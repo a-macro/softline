@@ -1,0 +1,75 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor/reset";
+
+/* Blocks */
+
+@import "blocks/search-res";
+@import "blocks/footer";
+@import "blocks/header";
+@import "blocks/main";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+
+html {
+  font-family: "Montserrat";
+  font-size: calc(100vw / 2500 * 10);
+  @include breakpoint($xxl-bp) {
+    font-size: calc(100vw / 1920 * 10);
+  }
+  @include breakpoint($xl-bp) {
+    font-size: calc(100vw / 1440 * 10);
+  }
+  @include breakpoint($mid-bp) {
+    font-size: calc(100vw / 768 * 10);
+  }
+  @include breakpoint($sm-bp) {
+    font-size: calc(100vw / 480 * 10);
+  }  
+}
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: $bg-color;
+  color: $black;
+}
+
+main {
+  flex-grow: 1;
+  padding-bottom: 15rem;
+  @include breakpoint($xl-bp) {
+    padding-bottom: 12rem;
+  }
+  @include breakpoint($mid-bp) {
+    padding-bottom: 10rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-bottom: 7rem;
+  }
+}
+
+input {
+  background: unset;
+  outline: none;
+  border: unset;
+  box-shadow: none;
+}
+
+.wrapper {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  @include breakpoint($mid-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

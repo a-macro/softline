@@ -1,0 +1,594 @@
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    z-index: 100;
+    @include breakpoint($mid-bp) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2.2rem 2rem 2rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding: 2.2rem 2.5rem 2.2rem;
+    }
+}
+
+
+.burger {
+    display: none;
+    @include breakpoint($mid-bp) {
+        display: block;
+        width: 4rem;
+        height: 2.8rem;  
+        border-top: 1px solid $footer-color;   
+        border-bottom: 1px solid $footer-color;  
+        position: relative;
+        border-left: unset;
+    }
+    @include breakpoint($sm-bp) {
+        width: 2.8rem;
+        height: 2.1rem;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        background: $footer-color;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.header__logo_mob {
+    display: none;
+    @include breakpoint($mid-bp) {
+        display: block;
+    }
+
+    img {
+        width: 10.7rem;
+        @include breakpoint($sm-bp) {
+            width: 13.7rem;
+        }
+    }
+}
+
+.header__top {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-bottom: 1px solid $grey;
+    z-index: 2;
+    line-height: 1;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #697279;
+    @include breakpoint($mid-bp) {
+        border-bottom: unset;
+    }
+
+    & > *:not(.burger) {
+        height: 5.1rem;
+        border-left: 1px solid $grey;
+        @include breakpoint($mid-bp) {
+            height: unset;
+            border-left: unset;
+        }
+    }
+}
+
+.header__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height: 8.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    @include breakpoint($xl-bp) {
+        padding-left: 3rem;
+        padding-right: 2.5rem;
+    }
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
+}
+
+.header__menu {
+    display: flex;
+}
+
+.header__nav {
+    display: flex;
+}
+
+.header__search {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2.3rem;
+    display: flex;
+    align-items: center;
+    @include breakpoint($mid-bp) {
+        padding: 0;
+        margin-right: 3rem;        
+    }
+
+    svg {
+        width: 1.3rem;
+        height: 1.3rem;
+        margin-left: .9rem;
+        @include breakpoint($mid-bp) {
+            width: 3rem;
+            height: 3rem;            
+        }
+        @include breakpoint($sm-bp) {
+            width: 2.7rem;
+            height: 2.7rem;            
+        }
+    }
+}
+
+.btn__search-show {
+    display: flex;
+    align-items: center;
+    span {
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+}
+
+.input__search {
+    display: none;
+}
+
+.btn__search {
+    display: none;
+}
+
+.header__search_close {
+    display: none;
+    position: absolute;
+    top: 2.1rem;
+    right: 4.2rem;
+    z-index: 6;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("../images/close-grey.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include breakpoint($mid-bp) {
+        top: 2rem;
+        right: 2rem;
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    @include breakpoint($sm-bp) {
+        top: 2.8rem;
+        right: 2.8rem;
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.header__search.active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding-left: 4rem;
+    padding-right: 5rem;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 1.8rem;
+    @include breakpoint($xxl-bp) {
+        padding-right: 4rem;
+    }
+    @include breakpoint($mid-bp) {
+        height: 12rem;
+        padding-left: 2rem;
+        padding-right: 2rem;   
+        padding-bottom: 2.2rem; 
+    }
+    @include breakpoint($sm-bp) {
+        height: 15rem;
+        padding-left: 2.8rem;
+        padding-right: 2.8rem;   
+    }
+
+    .btn__search-show {
+        display: none;
+    }
+
+    .btn__search {
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0em;
+        text-align: left;
+        color: white;
+        background: $red;
+        border: 1px solid $red;
+        padding: 1.3rem 1.2rem 1.3rem 2.4rem;
+        border-radius: 10rem;
+        text-decoration: none;
+        transition: .4s;
+        @include breakpoint($mid-bp) {
+            padding: 0;
+            border: unset;
+            span {
+                display: none;
+            }
+        }
+
+        svg {
+            width: 2.8rem;
+            height: 2.8rem;
+            margin-left: 2.4rem;
+            @include breakpoint($mid-bp) {
+                width: 2.4rem;
+                height: 2.4rem;
+                margin-left: 0;
+            }
+            @include breakpoint($sm-bp) {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+
+            rect {
+                fill: white;
+                @include breakpoint($mid-bp) {
+                    fill: $red;
+                }
+            }
+            path {
+                stroke: $red;
+                @include breakpoint($mid-bp) {
+                    stroke: white;
+                }
+            }
+        }
+    }
+
+    .btn__search.disabled {
+        color: $footer-color;
+        background: white;
+        border: 1px solid rgb(210, 220, 229, .3);
+        @include breakpoint($mid-bp) {
+            border: unset;
+        }
+        svg {
+            rect {
+                fill: #D2DCE5;
+            }
+            path {
+                stroke: white;
+            }
+        }
+    }
+
+    .input__search {
+        display: block;
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-bottom: .8rem;
+        color: $black;
+        &::placeholder {
+            color: #AAB8C3;
+        }
+        @include breakpoint($mid-bp) {
+            padding-bottom: 0;
+            font-size: 1.6rem;
+        }
+        @include breakpoint($sm-bp) {
+            font-size: 2rem;
+        }
+    }
+
+    .header__search_close {
+        display: block;
+    }
+}
+
+.geolocation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
+
+    img {
+        width: 2.4rem;
+    }
+}
+
+.geolocation__location {
+    color: #697279;
+    text-decoration: none;
+    margin-left: .8rem;
+    display: flex;
+    align-items: center;
+    transition: color .4s;
+    @include breakpoint($xl-bp) {
+        margin-left: 1.3rem;
+    }
+
+    &:hover {
+        color: $red;
+    }
+
+
+    &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 4px;
+        margin-left: 1rem;
+        background: url("../images/arrow-down.svg") no-repeat;
+        background-size: contain;
+    }
+}
+
+.header__store {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #697279;
+    text-decoration: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: color .4s;
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
+
+    &:hover {
+        color: $red;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin-left: 1.1rem;
+        background: url("../images/store.svg") no-repeat;
+        background-size: contain;
+    }
+}
+
+.header__logo {
+    img {
+        width: 14.8rem;
+    }
+}
+
+.header__menu {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.43;
+    letter-spacing: 0em;
+    text-align: left;
+    a {
+        color: #212424;
+        text-decoration: none;   
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+
+    a {
+        transition: color .4s;
+
+        &:hover {
+            color: $red;
+        }    
+    }
+}
+
+.header__item {
+    margin-right: 3.2rem;
+}
+
+.header__mail {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 100%;
+    background: $red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+
+    &:hover {
+        box-shadow: 0 0 4px $red;
+    }
+
+    img {
+        width: 1.6rem;
+    }
+}
+
+.__select {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.43;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-left: 2.2rem;
+    padding-right: 4rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint($xl-bp) {
+        padding-right: 1.8rem;
+        padding-left: 1.2rem;
+    }
+}
+
+.__select {
+    &[data-state="active"] {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        overflow: visible;
+        .__select__content {
+            opacity: 1;
+        }
+        .__select__label + .__select__input + .__select__label {
+            border-top-width: 1px;
+        }
+    }
+    @include breakpoint($sm-bp) {
+        padding: 0;
+    }
+}
+
+.__select__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    line-height: 1;
+    color: #697279;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor: pointer;
+    transition: color .4s;
+
+    &:hover {
+        color: $red;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding: 3.4rem 10.7rem 3.4rem 3.7rem;
+        z-index: 2;
+    }
+  
+    &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 4px;
+        margin-left: 1rem;
+        background: url("../images/arrow-down.svg") no-repeat;
+        background-size: contain;
+    }
+}
+
+.__select__content {
+    position: absolute;
+    top: calc(100% + 1px);
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin-top: -1px;
+    margin-left: -1px;
+    width: calc(100% + 2px);        
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    z-index: 8;
+    max-height: 38.5rem;
+    overflow-y: auto;
+    scrollbar-width: thin;          
+    scrollbar-color: rgba(239, 239, 239, 1) white;   
+    &::-webkit-scrollbar {
+        width: 40px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 10px 10px transparent;
+        border: solid 4px transparent;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 10px 10px rgba(239, 239, 239, 1);
+        border: solid 10px transparent;
+        border-right: solid 25px transparent;
+        border-radius: 0;
+        @include breakpoint($sm-bp) {
+            border-right: solid 20px transparent;
+        }
+    }
+      
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+    @include breakpoint($sm-bp) {
+        padding-top: 1.8rem;
+        padding-bottom: 1.8rem;
+        max-height: 420px;
+        overflow-y: scroll;
+    }
+}
+
+.languages {
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
+}
+
+.__select__input {
+    display: none;
+  
+    &:checked + label {
+        color: black;
+    }
+    &:checked + label[data-type="default"] {
+
+    }
+    &:disabled + label {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+}
+
+.__select__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    line-height: 1.3;
+    padding: 4px 16px;
+    padding-right: 6rem;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    color: rgb(152, 152, 152);
+    & + input + & {
+        border-top: 0 solid #C7CCD160;
+    }
+    &:hover {
+        color: black;
+    }
+    @include breakpoint($sm-bp) {
+        padding-right: 10rem;
+    }
+}
