@@ -1,5 +1,8 @@
 .breadcrumbs {
     margin-top: 3.2rem;
+    @include breakpoint($sm-bp) {
+        margin-top: 4.5rem;
+    }
 }
 
 .breadcrumbs__list {
@@ -42,6 +45,9 @@
     text-align: left;
     color: #AAB8C3;
     text-decoration: none;
+    @include breakpoint($sm-bp) {
+        font-size: 1.84rem;
+    }
 }
 
 .search-page {
@@ -54,16 +60,155 @@
     position: sticky;
     top: 0;
     padding-top: 5rem;
+    @include breakpoint($xxl-bp) {
+        padding-top: 5.5rem;
+    }
+    @include breakpoint($mid-bp) {
+        position: fixed;
+        width: 100%;
+        top: calc(100% - 6rem);
+        left: 0;
+        display: flex;
+        align-items: flex-start;
+        z-index: 1000;
+        background: white;
+        width: 100%;
+        height: 100vh;
+        padding: 10.3rem 2rem 1rem;
+        flex-direction: column;
+        border-radius: 2rem 2rem 0 0;
+    }
+    @include breakpoint($sm-bp) {
+        padding: 6.5rem 2.5rem 1rem;
+        top: calc(100% - 3.5rem);
+    }
+
+    &::before {
+        @include breakpoint($mid-bp) {
+            content: "";
+            width: 12.6rem;
+            height: .5rem;
+            display: block;
+            position: absolute;
+            top: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: .2rem;
+            background: #AAB8C3;
+        }
+        @include breakpoint($sm-bp) {
+            width: 5.6rem;
+            height: 3px;
+            top: 1.5rem;
+        }
+    }
+}
+
+.search-aside__title-mobile {
+    display: none;
+    @include breakpoint($mid-bp) {
+        display: block;
+        font-size: 5.2rem;
+        font-weight: 400;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        text-align: left;
+    }
+    @include breakpoint($sm-bp) {
+        font-size: 4.15rem;
+    }
+}
+
+.search-aside__list {
+    @include breakpoint($mid-bp) {
+        margin-top: 3rem;
+        max-height: 46rem;
+        overflow: auto;
+        width: 100%;
+        flex-grow: 1;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5rem;
+    }
+}
+
+.search-aside__close {
+    display: none;
+    @include breakpoint($mid-bp) {
+        display: block;
+        position: absolute;
+        top: 4.2rem;
+        right: 2.2rem;
+        width: 2rem;
+        height: 2rem;
+        background-image: url("../images/close-black.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0;
+        z-index: 5;
+        transition: opacity .1s;
+    }
+    @include breakpoint($sm-bp) {
+        top: 2.5rem;
+        right: 2.5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.search-aside.show {
+    .search-aside__close {
+        opacity: .3;
+    }
+}
+
+body {
+    &::before {
+        content: "";
+        background: transparent;
+        transition: background .2s .1s;
+    }
+}
+.lock-modal {
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: rgb(33, 33, 33, .4);
+        left: 0;
+        top: 0;
+        z-index: 999;    
+    }
 }
 
 .search-block {
     width: calc(100% - 39rem);
+    @include breakpoint($xl-bp) {
+        width: calc(100% - 35rem);
+        margin-top: -1rem;
+    }
+    @include breakpoint($mid-bp) {
+        width: 100%;
+        margin-top: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5rem;
+    }
 }
 
 .search-aside__item {
     margin-bottom: 2.5rem;
     position: relative;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    @include breakpoint($mid-bp) {
+        margin-bottom: 0;
+        padding-bottom: 2.2rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding-bottom: 2.55rem;
+    }
 
     &::before {
         content: "";
@@ -75,15 +220,28 @@
         left: -1rem;
         z-index: 1;
         transition: background .4s;
+        @include breakpoint($mid-bp) {
+            content: none;
+        }
     }
 }
 
 .search-aside__item.active {
     &::before {
         background: #E5E9F1;
+        @include breakpoint($mid-bp) {
+            content: none;
+        }
     }
 
-    &::after {
+    .search-aside__link,
+    .search-aside__num {
+        @include breakpoint($mid-bp) {
+            color: $red;
+        }
+    }
+
+    .search-aside__item_close {
         content: "";
         display: block;
         width: 1.3rem;
@@ -96,6 +254,9 @@
         transform: translateY(-50%);
         right: 5.5rem;
         z-index: 3;
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
     }
 }
 
@@ -109,6 +270,9 @@
     color: $black;
     z-index: 2;
     position: relative;
+    @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+    }
 }
 
 .search-aside__num {
@@ -123,12 +287,24 @@
     letter-spacing: 0em;
     text-align: left;
     color: #AAB8C3;
+    @include breakpoint($sm-bp) {
+        font-size: 1.8rem;
+    }
 }
 
 .search__title-block {
     display: flex;
     align-items: baseline;
     margin-top: 2rem;
+    @include breakpoint($xl-bp) {
+        margin-top: 4rem;
+    }
+    @include breakpoint($mid-bp) {
+        margin-top: 1.5rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 1.2rem;
+    }
 }
 
 .search__title {
@@ -137,6 +313,9 @@
     line-height: 1.45;
     letter-spacing: -0.01em;
     text-align: left;
+    @include breakpoint($sm-bp) {
+        font-size: 3.15rem;
+    }
 }
 
 .search__title_num {
@@ -146,11 +325,24 @@
     font-weight: 400;
     line-height: 1.45;
     letter-spacing: -0.01em;
+    @include breakpoint($sm-bp) {
+        font-size: 3.15rem;
+    }
 }
 
 .search-block__results {
     border-top: 1px solid #D2DCE5;
     margin-top: 2rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 2.4rem;
+    }
+    @include breakpoint($mid-bp) {
+        margin-top: 2.5rem;
+    }
+    @include breakpoint($sm-bp) {
+        border-top: unset;
+        margin-top: 1.5rem;
+    }
 }
 
 .search-result {
@@ -159,6 +351,22 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid #D2DCE5;
+    @include breakpoint($xl-bp) {
+        padding-top: 3.1rem;
+        padding-bottom: 3.3rem;
+    }
+    @include breakpoint($mid-bp) {
+        padding-bottom: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding-top: 5.5rem;
+        padding-bottom: 5.1rem;
+        flex-direction: column;
+    }
+
+    span {
+        color: $red;
+    }
 }
 
 .hide.search-result {
@@ -171,6 +379,9 @@
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
+    @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+    }
 }
 
 .search-result__text {
@@ -180,12 +391,30 @@
     letter-spacing: 0em;
     text-align: left;
     margin-top: 1.1rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 1.2rem;
+    }
+    @include breakpoint($sm-bp) {
+        font-size: 2.05rem;
+        margin-top: 1.8rem;
+        -webkit-line-clamp: 3; 
+        display: -webkit-box; 
+        -webkit-box-orient: vertical; 
+        overflow: hidden; 
+    }
 }
 
 .search-result__img {
     width: 23.3rem;
+    min-width: 23.3rem;
     height: 15.6rem;
     margin-right: 3.2rem;
+    @include breakpoint($sm-bp) {
+        width: 100%;
+        margin-right: 0;
+        height: 19.5rem;
+        margin-bottom: 2.5rem;
+    }
 
     img {
         width: 100%;
@@ -209,4 +438,10 @@
     background: #E5E9F1;
     text-decoration: none;
     color: $black;
+    @include breakpoint($mid-bp) {
+        margin-top: 5rem;
+    }
+}
+.search__show-more.hide {
+    display: none;
 }

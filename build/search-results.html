@@ -111,26 +111,35 @@
         
         <div class="wrapper search-page">
             <aside class="search-aside">
+                <div class="search-aside__close"></div>
+                <h2 class="search-aside__title-mobile">Sections</h2>
                 <ul class="search-aside__list">
-                    <li class="search-aside__item">
-                        <a class="search-aside__link" href="#">All Sections
+                    <li data-item="all" class="search-aside__item active">
+                        <a class="search-aside__link" href="#">
+                            <span class="search-aside__title">All Sections</span>
                             <span class="search-aside__num">51</span>
                         </a>
                     </li>
-                    <li class="search-aside__item active">
-                        <a class="search-aside__link" href="#">Services & Solutions
+                    <li data-item="services" class="search-aside__item">
+                        <a class="search-aside__link" href="#">
+                            <span class="search-aside__title">Services & Solutions</span>
                             <span class="search-aside__num">23</span>
                         </a>
+                        <span class="search-aside__item_close"></span>
                     </li>
-                    <li class="search-aside__item">
-                        <a class="search-aside__link" href="#">Industries 
+                    <li data-item="industries" class="search-aside__item">
+                        <a class="search-aside__link" href="#">
+                            <span class="search-aside__title">Industries</span>
                             <span class="search-aside__num">12</span>
                         </a>
+                        <span class="search-aside__item_close"></span>
                     </li>
-                    <li class="search-aside__item">
-                        <a class="search-aside__link" href="#">Insights
+                    <li data-item="insights" class="search-aside__item">
+                        <a class="search-aside__link" href="#">
+                            <span class="search-aside__title">Insights</span>
                             <span class="search-aside__num">16</span>
                         </a>
+                        <span class="search-aside__item_close"></span>
                     </li>
                 </ul>
             </aside>
@@ -138,12 +147,12 @@
                 <div class="search__heading">
                     <p class="search-block__common-info">51 results  by request «Cybersecurity»</p>
                     <div class="search__title-block">
-                        <h3 class="search__title">Services & Solutions</h3>
-                        <span class="search__title_num">23</span>
+                        <h3 class="search__title">All Sections</h3>
+                        <span class="search__title_num">51</span>
                     </div>
                 </div>
                 <div class="search-block__results">
-                    <div class="search-result">
+                    <div class="search-result services">
                         <div class="search-result__body">
                             <h4 class="search-result__title">CloudMaster - Hybrid Cloud Management</h4>
                             <p class="search-result__text">
@@ -151,7 +160,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result industries">
                         <div class="search-result__img">
                             <img src="assets/images/search/luca-bravo-XJXWbfSo2f0-unsplash (1) 1.jpg" alt="">
                         </div>
@@ -162,100 +171,176 @@
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result services">
                         <div class="search-result__img">
                             <img src="assets/images/search/Image.jpg" alt="">
                         </div>
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Neural network for retail on Google Cloud Platform</h4>
+                            <h4 class="search-result__title"><span>services</span>&nbsp;Neural network for retail on Google Cloud Platform</h4>
                             <p class="search-result__text">
                                 SmartMerch appreciated the possibility of launching a project without building an IT infrastructure from scratch and the flexibility of resource consumption depending on business goals
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result services">
                         <div class="search-result__body">
-                            <h4 class="search-result__title"><span>(pdf)</span>&nbsp;Information about Softline Clouds</h4>
+                            <h4 class="search-result__title"><span>(pdf)</span>&nbsp;<span>services</span>&nbsp;Information about Softline Clouds</h4>
                             <p class="search-result__text">
                                 About CloudMaster is a unified hybrid cloud management platform that automates multi-cloud nfrastructure, optimizes costs, and delivers self-service
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result industries">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>industries</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result industries">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>industries</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result services">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>services</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result insights">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result services">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>services</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result insights">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result industries">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>industries</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result insights">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result insights">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
                         </div>
                     </div>
-                    <div class="search-result">
+                    <div class="search-result insights">
                         <div class="search-result__body">
-                            <h4 class="search-result__title">Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>            <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>            <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>            <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>            <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result insights">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>insights</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
+                            <p class="search-result__text">
+                                ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result industries">
+                        <div class="search-result__body">
+                            <h4 class="search-result__title"><span>industries</span>&nbsp;Softline offered ABBYY an optimal plan for migration to the cloud</h4>
                             <p class="search-result__text">
                                 ABBYY's business development strategy required the modernization of its internal IT infrastructure using Microsoft cloud services.
                             </p>
@@ -367,6 +452,9 @@
     <!-- JS -->
     
     <script defer src="assets/vendor/swiper/swiper.min.js"></script>
+    <script defer src="assets/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script defer src="assets/vendor/hammer/hammer.min.js"></script>
+    <script defer src="assets/vendor/scroll-lock/scroll-lock.min.js"></script>
     <script defer src="assets/js/app.js"></script>
 
 </body>

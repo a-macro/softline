@@ -16,6 +16,7 @@
 html {
   font-family: "Montserrat";
   font-size: calc(100vw / 2500 * 10);
+  height: 100%;
   @include breakpoint($xxl-bp) {
     font-size: calc(100vw / 1920 * 10);
   }
@@ -38,6 +39,7 @@ body {
   flex-direction: column;
   background: $bg-color;
   color: $black;
+  min-height: 100%;
 }
 
 main {

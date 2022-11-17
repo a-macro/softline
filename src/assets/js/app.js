@@ -216,18 +216,239 @@ document.addEventListener("DOMContentLoaded", () => {
     initSlider();
 
     let results = document.querySelectorAll(".search-result");
+    let showMoreBtn = document.querySelector(".search__show-more");
 
     if(results && results.length > 0) {
         hideResults(results);
     }
 
     function hideResults(results) {
+        showMoreBtn.classList.add("hide");
         for(let i = 0; i < results.length; i++) {
             if(i >= 6) {
                 results[i].classList.add("hide");
+                showMoreBtn.classList.remove("hide");
             }
         }
     }
+
+    function changeResults(item) {
+        let attr = item.getAttribute("data-item");
+        let elems;
+        if(attr != "all") {
+            elems = document.querySelectorAll(`.${attr}`);
+            results.forEach(result => {
+                if(!result.classList.contains(`${attr}`)) {
+                    result.classList.add("hide");
+                } else {
+                    result.classList.remove("hide");
+                }
+            });    
+        } else {
+            elems = results;
+            results.forEach(result => {
+                result.classList.remove("hide")
+            });
+        }
+        hideResults(elems);
+    }
+
+    let itemsSearch = document.querySelectorAll(".search-aside__item");
+    let itemShowAll = document.querySelector(".search-aside__item[data-item='all']");
+
+    if(itemsSearch && itemsSearch.length > 0) {
+        let title = document.querySelector(".search__title");
+        let num = document.querySelector(".search__title_num");
+        itemsSearch.forEach(item => {
+            item.onclick = (e) => {
+                e.preventDefault();
+                if(!item.classList.contains("active")) {
+                    let itemTitle = item.querySelector(".search-aside__title");
+                    let itemNum = item.querySelector(".search-aside__num");
+                    let prevActive = document.querySelector(".active.search-aside__item");
+                    prevActive.classList.remove("active");
+                    item.classList.add("active");
+                    title.innerHTML = itemTitle.innerHTML;
+                    num.innerHTML = itemNum.innerHTML;
+                    changeResults(item);
+                } else {
+                    if(e.target.classList.contains("search-aside__item_close")) {
+                        let attr = item.getAttribute("data-item");
+                        if(attr != "all") {
+                            item.classList.remove("active");
+                            itemShowAll.classList.add("active");
+                            let itemTitle = itemShowAll.querySelector(".search-aside__title");
+                            let itemNum = itemShowAll.querySelector(".search-aside__num");   
+                            title.innerHTML = itemTitle.innerHTML;
+                            num.innerHTML = itemNum.innerHTML;                                
+                        }
+                        changeResults(itemShowAll);
+                    }
+                }
+            }
+        });
+    }
+
+    if(showMoreBtn) {
+        showMoreBtn.onclick = (e) => {
+            e.preventDefault();
+            let activeItem = document.querySelector(".active.search-aside__item");
+            let attr = activeItem.getAttribute("data-item");
+            if(attr != "all") {
+                let hiddenElems = document.querySelectorAll(`.search-result.${attr}.hide`);
+                for(let i = 0; i < hiddenElems.length; i++) {
+                    if(i < 6) {
+                        hiddenElems[i].classList.remove("hide");
+                    }
+                    if(hiddenElems.length < 6) {
+                        showMoreBtn.classList.add("hide");
+                    }
+                }
+            } else {
+                let hiddenElems = document.querySelectorAll(`.search-result.hide`);
+                for(let i = 0; i < hiddenElems.length; i++) {
+                    if(i < 6) {
+                        hiddenElems[i].classList.remove("hide");
+                    }
+                    if(hiddenElems.length <= 6) {
+                        showMoreBtn.classList.add("hide");
+                    }
+                }
+            }
+        }
+    }
+
+
+    let swipeEl = document.querySelector('.search-aside');
+    let mcSwipe = new Hammer.Manager(swipeEl);
+    
+    let swipeElHeight = window.innerHeight - 100;
+    let swipeThreshold = swipeElHeight / 3.5;
+    
+    let lastPosY = 0;
+    let isDragging = false;
+    let canSwipeUpDown = false;
+    let isOpen = false;
+
+    let values;
+    
+    function getTranslate3d(setting = '') {
+        values = setting.split(/\w+\(|\);?/);
+        if (!values[1] || !values[1].length) {
+            return [];
+        }
+    
+        return values[1].split(/,\s?/g).map(value => parseInt(value, 10));
+    }
+    
+    function setTranslate3dPosY(posY) {
+        return 'translate3d(0,' + posY + 'px, 0)';
+    }
+    
+    function hideswipeEl(elem) {
+        isOpen = false;
+        elem.classList.add("hide");
+        elem.classList.remove("show");
+        bodyTag.classList.remove("lock-modal");
+        elem.classList.remove("canScroll");
+        elem.style.transform = 'translate3d(0, 0px, 0)';
+        lastPosY = getTranslate3d(elem.style.transform)[1];
+    }
+
+    let asideClose = document.querySelector(".search-aside__close");
+    if(asideClose) {
+        asideClose.onclick = (e) => {
+            e.preventDefault();
+            hideswipeEl(swipeEl);
+        }
+    }
+
+    function showNow(elem) {
+        setTimeout(function () { isOpen = true }, 500);
+        elem.classList.remove("hide");
+        elem.classList.add("show");
+        bodyTag.classList.add("lock-modal");
+        var topPos = - window.innerHeight * .55;
+        elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
+        lastPosY = getTranslate3d(elem.style.transform)[1];
+    }
+    
+    function displayswipeEl(elem = swipeEl) {
+        elem.style.transform = 'translate3d(0, 0, 0)';
+        elem.classList.remove("hide");
+    }
+    
+    function handleDrag(ev) {
+        var direction = ev.offsetDirection;
+        var directionDown = direction === 16;
+    
+        swipeEl.addEventListener(
+            'scroll',
+            function () {
+                var scrollTop = swipeEl.scrollTop;
+                if (scrollTop == 0) {
+                    canSwipeUpDown = false;
+                    isOpen = false;
+                    swipeEl.classList.remove('canScroll');
+                }
+                else {
+                    canSwipeUpDown = true;
+                    isOpen = true;
+    
+                    swipeEl.classList.add('canScroll');
+                }
+            },
+            false
+        )
+    
+        /*if (isOpen && !directionDown) {
+            setTranslate3dPosY(0);
+            canSwipeUpDown = true;
+            swipeEl.classList.add('canScroll');
+        }
+        else */if (!canSwipeUpDown) {
+            swipeEl.classList.remove('canScroll');
+            var elem = swipeEl;
+    
+            // DRAG STARTED
+            if (!isDragging) {
+                if(ev.target != elem) {
+                    return;
+                }
+                elem.classList.remove('anim');
+                isDragging = true;
+                var currentPosY = getTranslate3d(elem.style.transform)[1];
+                lastPosY = currentPosY ? currentPosY : 0;
+            }
+    
+            var posY = ev.deltaY + lastPosY;
+            elem.style.transform = setTranslate3dPosY(posY);
+    
+            // DRAG ENDED
+            if (ev.isFinal) {
+                elem.classList.add('anim');
+                isDragging = false;
+    
+                if (Math.abs(posY) < swipeThreshold) {
+                    hideswipeEl(elem);
+                }
+                else {
+                    showNow(elem);
+                }
+            }
+        }
+    }
+    
+    mcSwipe.add(new Hammer.Pan({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 0
+    }));
+    if(window.innerWidth <= 768) {
+        mcSwipe.on("pan", handleDrag);
+    }
+    
+
+
 
     window.addEventListener("resize", () => {
         width = window.innerWidth;

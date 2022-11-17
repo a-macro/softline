@@ -199,15 +199,212 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   initSlider();
   var results = document.querySelectorAll(".search-result");
+  var showMoreBtn = document.querySelector(".search__show-more");
   if (results && results.length > 0) {
     hideResults(results);
   }
   function hideResults(results) {
+    showMoreBtn.classList.add("hide");
     for (var i = 0; i < results.length; i++) {
       if (i >= 6) {
         results[i].classList.add("hide");
+        showMoreBtn.classList.remove("hide");
       }
     }
+  }
+  function changeResults(item) {
+    var attr = item.getAttribute("data-item");
+    var elems;
+    if (attr != "all") {
+      elems = document.querySelectorAll(".".concat(attr));
+      results.forEach(function (result) {
+        if (!result.classList.contains("".concat(attr))) {
+          result.classList.add("hide");
+        } else {
+          result.classList.remove("hide");
+        }
+      });
+    } else {
+      elems = results;
+      results.forEach(function (result) {
+        result.classList.remove("hide");
+      });
+    }
+    hideResults(elems);
+  }
+  var itemsSearch = document.querySelectorAll(".search-aside__item");
+  var itemShowAll = document.querySelector(".search-aside__item[data-item='all']");
+  if (itemsSearch && itemsSearch.length > 0) {
+    var title = document.querySelector(".search__title");
+    var num = document.querySelector(".search__title_num");
+    itemsSearch.forEach(function (item) {
+      item.onclick = function (e) {
+        e.preventDefault();
+        if (!item.classList.contains("active")) {
+          var itemTitle = item.querySelector(".search-aside__title");
+          var itemNum = item.querySelector(".search-aside__num");
+          var prevActive = document.querySelector(".active.search-aside__item");
+          prevActive.classList.remove("active");
+          item.classList.add("active");
+          title.innerHTML = itemTitle.innerHTML;
+          num.innerHTML = itemNum.innerHTML;
+          changeResults(item);
+        } else {
+          if (e.target.classList.contains("search-aside__item_close")) {
+            var attr = item.getAttribute("data-item");
+            if (attr != "all") {
+              item.classList.remove("active");
+              itemShowAll.classList.add("active");
+              var _itemTitle = itemShowAll.querySelector(".search-aside__title");
+              var _itemNum = itemShowAll.querySelector(".search-aside__num");
+              title.innerHTML = _itemTitle.innerHTML;
+              num.innerHTML = _itemNum.innerHTML;
+            }
+            changeResults(itemShowAll);
+          }
+        }
+      };
+    });
+  }
+  if (showMoreBtn) {
+    showMoreBtn.onclick = function (e) {
+      e.preventDefault();
+      var activeItem = document.querySelector(".active.search-aside__item");
+      var attr = activeItem.getAttribute("data-item");
+      if (attr != "all") {
+        var hiddenElems = document.querySelectorAll(".search-result.".concat(attr, ".hide"));
+        for (var i = 0; i < hiddenElems.length; i++) {
+          if (i < 6) {
+            hiddenElems[i].classList.remove("hide");
+          }
+          if (hiddenElems.length < 6) {
+            showMoreBtn.classList.add("hide");
+          }
+        }
+      } else {
+        var _hiddenElems = document.querySelectorAll(".search-result.hide");
+        for (var _i = 0; _i < _hiddenElems.length; _i++) {
+          if (_i < 6) {
+            _hiddenElems[_i].classList.remove("hide");
+          }
+          if (_hiddenElems.length <= 6) {
+            showMoreBtn.classList.add("hide");
+          }
+        }
+      }
+    };
+  }
+  var swipeEl = document.querySelector('.search-aside');
+  var mcSwipe = new Hammer.Manager(swipeEl);
+  var swipeElHeight = window.innerHeight - 100;
+  var swipeThreshold = swipeElHeight / 3.5;
+  var lastPosY = 0;
+  var isDragging = false;
+  var canSwipeUpDown = false;
+  var isOpen = false;
+  var values;
+  function getTranslate3d() {
+    var setting = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    values = setting.split(/\w+\(|\);?/);
+    if (!values[1] || !values[1].length) {
+      return [];
+    }
+    return values[1].split(/,\s?/g).map(function (value) {
+      return parseInt(value, 10);
+    });
+  }
+  function setTranslate3dPosY(posY) {
+    return 'translate3d(0,' + posY + 'px, 0)';
+  }
+  function hideswipeEl(elem) {
+    isOpen = false;
+    elem.classList.add("hide");
+    elem.classList.remove("show");
+    bodyTag.classList.remove("lock-modal");
+    elem.classList.remove("canScroll");
+    elem.style.transform = 'translate3d(0, 0px, 0)';
+    lastPosY = getTranslate3d(elem.style.transform)[1];
+  }
+  var asideClose = document.querySelector(".search-aside__close");
+  if (asideClose) {
+    asideClose.onclick = function (e) {
+      e.preventDefault();
+      hideswipeEl(swipeEl);
+    };
+  }
+  function showNow(elem) {
+    setTimeout(function () {
+      isOpen = true;
+    }, 500);
+    elem.classList.remove("hide");
+    elem.classList.add("show");
+    bodyTag.classList.add("lock-modal");
+    var topPos = -window.innerHeight * .55;
+    elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
+    lastPosY = getTranslate3d(elem.style.transform)[1];
+  }
+  function displayswipeEl() {
+    var elem = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : swipeEl;
+    elem.style.transform = 'translate3d(0, 0, 0)';
+    elem.classList.remove("hide");
+  }
+  function handleDrag(ev) {
+    var direction = ev.offsetDirection;
+    var directionDown = direction === 16;
+    swipeEl.addEventListener('scroll', function () {
+      var scrollTop = swipeEl.scrollTop;
+      if (scrollTop == 0) {
+        canSwipeUpDown = false;
+        isOpen = false;
+        swipeEl.classList.remove('canScroll');
+      } else {
+        canSwipeUpDown = true;
+        isOpen = true;
+        swipeEl.classList.add('canScroll');
+      }
+    }, false);
+
+    /*if (isOpen && !directionDown) {
+        setTranslate3dPosY(0);
+        canSwipeUpDown = true;
+        swipeEl.classList.add('canScroll');
+    }
+    else */
+    if (!canSwipeUpDown) {
+      swipeEl.classList.remove('canScroll');
+      var elem = swipeEl;
+
+      // DRAG STARTED
+      if (!isDragging) {
+        if (ev.target != elem) {
+          return;
+        }
+        elem.classList.remove('anim');
+        isDragging = true;
+        var currentPosY = getTranslate3d(elem.style.transform)[1];
+        lastPosY = currentPosY ? currentPosY : 0;
+      }
+      var posY = ev.deltaY + lastPosY;
+      elem.style.transform = setTranslate3dPosY(posY);
+
+      // DRAG ENDED
+      if (ev.isFinal) {
+        elem.classList.add('anim');
+        isDragging = false;
+        if (Math.abs(posY) < swipeThreshold) {
+          hideswipeEl(elem);
+        } else {
+          showNow(elem);
+        }
+      }
+    }
+  }
+  mcSwipe.add(new Hammer.Pan({
+    direction: Hammer.DIRECTION_ALL,
+    threshold: 0
+  }));
+  if (window.innerWidth <= 768) {
+    mcSwipe.on("pan", handleDrag);
   }
   window.addEventListener("resize", function () {
     width = window.innerWidth;
