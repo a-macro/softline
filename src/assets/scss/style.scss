@@ -10,6 +10,7 @@
 @import "blocks/footer";
 @import "blocks/header";
 @import "blocks/main";
+@import "blocks/media.scss";
 
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
@@ -28,7 +29,8 @@ html {
   }
   @include breakpoint($sm-bp) {
     font-size: calc(100vw / 480 * 10);
-  }  
+  }
+
 }
 body {
   margin: 0;
