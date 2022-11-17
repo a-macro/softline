@@ -542,6 +542,17 @@ html ::-webkit-scrollbar {
   transform: translateX(-50%);
 }
 
+.filters {
+  display: flex;
+}
+
+.filter-wrapper {
+  width: 13rem;
+}
+.filter-wrapper:first-child {
+  width: 10.6rem;
+}
+
 .filter-button {
   border: 0;
   background-color: unset;
@@ -550,14 +561,19 @@ html ::-webkit-scrollbar {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 2.4rem;
+  width: 100%;
   /* identical to box height, or 150% */
   /* UI/Black/Medium */
   color: #40454E;
-  position: relative;
-  padding-right: 2.2rem;
-  height: 100%;
+  height: calc(100% + 1px);
+  padding-right: 1.5rem;
 }
-.filter-button::after {
+.filter-button span {
+  display: block;
+  position: relative;
+  padding-right: 1.5rem;
+}
+.filter-button span::after {
   content: "";
   position: absolute;
   top: 0;
@@ -568,6 +584,19 @@ html ::-webkit-scrollbar {
   background-size: contain;
   width: 1.4rem;
   height: 100%;
+}
+
+.filter-button--active {
+  background-color: #FFFFFF;
+}
+
+.filter-button + .panel {
+  position: absolute;
+  opacity: 0;
+}
+
+.filter-button--active + .panel {
+  opacity: 1;
 }
 
 .news__main-container {
@@ -738,9 +767,6 @@ html ::-webkit-scrollbar {
 .main-pagination .select-button {
   position: relative;
   z-index: 2;
-}
-.main-pagination .select-button::before {
-  content: attr(data-text);
 }
 .main-pagination .numb-container:focus {
   background-color: #FFFFFF;

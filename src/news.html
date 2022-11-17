@@ -15,10 +15,25 @@
       </nav>
 
       <div class="filters">
-        <button class="filter-button">Filters</button>
-        <button class="filter-button">All years</button>
-        <button class="filter-button">All months</button>
+        <div class="filter-wrapper">
+          <button class="filter-button filter-button--active"><span>Filters</span></button>
+            <div class="panel filters-panel">
+              <h2>Subjects</h2>
+              <div class="checkbox-container">
+  
+              </div>
+            </div>
+        </div>
+        <div class="filter-wrapper">
+          <button class="filter-button"><span>All years</span></button>
+            <div class="panel filters-panel">All years</div>
+        </div>
+        <div class="filter-wrapper">
+          <button class="filter-button"><span>All months</span></button>
+            <div class="panel filters-panel">All months</div>
+        </div>
       </div>
+
     </div>
 
     <div class="news__main-container wrapper">
@@ -141,7 +156,7 @@
       <div class="main-pagination">
         <span>Elements:</span>        
         <div class="numb-container" tabindex="1">
-          <span class="select-button num-page" data-text="15"></span>
+          <span class="select-button num-page">15</span>
           <span class="select-numb" tabindex="1">
             <a href="#">20</a>
             <a href="#">30</a>
