@@ -454,6 +454,51 @@ textarea {
 }
 
 /* Blocks */
+.insights-main-bg {
+    position: relative;
+}
+
+.insights-main-bg img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.insights-main-bg .breadcrumbs {
+    padding-top: 3.2rem;
+    margin-top: unset;
+}
+
+.insights-main-bg .breadcrumbs .breadcrumbs__link {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.insights-main-bg h1 {
+    padding-top: 84.7rem;
+    padding-bottom: 13.8rem;
+}
+
+.insights-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6.4rem;
+    line-height: 7.6rem;
+  /* identical to box height, or 119% */
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
 .breadcrumbs {
     margin-top: 3.2rem;
 }
@@ -2785,6 +2830,30 @@ textarea {
     }
 }
 
+@media (max-width: 1920px) {
+    .solve__slider {
+        margin-top: -19rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .solve__slider {
+        margin-top: -18rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .solve__slider {
+        margin-top: -19rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .solve__slider {
+        margin-top: -26rem;
+    }
+}
+
 .solve__slider .swiper-container {
     width: calc(100% - 4rem);
     margin-left: 2rem;
@@ -3441,6 +3510,21 @@ textarea {
         padding-top: 5.5rem;
         padding-left: 2.5rem;
     }
+}
+
+.informationTechnology h2 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.2rem;
+    line-height: 5.8rem;
+    letter-spacing: -0.02em;
+    color: #212424;
+    width: 51%;
+}
+
+.informationTechnology__content_position {
+    padding-top: 7.2rem;
 }
 
 html {
