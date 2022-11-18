@@ -318,6 +318,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    let btnGrid = document.querySelector(".catalog__btn-grid");
+    let btnList = document.querySelector(".catalog__btn-list");
+    let catalogWrap = document.querySelector(".catalog__services");
+
+    if(btnGrid && btnList && catalogWrap) {
+        btnGrid.onclick = (e) => {
+            e.preventDefault();
+            btnList.classList.remove("active");
+            btnGrid.classList.add("active");
+            catalogWrap.setAttribute("data-type", "grid");
+        }
+        btnList.onclick = (e) => {
+            e.preventDefault();
+            btnGrid.classList.remove("active");
+            btnList.classList.add("active");
+            catalogWrap.setAttribute("data-type", "list");
+        }
+    }
 
     let swipeEl = document.querySelector('.search-aside');
     if(swipeEl) {
@@ -447,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(window.innerWidth <= 768) {
             mcSwipe.on("pan", handleDrag);
         }
-           
+   
     }
 
 

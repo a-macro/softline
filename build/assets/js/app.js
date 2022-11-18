@@ -294,6 +294,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
   }
+  var btnGrid = document.querySelector(".catalog__btn-grid");
+  var btnList = document.querySelector(".catalog__btn-list");
+  var catalogWrap = document.querySelector(".catalog__services");
+  if (btnGrid && btnList && catalogWrap) {
+    btnGrid.onclick = function (e) {
+      e.preventDefault();
+      btnList.classList.remove("active");
+      btnGrid.classList.add("active");
+      catalogWrap.setAttribute("data-type", "grid");
+    };
+    btnList.onclick = function (e) {
+      e.preventDefault();
+      btnGrid.classList.remove("active");
+      btnList.classList.add("active");
+      catalogWrap.setAttribute("data-type", "list");
+    };
+  }
   var swipeEl = document.querySelector('.search-aside');
   if (swipeEl) {
     var getTranslate3d = function getTranslate3d() {

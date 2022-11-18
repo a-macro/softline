@@ -323,37 +323,44 @@
             display: none !important;
         }
     }
+}
 
-    .swiper-slide {
-        height: 31.8rem;
-        border-top: 1px solid $grey;
-        border-bottom: 1px solid $grey;
-        border-right: 1px solid $grey;
-        margin-left: 1px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 2.8rem 2rem 4.5rem;
-        @include breakpoint($xxl-bp) {
-            padding: 2.8rem 1.5rem 2.5rem;
-            height: 29.8rem;            
-        }
-        @include breakpoint($xl-bp) {
-            padding: 2.8rem 2.5rem 2rem 2rem;
-            height: 32rem;            
-        }
-        @include breakpoint($mid-bp) {
-            width: 23.2rem;
-            padding-right: 3.5rem;
-            margin-left: 0;
-        }
-        @include breakpoint($sm-bp) {
-            width: 40rem;
-            height: 34.5rem;
-            padding: 3.8rem 3.5rem 3rem 2rem;
-        }
+.service {
+    height: 31.8rem;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    border-right: 1px solid $grey;
+    margin-left: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.8rem 2rem 4.5rem;
+    text-decoration: none;
+    transition: .2s;
+    @include breakpoint($xxl-bp) {
+        padding: 2.8rem 1.5rem 2.5rem;
+        height: 29.8rem;            
+    }
+    @include breakpoint($xl-bp) {
+        padding: 2.8rem 2.5rem 2rem 2rem;
+        height: 32rem;            
+    }
+    @include breakpoint($mid-bp) {
+        width: 23.2rem;
+        padding-right: 3.5rem;
+        margin-left: 0;
+    }
+    @include breakpoint($sm-bp) {
+        width: 40rem;
+        height: 34.5rem;
+        padding: 3.8rem 3.5rem 3rem 2rem;
+    }
+
+    &:hover {
+        box-shadow: inset 2px 2px 4px #d2dce5;
     }
 }
+
 
 .swiper-container {
     .swiper-button-next,
@@ -401,7 +408,7 @@
     }
 }
 
-.slide__top {
+.service__top {
     img {
         width: 3.1rem;
         margin-bottom: 2.5rem;
@@ -417,16 +424,14 @@
     }
 }
 
-.slide__top_img {
-    @include breakpoint($mid-bp) {
-        height: 6rem;
-    }
+.service__top_img {
+    height: 6rem;
     @include breakpoint($sm-bp) {
         height: 6.4rem;
     }
 }
 
-.slide__text {
+.service__text {
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.5;
