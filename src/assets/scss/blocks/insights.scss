@@ -123,7 +123,15 @@ html {
     }
   }
 }
-
+.filters {
+  display: flex;
+}
+.filter-wrapper {
+  width: 13rem;
+  &:first-child {
+    width: 10.6rem;
+  }
+}
 .filter-button {
   border: 0;
   background-color: unset;
@@ -132,28 +140,43 @@ html {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 2.4rem;
+  width: 100%;
   /* identical to box height, or 150% */
   
   
   /* UI/Black/Medium */
   
   color: #40454E;
-
-  position: relative;
-  padding-right: 2.2rem;
-  height: 100%;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-    width: 1.4rem;
-    height: 100%;
+  height: calc(100% + 1px);
+  padding-right: 1.5rem;
+  span {
+    display: block;
+    position: relative;
+    padding-right: 1.5rem;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+      width: 1.4rem;
+      height: 100%;
+    }
   }
+}
+.filter-button--active {
+  background-color: #FFFFFF;
+}
+
+.filter-button + .panel {
+  position: absolute;
+  opacity: 0;
+}
+.filter-button--active + .panel {
+  opacity: 1;
 }
 
 .news__main-container {
@@ -323,9 +346,6 @@ html {
   .select-button {
     position: relative;
     z-index: 2;
-    &::before {
-      content: attr(data-text);
-    }
   }
   .numb-container:focus {
     background-color: #FFFFFF;
