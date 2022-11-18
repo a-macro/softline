@@ -412,4 +412,135 @@ document.addEventListener("DOMContentLoaded", function () {
     width = window.innerWidth;
     initSlider();
   });
+  var currentActiveButton = document.querySelector('.filter-button--active');
+  var no = function no() {
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /* For each element, create a new DIV that will act as the selected item: */
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected select-selected--light");
+      a.setAttribute('tabindex', '0');
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /* For each element, create a new DIV that will contain the option list: */
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 0; j < ll; j++) {
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        if (j === 0) {
+          c.classList.add('same-as-selected');
+        }
+        c.addEventListener("click", function (e) {
+          /* When an item is clicked, update the original select box,
+          and the selected item: */
+          var y, i, k, s, h, sl, yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          h.classList.add('filter-button--active');
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      var _overlay = document.createElement('div');
+      _overlay.classList.add('overlay');
+      x[i].appendChild(_overlay);
+      a.addEventListener("click", function (e) {
+        /* When the select box is clicked, close any other select boxes,
+        and open/close the current select box: */
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        //   this.classList.toggle("filter-button--active");
+      });
+    }
+
+    function closeAllSelect(elmnt) {
+      /* A function that will close all select boxes in the document,
+      except the current select box: */
+      var x,
+        y,
+        i,
+        xl,
+        yl,
+        arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i);
+          y[i].classList.remove('select-selected--light');
+        } else {
+          y[i].classList.remove("filter-button--active");
+          currentActiveButton = null;
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (!x[i].querySelector('.same-as-selected')) {
+          x[i].previousSibling.classList.add('select-selected--light');
+        }
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+
+    /* If the user clicks anywhere outside the select box,
+    then close all select boxes: */
+    document.addEventListener("click", closeAllSelect);
+  };
+  no();
+  var filterButtons = document.querySelectorAll('.filter-button, .select-selected');
+  var overlay = document.querySelector('.filter-wrapper .overlay');
+  var closeButtons = document.querySelectorAll('.close-button');
+  function clickHandler() {
+    if (this.classList.contains('filter-button--active')) {
+      this.classList.remove('filter-button--active');
+    } else {
+      filterButtons.forEach(function (el) {
+        el.classList.remove('filter-button--active');
+      });
+      this.classList.add('filter-button--active');
+    }
+  }
+  function closeMenu() {
+    filterButtons.forEach(function (el) {
+      el.classList.remove('filter-button--active');
+    });
+  }
+  if (filterButtons.length && closeButtons.length) {
+    if (overlay) {
+      overlay.addEventListener('click', closeMenu);
+    }
+    filterButtons.forEach(function (el) {
+      el.addEventListener('click', clickHandler);
+    });
+    closeButtons.forEach(function (el) {
+      el.addEventListener('click', closeMenu);
+    });
+  }
 });
