@@ -1231,6 +1231,7 @@ textarea {
     z-index: 10000;
     position: fixed;
     left: 0;
+    height: calc(100% - 4rem);
   }
 }
 
@@ -1289,6 +1290,12 @@ textarea {
 @media (max-width: 480px) {
   .news__main-container .news__item {
     min-height: 20rem;
+  }
+  .news__main-container .news__item:nth-last-child(2) .news__date {
+    padding-bottom: 1rem;
+  }
+  .news__main-container .news__item:nth-last-child(2)::before {
+    display: none;
   }
 }
 .news__main-container .news__item:focus {
@@ -1425,6 +1432,24 @@ textarea {
 @media (max-width: 480px) {
   .news__main-container .news__item--wider .news__date {
     color: #40454E;
+  }
+}
+.news__main-container .news__button {
+  display: none;
+  background: #E5E9F1;
+  border-radius: 0.4rem;
+  border: 0;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 2.5rem;
+  padding: 1.8rem;
+}
+@media (max-width: 480px) {
+  .news__main-container .news__button {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -1680,6 +1705,7 @@ textarea {
   vertical-align: middle;
   cursor: pointer;
   margin-right: 1.2rem;
+  transition: all 0.5s;
 }
 
 .form-group input:checked + label {
@@ -1728,6 +1754,7 @@ textarea {
   width: 1.4rem;
   height: 100%;
   margin-left: 1rem;
+  transition: background-color 0.5s;
 }
 @media (max-width: 480px) {
   .select-selected:after {
@@ -1751,6 +1778,7 @@ textarea {
   justify-content: center;
   /* 2022/Dark Electric Blue */
   cursor: pointer;
+  height: 100%;
 }
 @media (max-width: 480px) {
   .select-selected {
@@ -1787,6 +1815,25 @@ textarea {
     margin-top: 4rem;
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .select-items {
+    height: calc(100% - 4rem);
+    max-height: unset;
+  }
+}
+.select-items .close-button {
+  display: none;
+}
+@media (max-width: 480px) {
+  .select-items .close-button {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
 .select-items::-webkit-scrollbar {

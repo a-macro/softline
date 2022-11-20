@@ -403,6 +403,7 @@
     z-index: 10000;
     position: fixed;
     left: 0;
+    height: calc(100% - 4rem);
   }
 }
 .filter-button--active + .panel {
@@ -448,6 +449,14 @@
     min-height: 40rem;
     @include breakpoint($sm-bp) {
       min-height: 20rem;
+      &:nth-last-child(2) {
+        .news__date {
+          padding-bottom: 1rem;
+        }
+        &::before {
+          display: none;
+        }
+      }
     }
     &:focus {
       outline: none;
@@ -576,6 +585,23 @@
       @include breakpoint($sm-bp) {
         color: #40454E;
       }
+    }
+  }
+  .news__button {
+    display: none;
+    background: #E5E9F1;
+    border-radius: 0.4rem;
+    border: 0;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size:  2.4rem;
+    line-height: 2.5rem;
+    padding: 1.8rem;
+    @include breakpoint($sm-bp) {
+      display: block;
+      width: 100%;
+
     }
   }
 }
@@ -822,6 +848,7 @@
   vertical-align: middle;
   cursor: pointer;
   margin-right: 1.2rem;
+  transition: all .5s;
 }
 
 .form-group input:checked + label {
@@ -869,6 +896,7 @@
   width: 1.4rem;
   height: 100%;
   margin-left: 1rem;
+  transition: background-color .5s;
   @include breakpoint($sm-bp) {
     height: 1rem;
   }
@@ -893,6 +921,7 @@
   
   // padding: 1.2rem 1.6rem;
   cursor: pointer;
+  height: 100%;
   @include breakpoint($sm-bp) {
     font-size: 2rem;
     padding: 2rem 0;
@@ -922,7 +951,22 @@
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
   }
+  @include breakpoint($sm-bp) {
+    height: calc(100% - 4rem);
+    max-height: unset;
+  }
   /* width */
+  .close-button {
+    display: none;
+    @include breakpoint($sm-bp) {
+      display: block;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
 &::-webkit-scrollbar {
   width: 2px;
 }

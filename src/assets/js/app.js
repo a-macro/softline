@@ -494,6 +494,9 @@ const no = () => {
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
+    const closeButton = document.createElement('div')
+    closeButton.classList.add('close-button')
+    b.appendChild(closeButton)
     for (j = 0; j < ll; j++) {
       /* For each option in the original select element,
       create a new DIV that will act as an option item: */
