@@ -15,9 +15,9 @@ title: catalog
     <aside class="catalog-sidebar">
         <div class="catalog-sidebar__close"></div>
         <h2 class="catalog-sidebar__title-mobile">Filters</h2>
-        <div dats-show="6" class="filter__wrapper">
+        <div class="filter__wrapper">
             <a class="filter__category" href="#">Industries</a>
-            <ul class="catalog-sidebar__list side-list">
+            <ul data-show="6" class="catalog-sidebar__list side-list">
                 <li class="catalog-sidebar__item side-list__item">
                     <a class="catalog-sidebar__link side-list__link" href="#">
                         <span class="catalog-sidebar__title side-list__title">Automotive</span>
@@ -69,9 +69,9 @@ title: catalog
             </ul>
             <a class="filter__show-more" href="#">Show all</a>
         </div>
-        <div dats-show="6" class="filter__wrapper">
+        <div class="filter__wrapper">
             <a class="filter__category" href="#">Vendors</a>
-            <ul class="catalog-sidebar__list side-checkbox">
+            <ul data-show="6" class="catalog-sidebar__list side-checkbox">
                 <li class="catalog-sidebar__item side-checkbox__item">
                     <label>
                         <input class="check-input" type="checkbox">
@@ -131,9 +131,9 @@ title: catalog
             </ul>
             <a class="filter__show-more" href="#">Show all</a>
         </div>
-        <div dats-show="4" class="filter__wrapper">
+        <div class="filter__wrapper">
             <a class="filter__category" href="#">Technologies</a>
-            <ul class="catalog-sidebar__list side-checkbox">
+            <ul data-show="4" class="catalog-sidebar__list side-checkbox">
                 <li class="catalog-sidebar__item side-checkbox__item">
                     <label>
                         <input class="check-input" type="checkbox">
@@ -179,9 +179,9 @@ title: catalog
             </ul>
             <a class="filter__show-more" href="#">Show all</a>
         </div>
-        <div dats-show="4" class="filter__wrapper">
+        <div class="filter__wrapper">
             <a class="filter__category" href="#">Architecture</a>
-            <ul class="catalog-sidebar__list side-checkbox">
+            <ul data-show="4" class="catalog-sidebar__list side-checkbox">
                 <li class="catalog-sidebar__item side-checkbox__item">
                     <label>
                         <input class="check-input" type="checkbox">
@@ -585,6 +585,38 @@ title: catalog
                     Automation of business processes and improvement of operational efficiency
                 </p>
             </a>
+        </div>
+        <a href="#" class="catalog__show-more show-more">Show more</a>
+        <div class="pagination-block wrapper">
+        
+            <div class="main-pagination">
+                <span>Elements:</span>        
+                <div class="numb-container" tabindex="1">
+                    <span class="select-button num-page">15</span>
+                    <span class="select-numb" tabindex="1">
+                        <a href="#">15</a>
+                        <a href="#">20</a>
+                        <a href="#">30</a>
+                    </span>
+                </div>
+      
+                <div class="main-pagination__right">
+                    <span class="now-pages">1-15</span>
+                    <span> of </span>
+                    <span class="all-pages">350</span>
+                </div>
+            </div>
+        
+            <div class="pagination">
+                <a href="#"><svg class="arrow"><use href="#arrow"></use></svg></a>
+                <a class="active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">...</a>
+                <a href="#">20</a>
+                <a href="#"><svg class="arrow arrow--right arrow--active"><use href="#arrow"></use></svg></a>
+            </div>
+      
         </div>
     </div>
 </section>

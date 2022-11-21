@@ -337,6 +337,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    let filters = document.querySelectorAll("[data-show]");
+    if(filters && filters.length > 0) {
+        filters.forEach(filter => {
+            countHeight(filter);
+        });
+    }
+
+    function countHeight(filter) {
+        let num = +filter.getAttribute("data-show");
+        let elems = filter.querySelectorAll(".catalog-sidebar__item");
+        let len = elems.length;
+        let elemHeight = elems[0].getBoundingClientRect().height;
+        let margin =  +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
+        let commonH = num * (elemHeight + margin);
+        filter.style.setProperty("--max-h", commonH + "px");
+    }
+
+    let showMoreFilters = document.querySelectorAll(".filter__show-more");
+    if(showMoreFilters && showMoreFilters.length > 0) {
+        showMoreFilters.forEach(btn => {
+            let parent = btn.closest(".filter__wrapper");
+            btn.onclick = (e) => {
+                e.preventDefault();
+                let list = parent.querySelector("ul");
+                list.style.maxHeight = "200vh";
+                btn.classList.add("hide");
+            }
+        });
+    }
+
     let swipeEl = document.querySelector('.search-aside');
     if(swipeEl) {
         let mcSwipe = new Hammer.Manager(swipeEl);
@@ -471,6 +501,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", () => {
         width = window.innerWidth;
+        filters.forEach(filter => {
+            countHeight(filter);
+        });
         initSlider();
     });
 

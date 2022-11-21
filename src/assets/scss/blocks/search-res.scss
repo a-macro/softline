@@ -423,7 +423,7 @@ body {
     }
 }
 
-.search__show-more {
+.show-more {
     margin-top: 7.5rem;
     height: 5.5rem;
     width: 100%;
@@ -438,10 +438,15 @@ body {
     background: #E5E9F1;
     text-decoration: none;
     color: $black;
+    transition: color .4s;
     @include breakpoint($mid-bp) {
         margin-top: 5rem;
     }
+    
+    &:hover {
+        color: $red;
+    }
 }
-.search__show-more.hide {
+.show-more.hide {
     display: none;
 }
