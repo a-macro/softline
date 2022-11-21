@@ -497,6 +497,12 @@ const no = () => {
     const closeButton = document.createElement('div')
     closeButton.classList.add('close-button')
     b.appendChild(closeButton)
+    if (x[i].dataset.text) {
+        const title = document.createElement('div')
+        title.classList.add('custom-select__title')
+        title.innerHTML = x[i].dataset.text
+        b.appendChild(title)
+    }
     for (j = 0; j < ll; j++) {
       /* For each option in the original select element,
       create a new DIV that will act as an option item: */

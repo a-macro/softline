@@ -1039,7 +1039,7 @@ textarea {
   .filters {
     border-left: 0;
   }
-  .filters > div:not(:last-child) {
+  .filters > div:not(:nth-child(1)) {
     border-right: 1px solid #D2DCE5;
   }
 }
@@ -1071,6 +1071,8 @@ textarea {
 @media (max-width: 480px) {
   .filter-wrapper {
     width: 100%;
+    grid-column: 3/4;
+    grid-row: 1/2;
   }
 }
 
@@ -1192,6 +1194,7 @@ textarea {
   content: "";
   position: absolute;
   top: 50%;
+  left: 50%;
   width: 100%;
   height: 0.1rem;
   background-color: #212424;
@@ -1815,6 +1818,29 @@ textarea {
     margin-top: 4rem;
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
+    padding-left: 2.5rem;
+  }
+  .select-items::before {
+    content: "";
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    width: 4rem;
+    height: 2px;
+    background-color: #40454E;
+    transform: translateX(-50%);
+  }
+  .select-items::after {
+    content: "";
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background-color: #FFFFFF;
+    z-index: 0;
+    border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
   }
 }
 @media (max-width: 480px) {
@@ -1825,15 +1851,38 @@ textarea {
 }
 .select-items .close-button {
   display: none;
+  padding: 0 !important;
 }
 @media (max-width: 480px) {
   .select-items .close-button {
     display: block;
-    position: absolute;
+    position: sticky;
     top: 2rem;
-    right: 2rem;
+    right: 0;
     width: 4rem;
-    height: 4rem;
+    height: 3rem;
+    margin-left: auto;
+    z-index: 3;
+  }
+}
+.select-items .custom-select__title {
+  display: none;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.1rem;
+  line-height: 4.2rem;
+  /* identical to box height, or 125% */
+  letter-spacing: -0.02em;
+  /* UI/Black/High */
+  color: #212424;
+}
+@media (max-width: 480px) {
+  .select-items .custom-select__title {
+    display: block;
+    position: sticky;
+    top: 3rem;
+    z-index: 3;
   }
 }
 .select-items::-webkit-scrollbar {
@@ -1860,7 +1909,19 @@ textarea {
   cursor: pointer;
 }
 .select-items div:not(:last-child) {
-  padding-bottom: 1.6rem;
+  padding: 2.4rem 0;
+}
+@media (max-width: 480px) {
+  .select-items div {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.6rem;
+    line-height: 2.8rem;
+    /* identical to box height, or 140% */
+    /* UI/Black/High */
+    color: #212424;
+  }
 }
 
 .filters .custom-select:last-child .select-items {
