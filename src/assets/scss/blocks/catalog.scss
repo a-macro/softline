@@ -1,6 +1,9 @@
 .intro__catalog {
     display: grid;
     height: 71rem;
+    @include breakpoint($xxl-bp) {
+        height: 55rem;
+    }
 }
 
 .intro__catalog_bg {
@@ -19,6 +22,9 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 3rem 4rem 8.5rem;
+    @include breakpoint($xxl-bp) {
+        padding-bottom: 9rem;
+    }
 
     h1 {
         font-size: 6.4rem;
@@ -37,10 +43,21 @@
     letter-spacing: 0em;
     text-align: left;
     color: white;
+    text-decoration: none;
+    transition: color .4s;
+
+    &:hover {
+        color: $red;
+    }
 }
 
 .catalog {
     display: flex;
+
+    .pagination-block {
+        padding-left: 0;
+        padding-right: 0 ;
+    }
 }
 
 .catalog-sidebar {
@@ -49,6 +66,12 @@
     margin-right: 5rem;
     padding-left: 4rem;
     padding-top: 1rem;
+    @include breakpoint($xxl-bp) {
+        width: 40rem;
+        min-width: 40rem;
+        padding-top: 0;
+        margin-right: 12rem;
+    }
 }
 
 .catalog-sidebar__title-mobile {
@@ -63,6 +86,10 @@
     text-align: left;
     color: $black;
     text-decoration: none;
+}
+
+.catalog__show-more {
+    margin-bottom: 4rem;
 }
 
 .catalog {
@@ -87,6 +114,9 @@
 
 .catalog-sidebar__list {
     margin-top: 2.6rem;
+    max-height: var(--max-h);
+    overflow: hidden;
+    transition: .4s;
 }
 
 .filter__show-more {
@@ -99,6 +129,10 @@
     text-decoration: none;
     padding-top: 0.8rem;
     display: inline-block;
+}
+
+.filter__show-more.hide {
+    display: none;
 }
 
 .filter__wrapper {
@@ -119,6 +153,7 @@
     .check-box {
         width: 2rem;
         height: 2rem;
+        margin-top: 1px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -176,6 +211,9 @@
     width: calc(100% - 40rem);
     padding-top: 6rem;
     padding-right: 4rem;
+    @include breakpoint($xxl-bp) {
+        padding-top: 5rem;
+    }
 }
 
 .catalog__input-search {
@@ -225,6 +263,9 @@
     display: flex;
     align-items: center;
     margin-top: 5rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 5.5rem;
+    }
 }
 
 .catalog__terms_list {
@@ -256,6 +297,7 @@
     display: block;
     background: url("../images/close-black.svg") no-repeat;
     background-size: contain;
+    cursor: pointer;
 }
 
 .catalog__terms_del {
@@ -268,6 +310,13 @@
     text-decoration: none;
     display: inline-block;
     margin-left: 1rem;
+    cursor: pointer;
+    transition: .4s;
+    box-shadow: 0 1px 0 0 transparent;
+
+    &:hover {
+        box-shadow: 0 1px 0 0 $red;
+    }
 }
 
 .catalog__top-controls {
@@ -315,9 +364,29 @@
         padding-top: 3.5rem;
         padding-bottom: 2.9rem;
         position: relative;
+        @include breakpoint($xxl-bp) {
+            width: calc(calc(100% - 12rem) / 4);
+            padding-top: 2.5rem;
+        }
+
+        &:hover {
+            box-shadow: unset;
+            border-top: 1px solid $red;
+            border-bottom: 1px solid $red;
+            .subtitle {
+                color: $red;
+            }
+        }
+
+        .subtitle {
+            transition: color .4s;
+        }
 
         .service__top_img {
             height: 4.5rem;
+            @include breakpoint($xxl-bp) {
+                height: 5.5rem;
+            }
 
             img {
                 margin-bottom: 0;
@@ -336,11 +405,30 @@
 
         &:nth-child(6n) {
             margin-right: 0;
+            @include breakpoint($xxl-bp) {
+                margin-right: 4rem;
+            }
 
             &::after {
                 content: none;
+                @include breakpoint($xxl-bp) {
+                    content: "";
+                }
             }
         }
+
+        &:nth-child(4n) {
+            @include breakpoint($xxl-bp) {
+                margin-right: 0;
+            }
+
+            &::after {
+                @include breakpoint($xxl-bp) {
+                    content: none;
+                }
+            }
+        }
+
     }
 }
 
@@ -391,5 +479,11 @@
 
     .subtitle {
         font-size: 2rem;
+    }
+}
+
+.catalog__show-more.show-more {
+    @include breakpoint($xxl-bp) {
+        margin-top: 4rem;
     }
 }
