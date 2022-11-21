@@ -450,6 +450,12 @@ document.addEventListener("DOMContentLoaded", function () {
       var closeButton = document.createElement('div');
       closeButton.classList.add('close-button');
       b.appendChild(closeButton);
+      if (x[i].dataset.text) {
+        var _title = document.createElement('div');
+        _title.classList.add('custom-select__title');
+        _title.innerHTML = x[i].dataset.text;
+        b.appendChild(_title);
+      }
       for (j = 0; j < ll; j++) {
         /* For each option in the original select element,
         create a new DIV that will act as an option item: */
