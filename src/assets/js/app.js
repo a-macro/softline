@@ -55,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 selectSingle_title.onclick = (e) => {
                     e.preventDefault();
                     let prev = document.querySelector(`[data-state="active"]`);
-                    if(prev && prev != e.target) {
-                        prev.setAttribute('data-state', '');
-                    }
                     if ('active' === selectSingle.getAttribute('data-state')) {
                         selectSingle.setAttribute('data-state', '');
                     } else {
@@ -289,6 +286,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    let catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item");
+    if(catalogList && catalogList.length > 0) {
+        catalogList.forEach(item => {
+            let parent = item.closest("ul");
+            item.onclick = (e) => {
+                e.preventDefault();
+                if(!item.classList.contains("active")) {
+                    let prevActive = document.querySelector(".active.catalog-sidebar__item");
+                    if(prevActive) {
+                        prevActive.classList.remove("active");
+                    }
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            }
+        });
+    }
+
+    let filterMobBtn = document.querySelector(".filters__mobile");
+    let catalogSide = document.querySelector(".catalog-sidebar");
+    if(filterMobBtn) {
+        filterMobBtn.onclick = (e) => {
+            e.preventDefault();
+            showNow(catalogSide);
+        }
+    }
+
     if(showMoreBtn) {
         showMoreBtn.onclick = (e) => {
             e.preventDefault();
@@ -367,135 +392,150 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    let swipeEl = document.querySelector('.search-aside');
-    if(swipeEl) {
-        let mcSwipe = new Hammer.Manager(swipeEl);
-    
-        let swipeElHeight = window.innerHeight - 100;
-        let swipeThreshold = swipeElHeight / 3.5;
-        
-        let lastPosY = 0;
-        let isDragging = false;
-        let canSwipeUpDown = false;
-        let isOpen = false;
-    
-        let values;
-        
-        function getTranslate3d(setting = '') {
-            values = setting.split(/\w+\(|\);?/);
-            if (!values[1] || !values[1].length) {
-                return [];
+    let swipeEls = document.querySelectorAll('.swipe-el');
+    let hideswipeEl;
+    let showNow;
+
+    if(swipeEls && swipeEls.length > 0) {
+        swipeEls.forEach(swipeEl => {
+            let mcSwipe = new Hammer.Manager(swipeEl);
+            let swipeElHeight = window.innerHeight - 100;
+            let swipeThreshold = swipeElHeight / 3.5;
+            if(window.innerWidth <= 768 && window.innerWidth > 480) {
+                swipeEl.style.maxHeight = window.innerHeight * .8 + "px";
+            } else if(window.innerWidth <= 480) {
+                swipeEl.style.maxHeight = window.innerHeight * .9 + "px";
             }
+            
+            let lastPosY = 0;
+            let isDragging = false;
+            let canSwipeUpDown = false;
+            let isOpen = false;
         
-            return values[1].split(/,\s?/g).map(value => parseInt(value, 10));
-        }
-        
-        function setTranslate3dPosY(posY) {
-            return 'translate3d(0,' + posY + 'px, 0)';
-        }
-        
-        function hideswipeEl(elem) {
-            isOpen = false;
-            elem.classList.add("hide");
-            elem.classList.remove("show");
-            bodyTag.classList.remove("lock-modal");
-            elem.classList.remove("canScroll");
-            elem.style.transform = 'translate3d(0, 0px, 0)';
-            lastPosY = getTranslate3d(elem.style.transform)[1];
-        }
-    
-        let asideClose = document.querySelector(".search-aside__close");
-        if(asideClose) {
-            asideClose.onclick = (e) => {
-                e.preventDefault();
-                hideswipeEl(swipeEl);
-            }
-        }
-    
-        function showNow(elem) {
-            setTimeout(function () { isOpen = true }, 500);
-            elem.classList.remove("hide");
-            elem.classList.add("show");
-            bodyTag.classList.add("lock-modal");
-            var topPos = - window.innerHeight * .55;
-            elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
-            lastPosY = getTranslate3d(elem.style.transform)[1];
-        }
-        
-        function displayswipeEl(elem = swipeEl) {
-            elem.style.transform = 'translate3d(0, 0, 0)';
-            elem.classList.remove("hide");
-        }
-        
-        function handleDrag(ev) {
-            var direction = ev.offsetDirection;
-            var directionDown = direction === 16;
-        
-            swipeEl.addEventListener(
-                'scroll',
-                function () {
-                    var scrollTop = swipeEl.scrollTop;
-                    if (scrollTop == 0) {
-                        canSwipeUpDown = false;
-                        isOpen = false;
-                        swipeEl.classList.remove('canScroll');
-                    }
-                    else {
-                        canSwipeUpDown = true;
-                        isOpen = true;
-        
-                        swipeEl.classList.add('canScroll');
-                    }
-                },
-                false
-            )
-        
-            /*if (isOpen && !directionDown) {
-                setTranslate3dPosY(0);
-                canSwipeUpDown = true;
-                swipeEl.classList.add('canScroll');
-            }
-            else */if (!canSwipeUpDown) {
-                swipeEl.classList.remove('canScroll');
-                var elem = swipeEl;
-        
-                // DRAG STARTED
-                if (!isDragging) {
-                    if(ev.target != elem) {
-                        return;
-                    }
-                    elem.classList.remove('anim');
-                    isDragging = true;
-                    var currentPosY = getTranslate3d(elem.style.transform)[1];
-                    lastPosY = currentPosY ? currentPosY : 0;
+            let values;
+            
+            function getTranslate3d(setting = '') {
+                values = setting.split(/\w+\(|\);?/);
+                if (!values[1] || !values[1].length) {
+                    return [];
                 }
+            
+                return values[1].split(/,\s?/g).map(value => parseInt(value, 10));
+            }
+            
+            function setTranslate3dPosY(posY) {
+                return 'translate3d(0,' + posY + 'px, 0)';
+            }
+            
+            hideswipeEl = function(elem) {
+                isOpen = false;
+                elem.classList.add("hide");
+                elem.classList.remove("show");
+                bodyTag.classList.remove("lock-modal");
+                elem.classList.remove("canScroll");
+                elem.style.transform = 'translate3d(0, 0px, 0)';
+                lastPosY = getTranslate3d(elem.style.transform)[1];
+            }
         
-                var posY = ev.deltaY + lastPosY;
-                elem.style.transform = setTranslate3dPosY(posY);
-        
-                // DRAG ENDED
-                if (ev.isFinal) {
-                    elem.classList.add('anim');
-                    isDragging = false;
-        
-                    if (Math.abs(posY) < swipeThreshold) {
-                        hideswipeEl(elem);
+            let asideClose = document.querySelectorAll(".swipe-el__close");
+            if(asideClose && asideClose.length > 0) {
+                asideClose.forEach(btn => {
+                    let parent = btn.closest(".swipe-el")
+                    btn.onclick = (e) => {
+                        e.preventDefault();
+                        hideswipeEl(parent);
                     }
-                    else {
-                        showNow(elem);
+                });
+            }
+        
+            showNow = function(elem) {
+                setTimeout(function () { isOpen = true }, 500);
+                elem.classList.remove("hide");
+                elem.classList.add("show");
+                bodyTag.classList.add("lock-modal");
+                if(window.innerWidth <= 768 && window.innerWidth > 480) {
+                    var topPos = - window.innerHeight * .7;
+                } else if(window.innerWidth <= 480) {
+                    var topPos = - window.innerHeight * .9;
+                }
+                elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
+                lastPosY = getTranslate3d(elem.style.transform)[1];
+            }
+            
+            function displayswipeEl(elem = swipeEl) {
+                elem.style.transform = 'translate3d(0, 0, 0)';
+                elem.classList.remove("hide");
+            }
+            
+            function handleDrag(ev) {
+                var direction = ev.offsetDirection;
+                var directionDown = direction === 16;
+            
+                swipeEl.addEventListener(
+                    'scroll',
+                    function () {
+                        var scrollTop = swipeEl.scrollTop;
+                        if (scrollTop == 0) {
+                            canSwipeUpDown = false;
+                            isOpen = false;
+                            swipeEl.classList.remove('canScroll');
+                        }
+                        else {
+                            canSwipeUpDown = true;
+                            isOpen = true;
+            
+                            swipeEl.classList.add('canScroll');
+                        }
+                    },
+                    false
+                )
+            
+                /*if (isOpen && !directionDown) {
+                    setTranslate3dPosY(0);
+                    canSwipeUpDown = true;
+                    swipeEl.classList.add('canScroll');
+                }
+                else */if (!canSwipeUpDown) {
+                    swipeEl.classList.remove('canScroll');
+                    var elem = swipeEl;
+            
+                    // DRAG STARTED
+                    if (!isDragging) {
+                        if(ev.target != elem) {
+                            return;
+                        }
+                        elem.classList.remove('anim');
+                        isDragging = true;
+                        var currentPosY = getTranslate3d(elem.style.transform)[1];
+                        lastPosY = currentPosY ? currentPosY : 0;
+                    }
+            
+                    var posY = ev.deltaY + lastPosY;
+                    elem.style.transform = setTranslate3dPosY(posY);
+            
+                    // DRAG ENDED
+                    if (ev.isFinal) {
+                        elem.classList.add('anim');
+                        isDragging = false;
+            
+                        if (Math.abs(posY) < swipeThreshold) {
+                            hideswipeEl(elem);
+                        }
+                        else {
+                            showNow(elem);
+                        }
                     }
                 }
             }
-        }
-        
-        mcSwipe.add(new Hammer.Pan({
-            direction: Hammer.DIRECTION_ALL,
-            threshold: 0
-        }));
-        if(window.innerWidth <= 768) {
-            mcSwipe.on("pan", handleDrag);
-        }
-   
+            
+            mcSwipe.add(new Hammer.Pan({
+                direction: Hammer.DIRECTION_ALL,
+                threshold: 0
+            }));
+            if(window.innerWidth <= 768) {
+                mcSwipe.on("pan", handleDrag);
+            }    
+        });
     }
 
 
@@ -506,6 +546,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         initSlider();
     });
+
+
 
 
 let currentActiveButton = document.querySelector('.filter-button--active')
