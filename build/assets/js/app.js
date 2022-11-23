@@ -28,6 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
       headerSearch.classList.remove('active');
     };
   }
+  var menuItems = document.querySelectorAll(".header__item");
+  var menuWrapper = document.querySelector(".menu-wrapper");
+  if (menuItems && menuItems.length > 0) {
+    menuItems.forEach(function (item) {
+      var attr = item.getAttribute("data-menu");
+      if (attr) {
+        var itemMenu = document.querySelector(".".concat(attr));
+        item.onmouseover = function (e) {
+          item.classList.add("active");
+          itemMenu.style.display = "block";
+          menuWrapper.classList.add("show");
+        };
+      }
+    });
+  }
   var searchInp = document.querySelector(".input__search");
   var btnSearch = document.querySelector(".btn__search");
   if (searchInp) {

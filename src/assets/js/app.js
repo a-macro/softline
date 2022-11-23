@@ -29,6 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    let menuItems = document.querySelectorAll(".header__item");
+    let menuWrapper = document.querySelector(".menu-wrapper");
+    if(menuItems && menuItems.length > 0) {
+        menuItems.forEach(item => {
+            let attr = item.getAttribute("data-menu");
+            if(attr) {
+                let itemMenu = document.querySelector(`.${attr}`);
+                item.onmouseover = (e) => {
+                    item.classList.add("active");
+                    itemMenu.style.display = "block";
+                    menuWrapper.classList.add("show");
+                }
+            }
+        });
+    }
+
     let searchInp = document.querySelector(".input__search");
     let btnSearch = document.querySelector(".btn__search");
     if(searchInp) {
