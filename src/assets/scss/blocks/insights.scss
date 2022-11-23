@@ -91,6 +91,9 @@
       }
     }
   }
+  .catalog__terms_wrapper {
+    margin-top: 4rem;
+  }
 }
 
 .wrapper-left {
@@ -300,11 +303,70 @@
   background-color: #FFFFFF;
 }
 
+.filter-button + .panel {
+  @include breakpoint($sm-bp) {
+    &::after {
+      content: '';
+      position: fixed;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 12rem;
+      background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+      background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+      z-index: 0;
+      border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
+      pointer-events: none;
+      transition: top .4s;
+    }
+  }
+}
+
+.filter-button--active + .panel {
+  @include breakpoint($sm-bp) {
+    &::after {
+      content: '';
+      position: fixed;
+      top: 4rem;
+      left: 0;
+      width: 100%;
+      height: 12rem;
+      background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+      background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+      z-index: 0;
+      border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
+      pointer-events: none;
+      transition: top .4s;
+    }
+  }
+}
+
 .panel {
   background-color: #FFFFFF;
   z-index: 2;
   padding: 4rem 14rem 5rem 6rem;
   box-shadow: 0px 1rem 2rem rgba(159, 174, 191, 0.25);
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+   background-color: transparent;
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+     background: #AAB8C3; 
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+  background: #A50F2D; 
+  }
   @include breakpoint($mid-bp) {
     padding: 4rem 8rem 5rem 6rem;
   }
@@ -314,14 +376,27 @@
     position: relative;
     &::before {
       content: '';
-      position: absolute;
-      top: 0;
+      position: fixed;
+      top: 5rem;
       left: 50%;
       height: 2px;
       width: 5rem;
       background-color: #AAB8C3;
       transform: translateX(-50%);
       margin-top: 0.6rem;
+      z-index: 3;
+    }
+  }
+  .panel__main-title {
+    display: none;
+    @include breakpoint($sm-bp) {
+      display: block;
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 4rem;
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
   }
   .panel__title {
@@ -340,9 +415,34 @@
     padding-bottom: 2.4rem;
     @include breakpoint($sm-bp) {
       font-weight: 400;
-      font-size: 3.2rem;
-      line-height: 4rem;
+      font-size: 2.2rem;
+      line-height: 5rem;
+      padding-top: 2rem;
+      position: relative;
+      padding-right: 3rem;
+      background-color: #FFFFFF;
+      &::after {
+        content: ' ';
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
     }
+  }
+}
+
+.panel__title + .checkbox-container {
+  @include breakpoint($sm-bp) {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .1s;
   }
 }
 
@@ -356,6 +456,15 @@
     height: 3rem;
     @include breakpoint($mid-bp) {
       right: 2rem;
+    }
+    @include breakpoint($sm-bp) {
+      position: fixed;
+      top: 7rem;
+      right: 2rem;
+      z-index: 3;
+      &::after, &::before {
+        background-color: #D2DCE5;
+      }
     }
   }
 }
@@ -375,6 +484,9 @@
     height: 0.1rem;
     background-color: #212424;
     transform: translate(-50%, -50%) rotate(45deg);
+    @include breakpoint($sm-bp) {
+      height: 0.2rem;
+    }
   }
   &::after {
     transform: translate(-50%, -50%) rotate(-45deg);
@@ -953,7 +1065,8 @@
     margin-top: 4rem;
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
-    padding-left: 2.5rem;
+    padding-left: 0;
+    padding-right: 0;
     &::before {
       content: '';
       position: fixed;
@@ -961,20 +1074,29 @@
       left: 50%;
       width: 4rem;
       height: 2px;
-      background-color: #40454E;
+      background-color: #D2DCE5;
       transform: translateX(-50%);
+      z-index: 5;
     }
     &::after {
       content: '';
       position: fixed;
-      top: 4rem;
+      top: 100%;
       left: 0;
       width: 100%;
-      height: 10rem;
-      background-color: #FFFFFF;
+      height: 14rem;
+      background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+      background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
       z-index: 0;
       border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
+      pointer-events: none;
+      transition: top .4s;
+    }
+    &:not(.select-hide) {
+      &::after {
+        top: 4rem;
+      }
     }
   }
   @include breakpoint($sm-bp) {
@@ -989,11 +1111,14 @@
       display: block;
       position: sticky;
       top: 2rem;
-      right: 0;
+      right: 2rem;
       width: 4rem;
       height: 3rem;
       margin-left: auto;
       z-index: 3;
+      &::after, &::before {
+        background-color: #D2DCE5;
+      }
     }
   }
   .custom-select__title {
@@ -1008,7 +1133,7 @@
     letter-spacing: -0.02em;
     
     /* UI/Black/High */
-    
+    pointer-events: none;
     color: #212424;
     @include breakpoint($sm-bp) {
       display: block;
@@ -1064,6 +1189,13 @@ background: #A50F2D;
       /* UI/Black/High */
       
       color: #212424;
+      &:not(:last-child) {
+        // padding-bottom: 4.7rem;
+        padding: 2.4rem;
+      }
+      &:last-child {
+        padding: 2.4rem;
+      }
     }
   }
 }
@@ -1088,4 +1220,8 @@ background: #A50F2D;
 
 .select-items div:hover, .select-items .same-as-selected {
   color: #A50F2D;
+  @include breakpoint($sm-bp) {
+    color: #212424;
+    background-color: #E5E9F1;
+  }
 }
