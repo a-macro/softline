@@ -1897,6 +1897,9 @@ textarea {
     padding-bottom: 8rem;
   }
 }
+.insights .catalog__terms_wrapper {
+  margin-top: 4rem;
+}
 
 .wrapper-left {
   padding-left: 2rem;
@@ -2130,11 +2133,63 @@ textarea {
   background-color: #FFFFFF;
 }
 
+@media (max-width: 480px) {
+  .filter-button + .panel::after {
+    content: "";
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+    z-index: 0;
+    border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
+    pointer-events: none;
+    transition: top 0.4s;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-button--active + .panel::after {
+    content: "";
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+    z-index: 0;
+    border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
+    pointer-events: none;
+    transition: top 0.4s;
+  }
+}
+
 .panel {
   background-color: #FFFFFF;
   z-index: 2;
   padding: 4rem 14rem 5rem 6rem;
   box-shadow: 0px 1rem 2rem rgba(159, 174, 191, 0.25);
+  overflow: scroll;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.panel::-webkit-scrollbar {
+  width: 2px;
+}
+.panel::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.panel::-webkit-scrollbar-thumb {
+  background: #AAB8C3;
+}
+.panel::-webkit-scrollbar-thumb:hover {
+  background: #A50F2D;
 }
 @media (max-width: 768px) {
   .panel {
@@ -2149,14 +2204,29 @@ textarea {
   }
   .panel::before {
     content: "";
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 5rem;
     left: 50%;
     height: 2px;
     width: 5rem;
     background-color: #AAB8C3;
     transform: translateX(-50%);
     margin-top: 0.6rem;
+    z-index: 3;
+  }
+}
+.panel .panel__main-title {
+  display: none;
+}
+@media (max-width: 480px) {
+  .panel .panel__main-title {
+    display: block;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
 }
 .panel .panel__title {
@@ -2173,8 +2243,33 @@ textarea {
 @media (max-width: 480px) {
   .panel .panel__title {
     font-weight: 400;
-    font-size: 3.2rem;
-    line-height: 4rem;
+    font-size: 2.2rem;
+    line-height: 5rem;
+    padding-top: 2rem;
+    position: relative;
+    padding-right: 3rem;
+    background-color: #FFFFFF;
+  }
+  .panel .panel__title::after {
+    content: " ";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .panel__title + .checkbox-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s;
   }
 }
 
@@ -2191,6 +2286,17 @@ textarea {
 @media (max-width: 768px) {
   .filters-panel .close-button {
     right: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .filters-panel .close-button {
+    position: fixed;
+    top: 7rem;
+    right: 2rem;
+    z-index: 3;
+  }
+  .filters-panel .close-button::after, .filters-panel .close-button::before {
+    background-color: #D2DCE5;
   }
 }
 
@@ -2210,6 +2316,11 @@ textarea {
   height: 0.1rem;
   background-color: #212424;
   transform: translate(-50%, -50%) rotate(45deg);
+}
+@media (max-width: 480px) {
+  .close-button::before, .close-button::after {
+    height: 0.2rem;
+  }
 }
 .close-button::after {
   transform: translate(-50%, -50%) rotate(-45deg);
@@ -2829,7 +2940,8 @@ textarea {
     margin-top: 4rem;
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
-    padding-left: 2.5rem;
+    padding-left: 0;
+    padding-right: 0;
   }
   .select-items::before {
     content: "";
@@ -2838,20 +2950,27 @@ textarea {
     left: 50%;
     width: 4rem;
     height: 2px;
-    background-color: #40454E;
+    background-color: #D2DCE5;
     transform: translateX(-50%);
+    z-index: 5;
   }
   .select-items::after {
     content: "";
     position: fixed;
-    top: 4rem;
+    top: 100%;
     left: 0;
     width: 100%;
-    height: 10rem;
-    background-color: #FFFFFF;
+    height: 14rem;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
     z-index: 0;
     border-top-right-radius: 1.2rem;
     border-top-left-radius: 1.2rem;
+    pointer-events: none;
+    transition: top 0.4s;
+  }
+  .select-items:not(.select-hide)::after {
+    top: 4rem;
   }
 }
 @media (max-width: 480px) {
@@ -2869,11 +2988,14 @@ textarea {
     display: block;
     position: sticky;
     top: 2rem;
-    right: 0;
+    right: 2rem;
     width: 4rem;
     height: 3rem;
     margin-left: auto;
     z-index: 3;
+  }
+  .select-items .close-button::after, .select-items .close-button::before {
+    background-color: #D2DCE5;
   }
 }
 .select-items .custom-select__title {
@@ -2886,6 +3008,7 @@ textarea {
   /* identical to box height, or 125% */
   letter-spacing: -0.02em;
   /* UI/Black/High */
+  pointer-events: none;
   color: #212424;
 }
 @media (max-width: 480px) {
@@ -2933,6 +3056,12 @@ textarea {
     /* UI/Black/High */
     color: #212424;
   }
+  .select-items div:not(:last-child) {
+    padding: 2.4rem;
+  }
+  .select-items div:last-child {
+    padding: 2.4rem;
+  }
 }
 
 .filters .custom-select:last-child .select-items {
@@ -2949,6 +3078,12 @@ textarea {
 
 .select-items div:hover, .select-items .same-as-selected {
   color: #A50F2D;
+}
+@media (max-width: 480px) {
+  .select-items div:hover, .select-items .same-as-selected {
+    color: #212424;
+    background-color: #E5E9F1;
+  }
 }
 
 .breadcrumbs {
