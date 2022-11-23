@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
             selectSingle.setAttribute('data-state', 'active');
           }
         };
-        for (var i = 0; i < selectSingle_labels.length; i++) {
-          selectSingle_labels[i].addEventListener('click', function (evt) {
+        for (var _i = 0; _i < selectSingle_labels.length; _i++) {
+          selectSingle_labels[_i].addEventListener('click', function (evt) {
             if (!selectSingle_title.classList.contains("chosen")) {
               selectSingle_title.classList.add("chosen");
             }
@@ -202,9 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function hideResults(results) {
     showMoreBtn.classList.add("hide");
-    for (var i = 0; i < results.length; i++) {
-      if (i >= 6) {
-        results[i].classList.add("hide");
+    for (var _i2 = 0; _i2 < results.length; _i2++) {
+      if (_i2 >= 6) {
+        results[_i2].classList.add("hide");
         showMoreBtn.classList.remove("hide");
       }
     }
@@ -296,9 +296,9 @@ document.addEventListener("DOMContentLoaded", function () {
       var attr = activeItem.getAttribute("data-item");
       if (attr != "all") {
         var hiddenElems = document.querySelectorAll(".search-result.".concat(attr, ".hide"));
-        for (var i = 0; i < hiddenElems.length; i++) {
-          if (i < 6) {
-            hiddenElems[i].classList.remove("hide");
+        for (var _i3 = 0; _i3 < hiddenElems.length; _i3++) {
+          if (_i3 < 6) {
+            hiddenElems[_i3].classList.remove("hide");
           }
           if (hiddenElems.length < 6) {
             showMoreBtn.classList.add("hide");
@@ -306,9 +306,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       } else {
         var _hiddenElems = document.querySelectorAll(".search-result.hide");
-        for (var _i = 0; _i < _hiddenElems.length; _i++) {
-          if (_i < 6) {
-            _hiddenElems[_i].classList.remove("hide");
+        for (var _i4 = 0; _i4 < _hiddenElems.length; _i4++) {
+          if (_i4 < 6) {
+            _hiddenElems[_i4].classList.remove("hide");
           }
           if (_hiddenElems.length <= 6) {
             showMoreBtn.classList.add("hide");
@@ -636,6 +636,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     closeButtons.forEach(function (el) {
       el.addEventListener('click', closeMenu);
+    });
+  }
+  var acc = document.querySelectorAll(".panel .panel__title");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
     });
   }
 });
