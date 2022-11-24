@@ -693,21 +693,6 @@ if (filterButtons.length && closeButtons.length) {
     })
 }
 
-
-var acc = document.querySelectorAll(".panel .panel__title");
-var i;
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-
 const sm = matchMedia("(max-width: 480px)")
 const newsButton = document.querySelector('.news__button')
 let hideItems = null
@@ -741,6 +726,22 @@ function clickHandlerTabs () {
     this.hidden = true
     hideItems.forEach(el => el.hidden = false)
 }
+
+var acc = document.querySelectorAll(".panel .panel__title");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+
+
 
 });
 
