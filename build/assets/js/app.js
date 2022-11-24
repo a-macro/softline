@@ -506,6 +506,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  var observerV = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var el = entry.target;
+      var attr = +el.getAttribute("data-num");
+      if (entry.isIntersecting) {
+        numGrow(el, attr);
+        observerV.disconnect();
+      }
+    });
+  });
+  function numGrow(el, end) {
+    var i = 0;
+    var time = 2500 / end;
+    var int = setInterval(function () {
+      if (i < end) {
+        i += 5;
+        el.innerHTML = "".concat(i, "+");
+      } else {
+        clearInterval(int);
+      }
+    }, time);
+  }
+  var changeNums = document.querySelectorAll(".rising-num__num");
+  if (changeNums && changeNums.length > 0) {
+    changeNums.forEach(function (element) {
+      observerV.observe(element);
+    });
+  }
   window.addEventListener("resize", function () {
     width = window.innerWidth;
     filters.forEach(function (filter) {
