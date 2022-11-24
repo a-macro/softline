@@ -708,39 +708,39 @@ for (i = 0; i < acc.length; i++) {
     });
   }
 
-// const sm = matchMedia("(max-width: 480px)")
-// const newsButton = document.querySelector('.news__button')
-// let hideItems = null
-// const items = document.querySelectorAll('.events__item, .news__item');
+const sm = matchMedia("(max-width: 480px)")
+const newsButton = document.querySelector('.news__button')
+let hideItems = null
+const items = document.querySelectorAll('.events__item, .news__item');
 
-// if (sm.matches && newsButton) {
-//     if (items.length) {
-//         hideItems = [...items].slice(-8)
-//         hideItems.forEach(el => el.hidden = true)
-//     }
-//     newsButton.addEventListener('click', clickHandlerTabs)
-// } 
+if (sm.matches && newsButton) {
+    if (items.length) {
+        hideItems = [...items].slice(-8)
+        hideItems.forEach(el => el.hidden = true)
+    }
+    newsButton.addEventListener('click', clickHandlerTabs)
+} 
 
-// sm.addEventListener('change', () => {
-//     if (sm.matches) {
-//         if (items.length) {
-//             hideItems = [...items].slice(-8)
-//             hideItems.forEach(el => el.hidden = true)
-//         }
-//         newsButton.addEventListener('click', clickHandlerTabs)
-//         newsButton.hidden = false
-//     } else {
-//         newsButton.removeEventListener('click', clickHandlerTabs)
-//         if (hideItems?.length) {
-//             hideItems.forEach(el => el.hidden = false)
-//         }
-//     }
-// })
+sm.addEventListener('change', () => {
+    if (sm.matches) {
+        if (items.length) {
+            hideItems = [...items].slice(-8)
+            hideItems.forEach(el => el.hidden = true)
+        }
+        newsButton.addEventListener('click', clickHandlerTabs)
+        newsButton.hidden = false
+    } else {
+        newsButton.removeEventListener('click', clickHandlerTabs)
+        if (hideItems?.length) {
+            hideItems.forEach(el => el.hidden = false)
+        }
+    }
+})
 
-// function clickHandlerTabs () {
-//     this.hidden = true
-//     hideItems.forEach(el => el.hidden = false)
-// }
+function clickHandlerTabs () {
+    this.hidden = true
+    hideItems.forEach(el => el.hidden = false)
+}
 
 });
 
