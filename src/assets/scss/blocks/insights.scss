@@ -50,6 +50,9 @@
   h1 {
     padding-top: 13.8rem;
     padding-bottom: 13.8rem;
+    @include breakpoint($xxl-bp) {
+      padding-bottom: 9rem;
+    }
     @include breakpoint($mid-bp) {
       padding-bottom: 5rem;
     }
@@ -57,8 +60,23 @@
       padding-bottom: 4rem;
     }
   }
+  .insights-subtitle {
+    padding-top: 13.8rem;
+  }
+  .insights-subtitle + .insights-title {
+    padding-top: 0.8rem;
+  }
 }
 
+.insights-subtitle {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  
+  color: #FFFFFF;
+}
 .insights-title {
   font-family: 'Manrope';
   font-style: normal;
@@ -1586,14 +1604,62 @@ background: #A50F2D;
 
   .video-page {
     .breadcrumbs {
-      padding-bottom: 7.2rem;
+      padding-bottom: 7.6rem;
+      @include breakpoint($mid-bp) {
+        padding-bottom: 4.9rem;
+      }
+      .breadcrumbs__item {
+        &::after {
+          filter: brightness(0.5);
+        }
+      }
+      a {
+        color: rgba($color: #212424, $alpha: 0.7);
+      }
     }
 
     .intro__pop-up_wrapper {
       padding-bottom: 8rem;
+      position: relative;
+      @include breakpoint($mid-bp) {
+        padding-bottom: 6rem;
+      }
+      .form-modal__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10rem;
+        height: 10rem;
+        @include breakpoint($mid-bp) {
+          top: 40%;
+          width: 6.9rem;
+          height: 6.9rem;
+        }
+        svg {
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
     .intro__pop-up_video {
       width: 100%;
+    }
+    .section-top.align-bottom {
+      @include breakpoint($mid-bp) {
+        margin-top: 10rem;
+        flex-direction: row;
+        align-items: center;
+      }
+      @include breakpoint($sm-bp) {
+        margin-top: 5.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+      }
+      .link-red {
+        margin-top: 0;
+      }
     }
     .section-top__title {
       font-family: 'Manrope';
@@ -1607,6 +1673,46 @@ background: #A50F2D;
       /* UI/Black/High */
       
       color: #212424;
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+      }
+    }
+    .news__slider {
+      margin-top: 2.7rem;
+    }
+    .news__container {
+      border-top: 0.1rem solid #D2DCE5;
+      padding-top: 4rem;
+      @include breakpoint($mid-bp) {
+        padding-top: 2.5rem;
+      }
+      .swiper-slide {
+        width: 43rem;
+        height: auto;
+        .events__img {
+          @include breakpoint($mid-bp) {
+            height: 21rem;
+          }
+          &::after {
+            display: none;
+          }
+        }
+        .events__name {
+          @include breakpoint($sm-bp) {
+            font-size: 2rem;
+            padding-bottom: 2rem;
+          }
+        }
+        .events__title {
+          @include breakpoint($sm-bp) {
+            font-size: 2.6rem;
+            font-weight: 500;
+          }
+        }
+        @include breakpoint($mid-bp) {
+          width: 36rem;
+        }
+      }
     }
   }
 
@@ -1614,7 +1720,15 @@ background: #A50F2D;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 8.2rem;
+    padding-bottom: 4rem;
+    @include breakpoint($xl-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @include breakpoint($mid-bp) {
+      gap: 5rem;
+      padding-bottom: 6rem;
+    }
     .video-page__title-wrapper {
       max-width: 128rem;
       .video-page__title {
@@ -1631,6 +1745,11 @@ background: #A50F2D;
         
         color: #212424;
         padding-bottom: 3.2rem;
+        @include breakpoint($sm-bp) {
+          font-size: 4.3rem;
+          letter-spacing: normal;
+          line-height: 5.2rem;
+        }
       }
       .video-page__type {
         font-family: 'Manrope';
@@ -1662,25 +1781,48 @@ background: #A50F2D;
     }
     .links {
       flex-direction: column;
+      @include breakpoint($xl-bp) {
+        flex-direction: row;
+      }
+      @include breakpoint($sm-bp) {
+        transform: translateX(-1rem);
+      }
     }
   }
 
+  .text-wrapper {
+    max-width: 122.8rem;
+    margin: 0 auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    @include breakpoint($xl-bp) {
+      max-width: 90.2rem;
+    }
+    .text-wrapper__first {
+      padding-bottom: 7.3rem;
+    }
+  }
 
   
   .video-page__main-desc {
-    max-width: 1228px;
-    margin: 0 auto;
     .video-page__desc-cont {
       display: flex;
       flex-direction: column;
       gap: 2.4rem;
       padding-bottom: 8rem;
+      @include breakpoint($mid-bp) {
+        gap: 3.2rem;
+        padding-bottom: 6rem;
+      }
+      @include breakpoint($sm-bp) {
+        padding-bottom: 6.8rem;
+      }
       .video-page__desc-title {
         font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 3.6rem;
-        line-height: 5.2rem;
+        line-height: 5rem;
         /* identical to box height, or 144% */
         
         letter-spacing: -0.01em;
@@ -1688,6 +1830,10 @@ background: #A50F2D;
         /* UI/Black/High */
         
         color: #212424;
+        @include breakpoint($sm-bp) {
+          font-size: 3.1rem;
+          letter-spacing: normal;
+        }
       }
       div {
         font-family: 'Manrope';
@@ -1706,6 +1852,38 @@ background: #A50F2D;
         padding-left: 3.4rem;
 
         border-left: 0.2rem  solid #A50F2D;
+        @include breakpoint($xl-bp) {
+          padding: 0;
+          padding-left: 3.4rem;
+        }
+        @include breakpoint($mid-bp) {
+          padding: 0;
+          padding-left: 3.4rem;
+          border-left: none;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 0.2rem;
+            background-color: #A50F2D;
+            height: 85%;
+          }
+        }
+        @include breakpoint($sm-bp) {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 0.3rem;
+            background-color: #A50F2D;
+            height: 105%;
+          }
+        }
       }
       p {
         font-family: 'Manrope';
@@ -1728,6 +1906,12 @@ background: #A50F2D;
     padding-top: 3.2rem;
     display: flex;
     justify-content: space-between;
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2rem;
+    }
     &__tags {
       display: flex;
       gap: 1.2rem;
@@ -1749,6 +1933,10 @@ background: #A50F2D;
         padding: 0.8rem 1.6rem;
         border: 0.1rem solid #D2DCE5;
         border-radius: 0.4rem;
+        @include breakpoint($sm-bp) {
+          font-size: 2.1rem;
+          padding: 1rem 1.6rem;
+        }
       }
     }
   }
@@ -1758,11 +1946,18 @@ background: #A50F2D;
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
+    @include breakpoint($sm-bp) {
+      gap: 1.2rem;
+    }
     a {
       svg {
         width: 4rem;
         height: 4rem;
         fill: #40454E;
+        @include breakpoint($sm-bp) {
+          width: 6rem;
+          height: 6rem;
+        }
       }
       &:hover {
         svg {
@@ -1779,4 +1974,340 @@ background: #A50F2D;
 
   [hidden] {
     display: none!important;
+  }
+
+  .news-page {
+    .insights-title {
+      max-width: 119.5rem;
+    }
+    .news-page__swiper {
+      margin-top: 10rem;
+      .img-wrapper {
+        height: 66.6rem;
+      }
+    }
+    .news-page__contest {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      /* or 150% */
+      
+      
+      /* UI/Black/Low */
+      
+      color: #AAB8C3;
+      padding-top: 2.4rem;
+    }
+    .swiper-container {
+      position: relative;
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .swiper-button-prev {
+        left: -6rem;
+      }
+      .swiper-button-next {
+        right: -6rem;
+      }
+    }
+  }
+
+
+  
+  .sticky-wrapper {
+    display: grid;
+    grid-template-columns: 20rem 1fr 20rem;
+    padding-top: 10rem;
+    @include breakpoint($xxl-bp) {
+      padding-top: 8rem;
+    }
+    &__block {
+      .sticky-wrapper__item {
+        div {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          /* identical to box height, or 150% */
+          
+          
+          /* UI/Footer */
+          color: #212424;
+          &:first-child {
+            color: #697279;
+          }
+        }
+      }
+    }
+    .links {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .left-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+  }
+
+  .sticky {
+    position: sticky;
+    top: calc(var(--headerH) + 2rem);
+  }
+
+  .img-wrapper {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .round {
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+  
+  .avatar-block {
+    text-decoration: none;
+    .img-wrapper {
+      width: 10rem;
+      height: 10rem;
+      margin-bottom: 1.1rem;
+    }
+    .avatar-name {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      /* or 150% */
+      
+      
+      /* UI/Footer */
+      
+      color: #697279;
+    }
+    .avatar-date {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      /* or 150% */
+      
+      
+      /* UI/Footer */
+      
+      color: #697279;
+    }
+    .avatar-name + .avatar-date {
+      padding-top: 1.6rem;
+      margin-top: 2rem;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0.1rem;
+        background-color: #D2DCE5;
+        width: 4rem;
+      }
+    }
+  }
+  
+  .man36 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.6rem;
+    line-height: 5.2rem;
+    /* or 144% */
+    
+    letter-spacing: -0.01em;
+    
+    /* UI/Black/High */
+    
+    color: #212424;
+    
+  }
+  .man20 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    /* or 160% */
+    
+    
+    /* UI/Black/High */
+    
+    color: #212424;    
+    .red {
+      text-decoration: underline;
+    }
+  }
+  .quote {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-top: 0.1rem solid #D2DCE5;
+    border-bottom: 0.1rem solid #D2DCE5;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    &__wrapper {
+      padding-left: 11.7rem;
+      background: url('../images/news-page/quotes.svg') no-repeat;
+      background-position: top 1.4rem left;
+      .quote__text {
+        padding-bottom: 3.2rem;
+      }
+      .quote__author-block {
+        display: flex;
+        gap: 2.4rem;
+        .img-wrapper {
+          width: 7.2rem;
+          height: 7.2rem;
+        }
+        .quote__author-name {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          /* or 150% */
+          
+          
+          /* UI/Footer */
+          
+          color: #697279;
+        }
+      }
+    }
+  }
+
+  
+  .key-operating {
+    &__title {
+      padding-bottom: 3.2rem;
+    }
+    &__list {
+      li {
+        padding: 1.6rem 0;
+        padding-left: 7.7rem;
+        &:nth-child(4n + 1) {
+          background: url('../images/news-page/key-1.svg') no-repeat;
+          background-position: top 2rem left;
+        }
+        &:nth-child(4n + 2) {
+          background: url('../images/news-page/key-2.svg') no-repeat;
+          background-position: top 2rem left;
+        }
+        &:nth-child(4n + 3) {
+          background: url('../images/news-page/key-3.svg') no-repeat;
+          background-position: top 2rem left;
+        }
+        &:nth-child(4n + 4) {
+          background: url('../images/news-page/key-4.svg') no-repeat;
+          background-position: top 2rem left;
+        }
+      }
+    }
+  }
+
+  .unite-block {
+    * {
+      &:first-child {
+        padding-bottom: 3.2rem;
+      }
+    }
+    p + p {
+      padding-top: 2.4rem;
+    }
+
+    p + .block-line {
+      margin-top: 2.4rem;
+    }
+
+    .block-line + p {
+      padding-top: 2.4rem;
+    }
+  }
+
+  .block-line {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    /* or 150% */
+    
+    /* UI/Black/High */
+    
+    color: #212424;
+    padding: 1.4rem 0;
+    padding-left: 3.2rem;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 0.2rem;
+      height: 100%;
+      background-color: #A50F2D;
+    }
+  }
+
+  .pb10 {
+    padding-bottom: 10rem;
+  }
+
+  .read-also {
+    .man36 {
+      padding-bottom: 2.4rem;
+    }
+    .read-also__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      .read-also__item {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        
+        color: #212424;
+        text-decoration: none;
+        padding: 7.1rem 0;
+        border-top: 0.1rem solid #D2DCE5;
+        border-bottom: 0.1rem solid #D2DCE5;
+        svg {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
+    }
+  }
+
+  .man24 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    /* identical to box height, or 150% */
+    
+    color: #212424;
   }

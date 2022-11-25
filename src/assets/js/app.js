@@ -198,6 +198,28 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    new Swiper(".news-page__swiper", {
+        navigation: {
+            nextEl: ".news-page .swiper-container .swiper-button-next",
+            prevEl: ".news-page .swiper-container .swiper-button-prev"
+        },
+        slidesPerView: "auto",
+        watchOverflow: true,
+        spaceBetween: 40,
+        loop: true,
+        breakpoints: {
+            300: {
+                spaceBetween: 20,
+            },
+            769: {
+                spaceBetween: 40,
+            },
+            1025: {
+                spaceBetween: 40,
+            }
+        },
+    });
+
 
     let init = false;
     let swiper;
