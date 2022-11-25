@@ -1,0 +1,235 @@
+.menu-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 73.4rem;
+    overflow-y: auto;
+    overflow: hidden;
+    background: white;
+    top: var(--headerH);
+    transform: translateY(-100%);
+    transition: transform .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: rgb(236, 230, 230);
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+    }
+    scrollbar-color: rgba(0, 0, 0, 0.7) rgb(236, 230, 230);
+    scrollbar-width: thin;
+}
+
+.show.menu-wrapper {
+    transform: translateY(0);
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 4rem;
+    padding-top: 4rem;
+    padding-right: 4rem;
+    display: none;
+}
+
+.submenu {
+    position: absolute;
+    max-height: calc(100% - 4rem);
+    overflow-y: auto;
+    left: 43rem;
+    top: 0;
+    display: flex;
+    width: calc(100% - 43rem);
+    padding-right: 4rem;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: rgb(236, 230, 230);
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+    }
+    scrollbar-color: rgba(0, 0, 0, 0.7) rgb(236, 230, 230);
+    scrollbar-width: thin;
+}
+
+.menu__link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #AAB8C3;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0em;
+    text-align: left;
+    display: block;
+    padding-bottom: 1.6rem;
+    padding-right: 10rem;
+    width: 45rem;
+}
+
+.submenu__aside {
+    width: 37rem;
+    position: relative;
+    padding-top: 4.5rem;
+    @include breakpoint($xxl-bp) {
+        width: 23.5rem;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        top: 10.6rem;
+    }
+}
+
+.submenu__nav {
+    width: calc(100% - 44rem);
+    padding-top: 2.2rem;
+    position: relative;
+    @include breakpoint($xxl-bp) {
+        width: calc(100% - 24.5rem);
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: calc(100% - 4rem);
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        top: 10.6rem;
+    }
+}
+
+.submenu__title {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    h3 {
+        font-size: 3.6rem;
+        font-weight: 400;
+        line-height: 1.44;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: $black;
+    }
+
+    svg {
+        width: 3.2rem;
+        margin-left: 1.5rem;
+    }
+}
+
+.submenu__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 6.5rem;
+}
+
+.submenu__item {
+    width: calc(calc(100% - 15rem) / 4);
+    margin-right: 5rem;
+    margin-bottom: 3.2rem;
+    @include breakpoint($xxl-bp) {
+        width: calc(calc(100% - 13.5rem) / 3);
+        margin-right: 4.5rem;
+    }
+
+    &:nth-child(4n) {
+        margin-right: 0;
+        padding-right: 4rem;
+        @include breakpoint($xxl-bp) {
+            margin-right: 4.5rem;
+            padding-right: 0;
+        }
+    }
+
+    &:nth-child(3n) {
+        @include breakpoint($xxl-bp) {
+            margin-right: 0;
+            padding-right: 4rem;
+        }
+    }
+}
+
+.submenu__link {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $red;
+    text-decoration: none;
+
+    img {
+        width: 2.2rem;
+        margin-right: 1.3rem;
+    }
+}
+
+.submenu__text {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+.submenu__aside_title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+    color: $black;
+}
+
+.submenu__aside_list {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-right: 12rem;
+    margin-top: 6rem;
+    @include breakpoint($xxl-bp) {
+        padding-right: 0;
+    }
+
+    li {
+        margin-bottom: 2.4rem;
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: $black;
+        text-decoration: none;
+    }
+}

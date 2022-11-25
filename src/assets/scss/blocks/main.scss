@@ -127,7 +127,7 @@
 .title-wrapper {
     display: flex;
     align-items: flex-start;
-    width: calc(50% - 2rem);
+    width: calc(46% - 2rem);
     position: relative;
     @include breakpoint($mid-bp) {
         width: 100%;
@@ -426,6 +426,7 @@
 
 .service__top_img {
     height: 6rem;
+    display: block;
     @include breakpoint($sm-bp) {
         height: 6.4rem;
     }
