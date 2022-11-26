@@ -51,7 +51,10 @@
     padding-top: 13.8rem;
     padding-bottom: 13.8rem;
     @include breakpoint($xxl-bp) {
-      padding-bottom: 9rem;
+      padding-bottom: 8rem;
+    }
+    @include breakpoint($xl-bp) {
+      padding-bottom: 4rem;
     }
     @include breakpoint($mid-bp) {
       padding-bottom: 5rem;
@@ -1601,7 +1604,51 @@ background: #A50F2D;
       }
     }
   }
-
+  .video-page,
+  .news-page {
+    .section-top.align-bottom {
+      @include breakpoint($mid-bp) {
+        margin-top: 10rem;
+        flex-direction: row;
+        align-items: center;
+      }
+      @include breakpoint($sm-bp) {
+        margin-top: 5.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+      }
+      .link-red {
+        margin-top: 0;
+      }
+    }
+    .section-top__title {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      /* identical to box height, or 150% */
+      
+      
+      /* UI/Black/High */
+      
+      color: #212424;
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+      }
+    }
+    .news__container {
+      border-top: 0.1rem solid #D2DCE5;
+      padding-top: 4rem;
+      @include breakpoint($mid-bp) {
+        padding-top: 2.5rem;
+      }
+    }
+    .news__slider {
+      margin-top: 2.7rem;
+    }
+  }
   .video-page {
     .breadcrumbs {
       padding-bottom: 7.6rem;
@@ -1645,47 +1692,7 @@ background: #A50F2D;
     .intro__pop-up_video {
       width: 100%;
     }
-    .section-top.align-bottom {
-      @include breakpoint($mid-bp) {
-        margin-top: 10rem;
-        flex-direction: row;
-        align-items: center;
-      }
-      @include breakpoint($sm-bp) {
-        margin-top: 5.5rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2.5rem;
-      }
-      .link-red {
-        margin-top: 0;
-      }
-    }
-    .section-top__title {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 2.4rem;
-      line-height: 3.6rem;
-      /* identical to box height, or 150% */
-      
-      
-      /* UI/Black/High */
-      
-      color: #212424;
-      @include breakpoint($sm-bp) {
-        font-size: 2.6rem;
-      }
-    }
-    .news__slider {
-      margin-top: 2.7rem;
-    }
     .news__container {
-      border-top: 0.1rem solid #D2DCE5;
-      padding-top: 4rem;
-      @include breakpoint($mid-bp) {
-        padding-top: 2.5rem;
-      }
       .swiper-slide {
         width: 43rem;
         height: auto;
@@ -1800,6 +1807,9 @@ background: #A50F2D;
     }
     .text-wrapper__first {
       padding-bottom: 7.3rem;
+      @include breakpoint($xl-bp) {
+        padding-bottom: 5.3rem;
+      }
     }
   }
 
@@ -1975,15 +1985,29 @@ background: #A50F2D;
   [hidden] {
     display: none!important;
   }
-
   .news-page {
+    .text-wrapper {
+      max-width: 114.4rem;
+    }
     .insights-title {
       max-width: 119.5rem;
+      @include breakpoint($xl-bp) {
+        max-width: 105.5rem;
+      }
     }
     .news-page__swiper {
       margin-top: 10rem;
+      @include breakpoint($xl-bp) {
+        margin-top: 5.2rem;
+      }
       .img-wrapper {
         height: 66.6rem;
+        @include breakpoint($xxl-bp) {
+          height: 58.2rem;
+        }
+        @include breakpoint($xl-bp) {
+          height: 55rem;
+        }
       }
     }
     .news-page__contest {
@@ -2004,14 +2028,14 @@ background: #A50F2D;
       position: relative;
       .swiper-button-prev,
       .swiper-button-next {
-        top: 50%;
+        top: 41.5%;
         transform: translateY(-50%);
       }
       .swiper-button-prev {
-        left: -6rem;
+        left: -6.5rem;
       }
       .swiper-button-next {
-        right: -6rem;
+        right: -6.5rem;
       }
     }
   }
@@ -2044,14 +2068,16 @@ background: #A50F2D;
         }
       }
     }
-    .links {
-      flex-direction: column;
-      align-items: flex-end;
-    }
     .left-block {
       display: flex;
       flex-direction: column;
       gap: 2.4rem;
+    }
+    .right-block {
+      .links {
+        flex-direction: column;
+        align-items: flex-end;
+      }
     }
   }
 
@@ -2080,7 +2106,7 @@ background: #A50F2D;
     .img-wrapper {
       width: 10rem;
       height: 10rem;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.5rem;
     }
     .avatar-name {
       font-family: 'Manrope';
@@ -2139,6 +2165,16 @@ background: #A50F2D;
     color: #212424;
     
   }
+  .man16 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    
+    color: #40454E;
+    
+  }
   .man20 {
     font-family: 'Manrope';
     font-style: normal;
@@ -2162,10 +2198,14 @@ background: #A50F2D;
     border-bottom: 0.1rem solid #D2DCE5;
     margin-top: 10rem;
     margin-bottom: 10rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 8rem;
+      margin-bottom: 8rem;
+    }
     &__wrapper {
       padding-left: 11.7rem;
       background: url('../images/news-page/quotes.svg') no-repeat;
-      background-position: top 1.4rem left;
+      background-position: top 1.4rem left 0.8rem;
       .quote__text {
         padding-bottom: 3.2rem;
       }
@@ -2202,6 +2242,8 @@ background: #A50F2D;
       li {
         padding: 1.6rem 0;
         padding-left: 7.7rem;
+        display: flex;
+        flex-direction: column;
         &:nth-child(4n + 1) {
           background: url('../images/news-page/key-1.svg') no-repeat;
           background-position: top 2rem left;
@@ -2217,6 +2259,34 @@ background: #A50F2D;
         &:nth-child(4n + 4) {
           background: url('../images/news-page/key-4.svg') no-repeat;
           background-position: top 2rem left;
+        }
+        .key-operating__list-title {
+          padding-bottom: 1.2rem;
+        }
+      }
+    }
+    .key-operating__list-main {
+      li {
+        padding: 1.2rem 0;
+        padding-left: 4.5rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left top 2.4rem;
+      }
+
+    }
+    .key-operating__list--numeric {
+      li {
+        background: none;
+        position: relative;
+        counter-increment: item;
+        padding-left: 4.7rem;
+        &::before {
+          content: counter(item);
+          position: absolute;
+          top: 1.6rem;
+          left: 0;
+          color: #A50F2D;
         }
       }
     }
@@ -2269,11 +2339,18 @@ background: #A50F2D;
 
   .pb10 {
     padding-bottom: 10rem;
+    @include breakpoint($xl-bp) {
+      padding-bottom: 8rem;
+    }
+  }
+  .pb15 {
+    padding-bottom: 15rem;
   }
 
   .read-also {
-    .man36 {
+    .read-alse__title {
       padding-bottom: 2.4rem;
+
     }
     .read-also__container {
       display: grid;
@@ -2282,6 +2359,7 @@ background: #A50F2D;
       .read-also__item {
         display: grid;
         grid-template-columns: 1fr min-content;
+        gap: 2rem;
         font-family: 'Manrope';
         font-style: normal;
         font-weight: 500;
@@ -2293,6 +2371,12 @@ background: #A50F2D;
         padding: 7.1rem 0;
         border-top: 0.1rem solid #D2DCE5;
         border-bottom: 0.1rem solid #D2DCE5;
+        @include breakpoint($xxl-bp) {
+          padding: 4.1rem 0;
+        }
+        @include breakpoint($xl-bp) {
+          padding: 2.5rem 0;
+        }
         svg {
           width: 3.2rem;
           height: 3.2rem;
@@ -2310,4 +2394,130 @@ background: #A50F2D;
     /* identical to box height, or 150% */
     
     color: #212424;
+  }
+
+  .press-contacts {
+    padding-top: 4rem;
+    border-top: .1rem solid #D2DCE5;
+  }
+  .press-contacts__desc {
+    padding-bottom: 3.2rem;
+  }
+  .press-contacts__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    padding-bottom: 4rem;
+  }
+  .press-contacts__block {
+    padding: 2.4rem;
+    padding-top: 1.6rem;
+    background-color: #FFFFFF;
+    .press-contacts__name {
+      color: #AAB8C3;
+      padding-bottom: 1.6rem;
+    }
+    .press-contacts__avatar {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        gap: 1.6rem;
+      .press-contacts__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .img-wrapper {
+        width: 8rem;
+        height: 8rem;
+      }
+      .press-contacts-link {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+      }
+    }
+  }
+
+
+  .wrapper-margin {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .subscribe {
+    background-image: url('../images/news-page/subscribe-1.jpg');
+    padding: 15.6rem 11.7rem;
+    .subscribe__title {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 5.2rem;
+      line-height: 5.8rem;
+      /* or 112% */
+      
+      letter-spacing: -0.02em;
+      
+      /* UI / White */
+      
+      color: #FFFFFF;
+
+      padding-bottom: 7.2rem;
+      max-width: 91rem;
+    }
+    .subscribe__form {
+      padding-bottom: 7.2rem;
+      display: flex;
+      gap: 2.4rem;
+      .subscribe__input {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        
+        color: #AAB8C3;
+        border-bottom: 0.1rem solid #AAB8C3;
+        padding-top: 1.6rem;
+        padding-bottom: 2.3rem;
+        width: 50.8rem;
+        &::placeholder {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          
+          color: #AAB8C3;
+        }
+      }
+      .subscribe__button {
+        border: 0;
+        background: #A50F2D;
+        border-radius: 0.4rem;
+        padding: 2rem 5.8rem;
+
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        /* identical to box height, or 150% */
+        
+        color: #FFFFFF;
+      }
+    }
+    .subscribe__desc {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 2.2rem;
+      
+      color: #697279;
+      a {
+        color: #697279;
+        text-decoration: underline;
+      }
+    }
   }

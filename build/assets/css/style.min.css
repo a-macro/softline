@@ -2117,7 +2117,12 @@ textarea {
 }
 @media (max-width: 1920px) {
   .insights-main-bg h1 {
-    padding-bottom: 9rem;
+    padding-bottom: 8rem;
+  }
+}
+@media (max-width: 1440px) {
+  .insights-main-bg h1 {
+    padding-bottom: 4rem;
   }
 }
 @media (max-width: 768px) {
@@ -3719,6 +3724,60 @@ textarea {
   grid-column: 3 span;
 }
 
+@media (max-width: 768px) {
+  .video-page .section-top.align-bottom,
+  .news-page .section-top.align-bottom {
+    margin-top: 10rem;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .video-page .section-top.align-bottom,
+  .news-page .section-top.align-bottom {
+    margin-top: 5.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+}
+.video-page .section-top.align-bottom .link-red,
+.news-page .section-top.align-bottom .link-red {
+  margin-top: 0;
+}
+.video-page .section-top__title,
+.news-page .section-top__title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* identical to box height, or 150% */
+  /* UI/Black/High */
+  color: #212424;
+}
+@media (max-width: 480px) {
+  .video-page .section-top__title,
+  .news-page .section-top__title {
+    font-size: 2.6rem;
+  }
+}
+.video-page .news__container,
+.news-page .news__container {
+  border-top: 0.1rem solid #D2DCE5;
+  padding-top: 4rem;
+}
+@media (max-width: 768px) {
+  .video-page .news__container,
+  .news-page .news__container {
+    padding-top: 2.5rem;
+  }
+}
+.video-page .news__slider,
+.news-page .news__slider {
+  margin-top: 2.7rem;
+}
+
 .video-page .breadcrumbs {
   padding-bottom: 7.6rem;
 }
@@ -3763,51 +3822,6 @@ textarea {
 }
 .video-page .intro__pop-up_video {
   width: 100%;
-}
-@media (max-width: 768px) {
-  .video-page .section-top.align-bottom {
-    margin-top: 10rem;
-    flex-direction: row;
-    align-items: center;
-  }
-}
-@media (max-width: 480px) {
-  .video-page .section-top.align-bottom {
-    margin-top: 5.5rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.5rem;
-  }
-}
-.video-page .section-top.align-bottom .link-red {
-  margin-top: 0;
-}
-.video-page .section-top__title {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 2.4rem;
-  line-height: 3.6rem;
-  /* identical to box height, or 150% */
-  /* UI/Black/High */
-  color: #212424;
-}
-@media (max-width: 480px) {
-  .video-page .section-top__title {
-    font-size: 2.6rem;
-  }
-}
-.video-page .news__slider {
-  margin-top: 2.7rem;
-}
-.video-page .news__container {
-  border-top: 0.1rem solid #D2DCE5;
-  padding-top: 4rem;
-}
-@media (max-width: 768px) {
-  .video-page .news__container {
-    padding-top: 2.5rem;
-  }
 }
 .video-page .news__container .swiper-slide {
   width: 43rem;
@@ -3927,6 +3941,11 @@ textarea {
 }
 .text-wrapper .text-wrapper__first {
   padding-bottom: 7.3rem;
+}
+@media (max-width: 1440px) {
+  .text-wrapper .text-wrapper__first {
+    padding-bottom: 5.3rem;
+  }
 }
 
 .video-page__main-desc .video-page__desc-cont {
@@ -4098,14 +4117,37 @@ textarea {
   display: none !important;
 }
 
+.news-page .text-wrapper {
+  max-width: 114.4rem;
+}
 .news-page .insights-title {
   max-width: 119.5rem;
+}
+@media (max-width: 1440px) {
+  .news-page .insights-title {
+    max-width: 105.5rem;
+  }
 }
 .news-page .news-page__swiper {
   margin-top: 10rem;
 }
+@media (max-width: 1440px) {
+  .news-page .news-page__swiper {
+    margin-top: 5.2rem;
+  }
+}
 .news-page .news-page__swiper .img-wrapper {
   height: 66.6rem;
+}
+@media (max-width: 1920px) {
+  .news-page .news-page__swiper .img-wrapper {
+    height: 58.2rem;
+  }
+}
+@media (max-width: 1440px) {
+  .news-page .news-page__swiper .img-wrapper {
+    height: 55rem;
+  }
 }
 .news-page .news-page__contest {
   font-family: "Manrope";
@@ -4123,14 +4165,14 @@ textarea {
 }
 .news-page .swiper-container .swiper-button-prev,
 .news-page .swiper-container .swiper-button-next {
-  top: 50%;
+  top: 41.5%;
   transform: translateY(-50%);
 }
 .news-page .swiper-container .swiper-button-prev {
-  left: -6rem;
+  left: -6.5rem;
 }
 .news-page .swiper-container .swiper-button-next {
-  right: -6rem;
+  right: -6.5rem;
 }
 
 .sticky-wrapper {
@@ -4156,14 +4198,14 @@ textarea {
 .sticky-wrapper__block .sticky-wrapper__item div:first-child {
   color: #697279;
 }
-.sticky-wrapper .links {
-  flex-direction: column;
-  align-items: flex-end;
-}
 .sticky-wrapper .left-block {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+}
+.sticky-wrapper .right-block .links {
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .sticky {
@@ -4190,7 +4232,7 @@ textarea {
 .avatar-block .img-wrapper {
   width: 10rem;
   height: 10rem;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 .avatar-block .avatar-name {
   font-family: "Manrope";
@@ -4239,6 +4281,15 @@ textarea {
   color: #212424;
 }
 
+.man16 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #40454E;
+}
+
 .man20 {
   font-family: "Manrope";
   font-style: normal;
@@ -4261,10 +4312,16 @@ textarea {
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
+@media (max-width: 1440px) {
+  .quote {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+}
 .quote__wrapper {
   padding-left: 11.7rem;
   background: url("../images/news-page/quotes.svg") no-repeat;
-  background-position: top 1.4rem left;
+  background-position: top 1.4rem left 0.8rem;
 }
 .quote__wrapper .quote__text {
   padding-bottom: 3.2rem;
@@ -4294,6 +4351,8 @@ textarea {
 .key-operating__list li {
   padding: 1.6rem 0;
   padding-left: 7.7rem;
+  display: flex;
+  flex-direction: column;
 }
 .key-operating__list li:nth-child(4n+1) {
   background: url("../images/news-page/key-1.svg") no-repeat;
@@ -4310,6 +4369,29 @@ textarea {
 .key-operating__list li:nth-child(4n+4) {
   background: url("../images/news-page/key-4.svg") no-repeat;
   background-position: top 2rem left;
+}
+.key-operating__list li .key-operating__list-title {
+  padding-bottom: 1.2rem;
+}
+.key-operating .key-operating__list-main li {
+  padding: 1.2rem 0;
+  padding-left: 4.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left top 2.4rem;
+}
+.key-operating .key-operating__list--numeric li {
+  background: none;
+  position: relative;
+  counter-increment: item;
+  padding-left: 4.7rem;
+}
+.key-operating .key-operating__list--numeric li::before {
+  content: counter(item);
+  position: absolute;
+  top: 1.6rem;
+  left: 0;
+  color: #A50F2D;
 }
 
 .unite-block *:first-child {
@@ -4352,8 +4434,17 @@ textarea {
 .pb10 {
   padding-bottom: 10rem;
 }
+@media (max-width: 1440px) {
+  .pb10 {
+    padding-bottom: 8rem;
+  }
+}
 
-.read-also .man36 {
+.pb15 {
+  padding-bottom: 15rem;
+}
+
+.read-also .read-alse__title {
   padding-bottom: 2.4rem;
 }
 .read-also .read-also__container {
@@ -4364,6 +4455,7 @@ textarea {
 .read-also .read-also__container .read-also__item {
   display: grid;
   grid-template-columns: 1fr min-content;
+  gap: 2rem;
   font-family: "Manrope";
   font-style: normal;
   font-weight: 500;
@@ -4374,6 +4466,16 @@ textarea {
   padding: 7.1rem 0;
   border-top: 0.1rem solid #D2DCE5;
   border-bottom: 0.1rem solid #D2DCE5;
+}
+@media (max-width: 1920px) {
+  .read-also .read-also__container .read-also__item {
+    padding: 4.1rem 0;
+  }
+}
+@media (max-width: 1440px) {
+  .read-also .read-also__container .read-also__item {
+    padding: 2.5rem 0;
+  }
 }
 .read-also .read-also__container .read-also__item svg {
   width: 3.2rem;
@@ -4388,6 +4490,126 @@ textarea {
   line-height: 3.6rem;
   /* identical to box height, or 150% */
   color: #212424;
+}
+
+.press-contacts {
+  padding-top: 4rem;
+  border-top: 0.1rem solid #D2DCE5;
+}
+
+.press-contacts__desc {
+  padding-bottom: 3.2rem;
+}
+
+.press-contacts__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.press-contacts__block {
+  padding: 2.4rem;
+  padding-top: 1.6rem;
+  background-color: #FFFFFF;
+}
+.press-contacts__block .press-contacts__name {
+  color: #AAB8C3;
+  padding-bottom: 1.6rem;
+}
+.press-contacts__block .press-contacts__avatar {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 1.6rem;
+}
+.press-contacts__block .press-contacts__avatar .press-contacts__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.press-contacts__block .press-contacts__avatar .img-wrapper {
+  width: 8rem;
+  height: 8rem;
+}
+.press-contacts__block .press-contacts__avatar .press-contacts-link {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+}
+
+.wrapper-margin {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.subscribe {
+  background-image: url("../images/news-page/subscribe-1.jpg");
+  padding: 15.6rem 11.7rem;
+}
+.subscribe .subscribe__title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  letter-spacing: -0.02em;
+  /* UI / White */
+  color: #FFFFFF;
+  padding-bottom: 7.2rem;
+  max-width: 91rem;
+}
+.subscribe .subscribe__form {
+  padding-bottom: 7.2rem;
+  display: flex;
+  gap: 2.4rem;
+}
+.subscribe .subscribe__form .subscribe__input {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #AAB8C3;
+  border-bottom: 0.1rem solid #AAB8C3;
+  padding-top: 1.6rem;
+  padding-bottom: 2.3rem;
+  width: 50.8rem;
+}
+.subscribe .subscribe__form .subscribe__input::placeholder {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #AAB8C3;
+}
+.subscribe .subscribe__form .subscribe__button {
+  border: 0;
+  background: #A50F2D;
+  border-radius: 0.4rem;
+  padding: 2rem 5.8rem;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  /* identical to box height, or 150% */
+  color: #FFFFFF;
+}
+.subscribe .subscribe__desc {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  color: #697279;
+}
+.subscribe .subscribe__desc a {
+  color: #697279;
+  text-decoration: underline;
 }
 
 .breadcrumbs {
