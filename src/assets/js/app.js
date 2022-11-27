@@ -198,6 +198,28 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    new Swiper(".news-page__swiper", {
+        navigation: {
+            nextEl: ".news-page .swiper-container .swiper-button-next",
+            prevEl: ".news-page .swiper-container .swiper-button-prev"
+        },
+        slidesPerView: "auto",
+        watchOverflow: true,
+        spaceBetween: 40,
+        loop: true,
+        breakpoints: {
+            300: {
+                spaceBetween: 20,
+            },
+            769: {
+                spaceBetween: 40,
+            },
+            1025: {
+                spaceBetween: 40,
+            }
+        },
+    });
+
 
     let init = false;
     let swiper;
@@ -769,26 +791,29 @@ if (sm.matches && newsButton) {
     newsButton.addEventListener('click', clickHandlerTabs)
 } 
 
-sm.addEventListener('change', () => {
-    if (sm.matches) {
-        if (items.length) {
-            hideItems = [...items].slice(-8)
-            hideItems.forEach(el => el.hidden = true)
+if (newsButton) {
+    sm.addEventListener('change', () => {
+        if (sm.matches) {
+            if (items.length) {
+                hideItems = [...items].slice(-8)
+                hideItems.forEach(el => el.hidden = true)
+            }
+            newsButton.addEventListener('click', clickHandlerTabs)
+            newsButton.hidden = false
+        } else {
+            newsButton.removeEventListener('click', clickHandlerTabs)
+            if (hideItems?.length) {
+                hideItems.forEach(el => el.hidden = false)
+            }
         }
-        newsButton.addEventListener('click', clickHandlerTabs)
-        newsButton.hidden = false
-    } else {
-        newsButton.removeEventListener('click', clickHandlerTabs)
-        if (hideItems?.length) {
-            hideItems.forEach(el => el.hidden = false)
-        }
-    }
-})
+    })
+}
 
 function clickHandlerTabs () {
     this.hidden = true
     hideItems.forEach(el => el.hidden = false)
 }
+
 
 });
 

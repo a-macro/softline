@@ -44,6 +44,12 @@
           <path d="M13.9213 12C12.8607 12 12 12.8607 12 13.9213C12 14.982 12.8607 15.8607 13.9213 15.8607C14.982 15.8607 15.8427 14.982 15.8427 13.9213C15.842 12.8607 14.9813 12 13.9213 12V12Z" />
         </g>
       </symbol>
+    
+      <symbol id="play" viewBox="0 0 100 100">
+        <g>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM64 50L42 38V62L64 50Z" fill="white"/>
+        </g>
+      </symbol>
     </svg>    <header class="header">
         <div class="header__logo_mob">
             <img src="assets/images/logo.svg" alt="">
@@ -294,21 +300,23 @@
               <a href="#"><svg><use href="#facebook"></use></svg></a>
               <a href="#"><svg><use href="#twitter"></use></svg></a>
               <a href="#"><svg><use href="#linkedin"></use></svg></a>
-            </div>
-          </div>
+            </div>  </div>
         
           <div class="intro__pop-up modal">
             <div class="intro__pop-up_wrapper">
               <div class="form-modal__close"></div>
+              <!-- <div class="form-modal__play">
+                <svg><use href="#play"></use></svg>
+              </div> -->
               <div class="intro__pop-up_video-wrap">
                 <video class="intro__pop-up_video" preload="auto" loop controls playsinline>
-                  <source src="" type="video/mp4">
+                  <source src="./assets/video/video.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
           </div>
         
-          <div class="video-page__main-desc">
+          <div class="video-page__main-desc text-wrapper">
             <div class="video-page__desc-cont">
               <h2 class="video-page__desc-title">Criteria for choosing a new system</h2>
           
@@ -324,14 +332,12 @@
                 <a class="tag-wrapper__tags-item" href="#">Aerospace & Defense</a>
                 <a class="tag-wrapper__tags-item" href="#">Java</a>
               </div>
-        
+            
               <div class="links">
                 <a href="#"><svg><use href="#facebook"></use></svg></a>
                 <a href="#"><svg><use href="#twitter"></use></svg></a>
                 <a href="#"><svg><use href="#linkedin"></use></svg></a>
-              </div>
-            </div>
-          </div>
+              </div></div>  </div>
         
           <div class="wrapper events">
             <div class="section-top align-bottom">
@@ -362,17 +368,27 @@
                         <div class="swiper-slide news-slide">
                           <a href="#" class="events__item">
                             <span class="events__img">
-                              <img src="./assets/images/video/video-5.jpg" alt="events-img">
+                              <img src="./assets/images/video/video-2.jpg" alt="events-img">
                             </span>
-                            <span class="events__name">Webinar</span>
-                            <span class="events__title">Microsoft Azure for Small and Medium Businesses: How to Use the Cloud on Your Terms</span>
+                            <span class="events__name">Clouds</span>
+                            <span class="events__title">VMware NSX Networking Virtualization Platform</span>
                           </a>
                         </div>
                         
                         <div class="swiper-slide news-slide">
                           <a href="#" class="events__item">
                             <span class="events__img">
-                              <img src="./assets/images/video/video-5.jpg" alt="events-img">
+                              <img src="./assets/images/video/video-3.jpg" alt="events-img">
+                            </span>
+                            <span class="events__name">Cybersecurity</span>
+                            <span class="events__title">Introduction to Docker and Kubernetes. How to quickly create a container infrastructure</span>
+                          </a>
+                        </div>
+        
+                        <div class="swiper-slide news-slide">
+                          <a href="#" class="events__item">
+                            <span class="events__img">
+                              <img src="./assets/images/video/video-4.jpg" alt="events-img">
                             </span>
                             <span class="events__name">Webinar</span>
                             <span class="events__title">Microsoft Azure for Small and Medium Businesses: How to Use the Cloud on Your Terms</span>
