@@ -791,26 +791,29 @@ if (sm.matches && newsButton) {
     newsButton.addEventListener('click', clickHandlerTabs)
 } 
 
-sm.addEventListener('change', () => {
-    if (sm.matches) {
-        if (items.length) {
-            hideItems = [...items].slice(-8)
-            hideItems.forEach(el => el.hidden = true)
+if (newsButton) {
+    sm.addEventListener('change', () => {
+        if (sm.matches) {
+            if (items.length) {
+                hideItems = [...items].slice(-8)
+                hideItems.forEach(el => el.hidden = true)
+            }
+            newsButton.addEventListener('click', clickHandlerTabs)
+            newsButton.hidden = false
+        } else {
+            newsButton.removeEventListener('click', clickHandlerTabs)
+            if (hideItems?.length) {
+                hideItems.forEach(el => el.hidden = false)
+            }
         }
-        newsButton.addEventListener('click', clickHandlerTabs)
-        newsButton.hidden = false
-    } else {
-        newsButton.removeEventListener('click', clickHandlerTabs)
-        if (hideItems?.length) {
-            hideItems.forEach(el => el.hidden = false)
-        }
-    }
-})
+    })
+}
 
 function clickHandlerTabs () {
     this.hidden = true
     hideItems.forEach(el => el.hidden = false)
 }
+
 
 });
 
