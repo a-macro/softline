@@ -146,6 +146,7 @@
   }
 }
 
+
 .insights-navigation {
   border-bottom: 1px solid #D2DCE5;
   display: flex;
@@ -1194,10 +1195,11 @@ background: #A50F2D;
     
     color: #697279;
     cursor: pointer;
-    &:not(:last-child) {
-      // padding-bottom: 4.7rem;
-      padding: 2.4rem 0;
-    }
+    padding: 2.4rem 0;
+    // &:not(:last-child) {
+    //   // padding-bottom: 4.7rem;
+    //   padding: 2.4rem 0;
+    // }
     @include breakpoint($sm-bp) {
       font-family: 'Manrope';
       font-style: normal;
@@ -1210,13 +1212,13 @@ background: #A50F2D;
       /* UI/Black/High */
       
       color: #212424;
-      &:not(:last-child) {
-        // padding-bottom: 4.7rem;
-        padding: 2.4rem;
-      }
-      &:last-child {
-        padding: 2.4rem;
-      }
+      // &:not(:last-child) {
+      //   // padding-bottom: 4.7rem;
+      //   padding: 2.4rem;
+      // }
+      // &:last-child {
+      //   padding: 2.4rem;
+      // }
     }
   }
 }
@@ -1673,19 +1675,21 @@ background: #A50F2D;
       }
     }
   }
+
+
   .news-page {
     .section-top.align-bottom {
-      @include breakpoint($sm-bp) {
-        .link-red {
-          display: none;
-        }
-      }
+      // @include breakpoint($sm-bp) {
+      //   .link-red {
+      //     display: none;
+      //   }
+      // }
     }
     @include breakpoint($sm-bp) {
       .news__slider {
         margin-left: 0;
         .news__container {
-          padding-top: 0;
+          // padding-top: 0;
           border-top: 0;
           margin-left: 0;
           width: 100%;
@@ -1739,18 +1743,14 @@ background: #A50F2D;
     .intro__pop-up_video {
       width: 100%;
     }
+  }
+
+  .video-page,
+  .event-page {
     .news__container {
       .swiper-slide {
         width: 43rem;
         height: auto;
-        .events__img {
-          @include breakpoint($mid-bp) {
-            height: 21rem;
-          }
-          &::after {
-            display: none;
-          }
-        }
         .events__name {
           @include breakpoint($sm-bp) {
             font-size: 2rem;
@@ -2127,7 +2127,7 @@ background: #A50F2D;
   
   .sticky-wrapper {
     display: grid;
-    grid-template-columns: 20rem 1fr 20rem;
+    grid-template-columns: 25rem 1fr 25rem;
     padding-top: 10rem;
     @include breakpoint($xxl-bp) {
       padding-top: 8rem;
@@ -2166,6 +2166,10 @@ background: #A50F2D;
           color: #212424;
           &:first-child {
             color: #697279;
+          }
+          @include breakpoint($sm-bp) {
+            font-size: 2rem;
+            line-height: 3rem;
           }
         }
       }
@@ -2768,6 +2772,7 @@ background: #A50F2D;
   }
   .subscribe {
     background-image: url('../images/news-page/subscribe-1.jpg');
+    background-size: cover;
     padding: 15.6rem 11.7rem;
     @include breakpoint($xl-bp) {
       padding: 8rem 11.7rem 6rem;
@@ -2886,6 +2891,482 @@ background: #A50F2D;
       a {
         color: #697279;
         text-decoration: underline;
+      }
+    }
+  }
+
+  .registration-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include breakpoint($mid-bp) {
+      padding-top: 5rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-top: 0;
+    }
+    .link-red {
+      @include breakpoint($mid-bp) {
+        display: none;
+      }
+    }
+  }
+
+  .event-page {
+    .wrapper--swiper {
+      @include breakpoint($mid-bp) {
+        padding-right: 2rem;
+      }
+      @include breakpoint($sm-bp) {
+        padding-right: 0;
+      }
+      .section-top {
+        @include breakpoint($mid-bp) {
+          padding-right: 0;
+        }
+      }
+      .news__container {
+        &::before {
+          @include breakpoint($mid-bp) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .event-page__about {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      .event-page__about-title {
+        padding-bottom: 0.8rem;
+      }
+      .block-line {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    .event-page__program {
+      .event-page__program-title {
+        padding-bottom: 5.2rem;
+        @include breakpoint($mid-bp) {
+          padding-bottom: 3.2rem;
+        }
+        @include breakpoint($sm-bp) {
+          font-size: 3.2rem;
+        }
+      }
+    }
+    .events__img {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(33, 33, 33, 0.4);
+      } 
+    }
+    .events__item .events__img .events__date-block .events__date {
+      @include breakpoint($sm-bp) {
+        font-size: 4.6rem;
+      }
+    }
+    .events__item .events__img .events__date-block .events__month {
+      @include breakpoint($sm-bp) {
+        font-size: 2rem;
+        line-height: 3.4rem;
+      }
+    }
+
+    .sticky-wrapper {
+      @include breakpoint($xl-bp) {
+        padding-top: 8rem;
+      }
+      @include breakpoint($mid-bp) {
+        padding-top: 5rem;
+      }
+    }
+    .image-wrapper {
+      .img-wrapper {
+        @include breakpoint($xl-bp) {
+          height: 55.6rem;
+        }
+        @include breakpoint($mid-bp) {
+          height: 42rem;
+        }
+        @include breakpoint($sm-bp) {
+          height: 33rem;
+        }
+      }
+    }
+    .key-operating {
+      @include breakpoint($xl-bp) {
+        padding-bottom: 12rem;
+      }
+      @include breakpoint($mid-bp) {
+        padding-bottom: 8rem;
+      }
+    }
+    .left-block {
+        @include breakpoint($mid-bp) {
+          flex-direction: row;
+          padding-bottom: 4rem;
+        }
+        @include breakpoint($sm-bp) {
+          flex-direction: column;
+        }
+        .sticky-wrapper__item {
+          @include breakpoint($mid-bp) {
+            width: 15.7rem;
+          }
+          @include breakpoint($sm-bp) {
+            width: auto;
+          }
+        }
+        .link-red {
+          display: none;
+          @include breakpoint($mid-bp) {
+            display: flex;
+          }
+        }
+      }
+    .left-block + .link-red {
+      display: none;
+      @include breakpoint($mid-bp) {
+        display: flex;
+        margin-bottom: 5rem;
+        align-items: center;
+      }
+    }
+
+    .right-block {
+      .links {
+        svg {
+          @include breakpoint($sm-bp) {
+            width: 5rem;
+            height: 5rem;
+            transform: translateX(1rem);
+          }
+        }
+      }
+    }
+    .block-line {
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  
+  .program-block {
+    padding-bottom: 8rem;
+    @include breakpoint($mid-bp) {
+      padding-bottom: 4rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-bottom: 6rem;
+    }
+    .program-block__title-block {
+      background: rgba(210, 220, 229, 0.3);
+      padding: 3.2rem 2.4rem;
+      display: flex;
+      align-items: center;
+      gap: 6.8rem;
+      @include breakpoint($sm-bp) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .program-block__time {
+        @include breakpoint($sm-bp) {
+          font-size: 2rem;
+        }
+      }
+      .program-block__title {
+        @include breakpoint($sm-bp) {
+          font-size: 2.6rem;
+        }
+      }
+    }
+    .program-block__item {
+      padding: 3.2rem;
+      padding-left: 0;
+
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 8.2rem;
+      @include breakpoint($xl-bp) {
+        padding-left: 2.4rem;
+      }
+      @include breakpoint($mid-bp) {
+        padding-left: 0;
+        column-gap: 7.4rem;
+      }
+      @include breakpoint($sm-bp) {
+        padding-left: 2.4rem;
+        grid-template-columns: 1fr;
+      }
+      .program-block__wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+      .program-block__time {
+        padding-top: 0.5rem;
+        @include breakpoint($sm-bp) {
+          font-size: 2rem;
+          padding-bottom: 1.2rem;
+        }
+      }
+      .program-block__name {
+        padding-bottom: 2.4rem;
+        @include breakpoint($sm-bp) {
+          font-size: 2.6rem;
+        }
+      }
+      .program-block__author {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        gap: 2.4rem;
+        align-items: center;
+        @include breakpoint($sm-bp) {
+          gap: 1.5rem;
+        }
+        .program-block__avatar {
+          width: 5.2rem;
+          height: 5.2rem;
+          @include breakpoint($sm-bp) {
+            width: 6.2rem;
+            height: 6.2rem;
+          }
+        }
+        .program-block__avatar-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
+        .program-block__author-name {          
+          color: #212424;
+          @include breakpoint($sm-bp) {
+            font-size: 2rem;
+          }
+        }
+        .program-block__author-prof {
+          color: #697279;
+          @include breakpoint($sm-bp) {
+            font-size: 1.9rem;
+          }
+        }
+      }
+      .program-block__author + .program-block__author {
+        padding-top: 1.8rem;
+      }
+    }
+    .program-block__item + .program-block__item {
+      border-top: 0.1rem solid #D2DCE5;
+    }
+  }
+
+  
+  .registration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #212121, $alpha: 0.4);
+    z-index: 200;
+    .registration__block {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #FFFFFF;
+      height: 100%;
+      width: 68.4rem;
+      padding: 4rem;
+      padding-top: 4.8rem;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+      
+      /* Track */
+      &::-webkit-scrollbar-track {
+       background-color: transparent;
+      }
+      
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+         background: #AAB8C3; 
+      }
+      
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+      background: #A50F2D; 
+      }
+
+      .registration__wrapper {
+        display: flex;
+        justify-content: space-between;
+        .close-button {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          display: flex;
+          align-items: center;
+          gap: 2.4rem;
+          
+          color: #212424;
+          padding: 1.2rem 1.2rem 1.2rem 2.4rem;
+          border: 0.1rem solid #D2DCE5;
+          border-radius: 10rem;
+          height: min-content;
+          position: relative;
+          top: -2rem;
+          &::before, &::after {
+            display: none;
+          }
+          .close-button__cross {
+            position: relative;
+            display: block;
+            width: 2.8rem;
+            height: 2.8rem;
+            background: rgba(210, 220, 229, 0.3);
+            border-radius: 50%;
+            &::before, &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 50%;
+              height: 0.2rem;
+              background-color: #AAB8C3;
+              transform: translate(-50%, -50%) rotate(45deg);
+              @include breakpoint($sm-bp) {
+                height: 0.2rem;
+              }
+            }
+            &::after {
+              transform: translate(-50%, -50%) rotate(-45deg);
+            }
+          }
+        }
+      }
+      .registration__title {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 5.2rem;
+        line-height: 5.8rem;
+        /* identical to box height, or 112% */
+        
+        letter-spacing: -0.02em;
+        
+        /* UI/Black/High */
+        
+        color: #212424;
+        padding-bottom: 1.2rem;
+      }
+      .registration__subtitle {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 3.2rem;
+        /* identical to box height, or 160% */
+        
+        
+        /* UI/Footer */
+        
+        color: #697279;
+        padding-bottom: 4.4rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        .custom-select {
+          width: 100%;
+          .select-selected {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            /* identical to box height, or 150% */
+            
+            color: #697279;
+            padding-top: 1.6rem;
+            padding-bottom: 2.4rem;
+            border-bottom: 0.1rem solid #D2DCE5;
+            width: 100%;
+            padding-left: 0;
+            justify-content: flex-start;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 1rem;
+              background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+              background-repeat: no-repeat;
+              background-position: right;
+              background-size: contain;
+              width: 1.4rem;
+              height: 100%;
+              transition: transform .3s;
+            }
+          }
+          .filter-button--active {
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+          .select-items {
+            width: 100%;
+          }
+        }
+        input {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          /* identical to box height, or 150% */
+          
+          /* UI/Footer */
+          
+          color: #697279;
+          padding-top: 1.6rem;
+          padding-bottom: 2.4rem;
+          border-bottom: 0.1rem solid #D2DCE5;
+          &::placeholder {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            /* identical to box height, or 150% */
+            
+            display: flex;
+            align-items: flex-end;
+            
+            /* UI/Footer */
+            
+            color: #697279;
+          }
+        }
+        .registration__agree {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1.2rem;
+          line-height: 2rem;
+          
+          color: #AAB8C3;
+          padding-top: 1.6rem;
+        }
       }
     }
   }
