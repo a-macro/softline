@@ -762,4 +762,58 @@ document.addEventListener("DOMContentLoaded", function () {
       return el.hidden = false;
     });
   }
+  var buttonsModal = document.querySelectorAll('[data-modal]');
+  var regModal = document.querySelectorAll('.regModal');
+  if (regModal.length) {
+    regModal.forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (event.target.classList.contains('regModal')) {
+          modalHandler.apply(event.target);
+        }
+      });
+      var closeButton = el.querySelector('.close-button');
+      if (closeButton) {
+        closeButton.addEventListener('click', function () {
+          var modal = this.closest('.regModal');
+          if (modal) {
+            modalHandler.apply(modal);
+          }
+        });
+      }
+    });
+  }
+  function modalHandler() {
+    var _this$dataset;
+    var modal = document.querySelector("".concat((_this$dataset = this.dataset) === null || _this$dataset === void 0 ? void 0 : _this$dataset.modal)) || this;
+    if (modal) {
+      if (modal.hidden) {
+        modal.hidden = !modal.hidden;
+        setTimeout(function () {
+          modal.style.opacity = 1;
+        }, 10);
+      } else {
+        modal.style.opacity = 0;
+        modal.addEventListener('transitionend', hideaftertransition);
+      }
+    }
+  }
+  function hideaftertransition() {
+    this.hidden = true;
+    this.removeEventListener('transitionend', hideaftertransition);
+  }
+  if (buttonsModal.length) {
+    buttonsModal.forEach(function (el) {
+      return el.addEventListener('click', modalHandler);
+    });
+  }
+
+  // function openModal () {
+  //     registrModal
+  // }
+
+  // if (registrButton.length && registrModal) {
+  //     registrButton.forEach(el => {
+  //         el.addEventListener('click', openModal)
+  //     })
+  // }
 });

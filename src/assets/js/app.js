@@ -814,7 +814,63 @@ function clickHandlerTabs () {
     hideItems.forEach(el => el.hidden = false)
 }
 
+const buttonsModal = document.querySelectorAll('[data-modal]')
+const regModal = document.querySelectorAll('.regModal')
 
+if (regModal.length) {
+    regModal.forEach(el =>  {
+        el.addEventListener('click', function () {
+        if (event.target.classList.contains('regModal')) {
+            modalHandler.apply(event.target)
+        }
+    })
+    const closeButton = el.querySelector('.close-button')
+
+    if (closeButton) {
+        closeButton.addEventListener('click', function () {
+            const modal = this.closest('.regModal')
+            if (modal) {
+                modalHandler.apply(modal)
+            }
+        })
+    }
+})
+}
+
+function modalHandler() {
+    const modal = document.querySelector(`${this.dataset?.modal}`) || this
+
+    if (modal) {
+        if (modal.hidden) {
+            modal.hidden = !modal.hidden
+            setTimeout(() => {
+                modal.style.opacity = 1
+            }, 10)
+        } else {
+            modal.style.opacity = 0
+            modal.addEventListener('transitionend', hideaftertransition)
+        }
+    }
+}
+
+function hideaftertransition () {
+    this.hidden = true
+    this.removeEventListener('transitionend', hideaftertransition)
+}
+
+if (buttonsModal.length) {
+    buttonsModal.forEach(el => el.addEventListener('click', modalHandler))
+}
+
+// function openModal () {
+//     registrModal
+// }
+
+// if (registrButton.length && registrModal) {
+//     registrButton.forEach(el => {
+//         el.addEventListener('click', openModal)
+//     })
+// }
 });
 
 
