@@ -3166,7 +3166,9 @@ background: #A50F2D;
     }
   }
 
-  
+  .regModal {
+    transition: opacity 0.4s;
+  }
   .registration {
     position: fixed;
     top: 0;
@@ -3204,9 +3206,25 @@ background: #A50F2D;
       background: #A50F2D; 
       }
 
+      @include breakpoint($sm-bp) {
+        height: calc(100% - 4rem);
+        width: 100%;
+        top: 4rem;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+      }
+
       .registration__wrapper {
         display: flex;
         justify-content: space-between;
+        @include breakpoint($sm-bp) {
+          padding-right: 2.5rem;
+          padding-left: 2.5rem;
+        }
         .close-button {
           font-family: 'Manrope';
           font-style: normal;
@@ -3224,8 +3242,28 @@ background: #A50F2D;
           height: min-content;
           position: relative;
           top: -2rem;
+          transition: background-color .3s;
           &::before, &::after {
             display: none;
+          }
+          &:hover {
+            background-color: #D2DCE5;
+            color: #FFFFFF;
+            .close-button__cross {
+              &::before, &::after {
+                background-color: #FFFFFF;
+                @include breakpoint($sm-bp) {
+                  background-color: #D2DCE5;
+                }
+              }
+            }
+          }
+          @include breakpoint($sm-bp) {
+            padding: 0;
+            border: 0;
+            span:nth-child(1) {
+              display: none;
+            }
           }
           .close-button__cross {
             position: relative;
@@ -3234,6 +3272,9 @@ background: #A50F2D;
             height: 2.8rem;
             background: rgba(210, 220, 229, 0.3);
             border-radius: 50%;
+            @include breakpoint($sm-bp) {
+              background-color: #FFFFFF;
+            }
             &::before, &::after {
               content: '';
               position: absolute;
@@ -3243,8 +3284,10 @@ background: #A50F2D;
               height: 0.2rem;
               background-color: #AAB8C3;
               transform: translate(-50%, -50%) rotate(45deg);
+              transition: color .3s;
               @include breakpoint($sm-bp) {
                 height: 0.2rem;
+                width: 100%;
               }
             }
             &::after {
@@ -3281,11 +3324,42 @@ background: #A50F2D;
         
         color: #697279;
         padding-bottom: 4.4rem;
+        @include breakpoint($sm-bp) {
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+          padding-bottom: 2rem;
+        }
       }
       form {
         display: flex;
         flex-direction: column;
         gap: 4rem;
+        &::-webkit-scrollbar {
+          width: 2px;
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+         background-color: transparent;
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+           background: #AAB8C3; 
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+        background: #A50F2D; 
+        }
+        @include breakpoint($sm-bp) {
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+          height: calc(100% - 10rem);
+          overflow: scroll;
+          padding-bottom: 4rem;
+          width: 100%;
+        }
         .custom-select {
           width: 100%;
           .select-selected {
@@ -3316,6 +3390,27 @@ background: #A50F2D;
               width: 1.4rem;
               height: 100%;
               transition: transform .3s;
+            }
+          }
+          .select-items {
+            @include breakpoint($sm-bp) {
+              position: absolute;
+              height: 25rem;
+              margin-top: 7rem;
+              &::before, &::after {
+                display: none;
+              }
+
+              div {
+                padding-left: 2rem;
+              }
+              .close-button {
+                display: none;
+              }
+              .same-as-selected {
+                background-color: #FFFFFF;
+                color: #A50F2D;
+              }
             }
           }
           .filter-button--active {

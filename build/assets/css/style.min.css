@@ -5426,6 +5426,10 @@ textarea {
   border-top: 0.1rem solid #D2DCE5;
 }
 
+.regModal {
+  transition: opacity 0.4s;
+}
+
 .registration {
   position: fixed;
   top: 0;
@@ -5461,9 +5465,28 @@ textarea {
 .registration .registration__block::-webkit-scrollbar-thumb:hover {
   background: #A50F2D;
 }
+@media (max-width: 480px) {
+  .registration .registration__block {
+    height: calc(100% - 4rem);
+    width: 100%;
+    top: 4rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+}
 .registration .registration__block .registration__wrapper {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 480px) {
+  .registration .registration__block .registration__wrapper {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
 }
 .registration .registration__block .registration__wrapper .close-button {
   font-family: "Manrope";
@@ -5481,9 +5504,31 @@ textarea {
   height: min-content;
   position: relative;
   top: -2rem;
+  transition: background-color 0.3s;
 }
 .registration .registration__block .registration__wrapper .close-button::before, .registration .registration__block .registration__wrapper .close-button::after {
   display: none;
+}
+.registration .registration__block .registration__wrapper .close-button:hover {
+  background-color: #D2DCE5;
+  color: #FFFFFF;
+}
+.registration .registration__block .registration__wrapper .close-button:hover .close-button__cross::before, .registration .registration__block .registration__wrapper .close-button:hover .close-button__cross::after {
+  background-color: #FFFFFF;
+}
+@media (max-width: 480px) {
+  .registration .registration__block .registration__wrapper .close-button:hover .close-button__cross::before, .registration .registration__block .registration__wrapper .close-button:hover .close-button__cross::after {
+    background-color: #D2DCE5;
+  }
+}
+@media (max-width: 480px) {
+  .registration .registration__block .registration__wrapper .close-button {
+    padding: 0;
+    border: 0;
+  }
+  .registration .registration__block .registration__wrapper .close-button span:nth-child(1) {
+    display: none;
+  }
 }
 .registration .registration__block .registration__wrapper .close-button .close-button__cross {
   position: relative;
@@ -5492,6 +5537,11 @@ textarea {
   height: 2.8rem;
   background: rgba(210, 220, 229, 0.3);
   border-radius: 50%;
+}
+@media (max-width: 480px) {
+  .registration .registration__block .registration__wrapper .close-button .close-button__cross {
+    background-color: #FFFFFF;
+  }
 }
 .registration .registration__block .registration__wrapper .close-button .close-button__cross::before, .registration .registration__block .registration__wrapper .close-button .close-button__cross::after {
   content: "";
@@ -5502,10 +5552,12 @@ textarea {
   height: 0.2rem;
   background-color: #AAB8C3;
   transform: translate(-50%, -50%) rotate(45deg);
+  transition: color 0.3s;
 }
 @media (max-width: 480px) {
   .registration .registration__block .registration__wrapper .close-button .close-button__cross::before, .registration .registration__block .registration__wrapper .close-button .close-button__cross::after {
     height: 0.2rem;
+    width: 100%;
   }
 }
 .registration .registration__block .registration__wrapper .close-button .close-button__cross::after {
@@ -5534,10 +5586,42 @@ textarea {
   color: #697279;
   padding-bottom: 4.4rem;
 }
+@media (max-width: 480px) {
+  .registration .registration__block .registration__subtitle {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 2rem;
+  }
+}
 .registration .registration__block form {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.registration .registration__block form::-webkit-scrollbar {
+  width: 2px;
+}
+.registration .registration__block form::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.registration .registration__block form::-webkit-scrollbar-thumb {
+  background: #AAB8C3;
+}
+.registration .registration__block form::-webkit-scrollbar-thumb:hover {
+  background: #A50F2D;
+}
+@media (max-width: 480px) {
+  .registration .registration__block form {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    height: calc(100% - 10rem);
+    overflow: scroll;
+    padding-bottom: 4rem;
+    width: 100%;
+  }
 }
 .registration .registration__block form .custom-select {
   width: 100%;
@@ -5570,6 +5654,26 @@ textarea {
   width: 1.4rem;
   height: 100%;
   transition: transform 0.3s;
+}
+@media (max-width: 480px) {
+  .registration .registration__block form .custom-select .select-items {
+    position: absolute;
+    height: 25rem;
+    margin-top: 7rem;
+  }
+  .registration .registration__block form .custom-select .select-items::before, .registration .registration__block form .custom-select .select-items::after {
+    display: none;
+  }
+  .registration .registration__block form .custom-select .select-items div {
+    padding-left: 2rem;
+  }
+  .registration .registration__block form .custom-select .select-items .close-button {
+    display: none;
+  }
+  .registration .registration__block form .custom-select .select-items .same-as-selected {
+    background-color: #FFFFFF;
+    color: #A50F2D;
+  }
 }
 .registration .registration__block form .custom-select .filter-button--active::after {
   transform: rotate(180deg);
