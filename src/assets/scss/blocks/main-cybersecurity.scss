@@ -165,6 +165,7 @@
     @include breakpoint($xl-bp) {
         margin-top: 12rem;
         padding-bottom: 6rem;
+        background-image: url("../images/main-cybersecurity/nums-1440.jpg");
     }
 
     .section-top {
@@ -191,6 +192,9 @@
     @include breakpoint($xl-bp) {
         margin-left: 25.7%;
         margin-top: 10rem;
+    }
+    @include breakpoint($mid-bp) {
+        flex-direction: column;
     }
 }
 
