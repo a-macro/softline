@@ -606,6 +606,7 @@ textarea {
   .cybersecurity-nums {
     margin-top: 12rem;
     padding-bottom: 6rem;
+    background-image: url("../images/main-cybersecurity/nums-1440.jpg");
   }
 }
 .cybersecurity-nums .section-top {
@@ -633,6 +634,11 @@ textarea {
   .cybersecurity-nums__block {
     margin-left: 25.7%;
     margin-top: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .cybersecurity-nums__block {
+    flex-direction: column;
   }
 }
 
