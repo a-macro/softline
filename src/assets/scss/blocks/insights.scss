@@ -10,9 +10,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   @include breakpoint($sm-bp) {
     min-height: calc(100vh - 8rem);
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -22,19 +24,22 @@
     left: 0;
     z-index: -1;
   }
+
   .breadcrumbs {
     padding-top: 3.2rem;
     margin-top: unset;
+
     .breadcrumbs__link {
       font-family: 'Manrope';
       font-style: normal;
       font-weight: 500;
       line-height: 2rem;
-      
+
       color: #FFFFFF;
-      
+
       opacity: 0.7;
     }
+
     .breadcrumbs__item {
       &::after {
         width: 1rem;
@@ -43,30 +48,36 @@
         transform: rotate(0);
         background: url("../images/arrow.svg") no-repeat;
         background-size: contain;
-    }
+      }
     }
   }
 
   h1 {
     padding-top: 13.8rem;
     padding-bottom: 13.8rem;
+
     @include breakpoint($xxl-bp) {
       padding-bottom: 8rem;
     }
+
     @include breakpoint($xl-bp) {
       padding-bottom: 4rem;
     }
+
     @include breakpoint($mid-bp) {
       padding-bottom: 5rem;
     }
+
     @include breakpoint($sm-bp) {
       padding-bottom: 4rem;
     }
   }
+
   .insights-subtitle {
     padding-top: 13.8rem;
   }
-  .insights-subtitle + .insights-title {
+
+  .insights-subtitle+.insights-title {
     padding-top: 0.8rem;
   }
 }
@@ -77,9 +88,10 @@
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 2.4rem;
-  
+
   color: #FFFFFF;
 }
+
 .insights-title {
   font-family: 'Manrope';
   font-style: normal;
@@ -88,8 +100,9 @@
   line-height: 7.6rem;
   /* identical to box height, or 119% */
   letter-spacing: -0.01em;
-  
+
   color: #FFFFFF;
+
   @include breakpoint($sm-bp) {
     font-weight: 400;
     font-size: 4.4rem;
@@ -99,12 +112,13 @@
 
 .insights {
   .insights__bottom-block {
-    
+
     background-image: url('../images/insights/insight-bottom-bg.jpg');
 
     .section-top {
       padding-top: 11rem;
       padding-bottom: 11rem;
+
       @include breakpoint($mid-bp) {
         padding-left: 5rem;
         padding-top: 14rem;
@@ -112,9 +126,11 @@
       }
     }
   }
+
   .catalog__terms_wrapper {
     margin-top: 4rem;
   }
+
   .news__button {
     display: none;
     background: #E5E9F1;
@@ -123,9 +139,10 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 600;
-    font-size:  2.4rem;
+    font-size: 2.4rem;
     line-height: 2.5rem;
     padding: 1.8rem;
+
     @include breakpoint($sm-bp) {
       display: block;
       width: 100%;
@@ -137,9 +154,11 @@
 .wrapper-left {
   padding-left: 2rem;
   padding-right: 4rem;
+
   @include breakpoint($mid-bp) {
     padding-right: 2rem;
   }
+
   @include breakpoint($sm-bp) {
     padding-left: 0;
     padding-right: 0;
@@ -151,47 +170,56 @@
   border-bottom: 1px solid #D2DCE5;
   display: flex;
   justify-content: space-between;
+
   @include breakpoint($xl-bp) {
     position: relative;
   }
+
   @include breakpoint($mid-bp) {
     display: grid;
     grid-template-columns: 49% 1fr;
   }
+
   @include breakpoint($sm-bp) {
     grid-template-columns: 1fr;
   }
+
   nav {
     @include breakpoint($mid-bp) {
       overflow: scroll;
+
       &::-webkit-scrollbar {
         width: 0;
         height: 0;
       }
-      
+
       /* Track */
       &::-webkit-scrollbar-track {
-       background-color: transparent;
+        background-color: transparent;
       }
-      
+
       /* Handle */
       &::-webkit-scrollbar-thumb {
-         background: #AAB8C3; 
+        background: #AAB8C3;
       }
-      
+
       /* Handle on hover */
       &::-webkit-scrollbar-thumb:hover {
-      background: #A50F2D; 
+        background: #A50F2D;
       }
     }
+
     @include breakpoint($sm-bp) {
       border-bottom: 1px solid #D2DCE5;
     }
+
     ul {
       display: flex;
+
       @include breakpoint($sm-bp) {
         gap: 1rem;
       }
+
       li {
         @include breakpoint($mid-bp) {
           &:nth-child(1) {
@@ -200,6 +228,7 @@
             }
           }
         }
+
         @include breakpoint($sm-bp) {
           &:nth-child(1) {
             a {
@@ -207,6 +236,7 @@
             }
           }
         }
+
         a {
           width: 10.8rem;
           padding: 3.2rem 2.15rem;
@@ -216,25 +246,29 @@
           font-size: 2rem;
           line-height: 3.2rem;
           /* identical to box height, or 160% */
-          
+
           text-align: center;
-          
+
           /* UI/Black/High */
-          
+
           color: #212424;
           display: block;
           text-decoration: none;
+
           @include breakpoint($mid-bp) {
             padding: 3.2rem 0.85rem;
             width: auto;
           }
+
           @include breakpoint($sm-bp) {
             padding: 2.4rem 1.8rem
           }
         }
+
         .active {
           position: relative;
           color: #A50F2D;
+
           &::after {
             content: '';
             position: absolute;
@@ -244,9 +278,11 @@
             height: 0.3rem;
             background-color: #A50F2D;
             transform: translateX(-50%);
+
             @include breakpoint($mid-bp) {
               width: 100%;
             }
+
             @include breakpoint($sm-bp) {
               width: 80%;
             }
@@ -256,23 +292,56 @@
     }
   }
 }
+
+.media {
+  .insights-navigation {
+    @include breakpoint($mid-bp) {
+      display: flex;
+
+      nav {
+        width: 100%;
+
+        ul {
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+
+  .news__slider {
+    margin-left: 0;
+  }
+
+  .news__container {
+    @include breakpoint($sm-bp) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
 .filters {
   display: flex;
   position: relative;
+
   @include breakpoint($xl-bp) {
     position: static;
   }
+
   @include breakpoint($mid-bp) {
     border-left: 1px solid #D2DCE5;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
   @include breakpoint($sm-bp) {
     border-left: 0;
-    & > div:not(:nth-child(1)) {
+
+    &>div:not(:nth-child(1)) {
       border-right: 1px solid #D2DCE5;
     }
   }
+
   .overlay {
     position: fixed;
     top: 0;
@@ -281,6 +350,7 @@
     height: 100%;
     background-color: transparent;
     display: none;
+
     @include breakpoint($sm-bp) {
       z-index: 100;
       background-color: #212424;
@@ -288,17 +358,21 @@
     }
   }
 }
+
 .filter-wrapper {
   width: 13rem;
+
   @include breakpoint($mid-bp) {
     width: auto;
   }
+
   @include breakpoint($sm-bp) {
     width: 100%;
     grid-column: 3 / 4;
     grid-row: 1 / 2;
   }
 }
+
 .filter-button {
   border: 0;
   background-color: unset;
@@ -309,21 +383,24 @@
   line-height: 2.4rem;
   width: 100%;
   /* identical to box height, or 150% */
-  
-  
+
+
   /* UI/Black/Medium */
-  
+
   color: #40454E;
   height: calc(100% + 1px);
   padding-right: 1.5rem;
   transition: background-color .5s;
+
   @include breakpoint($sm-bp) {
     font-size: 2rem;
   }
+
   span {
     display: block;
     position: relative;
     padding-right: 1.5rem;
+
     &::after {
       content: '';
       position: absolute;
@@ -338,11 +415,12 @@
     }
   }
 }
+
 .filter-button--active {
   background-color: #FFFFFF;
 }
 
-.filter-button + .panel {
+.filter-button+.panel {
   @include breakpoint($sm-bp) {
     &::after {
       content: '';
@@ -355,14 +433,14 @@
       background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
       z-index: 0;
       border-top-right-radius: 1.2rem;
-    border-top-left-radius: 1.2rem;
+      border-top-left-radius: 1.2rem;
       pointer-events: none;
       transition: top .4s;
     }
   }
 }
 
-.filter-button--active + .panel {
+.filter-button--active+.panel {
   @include breakpoint($sm-bp) {
     &::after {
       content: '';
@@ -375,7 +453,7 @@
       background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
       z-index: 0;
       border-top-right-radius: 1.2rem;
-    border-top-left-radius: 1.2rem;
+      border-top-left-radius: 1.2rem;
       pointer-events: none;
       transition: top .4s;
     }
@@ -388,31 +466,35 @@
   padding: 4rem 14rem 5rem 6rem;
   box-shadow: 0px 1rem 2rem rgba(159, 174, 191, 0.25);
   overflow: scroll;
+
   &::-webkit-scrollbar {
     width: 2px;
   }
-  
+
   /* Track */
   &::-webkit-scrollbar-track {
-   background-color: transparent;
+    background-color: transparent;
   }
-  
+
   /* Handle */
   &::-webkit-scrollbar-thumb {
-     background: #AAB8C3; 
+    background: #AAB8C3;
   }
-  
+
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-  background: #A50F2D; 
+    background: #A50F2D;
   }
+
   @include breakpoint($mid-bp) {
     padding: 4rem 8rem 5rem 6rem;
   }
+
   @include breakpoint($sm-bp) {
     padding: 2rem;
     padding-top: 4rem;
     position: relative;
+
     &::before {
       content: '';
       position: fixed;
@@ -426,8 +508,10 @@
       z-index: 3;
     }
   }
+
   .panel__main-title {
     display: none;
+
     @include breakpoint($sm-bp) {
       display: block;
       font-weight: 400;
@@ -438,6 +522,7 @@
       z-index: 2;
     }
   }
+
   .panel__title {
     font-family: 'Manrope';
     font-style: normal;
@@ -445,13 +530,14 @@
     font-size: 2rem;
     line-height: 3.2rem;
     /* identical to box height, or 160% */
-    
-    
+
+
     /* UI/Black/High */
-    
+
     color: #212424;
 
     padding-bottom: 2.4rem;
+
     @include breakpoint($sm-bp) {
       font-weight: 400;
       font-size: 2.2rem;
@@ -460,6 +546,7 @@
       position: relative;
       padding-right: 3rem;
       background-color: #FFFFFF;
+
       &::after {
         content: ' ';
         width: 1.5rem;
@@ -477,7 +564,7 @@
   }
 }
 
-.panel__title + .checkbox-container {
+.panel__title+.checkbox-container {
   @include breakpoint($sm-bp) {
     max-height: 0;
     overflow: hidden;
@@ -487,21 +574,26 @@
 
 .filters-panel {
   position: relative;
+
   .close-button {
     position: absolute;
     top: 3.2rem;
     right: 3.5rem;
     width: 3rem;
     height: 3rem;
+
     @include breakpoint($mid-bp) {
       right: 2rem;
     }
+
     @include breakpoint($sm-bp) {
       position: fixed;
       top: 7rem;
       right: 2rem;
       z-index: 3;
-      &::after, &::before {
+
+      &::after,
+      &::before {
         background-color: #D2DCE5;
       }
     }
@@ -514,7 +606,9 @@
   background-color: unset;
   padding: 0;
   cursor: pointer;
-  &::before, &::after {
+
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -523,17 +617,19 @@
     height: 0.1rem;
     background-color: #212424;
     transform: translate(-50%, -50%) rotate(45deg);
+
     @include breakpoint($sm-bp) {
       height: 0.2rem;
     }
   }
+
   &::after {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
 
 
-.filter-button + .panel {
+.filter-button+.panel {
   position: absolute;
   top: 90%;
   right: -4rem;
@@ -541,16 +637,19 @@
   opacity: 0;
   pointer-events: none;
   transition: all .5s;
+
   @include breakpoint($xl-bp) {
     width: 100%;
     left: 0;
     right: unset;
   }
+
   @include breakpoint($mid-bp) {
     width: auto;
     right: 0;
     left: unset;
   }
+
   @include breakpoint($sm-bp) {
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
@@ -560,29 +659,34 @@
     height: calc(100% - 4rem);
   }
 }
-.filter-button--active + .panel {
+
+.filter-button--active+.panel {
   top: 100%;
   opacity: 1;
   pointer-events: all;
+
   @include breakpoint($sm-bp) {
     top: 0;
     left: 0;
     margin-top: 4rem;
   }
 }
-.filter-button--active ~ .overlay {
+
+.filter-button--active~.overlay {
   display: block;
 }
 
 .news__main-container {
-  padding-top:  4.85rem;
+  padding-top: 4.85rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 4rem;
   padding-bottom: 8rem;
+
   @include breakpoint($xl-bp) {
     grid-template-columns: repeat(4, 1fr);
   }
+
   @include breakpoint($mid-bp) {
     grid-template-columns: repeat(2, 1fr);
     padding-top: 6rem;
@@ -590,10 +694,12 @@
     row-gap: 5rem;
     column-gap: 3rem;
   }
+
   @include breakpoint($sm-bp) {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 4rem;
   }
+
   .news__item {
     text-decoration: none;
     position: relative;
@@ -601,20 +707,25 @@
     flex-direction: column;
     gap: 0.8rem;
     min-height: 40rem;
+
     @include breakpoint($sm-bp) {
       min-height: 20rem;
+
       &:nth-last-child(2) {
         .news__date {
           padding-bottom: 1rem;
         }
+
         &::before {
           display: none;
         }
       }
     }
+
     &:focus {
       outline: none;
     }
+
     &::before {
       content: '';
       width: 100%;
@@ -626,24 +737,29 @@
 
       background-color: #D2DCE5;
       z-index: -3;
+
       @include breakpoint($sm-bp) {
         top: unset;
         bottom: 0;
       }
     }
+
     span {
       display: block;
     }
   }
+
   .news__img {
     width: 100%;
     height: 15.5rem;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
+
   .news__title {
     font-family: 'Manrope';
     font-style: normal;
@@ -651,42 +767,49 @@
     font-size: 2.4rem;
     line-height: 3.6rem;
     /* or 150% */
-    
-    
+
+
     /* UI/Black/High */
-    
+
     color: #212424;
 
     padding-top: 1.6rem;
   }
+
   .news__date {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 2.4rem;
-    
+
     color: #697279;
     margin-top: auto;
     padding-top: 1rem;
+
     @include breakpoint($sm-bp) {
       font-size: 1.9rem;
       padding-bottom: 4rem;
     }
   }
+
   .news__item--wider {
     padding: 4rem;
     grid-column: 3 span;
+
     @include breakpoint($xl-bp) {
       grid-column: 2 span;
     }
+
     @include breakpoint($mid-bp) {
       padding-top: 3rem;
     }
+
     @include breakpoint($sm-bp) {
       grid-column: 1 span;
       padding: 0;
     }
+
     .news__img {
       position: absolute;
       width: 100%;
@@ -694,10 +817,12 @@
       top: 0;
       left: 0;
       z-index: -2;
+
       @include breakpoint($sm-bp) {
         position: static;
       }
     }
+
     &::after {
       content: '';
       position: absolute;
@@ -708,10 +833,12 @@
       z-index: -1;
       background: #212424;
       opacity: 0.3;
+
       @include breakpoint($sm-bp) {
         display: none;
       }
     }
+
     .news__title {
       padding-top: 0;
       font-weight: 400;
@@ -719,12 +846,13 @@
       line-height: 5.2rem;
       max-width: 53rem;
       /* or 144% */
-      
+
       letter-spacing: -0.01em;
-      
+
       /* UI / White */
-      
+
       color: #FFFFFF;
+
       @include breakpoint($sm-bp) {
         color: #212424;
         font-family: 'Manrope';
@@ -734,8 +862,10 @@
         line-height: 3.6rem;
       }
     }
+
     .news__date {
       color: #FFFFFF;
+
       @include breakpoint($sm-bp) {
         color: #40454E;
       }
@@ -748,9 +878,11 @@
   height: 1px;
   background-color: #D2DCE5;
   margin-bottom: 2.8rem;
+
   @include breakpoint($mid-bp) {
     margin-bottom: 3rem;
   }
+
   @include breakpoint($sm-bp) {
     display: none;
   }
@@ -764,9 +896,11 @@
 
 .main-pagination {
   display: flex;
+
   @include breakpoint($sm-bp) {
     display: none;
   }
+
   span {
     font-family: 'Manrope';
     font-style: normal;
@@ -774,11 +908,13 @@
     font-size: 1.6rem;
     line-height: 2.4rem;
   }
+
   .main-pagination__right {
     border-left: 1px solid #AAB8C3;
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
   .num-page {
     background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
     background-repeat: no-repeat;
@@ -787,23 +923,28 @@
     padding-right: 1.5rem;
     margin-right: 1.8rem;
   }
+
   .numb-container {
     position: relative;
     transition: all .5s;
     cursor: pointer;
   }
+
   .select-button {
     position: relative;
     z-index: 2;
   }
+
   .numb-container:focus {
     background-color: #FFFFFF;
   }
-  .numb-container:focus > .select-numb {
+
+  .numb-container:focus>.select-numb {
     visibility: visible;
     opacity: 1;
     top: 2.4rem;
   }
+
   .select-numb {
     position: absolute;
     top: 0;
@@ -815,20 +956,23 @@
     opacity: 0;
     visibility: hidden;
     transition: all .5s ease;
+
     a {
       padding: 1rem;
       color: #212424;
       text-decoration: none;
       position: relative;
+
       &:hover {
         color: #A50F2D;
       }
     }
   }
-  .select-numb:focus{
-    top:2.4rem;
-    visibility:visible;
-    opacity:1;
+
+  .select-numb:focus {
+    top: 2.4rem;
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -836,30 +980,37 @@
   display: flex;
   gap: 2rem;
   padding: 0 0.5rem;
+
   @include breakpoint($mid-bp) {
     gap: 1.8rem;
   }
+
   @include breakpoint($sm-bp) {
     justify-content: space-between;
     width: 100%;
   }
+
   .arrow {
     width: 1.5rem;
     height: 1.5rem;
     stroke: #AAB8C3;
     transition: transform .4s;
+
     @include breakpoint($sm-bp) {
       width: 2.4rem;
       height: 2.4rem;
     }
   }
+
   .arrow--right {
     transform: rotate(180deg);
   }
+
   .arrow--active {
     stroke: #212424;
   }
 }
+
 .pagination a {
   position: relative;
   display: block;
@@ -871,28 +1022,35 @@
   line-height: 2.4rem;
   color: #40454E;
   text-decoration: none;
+
   @include breakpoint($sm-bp) {
     font-size: 2.6rem;
     line-height: 2.6rem;
   }
+
   &:hover {
     .arrow--active {
       transform: rotate(0) translateX(-0.5rem);
     }
+
     .arrow--right {
       transform: rotate(180deg) translateX(-0.5rem);
     }
   }
+
   &:not(:last-child) {
     margin-right: 1.2rem;
   }
+
   &:nth-last-child(3) {
     margin-right: 0;
   }
 }
+
 .pagination a.active {
   color: #A50F2D;
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -905,28 +1063,36 @@
   }
 }
 
-.pagination a:hover:not(.active) {color: #697279;}
+.pagination a:hover:not(.active) {
+  color: #697279;
+}
 
 .checkbox-container {
   display: grid;
   grid-template-columns: repeat(5, max-content);
   column-gap: 4rem;
+
   @include breakpoint($mid-bp) {
     grid-template-columns: repeat(2, max-content);
   }
+
   @include breakpoint($sm-bp) {
     grid-template-columns: repeat(1, max-content);
   }
+
   .checkbox-container__item {
     @include breakpoint($mid-bp) {
       padding-bottom: 6rem;
+
       &:last-child {
         padding-bottom: 0;
       }
+
       &:nth-last-child(2) {
         padding-bottom: 0;
       }
     }
+
     @include breakpoint($sm-bp) {
       padding-bottom: 0;
     }
@@ -966,14 +1132,14 @@
   font-size: 1.6rem;
   line-height: 2.4rem;
   /* identical to box height, or 150% */
-  
+
   /* UI / Accent */
-  
+
   color: #212424;
 }
 
 .form-group label:before {
-  content:'';
+  content: '';
   -webkit-appearance: none;
   background-color: transparent;
   border: 1px solid #40454E;
@@ -988,11 +1154,11 @@
   transition: all .5s;
 }
 
-.form-group input:checked + label {
+.form-group input:checked+label {
   color: #A50F2D;
 }
 
-.form-group input:checked + label:after {
+.form-group input:checked+label:after {
   content: '';
   display: block;
   position: absolute;
@@ -1005,7 +1171,7 @@
   transform: rotate(45deg);
 }
 
-.form-group input:checked + label:before{
+.form-group input:checked+label:before {
   background-color: #A50F2D;
   border: 1px solid #A50F2D;
 }
@@ -1014,13 +1180,15 @@
 .custom-select {
   position: relative;
   width: 13rem;
+
   @include breakpoint($mid-bp) {
     width: auto;
   }
 }
 
 .custom-select select {
-  display: none; /*hide original SELECT element: */
+  display: none;
+  /*hide original SELECT element: */
 }
 
 /* Style the arrow inside the select element: */
@@ -1034,6 +1202,7 @@
   height: 100%;
   margin-left: 1rem;
   transition: background-color .5s;
+
   @include breakpoint($sm-bp) {
     height: 1rem;
   }
@@ -1043,22 +1212,24 @@
 .select-selected.filter-button--active {
   background-color: #FFFFFF;
 }
+
 /* style the items (options), including the selected item: */
 .select-selected {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
   /* identical to box height, or 150% */
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   /* 2022/Dark Electric Blue */
-  
-  
+
+
   // padding: 1.2rem 1.6rem;
   cursor: pointer;
   height: 100%;
+
   @include breakpoint($sm-bp) {
     font-size: 2rem;
     padding: 2rem 0;
@@ -1069,7 +1240,7 @@
 .select-items {
   position: absolute;
   background: #FFFFFF;
-  top:  100%;
+  top: 100%;
   left: 0;
   right: 0;
   z-index: 99;
@@ -1079,6 +1250,7 @@
   width: 23.5rem;
   transition: all .5s;
   box-shadow: 0px 1rem 2rem rgba(159, 174, 191, 0.25);
+
   @include breakpoint($sm-bp) {
     position: fixed;
     top: 0;
@@ -1089,6 +1261,7 @@
     border-top-left-radius: 1.2rem;
     padding-left: 0;
     padding-right: 0;
+
     &::before {
       content: '';
       position: fixed;
@@ -1100,6 +1273,7 @@
       transform: translateX(-50%);
       z-index: 5;
     }
+
     &::after {
       content: '';
       position: fixed;
@@ -1111,24 +1285,28 @@
       background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
       z-index: 0;
       border-top-right-radius: 1.2rem;
-    border-top-left-radius: 1.2rem;
+      border-top-left-radius: 1.2rem;
       pointer-events: none;
       transition: top .4s;
     }
+
     &:not(.select-hide) {
       &::after {
         top: 4rem;
       }
     }
   }
+
   @include breakpoint($sm-bp) {
     height: calc(100% - 4rem);
     max-height: unset;
   }
+
   /* width */
   .close-button {
     display: none;
-    padding: 0!important;
+    padding: 0 !important;
+
     @include breakpoint($sm-bp) {
       display: block;
       position: sticky;
@@ -1138,11 +1316,14 @@
       height: 3rem;
       margin-left: auto;
       z-index: 3;
-      &::after, &::before {
+
+      &::after,
+      &::before {
         background-color: #D2DCE5;
       }
     }
   }
+
   .custom-select__title {
     display: none;
     font-family: 'Manrope';
@@ -1151,12 +1332,13 @@
     font-size: 4.1rem;
     line-height: 4.2rem;
     /* identical to box height, or 125% */
-    
+
     letter-spacing: -0.02em;
-    
+
     /* UI/Black/High */
     pointer-events: none;
     color: #212424;
+
     @include breakpoint($sm-bp) {
       display: block;
       position: sticky;
@@ -1164,24 +1346,26 @@
       z-index: 3;
     }
   }
-&::-webkit-scrollbar {
-  width: 2px;
-}
 
-/* Track */
-&::-webkit-scrollbar-track {
- background-color: transparent;
-}
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
 
-/* Handle */
-&::-webkit-scrollbar-thumb {
-   background: #AAB8C3; 
-}
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 
-/* Handle on hover */
-&::-webkit-scrollbar-thumb:hover {
-background: #A50F2D; 
-}
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #AAB8C3;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #A50F2D;
+  }
+
   div {
     font-family: 'Manrope';
     font-style: normal;
@@ -1189,13 +1373,14 @@ background: #A50F2D;
     font-size: 2rem;
     line-height: 3.2rem;
     /* identical to box height, or 160% */
-    
-    
+
+
     /* UI/Footer */
-    
+
     color: #697279;
     cursor: pointer;
     padding: 2.4rem 0;
+
     // &:not(:last-child) {
     //   // padding-bottom: 4.7rem;
     //   padding: 2.4rem 0;
@@ -1207,10 +1392,10 @@ background: #A50F2D;
       font-size: 2.6rem;
       line-height: 2.8rem;
       /* identical to box height, or 140% */
-      
-      
+
+
       /* UI/Black/High */
-      
+
       color: #212424;
       // &:not(:last-child) {
       //   // padding-bottom: 4.7rem;
@@ -1241,8 +1426,10 @@ background: #A50F2D;
   pointer-events: none;
 }
 
-.select-items div:hover, .select-items .same-as-selected {
+.select-items div:hover,
+.select-items .same-as-selected {
   color: #A50F2D;
+
   @include breakpoint($sm-bp) {
     color: #212424;
     background-color: #E5E9F1;
@@ -1250,2218 +1437,2686 @@ background: #A50F2D;
 }
 
 
-  .events__main-container {
-    padding-top: 4.8rem;
-    padding-bottom: 8rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4rem;
-    @include breakpoint($xl-bp) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @include breakpoint($mid-bp) {
-      grid-template-columns: repeat(2, 1fr);
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-      row-gap: 4rem;
-      column-gap: 2rem;
-    }
-    @include breakpoint($sm-bp) {
-      grid-template-columns: repeat(1, 1fr);
-      row-gap: 4rem;
-    }
-  }
-  
-  .events__item {
-    font-family: 'Manrope';
-    font-style: normal;
-    text-decoration: none;
-    position: relative;
-    .events__img {
-      position: relative;
-      display: block;
-      margin-bottom: 2rem;
-      height: 26rem;
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(33, 33, 33, 0.4);
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .events__date-block {
-        display: flex;
-        position: absolute;
-        left: 2.2rem;
-        bottom: 2rem;
-        z-index: 1;
-        .events__date-item {
-          display: flex;
-          flex-direction: column;
-          &:not(:first-child) {
-            padding-left: 3.5rem;
-            position: relative;
-            &::before {
-              content: '';
-              position: absolute;
-              top: 2.5rem;
-              left: 0.5rem;
-              background-color: #FFFFFF;
-              width: 2rem;
-              height: 0.2rem;
-            }
-          }
-        }
-        .events__date {
-          font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 3.6rem;
-          line-height: 5.2rem;
-          /* identical to box height, or 144% */
-          
-          letter-spacing: -0.01em;
-          
-          /* UI / White */
-          
-          color: #FFFFFF;
-        }
-        .events__month {
-          font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 1.6rem;
-          line-height: 2.4rem;
-          /* identical to box height, or 150% */
-          
-          
-          /* UI / White */
-          
-          color: #FFFFFF;
-        }
-      }
-    }
-    .events__name {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      display: block;
-      color: #A50F2D;
-      padding-bottom: 1rem;
-    }
-    .events__title {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-size: 2.4rem;
-      line-height: 3.6rem;
-      color: #212424;
-    }
+.events__main-container {
+  padding-top: 4.8rem;
+  padding-bottom: 8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .events__item--wider {
-    grid-column: 2 span;
-    padding: 3.2rem 4rem;
-    padding-bottom: 12rem;
-    height: 50rem;
-    @include breakpoint($sm-bp) {
-      grid-column: 1 span;
-      padding: 0;
-      height: auto;
-    }
-    .events__img {
+  @include breakpoint($mid-bp) {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    row-gap: 4rem;
+    column-gap: 2rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 4rem;
+  }
+}
+
+.events__item {
+  font-family: 'Manrope';
+  font-style: normal;
+  text-decoration: none;
+  position: relative;
+
+  .events__img {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    height: 26rem;
+
+    &::after {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
-      @include breakpoint($sm-bp) {
-        position: relative;
-        height: 26rem;
-      }
-      .events__date-block {
-        left: 4rem;
-        bottom: 4rem;
-        gap: 0.4rem;
-        .events__date-item {
-          &:not(:first-child) {
-            &::before {
-              top: 3rem;
-            }
-          }
-        }
-        .events__date {
-          font-size: 5.2rem;
-          line-height: 5.8rem;
-          /* identical to box height, or 112% */
-          
-          letter-spacing: -0.02em;
-          
-          /* UI / White */
-          
-          color: #FFFFFF;
-          }
-      }
+      background: rgba(33, 33, 33, 0.4);
     }
-    .events__name {
-      color: #FFFFFF;
-      @include breakpoint($sm-bp) {
-        color: #A50F2D;
-      }
-    }
-    .events__title {
-      font-size: 3.6rem;
-      line-height: 5.2rem;
-      /* or 144% */
-      
-      letter-spacing: -0.01em;
-      
-      /* UI / White */
-      
-      color: #FFFFFF;
-      @include breakpoint($sm-bp) {
-        font-size: 2.4rem;
-        line-height: 3.6rem;
-        color: #212424;
-      }
-    }
-  }
 
-  .events__item--big {
-    grid-column: 2 span;
-    .events__img {
-      height: 54rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-  }
 
-  .events__item--max {
-    grid-column: 4 span;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: min-content 1fr;
-    column-gap: 4rem;
-    background-color: #FFFFFF;
-    .events__img {
-      grid-row: 2 span;
-      height: 57.2rem;
-      margin-bottom: 0;
-    }
-    .events__title {
-      max-width: 78rem;
-    }
-    .events__name {
-      padding-top: 3.2rem;
-    }
-  }
+    .events__date-block {
+      display: flex;
+      position: absolute;
+      left: 2.2rem;
+      bottom: 2rem;
+      z-index: 1;
 
-  .video {
-    .video__main-container {
-      padding-top:  4.85rem;
-      padding-bottom: 8rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4rem;
-      @include breakpoint($xl-bp) {
-        grid-template-columns: repeat(6, 1fr);
-      }
-      @include breakpoint($mid-bp) {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-      }
-      @include breakpoint($sm-bp) {
-        grid-template-columns: repeat(1, 1fr);
-      }
-      .events__item {
-        &:nth-child(5), 
-        &:nth-child(6) {
-          grid-column: 2 span;
-          .events__img {
-            height: 54rem;
-          }
-        }
-        &:nth-child(7) {
-          grid-column: 4 span;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: min-content 1fr;
-          column-gap: 4rem;
-          background-color: #FFFFFF;
-          .events__img {
-            grid-row: 2 span;
-            height: 57.2rem;
-            margin-bottom: 0;
-          }
-          .events__title {
-            max-width: 78rem;
-          }
-          .events__name {
-            padding-top: 3.2rem;
-          }
-        }
-        .events__img {
-          &::after {
-            display: none;
-          }
-        }
-        @include breakpoint($xl-bp) {
-          grid-column: 2 span;
-          &:nth-child(4),
-          &:nth-child(5) {
-            grid-column: 3 span;
-            .events__img {
-              height: 35.2rem;
-            }
-          }
-          &:nth-child(6) {
-            grid-column: 6 span;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: min-content 1fr;
-            column-gap: 4rem;
-            background-color: #FFFFFF;
-            .events__img {
-              grid-row: 2 span;
-              height: 57.2rem;
-              margin-bottom: 0;
-            }
-            .events__title {
-              max-width: 78rem;
-            }
-            .events__name {
-              padding-top: 3.2rem;
-            }
-          }
-          &:nth-child(7) {
-            grid-column: 2 span;
-            display: block;
-            background-color: unset;
-            .events__img {
-              grid-row: 2 span;
-              height: auto;
-              margin-bottom: 2rem;
-            }
-            .events__title {
-              max-width: none;
-            }
-            .events__name {
-              padding-top: 0;
-            }
-          }
-        }
-        @include breakpoint($mid-bp) {
-          &,
-          &:nth-child(4),
-          &:nth-child(5),
-          &:nth-child(6) {
-            grid-column: 1 span;
-            background-color: unset;
-            display: block;
-            .events__name {
-              padding-top: 0;
-            }
-            .events__img {
-              height: 21rem;
-              margin-bottom: 2rem;
-            }
-          }
-          &:nth-child(7) {
-            background-color: #FFFFFF;
-            .events__name {
-              padding-left: 3rem;
-            }
-            .events__title {
-              padding-left: 3rem;
-              padding-right: 3rem;
-              padding-bottom: 2rem;
-              display: block;
-            }
-          }
-        }
-        @include breakpoint($sm-bp) {
-          &:nth-child(7) {
-            grid-column: 1 span;
-            background-color: unset;
-            .events__name {
-              padding-left: 0;
-            }
-            .events__title {
-              padding-left: 0;
-              padding-right: 0;
-              padding-bottom: 0;
-            }
-          }
-        }
-      }
-      .events__item--big {
-        grid-column: 3 span;
-      }
-    }
-  }
-  .video-page,
-  .news-page {
-    .section-top.align-bottom {
-      @include breakpoint($mid-bp) {
-        margin-top: 10rem;
-        flex-direction: row;
-        align-items: center;
-      }
-      @include breakpoint($sm-bp) {
-        margin-top: 5.5rem;
+      .events__date-item {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 2.5rem;
-      }
-      .link-red {
-        margin-top: 0;
-      }
-    }
-    .section-top__title {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 2.4rem;
-      line-height: 3.6rem;
-      /* identical to box height, or 150% */
-      
-      
-      /* UI/Black/High */
-      
-      color: #212424;
-      @include breakpoint($sm-bp) {
-        font-size: 2.6rem;
-      }
-    }
-    .news__container {
-      border-top: 0.1rem solid #D2DCE5;
-      padding-top: 4rem;
-      @include breakpoint($mid-bp) {
-        padding-top: 2.5rem;
-      }
-    }
-    .news__slider {
-      margin-top: 2.7rem;
-      @include breakpoint($sm-bp) {
-        width: 100%;
-      }
-    }
-    .wrapper--swiper {
-      @include breakpoint($mid-bp) {
-        padding-right: 0;
-        .section-top {
-          padding-right: 2rem;
-        }
-        .news__container {
-          border-top: 0;
+
+        &:not(:first-child) {
+          padding-left: 3.5rem;
           position: relative;
+
           &::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: calc(100% - 2rem);
-            height: 0.1rem;
-            background-color: #D2DCE5;
+            top: 2.5rem;
+            left: 0.5rem;
+            background-color: #FFFFFF;
+            width: 2rem;
+            height: 0.2rem;
           }
         }
       }
-    }
-  }
 
-
-  .news-page {
-    .section-top.align-bottom {
-      // @include breakpoint($sm-bp) {
-      //   .link-red {
-      //     display: none;
-      //   }
-      // }
-    }
-    @include breakpoint($sm-bp) {
-      .news__slider {
-        margin-left: 0;
-        .news__container {
-          // padding-top: 0;
-          border-top: 0;
-          margin-left: 0;
-          width: 100%;
-          &::before {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-  .video-page {
-    .breadcrumbs {
-      padding-bottom: 7.6rem;
-      @include breakpoint($mid-bp) {
-        padding-bottom: 4.9rem;
-      }
-      .breadcrumbs__item {
-        &::after {
-          filter: brightness(0.5);
-        }
-      }
-      a {
-        color: rgba($color: #212424, $alpha: 0.7);
-      }
-    }
-
-    .intro__pop-up_wrapper {
-      padding-bottom: 8rem;
-      position: relative;
-      @include breakpoint($mid-bp) {
-        padding-bottom: 6rem;
-      }
-      .form-modal__play {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 10rem;
-        height: 10rem;
-        @include breakpoint($mid-bp) {
-          top: 40%;
-          width: 6.9rem;
-          height: 6.9rem;
-        }
-        svg {
-          height: 100%;
-          width: 100%;
-        }
-      }
-    }
-    .intro__pop-up_video {
-      width: 100%;
-    }
-  }
-
-  .video-page,
-  .event-page {
-    .news__container {
-      .swiper-slide {
-        width: 43rem;
-        height: auto;
-        .events__name {
-          @include breakpoint($sm-bp) {
-            font-size: 2rem;
-            padding-bottom: 2rem;
-          }
-        }
-        .events__title {
-          @include breakpoint($sm-bp) {
-            font-size: 2.6rem;
-            font-weight: 500;
-          }
-        }
-        @include breakpoint($mid-bp) {
-          width: 36rem;
-        }
-      }
-    }
-  }
-
-  .video-page__top-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 4rem;
-    @include breakpoint($xl-bp) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    @include breakpoint($mid-bp) {
-      gap: 5rem;
-      padding-bottom: 6rem;
-    }
-    .video-page__title-wrapper {
-      max-width: 128rem;
-      .video-page__title {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 5.2rem;
-        line-height: 5.8rem;
-        /* or 112% */
-        
-        letter-spacing: -0.02em;
-        
-        /* UI/Black/High */
-        
-        color: #212424;
-        padding-bottom: 3.2rem;
-        @include breakpoint($sm-bp) {
-          font-size: 4.3rem;
-          letter-spacing: normal;
-          line-height: 5.2rem;
-        }
-      }
-      .video-page__type {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 2rem;
-        line-height: 3.2rem;
-        /* identical to box height, or 160% */
-        
-        
-        /* UI / Accent */
-        
-        color: #A50F2D;
-      }
-      .video-page__date {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 2rem;
-        line-height: 3.2rem;
-        /* identical to box height, or 160% */
-        
-        
-        /* UI/Footer */
-        
-        color: #697279;
-        padding-left: 2rem;
-      }
-    }
-    .links {
-      flex-direction: column;
-      @include breakpoint($xl-bp) {
-        flex-direction: row;
-      }
-      @include breakpoint($sm-bp) {
-        transform: translateX(-1rem);
-      }
-    }
-  }
-
-  .text-wrapper {
-    max-width: 122.8rem;
-    margin: 0 auto;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    @include breakpoint($xl-bp) {
-      max-width: 90.2rem;
-    }
-    .text-wrapper__first {
-      padding-bottom: 7.3rem;
-      @include breakpoint($xl-bp) {
-        padding-bottom: 5.3rem;
-      }
-      @include breakpoint($mid-bp) {
-        padding-top: 5rem;
-        padding-bottom: 8rem;
-      }
-      @include breakpoint($sm-bp) {
-        padding-top: 0;
-        padding-bottom: 5rem;
-      }
-    }
-  }
-
-  
-  .video-page__main-desc {
-    .video-page__desc-cont {
-      display: flex;
-      flex-direction: column;
-      gap: 2.4rem;
-      padding-bottom: 8rem;
-      @include breakpoint($mid-bp) {
-        gap: 3.2rem;
-        padding-bottom: 6rem;
-      }
-      @include breakpoint($sm-bp) {
-        padding-bottom: 6.8rem;
-      }
-      .video-page__desc-title {
+      .events__date {
         font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 3.6rem;
-        line-height: 5rem;
+        line-height: 5.2rem;
         /* identical to box height, or 144% */
-        
+
         letter-spacing: -0.01em;
-        
-        /* UI/Black/High */
-        
-        color: #212424;
-        @include breakpoint($sm-bp) {
-          font-size: 3.1rem;
-          letter-spacing: normal;
-        }
-      }
-      div {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 2.4rem;
-        line-height: 3.6rem;
-        /* or 150% */
-        
-        
-        /* UI/Black/High */
-        
-        color: #212424;
 
-        padding: 3.6rem 0;
-        padding-left: 3.4rem;
+        /* UI / White */
 
-        border-left: 0.2rem  solid #A50F2D;
-        @include breakpoint($xl-bp) {
-          padding: 0;
-          padding-left: 3.4rem;
-        }
-        @include breakpoint($mid-bp) {
-          padding: 0;
-          padding-left: 3.4rem;
-          border-left: none;
-          position: relative;
-          &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            width: 0.2rem;
-            background-color: #A50F2D;
-            height: 85%;
-          }
-        }
-        @include breakpoint($sm-bp) {
-          &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            width: 0.3rem;
-            background-color: #A50F2D;
-            height: 105%;
-          }
-        }
+        color: #FFFFFF;
       }
-      p {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 2rem;
-        line-height: 3.2rem;
-        /* or 160% */
-        
-        
-        /* UI/Black/High */
-        
-        color: #212424;
-      }
-    }
-  }
 
-  .tag-wrapper {
-    border-top: 0.1rem solid #D2DCE5;
-    padding-top: 3.2rem;
-    display: flex;
-    justify-content: space-between;
-    @include breakpoint($sm-bp) {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 2rem;
-    }
-    &__tags {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      .tag-wrapper__tags-item {
+      .events__month {
         font-family: 'Manrope';
         font-style: normal;
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.4rem;
         /* identical to box height, or 150% */
-        
-        
-        /* UI/Black/High */
-        
-        color: #212424;
-        text-decoration: none;
 
-        padding: 0.8rem 1.6rem;
-        border: 0.1rem solid #D2DCE5;
-        border-radius: 0.4rem;
-        @include breakpoint($sm-bp) {
-          font-size: 2.1rem;
-          padding: 1rem 1.6rem;
-        }
+
+        /* UI / White */
+
+        color: #FFFFFF;
       }
     }
   }
 
-  .links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    @include breakpoint($sm-bp) {
-      gap: 1.2rem;
-    }
-    a {
-      svg {
-        width: 4rem;
-        height: 4rem;
-        fill: #40454E;
-        @include breakpoint($sm-bp) {
-          width: 6rem;
-          height: 6rem;
-        }
-      }
-      &:hover {
-        svg {
-          fill: #697279;
-        }
-      }
-    }
-  }
-
-  .red {
-    color: #A50F2D;
-    text-decoration: none;
-  }
-
-  [hidden] {
-    display: none!important;
-  }
-  .news-page {
-    .text-wrapper {
-      max-width: 114.4rem;
-      @include breakpoint($xl-bp) {
-        max-width: 93.4rem;
-      }
-    }
-    .text-wrapper--swiper {
-      padding-right: 0;
-    }
-    .insights-title {
-      max-width: 119.5rem;
-      @include breakpoint($xl-bp) {
-        max-width: 105.5rem;
-      }
-    }
-    .news-page__swiper {
-      margin-top: 10rem;
-      @include breakpoint($xl-bp) {
-        margin-top: 5.2rem;
-      }
-      .swiper-slide {
-        @include breakpoint($mid-bp) {
-            width: 54rem;
-        }
-        @include breakpoint($sm-bp) {
-          width: 39rem;
-        }
-      }
-      .img-wrapper {
-        height: 66.6rem;
-        @include breakpoint($xxl-bp) {
-          height: 58.2rem;
-        }
-        @include breakpoint($xl-bp) {
-          height: 55rem;
-        }
-        @include breakpoint($mid-bp) {
-          height: 43.7rem;
-        }
-        @include breakpoint($sm-bp) {
-          height: 32.7rem;
-        }
-      }
-    }
-    .news-page__contest {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      /* or 150% */
-      
-      
-      /* UI/Black/Low */
-      
-      color: #AAB8C3;
-      padding-top: 2.4rem;
-      @include breakpoint($sm-bp) {
-        font-size: 2.1rem;
-        line-height: 2.85rem;
-        font-weight: 400;
-      }
-    }
-    .swiper-container {
-      position: relative;
-      .swiper-button-prev,
-      .swiper-button-next {
-        top: 41.5%;
-        transform: translateY(-50%);
-        @include breakpoint($mid-bp) {
-          display: none;
-        }
-      }
-      .swiper-button-prev {
-        left: -6.5rem;
-      }
-      .swiper-button-next {
-        right: -6.5rem;
-      }
-    }
-  }
-
-
-  
-  .sticky-wrapper {
-    display: grid;
-    grid-template-columns: 25rem 1fr 25rem;
-    padding-top: 10rem;
-    @include breakpoint($xxl-bp) {
-      padding-top: 8rem;
-    }
-    @include breakpoint($mid-bp) {
-      grid-template-columns: 1fr min-content;
-      padding-top: 5rem;
-    }
-    @include breakpoint($sm-bp) {
-      padding-top: 3rem;
-    }
-    .center-block {
-      @include breakpoint($mid-bp) {
-        grid-column: 2 span;
-      }
-    }
-    .line {
-      display: none;
-      @include breakpoint($mid-bp) {
-        display: block;
-        grid-column: 2 span;
-      }
-    }
-    &__block {
-      .sticky-wrapper__item {
-        div {
-          font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 1.6rem;
-          line-height: 2.4rem;
-          /* identical to box height, or 150% */
-          
-          
-          /* UI/Footer */
-          color: #212424;
-          &:first-child {
-            color: #697279;
-          }
-          @include breakpoint($sm-bp) {
-            font-size: 2rem;
-            line-height: 3rem;
-          }
-        }
-      }
-    }
-    .left-block {
-      display: flex;
-      flex-direction: column;
-      gap: 2.4rem;
-    }
-    .right-block {
-      @include breakpoint($mid-bp) {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-      }
-      @include breakpoint($sm-bp) {
-        padding-left:0 !important;
-      }
-      .links {
-        flex-direction: column;
-        align-items: flex-end;
-        @include breakpoint($sm-bp) {
-          gap: 0;
-          svg {
-            width: 4.5rem;
-            height: 4.5rem;
-          }
-        }
-      }
-    }
-  }
-
-  .sticky {
-    position: sticky;
-    top: calc(var(--headerH) + 2rem);
-    @include breakpoint($mid-bp) {
-      position: static;
-    }
-  }
-
-  .img-wrapper {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-    }
-  }
-
-  .round {
-    border-radius: 50%;
-    overflow: hidden;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-  }
-  
-  .avatar-block {
-    text-decoration: none;
-    @include breakpoint($mid-bp) {
-      display: grid;
-      grid-template-columns: min-content 1fr;
-      column-gap: 4rem;
-      padding-bottom: 5rem;
-    }
-    @include breakpoint($sm-bp) {
-      column-gap: 1.5rem;
-      padding-top: 2rem;
-    }
-    .img-wrapper {
-      width: 10rem;
-      height: 10rem;
-      margin-bottom: 1.5rem;
-      @include breakpoint($mid-bp) {
-        grid-row: 2 span;
-
-        width: 14.7rem;
-        height: 14.7rem;
-        margin-bottom: 0;
-      }
-      @include breakpoint($sm-bp) {
-        width: 8rem;
-        height: 8rem;
-      }
-    }
-    .avatar-name {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      /* or 150% */
-      
-      
-      /* UI/Footer */
-      
-      color: #697279;
-      @include breakpoint($mid-bp) {
-        font-size: 2.4rem;
-        line-height: 3.6rem;
-      }
-      @include breakpoint($sm-bp) {
-        font-size: 1.9rem;
-        line-height: 3rem;
-      }
-    }
-    .avatar-date {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      /* or 150% */
-      
-      
-      /* UI/Footer */
-      
-      color: #697279;
-      @include breakpoint($mid-bp) {
-        font-size: 2.4rem;
-        line-height: 3.6rem;
-      }
-      @include breakpoint($sm-bp) {
-        font-size: 1.9rem;
-        line-height: 3rem;
-      }
-    }
-    .avatar-name + .avatar-date {
-      padding-top: 1.6rem;
-      margin-top: 2rem;
-      position: relative;
-      @include breakpoint($mid-bp) {
-        padding-top: 1.8rem;
-        margin-top: 1rem;
-      }
-      @include breakpoint($sm-bp) {
-        margin-top: 0;
-        padding-top: 1.4rem;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 0.1rem;
-        background-color: #D2DCE5;
-        width: 4rem;
-        @include breakpoint($sm-bp) {
-          display: none;
-        }
-      }
-    }
-  }
-  
-  .man36 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 3.6rem;
-    line-height: 5.2rem;
-    /* or 144% */
-    
-    letter-spacing: -0.01em;
-    
-    /* UI/Black/High */
-    
-    color: #212424;
-    @include breakpoint($sm-bp) {
-      font-size: 2.8rem;
-      line-height: 4.65rem;
-    }
-  }
-  .man16 {
+  .events__name {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 2.4rem;
-    
-    color: #40454E;
-    
+    display: block;
+    color: #A50F2D;
+    padding-bottom: 1rem;
   }
-  .man20 {
+
+  .events__title {
     font-family: 'Manrope';
     font-style: normal;
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    /* or 160% */
-    
-    
-    /* UI/Black/High */
-    
-    color: #212424;    
-    .red {
-      text-decoration: underline;
-    }
-    @include breakpoint($sm-bp) {
-      font-size: 2.1rem;
-      line-height: 3.15rem;
-    }
-  }
-  .quote {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    border-top: 0.1rem solid #D2DCE5;
-    border-bottom: 0.1rem solid #D2DCE5;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    @include breakpoint($xl-bp) {
-      margin-top: 8rem;
-      margin-bottom: 8rem;
-    }
-    @include breakpoint($sm-bp) {
-      margin-top: 5rem;
-      padding-top: 3rem;
-    }
-    &__wrapper {
-      padding-left: 11.7rem;
-      background: url('../images/news-page/quotes.svg') no-repeat;
-      background-position: top 1.4rem left 0.8rem;
-      @include breakpoint($sm-bp) {
-        padding-left: 0;
-        background: unset;
-      }
-      .quote__text {
-        padding-bottom: 3.2rem;
-        @include breakpoint($sm-bp) {
-          &::before {
-            content: "\00ab";
-          }
-          &::after {
-            content: "\00bb";
-          }
-        }
-      }
-      .quote__author-block {
-        display: flex;
-        gap: 2.4rem;
-        @include breakpoint($sm-bp) {
-          gap: 1.5rem;
-        }
-        .img-wrapper {
-          width: 7.2rem;
-          height: 7.2rem;
-        }
-        .quote__author-name {
-          font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 1.6rem;
-          line-height: 2.4rem;
-          /* or 150% */
-          
-          
-          /* UI/Footer */
-          
-          color: #697279;
-          @include breakpoint($sm-bp) {
-            font-size: 1.9rem;
-            line-height: 3rem;
-          }
-        }
-      }
-    }
-  }
-
-  
-  .key-operating {
-    &__title {
-      padding-bottom: 3.2rem;
-      @include breakpoint($sm-bp) {
-        padding-bottom: 2.2rem;
-        font-size: 3.1rem;
-      }
-    }
-    &__list {
-      li {
-        padding: 1.6rem 0;
-        padding-left: 7.7rem;
-        display: flex;
-        flex-direction: column;
-        @include breakpoint($mid-bp) {
-          padding-left: 5.7rem;
-        }
-        @include breakpoint($sm-bp) {
-          padding: 2.2rem 0;
-          padding-left: 5.7rem;
-        }
-        &:nth-child(4n + 1) {
-          background: url('../images/news-page/key-1.svg') no-repeat;
-          background-position: top 2rem left;
-        }
-        &:nth-child(4n + 2) {
-          background: url('../images/news-page/key-2.svg') no-repeat;
-          background-position: top 2rem left;
-        }
-        &:nth-child(4n + 3) {
-          background: url('../images/news-page/key-3.svg') no-repeat;
-          background-position: top 2rem left;
-        }
-        &:nth-child(4n + 4) {
-          background: url('../images/news-page/key-4.svg') no-repeat;
-          background-position: top 2rem left;
-        }
-        .key-operating__list-title {
-          padding-bottom: 1.2rem;
-          @include breakpoint($sm-bp) {
-            font-size: 2.55rem;
-          }
-        }
-        .key-operating__list-desc {
-          @include breakpoint($sm-bp) {
-            line-height: 3.25rem;
-          }
-        }
-      }
-    }
-    .key-operating__list-main {
-      li {
-        padding: 1.2rem 0;
-        padding-left: 4.5rem;
-        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: left top 2.4rem;
-      }
-
-    }
-    .key-operating__list--numeric {
-      li {
-        background: none;
-        position: relative;
-        counter-increment: item;
-        padding-left: 4.7rem;
-        @include breakpoint($sm-bp) {
-          padding-left: 4rem;
-        }
-        &::before {
-          content: counter(item);
-          position: absolute;
-          top: 1.6rem;
-          left: 0;
-          color: #A50F2D;
-          @include breakpoint($sm-bp) {
-            top: 2.1rem;
-          }
-        }
-      }
-    }
-  }
-
-  .unite-block {
-    h3 {
-      @include breakpoint($sm-bp) {
-        font-size: 3.15rem;
-      }
-    }
-    * {
-      &:first-child {
-        padding-bottom: 3.2rem;
-      }
-    }
-    p + p {
-      padding-top: 2.4rem;
-    }
-
-    p + .block-line {
-      margin-top: 2.4rem;
-      @include breakpoint($mid-bp) {
-        margin-top: 1.1rem;
-      }
-    }
-
-    .block-line + p {
-      padding-top: 2.4rem;
-    }
-  }
-
-  .block-line {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
-    /* or 150% */
-    
-    /* UI/Black/High */
-    
     color: #212424;
-    padding: 1.4rem 0;
-    padding-left: 3.2rem;
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 0.2rem;
-      height: 100%;
-      background-color: #A50F2D;
-      @include breakpoint($mid-bp) {
-        height: 74%;
+  }
+}
+
+.events__item--wider {
+  grid-column: 2 span;
+  padding: 3.2rem 4rem;
+  padding-bottom: 12rem;
+  height: 50rem;
+
+  @include breakpoint($sm-bp) {
+    grid-column: 1 span;
+    padding: 0;
+    height: auto;
+  }
+
+  .events__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include breakpoint($sm-bp) {
+      position: relative;
+      height: 26rem;
+    }
+
+    .events__date-block {
+      left: 4rem;
+      bottom: 4rem;
+      gap: 0.4rem;
+
+      .events__date-item {
+        &:not(:first-child) {
+          &::before {
+            top: 3rem;
+          }
+        }
       }
-      @include breakpoint($sm-bp) {
-        height: 100%;
-        width: 0.3rem;
+
+      .events__date {
+        font-size: 5.2rem;
+        line-height: 5.8rem;
+        /* identical to box height, or 112% */
+
+        letter-spacing: -0.02em;
+
+        /* UI / White */
+
+        color: #FFFFFF;
       }
     }
   }
 
-  .pb10 {
-    padding-bottom: 10rem;
-    @include breakpoint($xl-bp) {
-      padding-bottom: 8rem;
-    }
+  .events__name {
+    color: #FFFFFF;
+
     @include breakpoint($sm-bp) {
-      padding-bottom: 5.5rem;
+      color: #A50F2D;
     }
   }
-  .pb15 {
-    padding-bottom: 15rem;
-    @include breakpoint($xl-bp) {
-      padding-bottom: 12rem;
+
+  .events__title {
+    font-size: 3.6rem;
+    line-height: 5.2rem;
+    /* or 144% */
+
+    letter-spacing: -0.01em;
+
+    /* UI / White */
+
+    color: #FFFFFF;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      color: #212424;
     }
+  }
+}
+
+.events__item--big {
+  grid-column: 2 span;
+
+  .events__img {
+    height: 54rem;
+  }
+}
+
+.events__item--max {
+  grid-column: 4 span;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content 1fr;
+  column-gap: 4rem;
+  background-color: #FFFFFF;
+
+  .events__img {
+    grid-row: 2 span;
+    height: 57.2rem;
+    margin-bottom: 0;
+  }
+
+  .events__title {
+    max-width: 78rem;
+  }
+
+  .events__name {
+    padding-top: 3.2rem;
+  }
+}
+
+.video {
+  .video__main-container {
+    padding-top: 4.85rem;
+    padding-bottom: 8rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+
+    @include breakpoint($xl-bp) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
     @include breakpoint($mid-bp) {
-      padding-bottom: 10rem;
-    }
-    @include breakpoint($sm-bp) {
-      padding-bottom: 6rem;
-    }
-  }
-
-  .read-also {
-    .read-also__title {
-      padding-bottom: 2.4rem;
-      @include breakpoint($sm-bp) {
-        font-size: 2.6rem;
-      }
-    }
-    .read-also__container {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 4rem;
-      @include breakpoint($mid-bp) {
-        gap: 2rem;
+      column-gap: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .events__item {
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: 2 span;
+
+        .events__img {
+          height: 54rem;
+        }
       }
-      @include breakpoint($sm-bp) {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 0;
-      }
-      .read-also__item {
+
+      &:nth-child(7) {
+        grid-column: 4 span;
         display: grid;
-        grid-template-columns: 1fr min-content;
-        gap: 2rem;
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        
-        color: #212424;
-        text-decoration: none;
-        padding: 7.1rem 0;
-        border-top: 0.1rem solid #D2DCE5;
-        border-bottom: 0.1rem solid #D2DCE5;
-        &:first-child {
-          @include breakpoint($sm-bp) {
-            border-bottom: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content 1fr;
+        column-gap: 4rem;
+        background-color: #FFFFFF;
+
+        .events__img {
+          grid-row: 2 span;
+          height: 57.2rem;
+          margin-bottom: 0;
+        }
+
+        .events__title {
+          max-width: 78rem;
+        }
+
+        .events__name {
+          padding-top: 3.2rem;
+        }
+      }
+
+      .events__img {
+        &::after {
+          display: none;
+        }
+      }
+
+      @include breakpoint($xl-bp) {
+        grid-column: 2 span;
+
+        &:nth-child(4),
+        &:nth-child(5) {
+          grid-column: 3 span;
+
+          .events__img {
+            height: 35.2rem;
           }
         }
-        @include breakpoint($xxl-bp) {
-          padding: 4.1rem 0;
+
+        &:nth-child(6) {
+          grid-column: 6 span;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: min-content 1fr;
+          column-gap: 4rem;
+          background-color: #FFFFFF;
+
+          .events__img {
+            grid-row: 2 span;
+            height: 57.2rem;
+            margin-bottom: 0;
+          }
+
+          .events__title {
+            max-width: 78rem;
+          }
+
+          .events__name {
+            padding-top: 3.2rem;
+          }
         }
-        @include breakpoint($xl-bp) {
-          padding: 2.5rem 0;
-          gap: 5rem;
+
+        &:nth-child(7) {
+          grid-column: 2 span;
+          display: block;
+          background-color: unset;
+
+          .events__img {
+            grid-row: 2 span;
+            height: auto;
+            margin-bottom: 2rem;
+          }
+
+          .events__title {
+            max-width: none;
+          }
+
+          .events__name {
+            padding-top: 0;
+          }
         }
-        @include breakpoint($mid-bp) {
-          padding: 4.1rem 0;
-          gap: 2rem;
+      }
+
+      @include breakpoint($mid-bp) {
+
+        &,
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: 1 span;
+          background-color: unset;
+          display: block;
+
+          .events__name {
+            padding-top: 0;
+          }
+
+          .events__img {
+            height: 21rem;
+            margin-bottom: 2rem;
+          }
         }
-        @include breakpoint($sm-bp) {
-          font-size: 2rem;
-          line-height: 2.6rem;
-          padding: 2.5rem 0;
-          gap: 1rem;
+
+        &:nth-child(7) {
+          background-color: #FFFFFF;
+
+          .events__name {
+            padding-left: 3rem;
+          }
+
+          .events__title {
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-bottom: 2rem;
+            display: block;
+          }
         }
-        svg {
-          width: 3.2rem;
-          height: 3.2rem;
-          @include breakpoint($sm-bp) {
-            width: 4rem;
-            height: 4rem;
-            margin-right: 0.5rem;
-            transform: translateY(-.5rem);
+      }
+
+      @include breakpoint($sm-bp) {
+        &:nth-child(7) {
+          grid-column: 1 span;
+          background-color: unset;
+
+          .events__name {
+            padding-left: 0;
+          }
+
+          .events__title {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
           }
         }
       }
     }
+
+    .events__item--big {
+      grid-column: 3 span;
+    }
+  }
+}
+
+.media,
+.video-page,
+.news-page {
+  .section-top.align-bottom {
+    @include breakpoint($mid-bp) {
+      margin-top: 10rem;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 5.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+
+    .link-red {
+      margin-top: 0;
+    }
   }
 
-  .man24 {
+  .section-top__title {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
     /* identical to box height, or 150% */
-    
+
+
+    /* UI/Black/High */
+
     color: #212424;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.6rem;
+    }
   }
 
-  .press-contacts {
+  .news__container {
+    border-top: 0.1rem solid #D2DCE5;
     padding-top: 4rem;
-    border-top: .1rem solid #D2DCE5;
-    @include breakpoint($xl-bp) {
-      padding-top: 3.3rem;
-    }
-  }
-  .press-contacts__desc {
-    padding-bottom: 3.2rem;
-  }
-  .press-contacts__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    padding-bottom: 4rem;
-    @include breakpoint($xl-bp) {
-      padding-bottom: 8rem;
-    }
+
     @include breakpoint($mid-bp) {
-      gap: 2rem;
-      padding-bottom: 4rem;
-    }
-    @include breakpoint($sm-bp) {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2.5rem;
-      padding-bottom: 7rem;
+      padding-top: 2.5rem;
     }
   }
-  .press-contacts__block {
-    padding: 2.4rem;
-    padding-top: 1.6rem;
-    background-color: #FFFFFF;
-    @include breakpoint($mid-bp) {
-      padding-bottom: 1.6rem;
-    }
+
+  .news__slider {
+    margin-top: 2.7rem;
+
     @include breakpoint($sm-bp) {
-      padding-bottom: 2.8rem;
+      width: 100%;
     }
-    .press-contacts__name {
-      color: #AAB8C3;
-      padding-bottom: 1.6rem;
-    }
-    .press-contacts__avatar {
-        display: grid;
-        grid-template-columns: min-content 1fr;
-        gap: 1.6rem;
-        align-items: center;
-      .press-contacts__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+  }
+
+  .wrapper--swiper {
+    overflow: hidden;
+
+    @include breakpoint($mid-bp) {
+      padding-right: 0;
+
+      .section-top {
+        padding-right: 2rem;
       }
-      .img-wrapper {
-        width: 8rem;
-        height: 8rem;
-        @include breakpoint($sm-bp) {
-          width: 9.5rem;
-          height: 9.5rem;
-          align-self: flex-start;
+
+      .news__container {
+        border-top: 0;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: calc(100% - 2rem);
+          height: 0.1rem;
+          background-color: #D2DCE5;
         }
       }
-      .press-contacts-name {
+    }
+  }
+}
+
+
+.news-page {
+  .section-top.align-bottom {
+    // @include breakpoint($sm-bp) {
+    //   .link-red {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  @include breakpoint($sm-bp) {
+    .news__slider {
+      margin-left: 0;
+
+      .news__container {
+        // padding-top: 0;
+        border-top: 0;
+        margin-left: 0;
+        width: 100%;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.video-page {
+  .breadcrumbs {
+    padding-bottom: 7.6rem;
+
+    @include breakpoint($mid-bp) {
+      padding-bottom: 4.9rem;
+    }
+
+    .breadcrumbs__item {
+      &::after {
+        filter: brightness(0.5);
+      }
+    }
+
+    a {
+      color: rgba($color: #212424, $alpha: 0.7);
+    }
+  }
+
+  .intro__pop-up_wrapper {
+    padding-bottom: 8rem;
+    position: relative;
+
+    @include breakpoint($mid-bp) {
+      padding-bottom: 6rem;
+    }
+
+    .form-modal__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10rem;
+      height: 10rem;
+
+      @include breakpoint($mid-bp) {
+        top: 40%;
+        width: 6.9rem;
+        height: 6.9rem;
+      }
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .intro__pop-up_video {
+    width: 100%;
+  }
+}
+
+.video-page,
+.event-page {
+  .news__container {
+    .swiper-slide {
+      width: 43rem;
+      height: auto;
+
+      .events__name {
         @include breakpoint($sm-bp) {
           font-size: 2rem;
-          line-height: 3rem;
+          padding-bottom: 2rem;
         }
       }
-      .press-contacts-link {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.5rem;
-        line-height: 2.4rem;
+
+      .events__title {
         @include breakpoint($sm-bp) {
-          font-size: 1.95rem;
-          line-height: 2.6rem;
+          font-size: 2.6rem;
+          font-weight: 500;
         }
+      }
+
+      @include breakpoint($mid-bp) {
+        width: 36rem;
       }
     }
   }
+}
 
+.video-page__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4rem;
 
-  .wrapper-margin {
-    margin-left: 4rem;
-    margin-right: 4rem;
-    @include breakpoint($mid-bp) {
-      margin-right: 2rem;
-      margin-left: 2rem;
-    }
+  @include breakpoint($xl-bp) {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .subscribe {
-    background-image: url('../images/news-page/subscribe-1.jpg');
-    background-size: cover;
-    padding: 15.6rem 11.7rem;
-    @include breakpoint($xl-bp) {
-      padding: 8rem 11.7rem 6rem;
-    }
-    @include breakpoint($mid-bp) {
-      padding: 13.8rem 2.5rem;
-    }
-    @include breakpoint($sm-bp) {
-      padding: 5rem 2.5rem;
-    }
-    .subscribe__title {
+
+  @include breakpoint($mid-bp) {
+    gap: 5rem;
+    padding-bottom: 6rem;
+  }
+
+  .video-page__title-wrapper {
+    max-width: 128rem;
+
+    .video-page__title {
       font-family: 'Manrope';
       font-style: normal;
       font-weight: 400;
       font-size: 5.2rem;
       line-height: 5.8rem;
       /* or 112% */
-      
-      letter-spacing: -0.02em;
-      
-      /* UI / White */
-      
-      color: #FFFFFF;
 
-      padding-bottom: 7.2rem;
-      max-width: 91rem;
-      @include breakpoint($xl-bp) {
-        max-width: 69rem;
-      }
-      @include breakpoint($mid-bp) {
-        padding-bottom: 1.7rem;
-      }
+      letter-spacing: -0.02em;
+
+      /* UI/Black/High */
+
+      color: #212424;
+      padding-bottom: 3.2rem;
+
       @include breakpoint($sm-bp) {
-        font-size: 4rem;
-        line-height: 5rem;
-        padding-bottom: 8.2rem;
+        font-size: 4.3rem;
+        letter-spacing: normal;
+        line-height: 5.2rem;
       }
     }
-    .subscribe__form {
-      padding-bottom: 7.2rem;
-      display: flex;
-      gap: 2.4rem;
-      @include breakpoint($mid-bp) {
-        padding-bottom: 5.2rem;
-      }
-      @include breakpoint($sm-bp) {
-        flex-direction: column;
-        gap: 3.5rem;
-        padding-bottom: 3.5rem;
-      }
-      .subscribe__input {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        
-        color: #AAB8C3;
-        border-bottom: 0.1rem solid #AAB8C3;
-        padding-top: 1.6rem;
-        padding-bottom: 2.3rem;
-        width: 50.8rem;
-        @include breakpoint($xl-bp) {
-          width: 33.8rem;
-        }
-        @include breakpoint($mid-bp) {
-          width: 100%;
-        }
-        @include breakpoint($sm-bp) {
-          padding-bottom: 3rem;
-          width: auto;
-        }
-        &::placeholder {
-          font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 1.6rem;
-          line-height: 2.4rem;
-          
-          color: #AAB8C3;
-        }
-      }
-      .subscribe__button {
-        border: 0;
-        background: #A50F2D;
-        border-radius: 0.4rem;
-        padding: 2rem 5.8rem;
 
+    .video-page__type {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 3.2rem;
+      /* identical to box height, or 160% */
+
+
+      /* UI / Accent */
+
+      color: #A50F2D;
+    }
+
+    .video-page__date {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 3.2rem;
+      /* identical to box height, or 160% */
+
+
+      /* UI/Footer */
+
+      color: #697279;
+      padding-left: 2rem;
+    }
+  }
+
+  .links {
+    flex-direction: column;
+
+    @include breakpoint($xl-bp) {
+      flex-direction: row;
+    }
+
+    @include breakpoint($sm-bp) {
+      transform: translateX(-1rem);
+    }
+  }
+}
+
+.text-wrapper {
+  max-width: 122.8rem;
+  margin: 0 auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  @include breakpoint($xl-bp) {
+    max-width: 90.2rem;
+  }
+
+  .text-wrapper__first {
+    padding-bottom: 7.3rem;
+
+    @include breakpoint($xl-bp) {
+      padding-bottom: 5.3rem;
+    }
+
+    @include breakpoint($mid-bp) {
+      padding-top: 5rem;
+      padding-bottom: 8rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding-top: 0;
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+
+.video-page__main-desc {
+  .video-page__desc-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-bottom: 8rem;
+
+    @include breakpoint($mid-bp) {
+      gap: 3.2rem;
+      padding-bottom: 6rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding-bottom: 6.8rem;
+    }
+
+    .video-page__desc-title {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 3.6rem;
+      line-height: 5rem;
+      /* identical to box height, or 144% */
+
+      letter-spacing: -0.01em;
+
+      /* UI/Black/High */
+
+      color: #212424;
+
+      @include breakpoint($sm-bp) {
+        font-size: 3.1rem;
+        letter-spacing: normal;
+      }
+    }
+
+    div {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      /* or 150% */
+
+
+      /* UI/Black/High */
+
+      color: #212424;
+
+      padding: 3.6rem 0;
+      padding-left: 3.4rem;
+
+      border-left: 0.2rem solid #A50F2D;
+
+      @include breakpoint($xl-bp) {
+        padding: 0;
+        padding-left: 3.4rem;
+      }
+
+      @include breakpoint($mid-bp) {
+        padding: 0;
+        padding-left: 3.4rem;
+        border-left: none;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          width: 0.2rem;
+          background-color: #A50F2D;
+          height: 85%;
+        }
+      }
+
+      @include breakpoint($sm-bp) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          width: 0.3rem;
+          background-color: #A50F2D;
+          height: 105%;
+        }
+      }
+    }
+
+    p {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 3.2rem;
+      /* or 160% */
+
+
+      /* UI/Black/High */
+
+      color: #212424;
+    }
+  }
+}
+
+.tag-wrapper {
+  border-top: 0.1rem solid #D2DCE5;
+  padding-top: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint($sm-bp) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+
+    .tag-wrapper__tags-item {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      /* identical to box height, or 150% */
+
+
+      /* UI/Black/High */
+
+      color: #212424;
+      text-decoration: none;
+
+      padding: 0.8rem 1.6rem;
+      border: 0.1rem solid #D2DCE5;
+      border-radius: 0.4rem;
+
+      @include breakpoint($sm-bp) {
+        font-size: 2.1rem;
+        padding: 1rem 1.6rem;
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  @include breakpoint($sm-bp) {
+    gap: 1.2rem;
+  }
+
+  a {
+    svg {
+      width: 4rem;
+      height: 4rem;
+      fill: #40454E;
+
+      @include breakpoint($sm-bp) {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+
+    &:hover {
+      svg {
+        fill: #697279;
+      }
+    }
+  }
+}
+
+.red {
+  color: #A50F2D;
+  text-decoration: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.news-page {
+  .text-wrapper {
+    max-width: 114.4rem;
+
+    @include breakpoint($xl-bp) {
+      max-width: 93.4rem;
+    }
+  }
+
+  .text-wrapper--swiper {
+    padding-right: 0;
+  }
+
+  .insights-title {
+    max-width: 119.5rem;
+
+    @include breakpoint($xl-bp) {
+      max-width: 105.5rem;
+    }
+  }
+
+  .news-page__swiper {
+    margin-top: 10rem;
+
+    @include breakpoint($xl-bp) {
+      margin-top: 5.2rem;
+    }
+
+    .swiper-slide {
+      @include breakpoint($mid-bp) {
+        width: 54rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        width: 39rem;
+      }
+    }
+
+    .img-wrapper {
+      height: 66.6rem;
+
+      @include breakpoint($xxl-bp) {
+        height: 58.2rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        height: 55rem;
+      }
+
+      @include breakpoint($mid-bp) {
+        height: 43.7rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        height: 32.7rem;
+      }
+    }
+  }
+
+  .news-page__contest {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    /* or 150% */
+
+
+    /* UI/Black/Low */
+
+    color: #AAB8C3;
+    padding-top: 2.4rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.1rem;
+      line-height: 2.85rem;
+      font-weight: 400;
+    }
+  }
+
+  .swiper-container {
+    position: relative;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 41.5%;
+      transform: translateY(-50%);
+
+      @include breakpoint($mid-bp) {
+        display: none;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -6.5rem;
+    }
+
+    .swiper-button-next {
+      right: -6.5rem;
+    }
+  }
+}
+
+
+
+.sticky-wrapper {
+  display: grid;
+  grid-template-columns: 25rem 1fr 25rem;
+  padding-top: 10rem;
+
+  @include breakpoint($xxl-bp) {
+    padding-top: 8rem;
+  }
+
+  @include breakpoint($mid-bp) {
+    grid-template-columns: 1fr min-content;
+    padding-top: 5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-top: 3rem;
+  }
+
+  .center-block {
+    @include breakpoint($mid-bp) {
+      grid-column: 2 span;
+    }
+  }
+
+  .line {
+    display: none;
+
+    @include breakpoint($mid-bp) {
+      display: block;
+      grid-column: 2 span;
+    }
+  }
+
+  &__block {
+    .sticky-wrapper__item {
+      div {
         font-family: 'Manrope';
         font-style: normal;
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.4rem;
         /* identical to box height, or 150% */
-        
-        color: #FFFFFF;
+
+
+        /* UI/Footer */
+        color: #212424;
+
+        &:first-child {
+          color: #697279;
+        }
+
         @include breakpoint($sm-bp) {
           font-size: 2rem;
-          font-weight: 400;
-          padding: 2.5rem 5.8rem;
+          line-height: 3rem;
         }
-      }
-    }
-    .subscribe__desc {
-      font-family: 'Manrope';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 1.2rem;
-      line-height: 2.2rem;
-      
-      color: #697279;
-      @include breakpoint($sm-bp) {
-        font-size: 1.6rem;
-        line-height: 2.85rem;
-      }
-      a {
-        color: #697279;
-        text-decoration: underline;
       }
     }
   }
 
-  .registration-block {
+  .left-block {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    gap: 2.4rem;
+  }
+
+  .right-block {
     @include breakpoint($mid-bp) {
-      padding-top: 5rem;
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
     }
+
     @include breakpoint($sm-bp) {
-      padding-top: 0;
+      padding-left: 0 !important;
     }
-    .link-red {
-      @include breakpoint($mid-bp) {
+
+    .links {
+      flex-direction: column;
+      align-items: flex-end;
+
+      @include breakpoint($sm-bp) {
+        gap: 0;
+
+        svg {
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+      }
+    }
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: calc(var(--headerH) + 2rem);
+
+  @include breakpoint($mid-bp) {
+    position: static;
+  }
+}
+
+.img-wrapper {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.avatar-block {
+  text-decoration: none;
+
+  @include breakpoint($mid-bp) {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 4rem;
+    padding-bottom: 5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    column-gap: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .img-wrapper {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint($mid-bp) {
+      grid-row: 2 span;
+
+      width: 14.7rem;
+      height: 14.7rem;
+      margin-bottom: 0;
+    }
+
+    @include breakpoint($sm-bp) {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  .avatar-name {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    /* or 150% */
+
+
+    /* UI/Footer */
+
+    color: #697279;
+
+    @include breakpoint($mid-bp) {
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.9rem;
+      line-height: 3rem;
+    }
+  }
+
+  .avatar-date {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    /* or 150% */
+
+
+    /* UI/Footer */
+
+    color: #697279;
+
+    @include breakpoint($mid-bp) {
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.9rem;
+      line-height: 3rem;
+    }
+  }
+
+  .avatar-name+.avatar-date {
+    padding-top: 1.6rem;
+    margin-top: 2rem;
+    position: relative;
+
+    @include breakpoint($mid-bp) {
+      padding-top: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 0;
+      padding-top: 1.4rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.1rem;
+      background-color: #D2DCE5;
+      width: 4rem;
+
+      @include breakpoint($sm-bp) {
         display: none;
       }
     }
   }
+}
 
-  .event-page {
-    .wrapper--swiper {
-      @include breakpoint($mid-bp) {
-        padding-right: 2rem;
-      }
+.man36 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 5.2rem;
+  /* or 144% */
+
+  letter-spacing: -0.01em;
+
+  /* UI/Black/High */
+
+  color: #212424;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.8rem;
+    line-height: 4.65rem;
+  }
+}
+
+.man16 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+
+  color: #40454E;
+
+}
+
+.man20 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  /* or 160% */
+
+
+  /* UI/Black/High */
+
+  color: #212424;
+
+  .red {
+    text-decoration: underline;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.1rem;
+    line-height: 3.15rem;
+  }
+}
+
+.quote {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-top: 0.1rem solid #D2DCE5;
+  border-bottom: 0.1rem solid #D2DCE5;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+
+  @include breakpoint($xl-bp) {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-top: 5rem;
+    padding-top: 3rem;
+  }
+
+  &__wrapper {
+    padding-left: 11.7rem;
+    background: url('../images/news-page/quotes.svg') no-repeat;
+    background-position: top 1.4rem left 0.8rem;
+
+    @include breakpoint($sm-bp) {
+      padding-left: 0;
+      background: unset;
+    }
+
+    .quote__text {
+      padding-bottom: 3.2rem;
+
       @include breakpoint($sm-bp) {
-        padding-right: 0;
-      }
-      .section-top {
-        @include breakpoint($mid-bp) {
-          padding-right: 0;
-        }
-      }
-      .news__container {
         &::before {
-          @include breakpoint($mid-bp) {
-            width: 100%;
-          }
+          content: "\00ab";
+        }
+
+        &::after {
+          content: "\00bb";
         }
       }
     }
-    .event-page__about {
+
+    .quote__author-block {
+      display: flex;
+      gap: 2.4rem;
+
+      @include breakpoint($sm-bp) {
+        gap: 1.5rem;
+      }
+
+      .img-wrapper {
+        width: 7.2rem;
+        height: 7.2rem;
+      }
+
+      .quote__author-name {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        /* or 150% */
+
+
+        /* UI/Footer */
+
+        color: #697279;
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.9rem;
+          line-height: 3rem;
+        }
+      }
+    }
+  }
+}
+
+
+.key-operating {
+  &__title {
+    padding-bottom: 3.2rem;
+
+    @include breakpoint($sm-bp) {
+      padding-bottom: 2.2rem;
+      font-size: 3.1rem;
+    }
+  }
+
+  &__list {
+    li {
+      padding: 1.6rem 0;
+      padding-left: 7.7rem;
       display: flex;
       flex-direction: column;
-      gap: 2.4rem;
-      .event-page__about-title {
-        padding-bottom: 0.8rem;
+
+      @include breakpoint($mid-bp) {
+        padding-left: 5.7rem;
       }
-      .block-line {
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-    }
-    .event-page__program {
-      .event-page__program-title {
-        padding-bottom: 5.2rem;
-        @include breakpoint($mid-bp) {
-          padding-bottom: 3.2rem;
-        }
-        @include breakpoint($sm-bp) {
-          font-size: 3.2rem;
-        }
-      }
-    }
-    .events__img {
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(33, 33, 33, 0.4);
-      } 
-    }
-    .events__item .events__img .events__date-block .events__date {
+
       @include breakpoint($sm-bp) {
-        font-size: 4.6rem;
+        padding: 2.2rem 0;
+        padding-left: 5.7rem;
+      }
+
+      &:nth-child(4n + 1) {
+        background: url('../images/news-page/key-1.svg') no-repeat;
+        background-position: top 2rem left;
+      }
+
+      &:nth-child(4n + 2) {
+        background: url('../images/news-page/key-2.svg') no-repeat;
+        background-position: top 2rem left;
+      }
+
+      &:nth-child(4n + 3) {
+        background: url('../images/news-page/key-3.svg') no-repeat;
+        background-position: top 2rem left;
+      }
+
+      &:nth-child(4n + 4) {
+        background: url('../images/news-page/key-4.svg') no-repeat;
+        background-position: top 2rem left;
+      }
+
+      .key-operating__list-title {
+        padding-bottom: 1.2rem;
+
+        @include breakpoint($sm-bp) {
+          font-size: 2.55rem;
+        }
+      }
+
+      .key-operating__list-desc {
+        @include breakpoint($sm-bp) {
+          line-height: 3.25rem;
+        }
       }
     }
-    .events__item .events__img .events__date-block .events__month {
+  }
+
+  .key-operating__list-main {
+    li {
+      padding: 1.2rem 0;
+      padding-left: 4.5rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left top 2.4rem;
+    }
+
+  }
+
+  .key-operating__list--numeric {
+    li {
+      background: none;
+      position: relative;
+      counter-increment: item;
+      padding-left: 4.7rem;
+
+      @include breakpoint($sm-bp) {
+        padding-left: 4rem;
+      }
+
+      &::before {
+        content: counter(item);
+        position: absolute;
+        top: 1.6rem;
+        left: 0;
+        color: #A50F2D;
+
+        @include breakpoint($sm-bp) {
+          top: 2.1rem;
+        }
+      }
+    }
+  }
+}
+
+.unite-block {
+  h3 {
+    @include breakpoint($sm-bp) {
+      font-size: 3.15rem;
+    }
+  }
+
+  * {
+    &:first-child {
+      padding-bottom: 3.2rem;
+    }
+  }
+
+  p+p {
+    padding-top: 2.4rem;
+  }
+
+  p+.block-line {
+    margin-top: 2.4rem;
+
+    @include breakpoint($mid-bp) {
+      margin-top: 1.1rem;
+    }
+  }
+
+  .block-line+p {
+    padding-top: 2.4rem;
+  }
+}
+
+.block-line {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* or 150% */
+
+  /* UI/Black/High */
+
+  color: #212424;
+  padding: 1.4rem 0;
+  padding-left: 3.2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 0.2rem;
+    height: 100%;
+    background-color: #A50F2D;
+
+    @include breakpoint($mid-bp) {
+      height: 74%;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: 100%;
+      width: 0.3rem;
+    }
+  }
+}
+
+.pb10 {
+  padding-bottom: 10rem;
+
+  @include breakpoint($xl-bp) {
+    padding-bottom: 8rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 5.5rem;
+  }
+}
+
+.pb15 {
+  padding-bottom: 15rem;
+
+  @include breakpoint($xl-bp) {
+    padding-bottom: 12rem;
+  }
+
+  @include breakpoint($mid-bp) {
+    padding-bottom: 10rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 6rem;
+  }
+}
+
+.read-also {
+  .read-also__title {
+    padding-bottom: 2.4rem;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.6rem;
+    }
+  }
+
+  .read-also__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+    @include breakpoint($mid-bp) {
+      gap: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0;
+    }
+
+    .read-also__item {
+      display: grid;
+      grid-template-columns: 1fr min-content;
+      gap: 2rem;
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+
+      color: #212424;
+      text-decoration: none;
+      padding: 7.1rem 0;
+      border-top: 0.1rem solid #D2DCE5;
+      border-bottom: 0.1rem solid #D2DCE5;
+
+      &:first-child {
+        @include breakpoint($sm-bp) {
+          border-bottom: 0;
+        }
+      }
+
+      @include breakpoint($xxl-bp) {
+        padding: 4.1rem 0;
+      }
+
+      @include breakpoint($xl-bp) {
+        padding: 2.5rem 0;
+        gap: 5rem;
+      }
+
+      @include breakpoint($mid-bp) {
+        padding: 4.1rem 0;
+        gap: 2rem;
+      }
+
       @include breakpoint($sm-bp) {
         font-size: 2rem;
-        line-height: 3.4rem;
+        line-height: 2.6rem;
+        padding: 2.5rem 0;
+        gap: 1rem;
+      }
+
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        @include breakpoint($sm-bp) {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 0.5rem;
+          transform: translateY(-.5rem);
+        }
+      }
+    }
+  }
+}
+
+.man24 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* identical to box height, or 150% */
+
+  color: #212424;
+}
+
+.press-contacts {
+  padding-top: 4rem;
+  border-top: .1rem solid #D2DCE5;
+
+  @include breakpoint($xl-bp) {
+    padding-top: 3.3rem;
+  }
+}
+
+.press-contacts__desc {
+  padding-bottom: 3.2rem;
+}
+
+.press-contacts__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  padding-bottom: 4rem;
+
+  @include breakpoint($xl-bp) {
+    padding-bottom: 8rem;
+  }
+
+  @include breakpoint($mid-bp) {
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.press-contacts__block {
+  padding: 2.4rem;
+  padding-top: 1.6rem;
+  background-color: #FFFFFF;
+
+  @include breakpoint($mid-bp) {
+    padding-bottom: 1.6rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 2.8rem;
+  }
+
+  .press-contacts__name {
+    color: #AAB8C3;
+    padding-bottom: 1.6rem;
+  }
+
+  .press-contacts__avatar {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 1.6rem;
+    align-items: center;
+
+    .press-contacts__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .img-wrapper {
+      width: 8rem;
+      height: 8rem;
+
+      @include breakpoint($sm-bp) {
+        width: 9.5rem;
+        height: 9.5rem;
+        align-self: flex-start;
       }
     }
 
-    .sticky-wrapper {
+    .press-contacts-name {
+      @include breakpoint($sm-bp) {
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+    }
+
+    .press-contacts-link {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+
+      @include breakpoint($sm-bp) {
+        font-size: 1.95rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+}
+
+
+.wrapper-margin {
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+  @include breakpoint($mid-bp) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+.subscribe {
+  background-image: url('../images/news-page/subscribe-1.jpg');
+  background-size: cover;
+  padding: 15.6rem 11.7rem;
+
+  @include breakpoint($xl-bp) {
+    padding: 8rem 11.7rem 6rem;
+  }
+
+  @include breakpoint($mid-bp) {
+    padding: 13.8rem 2.5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding: 5rem 2.5rem;
+  }
+
+  .subscribe__title {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.2rem;
+    line-height: 5.8rem;
+    /* or 112% */
+
+    letter-spacing: -0.02em;
+
+    /* UI / White */
+
+    color: #FFFFFF;
+
+    padding-bottom: 7.2rem;
+    max-width: 91rem;
+
+    @include breakpoint($xl-bp) {
+      max-width: 69rem;
+    }
+
+    @include breakpoint($mid-bp) {
+      padding-bottom: 1.7rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      font-size: 4rem;
+      line-height: 5rem;
+      padding-bottom: 8.2rem;
+    }
+  }
+
+  .subscribe__form {
+    padding-bottom: 7.2rem;
+    display: flex;
+    gap: 2.4rem;
+
+    @include breakpoint($mid-bp) {
+      padding-bottom: 5.2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+      gap: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .subscribe__input {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+
+      color: #AAB8C3;
+      border-bottom: 0.1rem solid #AAB8C3;
+      padding-top: 1.6rem;
+      padding-bottom: 2.3rem;
+      width: 50.8rem;
+
       @include breakpoint($xl-bp) {
-        padding-top: 8rem;
+        width: 33.8rem;
       }
+
       @include breakpoint($mid-bp) {
-        padding-top: 5rem;
+        width: 100%;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding-bottom: 3rem;
+        width: auto;
+      }
+
+      &::placeholder {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+
+        color: #AAB8C3;
       }
     }
-    .image-wrapper {
-      .img-wrapper {
-        @include breakpoint($xl-bp) {
-          height: 55.6rem;
-        }
-        @include breakpoint($mid-bp) {
-          height: 42rem;
-        }
-        @include breakpoint($sm-bp) {
-          height: 33rem;
-        }
+
+    .subscribe__button {
+      border: 0;
+      background: #A50F2D;
+      border-radius: 0.4rem;
+      padding: 2rem 5.8rem;
+
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      /* identical to box height, or 150% */
+
+      color: #FFFFFF;
+
+      @include breakpoint($sm-bp) {
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 2.5rem 5.8rem;
       }
     }
-    .key-operating {
-      @include breakpoint($xl-bp) {
-        padding-bottom: 12rem;
-      }
-      @include breakpoint($mid-bp) {
-        padding-bottom: 8rem;
-      }
+  }
+
+  .subscribe__desc {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+
+    color: #697279;
+
+    @include breakpoint($sm-bp) {
+      font-size: 1.6rem;
+      line-height: 2.85rem;
     }
-    .left-block {
-        @include breakpoint($mid-bp) {
-          flex-direction: row;
-          padding-bottom: 4rem;
-        }
-        @include breakpoint($sm-bp) {
-          flex-direction: column;
-        }
-        .sticky-wrapper__item {
-          @include breakpoint($mid-bp) {
-            width: 15.7rem;
-          }
-          @include breakpoint($sm-bp) {
-            width: auto;
-          }
-        }
-        .link-red {
-          display: none;
-          @include breakpoint($mid-bp) {
-            display: flex;
-          }
-        }
-      }
-    .left-block + .link-red {
+
+    a {
+      color: #697279;
+      text-decoration: underline;
+    }
+  }
+}
+
+.registration-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  @include breakpoint($mid-bp) {
+    padding-top: 5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-top: 0;
+  }
+
+  .link-red {
+    @include breakpoint($mid-bp) {
       display: none;
+    }
+  }
+}
+
+.event-page {
+  .wrapper--swiper {
+    @include breakpoint($mid-bp) {
+      padding-right: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding-right: 0;
+    }
+
+    .section-top {
+      @include breakpoint($mid-bp) {
+        padding-right: 0;
+      }
+    }
+
+    .news__container {
+      &::before {
+        @include breakpoint($mid-bp) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .event-page__about {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    .event-page__about-title {
+      padding-bottom: 0.8rem;
+    }
+
+    .block-line {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .event-page__program {
+    .event-page__program-title {
+      padding-bottom: 5.2rem;
+
+      @include breakpoint($mid-bp) {
+        padding-bottom: 3.2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  .events__img {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(33, 33, 33, 0.4);
+    }
+  }
+
+  .events__item .events__img .events__date-block .events__date {
+    @include breakpoint($sm-bp) {
+      font-size: 4.6rem;
+    }
+  }
+
+  .events__item .events__img .events__date-block .events__month {
+    @include breakpoint($sm-bp) {
+      font-size: 2rem;
+      line-height: 3.4rem;
+    }
+  }
+
+  .sticky-wrapper {
+    @include breakpoint($xl-bp) {
+      padding-top: 8rem;
+    }
+
+    @include breakpoint($mid-bp) {
+      padding-top: 5rem;
+    }
+  }
+
+  .image-wrapper {
+    .img-wrapper {
+      @include breakpoint($xl-bp) {
+        height: 55.6rem;
+      }
+
+      @include breakpoint($mid-bp) {
+        height: 42rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        height: 33rem;
+      }
+    }
+  }
+
+  .key-operating {
+    @include breakpoint($xl-bp) {
+      padding-bottom: 12rem;
+    }
+
+    @include breakpoint($mid-bp) {
+      padding-bottom: 8rem;
+    }
+  }
+
+  .left-block {
+    @include breakpoint($mid-bp) {
+      flex-direction: row;
+      padding-bottom: 4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+    }
+
+    .sticky-wrapper__item {
+      @include breakpoint($mid-bp) {
+        width: 15.7rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        width: auto;
+      }
+    }
+
+    .link-red {
+      display: none;
+
       @include breakpoint($mid-bp) {
         display: flex;
-        margin-bottom: 5rem;
-        align-items: center;
       }
     }
+  }
 
-    .right-block {
-      .links {
-        svg {
-          @include breakpoint($sm-bp) {
-            width: 5rem;
-            height: 5rem;
-            transform: translateX(1rem);
-          }
+  .left-block+.link-red {
+    display: none;
+
+    @include breakpoint($mid-bp) {
+      display: flex;
+      margin-bottom: 5rem;
+      align-items: center;
+    }
+  }
+
+  .right-block {
+    .links {
+      svg {
+        @include breakpoint($sm-bp) {
+          width: 5rem;
+          height: 5rem;
+          transform: translateX(1rem);
         }
       }
     }
-    .block-line {
+  }
+
+  .block-line {
+    @include breakpoint($sm-bp) {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+
+.program-block {
+  padding-bottom: 8rem;
+
+  @include breakpoint($mid-bp) {
+    padding-bottom: 4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 6rem;
+  }
+
+  .program-block__title-block {
+    background: rgba(210, 220, 229, 0.3);
+    padding: 3.2rem 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 6.8rem;
+
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .program-block__time {
+      @include breakpoint($sm-bp) {
+        font-size: 2rem;
+      }
+    }
+
+    .program-block__title {
       @include breakpoint($sm-bp) {
         font-size: 2.6rem;
       }
     }
   }
 
-  
-  .program-block {
-    padding-bottom: 8rem;
+  .program-block__item {
+    padding: 3.2rem;
+    padding-left: 0;
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 8.2rem;
+
+    @include breakpoint($xl-bp) {
+      padding-left: 2.4rem;
+    }
+
     @include breakpoint($mid-bp) {
-      padding-bottom: 4rem;
-    }
-    @include breakpoint($sm-bp) {
-      padding-bottom: 6rem;
-    }
-    .program-block__title-block {
-      background: rgba(210, 220, 229, 0.3);
-      padding: 3.2rem 2.4rem;
-      display: flex;
-      align-items: center;
-      gap: 6.8rem;
-      @include breakpoint($sm-bp) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-      }
-      .program-block__time {
-        @include breakpoint($sm-bp) {
-          font-size: 2rem;
-        }
-      }
-      .program-block__title {
-        @include breakpoint($sm-bp) {
-          font-size: 2.6rem;
-        }
-      }
-    }
-    .program-block__item {
-      padding: 3.2rem;
       padding-left: 0;
-
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      column-gap: 8.2rem;
-      @include breakpoint($xl-bp) {
-        padding-left: 2.4rem;
-      }
-      @include breakpoint($mid-bp) {
-        padding-left: 0;
-        column-gap: 7.4rem;
-      }
-      @include breakpoint($sm-bp) {
-        padding-left: 2.4rem;
-        grid-template-columns: 1fr;
-      }
-      .program-block__wrapper {
-        display: flex;
-        flex-direction: column;
-      }
-      .program-block__time {
-        padding-top: 0.5rem;
-        @include breakpoint($sm-bp) {
-          font-size: 2rem;
-          padding-bottom: 1.2rem;
-        }
-      }
-      .program-block__name {
-        padding-bottom: 2.4rem;
-        @include breakpoint($sm-bp) {
-          font-size: 2.6rem;
-        }
-      }
-      .program-block__author {
-        display: grid;
-        grid-template-columns: min-content 1fr;
-        gap: 2.4rem;
-        align-items: center;
-        @include breakpoint($sm-bp) {
-          gap: 1.5rem;
-        }
-        .program-block__avatar {
-          width: 5.2rem;
-          height: 5.2rem;
-          @include breakpoint($sm-bp) {
-            width: 6.2rem;
-            height: 6.2rem;
-          }
-        }
-        .program-block__avatar-wrapper {
-          display: flex;
-          flex-direction: column;
-        }
-        .program-block__author-name {          
-          color: #212424;
-          @include breakpoint($sm-bp) {
-            font-size: 2rem;
-          }
-        }
-        .program-block__author-prof {
-          color: #697279;
-          @include breakpoint($sm-bp) {
-            font-size: 1.9rem;
-          }
-        }
-      }
-      .program-block__author + .program-block__author {
-        padding-top: 1.8rem;
-      }
+      column-gap: 7.4rem;
     }
-    .program-block__item + .program-block__item {
-      border-top: 0.1rem solid #D2DCE5;
-    }
-  }
 
-  .regModal {
-    transition: opacity 0.4s;
-  }
-  .registration {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($color: #212121, $alpha: 0.4);
-    z-index: 200;
-    .registration__block {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: #FFFFFF;
-      height: 100%;
-      width: 68.4rem;
-      padding: 4rem;
-      padding-top: 4.8rem;
-      overflow: scroll;
-      &::-webkit-scrollbar {
-        width: 2px;
-      }
-      
-      /* Track */
-      &::-webkit-scrollbar-track {
-       background-color: transparent;
-      }
-      
-      /* Handle */
-      &::-webkit-scrollbar-thumb {
-         background: #AAB8C3; 
-      }
-      
-      /* Handle on hover */
-      &::-webkit-scrollbar-thumb:hover {
-      background: #A50F2D; 
-      }
+    @include breakpoint($sm-bp) {
+      padding-left: 2.4rem;
+      grid-template-columns: 1fr;
+    }
+
+    .program-block__wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .program-block__time {
+      padding-top: 0.5rem;
 
       @include breakpoint($sm-bp) {
-        height: calc(100% - 4rem);
-        width: 100%;
-        top: 4rem;
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 0;
-        overflow: hidden;
-      }
-
-      .registration__wrapper {
-        display: flex;
-        justify-content: space-between;
-        @include breakpoint($sm-bp) {
-          padding-right: 2.5rem;
-          padding-left: 2.5rem;
-        }
-        .close-button {
-          font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 1.6rem;
-          line-height: 2.4rem;
-          display: flex;
-          align-items: center;
-          gap: 2.4rem;
-          
-          color: #212424;
-          padding: 1.2rem 1.2rem 1.2rem 2.4rem;
-          border: 0.1rem solid #D2DCE5;
-          border-radius: 10rem;
-          height: min-content;
-          position: relative;
-          top: -2rem;
-          transition: background-color .3s;
-          &::before, &::after {
-            display: none;
-          }
-          &:hover {
-            background-color: #D2DCE5;
-            color: #FFFFFF;
-            .close-button__cross {
-              &::before, &::after {
-                background-color: #FFFFFF;
-                @include breakpoint($sm-bp) {
-                  background-color: #D2DCE5;
-                }
-              }
-            }
-          }
-          @include breakpoint($sm-bp) {
-            padding: 0;
-            border: 0;
-            span:nth-child(1) {
-              display: none;
-            }
-          }
-          .close-button__cross {
-            position: relative;
-            display: block;
-            width: 2.8rem;
-            height: 2.8rem;
-            background: rgba(210, 220, 229, 0.3);
-            border-radius: 50%;
-            @include breakpoint($sm-bp) {
-              background-color: #FFFFFF;
-            }
-            &::before, &::after {
-              content: '';
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              width: 50%;
-              height: 0.2rem;
-              background-color: #AAB8C3;
-              transform: translate(-50%, -50%) rotate(45deg);
-              transition: color .3s;
-              @include breakpoint($sm-bp) {
-                height: 0.2rem;
-                width: 100%;
-              }
-            }
-            &::after {
-              transform: translate(-50%, -50%) rotate(-45deg);
-            }
-          }
-        }
-      }
-      .registration__title {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 5.2rem;
-        line-height: 5.8rem;
-        /* identical to box height, or 112% */
-        
-        letter-spacing: -0.02em;
-        
-        /* UI/Black/High */
-        
-        color: #212424;
+        font-size: 2rem;
         padding-bottom: 1.2rem;
       }
-      .registration__subtitle {
+    }
+
+    .program-block__name {
+      padding-bottom: 2.4rem;
+
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+      }
+    }
+
+    .program-block__author {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      gap: 2.4rem;
+      align-items: center;
+
+      @include breakpoint($sm-bp) {
+        gap: 1.5rem;
+      }
+
+      .program-block__avatar {
+        width: 5.2rem;
+        height: 5.2rem;
+
+        @include breakpoint($sm-bp) {
+          width: 6.2rem;
+          height: 6.2rem;
+        }
+      }
+
+      .program-block__avatar-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .program-block__author-name {
+        color: #212424;
+
+        @include breakpoint($sm-bp) {
+          font-size: 2rem;
+        }
+      }
+
+      .program-block__author-prof {
+        color: #697279;
+
+        @include breakpoint($sm-bp) {
+          font-size: 1.9rem;
+        }
+      }
+    }
+
+    .program-block__author+.program-block__author {
+      padding-top: 1.8rem;
+    }
+  }
+
+  .program-block__item+.program-block__item {
+    border-top: 0.1rem solid #D2DCE5;
+  }
+}
+
+.regModal {
+  transition: opacity 0.4s;
+}
+
+.feedBack {
+  transition: opacity 0.4s;
+}
+
+.registration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #212121, $alpha: 0.4);
+  z-index: 200;
+
+  .registration__block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 68.4rem;
+    padding: 4rem;
+    padding-top: 4.8rem;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #AAB8C3;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #A50F2D;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: calc(100% - 4rem);
+      width: 100%;
+      top: 4rem;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      overflow: visible;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem;
+        height: 0.2rem;
+        background-color: #AAB8C3;
+        border-radius: 2px;
+      }
+    }
+
+    .registration__wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @include breakpoint($sm-bp) {
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+      }
+
+      .close-button {
         font-family: 'Manrope';
         font-style: normal;
         font-weight: 500;
-        font-size: 2rem;
-        line-height: 3.2rem;
-        /* identical to box height, or 160% */
-        
-        
-        /* UI/Footer */
-        
-        color: #697279;
-        padding-bottom: 4.4rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+
+        color: #212424;
+        padding: 1.2rem 1.2rem 1.2rem 2.4rem;
+        border: 0.1rem solid #D2DCE5;
+        border-radius: 10rem;
+        height: min-content;
+        position: relative;
+        top: -2rem;
+        transition: background-color .3s;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+
+        &:hover {
+          background-color: #D2DCE5;
+          color: #FFFFFF;
+
+          .close-button__cross {
+
+            &::before,
+            &::after {
+              background-color: #FFFFFF;
+
+              @include breakpoint($sm-bp) {
+                background-color: #D2DCE5;
+              }
+            }
+          }
+        }
+
         @include breakpoint($sm-bp) {
-          padding-left: 2.5rem;
-          padding-right: 2.5rem;
-          padding-bottom: 2rem;
+          padding: 0;
+          border: 0;
+
+          span:nth-child(1) {
+            display: none;
+          }
+        }
+
+        .close-button__cross {
+          position: relative;
+          display: block;
+          width: 2.8rem;
+          height: 2.8rem;
+          background: rgba(210, 220, 229, 0.3);
+          border-radius: 50%;
+
+          @include breakpoint($sm-bp) {
+            background-color: #FFFFFF;
+          }
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 0.2rem;
+            background-color: #AAB8C3;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: color .3s;
+
+            @include breakpoint($sm-bp) {
+              height: 0.2rem;
+              width: 100%;
+            }
+          }
+
+          &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
         }
       }
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-        &::-webkit-scrollbar {
-          width: 2px;
-        }
-        
-        /* Track */
-        &::-webkit-scrollbar-track {
-         background-color: transparent;
-        }
-        
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-           background: #AAB8C3; 
-        }
-        
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-        background: #A50F2D; 
-        }
-        @include breakpoint($sm-bp) {
-          padding-left: 2.5rem;
-          padding-right: 2.5rem;
-          height: calc(100% - 10rem);
-          overflow: scroll;
-          padding-bottom: 4rem;
-          width: 100%;
-        }
-        .custom-select {
-          width: 100%;
-          .select-selected {
-            font-family: 'Manrope';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 1.6rem;
-            line-height: 2.4rem;
-            /* identical to box height, or 150% */
-            
-            color: #697279;
-            padding-top: 1.6rem;
-            padding-bottom: 2.4rem;
-            border-bottom: 0.1rem solid #D2DCE5;
-            width: 100%;
-            padding-left: 0;
-            justify-content: flex-start;
-            position: relative;
-            &::after {
-              content: '';
-              position: absolute;
-              top: 0;
-              right: 1rem;
-              background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
-              background-repeat: no-repeat;
-              background-position: right;
-              background-size: contain;
-              width: 1.4rem;
-              height: 100%;
-              transition: transform .3s;
-            }
-          }
-          .select-items {
-            @include breakpoint($sm-bp) {
-              position: absolute;
-              height: 25rem;
-              margin-top: 7rem;
-              &::before, &::after {
-                display: none;
-              }
+    }
 
-              div {
-                padding-left: 2rem;
-              }
-              .close-button {
-                display: none;
-              }
-              .same-as-selected {
-                background-color: #FFFFFF;
-                color: #A50F2D;
-              }
-            }
-          }
-          .filter-button--active {
-            &::after {
-              transform: rotate(180deg);
-            }
-          }
-          .select-items {
-            width: 100%;
-          }
+    .registration__title {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 5.2rem;
+      line-height: 5.8rem;
+      /* identical to box height, or 112% */
+
+      letter-spacing: -0.02em;
+
+      /* UI/Black/High */
+
+      color: #212424;
+      padding-bottom: 1.2rem;
+
+      @include breakpoint($sm-bp) {
+        font-size: 4rem;
+        line-height: 4.8rem;
+      }
+    }
+
+    .registration__subtitle {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 3.2rem;
+      /* identical to box height, or 160% */
+
+
+      /* UI/Footer */
+
+      color: #697279;
+      padding-bottom: 4.4rem;
+
+      @include breakpoint($sm-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        padding-bottom: 2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 2rem;
+          background: -webkit-linear-gradient(to bottom, #FFFFFF 50%, rgba(255, 255, 255, 0));
+          background: linear-gradient(to bottom, #FFFFFF 50%, rgba(255, 255, 255, 0));
+          z-index: 0;
+          pointer-events: none;
         }
-        input {
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #AAB8C3;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #A50F2D;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding-top: 2rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        height: calc(100% - 10rem);
+        overflow: scroll;
+        padding-bottom: 4rem;
+        width: 100%;
+      }
+
+      .custom-select {
+        width: 100%;
+
+        .select-selected {
           font-family: 'Manrope';
           font-style: normal;
           font-weight: 500;
           font-size: 1.6rem;
           line-height: 2.4rem;
           /* identical to box height, or 150% */
-          
-          /* UI/Footer */
-          
+
           color: #697279;
           padding-top: 1.6rem;
           padding-bottom: 2.4rem;
           border-bottom: 0.1rem solid #D2DCE5;
-          &::placeholder {
-            font-family: 'Manrope';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 1.6rem;
-            line-height: 2.4rem;
-            /* identical to box height, or 150% */
-            
-            display: flex;
-            align-items: flex-end;
-            
-            /* UI/Footer */
-            
-            color: #697279;
+          width: 100%;
+          padding-left: 0;
+          justify-content: flex-start;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 1rem;
+            background-image: url('data:image/svg+xml,%3Csvg%20width%3D%228%22%20height%3D%224%22%20viewBox%3D%220%200%208%204%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.853552%200.853552C0.53857%200.53857%200.761654%200%201.20711%200H6.79289C7.23835%200%207.46143%200.538571%207.14645%200.853553L4.35355%203.64645C4.15829%203.84171%203.84171%203.84171%203.64645%203.64645L0.853552%200.853552Z%22%20fill%3D%22%2340454E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+            width: 1.4rem;
+            height: 100%;
+            transition: transform .3s;
           }
         }
-        .registration__agree {
+
+        .select-items {
+          @include breakpoint($sm-bp) {
+            position: absolute;
+            height: 25rem;
+            margin-top: 7rem;
+
+            &::before,
+            &::after {
+              display: none;
+            }
+
+            div {
+              padding-left: 2rem;
+            }
+
+            .close-button {
+              display: none;
+            }
+
+            .same-as-selected {
+              background-color: #FFFFFF;
+              color: #A50F2D;
+            }
+          }
+        }
+
+        .filter-button--active {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        .select-items {
+          width: 100%;
+        }
+      }
+
+      input {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        /* identical to box height, or 150% */
+
+        /* UI/Footer */
+
+        color: #697279;
+        padding-top: 1.6rem;
+        padding-bottom: 2.4rem;
+        border-bottom: 0.1rem solid #D2DCE5;
+
+        &::placeholder {
           font-family: 'Manrope';
           font-style: normal;
           font-weight: 500;
-          font-size: 1.2rem;
-          line-height: 2rem;
-          
-          color: #AAB8C3;
-          padding-top: 1.6rem;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          /* identical to box height, or 150% */
+
+          display: flex;
+          align-items: flex-end;
+
+          /* UI/Footer */
+
+          color: #697279;
         }
+      }
+
+      .registration__agree {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 2rem;
+
+        color: #AAB8C3;
+        padding-top: 1.6rem;
       }
     }
   }
+}
+
+
+.feedBack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .feedBack__block {
+    padding: 1.6rem 2.4rem;
+    background-color: #FFFFFF;
+    width: max-content;
+    position: absolute;
+    top: calc(var(--headerH) + 4rem);
+    left: 4rem;
+    border: 1px solid #D2DCE5;
+    border-radius: 2px;
+
+    .close-button {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: 2.4rem;
+      top: 2.4rem;
+
+      &::before,
+      &::after {
+        background-color: #697279;
+      }
+    }
+
+    .man20 {
+      padding-bottom: 0.8rem;
+    }
+
+    .feedBack__desc {
+      color: #697279;
+      padding-bottom: 2.4rem;
+    }
+
+    button {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 3.2rem;
+      /* identical to box height, or 178% */
+
+      /* UI / Accent */
+
+      color: #A50F2D;
+      border: 0;
+      background-color: unset;
+      margin: 0 auto;
+      display: block;
+      width: min-content;
+    }
+  }
+}

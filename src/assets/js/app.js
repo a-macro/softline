@@ -862,15 +862,80 @@ if (buttonsModal.length) {
     buttonsModal.forEach(el => el.addEventListener('click', modalHandler))
 }
 
-// function openModal () {
-//     registrModal
-// }
+const forms = document.forms
+const feedBack = document.querySelector('.feedBack')
 
-// if (registrButton.length && registrModal) {
-//     registrButton.forEach(el => {
-//         el.addEventListener('click', openModal)
-//     })
-// }
+if (feedBack) {
+    const closeButton = feedBack.querySelectorAll('button')
+
+    if (closeButton.length) {
+        closeButton.forEach(el => el.addEventListener('click', modalHandler.bind(feedBack)))
+    }
+
+}
+
+if (forms.length && feedBack) {
+    for(let form of forms) {
+        form.addEventListener('submit', function () {
+            event.preventDefault()
+            modalHandler.apply(this.closest('.regModal'))
+            modalHandler.apply(feedBack)
+        })
+    }
+}
+
+var acc = document.getElementsByClassName("accordion__list-title");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.parentNode.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    console.log(panel)
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+const navBar = document.querySelectorAll('.faq__left-list li')
+let currentNav = null
+
+const callback = (entry) => {
+    if (entry.length) {
+        entry.forEach(el => {
+            if (el.isIntersecting) {
+                el.target.classList.add('accordion--visible')
+                const data = el.target.dataset.visible
+                if (data) {
+                    navBar.forEach(navItem => {
+                        if (navItem.dataset.visible === data) {
+                            navItem.classList.add('active')
+                        } else {
+                            navItem.classList.remove('active')
+                        }
+                    })
+                }
+            } else {
+                el.target.classList.remove('accordion--visible')
+            }
+        })
+    }
+}
+
+const observer = new IntersectionObserver(callback)
+
+const accordions = document.querySelectorAll('.accordion')
+
+
+if (accordions.length && navBar.length) {
+    accordions.forEach(el => observer.observe(el))
+}
+
+
+
 });
 
 
