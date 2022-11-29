@@ -900,8 +900,36 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+const accordions = document.querySelectorAll('.accordion')
+const faqlist = document.querySelector('.faq__left-list')
+
+if (accordions.length && faqlist) {
+    accordions.forEach(el => {
+        const title = el.querySelector('.accordion__title')?.innerHTML
+
+        if (title) {
+            el.setAttribute('data-visible', title)
+            const li = document.createElement('li')
+            li.setAttribute('data-visible', title)
+            li.innerHTML = title
+            li.addEventListener('click', function () {
+                accordions.forEach(el => {
+                    if (this.dataset.visible === el.dataset.visible) {
+                        // const headerH = document.documentElement.style.getPropertyValue('--headerH') || '-200'
+
+                        const yOffset = -200; 
+                        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        
+                        window.scrollTo({top: y, behavior: 'auto'});
+                    }
+                })
+            })
+            faqlist.appendChild(li)
+        }
+    })
+}
+
 const navBar = document.querySelectorAll('.faq__left-list li')
-let currentNav = null
 
 const callback = (entry) => {
     if (entry.length) {
@@ -925,9 +953,11 @@ const callback = (entry) => {
     }
 }
 
-const observer = new IntersectionObserver(callback)
+const options = {
+    threshold: 0.5 // half of item height
+  }
 
-const accordions = document.querySelectorAll('.accordion')
+const observer = new IntersectionObserver(callback, options)
 
 
 if (accordions.length && navBar.length) {
