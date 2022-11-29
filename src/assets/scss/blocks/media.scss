@@ -8,18 +8,51 @@
         letter-spacing: -0.02em;
         color: #212424;
         width: 51%;
+        @include breakpoint($xl-bp) {
+            width: 80%;
+        }
+        @include breakpoint($mid-bp) {
+            width: auto;
+        }
+        @include breakpoint($sm-bp) {
+            font-size: 4.15rem;
+            line-height: 5rem;
+        }
     }
 }
 
 .informationTechnology__content_position {
     margin-top: 7.2rem;
+    @include breakpoint($mid-bp) {
+        margin-top: 4.2rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5.2rem;
+    }
+}
+
+.pt10 {
+    padding-top: 10rem;
+    @include breakpoint($mid-bp) {
+        padding-top: 7rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding-top: 5rem;
+    }
 }
 
 
 .informationTechnology__content {
     display: flex;
     justify-content: space-between;
-    
+    @include breakpoint($mid-bp) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    @include breakpoint($sm-bp) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .informationTechnology__block {
         width: 24%;
@@ -31,6 +64,19 @@
         flex-direction: column;
         gap: 9.2rem;
         justify-content: space-between;
+        @include breakpoint($mid-bp) {
+            width: 100%;
+            border-bottom: 0.1rem solid transparent;
+            &:nth-last-child(1), &:nth-last-child(2) {
+                border-bottom: 0.1rem solid #D2DCE5;
+            }
+        }
+        @include breakpoint($sm-bp) {
+            gap: 5rem;
+            &:nth-last-child(2) {
+                border-bottom: 0.1rem solid transparent;
+            }
+        }
 
         div:last-child {
             font-family: 'Manrope';
@@ -40,6 +86,13 @@
             line-height: 2.4rem;
             width: 78%;
             color: #697279;
+            @include breakpoint($mid-bp) {
+                width: 100%;
+            }
+            @include breakpoint($sm-bp) {
+                font-size: 1.95rem;
+                line-height: 2.6rem;
+            }
         }
     
 
@@ -52,6 +105,11 @@
                 line-height: 5.8rem;
                 letter-spacing: -0.02em;
                 color: #A50F2D;
+                @include breakpoint($sm-bp) {
+                    font-size: 7rem;
+                    line-height: 8rem;
+                    padding-bottom: 0.4rem;
+                }
             }
     
             div:last-child {
@@ -69,6 +127,12 @@
 
 .corporate-position {
     margin-top: 15rem;
+    @include breakpoint($mid-bp) {
+        margin-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 8rem;
+    }
 }
 
 .corporate {
@@ -81,13 +145,24 @@
         color: #212424;
         padding-bottom: 2.6rem;
         border-bottom: solid 0.1rem #D2DCE5;
+        @include breakpoint($sm-bp) {
+            font-size: 2.6rem;
+        }
     }
 
     .corporate__content {
         display: flex;
         justify-content: space-between;
         margin-top: 4rem;
-
+        @include breakpoint($mid-bp) {
+            margin-top: 2rem;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 4rem;
+            gap: 2rem;
+        }
         .corporate__block {
             width: 33%;
             position: relative;
@@ -98,6 +173,12 @@
             padding-bottom: 2rem;
             padding-left: 2.8rem;
             overflow: hidden;
+            @include breakpoint($mid-bp) {
+                width: auto;
+            }
+            @include breakpoint($sm-bp) {
+                gap: 7.2rem;
+            }
             div {
                 font-family: 'Manrope';
                 font-style: normal;
@@ -114,6 +195,10 @@
                 top: 0;
                 left: 0;
                 z-index: -1;
+                @include breakpoint($sm-bp) {
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
 
             .corporate__helper {

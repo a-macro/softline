@@ -198,6 +198,28 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    new Swiper(".news-page__swiper", {
+        navigation: {
+            nextEl: ".news-page .swiper-container .swiper-button-next",
+            prevEl: ".news-page .swiper-container .swiper-button-prev"
+        },
+        slidesPerView: "auto",
+        watchOverflow: true,
+        spaceBetween: 40,
+        loop: true,
+        breakpoints: {
+            300: {
+                spaceBetween: 20,
+            },
+            769: {
+                spaceBetween: 40,
+            },
+            1025: {
+                spaceBetween: 40,
+            }
+        },
+    });
+
 
     let init = false;
     let swiper;
@@ -755,6 +777,164 @@ for (i = 0; i < acc.length; i++) {
       }
     });
   }
+
+const sm = matchMedia("(max-width: 480px)")
+const newsButton = document.querySelector('.news__button')
+let hideItems = null
+const items = document.querySelectorAll('.events__item, .news__item');
+
+if (sm.matches && newsButton) {
+    if (items.length) {
+        hideItems = [...items].slice(-8)
+        hideItems.forEach(el => el.hidden = true)
+    }
+    newsButton.addEventListener('click', clickHandlerTabs)
+} 
+
+if (newsButton) {
+    sm.addEventListener('change', () => {
+        if (sm.matches) {
+            if (items.length) {
+                hideItems = [...items].slice(-8)
+                hideItems.forEach(el => el.hidden = true)
+            }
+            newsButton.addEventListener('click', clickHandlerTabs)
+            newsButton.hidden = false
+        } else {
+            newsButton.removeEventListener('click', clickHandlerTabs)
+            if (hideItems?.length) {
+                hideItems.forEach(el => el.hidden = false)
+            }
+        }
+    })
+}
+
+function clickHandlerTabs () {
+    this.hidden = true
+    hideItems.forEach(el => el.hidden = false)
+}
+
+const buttonsModal = document.querySelectorAll('[data-modal]')
+const regModal = document.querySelectorAll('.regModal')
+
+if (regModal.length) {
+    regModal.forEach(el =>  {
+        el.addEventListener('click', function () {
+        if (event.target.classList.contains('regModal')) {
+            modalHandler.apply(event.target)
+        }
+    })
+    const closeButton = el.querySelector('.close-button')
+
+    if (closeButton) {
+        closeButton.addEventListener('click', function () {
+            const modal = this.closest('.regModal')
+            if (modal) {
+                modalHandler.apply(modal)
+            }
+        })
+    }
+})
+}
+
+function modalHandler() {
+    const modal = document.querySelector(`${this.dataset?.modal}`) || this
+
+    if (modal) {
+        if (modal.hidden) {
+            modal.hidden = !modal.hidden
+            setTimeout(() => {
+                modal.style.opacity = 1
+            }, 10)
+        } else {
+            modal.style.opacity = 0
+            modal.addEventListener('transitionend', hideaftertransition)
+        }
+    }
+}
+
+function hideaftertransition () {
+    this.hidden = true
+    this.removeEventListener('transitionend', hideaftertransition)
+}
+
+if (buttonsModal.length) {
+    buttonsModal.forEach(el => el.addEventListener('click', modalHandler))
+}
+
+const forms = document.forms
+const feedBack = document.querySelector('.feedBack')
+
+if (feedBack) {
+    const closeButton = feedBack.querySelectorAll('button')
+
+    if (closeButton.length) {
+        closeButton.forEach(el => el.addEventListener('click', modalHandler.bind(feedBack)))
+    }
+
+}
+
+if (forms.length && feedBack) {
+    for(let form of forms) {
+        form.addEventListener('submit', function () {
+            event.preventDefault()
+            modalHandler.apply(this.closest('.regModal'))
+            modalHandler.apply(feedBack)
+        })
+    }
+}
+
+var acc = document.getElementsByClassName("accordion__list-title");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.parentNode.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    console.log(panel)
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+const navBar = document.querySelectorAll('.faq__left-list li')
+let currentNav = null
+
+const callback = (entry) => {
+    if (entry.length) {
+        entry.forEach(el => {
+            if (el.isIntersecting) {
+                el.target.classList.add('accordion--visible')
+                const data = el.target.dataset.visible
+                if (data) {
+                    navBar.forEach(navItem => {
+                        if (navItem.dataset.visible === data) {
+                            navItem.classList.add('active')
+                        } else {
+                            navItem.classList.remove('active')
+                        }
+                    })
+                }
+            } else {
+                el.target.classList.remove('accordion--visible')
+            }
+        })
+    }
+}
+
+const observer = new IntersectionObserver(callback)
+
+const accordions = document.querySelectorAll('.accordion')
+
+
+if (accordions.length && navBar.length) {
+    accordions.forEach(el => observer.observe(el))
+}
+
+
 
 });
 
