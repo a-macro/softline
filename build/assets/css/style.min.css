@@ -8997,6 +8997,7 @@ body::before {
   gap: 2rem;
 }
 .faq .faq__block .faq__left.wrapper nav li {
+  cursor: pointer;
   color: #AAB8C3;
 }
 .faq .faq__block .faq__left.wrapper nav li.active {
