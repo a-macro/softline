@@ -10705,6 +10705,7 @@ body::before {
 }
 
 .faq .faq__block .faq__left.wrapper nav li {
+    cursor: pointer;
     color: #AAB8C3;
 }
 
