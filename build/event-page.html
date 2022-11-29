@@ -282,13 +282,14 @@
             <div class="registration__block">
               <div class="registration__wrapper">
                 <h2 class="registration__title">Registration</h2>
-                <button class="close-button"><span>Close</span> <span class="close-button__cross"><span class="close-icon"></span></span></button>
+                <button class="close-button"><span>Close</span> <span class="close-button__cross"><span
+                      class="close-icon"></span></span></button>
               </div>
               <div class="registration__subtitle">For the event</div>
         
               <form action="#">
-                <input type="email" name="email" placeholder="Email">
-                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="name" placeholder="Name" required>
                 <input type="text" name="position" placeholder="Position">
                 <input type="text" name="position" placeholder="Company">
         
@@ -300,22 +301,33 @@
                   </select>
                 </div>
         
-                <input type="tel" name="tel" placeholder="Phone number">
+                <input type="tel" name="tel" placeholder="Phone number" required>
         
                 <input type="text" name="additional" placeholder="Additional">
         
                 <button class="link-red" type="submit">
                   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                    <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                      stroke-width="1.5" />
                   </svg>
                   <span>Send request</span>
                 </button>
         
                 <div class="registration__agree">
-                  By clicking «Subscribe», you agree to the terms of our Privacy Policy and the processing of personal data. <br/>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply
+                  By clicking «Subscribe», you agree to the terms of our Privacy Policy and the processing of personal data.
+                  <br />This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply
                 </div>
               </form>
+            </div>
+          </div>
+        
+          <div class="feedBack" style="opacity: 0;" hidden>
+            <div class="feedBack__block">
+              <button class="close-button"></button>
+              <h3 class="man20">Application sent</h3>
+              <div class="feedBack__desc man16">We will consider it and reply with a letter <br />to the mail</div>
+              <button>OK!</button>
             </div>
           </div>
         
@@ -324,38 +336,38 @@
         
             <div class="breadcrumbs wrapper">
               <ul class="breadcrumbs__list">
-                  <li class="breadcrumbs__item">
-                      <a class="breadcrumbs__link" href="#">Main</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                      <a class="breadcrumbs__link" href="#">Insights</a>
-                  </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="#">Main</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="#">Insights</a>
+                </li>
               </ul>
             </div>
-          
-          
-          <img src="assets/images/event-page/main.jpg" alt="main-bg">
-          
-          <div class="wrapper">
-            <div class="insights-subtitle">Event</div>
-            <h1 class="insights-title">Optimize your business with predictive analytics from Softline and IBM</h1>
-          </div>
+        
+        
+            <img src="assets/images/event-page/main.jpg" alt="main-bg">
+        
+            <div class="wrapper">
+              <div class="insights-subtitle">Event</div>
+              <h1 class="insights-title">Optimize your business with predictive analytics from Softline and IBM</h1>
+            </div>
           </div>
         
-          
+        
           <div class="sticky-wrapper pb15">
             <div class="sticky-wrapper__block wrapper">
               <div class="sticky left-block">
                 <div class="sticky-wrapper__item">
                   <div>Date</div>
-                  <div>19 August 2021 <br/>14:00 – 16:00 (msk)</div>
+                  <div>19 August 2021 <br />14:00 – 16:00 (msk)</div>
                 </div>
-          
+        
                 <div class="sticky-wrapper__item">
                   <div>Partners</div>
                   <div>Microsoft</div>
                 </div>
-          
+        
                 <div class="sticky-wrapper__item">
                   <div>Platform</div>
                   <div>Cisco Webex</div>
@@ -364,8 +376,9 @@
         
               <button class="link-red" data-modal="#registrModal">
                 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                  <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                  <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                    stroke-width="1.5" />
                 </svg>
                 <span>Registration</span>
               </button>
@@ -378,20 +391,24 @@
         
                 <div class="registration-block pb10">
                   <div class="man36">
-                    Softline and Group-IB invite you on June 10, 2021 to take part in the online seminar "The Group-IB Experience: Working on Errors in Protection from Current Cyber ​​Threats", which will be held on the Webinar.ru platform
+                    Softline and Group-IB invite you on June 10, 2021 to take part in the online seminar "The Group-IB
+                    Experience: Working on Errors in Protection from Current Cyber ​​Threats", which will be held on the
+                    Webinar.ru platform
                   </div>
         
-                    <button class="link-red" data-modal="#">
-                      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                          <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
-                      </svg>
-                      <span>Registration</span>
-                    </button>
+                  <button class="link-red" data-modal="#registrModal">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                        stroke-width="1.5" />
+                    </svg>
+                    <span>Registration</span>
+                  </button>
                 </div>
         
                 <div class="man20 pb10">
-                  Let's analyze common mistakes of information security specialists and consider the current cyber threat landscape of 2021
+                  Let's analyze common mistakes of information security specialists and consider the current cyber threat
+                  landscape of 2021
                 </div>
         
                 <div class="image-wrapper pb10">
@@ -399,21 +416,26 @@
                     <img src="./assets/images/event-page/event-1.jpg" alt="event-img">
                   </div>
         
-                  <div class="news-page__contest">The webinar will help NX users create postprocessors in NX CAM using the Post Configurator module</div>
+                  <div class="news-page__contest">The webinar will help NX users create postprocessors in NX CAM using the Post
+                    Configurator module</div>
                 </div>
         
                 <div class="key-operating event-page__about pb10">
                   <h3 class="event-page__about-title man36">About the event</h3>
         
-                  <div class="event-page__about-subtitle man20">We will analyze examples and cases, and talk about the importance of an integrated <br/>approach to countering cyber threats</div>
+                  <div class="event-page__about-subtitle man20">We will analyze examples and cases, and talk about the
+                    importance of an integrated <br />approach to countering cyber threats</div>
         
                   <ul class="key-operating__list-main man20">
                     <li>Free participation</li>
                     <li>Mandatory pre-registration</li>
-                    <li>By participating in the event on this invitation, you confirm that you are familiar with <br/>and agree to the processing <br/>of your personal data</li>
+                    <li>By participating in the event on this invitation, you confirm that you are familiar with <br />and agree
+                      to the processing <br />of your personal data</li>
                   </ul>
         
-                  <div class="block-line">Group-IB will share its experience in investigating and preventing crimes <br/>in the field of high information technology and will provide working recommendations for proactive protection and incident response</div>
+                  <div class="block-line">Group-IB will share its experience in investigating and preventing crimes <br />in the
+                    field of high information technology and will provide working recommendations for proactive protection and
+                    incident response</div>
                 </div>
         
                 <div class="event-page__program">
@@ -431,7 +453,8 @@
                       <div class="program-block__wrapper">
                         <h4 class="program-block__name man24">Welcome speech from Softline</h4>
                         <div class="program-block__author">
-                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-1.jpg" alt="avatar"></div>
+                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-1.jpg"
+                              alt="avatar"></div>
                           <div class="program-block__avatar-wrapper">
                             <div class="program-block__author-name man16">Lisa Ann Reeves</div>
                             <div class="program-block__author-prof man16">Manager, Adobe Design Solutions</div>
@@ -443,9 +466,11 @@
                     <div class="program-block__item">
                       <div class="program-block__time man16">10:15 – 11:00</div>
                       <div class="program-block__wrapper">
-                        <h4 class="program-block__name man24">An integrated approach to countering cyber threats. Working guidelines for proactive defense and incident response</h4>
+                        <h4 class="program-block__name man24">An integrated approach to countering cyber threats. Working
+                          guidelines for proactive defense and incident response</h4>
                         <div class="program-block__author">
-                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-2.jpg" alt="avatar"></div>
+                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-2.jpg"
+                              alt="avatar"></div>
                           <div class="program-block__avatar-wrapper">
                             <div class="program-block__author-name man16">Lisa Ann Reeves</div>
                             <div class="program-block__author-prof man16">Manager, Adobe Design Solutions</div>
@@ -459,14 +484,16 @@
                       <div class="program-block__wrapper">
                         <h4 class="program-block__name man24">Cyber ​​Threat Landscape 2021: Current Threats</h4>
                         <div class="program-block__author">
-                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-1.jpg" alt="avatar"></div>
+                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-1.jpg"
+                              alt="avatar"></div>
                           <div class="program-block__avatar-wrapper">
                             <div class="program-block__author-name man16">Lisa Ann Reeves</div>
                             <div class="program-block__author-prof man16">Manager, Adobe Design Solutions</div>
                           </div>
                         </div>
                         <div class="program-block__author">
-                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-3.jpg" alt="avatar"></div>
+                          <div class="program-block__avatar round img-wrapper"><img src="./assets/images/news-page/avatar-3.jpg"
+                              alt="avatar"></div>
                           <div class="program-block__avatar-wrapper">
                             <div class="program-block__author-name man16">Anton Chumakov</div>
                             <div class="program-block__author-prof man16">Head of Training Projects, Group-IB</div>
@@ -526,91 +553,96 @@
           
             </section>
         
-            <div class="wrapper wrapper--swiper events">
-              <div class="section-top align-bottom">
-                  <div class="section-top__title">More events</div>
-                  <a class="link-red" href="#">
-                      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                          <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
-                      </svg>
-                      <span>See all</span>
-                  </a>
-              </div>   
-              
-              <div class="news__slider">
-                  <div class="news__container swiper-container">
-                      <div class="swiper-wrapper">
+          <div class="wrapper wrapper--swiper events">
+            <div class="section-top align-bottom">
+              <div class="section-top__title">More events</div>
+              <a class="link-red" href="#">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                  <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                    stroke-width="1.5" />
+                </svg>
+                <span>See all</span>
+              </a>
+            </div>
         
-                          <div class="swiper-slide news-slide">
-                            <a href="#" class="events__item">
-                              <span class="events__img">
-                                <img src="./assets/images/events/events-1.jpg" alt="events-img">
-                                <span class="events__date-block">
-                                  <span class="events__date-item">
-                                    <span class="events__date">20</span>
-                                    <span class="events__month">Aug</span>
-                                  </span>
-                                </span>
-                              </span>
-                              <span class="events__name">Seminar</span>
-                              <span class="events__title">ABBYY FineReader PDF 15 — a tool for efficient work with documents ABBYY FineReader PDF 15</span>
-                            </a>
-                          </div>
+            <div class="news__slider">
+              <div class="news__container swiper-container">
+                <div class="swiper-wrapper">
         
-                          <div class="swiper-slide news-slide">
-                            <a href="#" class="events__item">
-                              <span class="events__img">
-                                <img src="./assets/images/events/events-2.jpg" alt="events-img">
-                                <span class="events__date-block">
-                                  <span class="events__date-item">
-                                    <span class="events__date">20</span>
-                                    <span class="events__month">Aug</span>
-                                  </span>
-                                </span>
-                              </span>
-                              <span class="events__name">Seminar</span>
-                              <span class="events__title">Online seminar «The Group-IB Experience: Working on Errors in Against Current Cyber ​Threats»</span>
-                            </a>
-                          </div>
-                          
-                          <div class="swiper-slide news-slide">
-                            <a href="#" class="events__item">
-                              <span class="events__img">
-                                <img src="./assets/images/events/events-3.jpg" alt="events-img">
-                                <span class="events__date-block">
-                                  <span class="events__date-item">
-                                    <span class="events__date">28</span>
-                                    <span class="events__month">Aug</span>
-                                  </span>
-                                </span>
-                              </span>
-                              <span class="events__name">Webinar</span>
-                              <span class="events__title">ABBYY FineReader PDF 15 — a tool for efficient work with documents ABBYY FineReader PDF 15</span>
-                            </a>
-                          </div>
-        
-                          <div class="swiper-slide news-slide">
-                            <a href="#" class="events__item">
-                              <span class="events__img">
-                                <img src="./assets/images/events/events-2.jpg" alt="events-img">
-                                <span class="events__date-block">
-                                  <span class="events__date-item">
-                                    <span class="events__date">20</span>
-                                    <span class="events__month">Aug</span>
-                                  </span>
-                                </span>
-                              </span>
-                              <span class="events__name">Seminar</span>
-                              <span class="events__title">Online seminar «The Group-IB Experience: Working on Errors in Against Current Cyber ​​Threats»</span>
-                            </a>
-                          </div>
-                      </div>
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-button-next"></div>
+                  <div class="swiper-slide news-slide">
+                    <a href="#" class="events__item">
+                      <span class="events__img">
+                        <img src="./assets/images/events/events-1.jpg" alt="events-img">
+                        <span class="events__date-block">
+                          <span class="events__date-item">
+                            <span class="events__date">20</span>
+                            <span class="events__month">Aug</span>
+                          </span>
+                        </span>
+                      </span>
+                      <span class="events__name">Seminar</span>
+                      <span class="events__title">ABBYY FineReader PDF 15 — a tool for efficient work with documents ABBYY
+                        FineReader PDF 15</span>
+                    </a>
                   </div>
+        
+                  <div class="swiper-slide news-slide">
+                    <a href="#" class="events__item">
+                      <span class="events__img">
+                        <img src="./assets/images/events/events-2.jpg" alt="events-img">
+                        <span class="events__date-block">
+                          <span class="events__date-item">
+                            <span class="events__date">20</span>
+                            <span class="events__month">Aug</span>
+                          </span>
+                        </span>
+                      </span>
+                      <span class="events__name">Seminar</span>
+                      <span class="events__title">Online seminar «The Group-IB Experience: Working on Errors in Against Current
+                        Cyber ​Threats»</span>
+                    </a>
+                  </div>
+        
+                  <div class="swiper-slide news-slide">
+                    <a href="#" class="events__item">
+                      <span class="events__img">
+                        <img src="./assets/images/events/events-3.jpg" alt="events-img">
+                        <span class="events__date-block">
+                          <span class="events__date-item">
+                            <span class="events__date">28</span>
+                            <span class="events__month">Aug</span>
+                          </span>
+                        </span>
+                      </span>
+                      <span class="events__name">Webinar</span>
+                      <span class="events__title">ABBYY FineReader PDF 15 — a tool for efficient work with documents ABBYY
+                        FineReader PDF 15</span>
+                    </a>
+                  </div>
+        
+                  <div class="swiper-slide news-slide">
+                    <a href="#" class="events__item">
+                      <span class="events__img">
+                        <img src="./assets/images/events/events-2.jpg" alt="events-img">
+                        <span class="events__date-block">
+                          <span class="events__date-item">
+                            <span class="events__date">20</span>
+                            <span class="events__month">Aug</span>
+                          </span>
+                        </span>
+                      </span>
+                      <span class="events__name">Seminar</span>
+                      <span class="events__title">Online seminar «The Group-IB Experience: Working on Errors in Against Current
+                        Cyber ​​Threats»</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
             </div>
+          </div>
         
         </section>
 

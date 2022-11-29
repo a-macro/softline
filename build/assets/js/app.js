@@ -1,5 +1,6 @@
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -806,14 +807,76 @@ document.addEventListener("DOMContentLoaded", function () {
       return el.addEventListener('click', modalHandler);
     });
   }
-
-  // function openModal () {
-  //     registrModal
-  // }
-
-  // if (registrButton.length && registrModal) {
-  //     registrButton.forEach(el => {
-  //         el.addEventListener('click', openModal)
-  //     })
-  // }
+  var forms = document.forms;
+  var feedBack = document.querySelector('.feedBack');
+  if (feedBack) {
+    var closeButton = feedBack.querySelectorAll('button');
+    if (closeButton.length) {
+      closeButton.forEach(function (el) {
+        return el.addEventListener('click', modalHandler.bind(feedBack));
+      });
+    }
+  }
+  if (forms.length && feedBack) {
+    var _iterator = _createForOfIteratorHelper(forms),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var form = _step.value;
+        form.addEventListener('submit', function () {
+          event.preventDefault();
+          modalHandler.apply(this.closest('.regModal'));
+          modalHandler.apply(feedBack);
+        });
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
+  var acc = document.getElementsByClassName("accordion__list-title");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.parentNode.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      console.log(panel);
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+  var navBar = document.querySelectorAll('.faq__left-list li');
+  var currentNav = null;
+  var callback = function callback(entry) {
+    if (entry.length) {
+      entry.forEach(function (el) {
+        if (el.isIntersecting) {
+          el.target.classList.add('accordion--visible');
+          var data = el.target.dataset.visible;
+          if (data) {
+            navBar.forEach(function (navItem) {
+              if (navItem.dataset.visible === data) {
+                navItem.classList.add('active');
+              } else {
+                navItem.classList.remove('active');
+              }
+            });
+          }
+        } else {
+          el.target.classList.remove('accordion--visible');
+        }
+      });
+    }
+  };
+  var observer = new IntersectionObserver(callback);
+  var accordions = document.querySelectorAll('.accordion');
+  if (accordions.length && navBar.length) {
+    accordions.forEach(function (el) {
+      return observer.observe(el);
+    });
+  }
 });
