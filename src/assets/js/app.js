@@ -620,6 +620,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
 let currentActiveButton = document.querySelector('.filter-button--active')
 
 const no = () => {
@@ -843,11 +845,13 @@ function modalHandler() {
     if (modal) {
         if (modal.hidden) {
             modal.hidden = !modal.hidden
+            modal.style.setProperty('pointer-events', 'auto')
             setTimeout(() => {
                 modal.style.opacity = 1
             }, 10)
         } else {
             modal.style.opacity = 0
+            modal.style.setProperty('pointer-events', null)
             modal.addEventListener('transitionend', hideaftertransition)
         }
     }
@@ -891,7 +895,6 @@ for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.parentNode.classList.toggle("active");
     var panel = this.nextElementSibling;
-    console.log(panel)
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
@@ -902,6 +905,8 @@ for (i = 0; i < acc.length; i++) {
 
 const accordions = document.querySelectorAll('.accordion')
 const faqlist = document.querySelector('.faq__left-list')
+
+const mm = matchMedia("(max-width: 768px)")
 
 if (accordions.length && faqlist) {
     accordions.forEach(el => {
@@ -917,10 +922,10 @@ if (accordions.length && faqlist) {
                     if (this.dataset.visible === el.dataset.visible) {
                         // const headerH = document.documentElement.style.getPropertyValue('--headerH') || '-200'
 
-                        const yOffset = -200; 
+                        const yOffset = !mm.matches ? -200 : -150; 
                         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
                         
-                        window.scrollTo({top: y, behavior: 'auto'});
+                        window.scrollTo({top: y, behavior: 'smooth'});
                     }
                 })
             })
@@ -930,17 +935,21 @@ if (accordions.length && faqlist) {
 }
 
 const navBar = document.querySelectorAll('.faq__left-list li')
+const stickyBar = document.querySelector('.sticky-mobile')
 
 const callback = (entry) => {
     if (entry.length) {
         entry.forEach(el => {
-            if (el.isIntersecting) {
+            if (el.isIntersecting ) {
                 el.target.classList.add('accordion--visible')
                 const data = el.target.dataset.visible
                 if (data) {
                     navBar.forEach(navItem => {
                         if (navItem.dataset.visible === data) {
                             navItem.classList.add('active')
+                            if (stickyBar) {
+                                stickyBar.innerHTML = data
+                            }
                         } else {
                             navItem.classList.remove('active')
                         }
@@ -953,12 +962,44 @@ const callback = (entry) => {
     }
 }
 
+if (stickyBar && navBar.length) {
+    stickyBar.addEventListener('click', function () {
+        const nav = navBar[0].closest('.fixed-mobile')
+        modalHandler.apply(nav)
+    })
+}
+
 const options = {
     threshold: 0.5 // half of item height
   }
 
 const observer = new IntersectionObserver(callback, options)
 
+
+const fixedBlock = document.querySelector('.fixed-mobile')
+if (fixedBlock) {
+    mm.addEventListener('change', () => {
+        if (mm.matches) {
+            fixedBlock.hidden = true
+        } else {
+            fixedBlock.style.opacity = null
+            fixedBlock.hidden = false
+        }
+    })
+    if (mm.matches) {
+        fixedBlock.hidden = true
+    } else {
+        fixedBlock.style.opacity = null
+        fixedBlock.hidden = false
+    }
+}
+
+document.addEventListener('resize', () => {
+    if(header) {
+        let headerH = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--headerH', headerH + "px");
+    }
+})
 
 if (accordions.length && navBar.length) {
     accordions.forEach(el => observer.observe(el))

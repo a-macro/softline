@@ -789,11 +789,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modal) {
       if (modal.hidden) {
         modal.hidden = !modal.hidden;
+        modal.style.setProperty('pointer-events', 'auto');
         setTimeout(function () {
           modal.style.opacity = 1;
         }, 10);
       } else {
         modal.style.opacity = 0;
+        modal.style.setProperty('pointer-events', null);
         modal.addEventListener('transitionend', hideaftertransition);
       }
     }
@@ -841,7 +843,6 @@ document.addEventListener("DOMContentLoaded", function () {
     acc[i].addEventListener("click", function () {
       this.parentNode.classList.toggle("active");
       var panel = this.nextElementSibling;
-      console.log(panel);
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
       } else {
@@ -851,6 +852,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   var accordions = document.querySelectorAll('.accordion');
   var faqlist = document.querySelector('.faq__left-list');
+  var mm = matchMedia("(max-width: 768px)");
   if (accordions.length && faqlist) {
     accordions.forEach(function (el) {
       var _el$querySelector;
@@ -866,11 +868,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (_this.dataset.visible === el.dataset.visible) {
               // const headerH = document.documentElement.style.getPropertyValue('--headerH') || '-200'
 
-              var yOffset = -200;
+              var yOffset = !mm.matches ? -200 : -150;
               var y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
               window.scrollTo({
                 top: y,
-                behavior: 'auto'
+                behavior: 'smooth'
               });
             }
           });
@@ -880,6 +882,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   var navBar = document.querySelectorAll('.faq__left-list li');
+  var stickyBar = document.querySelector('.sticky-mobile');
   var callback = function callback(entry) {
     if (entry.length) {
       entry.forEach(function (el) {
@@ -890,6 +893,9 @@ document.addEventListener("DOMContentLoaded", function () {
             navBar.forEach(function (navItem) {
               if (navItem.dataset.visible === data) {
                 navItem.classList.add('active');
+                if (stickyBar) {
+                  stickyBar.innerHTML = data;
+                }
               } else {
                 navItem.classList.remove('active');
               }
@@ -901,11 +907,40 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   };
+  if (stickyBar && navBar.length) {
+    stickyBar.addEventListener('click', function () {
+      var nav = navBar[0].closest('.fixed-mobile');
+      modalHandler.apply(nav);
+    });
+  }
   var options = {
     threshold: 0.5 // half of item height
   };
 
   var observer = new IntersectionObserver(callback, options);
+  var fixedBlock = document.querySelector('.fixed-mobile');
+  if (fixedBlock) {
+    mm.addEventListener('change', function () {
+      if (mm.matches) {
+        fixedBlock.hidden = true;
+      } else {
+        fixedBlock.style.opacity = null;
+        fixedBlock.hidden = false;
+      }
+    });
+    if (mm.matches) {
+      fixedBlock.hidden = true;
+    } else {
+      fixedBlock.style.opacity = null;
+      fixedBlock.hidden = false;
+    }
+  }
+  document.addEventListener('resize', function () {
+    if (header) {
+      var _headerH = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', _headerH + "px");
+    }
+  });
   if (accordions.length && navBar.length) {
     accordions.forEach(function (el) {
       return observer.observe(el);
