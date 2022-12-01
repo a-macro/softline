@@ -1005,7 +1005,120 @@ if (accordions.length && navBar.length) {
     accordions.forEach(el => observer.observe(el))
 }
 
+const accCloseButtons = document.querySelectorAll('.accordion .close-button')
 
+if (accCloseButtons.length) {
+    accCloseButtons.forEach(el => {
+        el.addEventListener('click', function () {
+            this.parentNode.previousElementSibling.click()
+        })
+    })
+}
+
+const actualBtn = document.getElementById('actual-btn');
+
+function bytesToMegaBytes(bytes) { 
+    return bytes / (1024*1024); 
+  }
+
+function deleteFile (element, index = 0) {
+    const dt = new DataTransfer()
+    const input = element
+    const files = input.files
+    
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i]
+      if (index !== i)
+        dt.items.add(file)
+    }
+    
+    input.files = dt.files // Assign the updates list
+}
+
+function changeText (element, text, error = true) {
+    if (element) {
+        element.innerHTML = text
+        if (error) {
+            element.classList.add('error')
+        } else {
+            element.classList.remove('error')
+        }
+    }
+}
+
+if (actualBtn) {
+    const label = actualBtn.nextElementSibling
+    actualBtn.addEventListener('change', function(){
+        let filechosen = this.parentElement.querySelector('.file-chosen')
+        if (!this.files[0]) {
+            return
+        }
+        const mb = bytesToMegaBytes(this.files[0].size)
+        const ourText = this.parentElement.querySelector('.canText')
+        if (mb > 1) {
+
+            deleteFile(this)
+
+            if (filechosen) {
+                filechosen.remove()
+            }
+            
+            if (ourText) {
+                const text = ourText.dataset.error
+                if (text) {
+                    changeText(ourText, text)
+                }
+            }
+
+            return
+        }
+
+        const arrayText = 'doc, txt, rtf, pfd'
+        const types = arrayText.split(/[^\w+]+/)
+        const typesTest = types.some(el => {
+            const ext = this.files[0].name.match(/\.([^.]+)$/)[0].slice(1)
+            return el === ext
+        })
+
+
+        if (!typesTest) {
+
+            deleteFile(this)
+
+            if (filechosen) {
+                filechosen.remove()
+            }
+
+            if (ourText) {
+                const text = ourText.dataset.error
+                if (text) {
+                    changeText(ourText, text)
+                }
+            }
+            return
+        }
+
+        if (!filechosen) {
+            filechosen = document.createElement('span')
+            filechosen.classList.add('file-chosen')
+            filechosen.innerHTML = this.files[0].name
+            label.appendChild(filechosen)
+            filechosen.addEventListener('click', () => {
+                filechosen.remove()
+                deleteFile(this)
+            })
+        } else {
+            filechosen.innerText = this.files[0].name
+        }
+
+        if (ourText) {
+            const text = ourText.dataset.submit
+            if (text) {
+                changeText(ourText, text, false)
+            }
+        }
+        })
+}
 
 });
 

@@ -946,4 +946,101 @@ document.addEventListener("DOMContentLoaded", function () {
       return observer.observe(el);
     });
   }
+  var accCloseButtons = document.querySelectorAll('.accordion .close-button');
+  if (accCloseButtons.length) {
+    accCloseButtons.forEach(function (el) {
+      el.addEventListener('click', function () {
+        this.parentNode.previousElementSibling.click();
+      });
+    });
+  }
+  var actualBtn = document.getElementById('actual-btn');
+  function bytesToMegaBytes(bytes) {
+    return bytes / (1024 * 1024);
+  }
+  function deleteFile(element) {
+    var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var dt = new DataTransfer();
+    var input = element;
+    var files = input.files;
+    for (var _i5 = 0; _i5 < files.length; _i5++) {
+      var file = files[_i5];
+      if (index !== _i5) dt.items.add(file);
+    }
+    input.files = dt.files; // Assign the updates list
+  }
+
+  function changeText(element, text) {
+    var error = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+    if (element) {
+      element.innerHTML = text;
+      if (error) {
+        element.classList.add('error');
+      } else {
+        element.classList.remove('error');
+      }
+    }
+  }
+  if (actualBtn) {
+    var label = actualBtn.nextElementSibling;
+    actualBtn.addEventListener('change', function () {
+      var _this2 = this;
+      var filechosen = this.parentElement.querySelector('.file-chosen');
+      if (!this.files[0]) {
+        return;
+      }
+      var mb = bytesToMegaBytes(this.files[0].size);
+      var ourText = this.parentElement.querySelector('.canText');
+      if (mb > 1) {
+        deleteFile(this);
+        if (filechosen) {
+          filechosen.remove();
+        }
+        if (ourText) {
+          var text = ourText.dataset.error;
+          if (text) {
+            changeText(ourText, text);
+          }
+        }
+        return;
+      }
+      var arrayText = 'doc, txt, rtf, pfd';
+      var types = arrayText.split(/[^\w+]+/);
+      var typesTest = types.some(function (el) {
+        var ext = _this2.files[0].name.match(/\.([^.]+)$/)[0].slice(1);
+        return el === ext;
+      });
+      if (!typesTest) {
+        deleteFile(this);
+        if (filechosen) {
+          filechosen.remove();
+        }
+        if (ourText) {
+          var _text = ourText.dataset.error;
+          if (_text) {
+            changeText(ourText, _text);
+          }
+        }
+        return;
+      }
+      if (!filechosen) {
+        filechosen = document.createElement('span');
+        filechosen.classList.add('file-chosen');
+        filechosen.innerHTML = this.files[0].name;
+        label.appendChild(filechosen);
+        filechosen.addEventListener('click', function () {
+          filechosen.remove();
+          deleteFile(_this2);
+        });
+      } else {
+        filechosen.innerText = this.files[0].name;
+      }
+      if (ourText) {
+        var _text2 = ourText.dataset.submit;
+        if (_text2) {
+          changeText(ourText, _text2, false);
+        }
+      }
+    });
+  }
 });
