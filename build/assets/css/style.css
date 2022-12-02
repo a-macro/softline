@@ -11262,10 +11262,31 @@ body::before {
     margin: 0;
 }
 
+@media (hover: hover) {
+    .accordion .accordion__list-title:hover {
+        background-color: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+
+    .accordion .accordion__list-title:hover .accordion__plus {
+        background-color: #A50F2D;
+        border-color: #A50F2D;
+    }
+
+    .accordion .accordion__list-title:hover .accordion__plus::after {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    .accordion .accordion__list-title:hover .accordion__plus::after, .accordion .accordion__list-title:hover .accordion__plus::before {
+        background-color: #FFFFFF;
+    }
+}
+
 .accordion .accordion__list-title + .accordion__list-desc {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s;
+    transition: max-height 0.3s;
     display: block;
 }
 
@@ -11358,6 +11379,10 @@ body::before {
     max-width: 144rem;
 }
 
+.politics-page .breadcrumbs__link {
+    color: #212424;
+}
+
 .politics-page .politics-page__block {
     padding-top: 7.2rem;
     display: -ms-flexbox;
@@ -11365,6 +11390,22 @@ body::before {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding-bottom: 4.2rem;
+}
+
+@media (max-width: 768px) {
+    .politics-page .politics-page__block {
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .politics-page .politics-page__block {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-top: 5.2rem;
+        padding-bottom: 5.2rem;
+        gap: 5rem;
+    }
 }
 
 .politics-page .politics-page__block .politics-page__wrapper .politics-page__title {
@@ -11378,6 +11419,13 @@ body::before {
   /* UI/Black/High */
     color: #212424;
     padding-bottom: 3.2rem;
+}
+
+@media (max-width: 480px) {
+    .politics-page .politics-page__block .politics-page__wrapper .politics-page__title {
+        font-size: 4.45rem;
+        line-height: 4.8rem;
+    }
 }
 
 .politics-page .politics-page__block .politics-page__wrapper .politics-page__subtitle {
@@ -11398,203 +11446,571 @@ body::before {
     flex-direction: column;
 }
 
+@media (max-width: 480px) {
+    .politics-page .politics-page__block .politics-page__wrapper .links {
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: start;
+        justify-content: start;
+        -webkit-transform: translateX(-1rem);
+        transform: translateX(-1rem);
+    }
+
+    .politics-page .politics-page__block .politics-page__wrapper .links a {
+        width: 4rem;
+    }
+
+    .politics-page .politics-page__block .politics-page__wrapper .links a svg {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
 .politics-page .accordion .accordion__list-title {
     display: grid;
     grid-template-columns: 1fr -webkit-min-content;
     grid-template-columns: 1fr min-content;
+    -ms-flex-align: center;
+    align-items: center;
     width: 100%;
     text-align: start;
     padding-top: 4.8rem;
     padding-bottom: 4.8rem;
+    transition: all 0.3s;
+    font-size: 3.6rem;
+    letter-spacing: -0.02em;
+    line-height: 5.2rem;
+}
+
+@media (hover: hover) {
+    .politics-page .accordion .accordion__list-title:hover {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .politics-page .accordion .accordion__list-title {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .politics-page .accordion .accordion__list-title {
+        font-size: 2.6rem;
+        line-height: 3.2rem;
+        letter-spacing: normal;
+    }
+}
+
+.politics-page .accordion .accordion__list-desc {
+    display: block;
+    position: relative;
+}
+
+.politics-page .accordion .accordion__list-desc .close-button {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+}
+
+.politics-page .accordion .accordion__list-desc .close-button::after, .politics-page .accordion .accordion__list-desc .close-button::before {
+    background-color: #AAB8C3;
+    height: 0.2rem;
+}
+
+.politics-page .accordion .accordion__list-desc .accordion__list__inner {
+    padding: 5.6rem 6.4rem 7.2rem;
+    background-color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .politics-page .accordion .accordion__list-desc .accordion__list__inner {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .politics-page .accordion .accordion__list-desc .accordion__list__inner {
+        padding: 3rem 3rem;
+        padding-right: 5rem;
+    }
+}
+
+.politics-page .accordion .accordion__list-desc .accordion__desc-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.6rem;
+    line-height: 5.2rem;
+  /* identical to box height, or 144% */
+    letter-spacing: -0.01em;
+  /* UI/Black/High */
+    color: #212424;
+    padding-bottom: 4rem;
+}
+
+@media (max-width: 480px) {
+    .politics-page .accordion .accordion__list-desc .accordion__desc-title {
+        font-size: 2.7rem;
+        line-height: 4.2rem;
+        padding-right: 2rem;
+        font-weight: 500;
+        padding-bottom: 3rem;
+    }
+}
+
+.politics-page .accordion .accordion__list-desc ul li {
+    border: 0;
+    padding: 1.2rem 0;
+    padding-left: 4.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left top 2.4rem;
+}
+
+.politics-page .accordion .accordion__list-desc p + ul {
+    padding-top: 3.2rem;
+}
+
+@media (max-width: 480px) {
+    .politics-page .accordion .accordion__list-desc p + ul {
+        padding-top: 2.2rem;
+    }
+}
+
+.politics-page .accordion .accordion__list-desc p + p {
+    padding-top: 3.2rem;
+}
+
+@media (max-width: 480px) {
+    .politics-page .accordion .accordion__list-desc p + p {
+        padding-top: 2.2rem;
+    }
+}
+
+.politics-page .accordion .accordion__list-desc ul + p {
+    padding-top: 3.2rem;
+}
+
+@media (max-width: 480px) {
+    .politics-page .accordion .accordion__list-desc ul + p {
+        padding-top: 2.2rem;
+    }
+}
+
+.politics-page .accordion__item.active {
+    border-color: transparent;
+}
+
+.form__item .form__item-name {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  /* identical to box height, or 150% */
+  /* UI/Black/High */
+    color: #212424;
+    padding-bottom: 1.2rem;
+}
+
+.form__item .form__item-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  /* identical to box height, or 150% */
+  /* UI/Black/Low */
+    color: #AAB8C3;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border: 1px solid #D2DCE5;
+    height: 9.6rem;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  /* identical to box height, or 150% */
+  /* UI/Footer */
+    color: #697279;
+    padding: 1.6rem 2rem;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form__item {
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  /* Show the indicator (dot/circle) when checked */
+  /* Style the indicator (dot/circle) */
+}
+.form__item .error {
+  color: #A50F2D !important;
+}
+.form__item .form__item-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: center;
+      align-items: center;
+  row-gap: 1rem;
+  padding-bottom: 1.6rem;
+}
+.form__item .link-red {
+  cursor: pointer;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.form__item .link-red .ball {
+  fill: #212121;
+}
+.form__item .link-red__text {
+  color: #212121;
+}
+.form__item .file-chosen {
+  display: block;
+  padding-left: 3.4rem;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  /* identical to box height, or 150% */
+  /* UI/Black/High */
+  color: #212424;
+}
+.form__item .file-chosen::after {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 1em;
+  margin-left: 0.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L1 9M9 9L1 1' stroke='%23212424' stroke-width='1.11'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 60%;
+}
+.form__item .link-red:hover span {
+  box-shadow: unset;
+}
+.form__item .link-red:hover .ball {
+  fill: #A50F2D;
+}
+.form__item .link-red:hover .link-red__text {
+  color: #A50F2D;
+}
+.form__item .form__item-radio {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 3.2rem;
+     -moz-column-gap: 3.2rem;
+          column-gap: 3.2rem;
+  row-gap: 2rem;
+  padding-top: 1.2rem;
+}
+.form__item .form__item-radio--column {
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+.form__item .container {
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+  cursor: pointer;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  /* UI/Black/Medium */
+  color: #40454E;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.form__item .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.form__item .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid #40454E;
+}
+.form__item .container:hover input ~ .checkmark {
+  border-color: #A50F2D;
+}
+.form__item .container:hover input ~ .checkmark::after {
+  display: block;
+}
+.form__item .container--box:hover input ~ .checkmark::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.808594 3.54395L4.6327 7.36805L11.3676 0.633141' stroke='%23A50F2D' stroke-width='1.7'/%3E%3C/svg%3E%0A");
+}
+.form__item .container--box:hover input ~ .checkmark::after {
+  background-color: #FFFFFF;
+}
+.form__item .container--box:hover input:checked ~ .checkmark::after {
+  background: #A50F2D;
+}
+.form__item .container--box:hover input:checked ~ .checkmark::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.808594 3.54395L4.6327 7.36805L11.3676 0.633141' stroke='white' stroke-width='1.7'/%3E%3C/svg%3E");
+}
+.form__item .container input:checked ~ .checkmark {
+  background-color: unset;
+}
+.form__item .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.form__item .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.form__item .container input:checked ~ .checkmark {
+  border-color: #A50F2D;
+}
+.form__item .container--box .checkmark {
+  border-radius: unset;
+}
+.form__item .container .checkmark:after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: #A50F2D;
+}
+.form__item .container--box .checkmark:after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: unset;
+  background: #A50F2D;
+}
+.form__item .container--box .checkmark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: opacity 0.4s;
+  width: 1.2rem;
+  height: 0.8rem;
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.808594 3.54395L4.6327 7.36805L11.3676 0.633141' stroke='white' stroke-width='1.7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+@media (max-width: 480px) {
+  .form__item .container--box .checkmark::before {
+    width: 1.8rem;
+    height: 1.3rem;
+  }
 }
 
 html {
-    font-family: "Montserrat";
-    font-size: 0.4vw;
-    height: 100%;
+  font-family: "Montserrat";
+  font-size: 0.4vw;
+  height: 100%;
 }
-
 @media (max-width: 1920px) {
-    html {
-        font-size: 0.5208333333vw;
-    }
+  html {
+    font-size: 0.5208333333vw;
+  }
 }
-
 @media (max-width: 1440px) {
-    html {
-        font-size: 0.6944444444vw;
-    }
+  html {
+    font-size: 0.6944444444vw;
+  }
 }
-
 @media (max-width: 768px) {
-    html {
-        font-size: 1.3020833333vw;
-    }
+  html {
+    font-size: 1.3020833333vw;
+  }
 }
-
 @media (max-width: 480px) {
-    html {
-        font-size: 2.0833333333vw;
-    }
+  html {
+    font-size: 2.0833333333vw;
+  }
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    font-family: "Manrope", sans-serif;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    background: #EFF1F6;
-    color: #212424;
-    min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background: #EFF1F6;
+  color: #212424;
+  min-height: 100%;
 }
 
 main {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    padding-bottom: 15rem;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  padding-bottom: 15rem;
 }
-
 @media (max-width: 1440px) {
-    main {
-        padding-bottom: 12rem;
-    }
+  main {
+    padding-bottom: 12rem;
+  }
 }
-
 @media (max-width: 768px) {
-    main {
-        padding-bottom: 10rem;
-    }
+  main {
+    padding-bottom: 10rem;
+  }
 }
-
 @media (max-width: 480px) {
-    main {
-        padding-bottom: 7rem;
-    }
+  main {
+    padding-bottom: 7rem;
+  }
 }
 
 input {
-    background: unset;
-    outline: none;
-    border: unset;
-    box-shadow: none;
+  background: unset;
+  outline: none;
+  border: unset;
+  box-shadow: none;
 }
 
 .wrapper {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
-
 @media (max-width: 768px) {
-    .wrapper {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
+  .wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
-
 @media (max-width: 480px) {
-    .wrapper {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-    }
+  .wrapper {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 .preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f0f2f6;
-    z-index: 100000000000;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f2f6;
+  z-index: 100000000000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
-
 .preloader .spin {
-    -webkit-transform: scale(3);
-    transform: scale(3);
+  -webkit-transform: scale(3);
+          transform: scale(3);
 }
 
 .lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-
 @media (max-width: 480px) {
-    .lds-ring {
-        width: 50px;
-        height: 50px;
-    }
+  .lds-ring {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64%;
-    height: 64%;
-    margin: 8px;
-    border: 0.2rem solid #A50F2D;
-    border-radius: 50%;
-    -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #A50F2D transparent transparent transparent;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64%;
+  height: 64%;
+  margin: 8px;
+  border: 0.2rem solid #A50F2D;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #A50F2D transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {
-    -webkit-animation-delay: -0.45s;
-    animation-delay: -0.45s;
-    z-index: 1;
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+  z-index: 1;
 }
 
 .lds-ring div:nth-child(2) {
-    -webkit-animation-delay: -0.3s;
-    animation-delay: -0.3s;
-    z-index: 1;
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+  z-index: 1;
 }
 
 .lds-ring div:nth-child(3) {
-    -webkit-animation-delay: -0.15s;
-    animation-delay: -0.15s;
-    z-index: 1;
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+  z-index: 1;
 }
 
 .lds-ring div:nth-child(4) {
-    -webkit-animation: none;
-    animation: none;
-    border-color: #D2DCE5;
+  -webkit-animation: none;
+          animation: none;
+  border-color: #D2DCE5;
 }
 
 @-webkit-keyframes lds-ring {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @keyframes lds-ring {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }

@@ -846,10 +846,19 @@
       column-gap: 3.2rem;
       row-gap: 2rem;
       padding-top: 1.2rem;
+      @include breakpoint($sm-bp) {
+        flex-direction: column;
+      }
     }
 
     .form__item-radio--column {
       flex-direction: column;
+      @include breakpoint($mid-bp) {
+        flex-direction: row;
+      }
+      @include breakpoint($sm-bp) {
+        flex-direction: column;
+      }
     }
 
     .container {
@@ -978,4 +987,54 @@
   }
    }
 
+  }
+
+  .cookie {
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+    display: flex;
+    gap: 6.4rem;
+    background: #212424;
+    border-radius: 2px;
+    width: fit-content;
+    padding: 2.8rem;
+    z-index: 5;
+    @include breakpoint($sm-bp) {
+      width: 100%;
+      right: 0;
+      bottom: 0;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cookie__text {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      /* identical to box height, or 150% */
+      
+      
+      /* UI/Gray */
+      
+      color: #E5E9F1;
+      a {
+        @include breakpoint($sm-bp) {
+          display: block;
+        }
+      }
+    }
+    .close-button {
+      width: 2rem;
+      height: 2rem;
+      @include breakpoint($sm-bp) {
+        width: 3rem;
+        height: 3rem;
+      }
+      &::before, &::after {
+        background-color: #697279;
+        height: 0.2rem;
+      }
+    }
   }
