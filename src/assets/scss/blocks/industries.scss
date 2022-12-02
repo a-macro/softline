@@ -1,0 +1,275 @@
+.industries {
+
+  .industries__block {
+    padding-top: 15rem;
+    @include breakpoint($xl-bp) {
+      padding-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+      padding-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-top: 5rem;
+    }
+  }
+
+  .industries__top-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7.7rem;
+    padding-bottom: 15rem;
+    justify-content: space-between;
+    max-width: 156rem;
+    @include breakpoint($xl-bp) {
+      max-width: 132.5rem;
+      padding-bottom: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+      gap: 3.7rem;
+      padding-bottom: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      gap: 2.7rem;
+      padding-bottom: 7rem;
+    }
+    .industries__title {
+      max-width: 45rem;
+      @include breakpoint($mid-bp) {
+        max-width: unset;
+      }
+    }
+    .industries__subtitle {
+      max-width: 58rem;
+      @include breakpoint($xl-bp) {
+        padding-top: 0.5rem;
+      }
+      @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+      }
+    }
+  }
+  .industries__container {
+    .industries__list-title {
+      display: none;
+      @include breakpoint($xl-bp) {
+        display: block;
+        padding-bottom: 2.6rem;
+        border-bottom: 0.1rem solid #D2DCE5;
+        margin-bottom: 4rem;
+      }
+      @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+      }
+    }
+  }
+  .industries__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4rem;
+    @include breakpoint($mid-bp) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      row-gap: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    li {
+      a {
+        text-decoration: none;
+        color: #212424;
+        .img-wrapper {
+          padding-bottom: 2.4rem;
+          display: block;
+          @include breakpoint($xl-bp) {
+            height: 27.6rem;
+          }
+          @include breakpoint($mid-bp) {
+            height: 29rem;
+            padding-bottom: 1.4rem;
+          }
+          @include breakpoint($sm-bp) {
+            height: 26rem;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .industries__name {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 2rem;
+          line-height: 3.2rem;
+          /* identical to box height, or 160% */
+          
+          
+          /* UI/Black/High */
+          
+          color: #212424;
+          @include breakpoint($mid-bp) {
+            display: block;
+            padding-top: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper--swiper {
+    overflow: hidden;
+    @include breakpoint($mid-bp) {
+      padding-right: 0;
+    }
+  }
+  // .partners {
+  //   @include breakpoint($mid-bp) {
+  //     display: grid;
+  //     grid-template-columns: repeat(7, 18.4rem);
+  //     grid-template-rows: 18.4rem 18.4rem;
+  //     column-gap: 2rem;
+  //     width: 140rem;
+  //     padding-top: 2rem;
+  //   }
+  //   .partner {
+  //     @include breakpoint($mid-bp) {
+  //       width: 75%;
+  //       margin: 0;
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: center;
+  //     }
+  //   }
+  // }
+
+}
+
+.solve.solve--industries {
+  .solve__slider {
+    @include breakpoint($xl-bp) {
+      margin-top: -24rem;
+    }
+    @include breakpoint($sm-bp) {
+      margin-top: -19rem;
+    }
+  }
+  .solve__intro {
+      background-image: url("../images/industries/solve.jpg");
+      @include breakpoint($mid-bp) {
+        height: 70rem;
+      }
+      @include breakpoint($sm-bp) {
+        height: 53rem;
+        background-position: right 66% top 50%;
+      }
+      .section-top {
+        @include breakpoint($mid-bp) {
+          padding-top: 9.5rem;
+          margin-top: 10rem;
+        }
+        @include breakpoint($sm-bp) {
+          margin-top: 8rem;
+          padding-top: 4.5rem;
+        }
+      }
+  }
+}
+
+.man52 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  
+  letter-spacing: -0.02em;
+  
+  /* UI/Black/High */
+  
+  color: #212424;
+  @include breakpoint($sm-bp) {
+    font-size: 4.1rem;
+    line-height: 5rem;
+  }
+}
+
+.section-top__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  
+  letter-spacing: -0.02em;
+  
+  /* UI/Black/High */
+  
+  color: #212424;
+  @include breakpoint($sm-bp) {
+    font-size: 4.1rem;
+    line-height: 5rem;
+  }
+}
+
+.industrie {
+  .section-top {
+    margin-top: 16rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 12.5rem;
+    }
+  }
+  .news__slider {
+    margin-top: 5rem;
+  }
+  .news-slide {
+    width: 43rem;
+    height: auto;
+    @include breakpoint($xl-bp) {
+      width: 31rem;
+    }
+    @include breakpoint($mid-bp) {
+      width: 57rem;
+      padding-right: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+      width: 39rem;
+      padding-right: 0;
+    }
+    .events__img {
+      @include breakpoint($mid-bp) {
+        height: 32rem;
+      }
+      .events__date-block {
+        @include breakpoint($sm-bp) {
+          bottom: 3rem;
+        }
+        .events__date-item {
+          @include breakpoint($sm-bp) {
+            gap: 1rem;
+          }
+        }
+        .events__date {
+          @include breakpoint($sm-bp) {
+            font-size: 4.4rem;
+          }
+        }
+        .events__month {
+          @include breakpoint($sm-bp) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .events__title {
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .swiper-button-next, .swiper-button-prev {
+    top: 13rem;
+  }
+}
