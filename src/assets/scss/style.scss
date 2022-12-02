@@ -5,6 +5,7 @@
 
 /* Blocks */
 
+@import 'blocks/industries.scss';
 @import 'blocks/main-cybersecurity';
 @import 'blocks/menu';
 @import 'blocks/catalog';
@@ -35,8 +36,8 @@ html {
   @include breakpoint($sm-bp) {
     font-size: calc(100vw / 480 * 10);
   }
-
 }
+
 body {
   margin: 0;
   padding: 0;
