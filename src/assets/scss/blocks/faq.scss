@@ -498,16 +498,16 @@
     .accordion__list-desc {
       position: relative;
       will-change: max-height;
-      .accordion__item-bg {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
+    }
+    .accordion__item-bg {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
   }
 
