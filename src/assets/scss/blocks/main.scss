@@ -807,9 +807,9 @@
         padding: 0 1.5rem;
     }
     @include breakpoint($mid-bp) {
-        padding: 0 2.5rem;
-    }
-    @include breakpoint($sm-bp) {
+//        padding: 0 2.5rem;
+//    }
+//    @include breakpoint($sm-bp) {
         height: calc(33rem + 40px);
         padding-top: 3.5rem;
         flex-direction: column;
@@ -818,7 +818,8 @@
 
 .partners__mobSlider {
     width: 100%;
-    @include breakpoint($sm-bp) {
+    //@include breakpoint($sm-bp) {
+    @include breakpoint($mid-bp) {
         overflow: hidden;
         margin-top: 3rem;
     }
@@ -843,12 +844,12 @@
         width: calc((100% - 37.8rem) / 7);
     }
     @include breakpoint($mid-bp) {
-        width: calc((100% - 16.8rem) / 4);
-        margin-right: 5.6rem;
-        margin-top: 5rem;
-        margin-bottom: 0.8rem;
-    }
-    @include breakpoint($sm-bp) {
+    //    width: calc((100% - 16.8rem) / 4);
+    //    margin-right: 5.6rem;
+    //    margin-top: 5rem;
+    //    margin-bottom: 0.8rem;
+    //}
+    //@include breakpoint($sm-bp) {
         height: 13rem;
         margin-right: 0;
         margin-top: 0;

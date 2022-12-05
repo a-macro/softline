@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let swiper;
 
     function initSlider() {
-        if (width <= 480 && !init) {
+        if (width <= 768 && !init) {
             swiper = new Swiper(".partners__mobSlider", {
                 loop: false,
                 slidesPerView: 2.8,
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
             init = true;
         }
 
-        if (init && width > 480) {
+        if (init && width > 768) {
             init = false;
             swiper.destroy();
         }

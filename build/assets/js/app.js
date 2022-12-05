@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var init = false;
   var swiper;
   function initSlider() {
-    if (width <= 480 && !init) {
+    if (width <= 768 && !init) {
       swiper = new Swiper(".partners__mobSlider", {
         loop: false,
         slidesPerView: 2.8,
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       init = true;
     }
-    if (init && width > 480) {
+    if (init && width > 768) {
       init = false;
       swiper.destroy();
     }
