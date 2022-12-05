@@ -1,0 +1,400 @@
+.industries {
+  .title-num {
+    color: #A50F2D;
+  }
+  .industries__block {
+    padding-top: 15rem;
+    @include breakpoint($xl-bp) {
+      padding-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+      padding-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-top: 5rem;
+    }
+  }
+
+  .industries__top-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7.7rem;
+    padding-bottom: 15rem;
+    justify-content: space-between;
+    max-width: 156rem;
+    @include breakpoint($xl-bp) {
+      max-width: 132.5rem;
+      padding-bottom: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+      gap: 3.7rem;
+      padding-bottom: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      gap: 2.7rem;
+      padding-bottom: 7rem;
+    }
+    .industries__title {
+      max-width: 45rem;
+      @include breakpoint($mid-bp) {
+        max-width: unset;
+      }
+    }
+    .industries__subtitle {
+      max-width: 58rem;
+      @include breakpoint($xl-bp) {
+        padding-top: 0.5rem;
+      }
+      @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+      }
+    }
+  }
+  .industries__container {
+    .industries__list-title {
+      display: none;
+      @include breakpoint($xl-bp) {
+        display: block;
+        padding-bottom: 2.6rem;
+        border-bottom: 0.1rem solid #D2DCE5;
+        margin-bottom: 4rem;
+      }
+      @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+      }
+    }
+  }
+  .industries__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4rem;
+    @include breakpoint($mid-bp) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      row-gap: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    li {
+      a {
+        text-decoration: none;
+        color: #212424;
+        .img-wrapper {
+          padding-bottom: 2.4rem;
+          display: block;
+          @include breakpoint($xl-bp) {
+            height: 27.6rem;
+          }
+          @include breakpoint($mid-bp) {
+            height: 29rem;
+            padding-bottom: 1.4rem;
+          }
+          @include breakpoint($sm-bp) {
+            height: 26rem;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .industries__name {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 2rem;
+          line-height: 3.2rem;
+          /* identical to box height, or 160% */
+          
+          
+          /* UI/Black/High */
+          
+          color: #212424;
+          @include breakpoint($mid-bp) {
+            display: block;
+            padding-top: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper--swiper {
+    overflow: hidden;
+    @include breakpoint($mid-bp) {
+      padding-right: 0;
+    }
+  }
+  // .partners {
+  //   @include breakpoint($mid-bp) {
+  //     display: grid;
+  //     grid-template-columns: repeat(7, 18.4rem);
+  //     grid-template-rows: 18.4rem 18.4rem;
+  //     column-gap: 2rem;
+  //     width: 140rem;
+  //     padding-top: 2rem;
+  //   }
+  //   .partner {
+  //     @include breakpoint($mid-bp) {
+  //       width: 75%;
+  //       margin: 0;
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: center;
+  //     }
+  //   }
+  // }
+
+}
+
+.solve.solve--industries {
+  .solve__slider {
+    @include breakpoint($xl-bp) {
+      margin-top: -24rem;
+    }
+    @include breakpoint($sm-bp) {
+      margin-top: -19rem;
+    }
+  }
+  .solve__intro {
+      background-image: url("../images/industries/solve.jpg");
+      @include breakpoint($mid-bp) {
+        height: 70rem;
+      }
+      @include breakpoint($sm-bp) {
+        height: 53rem;
+        background-position: right 66% top 50%;
+      }
+      .section-top {
+        @include breakpoint($mid-bp) {
+          padding-top: 9.5rem;
+          margin-top: 10rem;
+        }
+        @include breakpoint($sm-bp) {
+          margin-top: 8rem;
+          padding-top: 4.5rem;
+        }
+      }
+  }
+}
+
+.man52 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  
+  letter-spacing: -0.02em;
+  
+  /* UI/Black/High */
+  
+  color: #212424;
+  @include breakpoint($sm-bp) {
+    font-size: 4.1rem;
+    line-height: 5rem;
+  }
+}
+
+.section-top__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  
+  letter-spacing: -0.02em;
+  
+  /* UI/Black/High */
+  
+  color: #212424;
+  @include breakpoint($sm-bp) {
+    font-size: 4.1rem;
+    line-height: 5rem;
+  }
+}
+
+.industrie {
+  .section-top {
+    margin-top: 16rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 12.5rem;
+    }
+  }
+  .news__slider {
+    margin-top: 5rem;
+  }
+  .news-slide {
+    width: 43rem;
+    height: auto;
+    @include breakpoint($xl-bp) {
+      width: 31rem;
+    }
+    @include breakpoint($mid-bp) {
+      width: 57rem;
+      padding-right: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+      width: 39rem;
+      padding-right: 0;
+    }
+    .events__img {
+      @include breakpoint($mid-bp) {
+        height: 32rem;
+      }
+      .events__date-block {
+        @include breakpoint($sm-bp) {
+          bottom: 3rem;
+        }
+        .events__date-item {
+          @include breakpoint($sm-bp) {
+            gap: 1rem;
+          }
+        }
+        .events__date {
+          @include breakpoint($sm-bp) {
+            font-size: 4.4rem;
+          }
+        }
+        .events__month {
+          @include breakpoint($sm-bp) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .events__title {
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .swiper-button-next, .swiper-button-prev {
+    top: 13rem;
+  }
+}
+
+.industry {
+  .lined-card {
+    justify-content: flex-start;
+    gap: 10rem;
+  }
+  .accordion {
+    padding-top: 15rem;
+    .accordion__ind-title {
+      padding-bottom: 7.2rem;
+    }
+    .accordion__list-title {
+      display: grid;
+      grid-template-columns: 1fr min-content;
+      align-items: center;
+      width: 100%;
+      text-align: start;
+      padding-top: 4.8rem;
+      padding-bottom: 4.8rem;
+      transition: all .3s;
+      @media (hover: hover) {
+        &:hover {
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
+      }
+      font-size: 3.6rem;
+      letter-spacing: -0.02em;
+      line-height: 5.2rem;
+      @include breakpoint($mid-bp) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      @include breakpoint($sm-bp) {
+        font-size: 2.6rem;
+        line-height: 3.2rem;
+        letter-spacing: normal;
+      }
+    }
+    .accordion__list-desc {
+      display: block;
+      position: relative;
+      background-color: #FFFFFF;
+      .close-button {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        top: 2rem;
+        right: 2.5rem;
+        z-index: 2;
+        &::after, &::before {
+          background-color: #AAB8C3;
+          height: 0.2rem;
+        }
+      }
+      .accordion__list__inner {
+        position: relative;
+        z-index: 1;
+        padding: 5.6rem 6.4rem 7.2rem;
+        @include breakpoint($mid-bp) {
+          padding: 4rem 2rem;
+        }
+        @include breakpoint($sm-bp) {
+          padding: 3rem 3rem;
+          padding-right: 5rem;
+        }
+      }
+      .accordion__desc-title {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.6rem;
+        line-height: 5.2rem;
+        /* identical to box height, or 144% */
+        
+        letter-spacing: -0.01em;
+        
+        /* UI/Black/High */
+        
+        color: #212424;
+        padding-bottom: 4rem;
+        @include breakpoint($sm-bp) {
+          font-size: 2.7rem;
+          line-height: 4.2rem;
+          padding-right: 2rem;
+          font-weight: 500;
+          padding-bottom: 3rem;
+        }
+      }
+      ul {
+        li {
+          border: 0;
+          padding: 1.2rem 0;
+          padding-left: 4.5rem;
+          background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: left top 2.4rem;
+        }
+      }
+      p + ul {
+        padding-top: 3.2rem;
+        @include breakpoint($sm-bp) {
+          padding-top: 2.2rem;
+        }
+      }
+      p + p {
+        padding-top: 3.2rem;
+        @include breakpoint($sm-bp) {
+          padding-top: 2.2rem;
+        }
+      }
+      ul + p {
+        padding-top: 3.2rem;
+        @include breakpoint($sm-bp) {
+          padding-top: 2.2rem;
+        }
+      }
+    }
+  }
+  .accordion__item.active {
+    border-color: transparent;
+  }
+}

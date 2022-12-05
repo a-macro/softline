@@ -66,6 +66,10 @@
         margin-top: 9rem;
         padding-bottom: 10rem;
     }
+    @include breakpoint($sm-bp) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .lined-card {
