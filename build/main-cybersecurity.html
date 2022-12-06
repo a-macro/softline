@@ -55,6 +55,24 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM64 50L42 38V62L64 50Z" fill="white"/>
         </g>
       </symbol>
+    
+      <symbol id="cloud" viewBox="0 0 40 40">
+        <g>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.554 32.5c-8.405 0-8.405-14.223 0-14.223 0-17.552 20.31-13.737 20.31-2.29 14.01-.763 14.01 16.513 2.803 16.513H17.5" stroke="#A50F2D" stroke-width="2px"/>
+        </g>
+      </symbol>
+    
+      <symbol id="light" viewBox="0 0 40 40">
+        <g>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.25 1.25V0h-2.5v16.2a3.996 3.996 0 012.5 0V1.25zm.553 15.179a4.018 4.018 0 011.768 1.767L34.634 7.134l.884-.884-1.768-1.768-.884.884L21.803 16.43zm1.998 2.321c.13.393.199.814.199 1.25 0 .436-.07.857-.2 1.25H40v-2.5H23.8zm-.23 3.054a4.018 4.018 0 01-1.768 1.767l11.062 11.063.884.884 1.768-1.768-.884-.884-11.062-11.062zM21.25 23.8c-.393.13-.814.199-1.25.199-.436 0-.857-.07-1.25-.2V40h2.5V23.8zm-3.054-.23a4.017 4.017 0 01-1.767-1.768L5.366 32.866l-.884.884 1.767 1.768.884-.884L18.196 23.57zM16.2 21.25c-.13-.393-.2-.814-.2-1.25 0-.436.07-.857.2-1.25H0v2.5h16.2zM7.134 5.366l-.884-.884L4.482 6.25l.884.884 6.417 6.417.884.884 1.768-1.768-.884-.884-6.417-6.417z" fill="#A50F2D"/>
+      </symbol>
+    
+      <symbol id="tag" viewBox="0 0 40 42">
+        <g>
+          <path d="M25 5L17.5 35" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square" stroke-linejoin="round"/>
+          <path d="M10.9559 11.0608L6.25 15.7667L3.75 18.2667L1.875 20.1417L10.9559 28.4192" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square"/>
+          <path d="M30.9191 11.0608L35.625 15.7667L38.125 18.2667L40 20.1417L30.9191 28.4192" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square"/>
+      </symbol>
     </svg>    <header class="header">
         <div class="header__logo_mob">
             <img src="assets/images/logo.svg" alt="">
@@ -357,130 +375,145 @@
         
             <div class="services">
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector5.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector5.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Infrastructure Security</h4>
                         </span>
-                        <h4 class="subtitle">Infrastructure Security</h4>
+                        <span class="service__text">
+                            Softline offers a wide range of cloud services for business
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Softline offers a wide range of cloud services for business
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector6.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector6.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Data Security</h4>
                         </span>
-                        <h4 class="subtitle">Data Security</h4>
+                        <span class="service__text">
+                            Protecting data in applications and platforms from unauthorized access
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Protecting data in applications and platforms from unauthorized access
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector7.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector7.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Application Security</h4>
                         </span>
-                        <h4 class="subtitle">Application Security</h4>
+                        <span class="service__text">
+                            Set of tools to protect applications from threats throughout their entire lifecycle
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Set of tools to protect applications from threats throughout their entire lifecycle
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector8.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector8.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Compliance</h4>
                         </span>
-                        <h4 class="subtitle">Compliance</h4>
+                        <span class="service__text">
+                            Set of tools to protect applications from threats throughout their entire lifecycle
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Set of tools to protect applications from threats throughout their entire lifecycle
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector5.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector5.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Infrastructure Security</h4>
                         </span>
-                        <h4 class="subtitle">Infrastructure Security</h4>
+                        <span class="service__text">
+                            Softline offers a wide range of cloud services for business
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Softline offers a wide range of cloud services for business
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector6.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector6.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Data Security</h4>
                         </span>
-                        <h4 class="subtitle">Data Security</h4>
+                        <span class="service__text">
+                            Protecting data in applications and platforms from unauthorized access
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Protecting data in applications and platforms from unauthorized access
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector7.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector7.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Application Security</h4>
                         </span>
-                        <h4 class="subtitle">Application Security</h4>
+                        <span class="service__text">
+                            Set of tools to protect applications from threats throughout their entire lifecycle
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Set of tools to protect applications from threats throughout their entire lifecycle
-                    </p>
                 </a>
                 <a href="#" class="service">
-                    <span class="service__top">
-                        <span class="service__top_img">
-                            <img src="assets/images/main-cybersecurity/Vector8.svg" alt="">
+                    <span class="service__inner">
+                        <span class="service__top">
+                            <span class="service__top_img">
+                                <img src="assets/images/main-cybersecurity/Vector8.svg" alt="">
+                            </span>
+                            <h4 class="subtitle">Compliance</h4>
                         </span>
-                        <h4 class="subtitle">Compliance</h4>
+                        <span class="service__text">
+                            Set of tools to protect applications from threats throughout their entire lifecycle
+                        </span>
                     </span>
-                    <p class="service__text">
-                        Set of tools to protect applications from threats throughout their entire lifecycle
-                    </p>
                 </a>
             </div>
         </section>
         
         <section class="cybersecurity-nums">
-            <div class="section-top">
-                <div class="title-wrapper">
-                    <h2 class="title">We have expertise&nbsp;<br>in cybersecurity</h2>
-                </div>   
-                <div class="section-top__aside">
-                    <p class="text-normal">
-                        We build cybersecurity around the challenges and constraints of your business, and protect customers  from cyberattacks with a proactive, targeted approach
-                    </p> 
-                </div>
-            </div>
+          <div class="section-top">
+              <div class="title-wrapper">
+                  <h2 class="title">We have expertise&nbsp;<br>in cybersecurity</h2>
+              </div>   
+              <div class="section-top__aside">
+                  <p class="text-normal">
+                      We build cybersecurity around the challenges and constraints of your business, and protect customers  from cyberattacks with a proactive, targeted approach
+                  </p> 
+              </div>
+          </div>
         
-            <div class="cybersecurity-nums__block">
-                <div class="rising-num">
-                    <span id="num1" data-num="150" class="rising-num__num">0+</span>
-                    <p class="rising-num__text">engineers<br>and analysts</p>
-                </div>
-                <div class="rising-num">
-                    <span id="num2" data-num="200" class="rising-num__num">0+</span>
-                    <p class="rising-num__text">cybersecurity vendors<br>in portfolio</p>
-                </div>
-                <div class="rising-num">
-                    <span id="num3" data-num="1500" class="rising-num__num">0+</span>
-                    <p class="rising-num__text">projects<br>since 2010</p>
-                </div>
-            </div>
+          <div class="cybersecurity-nums__block">
+              <div class="rising-num">
+                  <span id="num1" data-num="150" class="rising-num__num">0+</span>
+                  <p class="rising-num__text">engineers<br>and analysts</p>
+              </div>
+              <div class="rising-num">
+                  <span id="num2" data-num="200" class="rising-num__num">0+</span>
+                  <p class="rising-num__text">cybersecurity vendors<br>in portfolio</p>
+              </div>
+              <div class="rising-num">
+                  <span id="num3" data-num="1500" class="rising-num__num">0+</span>
+                  <p class="rising-num__text">projects<br>since 2010</p>
+              </div>
+          </div>
         </section>
-        
         <section class="solve cybersecurity">
             <div class="solve__intro">
                 <div class="section-top vertical white">
                     <div class="title-wrapper">
                         <span class="title-num">2</span>
-                        <h2 class="title">We already solved many&nbsp;<br>cybersecurity problems&nbsp;<br>for our customers</h2>
+                        <h2 class="title man52">We already solved many&nbsp;<br>cybersecurity problems&nbsp;<br>for our customers</h2>
                         <a class="link-white" href="#">
                             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="32" height="32" rx="16" fill="white"/>

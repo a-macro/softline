@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
             swiper = new Swiper(".partners__mobSlider", {
                 loop: false,
                 slidesPerView: 2.8,
-                spaceBetween: 40,
+                    spaceBetween: 40,
                 freeMode: true,
                 autoHeight: false,
 
@@ -239,6 +239,13 @@ document.addEventListener("DOMContentLoaded", () => {
                   },
  
                 initialSlide: 1,
+                breakpoints: {
+                    // when window width is >= 320px
+                    481: {
+                        slidesPerView: 3.8,
+                        spaceBetween: 40,
+                    },
+                }
             });
             init = true;
         }
