@@ -228,7 +228,14 @@ document.addEventListener("DOMContentLoaded", function () {
         grid: {
           rows: 2
         },
-        initialSlide: 1
+        initialSlide: 1,
+        breakpoints: {
+          // when window width is >= 320px
+          481: {
+            slidesPerView: 3.8,
+            spaceBetween: 40
+          }
+        }
       });
       init = true;
     }

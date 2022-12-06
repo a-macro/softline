@@ -874,7 +874,7 @@
 
     img {
         width: 100%;
-        @include breakpoint($sm-bp) {
+        @include breakpoint($mid-bp) {
             height: 100%;
             object-fit: contain;
         }

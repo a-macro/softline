@@ -226,8 +226,11 @@
     margin-top: 5rem;
   }
   .news-slide {
-    width: 43rem;
-    height: auto;
+    width: 57rem;
+    @include breakpoint($xxl-bp) {
+      width: 43rem;
+      height: auto;
+    }
     @include breakpoint($xl-bp) {
       width: 31rem;
     }
@@ -272,7 +275,10 @@
     }
   }
   .swiper-button-next, .swiper-button-prev {
-    top: 13rem;
+    top: 18rem;
+    @include breakpoint($xxl-bp) {
+      top: 13rem;
+    }
   }
 }
 
@@ -280,11 +286,28 @@
   .lined-card {
     justify-content: flex-start;
     gap: 10rem;
+    @include breakpoint($mid-bp) {
+      gap: 5.5rem;
+    }
   }
   .accordion {
     padding-top: 15rem;
+    @include breakpoint($xl-bp) {
+      padding-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-top: 5rem;
+    }
     .accordion__ind-title {
       padding-bottom: 7.2rem;
+      max-width: 75rem;
+      @include breakpoint($mid-bp) {
+        padding-bottom: 3.5rem;
+        max-width: unset;
+      }
+      @include breakpoint($sm-bp) {
+        padding-bottom: 5rem;
+      }
     }
     .accordion__list-title {
       display: grid;
@@ -305,13 +328,25 @@
       letter-spacing: -0.02em;
       line-height: 5.2rem;
       @include breakpoint($mid-bp) {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
       }
       @include breakpoint($sm-bp) {
         font-size: 2.6rem;
         line-height: 3.2rem;
         letter-spacing: normal;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .accordion__button-text {
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+      }
+      .accordion__button-text svg {
+        height: 4rem;
+        width: 4rem;
+        fill: transparent ;
       }
     }
     .accordion__list-desc {
@@ -340,6 +375,47 @@
         @include breakpoint($sm-bp) {
           padding: 3rem 3rem;
           padding-right: 5rem;
+        }
+        .services {
+          margin-top: 0;
+        }
+      }
+      .accordion__list__inner--first {
+        padding: 8rem;
+        padding-top: 7.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+        @include breakpoint($mid-bp) {
+          padding: 2rem;
+          padding-top: 7.7rem;
+          padding-bottom: 7.7rem;
+        }
+        @include breakpoint($sm-bp) {
+          padding-top: 4rem;
+          padding-left: 4rem;
+          padding-right: 7rem;
+          padding-bottom: 4.7rem;
+        }
+        .accordion__desc-text {
+          max-width: 41rem;
+          font-weight: 500;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          @include breakpoint($sm-bp) {
+            font-size: 1.9rem;
+            line-height: 2.9rem;
+          }
+        }
+      }
+      .accordion__list__inner--48 {
+        padding: 4.8rem;
+        padding-left: 2.8rem;
+        @include breakpoint($mid-bp) {
+          padding: 4rem 2rem;
+        }
+        @include breakpoint($sm-bp) {
+          padding: 5rem 2rem;
         }
       }
       .accordion__desc-title {
@@ -397,4 +473,136 @@
   .accordion__item.active {
     border-color: transparent;
   }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 14.4rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 11.4rem;
+    }
+    @include breakpoint($xl-bp) {
+        margin-top: 7.4rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @include breakpoint($mid-bp) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint($sm-bp) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .service {
+        width: 100%;
+        height: 29.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-right: unset;
+        position: relative;
+        padding: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border: unset;
+        border-left: 0.1rem solid #D2DCE5;
+        &::after {
+            display: none;
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+          .service__inner {
+            border-top: 0.1rem solid #D2DCE5;
+          }
+        }
+        &:nth-child(4n + 1) {
+          border-left: 0;
+        }
+        &:hover {
+          background-color: #F0F2F6;
+          .service__inner {
+            border-color: transparent;
+          }
+        }
+        @include breakpoint($xl-bp) {
+          height: 27.5rem;
+        }
+        @include breakpoint($mid-bp) {
+          border: 0;
+          padding: 0;
+          position: relative;
+          height: 25rem;
+          &:nth-child(2n + 1) {
+            padding-right: 1rem;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 0.1rem;
+              height: calc(100% - 1rem);
+              background-color: #D2DCE5;
+            }
+          }
+          &:nth-child(2n + 2) {
+            padding-left: 1rem;
+          }
+          &:nth-child(3), &:nth-child(4) {
+            .service__inner {
+              border-top: 0;
+            }
+          }
+        }
+        @include breakpoint($sm-bp) {
+          height: 28rem;
+          &:nth-child(2n + 1) {
+            padding-right: 0;
+            &::before {
+              content: unset;
+            }
+          }
+          &:nth-child(2n + 2) {
+            padding-left: 0;
+          }
+          &:nth-child(2) {
+            .service__inner {
+              border-top: 0;
+            }
+          }
+        }
+    }
+    .service__inner {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      border-bottom: 0.1rem solid #D2DCE5;
+      transform: translateY(1px);
+      @include breakpoint($mid-bp) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      @include breakpoint($sm-bp) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+    }
+    .service__top {
+      @include breakpoint($sm-bp) {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+    .service__top_img {
+        height: 5rem;
+    }
+
+    .service__text {
+        max-width: 70%;
+        @include breakpoint($xl-bp) {
+          max-width: 100%;
+        }
+    }
+}
+
 }

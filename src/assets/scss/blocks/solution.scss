@@ -1,0 +1,263 @@
+
+
+.solution {
+  .dark {
+    .section-top {
+      padding-bottom: 7.2rem;
+      @include breakpoint($sm-bp) {
+        padding-bottom: 5.5rem;
+      }
+    }
+  }
+  .solution__services {
+    margin-top: 15rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+      margin-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      margin-top: 8rem;
+    }
+    .solution__services-title {
+      padding-bottom: 5.2rem;
+    }
+    .services {
+      margin-top: 0;
+    }
+  }
+  .accordion__top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .accordion {
+    margin-top: 15rem;
+    @include breakpoint($xl-bp) {
+      margin-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+      margin-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      margin-top: 8rem;
+    }
+    .accordion__title {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 5.2rem;
+      line-height: 5.8rem;
+      /* identical to box height, or 112% */
+      
+      letter-spacing: -0.02em;
+      
+      /* Prototype / Black / High */
+      
+      color: #40454E;
+      padding-bottom: 5.2rem;
+      @include breakpoint($sm-bp) {
+        font-size: 4.1rem;
+        line-height: 4.8rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+    ul {
+    }
+    li {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      .accordion__plus {
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        border: 0.1rem solid #AAB8C3;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 8.8rem;
+        transition: all .2s;
+        @include breakpoint($mid-bp) {
+          margin-right: 6rem;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        @include breakpoint($sm-bp) {
+          width: 4.2rem;
+          height: 4.2rem;
+          margin: 0;
+          margin-right: 2rem;
+        }
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 1.4rem;
+          height: 0.148rem;
+          background-color: #AAB8C3;
+          transform: translateX(-50%);
+          transition: all .2s;
+        }
+        &::after {
+          transform: translateX(-50%) rotate(90deg);
+        }
+      }
+      .accordion__list-title {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        border: 0;
+        background-color: unset;
+        text-align: start;
+        padding: 0;
+        padding-right: 2rem;
+        transition: all .2s;
+        @include breakpoint($sm-bp) {
+          font-size: 2.1rem;
+          padding-left: 2.8rem;
+        }
+      }
+      .accordion__list-desc {
+        display: block;
+        color: #697279;
+        padding-left: 12rem;
+        padding-right: 24rem;
+        padding-top: 0;
+        transition: padding-top .2s;
+        box-sizing: content-box;
+        @include breakpoint($mid-bp) {
+          padding-right: 2rem;
+        }
+        @include breakpoint($sm-bp) {
+          padding-left: 9rem;
+          padding-right: 3rem;
+          font-size: 1.95rem;
+        }
+      }
+      @media (hover: hover) {
+        &:hover {
+          background-color: #FFFFFF;
+          padding-top: 3.3rem;
+          padding-bottom: 3.3rem;
+          border-color: #FFFFFF;
+          .accordion__plus {
+            background-color: #A50F2D;
+            border-color: #A50F2D;
+            margin-right: 6rem;
+            &::after {
+              transform: translateX(-50%);
+            }
+            &::after, &::before {
+              background-color: #FFFFFF;
+            }
+          }
+          .accordion__list-title {
+            padding-left: 2.8rem;
+          }
+        }
+      }
+    }
+    li.active {
+      background-color: #FFFFFF;
+      padding-top: 3.3rem;
+      padding-bottom: 3.3rem;
+      border-color: #FFFFFF;
+      .accordion__plus {
+        background-color: #A50F2D;
+        border-color: #A50F2D;
+        margin-right: 6rem;
+        @include breakpoint($mid-bp) {
+          margin: 0;
+          margin-right: 6rem;
+        }
+        @include breakpoint($sm-bp) {
+          margin-right: 2rem;
+        }
+        &::after {
+          transform: translateX(-50%);
+        }
+        &::after, &::before {
+          background-color: #FFFFFF;
+        }
+      }
+      .accordion__list-title {
+        padding-left: 2.8rem;
+      }
+      .accordion__list-desc {
+        padding-top: 2rem;
+      }
+    }
+  }
+}
+
+.solve.solve--solution {
+  .solve__intro {
+    background-image: url("../images/solution/solution-1.jpg");
+  }
+}
+
+.mt15 {
+  margin-top: 15rem;
+  @include breakpoint($xl-bp) {
+    margin-top: 12rem;
+  }
+  @include breakpoint($mid-bp) {
+    margin-top: 10rem;
+  }
+  @include breakpoint($sm-bp) {
+    margin-top: 8rem;
+  }
+}
+
+
+  .help-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding-bottom: 10rem;
+    @include breakpoint($mid-bp) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include breakpoint($sm-bp) {
+      gap: 3rem;
+      padding-bottom: 8rem;
+    }
+    .help-blocks__item {
+      height: 34.9rem;
+      display: flex;
+      justify-content: space-between;
+      background-color: #282B2B;
+      padding: 2rem 4rem 3rem 2.8rem;
+      @include breakpoint($sm-bp) {
+        padding-right: 2rem;
+        height: 20.9rem;
+      }
+      .help-blocks__left {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        .help-blocks__title {
+          color: #FFFFFF;
+        }
+        .help-blocks__subtitle {
+          color: #697279;
+        }
+      }
+      .help-blocks__right {
+        .img-wrapper {
+          height: 12rem;
+          width: 12rem;
+          @include breakpoint($sm-bp) {
+            width: 9rem;
+            height: 9rem;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
