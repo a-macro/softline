@@ -3744,6 +3744,16 @@
       background: #A50F2D;
     }
 
+    &::-webkit-scrollbar:horizontal{
+      height: 0;
+      width: 0;
+  }
+
+    &::-webkit-scrollbar-thumb:horizontal{
+      height: 0;
+      width: 0;
+  }
+
     @include breakpoint($sm-bp) {
       height: calc(100% - 4rem);
       width: 100%;
@@ -3812,7 +3822,7 @@
               background-color: #FFFFFF;
 
               @include breakpoint($sm-bp) {
-                background-color: #D2DCE5;
+                background-color: transparent;
               }
             }
           }
@@ -3836,7 +3846,7 @@
           border-radius: 50%;
 
           @include breakpoint($sm-bp) {
-            background-color: #FFFFFF;
+            background-color: transparent;
           }
 
           &::before,

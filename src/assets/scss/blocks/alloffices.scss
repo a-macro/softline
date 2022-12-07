@@ -1,0 +1,101 @@
+.alloffices__top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint($mid-bp) {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  @include breakpoint($sm-bp) {
+    gap: 3rem;
+    padding-bottom: 8.5rem;
+  }
+  .alloffices__title {
+    @include breakpoint($sm-bp) {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+  .alloffices__block {
+    @include breakpoint($mid-bp) {
+      margin-top: 5rem;
+    }
+    @include breakpoint($sm-bp) {
+      margin-top: 8rem;
+    }
+  }
+
+
+  .alloffices__list-block {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    /* identical to box height, or 150% */
+    
+    
+    /* UI/Black/High */
+    
+    color: #212424;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    @include breakpoint($mid-bp) {
+      gap: 6rem;
+    }
+    @include breakpoint($sm-bp) {
+      font-size: 2.6rem;
+      gap: 8rem;
+    }
+    .alloffices__list-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3.6rem;
+      .alloffices__list-title {
+        padding-bottom: 2.7rem;
+        border-bottom: 0.1rem solid #D2DCE5;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        row-gap: 3.6rem;
+        column-gap: 4rem;
+        @include breakpoint($xxl-bp) {
+          grid-template-columns: repeat(5, 1fr);
+        }
+        @include breakpoint($xl-bp) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        @include breakpoint($mid-bp) {
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 10rem;
+        }
+        @include breakpoint($sm-bp) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        li {
+        }
+        .link {
+          display: flex;
+          gap: 1.6rem;
+          text-decoration: none;
+          color: #212424;
+          .img-wrapper {
+            display: block;
+            width: 3rem;
+            height: 2rem;
+            @include breakpoint($sm-bp) {
+              width: 4rem;
+              height: 3rem;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          &:hover {}
+        }
+      }
+    }
+  }
