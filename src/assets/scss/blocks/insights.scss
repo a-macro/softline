@@ -3753,7 +3753,6 @@
       height: 0;
       width: 0;
   }
-
     @include breakpoint($sm-bp) {
       height: calc(100% - 4rem);
       width: 100%;
@@ -3955,6 +3954,10 @@
       /* Handle on hover */
       &::-webkit-scrollbar-thumb:hover {
         background: #A50F2D;
+      }
+
+      &::-webkit-scrollbar:horizontal {
+        height: 0;
       }
 
       @include breakpoint($sm-bp) {

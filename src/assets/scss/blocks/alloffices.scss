@@ -1,14 +1,17 @@
 .alloffices__top-wrapper {
   display: flex;
   justify-content: space-between;
+
   @include breakpoint($mid-bp) {
     flex-direction: column;
     gap: 4rem;
   }
+
   @include breakpoint($sm-bp) {
     gap: 3rem;
     padding-bottom: 8.5rem;
   }
+
   .alloffices__title {
     @include breakpoint($sm-bp) {
       br {
@@ -17,85 +20,278 @@
     }
   }
 }
-  .alloffices__block {
-    @include breakpoint($mid-bp) {
-      margin-top: 5rem;
-    }
-    @include breakpoint($sm-bp) {
-      margin-top: 8rem;
-    }
+
+.alloffices__block {
+  @include breakpoint($mid-bp) {
+    margin-top: 5rem;
   }
 
+  @include breakpoint($sm-bp) {
+    margin-top: 8rem;
+  }
+}
 
-  .alloffices__list-block {
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 3.6rem;
-    /* identical to box height, or 150% */
-    
-    
-    /* UI/Black/High */
-    
-    color: #212424;
+
+.alloffices__list-block {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* identical to box height, or 150% */
+
+
+  /* UI/Black/High */
+
+  color: #212424;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  @include breakpoint($mid-bp) {
+    gap: 6rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.6rem;
+    gap: 8rem;
+  }
+
+  .alloffices__list-item {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 3.6rem;
+
+    .alloffices__list-title {
+      padding-bottom: 2.7rem;
+      border-bottom: 0.1rem solid #D2DCE5;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      row-gap: 3.6rem;
+      column-gap: 4rem;
+
+      @include breakpoint($xxl-bp) {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      @include breakpoint($xl-bp) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include breakpoint($mid-bp) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      li {}
+
+      .link {
+        display: flex;
+        gap: 1.6rem;
+        text-decoration: none;
+        color: #212424;
+
+        .img-wrapper {
+          display: block;
+          width: 3rem;
+          height: 2rem;
+
+          @include breakpoint($sm-bp) {
+            width: 4rem;
+            height: 3rem;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        &:hover {}
+      }
+    }
+  }
+}
+
+.getintouch {
+  .registration__block {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
     @include breakpoint($mid-bp) {
-      gap: 6rem;
+      width: 100%;
+      margin-top: 7rem;
+      border-top-left-radius: 1.2rem;
+      border-top-right-radius: 1.2rem;
+      overflow: scroll;
+    }
+    &::before {
+      @include breakpoint($mid-bp) {
+        content: "";
+        width: 12.6rem;
+        height: .5rem;
+        display: block;
+        position: absolute;
+        top: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: .2rem;
+        background: #FFFFFF;
+    }
     }
     @include breakpoint($sm-bp) {
-      font-size: 2.6rem;
-      gap: 8rem;
+      overflow: scroll;
+      margin-top: 0;
+      &::before {
+        background-color: #FFFFFF;
+        z-index: 2;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem;
+        height: 0.2rem;
+        border-radius: 2px;
+      }
     }
-    .alloffices__list-item {
+    .registration__wrapper {
+      display: flex;
+      justify-content: flex-end;
+      @include breakpoint($sm-bp) {
+        padding: 0;
+      }
+    }
+    .registration__subtitle {
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      /* or 150% */
+      
+      
+      /* UI/Black/High */
+      
+      color: #212424;
+      padding-bottom: 3rem;
+      max-width: 44.6rem;
+      @include breakpoint($mid-bp) {
+        max-width: none;
+      }
+      @include breakpoint($sm-bp) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .registration__title {
+      margin-top: auto;
+      color: #FFFFFF;
+      font-size: 6.4rem;
+      line-height: 7.6rem ;
+    }
+    
+  form {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 4rem;
+    gap: 1rem;
+    height: 100%;
+    @include breakpoint($mid-bp) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .link-red {
+      padding-top: 2.5rem;
+    }
+  }
+    .getintouch__top-block {
+      height: 28rem;
+      background: url('../images/getintouch/getintouch.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
-      gap: 3.6rem;
-      .alloffices__list-title {
-        padding-bottom: 2.7rem;
-        border-bottom: 0.1rem solid #D2DCE5;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      @include breakpoint($mid-bp) {
+        height: 34.1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
       }
-      ul {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        row-gap: 3.6rem;
-        column-gap: 4rem;
-        @include breakpoint($xxl-bp) {
-          grid-template-columns: repeat(5, 1fr);
+      .close-button {
+        top: 0;
+        color: #FFFFFF;
+        &:hover {
+          .close-button__cross {
+            background-color: transparent;
+          }
         }
-        @include breakpoint($xl-bp) {
-          grid-template-columns: repeat(4, 1fr);
+        .close-button__cross {
+          background-color: #FFFFFF;
+          &:before, &:after {
+            background-color: #212424;
+          }
         }
         @include breakpoint($mid-bp) {
-          grid-template-columns: repeat(2, 1fr);
-          column-gap: 10rem;
-        }
-        @include breakpoint($sm-bp) {
-          grid-template-columns: repeat(1, 1fr);
-        }
-        li {
-        }
-        .link {
-          display: flex;
-          gap: 1.6rem;
-          text-decoration: none;
-          color: #212424;
-          .img-wrapper {
-            display: block;
-            width: 3rem;
-            height: 2rem;
-            @include breakpoint($sm-bp) {
-              width: 4rem;
-              height: 3rem;
-            }
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: contain;
+          border: 0;
+          color: transparent;
+          top: 0;
+          right: -1rem;
+          &:hover {
+            background-color: transparent;
+            color: transparent;
+            .close-button__cross {
+              background-color: transparent;
             }
           }
-          &:hover {}
+        }
+        @include breakpoint($sm-bp) {
+          top: 0;
+          right: 0;
+        }
+        .close-button__cross {
+          @include breakpoint($mid-bp) {
+            background-color: transparent;
+            &::before, &::after {
+              background-color: #FFFFFF;
+              width: 100%;
+            }
+          }
+          @include breakpoint($sm-bp) {
+            width: 4rem;
+            height: 4rem;
+          }
         }
       }
     }
   }
+
+  .registration__agree {
+    margin-top: auto;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 2rem;
+
+    color: #AAB8C3;
+    padding-top: 1.6rem;
+  }
+}
+
+.reqcallback {
+  .registration__block .getintouch__top-block {
+      background: url('../images/getintouch/reqcallback.jpg');
+    }
+}

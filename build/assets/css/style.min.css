@@ -1593,7 +1593,6 @@ textarea {
 }
 
 .menu-wrapper {
-  display: none;
   position: fixed;
   width: 100%;
   height: 73.4rem;
@@ -6620,6 +6619,9 @@ textarea {
 }
 .registration .registration__block form::-webkit-scrollbar-thumb:hover {
   background: #A50F2D;
+}
+.registration .registration__block form::-webkit-scrollbar:horizontal {
+  height: 0;
 }
 @media (max-width: 480px) {
   .registration .registration__block form {
@@ -11830,6 +11832,191 @@ textarea {
   height: 100%;
   object-fit: contain;
 }
+.getintouch .registration__block {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block {
+    width: 100%;
+    margin-top: 7rem;
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    overflow: scroll;
+  }
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block::before {
+    content: "";
+    width: 12.6rem;
+    height: 0.5rem;
+    display: block;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0.2rem;
+    background: #FFFFFF;
+  }
+}
+@media (max-width: 480px) {
+  .getintouch .registration__block {
+    overflow: scroll;
+    margin-top: 0;
+  }
+  .getintouch .registration__block::before {
+    background-color: #FFFFFF;
+    z-index: 2;
+  }
+  .getintouch .registration__block::before {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 0.2rem;
+    border-radius: 2px;
+  }
+}
+.getintouch .registration__block .registration__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 480px) {
+  .getintouch .registration__block .registration__wrapper {
+    padding: 0;
+  }
+}
+.getintouch .registration__block .registration__subtitle {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* or 150% */
+  /* UI/Black/High */
+  color: #212424;
+  padding-bottom: 3rem;
+  max-width: 44.6rem;
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block .registration__subtitle {
+    max-width: none;
+  }
+}
+@media (max-width: 480px) {
+  .getintouch .registration__block .registration__subtitle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.getintouch .registration__block .registration__title {
+  margin-top: auto;
+  color: #FFFFFF;
+  font-size: 6.4rem;
+  line-height: 7.6rem;
+}
+.getintouch .registration__block form {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 4rem;
+  gap: 1rem;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.getintouch .registration__block form .link-red {
+  padding-top: 2.5rem;
+}
+.getintouch .registration__block .getintouch__top-block {
+  height: 28rem;
+  background: url("../images/getintouch/getintouch.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block .getintouch__top-block {
+    height: 34.1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.getintouch .registration__block .getintouch__top-block .close-button {
+  top: 0;
+  color: #FFFFFF;
+}
+.getintouch .registration__block .getintouch__top-block .close-button:hover .close-button__cross {
+  background-color: transparent;
+}
+.getintouch .registration__block .getintouch__top-block .close-button .close-button__cross {
+  background-color: #FFFFFF;
+}
+.getintouch .registration__block .getintouch__top-block .close-button .close-button__cross:before, .getintouch .registration__block .getintouch__top-block .close-button .close-button__cross:after {
+  background-color: #212424;
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block .getintouch__top-block .close-button {
+    border: 0;
+    color: transparent;
+    top: 0;
+    right: -1rem;
+  }
+  .getintouch .registration__block .getintouch__top-block .close-button:hover {
+    background-color: transparent;
+    color: transparent;
+  }
+  .getintouch .registration__block .getintouch__top-block .close-button:hover .close-button__cross {
+    background-color: transparent;
+  }
+}
+@media (max-width: 480px) {
+  .getintouch .registration__block .getintouch__top-block .close-button {
+    top: 0;
+    right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .getintouch .registration__block .getintouch__top-block .close-button .close-button__cross {
+    background-color: transparent;
+  }
+  .getintouch .registration__block .getintouch__top-block .close-button .close-button__cross::before, .getintouch .registration__block .getintouch__top-block .close-button .close-button__cross::after {
+    background-color: #FFFFFF;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .getintouch .registration__block .getintouch__top-block .close-button .close-button__cross {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.getintouch .registration__agree {
+  margin-top: auto;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #AAB8C3;
+  padding-top: 1.6rem;
+}
+
+.reqcallback .registration__block .getintouch__top-block {
+  background: url("../images/getintouch/reqcallback.jpg");
+}
+
 html {
   font-family: "Montserrat";
   font-size: 0.4vw;
