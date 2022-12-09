@@ -45,6 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const menubutton = document.querySelector('.menu-button')
+
+    if (menubutton && menuWrapper) {
+        menubutton.addEventListener('click', () => {
+            menubutton.classList.toggle('menu-button--active')
+            menuWrapper.classList.toggle('show')
+        })
+    }
+
     let searchInp = document.querySelector(".input__search");
     let btnSearch = document.querySelector(".btn__search");
     if(searchInp) {
@@ -1126,6 +1135,8 @@ if (actualBtn) {
         }
         })
 }
+
+
 
 });
 
