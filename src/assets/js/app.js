@@ -54,6 +54,97 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const tabs = document.querySelectorAll('.tab-label');
+    const navList = document.querySelectorAll('.main-nav__list-item')
+    const backButton = document.querySelector('.back-panel')
+    const menuSecond = document.querySelector('.menu-second')
+
+    if (tabs.length && navList.length && backButton) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                navList.forEach(navItem => {
+                    navItem.hidden = !navItem.hidden
+                })
+                this.parentElement.hidden = !this.parentElement.hidden
+                this.classList.toggle('tab-label--active')
+                if (this.dataset.tab) {
+                    const modal = document.querySelector(`${this.dataset.tab}`)
+                    modalHandler.apply(modal)
+                    backButton.dataset.back = this.dataset.tab
+                }
+                backButton.classList.toggle('back-panel--active')
+                if (menuSecond) {
+                    modalHandler.apply(menuSecond)
+                }
+            })
+        })
+        backButton.addEventListener('click', function () {
+            this.classList.remove('back-panel--active')
+            if (this.dataset.back) {
+                const modal = document.querySelector(`${this.dataset.back}`)
+                modalHandler.apply(modal)
+                delete this.dataset.back
+            }
+            const active = document.querySelectorAll('.tab-label--active')
+            if (active.length) {
+                active.forEach(el => {
+                    el.classList.remove('tab-label--active')
+                })
+            }
+            navList.forEach(el => {
+                el.hidden = false
+            })
+            if (menuSecond) {
+                modalHandler.apply(menuSecond)
+            }
+        })
+    }
+
+    function modalHandler() {
+        const modal = this
+        
+        if (modal) {
+            if (modal.hidden) {
+                modal.hidden = !modal.hidden
+                modal.style.setProperty('pointer-events', 'auto')
+                setTimeout(() => {
+                    modal.style.opacity = 1
+                }, 10)
+            } else {
+                modal.style.opacity = 0
+                modal.style.setProperty('pointer-events', null)
+                modal.addEventListener('transitionend', hideaftertransition)
+            }
+        }
+    }
+
+    const tabAccItems = document.querySelectorAll('.tab-accord__list li')
+    const innnerDiv = document.querySelector('#inner-menu')
+
+    if (tabAccItems.length) {
+        tabAccItems.forEach(tab => {
+            tab.addEventListener('click', function () {
+                tabAccItems.forEach(el => {
+                    el.classList.add('not-active')
+                    el.classList.remove('active')
+                })
+                this.classList.remove('not-active')
+                this.classList.toggle('active')
+                const subMenu = this.querySelector('.main-nav__submenu')
+                if (subMenu && innnerDiv) {
+                    innnerDiv.innerHTML = subMenu.innerHTML
+                } else {
+                    innnerDiv.innerHTML = ''
+                }
+            })
+        })
+    }
+
+    function hideaftertransition () {
+        this.hidden = true
+        this.removeEventListener('transitionend', hideaftertransition)
+    }
+
     let searchInp = document.querySelector(".input__search");
     let btnSearch = document.querySelector(".btn__search");
     if(searchInp) {
