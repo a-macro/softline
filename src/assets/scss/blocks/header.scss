@@ -10,6 +10,16 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 2.2rem 2rem 2rem;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
     }
     @include breakpoint($sm-bp) {
         padding: 2.2rem 2.5rem 2.2rem;
@@ -76,7 +86,28 @@
         border-bottom: unset;
     }
 
-    & > *:not(.burger) {
+    .languages {
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+        .__select__title {
+            @include breakpoint($sm-bp) {
+                padding: 0;
+            }
+        }
+    }
+    .header__store {
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+    .geolocation {
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+
+    & > *:not(.menu-button) {
         height: 5.1rem;
         border-left: 1px solid $grey;
         @include breakpoint($mid-bp) {
@@ -122,6 +153,10 @@
     @include breakpoint($mid-bp) {
         padding: 0;
         margin-right: 3rem;        
+    }
+    @include breakpoint($sm-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
     }
 
     svg {
@@ -315,12 +350,19 @@
     justify-content: center;
     padding-left: 2rem;
     padding-right: 2rem;
-    @include breakpoint($mid-bp) {
-        display: none;
-    }
 
     img {
         width: 2.4rem;
+        @include breakpoint($sm-bp) {
+            width: 3rem;
+        }
+    }
+    @include breakpoint($mid-bp) {
+        justify-content: flex-start;
+        padding: 0;
+    }
+    @include breakpoint($sm-bp) {
+        padding: 2.5rem;
     }
 }
 
@@ -333,6 +375,14 @@
     transition: color .4s;
     @include breakpoint($xl-bp) {
         margin-left: 1.3rem;
+    }
+    @include breakpoint($mid-bp) {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    @include breakpoint($sm-bp) {
+        font-size: 1.8rem;
     }
 
     &:hover {
@@ -360,9 +410,6 @@
     padding-left: 2rem;
     padding-right: 2rem;
     transition: color .4s;
-    @include breakpoint($mid-bp) {
-        display: none;
-    }
 
     &:hover {
         color: $red;
@@ -376,6 +423,22 @@
         margin-left: 1.1rem;
         background: url("../images/store.svg") no-repeat;
         background-size: contain;
+        @include breakpoint($mid-bp) {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+    @include breakpoint($mid-bp) {
+        padding: 0;
+        font-weight: 500;
+        justify-content: flex-start;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -561,12 +624,6 @@
     }
 }
 
-.languages {
-    @include breakpoint($mid-bp) {
-        display: none;
-    }
-}
-
 .__select__input {
     display: none;
   
@@ -602,3 +659,4 @@
         padding-right: 10rem;
     }
 }
+

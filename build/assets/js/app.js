@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  var menubutton = document.querySelector('.menu-button');
+  if (menubutton && menuWrapper) {
+    menubutton.addEventListener('click', function () {
+      menubutton.classList.toggle('menu-button--active');
+      menuWrapper.classList.toggle('show');
+    });
+  }
   var searchInp = document.querySelector(".input__search");
   var btnSearch = document.querySelector(".btn__search");
   if (searchInp) {
