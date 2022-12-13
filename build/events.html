@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta name="description" content="">
     <meta name="format-detection" content="telephone=no">
-    <title></title>
+    <title>Softline</title>
     
     <link rel="stylesheet" href="assets/vendor/swiper/swiper.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -65,6 +65,7 @@
       <symbol id="light" viewBox="0 0 40 40">
         <g>
           <path fill-rule="evenodd" clip-rule="evenodd" d="M21.25 1.25V0h-2.5v16.2a3.996 3.996 0 012.5 0V1.25zm.553 15.179a4.018 4.018 0 011.768 1.767L34.634 7.134l.884-.884-1.768-1.768-.884.884L21.803 16.43zm1.998 2.321c.13.393.199.814.199 1.25 0 .436-.07.857-.2 1.25H40v-2.5H23.8zm-.23 3.054a4.018 4.018 0 01-1.768 1.767l11.062 11.063.884.884 1.768-1.768-.884-.884-11.062-11.062zM21.25 23.8c-.393.13-.814.199-1.25.199-.436 0-.857-.07-1.25-.2V40h2.5V23.8zm-3.054-.23a4.017 4.017 0 01-1.767-1.768L5.366 32.866l-.884.884 1.767 1.768.884-.884L18.196 23.57zM16.2 21.25c-.13-.393-.2-.814-.2-1.25 0-.436.07-.857.2-1.25H0v2.5h16.2zM7.134 5.366l-.884-.884L4.482 6.25l.884.884 6.417 6.417.884.884 1.768-1.768-.884-.884-6.417-6.417z" fill="#A50F2D"/>
+        </g>
       </symbol>
     
       <symbol id="tag" viewBox="0 0 40 42">
@@ -72,6 +73,7 @@
           <path d="M25 5L17.5 35" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square" stroke-linejoin="round"/>
           <path d="M10.9559 11.0608L6.25 15.7667L3.75 18.2667L1.875 20.1417L10.9559 28.4192" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square"/>
           <path d="M30.9191 11.0608L35.625 15.7667L38.125 18.2667L40 20.1417L30.9191 28.4192" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square"/>
+        </g>
       </symbol>
     </svg>    <header class="header">
         <div class="header__logo_mob">
@@ -126,7 +128,7 @@
             </div>
             <div class="header__menu">
                 <ul class="header__nav">
-                    <li class="header__item">
+                    <li data-menu="about-us" class="header__item">
                         <a class="header__link" href="#">About Us</a>
                     </li>
                     <li data-menu="solutions-and-services" class="header__item">
@@ -187,11 +189,11 @@
                         <button class="tab-label main-nav__list-button" data-tab="#inner-menu">Solutions & Services </button>
                         <div class="tab-accord">
                             <ul class="tab-accord__list">
-                                <li><a class="main-nav__list-link" href="#">See all</a></li>
-                                <li>
+                                <li class="tab-accord__list-item"><a class="main-nav__list-link" href="#">See all</a></li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">Cloud Services</button>
         
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
@@ -204,20 +206,20 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">Digital Solutions</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">Cybersecurity</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
@@ -226,10 +228,10 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">Softline Development</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
@@ -237,29 +239,29 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">CAD and GIS</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">Service providers</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">Future Workplace</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
@@ -269,10 +271,10 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="tab-accord__list-item">
                                     <button class="main-nav__list-button">IT Infrastructure</button>
                                     
-                                    <div class="main-nav__submenu" hidden>
+                                    <div class="main-nav__submenu">
                                         <ul>
                                             <li><a href="#">Migration Readiness Assessment</a></li>
                                             <li><a href="#">Migrations to the cloud</a></li>
@@ -335,12 +337,12 @@
         
                     <div class="languages __select" data-state="">
                         <div class="select-side"></div>
-                        <div id="language" class="__select__title" data-default="Option 0">En</div>
+                        <div id="language1" class="__select__title" data-default="Option 0">En</div>
                         <div class="__select__content">
-                            <input id="langSelect0" class="__select__input" type="radio" name="langSelect" />
-                            <label for="langSelect0" data-type="default" class="__select__label">En</label>
-                            <input id="langSelect1" class="__select__input" type="radio" name="langSelect" />
-                            <label for="langSelect1" class="__select__label">Ru</label>
+                            <input id="langSelect2" class="__select__input" type="radio" name="langSelect" />
+                            <label for="langSelect2" data-type="default" class="__select__label">En</label>
+                            <input id="langSelect3" class="__select__input" type="radio" name="langSelect" />
+                            <label for="langSelect3" class="__select__label">Ru</label>
                         </div>
                     </div>
             </div>
@@ -549,9 +551,85 @@
                 </div>
             </div>
         
+            <div class="menu about-us">
+                <div class="about-us__wrapper">
+                    <div class="left-wrapper">
+                        <div  class="tab-accord">
+                            <ul class="tab-accord__list">
+                                <li><a class="main-nav__list-link" href="#">About us</a></li>
+                                <li><a class="main-nav__list-link" href="#">Business Conduct Guidelines</a></li>
+                                <li><a class="main-nav__list-link" href="#">Leadership</a></li>
+                                <li><a class="main-nav__list-link" href="#">Social Responsibility</a></li>
+                                <li><a class="main-nav__list-link" href="#">Our Mission</a></li>
+                                <li><a class="main-nav__list-link" href="#">Partner Relations</a></li>
+                                <li><a class="main-nav__list-link" href="#">Our Customers</a></li>
+                                <li><a class="main-nav__list-link" href="#">Our History and Development</a></li>
+                                <li><a class="main-nav__list-link" href="#">FAQ</a></li>
+                                <li><a class="main-nav__list-link" href="#">All offices</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="corporate">
+                        <div class="corporate__content">
+                            <div class="corporate__block">
+                                <div>
+                                    One pager
+                                </div>
+                
+                                <div class="corporate__helper">
+                                    <span>rus</span>
+                                    <div class="dott"></div>
+                                    <span>eng</span>
+                                </div>
+                
+                                <img src="./assets/images/media/corporateImg1.jpg" alt="#">
+                            </div>
+                
+                            <div class="corporate__block">
+                                <div>
+                                    Corporate presentation
+                                </div>
+                
+                                <div class="corporate__helper">
+                                    <span>rus</span>
+                                    <div class="dott"></div>
+                                    <span>eng</span>
+                                    <div class="dott"></div>
+                                    <span>esp</span>
+                                </div>
+                
+                                <img src="./assets/images/media/corporateImg2.jpg" alt="#">
+                            </div>
             
-            <div class="inner-menu" id="inner-menu" hidden>
+                            <div class="corporate__block">
+                                <div>
+                                    One pager
+                                </div>
+                
+                                <div class="corporate__helper">
+                                    <span>rus</span>
+                                    <div class="dott"></div>
+                                    <span>eng</span>
+                                </div>
+                
+                                <img src="./assets/images/media/corporateImg1.jpg" alt="#">
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
         
+            <div class="menu top-insights-menu">
+                <div class="tab-accord">
+                    <ul class="tab-accord__list">
+                        <li><a class="main-nav__list-link" href="#">Blog</a></li>
+                        <li><a class="main-nav__list-link" href="#">News</a></li>
+                        <li><a class="main-nav__list-link" href="#">Events</a></li>
+                        <li><a class="main-nav__list-link" href="#">Video</a></li>
+                        <li><a class="main-nav__list-link" href="#">Media</a></li>
+                    </ul>
+                </div>
             </div>
         </nav></header>
     <main class="main">
@@ -1009,24 +1087,90 @@
         
     </main>
     
+    <div class="registration regModal getintouch reqcallback" id="request" style="opacity: 0;" hidden>
+      <div class="registration__block">
+        <div class="getintouch__top-block">
+          <div class="registration__wrapper">
+            <button class="close-button"><span>Close</span> <span class="close-button__cross"><span
+                  class="close-icon"></span></span></button>
+          </div>
+          <h2 class="registration__title">Request a callback</h2>
+        </div>
+    
+        <form action="#">
+    
+          <div class="registration__subtitle">Leave your contacts and we will call you shortly</div>
+    
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="text" name="company" placeholder="Company">
+          <input type="tel" name="tel" placeholder="Phone" required>
+    
+          <button class="link-red" type="submit">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="16" fill="#A50F2D" />
+              <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                stroke-width="1.5" />
+            </svg>
+            <span>Send request</span>
+          </button>
+          <div class="registration__agree">
+            By clicking «Send request», you agree to the terms of our Privacy Policy and the processing of personal
+            data<br />This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="registration regModal getintouch" hidden style="opacity: 0;" id="askModal">
+      <div class="registration__block">
+        <div class="getintouch__top-block">
+          <div class="registration__wrapper">
+            <button class="close-button"><span>Close</span> <span class="close-button__cross"><span
+                  class="close-icon"></span></span></button>
+          </div>
+          <h2 class="registration__title">Get in touch</h2>
+        </div>
+    
+        <form action="#">
+    
+          <div class="registration__subtitle">Leave your contacts and we will help you solve the problem</div>
+    
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="text" name="company" placeholder="Company">
+          <input type="tel" name="tel" placeholder="Phone" required>
+    
+          <button class="link-red" type="submit">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="16" fill="#A50F2D" />
+              <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                stroke-width="1.5" />
+            </svg>
+            <span>Send request</span>
+          </button>
+          <div class="registration__agree">
+            By clicking «Send request», you agree to the terms of our Privacy Policy and the processing of personal
+            data<br />This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply
+          </div>
+        </form>
+      </div>
+    </div>
     <footer class="footer">
        <div class="footer__top">
             <p class="footer__top_text">Have any questions?</p>
             <div class="footer__top_btns">
-                <a class="footer__btn" href="#">
+                <button class="footer__btn" data-modal="#askModal">
                     <h3>Get in touch</h3>
                     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="32" height="32" rx="16" fill="#A50F2D"/>
                         <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
                     </svg>    
-                </a>
-                <a class="footer__btn" href="#">
+                </button>
+                <button class="footer__btn" data-modal="#request">
                     <h3>Request a callback</h3>
                     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="32" height="32" rx="16" fill="#A50F2D"/>
                         <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
                     </svg>    
-                </a>
+                </button>
             </div>
        </div>
        <div class="footer__bottom">

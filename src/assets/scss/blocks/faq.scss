@@ -294,8 +294,8 @@
           ul {
           }
           li {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
+            // padding-top: 3rem;
+            // padding-bottom: 3rem;
             .accordion__plus {
               display: block;
               width: 3.2rem;
@@ -340,6 +340,8 @@
               padding: 0;
               padding-right: 2rem;
               transition: all .2s;
+              padding-top: 3rem;
+              padding-bottom: 3rem;
               @include breakpoint($sm-bp) {
                 font-size: 2.1rem;
                 padding-left: 2.8rem;
@@ -364,10 +366,10 @@
             }
             @media (hover: hover) {
               &:hover {
-                background-color: #FFFFFF;
-                padding-top: 3.3rem;
-                padding-bottom: 3.3rem;
-                border-color: #FFFFFF;
+                // background-color: #FFFFFF;
+                // padding-top: 3.3rem;
+                // padding-bottom: 3.3rem;
+                // border-color: #FFFFFF;
                 .accordion__plus {
                   background-color: #A50F2D;
                   border-color: #A50F2D;
@@ -387,7 +389,7 @@
           }
           li.active {
             background-color: #FFFFFF;
-            padding-top: 3.3rem;
+            // padding-top: 3.3rem;
             padding-bottom: 3.3rem;
             border-color: #FFFFFF;
             .accordion__plus {
@@ -462,8 +464,8 @@
       margin: 0;
       @media (hover: hover) {
         &:hover {
-          background-color: #FFFFFF;
-          border-color: #FFFFFF;
+          // background-color: #FFFFFF;
+          // border-color: #FFFFFF;
           .accordion__plus {
             background-color: #A50F2D;
             border-color: #A50F2D;

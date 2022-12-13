@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var navList = document.querySelectorAll('.main-nav__list-item');
   var backButton = document.querySelector('.back-panel');
   var menuSecond = document.querySelector('.menu-second');
+  var innnerDiv = document.querySelector('#inner-menu');
   if (tabs.length && navList.length && backButton) {
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
@@ -77,6 +78,22 @@ document.addEventListener("DOMContentLoaded", function () {
         backButton.classList.toggle('back-panel--active');
         if (menuSecond) {
           modalHandler.apply(menuSecond);
+        }
+        var active = document.querySelectorAll('.active, .not-active');
+        if (active.length) {
+          active.forEach(function (el) {
+            el.classList.remove('active');
+            el.classList.remove('not-active');
+          });
+        }
+        if (innnerDiv) {
+          innnerDiv.innerHTML = '';
+        }
+        var hiddenButton = document.querySelectorAll('.tab-label--hidden');
+        if (hiddenButton.length) {
+          hiddenButton.forEach(function (el) {
+            el.classList.remove('tab-label--hidden');
+          });
         }
       });
     });
@@ -99,6 +116,22 @@ document.addEventListener("DOMContentLoaded", function () {
       if (menuSecond) {
         modalHandler.apply(menuSecond);
       }
+      var active2 = document.querySelectorAll('.active, .not-active');
+      if (active2.length) {
+        active2.forEach(function (el) {
+          el.classList.remove('active');
+          el.classList.remove('not-active');
+        });
+      }
+      if (innnerDiv) {
+        innnerDiv.innerHTML = '';
+      }
+      var hiddenButton = document.querySelectorAll('.tab-label--hidden');
+      if (hiddenButton.length) {
+        hiddenButton.forEach(function (el) {
+          el.classList.remove('tab-label--hidden');
+        });
+      }
     });
   }
   function modalHandler() {
@@ -117,8 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-  var tabAccItems = document.querySelectorAll('.tab-accord__list li');
-  var innnerDiv = document.querySelector('#inner-menu');
+  var tabAccItems = document.querySelectorAll('.tab-accord__list-item');
   if (tabAccItems.length) {
     tabAccItems.forEach(function (tab) {
       tab.addEventListener('click', function () {
@@ -129,6 +161,13 @@ document.addEventListener("DOMContentLoaded", function () {
         this.classList.remove('not-active');
         this.classList.toggle('active');
         var subMenu = this.querySelector('.main-nav__submenu');
+        var mainButton = this.closest('.main-nav__list-item');
+        if (mainButton) {
+          var but = mainButton.querySelector('.tab-label--active');
+          if (but) {
+            but.classList.add('tab-label--hidden');
+          }
+        }
         if (subMenu && innnerDiv) {
           innnerDiv.innerHTML = subMenu.innerHTML;
         } else {
@@ -198,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 6,
     watchOverflow: true,
     spaceBetween: 0,
-    loop: false,
+    loop: true,
     breakpoints: {
       300: {
         slidesPerView: "auto"
@@ -220,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 6,
     watchOverflow: true,
     spaceBetween: 40,
-    loop: false,
+    loop: true,
     breakpoints: {
       300: {
         slidesPerView: "auto",
@@ -244,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
     watchOverflow: true,
     spaceBetween: 40,
     freeMode: "false",
-    loop: false,
+    loop: true,
     breakpoints: {
       300: {
         slidesPerView: "auto",
@@ -271,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: "auto",
     watchOverflow: true,
     spaceBetween: 40,
-    loop: false,
+    loop: true,
     breakpoints: {
       300: {
         spaceBetween: 20
@@ -310,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function initSlider() {
     if (width <= 768 && !init) {
       swiper = new Swiper(".partners__mobSlider", {
-        loop: false,
+        loop: true,
         slidesPerView: 2.8,
         spaceBetween: 40,
         freeMode: true,
