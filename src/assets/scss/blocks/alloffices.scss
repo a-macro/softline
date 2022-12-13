@@ -233,8 +233,9 @@
         top: 0;
         color: #FFFFFF;
         &:hover {
+          border-color: #FFFFFF;
           .close-button__cross {
-            background-color: transparent;
+            background-color: #A50F2D;
           }
         }
         .close-button__cross {

@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navList = document.querySelectorAll('.main-nav__list-item')
     const backButton = document.querySelector('.back-panel')
     const menuSecond = document.querySelector('.menu-second')
+    const innnerDiv = document.querySelector('#inner-menu')
 
     if (tabs.length && navList.length && backButton) {
         tabs.forEach(tab => {
@@ -75,6 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 backButton.classList.toggle('back-panel--active')
                 if (menuSecond) {
                     modalHandler.apply(menuSecond)
+                }
+                const active = document.querySelectorAll('.active, .not-active')
+                if (active.length) {
+                    active.forEach(el => {
+                        el.classList.remove('active')
+                        el.classList.remove('not-active')
+                    })
+                }
+                if (innnerDiv) {
+                    innnerDiv.innerHTML = ''
+                }
+                const hiddenButton = document.querySelectorAll('.tab-label--hidden') 
+                if(hiddenButton.length) {
+                    hiddenButton.forEach(el => {
+                        el.classList.remove('tab-label--hidden')
+                    })
                 }
             })
         })
@@ -97,6 +114,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if (menuSecond) {
                 modalHandler.apply(menuSecond)
             }
+            const active2 = document.querySelectorAll('.active, .not-active')
+            if (active2.length) {
+                active2.forEach(el => {
+                    el.classList.remove('active')
+                    el.classList.remove('not-active')
+                })
+            }
+            if (innnerDiv) {
+                innnerDiv.innerHTML = ''
+            }
+            const hiddenButton = document.querySelectorAll('.tab-label--hidden') 
+            if(hiddenButton.length) {
+                hiddenButton.forEach(el => {
+                    el.classList.remove('tab-label--hidden')
+                })
+            }
         })
     }
 
@@ -118,8 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const tabAccItems = document.querySelectorAll('.tab-accord__list li')
-    const innnerDiv = document.querySelector('#inner-menu')
+    const tabAccItems = document.querySelectorAll('.tab-accord__list-item')
 
     if (tabAccItems.length) {
         tabAccItems.forEach(tab => {
@@ -131,6 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.classList.remove('not-active')
                 this.classList.toggle('active')
                 const subMenu = this.querySelector('.main-nav__submenu')
+                const mainButton = this.closest('.main-nav__list-item')
+                    if (mainButton) {
+                        const but = mainButton.querySelector('.tab-label--active')
+                        if (but) {
+                            but.classList.add('tab-label--hidden')
+                        }
+                    }
                 if (subMenu && innnerDiv) {
                     innnerDiv.innerHTML = subMenu.innerHTML
                 } else {
@@ -208,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 6,
         watchOverflow: true,
         spaceBetween: 0,
-        loop: false,
+        loop: true,
         breakpoints: {
             300: {
                 slidesPerView: "auto",
@@ -231,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 6,
         watchOverflow: true,
         spaceBetween: 40,
-        loop: false,
+        loop: true,
         breakpoints: {
             300: {
                 slidesPerView: "auto",
@@ -256,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
         watchOverflow: true,
         spaceBetween: 40,
         freeMode: "false",
-        loop: false,
+        loop: true,
         breakpoints: {
             300: {
                 slidesPerView: "auto",
@@ -284,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: "auto",
         watchOverflow: true,
         spaceBetween: 40,
-        loop: false,
+        loop: true,
         breakpoints: {
             300: {
                 spaceBetween: 20,
@@ -327,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function initSlider() {
         if (width <= 768 && !init) {
             swiper = new Swiper(".partners__mobSlider", {
-                loop: false,
+                loop: true,
                 slidesPerView: 2.8,
                     spaceBetween: 40,
                 freeMode: true,

@@ -2,7 +2,7 @@
     // display: none;
     position: fixed;
     width: 100%;
-    height: 73.4rem;
+    max-height: 73.4rem;
     overflow-y: auto;
     overflow: hidden;
     background: white;
@@ -160,6 +160,11 @@
             background-color: unset;
             padding: 0;
         }
+        .tab-label--hidden {
+            @include breakpoint($sm-bp) {
+                display: none;
+            }
+          }
         .main-nav__list-link {
 
         }
@@ -183,6 +188,9 @@
                     height: 1.5rem;
                 }
             }
+        }
+        .main-nav__list-button + .main-nav__submenu {
+            display: none;
         }
         .tab-label--active {
             padding-bottom: 1.5rem;
@@ -381,6 +389,11 @@
     flex-wrap: wrap;
     width: 100%;
     margin-top: 6.5rem;
+    @include breakpoint($xl-bp) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6.8rem;
+    }
 }
 
 .submenu__item {
@@ -390,6 +403,9 @@
     @include breakpoint($xxl-bp) {
         width: calc(calc(100% - 13.5rem) / 3);
         margin-right: 4.5rem;
+    }
+    @include breakpoint($xl-bp) {
+        width: 100%;
     }
 
     &:nth-child(4n) {
@@ -505,7 +521,7 @@
           bottom: 0%;
       }
     }
-    @include breakpoint($xl-bp) {
+    @include breakpoint($mid-bp) {
       display: block;
       margin-left: 3rem;
     }
@@ -571,12 +587,38 @@
     li.active {
         color: #A50F2D;
         padding-left: 2rem;
+        @include breakpoint($sm-bp) {
+            color: #212424;
+            font-size: 2.6rem;
+            padding-left: 0;
+            padding-top: 0;
+        }
+        .main-nav__list-button {
+            &::after {
+                @include breakpoint($sm-bp) {
+                    display: none;
+                }
+            }
+        }
+        .main-nav__list-button + .main-nav__submenu {
+            @include breakpoint($sm-bp) {
+                display: block;
+                font-weight: 500;
+                font-size: 1.6rem;
+                line-height: 2.6rem;
+            }
+        }
     }
     li.not-active {
         padding-right: 2rem;
     }
   }
 
+  .not-active {
+    @include breakpoint($sm-bp) {
+        display: none;
+    }
+  }
 
   .insights-menu {
     padding-top: 3rem;
@@ -619,7 +661,10 @@
     padding-top: 10rem;
     transition: opacity .3s;
     @include breakpoint($sm-bp) {
-        padding-top: 3rem;
+        padding-top: 0rem;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
     }
     ul {
         font-weight: 500;
@@ -637,6 +682,60 @@
         a {
             text-decoration: none;
             color: inherit;
+        }
+    }
+  }
+
+  .about-us {
+    .about-us__wrapper {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        column-gap: 20rem;
+        padding-bottom: 8rem;
+        padding-right: 6rem;
+        @include breakpoint($xl-bp) {
+            column-gap: 29rem;
+            padding-right: 4rem;
+        }
+        .corporate {
+            border-left: 0;
+            padding: 0;
+            .corporate__content {
+                margin-top: 0;
+                .corporate__block {
+                    height: 24rem;
+                    @include breakpoint($xxl-bp) {
+                        width: 50%;
+                        &:nth-child(3) {
+                            display: none;
+                        }
+                    }
+                    @include breakpoint($xl-bp) {
+                        width: 100%;
+                        &:nth-child(1) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .left-wrapper {
+        .tab-accord__list {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            column-gap: 13.5rem;
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 3.2rem;
+            row-gap: 1.5rem;
+            li {
+                padding: 0;
+            }
+            a {
+                color: #212424;
+                text-decoration: none;
+            }
         }
     }
   }

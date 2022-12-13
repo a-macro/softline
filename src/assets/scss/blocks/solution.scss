@@ -373,7 +373,8 @@
     }
     .penetration__top-block {
       position: relative;
-      min-height: 100vh;
+      height: 100vh;
+      max-height: 976px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -381,9 +382,15 @@
       padding-bottom: 0;
       background-image: url('../images/penetration/penetration-bg.jpg');
       background-size: cover;
-      
+      @include breakpoint($xxl-bp) {
+        max-height: 750px;
+      }
+      @include breakpoint($xl-bp) {
+        max-height: 520px;
+      }
       @include breakpoint($mid-bp) {
-        min-height: calc(100vh - 7rem);
+        height: calc(100vh - 7rem);
+        max-height: 602px;
         border-top-left-radius: 1.2rem;
         border-top-right-radius: 1.2rem;
         overflow: hidden;
@@ -392,7 +399,8 @@
         background-image: url('../images/penetration/penetration-bg-768.jpg');
       }
       @include breakpoint($sm-bp) {
-        min-height: calc(100vh - 8rem);
+        height: calc(100vh - 8rem);
+        max-height: 460px;
         background-image: url('../images/penetration/penetration-bg-375.jpg');
       }
     }
