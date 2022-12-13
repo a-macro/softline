@@ -1509,7 +1509,7 @@ textarea {
 }
 
 .services .service:hover {
-    background-color: #F0F2F6;
+    background-color: #dedfe1;
 }
 
 .services .service:hover .service__inner {
@@ -4881,7 +4881,7 @@ textarea {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 0.8rem;
-    min-height: 40rem;
+    min-height: 38rem;
 }
 
 @media (max-width: 480px) {
@@ -4940,8 +4940,8 @@ textarea {
     font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 3.6rem;
+    font-size: 2.2rem;
+    line-height: 2.6rem;
   /* or 150% */
   /* UI/Black/High */
     color: #212424;
@@ -7216,11 +7216,11 @@ textarea {
 }
 
 .key-operating .key-operating__list-main li {
-    padding: 1.2rem 0;
-    padding-left: 4.5rem;
+    padding: 0.5rem 0;
+    padding-left: 3.5rem;
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: left top 2.4rem;
+    background-position: left top 1.6rem;
 }
 
 .key-operating .key-operating__list--numeric li {
@@ -7392,8 +7392,8 @@ textarea {
     font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
     color: #212424;
     text-decoration: none;
     padding: 7.1rem 0;
@@ -8307,8 +8307,17 @@ textarea {
 }
 
 .registration .registration__block .registration__wrapper .close-button:hover {
-    background-color: #D2DCE5;
-    color: #FFFFFF;
+    border-color: #40454E;
+}
+
+.registration .registration__block .registration__wrapper .close-button:hover .close-button__cross {
+    background-color: #40454E;
+}
+
+@media (max-width: 480px) {
+    .registration .registration__block .registration__wrapper .close-button:hover .close-button__cross {
+        background-color: transparent;
+    }
 }
 
 .registration .registration__block .registration__wrapper .close-button:hover .close-button__cross::before, .registration .registration__block .registration__wrapper .close-button:hover .close-button__cross::after {
@@ -9384,6 +9393,8 @@ body::before {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
+    border: 0;
+    background-color: unset;
 }
 
 @media (max-width: 480px) {
@@ -9559,9 +9570,9 @@ body::before {
 .footer__link {
     color: #697279;
     text-decoration: none;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.8rem;
     letter-spacing: 0em;
     text-align: left;
     transition: color 0.4s;
@@ -10345,9 +10356,9 @@ body::before {
 }
 
 .header__menu {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    line-height: 1.43;
+    line-height: 2rem;
     letter-spacing: 0em;
     text-align: left;
 }
@@ -10941,6 +10952,8 @@ body::before {
 .link-red {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.78;
@@ -10954,6 +10967,7 @@ body::before {
     border: 0;
     background-color: unset;
     padding: 0;
+    background-color: unset;
 }
 
 @media (max-width: 480px) {
@@ -11176,7 +11190,7 @@ body::before {
 }
 
 .service__text {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0em;
@@ -12255,7 +12269,7 @@ body::before {
     font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 2.4rem;
     width: 78%;
     color: #697279;
@@ -12892,11 +12906,6 @@ body::before {
     }
 }
 
-.faq .faq__block .faq__right .accordion li {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
 .faq .faq__block .faq__right .accordion li .accordion__plus {
     display: block;
     width: 3.2rem;
@@ -12953,6 +12962,8 @@ body::before {
     padding: 0;
     padding-right: 2rem;
     transition: all 0.2s;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 @media (max-width: 480px) {
@@ -12987,13 +12998,6 @@ body::before {
 }
 
 @media (hover: hover) {
-    .faq .faq__block .faq__right .accordion li:hover {
-        background-color: #FFFFFF;
-        padding-top: 3.3rem;
-        padding-bottom: 3.3rem;
-        border-color: #FFFFFF;
-    }
-
     .faq .faq__block .faq__right .accordion li:hover .accordion__plus {
         background-color: #A50F2D;
         border-color: #A50F2D;
@@ -13016,7 +13020,6 @@ body::before {
 
 .faq .faq__block .faq__right .accordion li.active {
     background-color: #FFFFFF;
-    padding-top: 3.3rem;
     padding-bottom: 3.3rem;
     border-color: #FFFFFF;
 }
@@ -13109,11 +13112,6 @@ body::before {
 }
 
 @media (hover: hover) {
-    .accordion .accordion__list-title:hover {
-        background-color: #FFFFFF;
-        border-color: #FFFFFF;
-    }
-
     .accordion .accordion__list-title:hover .accordion__plus {
         background-color: #A50F2D;
         border-color: #A50F2D;
@@ -14221,7 +14219,8 @@ textarea {
 }
 .penetration .penetration__top-block {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 976px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -14233,9 +14232,20 @@ textarea {
   background-image: url("../images/penetration/penetration-bg.jpg");
   background-size: cover;
 }
+@media (max-width: 1920px) {
+  .penetration .penetration__top-block {
+    max-height: 750px;
+  }
+}
+@media (max-width: 1440px) {
+  .penetration .penetration__top-block {
+    max-height: 520px;
+  }
+}
 @media (max-width: 768px) {
   .penetration .penetration__top-block {
-    min-height: calc(100vh - 7rem);
+    height: calc(100vh - 7rem);
+    max-height: 602px;
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
     overflow: hidden;
@@ -14246,7 +14256,8 @@ textarea {
 }
 @media (max-width: 480px) {
   .penetration .penetration__top-block {
-    min-height: calc(100vh - 8rem);
+    height: calc(100vh - 8rem);
+    max-height: 460px;
     background-image: url("../images/penetration/penetration-bg-375.jpg");
   }
 }
@@ -14802,8 +14813,11 @@ textarea {
   top: 0;
   color: #FFFFFF;
 }
+.getintouch .registration__block .getintouch__top-block .close-button:hover {
+  border-color: #FFFFFF;
+}
 .getintouch .registration__block .getintouch__top-block .close-button:hover .close-button__cross {
-  background-color: transparent;
+  background-color: #A50F2D;
 }
 .getintouch .registration__block .getintouch__top-block .close-button .close-button__cross {
   background-color: #FFFFFF;
