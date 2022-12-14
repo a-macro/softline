@@ -43,16 +43,22 @@ document.addEventListener("DOMContentLoaded", function () {
       if (attr) {
         var itemMenu = document.querySelector(".".concat(attr));
         item.onclick = function (e) {
-          var prev = document.querySelector(".active.header__item");
-          if (prev && prev != item) {
-            prev.classList.remove("active");
-            var attrPrev = prev.getAttribute("data-menu");
-            var itemMenuPrev = document.querySelector(".".concat(attrPrev));
-            itemMenuPrev.style.display = "none";
+          if (!item.classList.contains("active")) {
+            var _prev = document.querySelector(".active.header__item");
+            if (_prev && _prev != item) {
+              _prev.classList.remove("active");
+              var attrPrev = _prev.getAttribute("data-menu");
+              var itemMenuPrev = document.querySelector(".".concat(attrPrev));
+              itemMenuPrev.style.display = "none";
+            }
+            item.classList.add("active");
+            itemMenu.style.display = "block";
+            menuWrapper.classList.add("show");
+          } else {
+            item.classList.remove("active");
+            itemMenu.style.display = "none";
+            menuWrapper.classList.remove("show");
           }
-          item.classList.add("active");
-          itemMenu.style.display = "block";
-          menuWrapper.classList.add("show");
         };
       }
     });
@@ -64,9 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
       item.onclick = function (e) {
         e.preventDefault();
         if (!item.classList.contains("active")) {
-          var _prev = parent.querySelector(".menu__item.active");
-          if (_prev) {
-            _prev.classList.remove("active");
+          var _prev2 = parent.querySelector(".menu__item.active");
+          if (_prev2) {
+            _prev2.classList.remove("active");
           }
           item.classList.add("active");
         }
@@ -1326,40 +1332,42 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-  var filterSwipe = document.querySelector('.filter-swipe');
-  if (filterSwipe) {
-    var mc = new Hammer(filterSwipe);
-    mc.add(new Hammer.Pan({
-      direction: Hammer.DIRECTION_ALL,
-      threshold: 0
-    }));
-    var lastPosY = 0;
-    var isDragging = false;
-    mc.on("pan", function (ev) {
-      if (ev.target.classList.contains('filter-swipe') && sm.matches) {
-        if (!isDragging) {
-          isDragging = true;
-          lastPosY = ev.target.offsetTop;
-        }
-        var posY = ev.deltaY + lastPosY;
-        ev.target.style.transition = 'none';
-        ev.target.style.top = posY + "px";
-        if (ev.isFinal) {
-          isDragging = false;
-          ev.target.style.transition = null;
-          if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
-            var modal = ev.target.querySelector('.close-button');
-            if (modal) {
-              modal.click();
-              setTimeout(function () {
-                ev.target.style.top = null;
-              }, 300);
-              return;
-            }
+  var filterSwipe = document.querySelectorAll('.filter-swipe');
+  if (filterSwipe.length) {
+    filterSwipe.forEach(function (el) {
+      var mc = new Hammer(el);
+      mc.add(new Hammer.Pan({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 0
+      }));
+      var lastPosY = 0;
+      var isDragging = false;
+      mc.on("pan", function (ev) {
+        if (ev.target.classList.contains('filter-swipe') && sm.matches) {
+          if (!isDragging) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
           }
-          ev.target.style.top = null;
+          var posY = ev.deltaY + lastPosY;
+          ev.target.style.transition = 'none';
+          ev.target.style.top = posY + "px";
+          if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null;
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+              var modal = ev.target.querySelector('.close-button');
+              if (modal) {
+                modal.click();
+                setTimeout(function () {
+                  ev.target.style.top = null;
+                }, 300);
+                return;
+              }
+            }
+            ev.target.style.top = null;
+          }
         }
-      }
+      });
     });
   }
 });

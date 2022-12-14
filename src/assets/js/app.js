@@ -37,16 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if(attr) {
                 let itemMenu = document.querySelector(`.${attr}`);
                 item.onclick = (e) => {
-                    let prev = document.querySelector(".active.header__item");
-                    if(prev && prev != item) {
-                        prev.classList.remove("active");
-                        let attrPrev = prev.getAttribute("data-menu");
-                        let itemMenuPrev = document.querySelector(`.${attrPrev}`);
-                        itemMenuPrev.style.display = "none";
+                    if(!item.classList.contains("active")) {
+                        let prev = document.querySelector(".active.header__item");
+                        if(prev && prev != item) {
+                            prev.classList.remove("active");
+                            let attrPrev = prev.getAttribute("data-menu");
+                            let itemMenuPrev = document.querySelector(`.${attrPrev}`);
+                            itemMenuPrev.style.display = "none";
+                        }
+                        item.classList.add("active");
+                        itemMenu.style.display = "block";
+                        menuWrapper.classList.add("show");    
+                    } else {
+                        item.classList.remove("active");
+                        itemMenu.style.display = "none";
+                        menuWrapper.classList.remove("show");    
                     }
-                    item.classList.add("active");
-                    itemMenu.style.display = "block";
-                    menuWrapper.classList.add("show");
                 }
             }
         });
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         prev.classList.remove("active");
                     }
                     item.classList.add("active");
-                }
+                } 
             }
         });
     }
@@ -1442,10 +1448,12 @@ mc.on("pan", function (ev) {
 }
 
 
-const filterSwipe = document.querySelector('.filter-swipe') 
+const filterSwipe = document.querySelectorAll('.filter-swipe') 
 
-    if (filterSwipe) {
-        var mc = new Hammer(filterSwipe);
+    if (filterSwipe.length) {
+        filterSwipe.forEach(el => {
+
+            var mc = new Hammer(el);
 
         mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
         
@@ -1481,6 +1489,8 @@ const filterSwipe = document.querySelector('.filter-swipe')
             }
         
         });
+
+        })
     }
 
 
