@@ -1332,40 +1332,42 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-  var filterSwipe = document.querySelector('.filter-swipe');
-  if (filterSwipe) {
-    var mc = new Hammer(filterSwipe);
-    mc.add(new Hammer.Pan({
-      direction: Hammer.DIRECTION_ALL,
-      threshold: 0
-    }));
-    var lastPosY = 0;
-    var isDragging = false;
-    mc.on("pan", function (ev) {
-      if (ev.target.classList.contains('filter-swipe') && sm.matches) {
-        if (!isDragging) {
-          isDragging = true;
-          lastPosY = ev.target.offsetTop;
-        }
-        var posY = ev.deltaY + lastPosY;
-        ev.target.style.transition = 'none';
-        ev.target.style.top = posY + "px";
-        if (ev.isFinal) {
-          isDragging = false;
-          ev.target.style.transition = null;
-          if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
-            var modal = ev.target.querySelector('.close-button');
-            if (modal) {
-              modal.click();
-              setTimeout(function () {
-                ev.target.style.top = null;
-              }, 300);
-              return;
-            }
+  var filterSwipe = document.querySelectorAll('.filter-swipe');
+  if (filterSwipe.length) {
+    filterSwipe.forEach(function (el) {
+      var mc = new Hammer(el);
+      mc.add(new Hammer.Pan({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 0
+      }));
+      var lastPosY = 0;
+      var isDragging = false;
+      mc.on("pan", function (ev) {
+        if (ev.target.classList.contains('filter-swipe') && sm.matches) {
+          if (!isDragging) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
           }
-          ev.target.style.top = null;
+          var posY = ev.deltaY + lastPosY;
+          ev.target.style.transition = 'none';
+          ev.target.style.top = posY + "px";
+          if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null;
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+              var modal = ev.target.querySelector('.close-button');
+              if (modal) {
+                modal.click();
+                setTimeout(function () {
+                  ev.target.style.top = null;
+                }, 300);
+                return;
+              }
+            }
+            ev.target.style.top = null;
+          }
         }
-      }
+      });
     });
   }
 });

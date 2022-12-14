@@ -7191,7 +7191,7 @@ textarea {
 }
 @media (max-width: 480px) {
   .registration .registration__block {
-    height: calc(100% - 4rem);
+    height: auto;
     width: 100%;
     top: 4rem;
     border-top-left-radius: 2rem;
@@ -7200,6 +7200,7 @@ textarea {
     padding-right: 0;
     padding-bottom: 0;
     overflow: visible;
+    bottom: 0;
   }
   .registration .registration__block::before {
     content: "";
@@ -7240,6 +7241,7 @@ textarea {
   position: relative;
   top: -2rem;
   transition: background-color 0.3s;
+  z-index: 5;
 }
 .registration .registration__block .registration__wrapper .close-button::before, .registration .registration__block .registration__wrapper .close-button::after {
   display: none;

@@ -3832,7 +3832,7 @@
       }
     }
     @include breakpoint($sm-bp) {
-      height: calc(100% - 4rem);
+      height: auto;
       width: 100%;
       top: 4rem;
       border-top-left-radius: 2rem;
@@ -3841,6 +3841,7 @@
       padding-right: 0;
       padding-bottom: 0;
       overflow: visible;
+      bottom: 0;
 
       &::before {
         content: '';
@@ -3882,6 +3883,7 @@
         position: relative;
         top: -2rem;
         transition: background-color .3s;
+        z-index: 5;
 
         &::before,
         &::after {

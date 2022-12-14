@@ -1448,10 +1448,12 @@ mc.on("pan", function (ev) {
 }
 
 
-const filterSwipe = document.querySelector('.filter-swipe') 
+const filterSwipe = document.querySelectorAll('.filter-swipe') 
 
-    if (filterSwipe) {
-        var mc = new Hammer(filterSwipe);
+    if (filterSwipe.length) {
+        filterSwipe.forEach(el => {
+
+            var mc = new Hammer(el);
 
         mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
         
@@ -1487,6 +1489,8 @@ const filterSwipe = document.querySelector('.filter-swipe')
             }
         
         });
+
+        })
     }
 
 
