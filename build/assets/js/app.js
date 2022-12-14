@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var header = document.querySelector(".header");
   if (header) {
-    var _headerH = header.getBoundingClientRect().height;
-    document.documentElement.style.setProperty('--headerH', _headerH + "px");
+    var headerH = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--headerH', headerH + "px");
   }
   var headerSearch = document.querySelector(".header__search");
   var headerSearchBtn = document.querySelector(".btn__search-show");
@@ -704,8 +704,8 @@ document.addEventListener("DOMContentLoaded", function () {
     height = window.innerHeight;
     document.documentElement.style.setProperty('--h', height + "px");
     if (header) {
-      headerH = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--headerH', headerH + "px");
+      var _headerH = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', _headerH + "px");
     }
     filters.forEach(function (filter) {
       countHeight(filter);
@@ -1189,38 +1189,118 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  var swipeOn = document.querySelector('.swipe-on');
-  if (swipeOn) {
-    var mc = new Hammer(swipeOn);
-    mc.add(new Hammer.Pan({
-      direction: Hammer.DIRECTION_ALL,
-      threshold: 0
-    }));
-    var lastPosY = 0;
-    var isDragging = false;
-    mc.on("pan", function (ev) {
-      if (ev.target.classList.contains('swipe-on')) {
-        if (!isDragging) {
-          isDragging = true;
-          lastPosY = ev.target.offsetTop;
-        }
-        var posY = ev.deltaY + lastPosY;
-        ev.target.style.top = posY + "px";
-        if (ev.isFinal) {
-          isDragging = false;
-          if (ev.target.getBoundingClientRect().top >= window.innerHeight - 50) {
-            var modal = ev.target.closest('.regModal');
-            if (modal) {
-              modalHandler.apply(modal);
-              setTimeout(function () {
-                ev.target.style.top = null;
-              }, 300);
-              return;
-            }
+  var swipeOn = document.querySelectorAll('.swipe-on');
+  if (swipeOn.length) {
+    swipeOn.forEach(function (el) {
+      var mc = new Hammer(el);
+      mc.add(new Hammer.Pan({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 0
+      }));
+      var lastPosY = 0;
+      var isDragging = false;
+      mc.on("pan", function (ev) {
+        if (ev.target.classList.contains('swipe-on')) {
+          if (!isDragging) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
           }
-          ev.target.style.top = null;
+          var posY = ev.deltaY + lastPosY;
+          ev.target.style.transition = 'none';
+          ev.target.style.top = posY + "px";
+          if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null;
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 50) {
+              var modal = ev.target.closest('.regModal');
+              if (modal) {
+                modalHandler.apply(modal);
+                setTimeout(function () {
+                  ev.target.style.top = null;
+                }, 300);
+                return;
+              }
+            }
+            ev.target.style.top = null;
+          }
         }
-      }
+      });
+    });
+  }
+  var swipeOn2 = document.querySelectorAll('.swipe-on2');
+  if (swipeOn2.length) {
+    swipeOn2.forEach(function (el) {
+      var mc = new Hammer(el);
+      mc.add(new Hammer.Pan({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 0
+      }));
+      var lastPosY = 0;
+      var isDragging = false;
+      mc.on("pan", function (ev) {
+        if (ev.target.classList.contains('swipe-on2') && mm.matches) {
+          if (!isDragging) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
+          }
+          var posY = ev.deltaY + lastPosY;
+          ev.target.style.transition = 'none';
+          ev.target.style.top = posY + "px";
+          if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null;
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+              var modal = ev.target.closest('.regModal');
+              if (modal) {
+                modalHandler.apply(modal);
+                setTimeout(function () {
+                  ev.target.style.top = null;
+                }, 300);
+                return;
+              }
+            }
+            ev.target.style.top = null;
+          }
+        }
+      });
+    });
+  }
+  var selectSwipe = document.querySelectorAll('.filters .select-items');
+  if (selectSwipe.length) {
+    selectSwipe.forEach(function (el) {
+      var mc = new Hammer(el);
+      mc.add(new Hammer.Pan({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 0
+      }));
+      var lastPosY = 0;
+      var isDragging = false;
+      mc.on("pan", function (ev) {
+        if (ev.target.classList.contains('select-items') && sm.matches) {
+          if (!isDragging) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
+          }
+          var posY = ev.deltaY + lastPosY;
+          ev.target.style.transition = 'none';
+          ev.target.style.top = posY + "px";
+          if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null;
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+              var modal = ev.target.querySelector('.close-button');
+              if (modal) {
+                modal.click();
+                setTimeout(function () {
+                  ev.target.style.top = null;
+                }, 300);
+                return;
+              }
+            }
+            ev.target.style.top = null;
+          }
+        }
+      });
     });
   }
   var filterSwipe = document.querySelector('.filter-swipe');

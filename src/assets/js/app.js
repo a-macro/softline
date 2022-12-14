@@ -760,7 +760,7 @@ document.addEventListener("DOMContentLoaded", () => {
         height = window.innerHeight;
         document.documentElement.style.setProperty('--h', height + "px");
         if(header) {
-            headerH = header.getBoundingClientRect().height;
+            let headerH = header.getBoundingClientRect().height;
             document.documentElement.style.setProperty('--headerH', headerH + "px");
         }
         filters.forEach(filter => {
@@ -1274,11 +1274,13 @@ if (actualBtn) {
         }
         })
 }
-const swipeOn = document.querySelector('.swipe-on')
+const swipeOn = document.querySelectorAll('.swipe-on')
 
-if (swipeOn) {
+if (swipeOn.length) {
 
-var mc = new Hammer(swipeOn);
+swipeOn.forEach(el => {
+
+    var mc = new Hammer(el);
 
 mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
 
@@ -1294,10 +1296,12 @@ mc.on("pan", function (ev) {
         }
         var posY = ev.deltaY + lastPosY;
 
+        ev.target.style.transition = 'none'
         ev.target.style.top = posY + "px";
 
         if (ev.isFinal) {
             isDragging = false;
+            ev.target.style.transition = null
             if (ev.target.getBoundingClientRect().top >= window.innerHeight - 50) {
                 const modal = ev.target.closest('.regModal')
                 if (modal) {
@@ -1313,6 +1317,103 @@ mc.on("pan", function (ev) {
     }
 
 });
+
+})
+
+}
+
+const swipeOn2 = document.querySelectorAll('.swipe-on2')
+
+if (swipeOn2.length) {
+
+swipeOn2.forEach(el => {
+
+    var mc = new Hammer(el);
+
+mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
+
+var lastPosY = 0;
+var isDragging = false;
+
+mc.on("pan", function (ev) {
+    if (ev.target.classList.contains('swipe-on2') && mm.matches) {
+
+        if ( ! isDragging ) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
+        }
+        var posY = ev.deltaY + lastPosY;
+
+        ev.target.style.transition = 'none'
+        ev.target.style.top = posY + "px";
+
+        if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+                const modal = ev.target.closest('.regModal')
+                if (modal) {
+                    modalHandler.apply(modal)
+                    setTimeout(() => {
+                        ev.target.style.top = null
+                    }, 300)
+                    return
+                }
+            }
+            ev.target.style.top = null
+          }
+    }
+
+});
+
+})
+
+}
+
+const selectSwipe = document.querySelectorAll('.filters .select-items')
+
+if (selectSwipe.length) {
+    selectSwipe.forEach(el => {
+
+    var mc = new Hammer(el);
+
+mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
+
+var lastPosY = 0;
+var isDragging = false;
+
+mc.on("pan", function (ev) {
+    if (ev.target.classList.contains('select-items') && sm.matches) {
+
+        if ( ! isDragging ) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
+        }
+        var posY = ev.deltaY + lastPosY;
+
+        ev.target.style.transition = 'none'
+        ev.target.style.top = posY + "px";
+
+        if (ev.isFinal) {
+            isDragging = false;
+            ev.target.style.transition = null
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+                const modal = ev.target.querySelector('.close-button')
+                if (modal) {
+                    modal.click()
+                    setTimeout(() => {
+                        ev.target.style.top = null
+                    }, 300)
+                    return
+                }
+            }
+            ev.target.style.top = null
+          }
+    }
+
+});
+
+})
 
 }
 
