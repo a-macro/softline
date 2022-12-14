@@ -2189,14 +2189,22 @@ textarea {
     }
 }
 
+.active .menu__link {
+    color: #212424;
+}
+
+.active .submenu {
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .submenu {
     position: absolute;
     max-height: calc(100% - 4rem);
     overflow-y: auto;
     left: 43rem;
     top: 0;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     width: calc(100% - 43rem);
     padding-right: 4rem;
     -ms-flex-pack: justify;
@@ -2238,6 +2246,16 @@ textarea {
     padding-bottom: 1.6rem;
     padding-right: 10rem;
     width: 45rem;
+    transition: color 0.4s;
+}
+
+.menu__link:hover {
+    color: #212424;
+    outline: none;
+}
+
+.menu__link:active, .menu__link:focus {
+    outline: none;
 }
 
 .submenu__aside {
@@ -5601,6 +5619,8 @@ textarea {
 @media (max-width: 480px) {
     .filters .custom-select .select-items {
         padding-bottom: 0;
+        height: auto;
+        bottom: 0;
     }
 }
 
@@ -8264,6 +8284,21 @@ textarea {
     width: 0;
 }
 
+@media (max-width: 768px) {
+    .registration .registration__block::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .registration .registration__block::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10rem;
+        left: 0;
+    }
+}
+
 @media (max-width: 480px) {
     .registration .registration__block {
         height: calc(100% - 4rem);
@@ -8732,6 +8767,12 @@ textarea {
     width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
+}
+
+@media (max-width: 768px) {
+    .swipe-on2 {
+        transition: top 0.5s;
+    }
 }
 
 .breadcrumbs {
@@ -14740,6 +14781,8 @@ textarea {
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
     overflow: scroll;
+    height: auto;
+    bottom: 0;
   }
 }
 @media (max-width: 768px) {
@@ -14856,6 +14899,7 @@ textarea {
 .getintouch .registration__block .getintouch__top-block .close-button {
   top: 0;
   color: #FFFFFF;
+  z-index: 5;
 }
 .getintouch .registration__block .getintouch__top-block .close-button:hover {
   border-color: #FFFFFF;
@@ -14918,6 +14962,12 @@ textarea {
 
 .reqcallback .registration__block .getintouch__top-block {
   background: url("../images/getintouch/reqcallback.jpg");
+}
+@media (max-width: 768px) {
+  .reqcallback .registration__block .getintouch__top-block form {
+    height: 100%;
+    overflow: scroll;
+  }
 }
 
 html {
