@@ -75,12 +75,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const menubutton = document.querySelector('.menu-button')
+    const menubutton = document.querySelector('.menu-button');
+    let headerBottom = document.querySelector(".header__bottom");
 
     if (menubutton && menuWrapper) {
         menubutton.addEventListener('click', () => {
             menubutton.classList.toggle('menu-button--active')
-            menuWrapper.classList.toggle('show')
+            //menuWrapper.classList.toggle('show');
+            if(!headerBottom.classList.contains("show")) {
+                headerBottom.style.display = "block";
+                setTimeout(() => {
+                    headerBottom.classList.add("show");
+                }, 100);
+            }
+             else {
+                headerBottom.style.display = "none";
+                setTimeout(() => {
+                    headerBottom.classList.remove("show");
+                }, 100);            
+            }
         })
     }
 
@@ -88,8 +101,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const navList = document.querySelectorAll('.main-nav__list-item')
     const backButton = document.querySelector('.back-panel')
     const menuSecond = document.querySelector('.menu-second')
-    const innnerDiv = document.querySelector('#inner-menu')
+    const innnerDiv = document.querySelector('#inner-menu');
+    let menu = document.querySelectorAll(".menu");
 
+    backButton.onclick = (e) => {
+        e.preventDefault();
+        menuWrapper.classList.remove("show");
+        let act = document.querySelector(".menu__item.active");
+        if(act) {
+            act.classList.remove("active");
+        }
+        let act2 = document.querySelector(".header__item.active");
+        if(act2) {
+            menu.forEach(menu => {
+                menu.style.display = "none";
+            });
+            act2.classList.remove("active");
+        }
+    }
+/*
     if (tabs.length && navList.length && backButton) {
         tabs.forEach(tab => {
             tab.addEventListener('click', function () {
@@ -161,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
         })
-    }
+    }*/
 
     function modalHandler() {
         const modal = this

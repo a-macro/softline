@@ -80,10 +80,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   var menubutton = document.querySelector('.menu-button');
+  var headerBottom = document.querySelector(".header__bottom");
   if (menubutton && menuWrapper) {
     menubutton.addEventListener('click', function () {
       menubutton.classList.toggle('menu-button--active');
-      menuWrapper.classList.toggle('show');
+      //menuWrapper.classList.toggle('show');
+      if (!headerBottom.classList.contains("show")) {
+        headerBottom.style.display = "block";
+        setTimeout(function () {
+          headerBottom.classList.add("show");
+        }, 100);
+      } else {
+        headerBottom.style.display = "none";
+        setTimeout(function () {
+          headerBottom.classList.remove("show");
+        }, 100);
+      }
     });
   }
   var tabs = document.querySelectorAll('.tab-label');
@@ -91,78 +103,96 @@ document.addEventListener("DOMContentLoaded", function () {
   var backButton = document.querySelector('.back-panel');
   var menuSecond = document.querySelector('.menu-second');
   var innnerDiv = document.querySelector('#inner-menu');
-  if (tabs.length && navList.length && backButton) {
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        navList.forEach(function (navItem) {
-          navItem.hidden = !navItem.hidden;
-        });
-        this.parentElement.hidden = !this.parentElement.hidden;
-        this.classList.toggle('tab-label--active');
-        if (this.dataset.tab) {
-          var modal = document.querySelector("".concat(this.dataset.tab));
-          modalHandler.apply(modal);
-          backButton.dataset.back = this.dataset.tab;
-        }
-        backButton.classList.toggle('back-panel--active');
-        if (menuSecond) {
-          modalHandler.apply(menuSecond);
-        }
-        var active = document.querySelectorAll('.active, .not-active');
-        if (active.length) {
-          active.forEach(function (el) {
-            el.classList.remove('active');
-            el.classList.remove('not-active');
-          });
-        }
-        if (innnerDiv) {
-          innnerDiv.innerHTML = '';
-        }
-        var hiddenButton = document.querySelectorAll('.tab-label--hidden');
-        if (hiddenButton.length) {
-          hiddenButton.forEach(function (el) {
-            el.classList.remove('tab-label--hidden');
-          });
-        }
+  var menu = document.querySelectorAll(".menu");
+  backButton.onclick = function (e) {
+    e.preventDefault();
+    menuWrapper.classList.remove("show");
+    var act = document.querySelector(".menu__item.active");
+    if (act) {
+      act.classList.remove("active");
+    }
+    var act2 = document.querySelector(".header__item.active");
+    if (act2) {
+      menu.forEach(function (menu) {
+        menu.style.display = "none";
       });
-    });
-    backButton.addEventListener('click', function () {
-      this.classList.remove('back-panel--active');
-      if (this.dataset.back) {
-        var modal = document.querySelector("".concat(this.dataset.back));
-        modalHandler.apply(modal);
-        delete this.dataset.back;
-      }
-      var active = document.querySelectorAll('.tab-label--active');
-      if (active.length) {
-        active.forEach(function (el) {
-          el.classList.remove('tab-label--active');
-        });
-      }
-      navList.forEach(function (el) {
-        el.hidden = false;
-      });
-      if (menuSecond) {
-        modalHandler.apply(menuSecond);
-      }
-      var active2 = document.querySelectorAll('.active, .not-active');
-      if (active2.length) {
-        active2.forEach(function (el) {
-          el.classList.remove('active');
-          el.classList.remove('not-active');
-        });
-      }
-      if (innnerDiv) {
-        innnerDiv.innerHTML = '';
-      }
-      var hiddenButton = document.querySelectorAll('.tab-label--hidden');
-      if (hiddenButton.length) {
-        hiddenButton.forEach(function (el) {
-          el.classList.remove('tab-label--hidden');
-        });
-      }
-    });
-  }
+      act2.classList.remove("active");
+    }
+  };
+  /*
+      if (tabs.length && navList.length && backButton) {
+          tabs.forEach(tab => {
+              tab.addEventListener('click', function () {
+                  navList.forEach(navItem => {
+                      navItem.hidden = !navItem.hidden
+                  })
+                  this.parentElement.hidden = !this.parentElement.hidden
+                  this.classList.toggle('tab-label--active')
+                  if (this.dataset.tab) {
+                      const modal = document.querySelector(`${this.dataset.tab}`)
+                      modalHandler.apply(modal)
+                      backButton.dataset.back = this.dataset.tab
+                  }
+                  backButton.classList.toggle('back-panel--active')
+                  if (menuSecond) {
+                      modalHandler.apply(menuSecond)
+                  }
+                  const active = document.querySelectorAll('.active, .not-active')
+                  if (active.length) {
+                      active.forEach(el => {
+                          el.classList.remove('active')
+                          el.classList.remove('not-active')
+                      })
+                  }
+                  if (innnerDiv) {
+                      innnerDiv.innerHTML = ''
+                  }
+                  const hiddenButton = document.querySelectorAll('.tab-label--hidden') 
+                  if(hiddenButton.length) {
+                      hiddenButton.forEach(el => {
+                          el.classList.remove('tab-label--hidden')
+                      })
+                  }
+              })
+          })
+          backButton.addEventListener('click', function () {
+              this.classList.remove('back-panel--active')
+              if (this.dataset.back) {
+                  const modal = document.querySelector(`${this.dataset.back}`)
+                  modalHandler.apply(modal)
+                  delete this.dataset.back
+              }
+              const active = document.querySelectorAll('.tab-label--active')
+              if (active.length) {
+                  active.forEach(el => {
+                      el.classList.remove('tab-label--active')
+                  })
+              }
+              navList.forEach(el => {
+                  el.hidden = false
+              })
+              if (menuSecond) {
+                  modalHandler.apply(menuSecond)
+              }
+              const active2 = document.querySelectorAll('.active, .not-active')
+              if (active2.length) {
+                  active2.forEach(el => {
+                      el.classList.remove('active')
+                      el.classList.remove('not-active')
+                  })
+              }
+              if (innnerDiv) {
+                  innnerDiv.innerHTML = ''
+              }
+              const hiddenButton = document.querySelectorAll('.tab-label--hidden') 
+              if(hiddenButton.length) {
+                  hiddenButton.forEach(el => {
+                      el.classList.remove('tab-label--hidden')
+                  })
+              }
+          })
+      }*/
+
   function modalHandler() {
     var modal = this;
     if (modal) {

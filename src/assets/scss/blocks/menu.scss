@@ -19,11 +19,9 @@
     @include breakpoint($mid-bp) {
         border-top: 0.1rem solid #D2DCE5;
         left: 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: min-content;
         height: calc(100% - var(--headerH));
         overflow: auto;
+        transform: translateX(100%);
         &::-webkit-scrollbar {
             width: 0;
         }
@@ -56,10 +54,12 @@
     top: 0;
     left: 0;
     z-index: 2;
-    max-height: 0;
     height: min-content;
     overflow: hidden;
     transition: max-height .3s;
+    @include breakpoint($mid-bp) {
+        display: block;
+    }
     div {
         font-weight: 500;
         font-size: 1.6rem;
@@ -252,8 +252,26 @@
     }
 }
 
+.mob-title {
+    display: none;
+    @include breakpoint($mid-bp) {
+        display: block;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+}
+
 .show.menu-wrapper {
     transform: translateY(0);
+    @include breakpoint($mid-bp) {
+        z-index: 2;
+        width: 100%;
+        left: 0;
+        height: 66rem;
+    }
 }
 
 .menu {
@@ -266,7 +284,8 @@
     padding-bottom: 4rem;
     display: none;
     @include breakpoint($mid-bp) {
-        display: none!important;
+        padding-left: 0;
+        padding-top: 0;
     }
 }
 
@@ -331,6 +350,9 @@
         }
         @include breakpoint($xl-bp) {
             width: calc(100% - 45rem);
+        }
+        @include breakpoint($mid-bp) {
+            display: none;
         }
 
         & > div {
@@ -456,6 +478,11 @@
     }
     .submenu {
         display: flex;
+        @include breakpoint($mid-bp) {
+            display: flex;
+            width: 47%;
+            left: 51%;
+        }
     }
 }
 
@@ -521,6 +548,9 @@
     @include breakpoint($xxl-bp) {
         width: 23.5rem;
     }
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
 
     &::before {
         content: "";
@@ -541,6 +571,9 @@
     @include breakpoint($xxl-bp) {
         width: calc(100% - 24.5rem);
     }
+    @include breakpoint($mid-bp) {
+        width: 100%;
+    }
 
     &::before {
         content: "";
@@ -551,6 +584,9 @@
         position: absolute;
         left: 0;
         top: 10.6rem;
+        @include breakpoint($mid-bp) {
+            content: none;
+        }
     }
 }
 
@@ -558,6 +594,9 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
 
     h3 {
         font-size: 3.6rem;
@@ -583,6 +622,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 6.8rem;
+    }
+    @include breakpoint($mid-bp) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -627,6 +670,9 @@
     img {
         width: 2.2rem;
         margin-right: 1.3rem;
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
     }
 }
 
@@ -637,6 +683,9 @@
     letter-spacing: 0em;
     text-align: left;
     margin-top: 0.5rem;
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
 }
 
 .submenu__aside_title {
@@ -886,6 +935,9 @@
         .corporate {
             border-left: 0;
             padding: 0;
+            @include breakpoint($mid-bp) {
+                display: none;
+            }
             .corporate__content {
                 margin-top: 0;
                 .corporate__block {
@@ -915,6 +967,10 @@
             font-size: 2rem;
             line-height: 3.2rem;
             row-gap: 1.5rem;
+            @include breakpoint($mid-bp) {
+                display: flex;
+                flex-direction: column;
+            }
             li {
                 padding: 0;
             }
