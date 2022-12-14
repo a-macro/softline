@@ -4125,7 +4125,8 @@ textarea {
     z-index: 10000;
     position: fixed;
     left: 0;
-    height: calc(100% - 4rem);
+    height: auto;
+    bottom: 0;
   }
 }
 
@@ -4799,6 +4800,8 @@ textarea {
 @media (max-width: 480px) {
   .filters .custom-select .select-items {
     padding-bottom: 0;
+    height: auto;
+    bottom: 0;
   }
 }
 @media (max-width: 480px) {
@@ -6995,6 +6998,19 @@ textarea {
   height: 0;
   width: 0;
 }
+@media (max-width: 768px) {
+  .registration .registration__block::-webkit-scrollbar {
+    width: 0;
+  }
+  .registration .registration__block::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10rem;
+    left: 0;
+  }
+}
 @media (max-width: 480px) {
   .registration .registration__block {
     height: calc(100% - 4rem);
@@ -7338,6 +7354,12 @@ textarea {
   margin: 0 auto;
   display: block;
   width: min-content;
+}
+
+@media (max-width: 768px) {
+  .swipe-on2 {
+    transition: top 0.5s;
+  }
 }
 
 .breadcrumbs {
@@ -10706,6 +10728,7 @@ body::before {
     position: absolute;
     width: 100%;
     bottom: 0;
+    top: 26%;
     left: 0;
     background-color: #FFFFFF;
     display: block;
@@ -10713,6 +10736,7 @@ body::before {
     border-top-right-radius: 1.2rem;
     padding-bottom: 2.2rem;
     padding-top: 10rem;
+    transition: top 0.5s;
   }
 }
 @media (max-width: 768px) and (max-width: 480px) {
@@ -12500,6 +12524,8 @@ textarea {
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
     overflow: scroll;
+    height: auto;
+    bottom: 0;
   }
 }
 @media (max-width: 768px) {
@@ -12610,6 +12636,7 @@ textarea {
 .getintouch .registration__block .getintouch__top-block .close-button {
   top: 0;
   color: #FFFFFF;
+  z-index: 5;
 }
 .getintouch .registration__block .getintouch__top-block .close-button:hover {
   border-color: #FFFFFF;
@@ -12672,6 +12699,12 @@ textarea {
 
 .reqcallback .registration__block .getintouch__top-block {
   background: url("../images/getintouch/reqcallback.jpg");
+}
+@media (max-width: 768px) {
+  .reqcallback .registration__block .getintouch__top-block form {
+    height: 100%;
+    overflow: scroll;
+  }
 }
 
 html {

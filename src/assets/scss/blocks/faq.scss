@@ -122,6 +122,7 @@
               position: absolute;
               width: 100%;
               bottom: 0;
+              top: 26%;
               left: 0;
               background-color: #FFFFFF;
               display: block;
@@ -129,6 +130,7 @@
               border-top-right-radius: 1.2rem;
               padding-bottom: 2.2rem;
               padding-top: 10rem;
+              transition: top .5s;
               @include breakpoint($sm-bp) {
                 padding-top: 6rem;
               }

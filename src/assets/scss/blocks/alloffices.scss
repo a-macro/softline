@@ -132,6 +132,8 @@
       border-top-left-radius: 1.2rem;
       border-top-right-radius: 1.2rem;
       overflow: scroll;
+      height: auto;
+      bottom: 0;
     }
     &::before {
       @include breakpoint($mid-bp) {
@@ -232,6 +234,7 @@
       .close-button {
         top: 0;
         color: #FFFFFF;
+        z-index: 5;
         &:hover {
           border-color: #FFFFFF;
           .close-button__cross {
@@ -294,5 +297,11 @@
 .reqcallback {
   .registration__block .getintouch__top-block {
       background: url('../images/getintouch/reqcallback.jpg');
+      form {
+        @include breakpoint($mid-bp) {
+          height: 100%;
+          overflow: scroll;
+        }
+      }
     }
 }
