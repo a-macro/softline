@@ -3892,42 +3892,6 @@ textarea {
   background-color: #FFFFFF;
 }
 
-@media (max-width: 480px) {
-  .filter-button + .panel::after {
-    content: "";
-    position: fixed;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 12rem;
-    background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
-    background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
-    z-index: 0;
-    border-top-right-radius: 1.2rem;
-    border-top-left-radius: 1.2rem;
-    pointer-events: none;
-    transition: top 0.4s;
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-button--active + .panel::after {
-    content: "";
-    position: fixed;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    height: 12rem;
-    background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
-    background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
-    z-index: 0;
-    border-top-right-radius: 1.2rem;
-    border-top-left-radius: 1.2rem;
-    pointer-events: none;
-    transition: top 0.4s;
-  }
-}
-
 .panel {
   background-color: #FFFFFF;
   z-index: 2;
@@ -3957,14 +3921,15 @@ textarea {
 }
 @media (max-width: 480px) {
   .panel {
-    padding: 2rem;
+    padding: 0;
     padding-top: 4rem;
     position: relative;
+    overflow: auto;
   }
   .panel::before {
     content: "";
-    position: fixed;
-    top: 5rem;
+    position: absolute;
+    top: 1rem;
     left: 50%;
     height: 2px;
     width: 5rem;
@@ -3983,9 +3948,10 @@ textarea {
     font-weight: 400;
     font-size: 3.2rem;
     line-height: 4rem;
-    position: sticky;
     top: 0;
     z-index: 2;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 .panel .panel__title {
@@ -4023,6 +3989,36 @@ textarea {
     background-size: contain;
   }
 }
+@media (max-width: 480px) {
+  .panel .panel__wrapper {
+    position: relative;
+    overflow: hidden;
+    height: calc(100% - 4rem);
+  }
+}
+@media (max-width: 480px) {
+  .panel .panel__wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 50%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, #FFFFFF 50%, rgba(255, 255, 255, 0));
+    z-index: 1;
+    pointer-events: none;
+    transition: top 0.4s;
+  }
+}
+@media (max-width: 480px) {
+  .panel .panel__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 100%;
+    overflow: auto;
+  }
+}
 
 @media (max-width: 480px) {
   .panel__title + .checkbox-container {
@@ -4049,8 +4045,7 @@ textarea {
 }
 @media (max-width: 480px) {
   .filters-panel .close-button {
-    position: fixed;
-    top: 7rem;
+    top: 3rem;
     right: 2rem;
     z-index: 3;
   }
@@ -4379,6 +4374,7 @@ textarea {
   position: relative;
   z-index: 2;
 }
+.main-pagination .numb-container:hover,
 .main-pagination .numb-container:focus {
   background-color: #FFFFFF;
 }
@@ -4687,29 +4683,14 @@ textarea {
   }
   .select-items::before {
     content: "";
-    position: fixed;
-    top: 5rem;
+    position: absolute;
+    top: 1rem;
     left: 50%;
     width: 4rem;
     height: 2px;
     background-color: #D2DCE5;
     transform: translateX(-50%);
     z-index: 5;
-  }
-  .select-items::after {
-    content: "";
-    position: fixed;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 14rem;
-    background: -webkit-linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
-    background: linear-gradient(to bottom, #FFFFFF 80%, rgba(255, 255, 255, 0));
-    z-index: 0;
-    border-top-right-radius: 1.2rem;
-    border-top-left-radius: 1.2rem;
-    pointer-events: none;
-    transition: top 0.4s;
   }
   .select-items:not(.select-hide)::after {
     top: 4rem;
@@ -4728,8 +4709,8 @@ textarea {
 @media (max-width: 480px) {
   .select-items .close-button {
     display: block;
-    position: sticky;
-    top: 2rem;
+    position: absolute;
+    top: 3rem;
     right: 2rem;
     width: 4rem;
     height: 3rem;
@@ -4756,8 +4737,6 @@ textarea {
 @media (max-width: 480px) {
   .select-items .custom-select__title {
     display: block;
-    position: sticky;
-    top: 3rem;
     z-index: 3;
   }
 }
@@ -4773,7 +4752,7 @@ textarea {
 .select-items::-webkit-scrollbar-thumb:hover {
   background: #A50F2D;
 }
-.select-items div {
+.select-items .select-wrapper div {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 500;
@@ -4786,7 +4765,7 @@ textarea {
   padding: 2.4rem 0;
 }
 @media (max-width: 480px) {
-  .select-items div {
+  .select-items .select-wrapper div {
     font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
@@ -4802,6 +4781,44 @@ textarea {
   right: 0;
   left: unset;
 }
+@media (max-width: 480px) {
+  .filters .custom-select .select-items {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 480px) {
+  .filters .custom-select .select-items .custom-select__title {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+  }
+  .filters .custom-select .select-items .custom-select__title::before {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 50%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, #FFFFFF 50%, rgba(255, 255, 255, 0));
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+@media (max-width: 480px) {
+  .filters .custom-select .select-items .select-wrapper {
+    padding-top: 2rem;
+    height: calc(100% - 11.2rem);
+    overflow: auto;
+  }
+}
+@media (max-width: 480px) {
+  .filters .custom-select .select-items .select-wrapper div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 
 /* Hide the items when the select box is closed: */
 .select-hide {
@@ -4810,12 +4827,12 @@ textarea {
   pointer-events: none;
 }
 
-.select-items div:hover,
+.select-items .select-wrapper div:hover,
 .select-items .same-as-selected {
   color: #A50F2D;
 }
 @media (max-width: 480px) {
-  .select-items div:hover,
+  .select-items .select-wrapper div:hover,
   .select-items .same-as-selected {
     color: #212424;
     background-color: #E5E9F1;
