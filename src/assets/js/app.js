@@ -757,6 +757,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", () => {
         width = window.innerWidth;
+        height = window.innerHeight;
+        document.documentElement.style.setProperty('--h', height + "px");
+        if(header) {
+            headerH = header.getBoundingClientRect().height;
+            document.documentElement.style.setProperty('--headerH', headerH + "px");
+        }
         filters.forEach(filter => {
             countHeight(filter);
         });

@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var header = document.querySelector(".header");
   if (header) {
-    var headerH = header.getBoundingClientRect().height;
-    document.documentElement.style.setProperty('--headerH', headerH + "px");
+    var _headerH = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--headerH', _headerH + "px");
   }
   var headerSearch = document.querySelector(".header__search");
   var headerSearchBtn = document.querySelector(".btn__search-show");
@@ -701,6 +701,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("resize", function () {
     width = window.innerWidth;
+    height = window.innerHeight;
+    document.documentElement.style.setProperty('--h', height + "px");
+    if (header) {
+      headerH = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', headerH + "px");
+    }
     filters.forEach(function (filter) {
       countHeight(filter);
     });
@@ -1077,8 +1083,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   document.addEventListener('resize', function () {
     if (header) {
-      var _headerH = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--headerH', _headerH + "px");
+      var _headerH2 = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', _headerH2 + "px");
     }
   });
   if (accordions.length && navBar.length) {

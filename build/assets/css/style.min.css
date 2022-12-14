@@ -7743,6 +7743,10 @@ body::before {
   color: #A50F2D;
 }
 
+.search-result.services {
+  margin-top: 0;
+}
+
 .hide.search-result {
   display: none;
 }
@@ -8782,9 +8786,14 @@ body::before {
 }
 .__select[data-state=active] .__select__content {
   opacity: 1;
+  border: 1px solid #D2DCE5;
+  border-radius: 0 0 0.4rem 0.4rem;
 }
 .__select[data-state=active] .__select__label + .__select__input + .__select__label {
   border-top-width: 1px;
+}
+.__select[data-state=active] .__select__title::after {
+  transform: scale(1, -1);
 }
 @media (max-width: 480px) {
   .__select {
@@ -8823,6 +8832,7 @@ body::before {
   margin-left: 1rem;
   background: url("../images/arrow-down.svg") no-repeat;
   background-size: contain;
+  transition: transform 0.4s;
 }
 
 .__select__content {
@@ -8893,22 +8903,22 @@ body::before {
   align-items: center;
   width: 100%;
   line-height: 1.3;
-  padding: 4px 16px;
-  padding-right: 6rem;
+  font-size: 1.5rem;
+  padding: 0.4rem 2.2rem;
   transition: all 0.2s ease-out;
   cursor: pointer;
   color: rgb(152, 152, 152);
 }
+@media (max-width: 1440px) {
+  .__select__label {
+    padding: 0.4rem 1.2rem;
+  }
+}
 .__select__label + input + .__select__label {
-  border-top: 0 solid rgba(199, 204, 209, 0.3764705882);
+  border-top: 0 solid #D2DCE5;
 }
 .__select__label:hover {
   color: black;
-}
-@media (max-width: 480px) {
-  .__select__label {
-    padding-right: 10rem;
-  }
 }
 
 .intro {

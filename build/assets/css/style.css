@@ -11057,7 +11057,8 @@ body::before {
 }
 
 .service {
-    height: 31.8rem;
+    min-height: 31.8rem;
+    height: auto;
     border-top: 1px solid #D2DCE5;
     border-bottom: 1px solid #D2DCE5;
     border-right: 1px solid #D2DCE5;
@@ -11076,14 +11077,14 @@ body::before {
 @media (max-width: 1920px) {
     .service {
         padding: 2.8rem 1.5rem 2.5rem;
-        height: 29.8rem;
+        min-height: 29.8rem;
     }
 }
 
 @media (max-width: 1440px) {
     .service {
         padding: 2.8rem 2.5rem 2rem 2rem;
-        height: 32rem;
+        min-height: 32rem;
     }
 }
 
@@ -11098,13 +11099,14 @@ body::before {
 @media (max-width: 480px) {
     .service {
         width: 40rem;
-        height: 34.5rem;
+        min-height: 34.5rem;
         padding: 3.8rem 3.5rem 3rem 2rem;
     }
 }
 
-.service:hover {
-    box-shadow: inset 2px 2px 4px #d2dce5;
+.service:hover .subtitle {
+    color: #A50F2D;
+    transition: 0.4s;
 }
 
 .swiper-container .swiper-button-next,
