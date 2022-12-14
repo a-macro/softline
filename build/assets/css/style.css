@@ -2189,16 +2189,150 @@ textarea {
     }
 }
 
+.insights__inner {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-height: 65rem;
+    overflow-y: auto;
+    scrollbar-color: rgba(0, 0, 0, 0.7) rgb(236, 230, 230);
+    scrollbar-width: thin;
+}
+
+.insights__inner::-webkit-scrollbar {
+    width: 5px;
+}
+
+.insights__inner::-webkit-scrollbar-track {
+    background-color: rgb(236, 230, 230);
+    border-radius: 10px;
+}
+
+.insights__inner::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.insights__inner .main-nav__list-link {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #212424;
+}
+
+.insights__inner .tab-accord__list li {
+    padding: 0;
+    margin-bottom: 1.6rem;
+}
+
+.insights__inner .tab-accord__list li a {
+    text-decoration: none;
+    color: #212424;
+}
+
+.insights__inner .insights-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-right: 0;
+    padding-top: 0;
+    width: calc(100% - 57rem);
+    padding-bottom: 0;
+}
+
+.insights__inner .insights-menu > div {
+    width: calc((100% - 20rem) / 5);
+    margin-right: 5rem;
+    height: 39rem;
+    margin-bottom: 2rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.insights__inner .insights-menu > div .insights-menu__item {
+    height: 19.5rem;
+}
+
+.insights__inner .insights-menu > div .insights-menu__item:nth-child(1) .insights-menu__data {
+    padding-bottom: 1rem;
+}
+
+.insights__inner .insights-menu > div:nth-child(5n) {
+    margin-right: 0;
+}
+
+.insights__inner .insights-menu .big .insights-menu__item {
+    height: 100%;
+}
+
+.insights__inner .insights-menu .big .insights-menu__item:nth-child(1) {
+    padding-bottom: 0rem;
+}
+
+.insights__inner .insights-menu__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    height: 100%;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.insights__inner .insights-menu__item div {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.insights__inner .insights-menu__item img {
+    margin-bottom: 2rem;
+}
+
+.insights__inner .insights-menu__title {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    margin-top: 1.8rem;
+}
+
+.active .menu__link {
+    color: #212424;
+}
+
+.active .submenu {
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .submenu {
     position: absolute;
     max-height: calc(100% - 4rem);
     overflow-y: auto;
     left: 43rem;
     top: 0;
-    display: -ms-flexbox;
-    display: flex;
-    width: calc(100% - 43rem);
-    padding-right: 4rem;
+    display: none;
+    width: calc(100% - 47rem);
+    padding-right: 0;
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding-bottom: 4rem;
@@ -2238,6 +2372,16 @@ textarea {
     padding-bottom: 1.6rem;
     padding-right: 10rem;
     width: 45rem;
+    transition: color 0.4s;
+}
+
+.menu__link:hover {
+    color: #212424;
+    outline: none;
+}
+
+.menu__link:active, .menu__link:focus {
+    outline: none;
 }
 
 .submenu__aside {
@@ -2588,7 +2732,6 @@ textarea {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 5rem;
-    border-left: 0.1rem solid #E5E9F1;
     transition: opacity 0.3s;
 }
 
@@ -2598,9 +2741,7 @@ textarea {
     line-height: 2.4rem;
     text-decoration: none;
   /* identical to box height, or 150% */
-    padding-bottom: 2rem;
     border-bottom: 0.1rem solid #D2DCE5;
-    padding-top: 2rem;
 }
 
 .insights-menu .insights-menu__item:first-child {
@@ -2613,12 +2754,10 @@ textarea {
 
 .insights-menu .insights-menu__item .insights-menu__name {
     color: #A50F2D;
-    padding-bottom: 0.5rem;
 }
 
 .insights-menu .insights-menu__item .insights-menu__title {
     color: #212424;
-    padding-bottom: 2rem;
 }
 
 .insights-menu .insights-menu__item .insights-menu__data {
@@ -5601,6 +5740,8 @@ textarea {
 @media (max-width: 480px) {
     .filters .custom-select .select-items {
         padding-bottom: 0;
+        height: auto;
+        bottom: 0;
     }
 }
 
@@ -8264,6 +8405,21 @@ textarea {
     width: 0;
 }
 
+@media (max-width: 768px) {
+    .registration .registration__block::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .registration .registration__block::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10rem;
+        left: 0;
+    }
+}
+
 @media (max-width: 480px) {
     .registration .registration__block {
         height: calc(100% - 4rem);
@@ -8732,6 +8888,12 @@ textarea {
     width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
+}
+
+@media (max-width: 768px) {
+    .swipe-on2 {
+        transition: top 0.5s;
+    }
 }
 
 .breadcrumbs {
@@ -14740,6 +14902,8 @@ textarea {
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
     overflow: scroll;
+    height: auto;
+    bottom: 0;
   }
 }
 @media (max-width: 768px) {
@@ -14856,6 +15020,7 @@ textarea {
 .getintouch .registration__block .getintouch__top-block .close-button {
   top: 0;
   color: #FFFFFF;
+  z-index: 5;
 }
 .getintouch .registration__block .getintouch__top-block .close-button:hover {
   border-color: #FFFFFF;
@@ -14918,6 +15083,12 @@ textarea {
 
 .reqcallback .registration__block .getintouch__top-block {
   background: url("../images/getintouch/reqcallback.jpg");
+}
+@media (max-width: 768px) {
+  .reqcallback .registration__block .getintouch__top-block form {
+    height: 100%;
+    overflow: scroll;
+  }
 }
 
 html {
