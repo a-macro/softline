@@ -1265,11 +1265,47 @@ if (actualBtn) {
         }
         })
 }
-// var hammertime = new Hammer(myElement);
-// hammertime.on('pan', function(ev) {
-// 	console.log(ev)
-// });
+const swipeOn = document.querySelector('.swipe-on')
 
+if (swipeOn) {
+
+    var mc = new Hammer(swipeOn);
+
+mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
+
+var lastPosY = 0;
+var isDragging = false;
+
+mc.on("pan", function (ev) {
+    if (ev.target.classList.contains('swipe-on')) {
+
+        if ( ! isDragging ) {
+            isDragging = true;
+            lastPosY = ev.target.offsetTop;
+        }
+        var posY = ev.deltaY + lastPosY;
+
+        ev.target.style.top = posY + "px";
+
+        if (ev.isFinal) {
+            isDragging = false;
+            if (ev.target.getBoundingClientRect().top >= window.innerHeight - 50) {
+                const modal = ev.target.closest('.regModal')
+                if (modal) {
+                    modalHandler.apply(modal)
+                    setTimeout(() => {
+                        ev.target.style.top = null
+                    }, 300)
+                    return
+                }
+            }
+            ev.target.style.top = null
+          }
+    }
+
+});
+
+}
 
 
 });
