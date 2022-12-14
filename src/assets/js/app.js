@@ -1265,6 +1265,10 @@ if (actualBtn) {
         }
         })
 }
+// var hammertime = new Hammer(myElement);
+// hammertime.on('pan', function(ev) {
+// 	console.log(ev)
+// });
 
 
 
