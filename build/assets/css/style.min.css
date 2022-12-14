@@ -1874,13 +1874,20 @@ textarea {
   }
 }
 
+.active .menu__link {
+  color: #212424;
+}
+.active .submenu {
+  display: flex;
+}
+
 .submenu {
   position: absolute;
   max-height: calc(100% - 4rem);
   overflow-y: auto;
   left: 43rem;
   top: 0;
-  display: flex;
+  display: none;
   width: calc(100% - 43rem);
   padding-right: 4rem;
   justify-content: space-between;
@@ -1917,6 +1924,14 @@ textarea {
   padding-bottom: 1.6rem;
   padding-right: 10rem;
   width: 45rem;
+  transition: color 0.4s;
+}
+.menu__link:hover {
+  color: #212424;
+  outline: none;
+}
+.menu__link:active, .menu__link:focus {
+  outline: none;
 }
 
 .submenu__aside {

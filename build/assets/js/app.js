@@ -42,12 +42,35 @@ document.addEventListener("DOMContentLoaded", function () {
       var attr = item.getAttribute("data-menu");
       if (attr) {
         var itemMenu = document.querySelector(".".concat(attr));
-        item.onmouseover = function (e) {
+        item.onclick = function (e) {
+          var prev = document.querySelector(".active.header__item");
+          if (prev && prev != item) {
+            prev.classList.remove("active");
+            var attrPrev = prev.getAttribute("data-menu");
+            var itemMenuPrev = document.querySelector(".".concat(attrPrev));
+            itemMenuPrev.style.display = "none";
+          }
           item.classList.add("active");
           itemMenu.style.display = "block";
           menuWrapper.classList.add("show");
         };
       }
+    });
+  }
+  var subMenuItems = document.querySelectorAll(".menu__item");
+  if (subMenuItems && subMenuItems.length > 0) {
+    subMenuItems.forEach(function (item) {
+      var parent = item.closest(".menu");
+      item.onclick = function (e) {
+        e.preventDefault();
+        if (!item.classList.contains("active")) {
+          var _prev = parent.querySelector(".menu__item.active");
+          if (_prev) {
+            _prev.classList.remove("active");
+          }
+          item.classList.add("active");
+        }
+      };
     });
   }
   var menubutton = document.querySelector('.menu-button');

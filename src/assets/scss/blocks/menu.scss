@@ -278,13 +278,22 @@
     }
 }
 
+.active {
+    .menu__link {
+        color: $black;
+    }
+    .submenu {
+        display: flex;
+    }
+}
+
 .submenu {
     position: absolute;
     max-height: calc(100% - 4rem);
     overflow-y: auto;
     left: 43rem;
     top: 0;
-    display: flex;
+    display: none;
     width: calc(100% - 43rem);
     padding-right: 4rem;
     justify-content: space-between;
@@ -322,6 +331,15 @@
     padding-bottom: 1.6rem;
     padding-right: 10rem;
     width: 45rem;
+    transition: color .4s;
+    &:hover {
+        color: $black;
+        outline: none;
+    }
+    &:active,
+    &:focus  {
+        outline: none;
+    }
 }
 
 .submenu__aside {
