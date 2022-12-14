@@ -733,6 +733,9 @@ document.addEventListener("DOMContentLoaded", function () {
         _title.innerHTML = x[i].dataset.text;
         b.appendChild(_title);
       }
+      var wrapper = document.createElement('div');
+      wrapper.setAttribute('class', 'select-wrapper');
+      b.appendChild(wrapper);
       for (j = 0; j < ll; j++) {
         /* For each option in the original select element,
         create a new DIV that will act as an option item: */
@@ -745,9 +748,9 @@ document.addEventListener("DOMContentLoaded", function () {
           /* When an item is clicked, update the original select box,
           and the selected item: */
           var y, i, k, s, h, sl, yl;
-          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          s = this.parentNode.parentNode.parentNode.getElementsByTagName("select")[0];
           sl = s.length;
-          h = this.parentNode.previousSibling;
+          h = this.parentNode.parentNode.previousSibling;
           h.classList.add('filter-button--active');
           for (i = 0; i < sl; i++) {
             if (s.options[i].innerHTML == this.innerHTML) {
@@ -764,7 +767,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           h.click();
         });
-        b.appendChild(c);
+        wrapper.appendChild(c);
       }
       x[i].appendChild(b);
       var _overlay = document.createElement('div');
@@ -1203,6 +1206,42 @@ document.addEventListener("DOMContentLoaded", function () {
             var modal = ev.target.closest('.regModal');
             if (modal) {
               modalHandler.apply(modal);
+              setTimeout(function () {
+                ev.target.style.top = null;
+              }, 300);
+              return;
+            }
+          }
+          ev.target.style.top = null;
+        }
+      }
+    });
+  }
+  var filterSwipe = document.querySelector('.filter-swipe');
+  if (filterSwipe) {
+    var mc = new Hammer(filterSwipe);
+    mc.add(new Hammer.Pan({
+      direction: Hammer.DIRECTION_ALL,
+      threshold: 0
+    }));
+    var lastPosY = 0;
+    var isDragging = false;
+    mc.on("pan", function (ev) {
+      if (ev.target.classList.contains('filter-swipe') && sm.matches) {
+        if (!isDragging) {
+          isDragging = true;
+          lastPosY = ev.target.offsetTop;
+        }
+        var posY = ev.deltaY + lastPosY;
+        ev.target.style.transition = 'none';
+        ev.target.style.top = posY + "px";
+        if (ev.isFinal) {
+          isDragging = false;
+          ev.target.style.transition = null;
+          if (ev.target.getBoundingClientRect().top >= window.innerHeight - 100) {
+            var modal = ev.target.querySelector('.close-button');
+            if (modal) {
+              modal.click();
               setTimeout(function () {
                 ev.target.style.top = null;
               }, 300);
