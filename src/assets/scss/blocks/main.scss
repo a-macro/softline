@@ -335,7 +335,8 @@
 }
 
 .service {
-    height: 31.8rem;
+    min-height: 31.8rem;
+    height: auto;
     border-top: 1px solid $grey;
     border-bottom: 1px solid $grey;
     border-right: 1px solid $grey;
@@ -348,11 +349,11 @@
     transition: .2s;
     @include breakpoint($xxl-bp) {
         padding: 2.8rem 1.5rem 2.5rem;
-        height: 29.8rem;            
+        min-height: 29.8rem;            
     }
     @include breakpoint($xl-bp) {
         padding: 2.8rem 2.5rem 2rem 2rem;
-        height: 32rem;            
+        min-height: 32rem;            
     }
     @include breakpoint($mid-bp) {
         width: 23.2rem;
@@ -361,12 +362,15 @@
     }
     @include breakpoint($sm-bp) {
         width: 40rem;
-        height: 34.5rem;
+        min-height: 34.5rem;
         padding: 3.8rem 3.5rem 3rem 2rem;
     }
 
     &:hover {
-        box-shadow: inset 2px 2px 4px #d2dce5;
+        .subtitle {
+            color: $red;
+            transition: .4s;
+        }
     }
 }
 
@@ -418,6 +422,7 @@
 }
 
 .service__top {
+
     img {
         width: 3.1rem;
         margin-bottom: 2.5rem;
