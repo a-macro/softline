@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         prev.classList.remove("active");
                     }
                     item.classList.add("active");
-                    if(window.innerWidth <=480) {
+                    if(window.innerWidth <=480 && !item.classList.contains("empty")) {
                         subMenuItems.forEach(itemRest => {
                             itemRest.classList.add("hide");
                         });
@@ -129,6 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let act = document.querySelector(".menu__item.active");
         if(act) {
             act.classList.remove("active");
+        }
+        if(window.innerWidth <=480) {
+            subMenuItems.forEach(itemRest => {
+                itemRest.classList.remove("hide");
+            });
         }
         let act2 = document.querySelector(".header__item.active");
         if(act2) {

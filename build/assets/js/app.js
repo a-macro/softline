@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             _prev2.classList.remove("active");
           }
           item.classList.add("active");
-          if (window.innerWidth <= 480) {
+          if (window.innerWidth <= 480 && !item.classList.contains("empty")) {
             subMenuItems.forEach(function (itemRest) {
               itemRest.classList.add("hide");
             });
@@ -129,6 +129,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var act = document.querySelector(".menu__item.active");
     if (act) {
       act.classList.remove("active");
+    }
+    if (window.innerWidth <= 480) {
+      subMenuItems.forEach(function (itemRest) {
+        itemRest.classList.remove("hide");
+      });
     }
     var act2 = document.querySelector(".header__item.active");
     if (act2) {
