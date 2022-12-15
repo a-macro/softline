@@ -541,6 +541,33 @@
             width: 47%;
             left: 51%;
         }
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            max-height: 200vh;
+        }
+    }
+
+    .submenu__list {
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            max-height: 200vh;
+        }    
+    }
+}
+
+.menu__item.hide {
+    @include breakpoint($sm-bp) {
+        max-height: 0;
+        visibility: hidden;
+        overflow: hidden;
+    }
+}
+
+.menu__item.hide.active {
+    @include breakpoint($sm-bp) {
+        max-height: unset;
+        visibility: visible;
+        overflow: unset;
     }
 }
 
@@ -555,6 +582,9 @@
     padding-right: 0;
     justify-content: space-between;
     padding-bottom: 4rem;
+    @include breakpoint($sm-bp) {
+        position: static;
+    }
     &::-webkit-scrollbar {
         width: 5px;
     }
@@ -585,7 +615,7 @@
     letter-spacing: 0em;
     text-align: left;
     display: block;
-    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
     padding-right: 10rem;
     width: 45rem;
     transition: color .4s;
@@ -631,6 +661,9 @@
     }
     @include breakpoint($mid-bp) {
         width: 100%;
+    }
+    @include breakpoint($sm-bp) {
+        padding-top: 0;
     }
 
     &::before {
@@ -684,6 +717,13 @@
     @include breakpoint($mid-bp) {
         display: flex;
         flex-direction: column;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 1rem;
+        width: 100%;
+        max-height: 0;
+        transition: max-height .6s;
+        overflow: hidden;
     }
 }
 
@@ -1101,6 +1141,9 @@
             position: relative;
             @include breakpoint($mid-bp) {
                 width: 30rem;
+                @include breakpoint($sm-bp) {
+                    width: calc(100% - 5rem);
+                }
                 &::after {
                     content: '';
                     position: absolute;
@@ -1118,6 +1161,14 @@
                         height: 1.5rem;
                     }
                 }
+            }
+        }
+    }
+
+    .menu__item.empty .menu__link {
+        @include breakpoint($mid-bp) {
+            &::after {
+                content: none;
             }
         }
     }

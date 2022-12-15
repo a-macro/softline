@@ -66,6 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var subMenuItems = document.querySelectorAll(".menu__item");
   if (subMenuItems && subMenuItems.length > 0) {
     subMenuItems.forEach(function (item) {
+      if (window.innerWidth <= 480) {
+        item.classList.remove("active");
+      }
       var parent = item.closest(".menu");
       item.onclick = function (e) {
         e.preventDefault();
@@ -75,6 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
             _prev2.classList.remove("active");
           }
           item.classList.add("active");
+          if (window.innerWidth <= 480) {
+            subMenuItems.forEach(function (itemRest) {
+              itemRest.classList.add("hide");
+            });
+          }
+        } else {
+          if (window.innerWidth <= 480) {
+            item.classList.remove("active");
+            subMenuItems.forEach(function (itemRest) {
+              itemRest.classList.remove("hide");
+            });
+          }
         }
       };
     });
@@ -84,17 +99,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (menubutton && menuWrapper) {
     menubutton.addEventListener('click', function () {
       menubutton.classList.toggle('menu-button--active');
-      //menuWrapper.classList.toggle('show');
       if (!headerBottom.classList.contains("show")) {
         headerBottom.style.display = "block";
         setTimeout(function () {
           headerBottom.classList.add("show");
         }, 100);
+        scrollLock.disablePageScroll();
+        scrollLock.addScrollableSelector('.header__bottom');
+        scrollLock.addScrollableSelector('.header__menu');
+        scrollLock.addScrollableSelector('.menu');
       } else {
         headerBottom.style.display = "none";
         setTimeout(function () {
           headerBottom.classList.remove("show");
         }, 100);
+        scrollLock.enablePageScroll();
       }
     });
   }
@@ -192,6 +211,18 @@ document.addEventListener("DOMContentLoaded", function () {
               }
           })
       }*/
+
+  /* let subMenus = document.querySelectorAll(".submenu__list");
+   if(subMenus.length > 0) {
+       subMenus.forEach(menu => {
+           if(window.innerWidth <= 480) {
+               setTimeout(() => {
+                   let menuH = menu.scrollHeight;
+                   menu.style.setProperty('--menuH', menuH + "px");
+               }, 3000);
+           }
+       });
+   }*/
 
   function modalHandler() {
     var modal = this;

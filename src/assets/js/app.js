@@ -61,6 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let subMenuItems = document.querySelectorAll(".menu__item");
     if(subMenuItems && subMenuItems.length > 0) {
         subMenuItems.forEach(item => {
+            if(window.innerWidth <= 480) {
+                item.classList.remove("active");
+            }
             let parent = item.closest(".menu");
             item.onclick = (e) => {
                 e.preventDefault();
@@ -70,7 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
                         prev.classList.remove("active");
                     }
                     item.classList.add("active");
-                } 
+                    if(window.innerWidth <=480) {
+                        subMenuItems.forEach(itemRest => {
+                            itemRest.classList.add("hide");
+                        });
+                    }
+                } else {
+                    if(window.innerWidth <=480) {
+                        item.classList.remove("active");
+                        subMenuItems.forEach(itemRest => {
+                            itemRest.classList.remove("hide");
+                        });
+                    }
+                }
             }
         });
     }
@@ -81,18 +96,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menubutton && menuWrapper) {
         menubutton.addEventListener('click', () => {
             menubutton.classList.toggle('menu-button--active')
-            //menuWrapper.classList.toggle('show');
             if(!headerBottom.classList.contains("show")) {
                 headerBottom.style.display = "block";
                 setTimeout(() => {
                     headerBottom.classList.add("show");
                 }, 100);
+                scrollLock.disablePageScroll();
+                scrollLock.addScrollableSelector('.header__bottom');
+                scrollLock.addScrollableSelector('.header__menu');
+                scrollLock.addScrollableSelector('.menu');
             }
              else {
                 headerBottom.style.display = "none";
                 setTimeout(() => {
                     headerBottom.classList.remove("show");
-                }, 100);            
+                }, 100);     
+                scrollLock.enablePageScroll();       
             }
         })
     }
@@ -191,6 +210,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
         })
+    }*/
+
+   /* let subMenus = document.querySelectorAll(".submenu__list");
+    if(subMenus.length > 0) {
+        subMenus.forEach(menu => {
+            if(window.innerWidth <= 480) {
+                setTimeout(() => {
+                    let menuH = menu.scrollHeight;
+                    menu.style.setProperty('--menuH', menuH + "px");
+                }, 3000);
+            }
+        });
     }*/
 
     function modalHandler() {
