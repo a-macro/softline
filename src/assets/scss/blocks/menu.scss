@@ -762,7 +762,7 @@
     line-height: 1.6;
     letter-spacing: 0em;
     text-align: left;
-    color: $red;
+    color: #212424;
     text-decoration: none;
 
     img {
@@ -1116,6 +1116,12 @@
                 padding-bottom: 4rem;
             }
             li {
+                &:first-child {
+                    display: none;
+                    @include breakpoint($mid-bp) {
+                        display: block;
+                    }
+                }
                 padding: 0;
             }
             a {
@@ -1161,6 +1167,23 @@
                         height: 1.5rem;
                     }
                 }
+            }
+        }
+    }
+    .menu__item.active {
+        .menu__link {
+            &::after {
+                @include breakpoint($sm-bp) {
+                    display: none;
+                }
+            }
+            @include breakpoint($mid-bp) {
+                color: $red;
+                width: 32rem;
+            }
+            @include breakpoint($sm-bp) {
+                width: 100%;
+                color: #212424;
             }
         }
     }
