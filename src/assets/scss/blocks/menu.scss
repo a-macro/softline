@@ -212,6 +212,7 @@
         padding-bottom: 4rem;
         gap: 3rem;
         border-top: 0.1rem solid #E5E9F1;
+        border-left: 0;
     }
     .geolocation {
         @include breakpoint($sm-bp) {
@@ -256,7 +257,7 @@
     display: none;
     @include breakpoint($mid-bp) {
         display: block;
-        font-size: 2rem;
+        font-size: 2.6rem;
         font-weight: 500;
         line-height: 1.3;
         letter-spacing: 0em;
@@ -270,7 +271,7 @@
         z-index: 2;
         width: 100%;
         left: 0;
-        height: 66rem;
+        height: calc(100% - 7rem);
     }
 }
 
@@ -284,8 +285,7 @@
     padding-bottom: 4rem;
     display: none;
     @include breakpoint($mid-bp) {
-        padding-left: 0;
-        padding-top: 0;
+        padding: 0;
     }
 }
 
@@ -304,6 +304,14 @@
     }
     @include breakpoint($mid-bp) {
         max-height: unset;
+        display: grid;
+        grid-template-columns: 42% 1fr;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 0;
+    }
+    @include breakpoint($sm-bp) {
+        grid-template-columns: repeat(1, 1fr);
     }
     
     &::-webkit-scrollbar {
@@ -329,7 +337,14 @@
         text-align: left;
         color: $black;
     }
-
+    .tab-accord {
+        @include breakpoint($mid-bp) {
+            padding-top: 4rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-bottom: 2rem;
+        }
+    }
     .tab-accord__list li {
         padding: 0;
         margin-bottom: 1.6rem;
@@ -357,6 +372,14 @@
         @include breakpoint($mid-bp) {
             display: flex;
             flex-direction: column;
+            width: 100%;
+            border-left: 0.1rem solid #E5E9F1;
+            padding-top: 1.5rem;
+            padding-bottom: 3rem;
+        }
+        @include breakpoint($sm-bp) {
+            border: 0;
+            border-top: 0.1rem solid #d2d2d2;
         }
 
         & > div {
@@ -375,10 +398,28 @@
                 width: calc(calc(65% - 14rem) / 2);
                 height: 32rem;
             }
+            @include breakpoint($mid-bp) {
+                width: 100%;
+                height: auto;
+                margin-bottom: 0;
+                padding-top: 2rem;
+            }
             .insights-menu__item {
                 height: 20rem;
                 @include breakpoint($xl-bp) {
                     height: 17rem;
+                }
+                @include breakpoint($mid-bp) {
+                    height: auto;
+                    border-bottom: 0.1rem solid #D2DCE5;
+                }
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
+                .insights-menu__data {
+                    @include breakpoint($mid-bp) {
+                        padding-bottom: 2rem;
+                    }
                 }
                 &:nth-child(1) {
                     .insights-menu__data {
@@ -417,11 +458,17 @@
                     font-size: 1.6rem;
                 }
             }
+            &:last-child > .insights-menu__item:last-child {
+                border: 0;
+            }
         }
 
         .big {
             @include breakpoint($xl-bp) {
                 width: 35%;
+            }
+            @include breakpoint($mid-bp) {
+                display: none;
             }
 
             .insights-menu__item {
@@ -454,6 +501,9 @@
             flex-grow: 1;
             display: flex;
             align-items: flex-end;
+            @include breakpoint($mid-bp) {
+                display: block;
+            }
         }
         img {
             margin-bottom: 2rem;
@@ -472,6 +522,10 @@
         margin-top: 1.8rem;
         @include breakpoint($xl-bp) {
             margin-top: 1.1rem;
+        }
+        @include breakpoint($mid-bp) {
+            margin-top: 0.5rem;
+            padding-bottom: 2rem;
         }
     }
 }
@@ -869,18 +923,18 @@
     padding-right: 2rem;
     padding-bottom: 5rem;
     transition: opacity .3s;
+    @include breakpoint($sm-bp) {
+        padding: 0;
+    }
     .insights-menu__item {
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 2.4rem;
         text-decoration: none;
         /* identical to box height, or 150% */
-        border-bottom: 0.1rem solid #D2DCE5;
+        // border-bottom: 0.1rem solid #D2DCE5;
         &:first-child {
             padding-top: 0;
-        }
-        &:last-child {
-            border-bottom: 0;
         }
       .insights-menu__name {
         color: #A50F2D;
@@ -926,6 +980,12 @@
   }
 
   .about-us {
+    .tab-accord {
+        @include breakpoint($mid-bp) {
+            padding-top: 3rem;
+        }
+
+    }
     .about-us__wrapper {
         display: grid;
         grid-template-columns: min-content 1fr;
@@ -936,17 +996,41 @@
             column-gap: 29rem;
             padding-right: 4rem;
         }
+        @include breakpoint($mid-bp) {
+            grid-template-columns: 42% 1fr;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            column-gap: 0;
+            height: calc(100% - 6rem);
+        }
+        @include breakpoint($sm-bp) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         .corporate {
             border-left: 0;
             padding: 0;
             @include breakpoint($mid-bp) {
                 display: flex;
+                border-left: 0.1rem solid #D2DCE5;
+            }
+            @include breakpoint($sm-bp) {
+                border-left: 0;
             }
             .corporate__content {
                 margin-top: 0;
                 @include breakpoint($mid-bp) {
-                    gap: unset;
+                    gap: 3rem;
                     justify-content: flex-start;
+                    width: 100%;
+                    padding-left: 2rem;
+                    padding-top: 4rem;
+                    padding-bottom: 4rem;
+                }
+                @include breakpoint($sm-bp) {
+                    padding-left: 0;
+                    border-left: 0;
+                    border-top: 0.1rem solid #D2DCE5;
+                    padding-top: 4rem;
                 }
                 .corporate__block {
                     height: 24rem;
@@ -961,8 +1045,13 @@
                         &:nth-child(1) {
                             display: none;
                             @include breakpoint($mid-bp) {
-                                display: block;
+                                display: flex;
                             }
+                        }
+                    }
+                    @include breakpoint($mid-bp) {
+                        div {
+                            position: relative;
                         }
                     }
                 }
@@ -981,6 +1070,10 @@
             @include breakpoint($mid-bp) {
                 display: flex;
                 flex-direction: column;
+                font-size: 1.8rem;
+            }
+            @include breakpoint($sm-bp) {
+                padding-bottom: 4rem;
             }
             li {
                 padding: 0;
@@ -988,6 +1081,43 @@
             a {
                 color: #212424;
                 text-decoration: none;
+            }
+        }
+    }
+  }
+
+  .menu.solutions-and-services {
+    @include breakpoint($mid-bp) {
+        padding-top: 3rem;
+        padding-left: 2rem;
+    }
+    .mob-title {
+        @include breakpoint($mid-bp) {
+            padding-bottom: 2rem;
+        }
+    }
+    .menu__item {
+        .menu__link {
+            position: relative;
+            @include breakpoint($mid-bp) {
+                width: 30rem;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 1rem;
+                    height: 1rem;
+                    background-image: url('../images/arrow.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    filter: brightness(0.2);
+                    transform: translateY(-50%);
+                    @include breakpoint($sm-bp) {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
             }
         }
     }

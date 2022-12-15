@@ -79,6 +79,44 @@
             <a class="header__mail" href="#">
                 <img src="assets/images/mail.svg" alt="">
             </a>
+            <div class="menu-second">
+                <div class="geolocation">
+                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                    <a class="geolocation__location" href="#">Russia and CIS</a>
+                </div>
+    
+                <form class="header__search">
+                    <a href="#" class="header__search_close"></a>
+                    <div class="btn__search-show">
+                        <span>Search</span>
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
+                            <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
+                        </svg>
+                    </div>
+                    <input class="input input__search" type="text" placeholder="Enter your search term">
+                    <button class="btn__search disabled" disabled>
+                        <span>Search</span>
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+                            <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                        </svg>    
+                    </button>
+                </form>
+    
+                <a class="header__store" href="#">Store</a>
+    
+                <div class="languages __select" data-state="">
+                    <div class="select-side"></div>
+                    <div id="language1" class="__select__title" data-default="Option 0">En</div>
+                    <div class="__select__content">
+                        <input id="langSelect2" class="__select__input" type="radio" name="langSelect" />
+                        <label for="langSelect2" data-type="default" class="__select__label">En</label>
+                        <input id="langSelect3" class="__select__input" type="radio" name="langSelect" />
+                        <label for="langSelect3" class="__select__label">Ru</label>
+                    </div>
+                </div>
+        </div>
         </div>
     </div>
     {{> menu }}
