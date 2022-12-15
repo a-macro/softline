@@ -1917,6 +1917,11 @@ textarea {
     max-height: 35rem;
   }
 }
+@media (max-width: 768px) {
+  .insights__inner {
+    max-height: unset;
+  }
+}
 .insights__inner::-webkit-scrollbar {
   width: 5px;
 }
@@ -1966,7 +1971,8 @@ textarea {
 }
 @media (max-width: 768px) {
   .insights__inner .insights-menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
   }
 }
 .insights__inner .insights-menu > div {
@@ -2566,11 +2572,17 @@ textarea {
 }
 @media (max-width: 768px) {
   .about-us .about-us__wrapper .corporate {
-    display: none;
+    display: flex;
   }
 }
 .about-us .about-us__wrapper .corporate .corporate__content {
   margin-top: 0;
+}
+@media (max-width: 768px) {
+  .about-us .about-us__wrapper .corporate .corporate__content {
+    gap: unset;
+    justify-content: flex-start;
+  }
 }
 .about-us .about-us__wrapper .corporate .corporate__content .corporate__block {
   height: 24rem;
@@ -2589,6 +2601,11 @@ textarea {
   }
   .about-us .about-us__wrapper .corporate .corporate__content .corporate__block:nth-child(1) {
     display: none;
+  }
+}
+@media (max-width: 1440px) and (max-width: 768px) {
+  .about-us .about-us__wrapper .corporate .corporate__content .corporate__block:nth-child(1) {
+    display: block;
   }
 }
 .about-us .left-wrapper .tab-accord__list {

@@ -302,6 +302,9 @@
     @include breakpoint($xl-bp) {
         max-height: 35rem;
     }
+    @include breakpoint($mid-bp) {
+        max-height: unset;
+    }
     
     &::-webkit-scrollbar {
         width: 5px;
@@ -352,7 +355,8 @@
             width: calc(100% - 45rem);
         }
         @include breakpoint($mid-bp) {
-            display: none;
+            display: flex;
+            flex-direction: column;
         }
 
         & > div {
@@ -936,10 +940,14 @@
             border-left: 0;
             padding: 0;
             @include breakpoint($mid-bp) {
-                display: none;
+                display: flex;
             }
             .corporate__content {
                 margin-top: 0;
+                @include breakpoint($mid-bp) {
+                    gap: unset;
+                    justify-content: flex-start;
+                }
                 .corporate__block {
                     height: 24rem;
                     @include breakpoint($xxl-bp) {
@@ -952,6 +960,9 @@
                         width: 100%;
                         &:nth-child(1) {
                             display: none;
+                            @include breakpoint($mid-bp) {
+                                display: block;
+                            }
                         }
                     }
                 }
