@@ -229,23 +229,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }*/
 
-    function modalHandler() {
-        const modal = this
-        
-        if (modal) {
-            if (modal.hidden) {
-                modal.hidden = !modal.hidden
-                modal.style.setProperty('pointer-events', 'auto')
-                setTimeout(() => {
-                    modal.style.opacity = 1
-                }, 10)
-            } else {
-                modal.style.opacity = 0
-                modal.style.setProperty('pointer-events', null)
-                modal.addEventListener('transitionend', hideaftertransition)
-            }
-        }
-    }
+    // function modalHandler() {
+    //     const modal = this
+    //     if (modal) {
+    //         if (modal.hidden) {
+    //             modal.hidden = !modal.hidden
+    //             modal.style.setProperty('pointer-events', 'auto')
+    //             setTimeout(() => {
+    //                 modal.style.opacity = 1
+    //             }, 10)
+    //         } else {
+    //             modal.style.opacity = 0
+    //             modal.style.setProperty('pointer-events', null)
+    //             modal.addEventListener('transitionend', hideaftertransition)
+    //         }
+    //     }
+    // }
 
     const tabAccItems = document.querySelectorAll('.tab-accord__list-item')
 
@@ -1092,7 +1091,12 @@ if (regModal.length) {
 
 function modalHandler() {
     const modal = document.querySelector(`${this.dataset?.modal}`) || this
-
+    if (modal.classList.contains('regModal') && modal.hidden) {
+        scrollLock.disablePageScroll();
+        scrollLock.addScrollableSelector('.regModal');
+    } else {
+        scrollLock.enablePageScroll();
+    }
     if (modal) {
         if (modal.hidden) {
             modal.hidden = !modal.hidden

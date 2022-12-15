@@ -2418,7 +2418,7 @@ textarea {
   line-height: 1.6;
   letter-spacing: 0em;
   text-align: left;
-  color: #A50F2D;
+  color: #212424;
   text-decoration: none;
 }
 .submenu__link img {
@@ -2795,6 +2795,14 @@ textarea {
 .about-us .left-wrapper .tab-accord__list li {
   padding: 0;
 }
+.about-us .left-wrapper .tab-accord__list li:first-child {
+  display: none;
+}
+@media (max-width: 768px) {
+  .about-us .left-wrapper .tab-accord__list li:first-child {
+    display: block;
+  }
+}
 .about-us .left-wrapper .tab-accord__list a {
   color: #212424;
   text-decoration: none;
@@ -2843,6 +2851,23 @@ textarea {
   .menu.solutions-and-services .menu__item .menu__link::after {
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .menu.solutions-and-services .menu__item.active .menu__link::after {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .menu.solutions-and-services .menu__item.active .menu__link {
+    color: #A50F2D;
+    width: 32rem;
+  }
+}
+@media (max-width: 480px) {
+  .menu.solutions-and-services .menu__item.active .menu__link {
+    width: 100%;
+    color: #212424;
   }
 }
 @media (max-width: 768px) {
@@ -7506,7 +7531,7 @@ textarea {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 10rem;
+    height: 5rem;
     left: 0;
   }
 }
@@ -7859,6 +7884,12 @@ textarea {
 
 @media (max-width: 768px) {
   .swipe-on2 {
+    transition: top 0.5s;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-swipe {
     transition: top 0.5s;
   }
 }
@@ -8931,6 +8962,7 @@ body::before {
   .header__menu {
     height: 100%;
     row-gap: 1.5rem;
+    overflow: scroll;
   }
 }
 @media (max-width: 480px) {
@@ -12359,10 +12391,6 @@ textarea {
     padding-right: 2.5rem;
   }
 }
-.solution .accordion li {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 .solution .accordion li .accordion__plus {
   display: block;
   width: 3.2rem;
@@ -12411,6 +12439,8 @@ textarea {
   padding: 0;
   padding-right: 2rem;
   transition: all 0.2s;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 @media (max-width: 480px) {
   .solution .accordion li .accordion__list-title {
@@ -12440,12 +12470,6 @@ textarea {
   }
 }
 @media (hover: hover) {
-  .solution .accordion li:hover {
-    background-color: #FFFFFF;
-    padding-top: 3.3rem;
-    padding-bottom: 3.3rem;
-    border-color: #FFFFFF;
-  }
   .solution .accordion li:hover .accordion__plus {
     background-color: #A50F2D;
     border-color: #A50F2D;
@@ -12463,7 +12487,6 @@ textarea {
 }
 .solution .accordion li.active {
   background-color: #FFFFFF;
-  padding-top: 3.3rem;
   padding-bottom: 3.3rem;
   border-color: #FFFFFF;
 }

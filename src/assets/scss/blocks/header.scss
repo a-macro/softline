@@ -162,6 +162,7 @@
     @include breakpoint($mid-bp) {
         height: 100%;
         row-gap: 1.5rem;
+        overflow: scroll;
     }
     @include breakpoint($sm-bp) {
         flex-direction: column;
