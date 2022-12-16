@@ -191,6 +191,27 @@
       }
     }
   }
+  .wrapper--swiper {
+    @include breakpoint($sm-bp) {
+      padding-right: 0;
+      overflow: hidden;
+    }
+    .news__slider {
+      @include breakpoint($sm-bp) {
+        margin-left: 0;
+      }
+      .news__container {
+        @include breakpoint($mid-bp) {
+          width: 100%;
+          margin: 0;
+          padding-left: 2rem;
+        }
+        @include breakpoint($sm-bp) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
 
 .solve.solve--solution {
@@ -296,10 +317,12 @@
         margin-top: 7rem;
         border-top-left-radius: 1.2rem;
         border-top-right-radius: 1.2rem;
+        height: calc(100% - 5rem);
       }
       @include breakpoint($sm-bp) {
         overflow: scroll;
         margin-top: 0;
+        height: auto;
         &::before {
           background-color: #FFFFFF;
           z-index: 2;
@@ -342,7 +365,7 @@
             border: 0;
             color: transparent;
             top: -3rem;
-            right: -3.6rem;
+            right: -1.6rem;
             &:hover {
               background-color: transparent;
               color: transparent;
@@ -397,11 +420,25 @@
         padding-left: 2rem;
         padding-right: 2rem;
         background-image: url('../images/penetration/penetration-bg-768.jpg');
+        &::before {
+          content: '';
+          position: absolute;
+          top: 1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 12.6rem;
+          height: 0.5rem;
+          border-radius: 0.2rem;
+          background-color: #FFFFFF;
+        }
       }
       @include breakpoint($sm-bp) {
         height: calc(100vh - 8rem);
         max-height: 460px;
         background-image: url('../images/penetration/penetration-bg-375.jpg');
+        &::before {
+          display: none;
+        }
       }
     }
     .help-blocks {

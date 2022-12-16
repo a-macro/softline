@@ -6962,6 +6962,66 @@ textarea {
 
 .video-page .intro__pop-up_video {
     width: 100%;
+    max-height: 1000px;
+}
+
+@media (max-width: 1920px) {
+    .video-page .intro__pop-up_video {
+        max-height: 841px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .video-page .intro__pop-up_video {
+        max-height: 704px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-page .intro__pop-up_video {
+        max-height: 467px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-page .intro__pop-up_video {
+        max-height: 375px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-page .wrapper.events {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-page .news__slider {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-page .news__slider .news__container {
+        width: 100%;
+        margin-left: 0;
+        border-top: 0;
+        position: relative;
+    }
+
+    .video-page .news__slider .news__container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0.1rem;
+        width: calc(100% - 2.5rem);
+        background-color: #D2DCE5;
+    }
+}
+
+.video-page .events__item .events__img::after {
+    display: none;
 }
 
 .video-page .news__container .swiper-slide,
@@ -8543,6 +8603,22 @@ textarea {
 @media (max-width: 768px) {
     .event-page .wrapper--swiper .news__container::before {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-page .news__slider {
+        position: relative;
+    }
+
+    .event-page .news__slider::before {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: calc(100% - 2.5rem);
+        height: 0.1rem;
+        background-color: #D2DCE5;
     }
 }
 
@@ -11419,6 +11495,8 @@ body::before {
     background: white;
     margin-top: -1px;
     margin-left: -1px;
+    width: calc(100% + 1px);
+=======
     width: 100%;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -12799,7 +12877,7 @@ body::before {
 @media (max-width: 480px) {
     .news-slide {
         width: 39rem;
-        height: 47.5rem;
+        height: 44.5rem;
     }
 }
 
@@ -13740,7 +13818,7 @@ body::before {
         height: -moz-min-content;
         height: min-content;
         background: #FFFFFF;
-        z-index: 2;
+        z-index: 10;
     /* UI/Extra */
         border: 1px solid rgba(210, 220, 229, 0.3);
     /* Shadow */
@@ -14911,6 +14989,29 @@ textarea {
 .solution .accordion li.active .accordion__list-desc {
   padding-top: 2rem;
 }
+@media (max-width: 480px) {
+  .solution .wrapper--swiper {
+    padding-right: 0;
+    overflow: hidden;
+  }
+}
+@media (max-width: 480px) {
+  .solution .wrapper--swiper .news__slider {
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .solution .wrapper--swiper .news__slider .news__container {
+    width: 100%;
+    margin: 0;
+    padding-left: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .solution .wrapper--swiper .news__slider .news__container {
+    padding-left: 0;
+  }
+}
 
 .solve.solve--solution .solve__intro {
   background-image: url("../images/solution/solution-1.jpg");
@@ -15026,12 +15127,14 @@ textarea {
     margin-top: 7rem;
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
+    height: calc(100% - 5rem);
   }
 }
 @media (max-width: 480px) {
   .penetration .registration__block {
     overflow: scroll;
     margin-top: 0;
+    height: auto;
   }
   .penetration .registration__block::before {
     background-color: #FFFFFF;
@@ -15086,7 +15189,7 @@ textarea {
     border: 0;
     color: transparent;
     top: -3rem;
-    right: -3.6rem;
+    right: -1.6rem;
   }
   .penetration .registration__block .registration__wrapper .close-button:hover {
     background-color: transparent;
@@ -15153,12 +15256,27 @@ textarea {
     padding-right: 2rem;
     background-image: url("../images/penetration/penetration-bg-768.jpg");
   }
+  .penetration .penetration__top-block::before {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 12.6rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+    background-color: #FFFFFF;
+  }
 }
 @media (max-width: 480px) {
   .penetration .penetration__top-block {
     height: calc(100vh - 8rem);
     max-height: 460px;
     background-image: url("../images/penetration/penetration-bg-375.jpg");
+  }
+  .penetration .penetration__top-block::before {
+    display: none;
   }
 }
 .penetration .help-blocks {
