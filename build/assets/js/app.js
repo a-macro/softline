@@ -22,12 +22,22 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.style.setProperty('--headerH', headerH + "px");
   }
   var headerSearch = document.querySelector(".header__search");
-  var headerSearchBtn = document.querySelector(".btn__search-show");
+  var headerSearchBtn = document.querySelectorAll(".btn__search-show");
   if (headerSearchBtn) {
-    headerSearchBtn.onclick = function (e) {
-      e.preventDefault();
-      headerSearch.classList.add('active');
-    };
+    headerSearchBtn.forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        headerSearch.classList.add('active');
+        if (window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
+          bodyTag.classList.remove("menu-open");
+          headerBottom.style.display = "none";
+          setTimeout(function () {
+            headerBottom.classList.remove("show");
+          }, 100);
+          scrollLock.enablePageScroll();
+        }
+      };
+    });
   }
   var headerSearchClose = document.querySelector(".header__search_close");
   if (headerSearchClose) {

@@ -7971,6 +7971,11 @@ textarea {
     top: calc(100% + 3.5rem);
   }
 }
+.menu-open .header__top .btn__search-show {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 .search-aside {
   width: 35rem;
@@ -8902,6 +8907,9 @@ body::before {
     width: 50%;
   }
 }
+.header__top .languages {
+  min-width: 11rem;
+}
 @media (max-width: 768px) {
   .header__top .languages {
     display: none;
@@ -8910,6 +8918,17 @@ body::before {
 @media (max-width: 480px) {
   .header__top .languages .__select__title {
     padding: 0;
+  }
+}
+.header__top .languages .geolocation__flag {
+  margin-right: 1rem;
+}
+.header__top .languages img {
+  width: 2.4rem;
+}
+@media (max-width: 480px) {
+  .header__top .languages img {
+    width: 3rem;
   }
 }
 @media (max-width: 768px) {

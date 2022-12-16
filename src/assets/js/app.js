@@ -14,12 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let headerSearch = document.querySelector(".header__search");
-    let headerSearchBtn = document.querySelector(".btn__search-show");
+    let headerSearchBtn = document.querySelectorAll(".btn__search-show");
     if(headerSearchBtn) {
-        headerSearchBtn.onclick = (e) => {
-            e.preventDefault();
-            headerSearch.classList.add('active');
-        }
+        headerSearchBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                headerSearch.classList.add('active');
+                if(window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
+                    bodyTag.classList.remove("menu-open");
+                    headerBottom.style.display = "none";
+                    setTimeout(() => {
+                        headerBottom.classList.remove("show");
+                    }, 100);     
+                    scrollLock.enablePageScroll();     
+                }
+            }    
+        });
     }
 
     let headerSearchClose = document.querySelector(".header__search_close");

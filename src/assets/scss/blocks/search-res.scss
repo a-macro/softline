@@ -64,6 +64,12 @@
             top: calc(100% + 3.5rem);
         }
     }
+
+    .header__top .btn__search-show {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 }
 
 .search-aside {

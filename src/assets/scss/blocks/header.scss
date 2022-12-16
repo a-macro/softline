@@ -90,12 +90,24 @@
     }
 
     .languages {
+        min-width: 11rem;
         @include breakpoint($mid-bp) {
             display: none;
         }
         .__select__title {
             @include breakpoint($sm-bp) {
                 padding: 0;
+            }
+        }
+
+        .geolocation__flag {
+            margin-right: 1rem;
+        }
+    
+        img {
+            width: 2.4rem;
+            @include breakpoint($sm-bp) {
+                width: 3rem;
             }
         }
     }
