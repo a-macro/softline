@@ -304,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 let selectSingle_labels = selectSingle.querySelectorAll('.__select__label');   
                 selectSingle_title.onclick = (e) => {
                     e.preventDefault();
-                    let prev = document.querySelector(`[data-state="active"]`);
                     if ('active' === selectSingle.getAttribute('data-state')) {
                         selectSingle.setAttribute('data-state', '');
                     } else {
@@ -329,8 +328,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bodyTag.onclick = (e) => {
         let openedSelect = document.querySelector(`[data-state="active"]`);
+        let prev = document.querySelector(`[data-state="active"]`);
         if(openedSelect && !e.target.classList.contains("__select")) {
-            prev.setAttribute('data-state', '');
+            // prev.setAttribute('data-state', '');
         }
     }
 

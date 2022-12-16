@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var itemMenu = document.querySelector(".".concat(attr));
         item.onclick = function (e) {
           if (!item.classList.contains("active")) {
-            var _prev = document.querySelector(".active.header__item");
-            if (_prev && _prev != item) {
-              _prev.classList.remove("active");
-              var attrPrev = _prev.getAttribute("data-menu");
+            var prev = document.querySelector(".active.header__item");
+            if (prev && prev != item) {
+              prev.classList.remove("active");
+              var attrPrev = prev.getAttribute("data-menu");
               var itemMenuPrev = document.querySelector(".".concat(attrPrev));
               itemMenuPrev.style.display = "none";
             }
@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
       item.onclick = function (e) {
         e.preventDefault();
         if (!item.classList.contains("active")) {
-          var _prev2 = parent.querySelector(".menu__item.active");
-          if (_prev2) {
-            _prev2.classList.remove("active");
+          var prev = parent.querySelector(".menu__item.active");
+          if (prev) {
+            prev.classList.remove("active");
           }
           item.classList.add("active");
           if (window.innerWidth <= 480 && !item.classList.contains("empty")) {
@@ -299,7 +299,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var selectSingle_labels = selectSingle.querySelectorAll('.__select__label');
         selectSingle_title.onclick = function (e) {
           e.preventDefault();
-          var prev = document.querySelector("[data-state=\"active\"]");
           if ('active' === selectSingle.getAttribute('data-state')) {
             selectSingle.setAttribute('data-state', '');
           } else {
@@ -321,8 +320,9 @@ document.addEventListener("DOMContentLoaded", function () {
   selectFunc();
   bodyTag.onclick = function (e) {
     var openedSelect = document.querySelector("[data-state=\"active\"]");
+    var prev = document.querySelector("[data-state=\"active\"]");
     if (openedSelect && !e.target.classList.contains("__select")) {
-      prev.setAttribute('data-state', '');
+      // prev.setAttribute('data-state', '');
     }
   };
   new Swiper(".services__container", {
