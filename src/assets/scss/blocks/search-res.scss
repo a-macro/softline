@@ -55,6 +55,17 @@
     justify-content: space-between;
 }
 
+.menu-open {
+    .search-aside {
+        @include breakpoint($mid-bp) {
+            top: calc(100% + 6rem);
+        }
+        @include breakpoint($sm-bp) {
+            top: calc(100% + 3.5rem);
+        }
+    }
+}
+
 .search-aside {
     width: 35rem;
     position: sticky;
