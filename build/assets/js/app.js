@@ -927,16 +927,21 @@ document.addEventListener("DOMContentLoaded", function () {
   var closeButtons = document.querySelectorAll('.close-button');
   function clickHandler() {
     if (this.classList.contains('filter-button--active')) {
+      document.documentElement.style.overflow = null;
       this.classList.remove('filter-button--active');
     } else {
       filterButtons.forEach(function (el) {
         el.classList.remove('filter-button--active');
       });
+      if (sm.matches) {
+        document.documentElement.style.overflow = 'hidden';
+      }
       this.classList.add('filter-button--active');
     }
   }
   function closeMenu() {
     filterButtons.forEach(function (el) {
+      document.documentElement.style.overflow = null;
       el.classList.remove('filter-button--active');
     });
   }
@@ -1347,7 +1352,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           var posY = ev.deltaY + lastPosY;
           ev.target.style.transition = 'none';
-          ev.target.style.top = posY + "px";
+          ev.target.style.setProperty('transform', "translate3d(0, ".concat(posY, "px, 0)"));
           if (ev.isFinal) {
             isDragging = false;
             ev.target.style.transition = null;
@@ -1356,12 +1361,12 @@ document.addEventListener("DOMContentLoaded", function () {
               if (modal) {
                 modalHandler.apply(modal);
                 setTimeout(function () {
-                  ev.target.style.top = null;
+                  ev.target.style.setProperty('transform', null);
                 }, 300);
                 return;
               }
             }
-            ev.target.style.top = null;
+            ev.target.style.setProperty('transform', null);
           }
         }
       });
@@ -1385,7 +1390,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           var posY = ev.deltaY + lastPosY;
           ev.target.style.transition = 'none';
-          ev.target.style.top = posY + "px";
+          ev.target.style.setProperty('transform', "translate3d(0, ".concat(posY, "px, 0)"));
           if (ev.isFinal) {
             isDragging = false;
             ev.target.style.transition = null;
@@ -1394,12 +1399,12 @@ document.addEventListener("DOMContentLoaded", function () {
               if (modal) {
                 modal.click();
                 setTimeout(function () {
-                  ev.target.style.top = null;
+                  ev.target.style.setProperty('transform', null);
                 }, 300);
                 return;
               }
             }
-            ev.target.style.top = null;
+            ev.target.style.setProperty('transform', null);
           }
         }
       });
@@ -1423,7 +1428,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           var posY = ev.deltaY + lastPosY;
           ev.target.style.transition = 'none';
-          ev.target.style.top = posY + "px";
+          ev.target.style.setProperty('transform', "translate3d(0, ".concat(posY, "px, 0)"));
           if (ev.isFinal) {
             isDragging = false;
             ev.target.style.transition = null;
@@ -1432,12 +1437,12 @@ document.addEventListener("DOMContentLoaded", function () {
               if (modal) {
                 modal.click();
                 setTimeout(function () {
-                  ev.target.style.top = null;
+                  ev.target.style.setProperty('transform', null);
                 }, 300);
                 return;
               }
             }
-            ev.target.style.top = null;
+            ev.target.style.setProperty('transform', null);
           }
         }
       });

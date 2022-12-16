@@ -4626,7 +4626,8 @@ textarea {
   margin-top: -1px;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.5s;
+  transition: top 0.5s, opacity 0.5s, transform 0.5s;
+  will-change: top, opacity, transform;
 }
 @media (max-width: 1440px) {
   .filter-button + .panel {
@@ -4648,9 +4649,11 @@ textarea {
     border-top-right-radius: 1.2rem;
     z-index: 10000;
     position: fixed;
+    top: 0;
     left: 0;
     height: auto;
     bottom: 0;
+    margin-top: 4rem;
   }
 }
 
@@ -5202,8 +5205,9 @@ textarea {
   max-height: 25.6rem;
   overflow-y: auto;
   width: 23.5rem;
-  transition: all 0.5s;
+  transition: opacity 0.5s, top 0.5s, transform 0.5s;
   box-shadow: 0px 1rem 2rem rgba(159, 174, 191, 0.25);
+  will-change: top, opacity, transform;
   /* width */
   /* Track */
   /* Handle */
@@ -5367,6 +5371,11 @@ textarea {
   top: 90%;
   opacity: 0;
   pointer-events: none;
+}
+@media (max-width: 480px) {
+  .select-hide {
+    top: 0;
+  }
 }
 
 .select-items .select-wrapper div:hover,
@@ -7884,13 +7893,15 @@ textarea {
 
 @media (max-width: 768px) {
   .swipe-on2 {
-    transition: top 0.5s;
+    transition: top 0.5s, transform 0.5s;
+    will-change: transform;
   }
 }
 
 @media (max-width: 480px) {
   .filter-swipe {
-    transition: top 0.5s;
+    transition: top 0.5s, transform 0.5s;
+    will-change: transform;
   }
 }
 
