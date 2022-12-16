@@ -667,9 +667,6 @@
     &:checked + label {
         color: black;
     }
-    &:checked + label[data-type="default"] {
-
-    }
     &:disabled + label {
         opacity: 0.6;
         pointer-events: none;
