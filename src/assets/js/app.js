@@ -229,23 +229,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }*/
 
-    function modalHandler() {
-        const modal = this
-        
-        if (modal) {
-            if (modal.hidden) {
-                modal.hidden = !modal.hidden
-                modal.style.setProperty('pointer-events', 'auto')
-                setTimeout(() => {
-                    modal.style.opacity = 1
-                }, 10)
-            } else {
-                modal.style.opacity = 0
-                modal.style.setProperty('pointer-events', null)
-                modal.addEventListener('transitionend', hideaftertransition)
-            }
-        }
-    }
+    // function modalHandler() {
+    //     const modal = this
+    //     if (modal) {
+    //         if (modal.hidden) {
+    //             modal.hidden = !modal.hidden
+    //             modal.style.setProperty('pointer-events', 'auto')
+    //             setTimeout(() => {
+    //                 modal.style.opacity = 1
+    //             }, 10)
+    //         } else {
+    //             modal.style.opacity = 0
+    //             modal.style.setProperty('pointer-events', null)
+    //             modal.addEventListener('transitionend', hideaftertransition)
+    //         }
+    //     }
+    // }
 
     const tabAccItems = document.querySelectorAll('.tab-accord__list-item')
 
@@ -990,17 +989,22 @@ let closeButtons = document.querySelectorAll('.close-button')
 
 function clickHandler () {
     if (this.classList.contains('filter-button--active')) {
+        document.documentElement.style.overflow = null
         this.classList.remove('filter-button--active')
     } else {
         filterButtons.forEach(el => {
             el.classList.remove('filter-button--active')
         })
+        if (sm.matches) {
+            document.documentElement.style.overflow = 'hidden'
+        }
         this.classList.add('filter-button--active')
     }
 }
 
 function closeMenu () {
     filterButtons.forEach(el => {
+        document.documentElement.style.overflow = null
         el.classList.remove('filter-button--active')
     })
 }
@@ -1093,7 +1097,12 @@ if (regModal.length) {
 
 function modalHandler() {
     const modal = document.querySelector(`${this.dataset?.modal}`) || this
-
+    if (modal.classList.contains('regModal') && modal.hidden) {
+        scrollLock.disablePageScroll();
+        scrollLock.addScrollableSelector('.regModal');
+    } else {
+        scrollLock.enablePageScroll();
+    }
     if (modal) {
         if (modal.hidden) {
             modal.hidden = !modal.hidden
@@ -1442,7 +1451,7 @@ mc.on("pan", function (ev) {
         var posY = ev.deltaY + lastPosY;
 
         ev.target.style.transition = 'none'
-        ev.target.style.top = posY + "px";
+        ev.target.style.setProperty('transform', `translate3d(0, ${posY}px, 0)`)
 
         if (ev.isFinal) {
             isDragging = false;
@@ -1452,12 +1461,12 @@ mc.on("pan", function (ev) {
                 if (modal) {
                     modalHandler.apply(modal)
                     setTimeout(() => {
-                        ev.target.style.top = null
+                        ev.target.style.setProperty('transform', null)
                     }, 300)
                     return
                 }
             }
-            ev.target.style.top = null
+            ev.target.style.setProperty('transform', null)
           }
     }
 
@@ -1489,7 +1498,7 @@ mc.on("pan", function (ev) {
         var posY = ev.deltaY + lastPosY;
 
         ev.target.style.transition = 'none'
-        ev.target.style.top = posY + "px";
+        ev.target.style.setProperty('transform', `translate3d(0, ${posY}px, 0)`)
 
         if (ev.isFinal) {
             isDragging = false;
@@ -1499,12 +1508,12 @@ mc.on("pan", function (ev) {
                 if (modal) {
                     modal.click()
                     setTimeout(() => {
-                        ev.target.style.top = null
+                        ev.target.style.setProperty('transform', null)
                     }, 300)
                     return
                 }
             }
-            ev.target.style.top = null
+            ev.target.style.setProperty('transform', null)
           }
     }
 
@@ -1536,7 +1545,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                 }
                 var posY = ev.deltaY + lastPosY;
                 ev.target.style.transition = 'none'
-                ev.target.style.top = posY + "px";
+                ev.target.style.setProperty('transform', `translate3d(0, ${posY}px, 0)`)
         
                 if (ev.isFinal) {
                     isDragging = false;
@@ -1546,12 +1555,12 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         if (modal) {
                             modal.click()
                             setTimeout(() => {
-                                ev.target.style.top = null
+                                ev.target.style.setProperty('transform', null)
                             }, 300)
                             return
                         }
                     }
-                    ev.target.style.top = null
+                    ev.target.style.setProperty('transform', null)
                   }
             }
         
