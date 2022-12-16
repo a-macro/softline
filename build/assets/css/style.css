@@ -2569,6 +2569,36 @@ textarea {
     }
 }
 
+@media (max-width: 480px) {
+    .active .submenu {
+        width: 100%;
+        max-height: 200vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .active .submenu__list {
+        width: 100%;
+        max-height: 200vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu__item.hide {
+        max-height: 0;
+        visibility: hidden;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu__item.hide.active {
+        max-height: unset;
+        visibility: visible;
+        overflow: unset;
+    }
+}
+
 .submenu {
     position: absolute;
     max-height: calc(100% - 4rem);
@@ -2583,6 +2613,12 @@ textarea {
     padding-bottom: 4rem;
     scrollbar-color: rgba(0, 0, 0, 0.3) rgb(236, 230, 230);
     scrollbar-width: thin;
+}
+
+@media (max-width: 480px) {
+    .submenu {
+        position: static;
+    }
 }
 
 .submenu::-webkit-scrollbar {
@@ -2614,7 +2650,7 @@ textarea {
     letter-spacing: 0em;
     text-align: left;
     display: block;
-    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
     padding-right: 10rem;
     width: 45rem;
     transition: color 0.4s;
@@ -2673,6 +2709,12 @@ textarea {
 @media (max-width: 768px) {
     .submenu__nav {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .submenu__nav {
+        padding-top: 0;
     }
 }
 
@@ -2746,6 +2788,16 @@ textarea {
         display: flex;
         -ms-flex-direction: column;
         flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .submenu__list {
+        margin-top: 1rem;
+        width: 100%;
+        max-height: 0;
+        transition: max-height 0.6s;
+        overflow: hidden;
     }
 }
 
@@ -3273,7 +3325,15 @@ textarea {
     .menu.solutions-and-services .menu__item .menu__link {
         width: 30rem;
     }
+}
 
+@media (max-width: 768px) and (max-width: 480px) {
+    .menu.solutions-and-services .menu__item .menu__link {
+        width: calc(100% - 5rem);
+    }
+}
+
+@media (max-width: 768px) {
     .menu.solutions-and-services .menu__item .menu__link::after {
         content: "";
         position: absolute;
@@ -3295,6 +3355,12 @@ textarea {
     .menu.solutions-and-services .menu__item .menu__link::after {
         width: 1.5rem;
         height: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu.solutions-and-services .menu__item.empty .menu__link::after {
+        content: none;
     }
 }
 
