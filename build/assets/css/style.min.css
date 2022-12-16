@@ -7961,6 +7961,17 @@ textarea {
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .menu-open .search-aside {
+    top: calc(100% + 6rem);
+  }
+}
+@media (max-width: 480px) {
+  .menu-open .search-aside {
+    top: calc(100% + 3.5rem);
+  }
+}
+
 .search-aside {
   width: 35rem;
   position: sticky;
@@ -8973,14 +8984,13 @@ body::before {
   .header__menu {
     height: 100%;
     row-gap: 1.5rem;
-    overflow: scroll;
+    overflow-y: auto;
   }
 }
 @media (max-width: 480px) {
   .header__menu {
     flex-direction: column;
     height: auto;
-    overflow: scroll;
   }
 }
 

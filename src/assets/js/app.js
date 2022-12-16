@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         menubutton.addEventListener('click', () => {
             menubutton.classList.toggle('menu-button--active')
             if(!headerBottom.classList.contains("show")) {
+                bodyTag.classList.add("menu-open");
                 headerBottom.style.display = "block";
                 setTimeout(() => {
                     headerBottom.classList.add("show");
@@ -105,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 scrollLock.addScrollableSelector('.header__bottom');
                 scrollLock.addScrollableSelector('.header__menu');
                 scrollLock.addScrollableSelector('.menu');
-            }
-             else {
+            } else {
+                bodyTag.classList.remove("menu-open");
                 headerBottom.style.display = "none";
                 setTimeout(() => {
                     headerBottom.classList.remove("show");
@@ -715,6 +716,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 elem.classList.remove("canScroll");
                 elem.style.transform = 'translate3d(0, 0px, 0)';
                 lastPosY = getTranslate3d(elem.style.transform)[1];
+                scrollLock.enablePageScroll();
             }
         
             let asideClose = document.querySelectorAll(".swipe-el__close");
@@ -736,8 +738,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(window.innerWidth <= 768 && window.innerWidth > 480) {
                     var topPos = - window.innerHeight * .7;
                 } else if(window.innerWidth <= 480) {
-                    var topPos = - window.innerHeight * .9;
+                    var topPos = - window.innerHeight * .85;
                 }
+                scrollLock.disablePageScroll();
+                scrollLock.addScrollableSelector(".search-aside__list");
                 elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
                 lastPosY = getTranslate3d(elem.style.transform)[1];
             }
