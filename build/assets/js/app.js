@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         var itemMenu = document.querySelector(".".concat(attr));
         item.onclick = function (e) {
           if (!item.classList.contains("active")) {
-            var _prev = document.querySelector(".active.header__item");
-            if (_prev && _prev != item) {
-              _prev.classList.remove("active");
-              var attrPrev = _prev.getAttribute("data-menu");
+            var prev = document.querySelector(".active.header__item");
+            if (prev && prev != item) {
+              prev.classList.remove("active");
+              var attrPrev = prev.getAttribute("data-menu");
               var itemMenuPrev = document.querySelector(".".concat(attrPrev));
               itemMenuPrev.style.display = "none";
             }
@@ -73,9 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
       item.onclick = function (e) {
         e.preventDefault();
         if (!item.classList.contains("active")) {
-          var _prev2 = parent.querySelector(".menu__item.active");
-          if (_prev2) {
-            _prev2.classList.remove("active");
+          var prev = parent.querySelector(".menu__item.active");
+          if (prev) {
+            prev.classList.remove("active");
           }
           item.classList.add("active");
           if (window.innerWidth <= 480 && !item.classList.contains("empty")) {
@@ -301,7 +301,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var selectSingle_labels = selectSingle.querySelectorAll('.__select__label');
         selectSingle_title.onclick = function (e) {
           e.preventDefault();
+          var currentParent = selectSingle_title.closest(".__select");
           var prev = document.querySelector("[data-state=\"active\"]");
+          var prevParent;
+          if (prev) {
+            prevParent = prev.closest(".__select");
+          }
+          if (prev && prevParent && prevParent != currentParent) {
+            prev.setAttribute('data-state', '');
+          }
           if ('active' === selectSingle.getAttribute('data-state')) {
             selectSingle.setAttribute('data-state', '');
           } else {
@@ -313,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!selectSingle_title.classList.contains("chosen")) {
               selectSingle_title.classList.add("chosen");
             }
-            selectSingle_title.textContent = evt.target.textContent;
+            selectSingle_title.innerHTML = evt.currentTarget.innerHTML;
             selectSingle.setAttribute('data-state', '');
           });
         }
@@ -323,8 +331,9 @@ document.addEventListener("DOMContentLoaded", function () {
   selectFunc();
   bodyTag.onclick = function (e) {
     var openedSelect = document.querySelector("[data-state=\"active\"]");
-    if (openedSelect && !e.target.classList.contains("__select")) {
-      prev.setAttribute('data-state', '');
+    var parent = e.target.closest(".__select");
+    if (openedSelect && !parent) {
+      openedSelect.setAttribute('data-state', '');
     }
   };
   new Swiper(".services__container", {
@@ -776,25 +785,26 @@ document.addEventListener("DOMContentLoaded", function () {
   var observerV = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       var el = entry.target;
+      if (el.classList.contains("end")) {
+        return;
+      }
       var attr = +el.getAttribute("data-num");
       if (entry.isIntersecting) {
-        numGrow(el, attr);
-        observerV.disconnect();
+        var _i5 = 1,
+          _num = attr,
+          step = 2500 / _num,
+          int = setInterval(function () {
+            if (_i5 <= _num) {
+              el.innerHTML = "".concat(_i5, "+");
+            } else {
+              clearInterval(int);
+              el.classList.add("end");
+            }
+            _i5 += 5;
+          }, step);
       }
     });
   });
-  function numGrow(el, end) {
-    var i = 0;
-    var time = 2500 / end;
-    var int = setInterval(function () {
-      if (i < end) {
-        i += 5;
-        el.innerHTML = "".concat(i, "+");
-      } else {
-        clearInterval(int);
-      }
-    }, time);
-  }
   var changeNums = document.querySelectorAll(".rising-num__num");
   if (changeNums && changeNums.length > 0) {
     changeNums.forEach(function (element) {
@@ -1222,9 +1232,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var dt = new DataTransfer();
     var input = element;
     var files = input.files;
-    for (var _i5 = 0; _i5 < files.length; _i5++) {
-      var file = files[_i5];
-      if (index !== _i5) dt.items.add(file);
+    for (var _i6 = 0; _i6 < files.length; _i6++) {
+      var file = files[_i6];
+      if (index !== _i6) dt.items.add(file);
     }
     input.files = dt.files; // Assign the updates list
   }

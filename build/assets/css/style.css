@@ -3368,8 +3368,6 @@ textarea {
     }
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 480px) {
     .menu.solutions-and-services .menu__item.active .menu__link::after {
         display: none;
@@ -3390,7 +3388,6 @@ textarea {
     }
 }
 
->>>>>>> 3eb5a8040a15df16d86fe96e33dfdeee86bd8e06
 @media (max-width: 768px) {
     .menu.solutions-and-services .menu__item.empty .menu__link::after {
         content: none;
@@ -5455,8 +5452,10 @@ textarea {
     margin-top: -1px;
     opacity: 0;
     pointer-events: none;
-    transition: top 0.5s, opacity 0.5s;
-    will-change: top, opacity;
+    transition: top 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+    transition: top 0.5s, opacity 0.5s, transform 0.5s;
+    transition: top 0.5s, opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+    will-change: top, opacity, transform;
 }
 
 @media (max-width: 1440px) {
@@ -9514,6 +9513,18 @@ textarea {
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+    .menu-open .search-aside {
+        top: calc(100% + 6rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-open .search-aside {
+        top: calc(100% + 3.5rem);
+    }
+}
+
 .search-aside {
     width: 35rem;
     position: sticky;
@@ -10710,7 +10721,7 @@ body::before {
     .header__menu {
         height: 100%;
         row-gap: 1.5rem;
-        overflow: scroll;
+        overflow-y: auto;
     }
 }
 
@@ -10719,7 +10730,6 @@ body::before {
         -ms-flex-direction: column;
         flex-direction: column;
         height: auto;
-        overflow: scroll;
     }
 }
 
@@ -11335,6 +11345,7 @@ body::before {
 .__select[data-state=active] .__select__content {
     opacity: 1;
     border: 1px solid #D2DCE5;
+    border-right: unset;
     border-radius: 0 0 0.4rem 0.4rem;
 }
 
@@ -11400,8 +11411,6 @@ body::before {
 .__select__content {
     position: absolute;
     top: calc(100% + 1px);
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
     left: 0;
     display: -ms-flexbox;
     display: flex;
@@ -11410,7 +11419,7 @@ body::before {
     background: white;
     margin-top: -1px;
     margin-left: -1px;
-    width: calc(100% + 2px);
+    width: 100%;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     transition: all 0.3s ease-out;
@@ -11476,9 +11485,9 @@ body::before {
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
-    line-height: 1.3;
+    line-height: 1;
     font-size: 1.5rem;
-    padding: 0.4rem 2.2rem;
+    padding: 1rem 2.2rem;
     transition: all 0.2s ease-out;
     cursor: pointer;
     color: rgb(152, 152, 152);
@@ -11486,7 +11495,7 @@ body::before {
 
 @media (max-width: 1440px) {
     .__select__label {
-        padding: 0.4rem 1.2rem;
+        padding: 1rem 1.2rem;
     }
 }
 
