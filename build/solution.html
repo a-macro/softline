@@ -101,18 +101,42 @@
                 </button>
             </form>
             <a class="header__store" href="#">Store</a>
-            <div class="geolocation">
-                <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                <a class="geolocation__location" href="#">Russia and CIS</a>
+            <div class="geolocation __select" data-state="">
+                <div class="select-side"></div>
+                <div id="location" class="geolocation__location __select__title" data-default="Option 0">                   
+                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                    <span>Russia and CIS</span>
+                </div>
+                <div class="__select__content">
+                    <input id="locationSelect1" class="__select__input" type="radio" name="locationSelect" />
+                    <label for="locationSelect1" data-type="default" class="__select__label">
+                        <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                        <span>Russia and CIS</span>
+                    </label>
+                    <input id="locationSelect2" class="__select__input" type="radio" name="locationSelect" />
+                    <label for="locationSelect2" class="__select__label">
+                        <img class="geolocation__flag" src="assets/images/flag2.jpg" alt="">
+                        <span>Belarus</span>
+                    </label>
+                </div>
             </div>
             <div class="languages __select" data-state="">
                 <div class="select-side"></div>
-                <div id="language" class="__select__title" data-default="Option 0">En</div>
+                <div id="language" class="__select__title" data-default="Option 0">
+                    <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
+                    <span>En</span>
+                </div>
                 <div class="__select__content">
                     <input id="langSelect0" class="__select__input" type="radio" name="langSelect" />
-                    <label for="langSelect0" data-type="default" class="__select__label">En</label>
+                    <label for="langSelect0" data-type="default" class="__select__label">
+                        <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                        <span>Ru</span>
+                    </label>
                     <input id="langSelect1" class="__select__input" type="radio" name="langSelect" />
-                    <label for="langSelect1" class="__select__label">Ru</label>
+                    <label for="langSelect1" class="__select__label">
+                        <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
+                        <span>En</span>
+                    </label>
                 </div>
             </div>
             <button class="menu-button">

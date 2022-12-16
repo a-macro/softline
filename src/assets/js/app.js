@@ -14,12 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let headerSearch = document.querySelector(".header__search");
-    let headerSearchBtn = document.querySelector(".btn__search-show");
+    let headerSearchBtn = document.querySelectorAll(".btn__search-show");
     if(headerSearchBtn) {
-        headerSearchBtn.onclick = (e) => {
-            e.preventDefault();
-            headerSearch.classList.add('active');
-        }
+        headerSearchBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                headerSearch.classList.add('active');
+                if(window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
+                    bodyTag.classList.remove("menu-open");
+                    headerBottom.style.display = "none";
+                    setTimeout(() => {
+                        headerBottom.classList.remove("show");
+                    }, 100);     
+                    scrollLock.enablePageScroll();     
+                }
+            }    
+        });
     }
 
     let headerSearchClose = document.querySelector(".header__search_close");
@@ -305,6 +315,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 let selectSingle_labels = selectSingle.querySelectorAll('.__select__label');   
                 selectSingle_title.onclick = (e) => {
                     e.preventDefault();
+                    let currentParent = selectSingle_title.closest(".__select");
+                    let prev = document.querySelector(`[data-state="active"]`);
+                    let prevParent;
+                    if(prev) {
+                        prevParent = prev.closest(".__select");
+                    }
+                    if(prev && prevParent && prevParent != currentParent) {
+                        prev.setAttribute('data-state', '');
+                    }
                     if ('active' === selectSingle.getAttribute('data-state')) {
                         selectSingle.setAttribute('data-state', '');
                     } else {
@@ -317,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         if(!selectSingle_title.classList.contains("chosen")) {
                             selectSingle_title.classList.add("chosen");
                         }
-                        selectSingle_title.textContent = evt.target.textContent;
+                        selectSingle_title.innerHTML = evt.currentTarget.innerHTML;
                         selectSingle.setAttribute('data-state', '');
                     });
                 }
@@ -329,9 +348,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bodyTag.onclick = (e) => {
         let openedSelect = document.querySelector(`[data-state="active"]`);
-        let prev = document.querySelector(`[data-state="active"]`);
-        if(openedSelect && !e.target.classList.contains("__select")) {
-            // prev.setAttribute('data-state', '');
+        let parent = e.target.closest(".__select");
+        if(openedSelect && !parent) {
+            openedSelect.setAttribute('data-state', '');
         }
     }
 
@@ -825,26 +844,27 @@ document.addEventListener("DOMContentLoaded", () => {
     let observerV = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             let el = entry.target;
+            if(el.classList.contains("end")) {
+                return;
+            }
             let attr = +el.getAttribute("data-num");
             if(entry.isIntersecting) {
-                numGrow(el, attr);
-                observerV.disconnect();
+                let i = 1,
+                num = attr,
+                step = 2500 / num,
+            
+                int = setInterval(function() {
+                  if (i <= num) {
+                    el.innerHTML = `${i}+`
+                  } else {
+                    clearInterval(int);
+                    el.classList.add("end");
+                  }
+                  i+=5;
+                }, step);
             }
         });
     });
-
-    function numGrow(el, end) {
-        let i = 0;
-        let time = 2500 / end;
-        let int = setInterval(() => {
-            if(i < end) {
-                i += 5;
-                el.innerHTML = `${i}+`;
-            } else {
-                clearInterval(int);
-            }
-        }, time);
-    }
 
     let changeNums = document.querySelectorAll(".rising-num__num");
     if(changeNums && changeNums.length > 0) {
