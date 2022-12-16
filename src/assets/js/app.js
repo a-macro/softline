@@ -458,9 +458,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let init = false;
     let swiper;
+    let slider = document.querySelector(".partners__mobSlider");
 
     function initSlider() {
-        if (width <= 768 && !init) {
+        if (width <= 768 && !init && slider) {
             swiper = new Swiper(".partners__mobSlider", {
                 loop: true,
                 slidesPerView: 2.8,

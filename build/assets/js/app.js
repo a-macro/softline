@@ -441,8 +441,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   var init = false;
   var swiper;
+  var slider = document.querySelector(".partners__mobSlider");
   function initSlider() {
-    if (width <= 768 && !init) {
+    if (width <= 768 && !init && slider) {
       swiper = new Swiper(".partners__mobSlider", {
         loop: true,
         slidesPerView: 2.8,
