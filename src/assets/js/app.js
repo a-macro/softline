@@ -1594,6 +1594,72 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
     }
 
 
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
+
+      function setCookie(name, value, options = {}) {
+
+        options = {
+          path: '/',
+          // при необходимости добавьте другие значения по умолчанию
+          ...options
+        };
+      
+        if (options.expires instanceof Date) {
+          options.expires = options.expires.toUTCString();
+        }
+      
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+      
+        for (let optionKey in options) {
+          updatedCookie += "; " + optionKey;
+          let optionValue = options[optionKey];
+          if (optionValue !== true) {
+            updatedCookie += "=" + optionValue;
+          }
+        }
+      
+        document.cookie = updatedCookie;
+      }
+      const cookie = getCookie('softlineAccessCookie')
+      const cookieForm = document.querySelector('.cookie.regModal')
+      if (cookie && cookieForm) {
+        modalHandler.apply(cookieForm)
+      } 
+
+      if (cookieForm) {
+        const button = cookieForm.querySelector('.cookie__button')
+
+        if (button) {
+            button.addEventListener('click', function () {
+                setCookie('softlineAccessCookie', 'true')
+                modalHandler.apply(cookieForm)
+            })
+        }
+      }
+
+      const mapButton = document.querySelector('#map-button');
+      const map = document.querySelector('#yandex-map');
+      const offices = document.querySelector('#offices-list');
+      let oldText = '';
+
+      if (mapButton, map, offices) {
+        mapButton.addEventListener('click', function () {
+            modalHandler.apply(map)
+            modalHandler.apply(offices)
+            const text = this.querySelector('[data-text]')
+            if (text) {
+                oldText = text.innerHTML
+                text.innerHTML = text.dataset.text
+                text.dataset.text = oldText
+            }
+        })
+      }
+
 });
 
 

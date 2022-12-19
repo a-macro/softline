@@ -1023,21 +1023,28 @@
 
   .cookie {
     position: fixed;
-    right: 4rem;
-    bottom: 4rem;
+    right: 0;
+    bottom: 0;
     display: flex;
-    gap: 6.4rem;
-    background: #212424;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 2px;
-    width: fit-content;
-    padding: 2.8rem;
-    z-index: 5;
+    width: 100%;
+    padding: 5rem 4rem;
+    z-index: 1000000000;
+    @include breakpoint($mid-bp) {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      align-items: flex-start;
+    }
     @include breakpoint($sm-bp) {
       width: 100%;
       right: 0;
       bottom: 0;
       justify-content: space-between;
-      align-items: center;
+      padding: 5rem 2.5rem;
     }
     .cookie__text {
       font-family: 'Manrope';
@@ -1047,26 +1054,65 @@
       line-height: 2.4rem;
       /* identical to box height, or 150% */
       
-      
+      max-width: 1190px;
+      @include breakpoint($xxl-bp) {
+        max-width: 900px;
+      }
+      @include breakpoint($xl-bp) {
+        max-width: 660px;
+      }
+      @include breakpoint($mid-bp) {
+        max-width: unset;
+      }
       /* UI/Gray */
       
-      color: #E5E9F1;
       a {
         @include breakpoint($sm-bp) {
           display: block;
         }
       }
     }
-    .close-button {
-      width: 2rem;
-      height: 2rem;
-      @include breakpoint($sm-bp) {
-        width: 3rem;
-        height: 3rem;
+    .cookie__button {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: #FFFFFF;
+      background-color: #A50F2D;
+      border-radius: 0.4rem;
+      border: 0;
+      padding: 1.6rem 6.3rem;
+    }
+  }
+
+  .cookie-page {
+    .cookie-page__content {
+      max-width: 780px;
+      margin: 0 auto;
+      @include breakpoint($xxl-bp) {
+        max-width: 900px;
       }
-      &::before, &::after {
-        background-color: #697279;
-        height: 0.2rem;
+      @include breakpoint($xl-bp) {
+        max-width: 660px;
+      }
+      @include breakpoint($mid-bp) {
+        max-width: unset;
+      }
+      h2 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        padding-bottom: 1rem;
+      }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      p + h2 {
+        padding-top: 4rem;
+      }
+      p + p {
+        padding-top: 4rem;
       }
     }
   }
