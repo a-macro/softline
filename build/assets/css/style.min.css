@@ -2337,7 +2337,7 @@ textarea {
     display: none;
   }
 }
-.submenu__title h3 {
+.submenu__title .submenu__text, .submenu__title h3 {
   font-size: 3.6rem;
   font-weight: 400;
   line-height: 1.44;
