@@ -19,17 +19,19 @@
     <div class="alloffices__top-wrapper pb10">
       <h2 class="alloffices__title man52">Here you can find out the contact<br />sof the nearest Softline office</h2>
 
-      <a class="link-red" href="#">
+      <button class="link-red" id="map-button">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="32" height="32" rx="16" fill="#A50F2D" />
           <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
             stroke-width="1.5" />
         </svg>
-        <span>Offices on the map</span>
-      </a>
+        <span data-text="List of offices">Offices on the map</span>
+      </button>
     </div>
 
-    <div class="alloffices__list-block">
+    <div style="position:relative;overflow:hidden; opacity: 0;" hidden class="yandex-map" id="yandex-map"><a href="https://yandex.by/maps?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Яндекс Карты</a><a href="https://yandex.by/maps/geo/moskva/53000094/?ll=81.241928%2C11.771897&utm_medium=mapframe&utm_source=maps&z=2" style="color:#eee;font-size:12px;position:absolute;top:14px;">Москва — Яндекс Карты</a><iframe src="https://yandex.by/map-widget/v1/-/CCUnfCruwC" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+
+    <div class="alloffices__list-block" id="offices-list">
       <div class="alloffices__list-item">
         <div class="alloffices__list-title">Latin America</div>
         <ul>
@@ -94,3 +96,5 @@
     </div>
   </div>
 </section>
+
+{{> cookie-modal}}

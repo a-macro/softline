@@ -1,5 +1,8 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1472,6 +1475,58 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       });
+    });
+  }
+  function getCookie(name) {
+    var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+  function setCookie(name, value) {
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    options = _objectSpread({
+      path: '/'
+    }, options);
+    if (options.expires instanceof Date) {
+      options.expires = options.expires.toUTCString();
+    }
+    var updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    for (var optionKey in options) {
+      updatedCookie += "; " + optionKey;
+      var optionValue = options[optionKey];
+      if (optionValue !== true) {
+        updatedCookie += "=" + optionValue;
+      }
+    }
+    document.cookie = updatedCookie;
+  }
+  var cookie = getCookie('softlineAccessCookie');
+  var cookieForm = document.querySelector('.cookie.regModal');
+  if (cookie && cookieForm) {
+    modalHandler.apply(cookieForm);
+  }
+  if (cookieForm) {
+    var button = cookieForm.querySelector('.cookie__button');
+    if (button) {
+      button.addEventListener('click', function () {
+        setCookie('softlineAccessCookie', 'true');
+        modalHandler.apply(cookieForm);
+      });
+    }
+  }
+  var mapButton = document.querySelector('#map-button');
+  var map = document.querySelector('#yandex-map');
+  var offices = document.querySelector('#offices-list');
+  var oldText = '';
+  if (mapButton, map, offices) {
+    mapButton.addEventListener('click', function () {
+      modalHandler.apply(map);
+      modalHandler.apply(offices);
+      var text = this.querySelector('[data-text]');
+      if (text) {
+        oldText = text.innerHTML;
+        text.innerHTML = text.dataset.text;
+        text.dataset.text = oldText;
+      }
     });
   }
 });
