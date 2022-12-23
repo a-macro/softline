@@ -673,9 +673,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let num = +filter.getAttribute("data-show");
         let elems = filter.querySelectorAll(".catalog-sidebar__item");
         let len = elems.length;
-        let elemHeight = elems[0].getBoundingClientRect().height;
         let margin =  +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
-        let commonH = num * (elemHeight + margin);
+        let commonH = 0;
+        for(let i = 0; i < num; i++) {
+            let h = +elems[i].getBoundingClientRect().height + margin;
+            commonH += h;
+        }
         filter.style.setProperty("--max-h", commonH + "px");
     }
 

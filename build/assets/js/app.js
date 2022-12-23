@@ -645,9 +645,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var num = +filter.getAttribute("data-show");
     var elems = filter.querySelectorAll(".catalog-sidebar__item");
     var len = elems.length;
-    var elemHeight = elems[0].getBoundingClientRect().height;
     var margin = +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
-    var commonH = num * (elemHeight + margin);
+    var commonH = 0;
+    for (var _i5 = 0; _i5 < num; _i5++) {
+      var h = +elems[_i5].getBoundingClientRect().height + margin;
+      commonH += h;
+    }
     filter.style.setProperty("--max-h", commonH + "px");
   }
   var showMoreFilters = document.querySelectorAll(".filter__show-more");
@@ -803,17 +806,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       var attr = +el.getAttribute("data-num");
       if (entry.isIntersecting) {
-        var _i5 = 1,
+        var _i6 = 1,
           _num = attr,
           step = 2500 / _num,
           int = setInterval(function () {
-            if (_i5 <= _num) {
-              el.innerHTML = "".concat(_i5, "+");
+            if (_i6 <= _num) {
+              el.innerHTML = "".concat(_i6, "+");
             } else {
               clearInterval(int);
               el.classList.add("end");
             }
-            _i5 += 5;
+            _i6 += 5;
           }, step);
       }
     });
@@ -1245,9 +1248,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var dt = new DataTransfer();
     var input = element;
     var files = input.files;
-    for (var _i6 = 0; _i6 < files.length; _i6++) {
-      var file = files[_i6];
-      if (index !== _i6) dt.items.add(file);
+    for (var _i7 = 0; _i7 < files.length; _i7++) {
+      var file = files[_i7];
+      if (index !== _i7) dt.items.add(file);
     }
     input.files = dt.files; // Assign the updates list
   }
