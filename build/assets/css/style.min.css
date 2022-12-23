@@ -4260,7 +4260,7 @@ textarea {
   }
 }
 .insights-navigation nav ul li a {
-  width: 10.8rem;
+  min-width: 10.8rem;
   padding: 3.2rem 2.15rem;
   font-family: "Manrope";
   font-style: normal;
@@ -4277,7 +4277,7 @@ textarea {
 @media (max-width: 768px) {
   .insights-navigation nav ul li a {
     padding: 3.2rem 0.85rem;
-    width: auto;
+    min-width: auto;
   }
 }
 @media (max-width: 480px) {
@@ -10170,6 +10170,9 @@ body::before {
   opacity: 0;
 }
 
+.service__top {
+  margin-bottom: 1rem;
+}
 .service__top img {
   width: 3.1rem;
   margin-bottom: 2.5rem;

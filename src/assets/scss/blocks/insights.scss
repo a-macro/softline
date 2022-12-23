@@ -255,7 +255,7 @@
         }
 
         a {
-          width: 10.8rem;
+          min-width: 10.8rem;
           padding: 3.2rem 2.15rem;
           font-family: 'Manrope';
           font-style: normal;
@@ -274,7 +274,7 @@
 
           @include breakpoint($mid-bp) {
             padding: 3.2rem 0.85rem;
-            width: auto;
+            min-width: auto;
           }
 
           @include breakpoint($sm-bp) {
