@@ -2749,7 +2749,7 @@ textarea {
     }
 }
 
-.submenu__title h3 {
+.submenu__title .submenu__text, .submenu__title h3 {
     font-size: 3.6rem;
     font-weight: 400;
     line-height: 1.44;
@@ -6945,6 +6945,9 @@ textarea {
     transform: translate(-50%, -50%);
     width: 10rem;
     height: 10rem;
+    z-index: 1;
+    background-color: unset;
+    border: 0;
 }
 
 @media (max-width: 768px) {
