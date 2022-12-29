@@ -2085,7 +2085,9 @@
       transform: translate(-50%, -50%);
       width: 10rem;
       height: 10rem;
-
+      z-index: 1;
+      background-color: unset;
+      border: 0;
       @include breakpoint($mid-bp) {
         top: 40%;
         width: 6.9rem;

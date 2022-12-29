@@ -1191,6 +1191,15 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+window.addEventListener('resize', () => {
+    const activeAccords = document.querySelectorAll('.accordion .active .accordion__list-desc')
+    if (activeAccords.length) {
+        activeAccords.forEach(el => {
+            el.style.maxHeight = el.scrollHeight + 'px';
+        })
+    }
+})
+
 const accordions = document.querySelectorAll('.accordion')
 const faqlist = document.querySelector('.faq__left-list')
 
@@ -1661,6 +1670,36 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                 text.dataset.text = oldText
             }
         })
+      }
+
+      const videos = document.querySelectorAll('video')
+      if (videos.length) {
+        videos.forEach(video => {
+            const parentNode = video.closest('.intro__pop-up')
+            if (parentNode) {
+                const playButton = parentNode.querySelector('.form-modal__play')
+                if (playButton) {
+                    playButton.addEventListener('click', () => {
+                        togglePlay(video)
+                    })
+                    video.addEventListener('play', () => {
+                        playButton.hidden = !playButton.hidden
+                    })
+                    video.addEventListener('pause', () => {
+                        playButton.hidden = !playButton.hidden
+                    })
+                }
+
+            }
+        })
+      }
+
+      function togglePlay(video) {
+        if (video.paused || video.ended) {
+          video.play();
+        } else {
+          video.pause();
+        }
       }
 
 });
