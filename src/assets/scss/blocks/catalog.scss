@@ -134,6 +134,7 @@
         @include breakpoint($mid-bp) {
             margin-top: 0rem;
             overflow: unset;
+            max-height: unset;
         }
     }
 
@@ -636,6 +637,7 @@
     @include breakpoint($sm-bp) {
         padding: 0.35rem 1.3rem 0.35rem 1.6rem;
         margin-bottom: 1.7rem;
+        border-radius: 22px;
     }
 }
 
@@ -745,7 +747,7 @@
     .service {
         width: calc(calc(100% - 20rem) / 6);
         border-right: unset;
-        height: 29.8rem;
+        min-height: 29.8rem;
         margin-right: 4rem;
         margin-left: 0;
         padding-left: 0;
@@ -762,7 +764,7 @@
         @include breakpoint($mid-bp) {
             width: calc(calc(100% - 2rem) / 2);
             margin-right: 2rem;
-            height: 23.8rem;
+            min-height: 23.8rem;
             padding-bottom: 2.4rem;
             padding-right: 1rem;
         }
@@ -928,7 +930,8 @@
     .service {
         width: calc(50% - 6.4rem);
         margin-right: 12.8rem;
-        height: 9.1rem;
+        min-height: 9.1rem;
+        height: unset;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
@@ -938,16 +941,18 @@
         @include breakpoint($xxl-bp) {
             width: 100%;
             margin-right: 0;    
-            height: 8.9rem;        
+            min-height: 8.9rem;   
+            height: unset;     
         }
         @include breakpoint($xl-bp) {
-            height: 9rem;        
+            min-height: 9rem; 
+            height: unset;       
         }
         @include breakpoint($mid-bp) {
             flex-direction: column;
             align-items: flex-start;
-            height: unset;
             min-height: 20rem;
+            height: unset;
             justify-content: space-between;
             padding-top: 3.7rem;
             padding-bottom: 2.5rem;
@@ -967,6 +972,15 @@
                 content: none;
             }
         }
+    }
+
+    .service__text {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .service__top {
+        margin-bottom: 0;
     }
 
     .service__top_img {

@@ -6,6 +6,8 @@
     background: white;
     width: 100%;
     z-index: 100;
+    transition: .4s;
+    box-shadow: 0px 0px 35px transparent;
     @include breakpoint($mid-bp) {
         flex-direction: row;
         justify-content: space-between;
@@ -16,14 +18,35 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: white;
+            background-color: #F0F2F6;
             height: 100%;
             width: 100%;
-            z-index: 2;
+            z-index: 3;
         }
     }
     @include breakpoint($sm-bp) {
-        padding: 2.2rem 2.5rem 2.2rem;
+        padding: 2.5rem;
+    }
+}
+
+.menu-open {
+    .header::before {
+        background: white;
+    }
+}
+
+.header.start {
+    box-shadow: 0px 0px 35px #0000001c;
+    @include breakpoint($mid-bp) {
+        box-shadow: unset;
+    }
+}
+
+.header.hide-header {
+    transform: translateY(-103%);
+    box-shadow: 0px 0px 35px transparent;
+    @include breakpoint($mid-bp) {
+        transform: translateY(0);
     }
 }
 
@@ -87,10 +110,10 @@
     @include breakpoint($mid-bp) {
         border-bottom: unset;
         width: 50%;
+        background: unset;
     }
 
     .languages {
-        min-width: 11rem;
         @include breakpoint($mid-bp) {
             display: none;
         }
@@ -111,11 +134,7 @@
             }
         }
     }
-    .header__store {
-        @include breakpoint($mid-bp) {
-            display: none;
-        }
-    }
+
     .geolocation {
         @include breakpoint($mid-bp) {
             display: none;
@@ -123,7 +142,7 @@
     }
 
     & > *:not(.menu-button) {
-        height: 5.1rem;
+        height: 4.9rem;
         border-left: 1px solid $grey;
         @include breakpoint($mid-bp) {
             height: unset;
@@ -134,17 +153,16 @@
 
 .header__bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     z-index: 2;
-    height: 8.5rem;
     padding-left: 4rem;
     padding-right: 4rem;
     position: relative;
     background: #F0F2F6;
     @include breakpoint($xl-bp) {
         padding-left: 3rem;
-        padding-right: 2.5rem;
+        padding-right: 4rem;
     }
     @include breakpoint($mid-bp) {
         display: none;
@@ -158,6 +176,7 @@
         padding-left: 2rem;
         padding-right: 2rem;
         border-top: 0.1rem solid #D2DCE5;
+        background: white;
     }
     @include breakpoint($sm-bp) {
         padding-right: 0;
@@ -171,14 +190,19 @@
 
 .header__menu {
     display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
     @include breakpoint($mid-bp) {
         height: 100%;
         row-gap: 1.5rem;
         overflow-y: auto;
+        align-items: flex-start;
     }
     @include breakpoint($sm-bp) {
         flex-direction: column;
         height: auto;
+        row-gap: 0;
+        padding: 0;
     }
 }
 
@@ -188,7 +212,7 @@
         flex-direction: column;
         align-items: flex-start;
         width: 50%;
-        padding-top: 3rem;
+        padding-top: 1rem;
         padding-right: 5.5rem;
     }
     @include breakpoint($sm-bp) {
@@ -210,8 +234,6 @@
         margin-right: 3rem;        
     }
     @include breakpoint($sm-bp) {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
     }
 
     svg {
@@ -399,47 +421,6 @@
     }
 }
 
-.header__store {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #697279;
-    text-decoration: none;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    transition: color .4s;
-
-    &:hover {
-        color: $red;
-    }
-
-    &::after {
-        content: "";
-        display: block;
-        width: 1rem;
-        height: 1rem;
-        margin-left: 1.1rem;
-        background: url("../images/store.svg") no-repeat;
-        background-size: contain;
-        @include breakpoint($mid-bp) {
-            width: 1.2rem;
-            height: 1.2rem;
-        }
-    }
-    @include breakpoint($mid-bp) {
-        padding: 0;
-        font-weight: 500;
-        justify-content: flex-start;
-        font-size: 1.4rem;
-        line-height: 2rem;
-    }
-    @include breakpoint($sm-bp) {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        font-size: 1.8rem;
-    }
-}
-
 .header__logo {
     @include breakpoint($mid-bp) {
         display: none;
@@ -450,11 +431,12 @@
 }
 
 .header__menu {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    line-height: 2rem;
+    line-height: 1.43;
     letter-spacing: 0em;
     text-align: left;
+
     a {
         color: #212424;
         text-decoration: none;   
@@ -490,7 +472,12 @@
     }
     @include breakpoint($sm-bp) {
         font-size: 2.6rem;
-        margin-bottom: 3rem;
+        margin-bottom: 3.1rem;
+        padding-right: 3rem;
+    }
+
+    &:nth-last-child(1) {
+        margin-right: 0;
     }
 
     &[data-menu]::after {
@@ -499,8 +486,8 @@
                     position: absolute;
                     top: 50%;
                     right: 0;
-                    width: 1rem;
-                    height: 1rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
                     background-image: url('../images/arrow.svg');
                     background-repeat: no-repeat;
                     background-size: contain;
@@ -523,28 +510,6 @@
     }
 }
 
-.header__mail {
-    width: 3.6rem;
-    height: 3.6rem;
-    border-radius: 100%;
-    background: $red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .4s;
-    @include breakpoint($mid-bp) {
-        display: none;
-    }
-
-    &:hover {
-        box-shadow: 0 0 4px $red;
-    }
-
-    img {
-        width: 1.6rem;
-    }
-}
-
 .__select {
     font-size: 1.4rem;
     font-weight: 500;
@@ -552,8 +517,8 @@
     letter-spacing: 0em;
     text-align: center;
     text-transform: uppercase;
-    padding-left: 2.2rem;
-    padding-right: 4rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
     line-height: 1;
     display: flex;
     align-items: center;
@@ -571,6 +536,9 @@
         overflow: visible;
         .__select__content {
             opacity: 1;
+            @include breakpoint($sm-bp) {
+                width: 26rem;
+            }
         }
 
         .__select__title {
@@ -597,13 +565,15 @@
     text-align: center;
     cursor: pointer;
     transition: color .4s;
+    @include breakpoint($sm-bp) {
+        font-size: 1.8rem;
+    }
 
     &:hover {
         color: $red;
     }
 
     @include breakpoint($sm-bp) {
-        padding: 3.4rem 10.7rem 3.4rem 3.7rem;
         z-index: 2;
     }
   
@@ -616,6 +586,7 @@
         background: url("../images/arrow-down.svg") no-repeat;
         background-size: contain;
         transition: transform .4s;
+        transform: translateY(1px);
     }
 }
 
@@ -633,7 +604,11 @@
     max-height: 38.5rem;
     overflow-y: auto;
     scrollbar-width: thin;          
-    scrollbar-color: rgba(239, 239, 239, 1) white;   
+    scrollbar-color: rgba(239, 239, 239, 1) white;  
+    max-height: 12rem;
+    @include breakpoint($mid-bp) {
+        left: -1px;
+    } 
     &::-webkit-scrollbar {
         width: 40px;
     }
@@ -647,9 +622,6 @@
         border: solid 10px transparent;
         border-right: solid 25px transparent;
         border-radius: 0;
-        @include breakpoint($sm-bp) {
-            border-right: solid 20px transparent;
-        }
     }
       
     &::-webkit-scrollbar-button {
@@ -658,8 +630,8 @@
     @include breakpoint($sm-bp) {
         padding-top: 1.8rem;
         padding-bottom: 1.8rem;
-        max-height: 420px;
         overflow-y: scroll;
+        max-height: 15rem;
     }
 }
 
@@ -667,7 +639,7 @@
     display: none;
   
     &:checked + label {
-        color: black;
+        color: $red;
     }
     &:disabled + label {
         opacity: 0.6;
@@ -684,15 +656,100 @@
     padding: 1rem 2.2rem;
     transition: all 0.2s ease-out;
     cursor: pointer;
-    color: rgb(152, 152, 152);
+    color: $black;
     @include breakpoint($xl-bp) {
         padding: 1rem 1.2rem;
     }
+    @include breakpoint($mid-bp) {
+        font-size: 1.4rem;
+        border-bottom: 1px solid #E5E9F1;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @include breakpoint($sm-bp) {
+        font-size: 1.8rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
     &:hover {
-        color: black;
+        color: $red;
     }
 }
 
+.city.__select {
+    text-transform: unset;
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
+
+    .__select__label {
+        text-align: left;
+    }
+
+    .__select__content {
+        min-width: 16rem;
+    }
+}
+
+.header__mid {
+    background: #F0F2F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2.7rem;
+    padding-right: 4rem;
+    border-bottom: 1px solid $grey;
+    z-index: 2;
+    @include breakpoint($mid-bp) {
+        display: none;
+    }
+}
+
+.header__mid_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.header__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.9rem 0;
+    margin-left: 4rem;
+
+    a {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.43;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $black;
+        text-decoration: none;
+        transition: color .4s;
+        &:hover {
+            color: $red;
+        }
+    }
+}
+
+.header__nav_link {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.42;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $footer-color;
+    text-decoration: none;
+    margin-left: 3.3rem;
+    transition: color .4s;
+    &:nth-child(1) {
+        margin-left: 0;
+    }
+
+    &:hover {
+        color: $red;
+    }
+}
 
 .geolocation {
     display: flex;
@@ -701,17 +758,27 @@
     padding-left: 2rem;
     padding-right: 2rem;
     text-transform: unset;
-    min-width: 19rem;
+    min-width: 12rem;
     @include breakpoint($mid-bp) {
         justify-content: flex-start;
         padding: 0;
     }
     @include breakpoint($sm-bp) {
-        padding: 2.5rem;
+        min-width: unset;
     }
 
     .geolocation__flag {
         margin-right: 1rem;
+        @include breakpoint($sm-bp) {
+            margin-right: 1.8rem;
+        }
+    }
+
+    .__select__content {
+        width: 17rem;
+        @include breakpoint($sm-bp) {
+            width: 20rem;
+        }
     }
 
     img {
@@ -727,6 +794,10 @@
         justify-content: flex-start;
         padding-left: 2rem;
         padding-right: 2rem;
+        @include breakpoint($mid-bp) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -742,6 +813,8 @@
         font-weight: 500;
         font-size: 1.4rem;
         line-height: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;

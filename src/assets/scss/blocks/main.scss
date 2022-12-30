@@ -422,7 +422,7 @@
 }
 
 .service__top {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     img {
         width: 3.1rem;
@@ -736,32 +736,37 @@
 }
 
 .world-wide {
-    background-repeat: no-repeat;
-    background-image: url("../images/main/earth.png");
-    background-size: cover;
-    background-position: top;
-    height: 107rem;
+    //background-repeat: no-repeat;
+    //background-image: url("../images/main/earth.png");
+    //background-size: cover;
+    //background-position: top;
+    //height: 107rem;
     width: 100%;
     @include breakpoint($xxl-bp) {
-        height: 85rem;
-        background-size: 96%;
-        background-position-y: 3rem;
-        background-image: url("../images/main/world-1920.png");
+        //height: 85rem;
+        //background-size: 96%;
+        //background-position-y: 3rem;
+        //background-image: url("../images/main/world-1920.png");
     }
     @include breakpoint($xl-bp) {
-        height: 64rem;
+        //height: 64rem;
     }
     @include breakpoint($mid-bp) {
-        height: 62rem;
-        background-size: 122%;
-        background-position-y: 19.5rem;
+        //height: 62rem;
+        //background-size: 122%;
+        //background-position-y: 19.5rem;
     }
     @include breakpoint($sm-bp) {
-        background-image: url("../images/main/earth-mob.png");
-        height: 71rem;
-        background-size: 100%;
-        background-position-y: 12.5rem;
-        position: relative;
+        ////background-image: url("../images/main/earth-mob.png");
+        //height: 71rem;
+        //background-size: 100%;
+        ////-position-y: 12.5rem;
+        //position: relative;
+    }
+
+    #map {
+        height: 80rem;
+        margin-top: 2rem;
     }
 
     &::after {

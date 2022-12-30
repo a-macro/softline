@@ -7,38 +7,48 @@
         <form class="header__search">
             <a href="#" class="header__search_close"></a>
             <div class="btn__search-show">
-                <span>Search</span>
+                <span>Поиск</span>
                 <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
                     <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
                 </svg>
             </div>
-            <input class="input input__search" type="text" placeholder="Enter your search term">
+            <input class="input input__search" type="text" placeholder="Введите условие поиска">
             <button class="btn__search disabled" disabled>
-                <span>Search</span>
+                <span>Искать</span>
                 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" rx="16" fill="#A50F2D"/>
                     <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
                 </svg>    
             </button>
         </form>
-        <a class="header__store" href="#">Store</a>
         <div class="geolocation __select" data-state="">
             <div class="select-side"></div>
             <div id="location" class="geolocation__location __select__title" data-default="Option 0">                   
                 <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                <span>Russia and CIS</span>
+                <span>Россия</span>
             </div>
             <div class="__select__content">
                 <input id="locationSelect1" class="__select__input" type="radio" name="locationSelect" />
                 <label for="locationSelect1" data-type="default" class="__select__label">
                     <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                    <span>Russia and CIS</span>
+                    <span>Россия</span>
                 </label>
-                <input id="locationSelect2" class="__select__input" type="radio" name="locationSelect" />
-                <label for="locationSelect2" class="__select__label">
-                    <img class="geolocation__flag" src="assets/images/flag2.jpg" alt="">
-                    <span>Belarus</span>
+            </div>
+        </div>
+        <div class="city __select" data-state="">
+            <div class="select-side"></div>
+            <div id="location-city" class="city__location __select__title" data-default="Option 0">                   
+                <span>Город</span>
+            </div>
+            <div class="__select__content">
+                <input id="citySelect1" class="__select__input" type="radio" name="citySelect">
+                <label for="citySelect1" data-type="default" class="__select__label">
+                    <span>Москва</span>
+                </label>
+                <input id="citySelect2" class="__select__input" type="radio" name="citySelect">
+                <label for="citySelect2" class="__select__label">
+                    <span>Санкт-Петербург</span>
                 </label>
             </div>
         </div>
@@ -49,12 +59,12 @@
                 <span>En</span>
             </div>
             <div class="__select__content">
-                <input id="langSelect0" class="__select__input" type="radio" name="langSelect" />
+                <input id="langSelect0" class="__select__input" type="radio" name="langSelect">
                 <label for="langSelect0" data-type="default" class="__select__label">
                     <img class="geolocation__flag" src="assets/images/flag.png" alt="">
                     <span>Ru</span>
                 </label>
-                <input id="langSelect1" class="__select__input" type="radio" name="langSelect" />
+                <input id="langSelect1" class="__select__input" type="radio" name="langSelect">
                 <label for="langSelect1" class="__select__label">
                     <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
                     <span>En</span>
@@ -69,78 +79,144 @@
             </span>
         </button>
     </div>
-    <div class="header__bottom">
+    <div class="header__mid">
         <div class="header__logo">
             <img src="assets/images/logo.svg" alt="">
         </div>
+        <div class="header__mid_wrap">
+            <nav>
+                <a href="#" class="header__nav_link">О компании</a>
+                <a href="#" class="header__nav_link">Инвесторам</a>
+                <a href="#" class="header__nav_link">Карьера</a>
+                <a href="#" class="header__nav_link">IT-события</a>
+                <a href="#" class="header__nav_link">Блог</a>
+                <a href="#" class="header__nav_link">Контакты</a>
+                <a href="#" class="header__nav_link">Softline Finance</a>
+            </nav>
+            <div class="header__contact">
+                <a href="tel:+74952320023">+7 (495) 232-0023</a>
+                <a href="tel:88002320023">8 (800) 232-0023</a>
+            </div>    
+        </div>
+    </div>
+    <div class="header__bottom">
         <div class="header__menu">
             <ul class="header__nav">
-                <li data-menu="about-us" class="header__item">
-                    <a class="header__link" href="#">About Us</a>
+                <li data-menu="online-store" class="header__item">
+                    <a class="header__link" href="#">Интернет-магазин</a>
+                </li>
+                <li data-menu="digital-business" class="header__item">
+                    <a class="header__link" href="#">Цифровой бизнес</a>
                 </li>
                 <li data-menu="solutions-and-services" class="header__item">
-                    <a class="header__link" href="#">Solutions & Services</a>
+                    <a class="header__link" href="#">Услуги и решения</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Industries</a>
-                </li>
-                <li data-menu="insights" class="header__item">
-                    <a class="header__link" href="#">Insights</a>
+                    <a class="header__link" href="#">Для малого и среднего бизнеса</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Investor Relations</a>
+                    <a class="header__link" href="#">Для госсектора</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Stories</a>
+                    <a class="header__link" href="#">Для ритейла FMCG</a>
+                </li>
+                <li data-menu="clouds" class="header__item">
+                    <a class="header__link" href="#">Облака</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Careers</a>
+                    <a class="header__link" href="#">Кейсы</a>
                 </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Contact</a>
+                <li data-menu="training-center" class="header__item">
+                    <a class="header__link" href="#">Учебный центр</a>
                 </li>
             </ul>
-            <a class="header__mail" href="#">
-                <img src="assets/images/mail.svg" alt="">
-            </a>
             <div class="menu-second">
-                <div class="geolocation">
-                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                    <a class="geolocation__location" href="#">Russia and CIS</a>
-                </div>
-    
-                <form class="header__search">
-                    <a href="#" class="header__search_close"></a>
-                    <div class="btn__search-show">
-                        <span>Search</span>
-                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
-                            <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
-                        </svg>
+                <div class="menu-second__top">
+                    <div class="menu-second__helpers">
+                        <form class="header__search">
+                            <a href="#" class="header__search_close"></a>
+                            <div class="btn__search-show">
+                                <span>Поиск</span>
+                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
+                                    <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
+                                </svg>
+                            </div>
+                            <input class="input input__search" type="text" placeholder="Введите условие поиска">
+                            <button class="btn__search disabled" disabled>
+                                <span>Search</span>
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+                                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                                </svg>    
+                            </button>
+                        </form>
+            
+                        <div class="geolocation __select" data-state="">
+                            <div class="select-side"></div>
+                            <div id="location" class="geolocation__location __select__title" data-default="Option 0">                   
+                                <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                                <span>Россия</span>
+                            </div>
+                            <div class="__select__content">
+                                <input id="locationSelect1" class="__select__input" type="radio" name="locationSelect">
+                                <label for="locationSelect1" data-type="default" class="__select__label">
+                                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                                    <span>Россия</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="city __select" data-state="">
+                            <div class="select-side"></div>
+                            <div id="location-city" class="city__location __select__title" data-default="Option 0">                   
+                                <span>Город</span>
+                            </div>
+                            <div class="__select__content">
+                                <input id="citySelect1" class="__select__input" type="radio" name="citySelect">
+                                <label for="citySelect1" data-type="default" class="__select__label">
+                                    <span>Москва</span>
+                                </label>
+                                <input id="citySelect2" class="__select__input" type="radio" name="citySelect">
+                                <label for="citySelect2" class="__select__label">
+                                    <span>Санкт-Петербург</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="languages __select" data-state="">
+                            <div class="select-side"></div>
+                            <div id="language" class="__select__title" data-default="Option 0">
+                                <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
+                                <span>En</span>
+                            </div>
+                            <div class="__select__content">
+                                <input id="langSelect0" class="__select__input" type="radio" name="langSelect">
+                                <label for="langSelect0" data-type="default" class="__select__label">
+                                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                                    <span>Ru</span>
+                                </label>
+                                <input id="langSelect1" class="__select__input" type="radio" name="langSelect">
+                                <label for="langSelect1" class="__select__label">
+                                    <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
+                                    <span>En</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <input class="input input__search" type="text" placeholder="Enter your search term">
-                    <button class="btn__search disabled" disabled>
-                        <span>Search</span>
-                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                            <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
-                        </svg>    
-                    </button>
-                </form>
-    
-                <a class="header__store" href="#">Store</a>
-    
-                <div class="languages __select" data-state="">
-                    <div class="select-side"></div>
-                    <div id="language1" class="__select__title" data-default="Option 0">En</div>
-                    <div class="__select__content">
-                        <input id="langSelect2" class="__select__input" type="radio" name="langSelect" />
-                        <label for="langSelect2" data-type="default" class="__select__label">En</label>
-                        <input id="langSelect3" class="__select__input" type="radio" name="langSelect" />
-                        <label for="langSelect3" class="__select__label">Ru</label>
-                    </div>
+                    <div class="header__contact-mob">
+                        <a href="tel:+74952320023">+7 (495) 232-0023</a>
+                        <a href="tel:88002320023">8 (800) 232-0023</a>
+                    </div> 
                 </div>
-        </div>
+                <nav>
+                    <a href="#" class="header__nav_link">О компании</a>
+                    <a href="#" class="header__nav_link">Инвесторам</a>
+                    <a href="#" class="header__nav_link">Карьера</a>
+                    <a href="#" class="header__nav_link">IT-события</a>
+                    <a href="#" class="header__nav_link">Блог</a>
+                    <a href="#" class="header__nav_link">Контакты</a>
+                    <a href="#" class="header__nav_link">Softline Finance</a>
+                </nav>
+            </div>
         </div>
     </div>
     {{> menu }}

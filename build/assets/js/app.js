@@ -24,8 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var headerH = header.getBoundingClientRect().height;
     document.documentElement.style.setProperty('--headerH', headerH + "px");
   }
+  var prevScroll = 0;
+  window.onscroll = function (e) {
+    var delta = pageYOffset - prevScroll;
+    if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 768) {
+      header.classList.add("hide-header");
+      header.classList.add("start");
+    } else if (header && pageYOffset > 80 && window.innerWidth > 768) {
+      header.classList.remove("hide-header");
+      header.classList.add("start");
+    } else if (header && pageYOffset < 20 && window.innerWidth > 768) {
+      header.classList.remove("start");
+    }
+    prevScroll = pageYOffset;
+  };
   var headerSearch = document.querySelector(".header__search");
   var headerSearchBtn = document.querySelectorAll(".btn__search-show");
+  var menubutton = document.querySelector('.menu-button');
   if (headerSearchBtn) {
     headerSearchBtn.forEach(function (btn) {
       btn.onclick = function (e) {
@@ -33,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         headerSearch.classList.add('active');
         if (window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
           bodyTag.classList.remove("menu-open");
+          menubutton.classList.remove("menu-button--active");
           headerBottom.style.display = "none";
           setTimeout(function () {
             headerBottom.classList.remove("show");
@@ -55,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var attr = item.getAttribute("data-menu");
       if (attr) {
         var itemMenu = document.querySelector(".".concat(attr));
-        item.onclick = function (e) {
+        item.onmouseover = function (e) {
           if (!item.classList.contains("active")) {
             var prev = document.querySelector(".active.header__item");
             if (prev && prev != item) {
@@ -65,12 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
               itemMenuPrev.style.display = "none";
             }
             item.classList.add("active");
-            itemMenu.style.display = "block";
+            itemMenu.style.display = "flex";
             menuWrapper.classList.add("show");
           } else {
-            item.classList.remove("active");
+            /*item.classList.remove("active");
             itemMenu.style.display = "none";
-            menuWrapper.classList.remove("show");
+            menuWrapper.classList.remove("show");    */
           }
         };
       }
@@ -91,6 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
             prev.classList.remove("active");
           }
           item.classList.add("active");
+          /*let submenu = item.querySelector(".submenu");
+          let toBottom = window.innerHeight - item.getBoundingClientRect().bottom;
+          let h = submenu.getBoundingClientRect().height;
+          if(h >= toBottom) {
+              submenu.style.cssText = `top: -${h >= toBottom}px`;
+          }*/
           if (window.innerWidth <= 480 && !item.classList.contains("empty")) {
             subMenuItems.forEach(function (itemRest) {
               itemRest.classList.add("hide");
@@ -107,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
-  var menubutton = document.querySelector('.menu-button');
   var headerBottom = document.querySelector(".header__bottom");
   if (menubutton && menuWrapper) {
     menubutton.addEventListener('click', function () {
@@ -117,17 +138,34 @@ document.addEventListener("DOMContentLoaded", function () {
         headerBottom.style.display = "block";
         setTimeout(function () {
           headerBottom.classList.add("show");
-        }, 100);
+        }, 10);
         scrollLock.disablePageScroll();
         scrollLock.addScrollableSelector('.header__bottom');
         scrollLock.addScrollableSelector('.header__menu');
         scrollLock.addScrollableSelector('.menu');
       } else {
+        var active = document.querySelector(".header__item.active");
+        if (active) {
+          active.classList.remove("active");
+        }
+        var prev = document.querySelectorAll(".menu__item.active");
+        if (prev) {
+          prev.forEach(function (prev) {
+            prev.classList.remove("active");
+          });
+        }
+        var subMenus = document.querySelectorAll(".menu__item.hide");
+        if (subMenus) {
+          subMenus.forEach(function (itemRest) {
+            itemRest.classList.remove("hide");
+          });
+        }
+        menuWrapper.classList.remove("show");
         bodyTag.classList.remove("menu-open");
         headerBottom.style.display = "none";
         setTimeout(function () {
           headerBottom.classList.remove("show");
-        }, 100);
+        }, 10);
         scrollLock.enablePageScroll();
       }
     });
@@ -140,16 +178,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var menu = document.querySelectorAll(".menu");
   backButton.onclick = function (e) {
     e.preventDefault();
-    menuWrapper.classList.remove("show");
     var act = document.querySelector(".menu__item.active");
     if (act) {
       act.classList.remove("active");
+      if (window.innerWidth <= 480) {
+        subMenuItems.forEach(function (itemRest) {
+          itemRest.classList.remove("hide");
+        });
+        return;
+      }
     }
-    if (window.innerWidth <= 480) {
-      subMenuItems.forEach(function (itemRest) {
-        itemRest.classList.remove("hide");
-      });
-    }
+    menuWrapper.classList.remove("show");
     var act2 = document.querySelector(".header__item.active");
     if (act2) {
       menu.forEach(function (menu) {
@@ -158,109 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
       act2.classList.remove("active");
     }
   };
-  /*
-      if (tabs.length && navList.length && backButton) {
-          tabs.forEach(tab => {
-              tab.addEventListener('click', function () {
-                  navList.forEach(navItem => {
-                      navItem.hidden = !navItem.hidden
-                  })
-                  this.parentElement.hidden = !this.parentElement.hidden
-                  this.classList.toggle('tab-label--active')
-                  if (this.dataset.tab) {
-                      const modal = document.querySelector(`${this.dataset.tab}`)
-                      modalHandler.apply(modal)
-                      backButton.dataset.back = this.dataset.tab
-                  }
-                  backButton.classList.toggle('back-panel--active')
-                  if (menuSecond) {
-                      modalHandler.apply(menuSecond)
-                  }
-                  const active = document.querySelectorAll('.active, .not-active')
-                  if (active.length) {
-                      active.forEach(el => {
-                          el.classList.remove('active')
-                          el.classList.remove('not-active')
-                      })
-                  }
-                  if (innnerDiv) {
-                      innnerDiv.innerHTML = ''
-                  }
-                  const hiddenButton = document.querySelectorAll('.tab-label--hidden') 
-                  if(hiddenButton.length) {
-                      hiddenButton.forEach(el => {
-                          el.classList.remove('tab-label--hidden')
-                      })
-                  }
-              })
-          })
-          backButton.addEventListener('click', function () {
-              this.classList.remove('back-panel--active')
-              if (this.dataset.back) {
-                  const modal = document.querySelector(`${this.dataset.back}`)
-                  modalHandler.apply(modal)
-                  delete this.dataset.back
-              }
-              const active = document.querySelectorAll('.tab-label--active')
-              if (active.length) {
-                  active.forEach(el => {
-                      el.classList.remove('tab-label--active')
-                  })
-              }
-              navList.forEach(el => {
-                  el.hidden = false
-              })
-              if (menuSecond) {
-                  modalHandler.apply(menuSecond)
-              }
-              const active2 = document.querySelectorAll('.active, .not-active')
-              if (active2.length) {
-                  active2.forEach(el => {
-                      el.classList.remove('active')
-                      el.classList.remove('not-active')
-                  })
-              }
-              if (innnerDiv) {
-                  innnerDiv.innerHTML = ''
-              }
-              const hiddenButton = document.querySelectorAll('.tab-label--hidden') 
-              if(hiddenButton.length) {
-                  hiddenButton.forEach(el => {
-                      el.classList.remove('tab-label--hidden')
-                  })
-              }
-          })
-      }*/
-
-  /* let subMenus = document.querySelectorAll(".submenu__list");
-   if(subMenus.length > 0) {
-       subMenus.forEach(menu => {
-           if(window.innerWidth <= 480) {
-               setTimeout(() => {
-                   let menuH = menu.scrollHeight;
-                   menu.style.setProperty('--menuH', menuH + "px");
-               }, 3000);
-           }
-       });
-   }*/
-
-  // function modalHandler() {
-  //     const modal = this
-  //     if (modal) {
-  //         if (modal.hidden) {
-  //             modal.hidden = !modal.hidden
-  //             modal.style.setProperty('pointer-events', 'auto')
-  //             setTimeout(() => {
-  //                 modal.style.opacity = 1
-  //             }, 10)
-  //         } else {
-  //             modal.style.opacity = 0
-  //             modal.style.setProperty('pointer-events', null)
-  //             modal.addEventListener('transitionend', hideaftertransition)
-  //         }
-  //     }
-  // }
-
   var tabAccItems = document.querySelectorAll('.tab-accord__list-item');
   if (tabAccItems.length) {
     tabAccItems.forEach(function (tab) {
@@ -1064,6 +1000,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function modalHandler() {
     var _this$dataset;
+    var pannel = document.querySelector(".map__panel");
+    if (pannel) {
+      pannel.classList.remove("open");
+    }
     var modal = document.querySelector("".concat((_this$dataset = this.dataset) === null || _this$dataset === void 0 ? void 0 : _this$dataset.modal)) || this;
     if (modal.classList.contains('regModal') && modal.hidden) {
       scrollLock.disablePageScroll();
@@ -1516,20 +1456,176 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
-  var mapButton = document.querySelector('#map-button');
-  var map = document.querySelector('#yandex-map');
-  var offices = document.querySelector('#offices-list');
-  var oldText = '';
-  if (mapButton, map, offices) {
-    mapButton.addEventListener('click', function () {
-      modalHandler.apply(map);
-      modalHandler.apply(offices);
-      var text = this.querySelector('[data-text]');
-      if (text) {
-        oldText = text.innerHTML;
-        text.innerHTML = text.dataset.text;
-        text.dataset.text = oldText;
+  /*
+        const mapButton = document.querySelector('#map-button');
+        const map = document.querySelector('#yandex-map');
+        const offices = document.querySelector('#offices-list');
+        let oldText = '';
+  
+        if (mapButton, map, offices) {
+          mapButton.addEventListener('click', function () {
+              modalHandler.apply(map)
+              modalHandler.apply(offices)
+              const text = this.querySelector('[data-text]')
+              if (text) {
+                  oldText = text.innerHTML
+                  text.innerHTML = text.dataset.text
+                  text.dataset.text = oldText
+              }
+          })
+        }*/
+
+  var map = document.querySelector("#map");
+  var body = document.querySelector("body");
+  if (map) {
+    var data;
+    var pointsData = [];
+    var baloonsInfo = [];
+    var id = [];
+    var pannel = document.querySelector(".map__panel");
+    var btnBaloon = document.querySelector(".close__baloon");
+    if (btnBaloon) {
+      btnBaloon.onclick = function (e) {
+        e.preventDefault();
+        pannel.classList.remove("open");
+        if (activePlacmark) {
+          activePlacmark.options.set('iconImageHref', 'assets/images/map/default.svg');
+          activePlacmark.balloon.close();
+        }
+      };
+    }
+    var activePlacmark;
+    ymaps.ready(function () {
+      var myMap = new ymaps.Map('map', {
+          center: [55.751574, 37.573856],
+          zoom: 5,
+          behaviors: ['default', 'scrollZoom']
+        }, {
+          searchControlProvider: 'yandex#search'
+        }),
+        clusterer = new ymaps.Clusterer({
+          clusterIcons: [{
+            href: 'assets/images/map/default.svg',
+            size: [30, 30],
+            offset: [-15, -15]
+          }],
+          groupByCoordinates: false,
+          clusterDisableClickZoom: false,
+          clusterHideIconOnBalloonOpen: false,
+          geoObjectHideIconOnBalloonOpen: false,
+          hasBalloon: false
+        }),
+        getPointData = function getPointData(index) {
+          return {};
+        },
+        geoObjects = [];
+      clusterer.events.add(['click'], function (e) {
+        var target = e.get('target'),
+          type = e.get('type');
+        if (typeof target.getGeoObjects != 'undefined') {
+          // Событие произошло на кластере.
+          myMap.setCenter(target.properties._data.geoObjects[0].geometry._coordinates, myMap.getZoom() + 1, {
+            duration: 300
+          });
+        }
+      });
+      function render() {
+        return new Promise(function (resolve, reject) {
+          /*let req = new XMLHttpRequest();
+          req.onreadystatechange = () => {
+              if(req.readyState == 4) {
+                  resolve( req );
+              }
+          };  
+          req.open("GET", "/local/ajax/map.php", true);
+          req.responseType = 'json';
+          req.send();*/
+          var req = new XMLHttpRequest();
+          req.onreadystatechange = function () {
+            if (req.readyState == 4) {
+              resolve(req);
+            }
+          };
+          req.open("GET", "https://api.jsonbin.io/v3/b/63a9a90215ab31599e25552a", true);
+          req.setRequestHeader("X-Master-Key", "$2b$10$2vK1es0DlNZIjjLMRFSAEuqLKa67nVqo9xGycFQi3bVKqhwkMHgA6");
+          req.responseType = 'json';
+          req.send();
+        });
       }
+      setTimeout(function () {
+        pannel.style.display = "block";
+      }, 10);
+      render().then(function (req) {
+        //data = req.response.features;
+        data = req.response.record.features;
+        for (var j = 0; j < data.length; j++) {
+          pointsData[j] = data[j].geometry.coordinates;
+          baloonsInfo[j] = [data[j].properties.balloonContentHeader];
+          id[j] = data[j].id;
+        }
+        var BalloonContentLayout = ymaps.templateLayoutFactory.createClass('<div style="display: none;">' + '</div>', {});
+        var baloons = document.querySelectorAll(".baloon");
+        var _loop = function _loop() {
+          var myPlacemark = new ymaps.Placemark(pointsData[i], getPointData(i), {
+            iconLayout: 'default#image',
+            iconImageHref: 'assets/images/map/default.svg',
+            iconImageSize: [30, 30],
+            iconImageOffset: [-15, -15],
+            balloonContentLayout: BalloonContentLayout,
+            balloonPanelMaxMapArea: 0,
+            balloonLayout: "default#imageWithContent",
+            balloonShadow: false,
+            balloonImageSize: [0, 0]
+          });
+          myPlacemark.fakeId = id[i];
+          geoObjects[i] = myPlacemark;
+          myPlacemark.events.add('balloonopen', function (e) {
+            /*myMap.setCenter(myPlacemark.geometry._coordinates, 16, {
+                duration: 500
+            });*/
+
+            var fakeId = myPlacemark.fakeId;
+            myPlacemark.options.set('iconImageHref', 'assets/images/map/pressed.svg');
+            var div = document.querySelector(".id".concat(fakeId));
+            if (div) {
+              div.classList.add("open");
+            }
+            if (!pannel.classList.contains("open")) {
+              pannel.classList.add("open");
+            }
+            activePlacmark = myPlacemark;
+          });
+          myPlacemark.events.add('balloonclose', function (e) {
+            myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
+            baloons.forEach(function (baloon) {
+              baloon.classList.remove("open");
+            });
+            if (pannel.classList.contains("open")) {
+              pannel.classList.remove("open");
+            }
+            activePlacmark = null;
+          });
+        };
+        for (var i = 0, len = pointsData.length; i < len; i++) {
+          _loop();
+        }
+        clusterer.options.set({
+          gridSize: 80,
+          clusterDisableClickZoom: true
+        });
+        clusterer.add(geoObjects);
+        myMap.behaviors.disable('scrollZoom');
+        myMap.geoObjects.add(clusterer);
+        myMap.controls.add('geolocationControl');
+        myMap.controls.remove('searchControl');
+        myMap.setBounds(clusterer.getBounds(), {
+          checkZoomRange: true
+        });
+        myMap.behaviors.enable("dblClickZoom", "rightMouseButtonMagnifier", "multiTouch", "drag");
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          //myMap.behaviors.disable('drag');
+        }
+      });
     });
   }
 });
