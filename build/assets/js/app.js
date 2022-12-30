@@ -1075,6 +1075,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  window.addEventListener('resize', function () {
+    var activeAccords = document.querySelectorAll('.accordion .active .accordion__list-desc');
+    if (activeAccords.length) {
+      activeAccords.forEach(function (el) {
+        el.style.maxHeight = el.scrollHeight + 'px';
+      });
+    }
+  });
   var accordions = document.querySelectorAll('.accordion');
   var faqlist = document.querySelector('.faq__left-list');
   var mm = matchMedia("(max-width: 768px)");
@@ -1627,5 +1635,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+  }
+  var videos = document.querySelectorAll('video');
+  if (videos.length) {
+    videos.forEach(function (video) {
+      var parentNode = video.closest('.intro__pop-up');
+      if (parentNode) {
+        var playButton = parentNode.querySelector('.form-modal__play');
+        if (playButton) {
+          playButton.addEventListener('click', function () {
+            togglePlay(video);
+          });
+          video.addEventListener('play', function () {
+            playButton.hidden = !playButton.hidden;
+          });
+          video.addEventListener('pause', function () {
+            playButton.hidden = !playButton.hidden;
+          });
+        }
+      }
+    });
+  }
+  function togglePlay(video) {
+    if (video.paused || video.ended) {
+      video.play();
+    } else {
+      video.pause();
+    }
   }
 });
