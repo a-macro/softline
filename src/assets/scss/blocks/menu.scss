@@ -1326,6 +1326,7 @@
 }
 .menu__item.list {
     .menu__link {
+        @include breakpoint($mid-bp) {
             &::after {
                 content: '';
                 position: absolute;
@@ -1339,8 +1340,9 @@
                 filter: brightness(0.2);
                 transform: translateY(-50%);
                 transition: .4s;
-
             }
+        }
+
         @include breakpoint($sm-bp) {
             &::after {
                 width: 1.5rem;
