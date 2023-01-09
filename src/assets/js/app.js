@@ -1640,6 +1640,37 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
         })
       }*/
 
+        let leadershipCards = document.querySelectorAll(".leader__card");
+        let leadershipModal = document.querySelector("#leadership-modal");
+        if(leadershipCards && leadershipModal) {
+            leadershipCards.forEach(card => {
+                card.onclick = (e) => {
+                    e.preventDefault();
+                    leadershipModal.style.display = "block";
+                    scrollLock.disablePageScroll(leadershipModal);
+                    scrollLock.addScrollableSelector('.leadership__text-block');
+                    if(window.innerWidth <= 768) {
+                        scrollLock.addScrollableSelector(".leadership__wrapper");
+                    }
+                    setTimeout(() => {
+                        leadershipModal.classList.add("show");
+                    }, 10);
+                }
+            });
+
+            if(leadershipModal) {
+                let leadershipClose = document.querySelector(".close-leadership");
+                leadershipClose.onclick = (e) => {
+                    e.preventDefault();
+                    leadershipModal.classList.remove("show");
+                    scrollLock.enablePageScroll(leadershipModal);
+                    setTimeout(() => {
+                        leadershipModal.style.display = "none";
+                    }, 400);
+                }
+            }
+        }
+
       let map = document.querySelector("#map");
       let body = document.querySelector("body");
       if(map) {

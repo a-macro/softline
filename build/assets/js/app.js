@@ -1505,6 +1505,35 @@ document.addEventListener("DOMContentLoaded", function () {
           })
         }*/
 
+  var leadershipCards = document.querySelectorAll(".leader__card");
+  var leadershipModal = document.querySelector("#leadership-modal");
+  if (leadershipCards && leadershipModal) {
+    leadershipCards.forEach(function (card) {
+      card.onclick = function (e) {
+        e.preventDefault();
+        leadershipModal.style.display = "block";
+        scrollLock.disablePageScroll(leadershipModal);
+        scrollLock.addScrollableSelector('.leadership__text-block');
+        if (window.innerWidth <= 768) {
+          scrollLock.addScrollableSelector(".leadership__wrapper");
+        }
+        setTimeout(function () {
+          leadershipModal.classList.add("show");
+        }, 10);
+      };
+    });
+    if (leadershipModal) {
+      var leadershipClose = document.querySelector(".close-leadership");
+      leadershipClose.onclick = function (e) {
+        e.preventDefault();
+        leadershipModal.classList.remove("show");
+        scrollLock.enablePageScroll(leadershipModal);
+        setTimeout(function () {
+          leadershipModal.style.display = "none";
+        }, 400);
+      };
+    }
+  }
   var map = document.querySelector("#map");
   var body = document.querySelector("body");
   if (map) {
