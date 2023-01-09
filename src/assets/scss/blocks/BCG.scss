@@ -3,12 +3,9 @@
     grid-template-columns: repeat(4, 1fr);
     margin-top: 7.4rem;
 
-    @include breakpoint($xxl-bp) {
-        margin-top: 11.4rem;
-    }
 
     @include breakpoint($xl-bp) {
-        margin-top: 7.4rem;
+        margin-top: 2.4rem;
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -22,7 +19,7 @@
 
     .policy {
         width: 100%;
-        height: 29.5rem;
+        height: 23.6rem;
         margin-right: 0;
         margin-left: 0;
         border-right: unset;
@@ -32,6 +29,15 @@
         padding-right: 2rem;
         border: unset;
         border-left: 0.1rem solid #D2DCE5;
+        text-decoration: none;
+
+        .subtitle {
+            font-size: 2rem;
+            line-height: 1.6;
+            @include breakpoint($sm-bp) {
+                font-size: 2.05rem;
+            }
+        }
 
         &::after {
             display: none;
@@ -95,7 +101,7 @@
         }
 
         @include breakpoint($sm-bp) {
-            height: 28rem;
+            height: unset;
 
             &:nth-child(2n + 1) {
                 padding-right: 0;
@@ -118,8 +124,8 @@
     }
 
     .policy__inner {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-top: 2.9rem;
+        padding-bottom: 2.4rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -136,6 +142,9 @@
         @include breakpoint($sm-bp) {
             padding-top: 3rem;
             padding-bottom: 3rem;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
         }
     }
 
@@ -149,6 +158,12 @@
 
     .policy__top_img {
         height: 5rem;
+        @include breakpoint($sm-bp) {
+            height: unset;
+            width: 5rem;
+            min-width: 5rem;
+            margin-right: 3.2rem;
+        }
     }
 
     .policy__text {
@@ -171,15 +186,33 @@
     display: flex;
     align-items: center;
     margin-top: 2.2rem;
+    @include breakpoint($sm-bp) {
+        font-size: 15px;
+        margin-top: 3.2rem;
+    }
 
     img {
         width: 2.4rem;
         margin-right: 1.5rem;
+        @include breakpoint($sm-bp) {
+            width: 3rem;
+            min-width: 3rem;
+            margin-right: 2.2rem;
+        }
     }
 }
 
 .BCG {
     margin-top: 15rem;
+    margin-bottom: 15rem;
+    @include breakpoint($mid-bp) {
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 7.1rem;
+        margin-bottom: 7.1rem;
+    }
 }
 
 .policies__title {
@@ -188,4 +221,69 @@
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
+}
+
+.BCG__rules-wrapper.wrapper {
+    @include breakpoint($sm-bp) {
+        padding: 0;
+    }
+}
+
+.BCG__rules {
+    padding: 15rem 20.5rem;
+    @include breakpoint($xl-bp) {
+        padding: 10rem 4rem;
+    }
+    @include breakpoint($mid-bp) {
+        padding: 10rem 6rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding: 5rem 2.5rem;
+    }
+
+    .title {
+        color: white;
+    }
+}
+
+.BCG__rules_list {
+    display: flex;
+    margin-top: 10rem;
+    @include breakpoint($mid-bp) {
+        flex-wrap: wrap;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5rem;
+    }
+
+    .lined-card {
+        align-items: flex-start;
+        height: 33.5rem;
+        @include breakpoint($mid-bp) {
+            width: calc(calc(100% - 4rem)/2); 
+            height: 31rem;
+            &:nth-child(odd) {
+                margin-right: 4rem;
+            }
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+        @include breakpoint($sm-bp) {
+            padding-bottom: 2rem;
+            height: unset;
+            border-top: 1px solid #40454E;
+        }
+
+        .BCG__rules_img {
+            width: 3rem;
+            @include breakpoint($sm-bp) {
+                width: 3.5rem;
+            }
+        }
+
+        p {
+            color: white;
+        }
+    }
 }
