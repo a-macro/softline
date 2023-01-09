@@ -296,6 +296,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    bodyTag.onmousemove = (e) => {
+        if(menuWrapper.classList.contains("show")) {
+            let targ = e.target;
+            let attr = targ.getAttribute("data-menu");
+            let parent = targ.closest(".menu-wrapper");
+            let itemAct = document.querySelector(".header__item.active");
+            let checkLink = targ.closest(".header__item.active");
+            if(!attr && !parent && !targ.classList.contains("menu-wrapper") && itemAct && itemAct != targ && !checkLink && !targ.classList.contains("header__menu")) {
+                itemAct.classList.remove("active");
+                let attrPrev = itemAct.getAttribute("data-menu");
+                let itemMenu = document.querySelector(`.${attrPrev}`);
+                itemMenu.style.display = "none";
+                menuWrapper.classList.remove("show");
+            }
+        }
+        /*if(item.classList.contains("active")) {
+            item.classList.remove("active");
+            itemMenu.style.display = "none";
+            menuWrapper.classList.remove("show");    
+        } */
+    }
+
     new Swiper(".services__container", {
         navigation: {
             nextEl: ".services__container .swiper-button-next",
@@ -1617,6 +1639,37 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
             }
         })
       }*/
+
+        let leadershipCards = document.querySelectorAll(".leader__card");
+        let leadershipModal = document.querySelector("#leadership-modal");
+        if(leadershipCards && leadershipModal) {
+            leadershipCards.forEach(card => {
+                card.onclick = (e) => {
+                    e.preventDefault();
+                    leadershipModal.style.display = "block";
+                    scrollLock.disablePageScroll(leadershipModal);
+                    scrollLock.addScrollableSelector('.leadership__text-block');
+                    if(window.innerWidth <= 768) {
+                        scrollLock.addScrollableSelector(".leadership__wrapper");
+                    }
+                    setTimeout(() => {
+                        leadershipModal.classList.add("show");
+                    }, 10);
+                }
+            });
+
+            if(leadershipModal) {
+                let leadershipClose = document.querySelector(".close-leadership");
+                leadershipClose.onclick = (e) => {
+                    e.preventDefault();
+                    leadershipModal.classList.remove("show");
+                    scrollLock.enablePageScroll(leadershipModal);
+                    setTimeout(() => {
+                        leadershipModal.style.display = "none";
+                    }, 400);
+                }
+            }
+        }
 
       let map = document.querySelector("#map");
       let body = document.querySelector("body");

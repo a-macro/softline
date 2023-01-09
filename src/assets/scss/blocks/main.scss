@@ -613,6 +613,7 @@
 
 .link-white {
     display: flex;
+    align-items: center;
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.78;
@@ -742,6 +743,7 @@
     //background-position: top;
     //height: 107rem;
     width: 100%;
+    overflow: hidden;
     @include breakpoint($xxl-bp) {
         //height: 85rem;
         //background-size: 96%;

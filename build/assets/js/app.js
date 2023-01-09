@@ -285,6 +285,28 @@ document.addEventListener("DOMContentLoaded", function () {
       openedSelect.setAttribute('data-state', '');
     }
   };
+  bodyTag.onmousemove = function (e) {
+    if (menuWrapper.classList.contains("show")) {
+      var targ = e.target;
+      var attr = targ.getAttribute("data-menu");
+      var parent = targ.closest(".menu-wrapper");
+      var itemAct = document.querySelector(".header__item.active");
+      var checkLink = targ.closest(".header__item.active");
+      if (!attr && !parent && !targ.classList.contains("menu-wrapper") && itemAct && itemAct != targ && !checkLink && !targ.classList.contains("header__menu")) {
+        itemAct.classList.remove("active");
+        var attrPrev = itemAct.getAttribute("data-menu");
+        var itemMenu = document.querySelector(".".concat(attrPrev));
+        itemMenu.style.display = "none";
+        menuWrapper.classList.remove("show");
+      }
+    }
+    /*if(item.classList.contains("active")) {
+        item.classList.remove("active");
+        itemMenu.style.display = "none";
+        menuWrapper.classList.remove("show");    
+    } */
+  };
+
   new Swiper(".services__container", {
     navigation: {
       nextEl: ".services__container .swiper-button-next",
@@ -1483,6 +1505,35 @@ document.addEventListener("DOMContentLoaded", function () {
           })
         }*/
 
+  var leadershipCards = document.querySelectorAll(".leader__card");
+  var leadershipModal = document.querySelector("#leadership-modal");
+  if (leadershipCards && leadershipModal) {
+    leadershipCards.forEach(function (card) {
+      card.onclick = function (e) {
+        e.preventDefault();
+        leadershipModal.style.display = "block";
+        scrollLock.disablePageScroll(leadershipModal);
+        scrollLock.addScrollableSelector('.leadership__text-block');
+        if (window.innerWidth <= 768) {
+          scrollLock.addScrollableSelector(".leadership__wrapper");
+        }
+        setTimeout(function () {
+          leadershipModal.classList.add("show");
+        }, 10);
+      };
+    });
+    if (leadershipModal) {
+      var leadershipClose = document.querySelector(".close-leadership");
+      leadershipClose.onclick = function (e) {
+        e.preventDefault();
+        leadershipModal.classList.remove("show");
+        scrollLock.enablePageScroll(leadershipModal);
+        setTimeout(function () {
+          leadershipModal.style.display = "none";
+        }, 400);
+      };
+    }
+  }
   var map = document.querySelector("#map");
   var body = document.querySelector("body");
   if (map) {
