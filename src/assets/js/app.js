@@ -437,6 +437,52 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
     });
+    
+    const timelineSwiper = new Swiper(".timeline__swiper", {
+        autoHeight: true,
+        // autoplay: {
+        // delay: 5000,
+        // disableOnInteraction: false },
+        
+        speed: 500,
+        direction: "horizontal",
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev" },
+        
+        pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar" },
+        
+        loop: false,
+        effect: "slide",
+        spaceBetween: 30,
+    })
+    const timeSwiper = new Swiper(".timeline__swiper-2",
+    {
+        autoHeight: true,
+        // autoplay: {
+        // delay: 5000,
+        // disableOnInteraction: false },
+        
+        speed: 500,
+        direction: "horizontal",
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev" },
+        
+        pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar" },
+        
+        loop: false,
+        effect: "slide",
+        spaceBetween: 30,
+    }
+    )
+
+    timelineSwiper.controller.control = timeSwiper
+    timeSwiper.controller.control = timelineSwiper
 
 
     let init = false;
