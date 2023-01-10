@@ -380,6 +380,41 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  var solveCustomers = document.querySelectorAll(".customer__container");
+  if (solveCustomers.length > 0) {
+    solveCustomers.forEach(function (slider) {
+      var btnPrev = slider.querySelector(".swiper-button-prev");
+      var btnNext = slider.querySelector(".swiper-button-next");
+      var swiper = new Swiper(slider, {
+        navigation: {
+          nextEl: btnNext,
+          prevEl: btnPrev
+        },
+        slidesPerView: 3,
+        watchOverflow: true,
+        spaceBetween: 40,
+        freeMode: "false",
+        loop: true,
+        breakpoints: {
+          300: {
+            slidesPerView: "auto",
+            spaceBetween: 20
+          },
+          769: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          1441: {
+            slidesPerView: 2,
+            spaceBetween: 40
+          },
+          1921: {
+            slidesPerView: 3
+          }
+        }
+      });
+    });
+  }
   new Swiper(".news__container", {
     navigation: {
       nextEl: ".news__container .swiper-button-next",
@@ -1713,5 +1748,59 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       video.pause();
     }
+  }
+  var scrToBtn = document.querySelectorAll(".anchors__link");
+  var velocity = .1;
+  var pos = 0,
+    topOffset = 0;
+  var elemToScr;
+  var start;
+  if (scrToBtn.length > 0) {
+    scrToBtn.forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        var winYOffset = window.pageYOffset,
+          hash = btn.getAttribute("href");
+        elemToScr = document.querySelector(hash).getBoundingClientRect().top - topOffset, start = null;
+        requestAnimationFrame(step);
+        function step(time) {
+          if (start === null) start = time;
+          var progress = time - start,
+            r = elemToScr < 0 ? Math.max(winYOffset - progress / velocity, winYOffset + elemToScr) : Math.min(winYOffset + progress / velocity, winYOffset + elemToScr);
+          window.scrollTo(0, r);
+          if (r != winYOffset + elemToScr) {
+            requestAnimationFrame(step);
+          } else return;
+        }
+      };
+    });
+  }
+  var solveInfo = document.querySelectorAll(".solve__info");
+  if (solveInfo) {
+    solveInfo.forEach(function (info) {
+      var parent = info.closest(".section-top");
+      var txt = parent.querySelector(".section-top__aside");
+      info.onclick = function (e) {
+        e.preventDefault();
+        if (window.innerWidth <= 768) {
+          txt.style.display = "flex";
+          setTimeout(function () {
+            txt.classList.add("show");
+          }, 10);
+        }
+      };
+    });
+    var close = document.querySelectorAll(".section-top__aside_close");
+    close.forEach(function (btn) {
+      var parent = btn.closest(".section-top__aside");
+      btn.onclick = function (e) {
+        if (window.innerWidth <= 768) {
+          parent.classList.remove("show");
+          setTimeout(function () {
+            parent.style.display = "none";
+          }, 100);
+        }
+      };
+    });
   }
 });
