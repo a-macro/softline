@@ -5057,7 +5057,7 @@ textarea {
 
 .insights-main-bg {
     position: relative;
-    height: calc(100vh - 14rem);
+    height: calc(100vh - 16rem);
     max-height: 1113px;
     display: -ms-flexbox;
     display: flex;
@@ -17500,6 +17500,7 @@ textarea {
   text-align: left;
 }
 
+<<<<<<< HEAD
 @media (max-width: 480px) {
   .BCG__rules-wrapper.wrapper {
     padding: 0;
@@ -17580,6 +17581,8 @@ textarea {
   color: white;
 }
 
+=======
+>>>>>>> 7b1141208fedba824eac285998050504c1ca9702
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -17672,6 +17675,97 @@ textarea {
   gap: 15rem;
 }
 
+<<<<<<< HEAD
+=======
+.aboutus-features__inner {
+  position: relative;
+  padding: 15rem 16.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 4rem;
+     -moz-column-gap: 4rem;
+          column-gap: 4rem;
+  row-gap: 14.6rem;
+}
+
+.aboutus-features__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.aboutus-features__title {
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  letter-spacing: -0.02em;
+  /* UI / White */
+  color: #FFFFFF;
+}
+
+.aboutus-features__desc {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* or 150% */
+  /* UI / White */
+  color: #FFFFFF;
+}
+
+.aboutus-features__container {
+  grid-column: 2 span;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+.aboutus-features__container .aboutus-features__item .aboutus-features__num {
+  font-weight: 300;
+  font-size: 7.2rem;
+  line-height: 9rem;
+  /* identical to box height, or 125% */
+  letter-spacing: -0.03em;
+  /* UI / White */
+  color: #FFFFFF;
+}
+.aboutus-features__container .aboutus-features__item .aboutus-features__text {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  /* or 150% */
+  /* UI / White */
+  color: #FFFFFF;
+}
+
+.aboutus-services .aboutus-services__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding-bottom: 10rem;
+}
+.aboutus-services .aboutus-services__title {
+  font-size: 5.2rem;
+  line-height: 5.8rem;
+  /* or 112% */
+  letter-spacing: -0.02em;
+  /* UI/Black/High */
+  color: #212424;
+}
+.aboutus-services .aboutus-services__desc {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* or 150% */
+  /* UI/Black/High */
+  color: #212424;
+}
+
+>>>>>>> 7b1141208fedba824eac285998050504c1ca9702
 html {
   font-family: "Montserrat";
   font-size: 0.4vw;

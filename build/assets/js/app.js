@@ -457,6 +457,48 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  var timelineSwiper = new Swiper(".timeline__swiper", {
+    autoHeight: true,
+    // autoplay: {
+    // delay: 5000,
+    // disableOnInteraction: false },
+
+    speed: 500,
+    direction: "horizontal",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar"
+    },
+    loop: false,
+    effect: "slide",
+    spaceBetween: 30
+  });
+  var timeSwiper = new Swiper(".timeline__swiper-2", {
+    autoHeight: true,
+    // autoplay: {
+    // delay: 5000,
+    // disableOnInteraction: false },
+
+    speed: 500,
+    direction: "horizontal",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar"
+    },
+    loop: false,
+    effect: "slide",
+    spaceBetween: 30
+  });
+  timelineSwiper.controller.control = timeSwiper;
+  timeSwiper.controller.control = timelineSwiper;
   var init = false;
   var swiper;
   var slider = document.querySelector(".partners__mobSlider");
