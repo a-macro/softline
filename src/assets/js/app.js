@@ -474,53 +474,63 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         },
     });
-    
+    // const customPagination = document.querySelector('.swiper-pagination-custom__inner')
     const timelineSwiper = new Swiper(".timeline__swiper", {
-        autoHeight: true,
-        // autoplay: {
-        // delay: 5000,
-        // disableOnInteraction: false },
+        autoHeight: false,
+        autoplay: {
+        delay: 7000,
+        disableOnInteraction: false },
         
         speed: 500,
         direction: "horizontal",
         navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev" },
-        
+        nextEl: ".timeline .swiper-button-next",
+        prevEl: ".timeline .swiper-button-prev" },
+        slidesPerView: 'auto',
+        breakpoints: {
+            // when window width is >= 320px
+            769: {
+                loop: true
+            },
+        },
         pagination: {
         el: ".swiper-pagination",
-        type: "progressbar" },
-        
+        type: "custom",
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+        renderCustom: function (_, cur, list) {
+            const elcustom = document.querySelector('.progressbar__inner')
+            const num = (cur / list)
+            if (elcustom) {
+                elcustom.style.setProperty('transform', `scaleX(${num})`)
+            }
+        },
+        // dynamicMainBullets: 3,
+        // clickable: true,
+        // dynamicBullets: true,
+        // renderBullet: function(index, className) {
+        //     return `<span class="${className}">199${index}</span>`;
+        // },
+        },
         loop: false,
         effect: "slide",
-        spaceBetween: 30,
     })
     const timeSwiper = new Swiper(".timeline__swiper-2",
     {
-        autoHeight: true,
-        // autoplay: {
-        // delay: 5000,
-        // disableOnInteraction: false },
-        
+        slidesPerView: 'auto',
         speed: 500,
         direction: "horizontal",
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev" },
         
-        pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar" },
-        
-        loop: false,
+        loop: true,
         effect: "slide",
-        spaceBetween: 30,
+        spaceBetween: 40,
+        breakpoints: {
+            // when window width is >= 320px
+        },
     }
     )
 
     timelineSwiper.controller.control = timeSwiper
-    timeSwiper.controller.control = timelineSwiper
-
 
     let init = false;
     let swiper;
