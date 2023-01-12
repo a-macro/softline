@@ -11,9 +11,15 @@
     padding-right: 4rem;
     @include breakpoint($xxl-bp) {
         padding-bottom: 8.8rem;
+        max-height: 83rem;
     }
     @include breakpoint($xl-bp) {
         padding-bottom: 4rem;
+        max-height: 52rem;
+    }
+    @include breakpoint($sm-bp) {
+        padding-bottom: 4rem;
+        max-height: 54rem;
     }
 
     .breadcrumbs__link {

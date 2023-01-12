@@ -394,6 +394,43 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    let solveCustomers = document.querySelectorAll(".customer__container");
+    if(solveCustomers.length > 0) {
+        solveCustomers.forEach(slider => {
+            let btnPrev = slider.querySelector(".swiper-button-prev");
+            let btnNext = slider.querySelector(".swiper-button-next");
+
+            let swiper = new Swiper(slider, {
+                navigation: {
+                    nextEl: btnNext,
+                    prevEl: btnPrev
+                },
+                slidesPerView: 3,
+                watchOverflow: true,
+                spaceBetween: 40,
+                freeMode: "false",
+                loop: true,
+                breakpoints: {
+                    300: {
+                        slidesPerView: "auto",
+                        spaceBetween: 20,
+                    },
+                    769: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    1441: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    1921: {
+                        slidesPerView: 3,
+                    }
+                },
+            });
+        });
+    }
+
     new Swiper(".news__container", {
         navigation: {
             nextEl: ".news__container .swiper-button-next",
@@ -1925,6 +1962,64 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
         }
       }
 
+
+      let scrToBtn = document.querySelectorAll(".anchors__link");
+      let velocity = .1; 
+      let pos = 0,
+      topOffset = 0;
+      let elemToScr;
+      let start;
+      if(scrToBtn.length > 0) {
+        scrToBtn.forEach(btn => {
+              btn.onclick = (e) => {
+                  e.preventDefault();
+                  let winYOffset = window.pageYOffset, 
+                  hash = btn.getAttribute("href");
+                  elemToScr = document.querySelector(hash).getBoundingClientRect().top-topOffset,
+                      start = null;
+                  requestAnimationFrame(step); 
+                  function step(time) {
+                      if (start === null) start = time;
+                      let progress = time - start,
+                          r = (elemToScr < 0 ? Math.max(winYOffset - progress / velocity, winYOffset + elemToScr) : Math.min(winYOffset + progress / velocity, winYOffset + elemToScr));
+                      window.scrollTo(0, r);
+                      if (r != winYOffset + elemToScr) {
+                          requestAnimationFrame(step)
+                      } else 	return;
+                  }
+              }
+          });
+      }
+  
+    let solveInfo = document.querySelectorAll(".solve__info");
+    if(solveInfo) {
+        solveInfo.forEach(info => {
+            let parent = info.closest(".section-top");
+            let txt = parent.querySelector(".section-top__aside");
+            info.onclick = (e) => {
+                e.preventDefault();
+                if(window.innerWidth <= 768) {
+                    txt.style.display = "flex";
+                    setTimeout(() => {
+                        txt.classList.add("show");
+                    }, 10);
+                }
+            }
+        });
+
+        let close = document.querySelectorAll(".section-top__aside_close");
+        close.forEach(btn => {
+            let parent = btn.closest(".section-top__aside")
+            btn.onclick = (e) => {
+                if(window.innerWidth <= 768) {
+                    parent.classList.remove("show");
+                    setTimeout(() => {
+                        parent.style.display = "none";
+                    }, 100);
+                }
+            }
+        });
+    }
 });
 
 
