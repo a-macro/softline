@@ -1,0 +1,249 @@
+.solve.career {
+    .section-top {
+        padding-top: 16rem;
+        @include breakpoint($xxl-bp) {
+            padding-top: 10rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-top: 5rem;
+        }
+    }
+
+    .text-normal {
+        color: white;
+    }
+
+    .title {
+        max-width: 40rem;
+    }
+
+    .title-wrapper {
+        @include breakpoint($mid-bp) {
+            margin-left: 3.5rem;
+            width: calc(100% - 8rem);
+        }
+        @include breakpoint($sm-bp) {
+            margin-left: 0;
+            width: calc(100% - 5rem);
+        }
+
+        .text-normal {
+            margin-left: 20.5rem;
+            margin-top: 3rem;
+            max-width: 65rem;
+            @include breakpoint($xxl-bp) {
+                margin-left: 15.5rem;
+            }
+            @include breakpoint($xl-bp) {
+                margin-left: 11.5rem;
+            }
+            @include breakpoint($mid-bp) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .section-top__aside {
+        .text-normal {
+            font-size: 2.4rem;
+            max-width: 80%;
+        }
+    }
+
+    .solve__intro {
+        padding-bottom: 7rem;
+        min-height: 75.5rem;
+        height: unset;
+        @include breakpoint($xxl-bp) {
+            min-height: 76rem;
+            height: unset;
+        }
+        @include breakpoint($mid-bp) {
+            position: relative;
+            min-height: 40rem;
+        }
+        @include breakpoint($sm-bp) {
+            min-height: 51.5rem;
+        }
+
+        .footnote {
+            max-width: 70%;
+        }
+    }
+
+    .solve__slider {
+        @include breakpoint($mid-bp) {
+            margin-top: -4rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: -15rem;
+        }
+    }
+}
+
+.career {
+    .informationTechnology__content {
+        justify-content: flex-start;
+        gap: 4rem;
+        flex-wrap: wrap;
+        margin-top: 15rem;
+
+        .informationTechnology__block {
+            width: calc(calc(100% - 12rem) / 4);
+            margin-bottom: 1rem;
+            gap: 3.2rem;
+            margin-bottom: 1.4rem;
+        }
+    }
+}
+
+
+.suggestion {
+    margin-top: 15rem;
+
+    .title {
+        max-width: 40%;
+    }
+}
+
+.suggestion__wrapper {
+    margin-top: 7.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.suggestion__card_img{
+    width: 100%;
+    height: 62rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.suggestion__card_info {
+    margin-top: 2rem;
+
+    ul {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 1.56;
+        color: #212424;
+        margin-top: 3rem;
+        max-width: 73%;
+        @include breakpoint($sm-bp) {
+            font-size: 2.1rem;
+        }
+    }
+
+    li {
+        margin: 2.6rem 0;
+        padding: 0;
+        padding-left: 4.5rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left top 1.6rem;
+    }
+}
+
+.suggestion__card_title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.suggestion__card_text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.56;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 1.2rem;
+    max-width: 73%;
+}
+
+.stories__wrapper {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.story {
+    min-height: 75rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3.5rem 4rem;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 7.2rem;
+        height: 7.2rem;
+        border-radius: 100%;
+        margin-right: 2.5rem;
+    }
+}
+
+.story__name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.41;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+}
+
+.story__text {
+    color: white;
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 1.44;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.download-block.career {
+    margin-top: 15rem;
+
+    .title {
+        margin-bottom: 5rem;
+    }
+
+    .download-item  {
+        border-top: 0.1rem solid #D2DCE5;
+        border-bottom: unset;
+
+        &:nth-last-child(1) {
+            border-bottom: 0.1rem solid #D2DCE5;
+        }
+
+        .download-data {
+            min-width: 20rem;
+            display: inline-block;
+            padding-right: 2rem;
+        }
+
+        .download-text {
+            padding-left: 0;
+        }
+    }
+}
+
+.career.subscribe {
+    margin-top: 15rem;
+}

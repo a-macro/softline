@@ -1,0 +1,122 @@
+.help.wrapper{
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 15rem;
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 7rem;
+    }
+
+    .section-title {
+        @include breakpoint($mid-bp) {
+            max-width: calc(100% - 12rem);
+        }
+        @include breakpoint($sm-bp) {
+            max-width: 100%;
+        }
+    }
+}
+
+.projects__slider {
+    margin-top: 8rem;
+    position: relative;
+    @include breakpoint($xxl-bp) {
+        margin-top: 4rem;
+    }
+
+    .swiper-slide {
+        width: max-content;
+
+        img {
+            height: 92rem;
+            width: auto;
+            @include breakpoint($xxl-bp) {
+                height: 70rem;
+            }
+            @include breakpoint($xl-bp) {
+                height: 51rem;
+            }
+            @include breakpoint($mid-bp) {
+                height: 48rem;
+            }
+            @include breakpoint($sm-bp) {
+                height: 32rem;
+            }
+        }
+    }
+
+    .swiper-button-next.projects-next {
+        top: -12rem;
+        right: 0;
+        @include breakpoint($xxl-bp) {
+            top: -8rem;
+        }
+        @include breakpoint($sm-bp) {
+            display: none;
+        }   
+    }
+
+    .swiper-button-prev.projects-prev {
+        top: -12rem;
+        left: unset;
+        right: 5.5rem;
+        @include breakpoint($xxl-bp) {
+            top: -8rem;
+        }
+        @include breakpoint($sm-bp) {
+            display: none;
+        } 
+    }
+}
+
+.medical-care {
+    min-height: 75rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 7rem;
+    @include breakpoint($xxl-bp) {
+        min-height: 57rem;
+    }
+    @include breakpoint($xl-bp) {
+        min-height: 42.5rem;
+    }
+    @include breakpoint($mid-bp) {
+        min-height: 46.5rem;
+    }
+    @include breakpoint($sm-bp) {
+        width: calc(100% + 5rem);
+        margin-left: -2.5rem;
+        min-height: 54rem;
+    }
+
+    .section-top {
+        padding-top: 21.5rem;
+        @include breakpoint($xxl-bp) {
+            padding-top: 14rem;
+        }
+        @include breakpoint($xl-bp) {
+            padding-top: 8.5rem;
+        }
+        @include breakpoint($mid-bp) {
+            padding-top: 9.5rem;
+            padding-left: 5rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 7rem;
+            padding-top: 5.5rem;
+            padding-left: 2.5rem;
+        }
+    }
+
+    .title-wrapper {
+        @include breakpoint($xl-bp) {
+            width: 66%;
+        }
+        @include breakpoint($mid-bp) {
+            width: 92%;
+        }
+    }
+}
