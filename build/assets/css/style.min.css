@@ -6965,6 +6965,11 @@ textarea {
     display: none;
   }
 }
+.news-page .key-operating .key-operating__list-main li {
+  padding: 1.2rem 0;
+  padding-left: 4.5rem;
+  background-position: left top 2.1rem;
+}
 
 .video-page .breadcrumbs {
   padding-bottom: 7.6rem;
@@ -12236,13 +12241,13 @@ body::before {
 }
 .informationTechnology__content .informationTechnology__block {
   width: 24%;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.4rem;
   padding-top: 1.2rem;
   border-bottom: 0.1rem solid #D2DCE5;
   border-top: 0.1rem solid #D2DCE5;
   display: flex;
   flex-direction: column;
-  gap: 9.2rem;
+  gap: 3.2rem;
   justify-content: space-between;
 }
 @media (max-width: 768px) {
@@ -14263,13 +14268,17 @@ textarea {
     grid-template-columns: 1fr min-content;
   }
 }
+.download-item .download-data {
+  min-width: 6rem;
+  display: inline-block;
+}
 @media (max-width: 480px) {
   .download-item .download-data {
     display: none;
   }
 }
 .download-item .download-text {
-  padding-left: 40rem;
+  padding-left: 6rem;
 }
 @media (max-width: 768px) {
   .download-item .download-text {
@@ -16878,6 +16887,166 @@ textarea {
   border-bottom: 0.1rem solid #D2DCE5;
   padding-bottom: 2.6rem;
   margin-bottom: 4rem;
+}
+
+.developing {
+  position: relative;
+}
+.developing .developing__desc {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* or 150% */
+  /* UI/Black/Medium */
+  color: #40454E;
+}
+.developing .developing__container {
+  display: grid;
+  grid-template-columns: max-content 58.7rem;
+  gap: 47rem;
+}
+.developing .developing__top {
+  position: sticky;
+  top: 0;
+  background-color: #eff1f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid #D2DCE5;
+  padding-bottom: 2.7rem;
+  z-index: 1;
+}
+.developing .developing__top .developing__top-title {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* identical to box height, or 150% */
+  /* UI/Black/High */
+  color: #212424;
+}
+.developing .developing__top .developing__top-numbers {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  /* identical to box height, or 150% */
+  /* UI/Black/High */
+  color: #212424;
+}
+.developing .developing__wrapper {
+  position: relative;
+}
+.developing .developing__wrapper .developing__item {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 15.6rem;
+  padding-top: 8rem;
+}
+.developing .developing__wrapper .developing__item .img-wrapper {
+  width: 78rem;
+  height: 78rem;
+  grid-row: 2 span;
+  margin-left: 45rem;
+  visibility: hidden;
+}
+@media (max-width: 1920px) {
+  .developing .developing__wrapper .developing__item .img-wrapper {
+    width: 62.7rem;
+    height: 62.7rem;
+    margin-left: 15.7rem;
+  }
+}
+@media (max-width: 1440px) {
+  .developing .developing__wrapper .developing__item .img-wrapper {
+    width: 46.7rem;
+    height: 46.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .developing .developing__wrapper .developing__item .img-wrapper {
+    width: 26.3rem;
+    height: 26.3rem;
+  }
+}
+.developing .developing__block {
+  padding-top: 5rem;
+  padding-right: 45rem;
+}
+@media (max-width: 1920px) {
+  .developing .developing__block {
+    padding-right: 15.7rem;
+  }
+}
+.developing .developing__block-title {
+  padding-bottom: 3rem;
+}
+.developing .developing__block-desc {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  /* or 160% */
+  /* UI/Black/Medium */
+  color: #40454E;
+}
+.developing .developing__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  padding-right: 45rem;
+}
+@media (max-width: 1920px) {
+  .developing .developing__list {
+    padding-right: 15.7rem;
+  }
+}
+.developing .developing__list li {
+  border-top: 0.1rem solid #D2DCE5;
+  border-bottom: 0.1rem solid #D2DCE5;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.developing .developing__list li svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.developing .developing__list li .list-text {
+  padding-top: 11rem;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: #212424;
+}
+.developing .developing-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.developing .developing-images .img-wrapper {
+  width: 78rem;
+  height: 78rem;
+  position: sticky;
+  top: 10rem;
+  margin-left: 45rem;
+}
+@media (max-width: 1920px) {
+  .developing .developing-images .img-wrapper {
+    margin-left: 15.7rem;
+    width: 62.7rem;
+    height: 62.7rem;
+  }
+}
+@media (max-width: 1440px) {
+  .developing .developing-images .img-wrapper {
+    width: 46.7rem;
+    height: 46.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .developing .developing-images .img-wrapper {
+    width: 26.3rem;
+    height: 26.3rem;
+  }
 }
 
 html {
