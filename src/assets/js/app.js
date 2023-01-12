@@ -450,12 +450,6 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl: ".timeline .swiper-button-next",
         prevEl: ".timeline .swiper-button-prev" },
         slidesPerView: 'auto',
-        breakpoints: {
-            // when window width is >= 320px
-            769: {
-                loop: true
-            },
-        },
         pagination: {
         el: ".swiper-pagination",
         type: "custom",
@@ -468,14 +462,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 elcustom.style.setProperty('transform', `scaleX(${num})`)
             }
         },
-        // dynamicMainBullets: 3,
-        // clickable: true,
-        // dynamicBullets: true,
-        // renderBullet: function(index, className) {
-        //     return `<span class="${className}">199${index}</span>`;
-        // },
         },
-        loop: false,
+        loop: true,
         effect: "slide",
     })
     const timeSwiper = new Swiper(".timeline__swiper-2",
@@ -487,13 +475,21 @@ document.addEventListener("DOMContentLoaded", () => {
         loop: true,
         effect: "slide",
         spaceBetween: 40,
-        breakpoints: {
-            // when window width is >= 320px
-        },
     }
     )
 
     timelineSwiper.controller.control = timeSwiper
+
+    const swiperNew = new Swiper('.mission__swiper', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+    });
 
     let init = false;
     let swiper;

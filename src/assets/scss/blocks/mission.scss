@@ -1,0 +1,161 @@
+.developing {
+  position: relative;
+  .developing__title {}
+  .developing__desc {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    /* or 150% */
+    
+    
+    /* UI/Black/Medium */
+    
+    color: #40454E;
+  }
+  .developing__container {
+    display: grid;
+    grid-template-columns: max-content 58.7rem;
+    gap: 47rem;
+  }
+
+  .developing__top {
+    position: sticky;
+    top: 0;
+    background-color: #eff1f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem solid #D2DCE5;
+    padding-bottom: 2.7rem;
+    z-index: 1;
+    .developing__top-title {
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      /* identical to box height, or 150% */
+      
+      
+      /* UI/Black/High */
+      
+      color: #212424;
+    }
+    .developing__top-numbers {
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      /* identical to box height, or 150% */
+      
+      /* UI/Black/High */
+      
+      color: #212424;
+    }
+  }
+  .developing__wrapper {
+    position: relative;
+    .developing__item {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 15.6rem;
+      padding-top: 8rem;
+      .img-wrapper {
+        width: 78rem;
+        height: 78rem;
+        grid-row: 2 span;
+        margin-left: 45rem;
+        visibility: hidden;
+        @include breakpoint($xxl-bp) {
+          width: 62.7rem;
+          height: 62.7rem;
+          margin-left: 15.7rem;
+        }
+        @include breakpoint($xl-bp) {
+          width: 46.7rem;
+          height: 46.7rem;
+        }
+        @include breakpoint($mid-bp) {
+          width: 26.3rem;
+          height: 26.3rem;
+        }
+      }
+    }
+  }
+  .developing__block {
+    padding-top: 5rem;
+    padding-right: 45rem;
+    @include breakpoint($xxl-bp) {
+      padding-right: 15.7rem;
+    }
+  }
+  .developing__block-title {
+    padding-bottom: 3rem;
+  }
+  .developing__block-desc {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    /* or 160% */
+    
+    
+    /* UI/Black/Medium */
+    
+    color: #40454E;
+  }
+  .developing__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    padding-right: 45rem;
+    @include breakpoint($xxl-bp) {
+      padding-right: 15.7rem;
+    }
+    li {
+      border-top: 0.1rem solid #D2DCE5;
+      border-bottom: 0.1rem solid #D2DCE5;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+      .list-text {
+        padding-top: 11rem;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 3.2rem;
+        
+        color: #212424;
+      }
+    }
+  }
+  .developing-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    .img-wrapper {
+      width: 78rem;
+      height: 78rem;
+      position: sticky;
+      top: 10rem;
+      margin-left: 45rem;
+      @include breakpoint($xxl-bp) {
+        margin-left: 15.7rem;
+        width: 62.7rem;
+        height: 62.7rem;
+      }
+      @include breakpoint($xl-bp) {
+        width: 46.7rem;
+        height: 46.7rem;
+      }
+      @include breakpoint($mid-bp) {
+        width: 26.3rem;
+        height: 26.3rem;
+      }
+    }
+  }
+}
+
+.mission {
+  
+}

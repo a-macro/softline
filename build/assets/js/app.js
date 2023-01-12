@@ -436,12 +436,6 @@ document.addEventListener("DOMContentLoaded", function () {
       prevEl: ".timeline .swiper-button-prev"
     },
     slidesPerView: 'auto',
-    breakpoints: {
-      // when window width is >= 320px
-      769: {
-        loop: true
-      }
-    },
     pagination: {
       el: ".swiper-pagination",
       type: "custom",
@@ -454,15 +448,8 @@ document.addEventListener("DOMContentLoaded", function () {
           elcustom.style.setProperty('transform', "scaleX(".concat(num, ")"));
         }
       }
-      // dynamicMainBullets: 3,
-      // clickable: true,
-      // dynamicBullets: true,
-      // renderBullet: function(index, className) {
-      //     return `<span class="${className}">199${index}</span>`;
-      // },
     },
-
-    loop: false,
+    loop: true,
     effect: "slide"
   });
   var timeSwiper = new Swiper(".timeline__swiper-2", {
@@ -471,12 +458,19 @@ document.addEventListener("DOMContentLoaded", function () {
     direction: "horizontal",
     loop: true,
     effect: "slide",
-    spaceBetween: 40,
-    breakpoints: {
-      // when window width is >= 320px
-    }
+    spaceBetween: 40
   });
   timelineSwiper.controller.control = timeSwiper;
+  var swiperNew = new Swiper('.mission__swiper', {
+    direction: 'vertical',
+    slidesPerView: 1,
+    spaceBetween: 30,
+    mousewheel: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
   var init = false;
   var swiper;
   var slider = document.querySelector(".partners__mobSlider");

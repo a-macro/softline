@@ -582,12 +582,14 @@
       grid-template-columns: 1fr min-content;
     }
     .download-data {
+      min-width: 6rem;
+      display: inline-block;
       @include breakpoint($sm-bp) {
         display: none;
       }
     }
     .download-text {
-      padding-left: 40rem;
+      padding-left: 6rem;
       @include breakpoint($mid-bp) {
         padding-left: 2.5rem;
       }
