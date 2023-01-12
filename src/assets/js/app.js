@@ -394,6 +394,30 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    if(document.querySelector(".projects__slider")) {
+        new Swiper(".projects__slider", {
+            navigation: {
+                nextEl: ".projects__slider .swiper-button-next",
+                prevEl: ".projects__slider .swiper-button-prev"
+            },
+            slidesPerView: "auto",
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: true,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                },
+                769: {
+                    spaceBetween: 40,
+                },
+                1025: {
+                    spaceBetween: 40,
+                }
+            },
+        });    
+    }
+
     let solveCustomers = document.querySelectorAll(".customer__container");
     if(solveCustomers.length > 0) {
         solveCustomers.forEach(slider => {

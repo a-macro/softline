@@ -171,6 +171,9 @@
         display: flex;
         align-items: end;
         padding: 4rem;
+        @include breakpoint($xxl-bp) {
+            height: 52rem;
+        }
         @include breakpoint($mid-bp) {
             height: 38rem;
         }
