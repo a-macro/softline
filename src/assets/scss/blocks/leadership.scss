@@ -142,6 +142,9 @@
 
 .section {
     margin-top: 12.5rem;
+    @include breakpoint($mid-bp) {
+        margin-top: 9.5rem;
+    }
     @include breakpoint($sm-bp) {
         margin-top: 5.5rem;
     }
@@ -173,6 +176,9 @@
         padding: 4rem;
         @include breakpoint($xxl-bp) {
             height: 52rem;
+        }
+        @include breakpoint($xl-bp) {
+            height: 38rem;
         }
         @include breakpoint($mid-bp) {
             height: 38rem;

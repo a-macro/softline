@@ -1,29 +1,52 @@
 .solve.career {
+    width: 100%;
+    overflow: auto;
+
     .section-top {
         padding-top: 16rem;
         @include breakpoint($xxl-bp) {
+            padding-top: 15rem;
+        }
+        @include breakpoint($xl-bp) {
+            padding-top: 11rem;
+        }
+        @include breakpoint($mid-bp) {
             padding-top: 10rem;
+            padding-left: 0.5rem;
         }
         @include breakpoint($sm-bp) {
             padding-top: 5rem;
+            margin-top: 5rem;
         }
     }
 
     .text-normal {
         color: white;
+        @include breakpoint($xxl-bp) {
+            padding-right: 10%;
+        }
+        @include breakpoint($xl-bp) {
+            max-width: 99%;
+        }
     }
 
     .title {
         max-width: 40rem;
+        @include breakpoint($mid-bp) {
+            max-width: 100%;
+        }
     }
 
     .title-wrapper {
+        @include breakpoint($xl-bp) {
+            width: 40%;
+        }
         @include breakpoint($mid-bp) {
             margin-left: 3.5rem;
-            width: calc(100% - 8rem);
+            width: calc(100% - 6rem);
         }
         @include breakpoint($sm-bp) {
-            margin-left: 0;
+            margin-left: 2rem;
             width: calc(100% - 5rem);
         }
 
@@ -44,9 +67,18 @@
     }
 
     .section-top__aside {
+        @include breakpoint($mid-bp) {
+            margin-left: 3.5rem;
+        }
+        @include breakpoint($mid-bp) {
+            margin-left: 2rem;
+        }
         .text-normal {
             font-size: 2.4rem;
             max-width: 80%;
+            @include breakpoint($xl-bp) {
+                max-width: 99%;
+            }
         }
     }
 
@@ -55,12 +87,17 @@
         min-height: 75.5rem;
         height: unset;
         @include breakpoint($xxl-bp) {
-            min-height: 76rem;
+            min-height: 60rem;
+            height: unset;
+        }
+        @include breakpoint($xl-bp) {
+            min-height: 53rem;
             height: unset;
         }
         @include breakpoint($mid-bp) {
             position: relative;
             min-height: 40rem;
+            padding-bottom: 10rem;
         }
         @include breakpoint($sm-bp) {
             min-height: 51.5rem;
@@ -87,22 +124,105 @@
         gap: 4rem;
         flex-wrap: wrap;
         margin-top: 15rem;
+        @include breakpoint($xl-bp) {
+            margin-top: 12rem;
+        }
+        @include breakpoint($mid-bp) {
+            margin-top: 10rem;
+            display: flex;
+            gap: 2rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 5rem;
+            flex-direction: column;
+            gap: unset;
+        }
 
         .informationTechnology__block {
             width: calc(calc(100% - 12rem) / 4);
             margin-bottom: 1rem;
             gap: 3.2rem;
             margin-bottom: 1.4rem;
+            @include breakpoint($mid-bp) {
+                width: calc(calc(100% - 2rem) / 2);
+            }
+            @include breakpoint($sm-bp) {
+                width: 100%;
+                gap: 1.5rem;
+                margin-bottom: 0;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
         }
     }
 }
 
 
-.suggestion {
+.suggestion.wrapper {
     margin-top: 15rem;
+    width: 100%;
+    overflow: hidden;
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+        margin-top: 8rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        width: calc(100% - 4rem);
+    }
+    @include breakpoint($mid-bp) {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+        width: calc(100% - 5rem);
+        margin-top: 7rem;
+    }
 
     .title {
         max-width: 40%;
+        @include breakpoint($xxl-bp) {
+            max-width: 50%;
+        }
+        @include breakpoint($xl-bp) {
+            max-width: 65%;
+        }
+        @include breakpoint($mid-bp) {
+            max-width: 73%;
+        }
+        @include breakpoint($sm-bp) {
+            max-width: 100%;
+        }
+    }
+
+    .suggestion-slider {
+        width: 100%;
+        @include breakpoint($mid-bp) {
+            position: relative;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+            @include breakpoint($mid-bp) {
+                display: flex;
+                top: -7rem;
+            }
+            @include breakpoint($sm-bp) {
+                top: 17rem;
+            }
+        }
+        .swiper-button-prev {
+            @include breakpoint($mid-bp) {
+                left: unset;
+                right: 5.5rem;
+            }
+            @include breakpoint($sm-bp) {
+                right: unset;
+                left: 0;
+            }
+        }
     }
 }
 
@@ -111,11 +231,31 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
+    @include breakpoint($xl-bp) {
+        margin-top: 5rem;
+    }
+    @include breakpoint($mid-bp) {
+        display: flex;
+        grid-template-columns: unset;
+        gap: unset;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 2.8rem;
+    }
 }
 
 .suggestion__card_img{
     width: 100%;
     height: 62rem;
+    @include breakpoint($xxl-bp) {
+        height: 47rem;
+    }
+    @include breakpoint($xl-bp) {
+        height: 35rem;
+    }
+    @include breakpoint($sm-bp) {
+        height: 32.5rem;
+    }
 
     img {
         width: 100%;
@@ -126,6 +266,9 @@
 
 .suggestion__card_info {
     margin-top: 2rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 2.4rem;
+    }
 
     ul {
         font-family: "Manrope";
@@ -136,8 +279,11 @@
         color: #212424;
         margin-top: 3rem;
         max-width: 73%;
+        @include breakpoint($xxl-bp) {
+            max-width: 100%;
+        }
         @include breakpoint($sm-bp) {
-            font-size: 2.1rem;
+            font-size: 2.3rem;
         }
     }
 
@@ -151,12 +297,24 @@
     }
 }
 
+.suggestion__card {
+    @include breakpoint($xxl-bp) {
+        margin-bottom: 2rem;
+    }
+    @include breakpoint($xl-bp) {
+        margin-bottom: 1rem;
+    }
+}
+
 .suggestion__card_title {
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
+    @include breakpoint($sm-bp) {
+        font-size: 3.1rem;
+    }
 }
 
 .suggestion__card_text {
@@ -167,28 +325,118 @@
     text-align: left;
     margin-top: 1.2rem;
     max-width: 73%;
+    @include breakpoint($xxl-bp) {
+        max-width: 100%;
+    }
+    @include breakpoint($sm-bp) {
+        font-size: 2.3rem;
+    }
 }
 
-.stories__wrapper {
+.stories {
+    width: 100%;
+    overflow: hidden;
+
+    .title {
+        @include breakpoint($mid-bp) {
+            padding-right: 4rem;
+        }
+    }
+
+    .above-block {
+        @include breakpoint($xl-bp) {
+            margin-top: 11rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 5.5rem;
+        }
+    }
+}
+
+.stories-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
     margin-top: 8rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 7rem;
+    }
+    @include breakpoint($xl-bp) {
+        margin-top: 6rem;
+    }
+    @include breakpoint($mid-bp) {
+        margin-top: 3rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 3.5rem;
+        overflow: unset;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+        @include breakpoint($xl-bp) {
+            display: flex;
+        }
+    }
 }
 
 .story {
     min-height: 75rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 3.5rem 4rem;
+    display: grid;
+    text-decoration: none;
+    @include breakpoint($xxl-bp) {
+        min-height: 57rem;
+    }
+    @include breakpoint($xl-bp) {
+        min-height: 43rem;
+    }
+    @include breakpoint($mid-bp) {
+        min-height: 37rem;
+    }
+    @include breakpoint($sm-bp) {
+        min-height: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .story__bg {
+        grid-row: 1/1;
+        grid-column: 1/1;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        @include breakpoint($sm-bp) {
+            grid-row: unset;
+            grid-column: unset;
+            display: block;
+            width: 100%;
+            height: 20rem;
+        }   
+    }
+
+    .story__content {
+        grid-row: 1/1;
+        grid-column: 1/1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 3.5rem 4rem;  
+        @include breakpoint($sm-bp) {
+            grid-row: unset;
+            grid-column: unset;
+            justify-content: flex-start;
+            padding: 0;
+        }  
+    }
 
     div {
         display: flex;
         align-items: center;
+        @include breakpoint($sm-bp) {
+            margin-top: 7rem;
+        }
     }
 
     img {
@@ -196,6 +444,10 @@
         height: 7.2rem;
         border-radius: 100%;
         margin-right: 2.5rem;
+        @include breakpoint($sm-bp) {
+            width: 9.2rem;
+            height: 9.2rem;    
+        }
     }
 }
 
@@ -206,6 +458,10 @@
     letter-spacing: 0em;
     text-align: left;
     color: white;
+    @include breakpoint($sm-bp) {
+        color: $black;
+        font-size: 1.96rem;
+    }
 }
 
 .story__text {
@@ -215,10 +471,21 @@
     line-height: 1.44;
     letter-spacing: -0.01em;
     text-align: left;
+    @include breakpoint($sm-bp) {
+        color: $black;
+        font-size: 2.65rem;
+        margin-top: 2.2rem;
+    }
 }
 
 .download-block.career {
     margin-top: 15rem;
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 7rem;
+    }
 
     .title {
         margin-bottom: 5rem;
@@ -227,6 +494,9 @@
     .download-item  {
         border-top: 0.1rem solid #D2DCE5;
         border-bottom: unset;
+        @include breakpoint($sm-bp) {
+            padding: 2.6rem 0;
+        }
 
         &:nth-last-child(1) {
             border-bottom: 0.1rem solid #D2DCE5;
@@ -236,6 +506,15 @@
             min-width: 20rem;
             display: inline-block;
             padding-right: 2rem;
+            @include breakpoint($xxl-bp) {
+                min-width: 30.8rem;
+            }
+            @include breakpoint($xl-bp) {
+                min-width: 22.8rem;
+            }
+            @include breakpoint($sm-bp) {
+                display: none;
+            }
         }
 
         .download-text {
@@ -246,4 +525,10 @@
 
 .career.subscribe {
     margin-top: 15rem;
+    @include breakpoint($xl-bp) {
+        margin-top: 12rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5rem;
+    }
 }

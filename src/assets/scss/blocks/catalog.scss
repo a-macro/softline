@@ -804,6 +804,8 @@
         }
 
         .service__text {
+            color: #697279;
+            font-size: 1.6rem;
             @include breakpoint($sm-bp) {
                 font-size: 1.92rem;
                 line-height: 1.6;

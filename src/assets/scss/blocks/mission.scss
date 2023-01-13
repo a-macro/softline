@@ -1,16 +1,21 @@
 .developing {
   position: relative;
+  @include breakpoint($sm-bp) {
+    margin-top: 5rem;
+  }
+
   .developing__title {}
   .developing__desc {
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
-    /* or 150% */
-    
-    
-    /* UI/Black/Medium */
-    
     color: #40454E;
+    @include breakpoint($mid-bp) {
+      margin-top: 4rem;
+    }
+    @include breakpoint($sm-bp) {
+      margin-top: 3rem;
+    }
   }
   .developing__container {
     display: grid;
@@ -21,6 +26,16 @@
       gap: 28.2rem;
       grid-template-columns: max-content 61rem;
       padding-bottom: 12.4rem;
+    }
+    @include breakpoint($mid-bp) {
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: unset;
+      gap: unset;
+      padding-bottom: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-bottom: 7rem;
     }
   }
 
@@ -38,31 +53,39 @@
       font-weight: 500;
       font-size: 2.4rem;
       line-height: 3.6rem;
-      /* identical to box height, or 150% */
-      
-      
-      /* UI/Black/High */
-      
       color: #212424;
     }
     .developing__top-numbers {
       font-weight: 500;
       font-size: 2.4rem;
       line-height: 3.6rem;
-      /* identical to box height, or 150% */
-      
-      /* UI/Black/High */
-      
       color: #212424;
+      @include breakpoint($mid-bp) {
+        display: none;
+      }
     }
   }
   .developing__wrapper {
     position: relative;
+    @include breakpoint($mid-bp) {
+      margin-top: 0;
+    }
     .developing__item {
       display: grid;
       grid-template-columns: max-content 1fr;
       column-gap: 15.6rem;
       padding-top: 8rem;
+      @include breakpoint($mid-bp) {
+        column-gap: 0rem;
+        grid-template-columns: 0 1fr;
+        margin-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 11rem;
+      }
+      @include breakpoint($sm-bp) {
+        padding-top: 4rem;
+      }
       .img-wrapper {
         width: 78rem;
         height: 78rem;
@@ -81,6 +104,12 @@
         @include breakpoint($mid-bp) {
           width: 26.3rem;
           height: 26.3rem;
+          visibility: visible;
+          margin-left: 0;
+        }
+        @include breakpoint($sm-bp) {
+          width: 28.3rem;
+          height: 28.3rem;
         }
       }
     }
@@ -91,9 +120,23 @@
     @include breakpoint($xxl-bp) {
       padding-right: 15.7rem;
     }
+    @include breakpoint($mid-bp) {
+      padding-right: 0rem;
+      width: calc(100% - 26.3rem);
+      padding-left: 4rem;
+      padding-top: 0;
+    }
+    @include breakpoint($sm-bp) {
+      width: 100%;
+      padding-left: 0rem;
+      padding-top: 3rem;
+    }
   }
   .developing__block-title {
     padding-bottom: 3rem;
+    @include breakpoint($sm-bp) {
+      padding-bottom: 2rem;
+    }
   }
   .developing__block-desc {
     font-weight: 500;
@@ -115,22 +158,49 @@
     @include breakpoint($xxl-bp) {
       padding-right: 15.7rem;
     }
+    @include breakpoint($mid-bp) {
+      padding-right: 0;
+      padding-left: 0rem;
+      padding-top: 3.8rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-top: 4.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
     li {
       border-top: 0.1rem solid #D2DCE5;
       border-bottom: 0.1rem solid #D2DCE5;
       padding-top: 3rem;
       padding-bottom: 3rem;
+      @include breakpoint($sm-bp) {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;  
+      }
       svg {
+        display: block;
         width: 3.2rem;
         height: 3.2rem;
+        @include breakpoint($sm-bp) {
+          width: 4.2rem;
+          height: 4.2rem;  
+        }
       }
       .list-text {
         padding-top: 11rem;
         font-weight: 500;
         font-size: 2rem;
         line-height: 3.2rem;
-        
         color: #212424;
+        @include breakpoint($mid-bp) {
+          padding-top: 4rem;
+        }
+        @include breakpoint($sm-bp) {
+          padding-top: 5.5rem;
+          font-size: 2.05rem;
+        }
       }
     }
   }
@@ -156,6 +226,9 @@
     left: 0;
     height: 100%;
     width: 100%;
+    @include breakpoint($mid-bp) {
+      display: none;
+    }
     .developing-images__inner {
       position: sticky;
       top: 10rem;
@@ -166,6 +239,7 @@
       @include breakpoint($xl-bp) {
         height: 46.7rem;
       }
+
     }
     .img-wrapper {
       width: 78rem;
@@ -186,6 +260,9 @@
       @include breakpoint($mid-bp) {
         width: 26.3rem;
         height: 26.3rem;
+        margin-left: 0;
+        position: relative;
+        opacity: 1 !important;
       }
     }
   }

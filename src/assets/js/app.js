@@ -418,6 +418,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });    
     }
 
+    let storiesSlider = document.querySelector(".stories-slider");
+    if(storiesSlider) {
+        new Swiper(".stories-slider", {
+            navigation: {
+                nextEl: ".stories-slider .swiper-button-next",
+                prevEl: ".stories-slider .swiper-button-prev"
+            },
+            slidesPerView: 2,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.1,
+                },
+                481: {
+                    slidesPerView: 1.35,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
+
     let solveCustomers = document.querySelectorAll(".customer__container");
     if(solveCustomers.length > 0) {
         solveCustomers.forEach(slider => {
@@ -588,6 +620,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     initSlider();
+
+    let initSuggestion = false;
+    let swiperSuggestion;
+    let sliderSuggestion = document.querySelector(".suggestion-slider");
+    
+    function initSliderSuggestion() {
+        console.log(initSuggestion, width, sliderSuggestion);
+
+        if (width <= 768 && !initSuggestion && sliderSuggestion) {
+            swiperSuggestion = new Swiper(".suggestion-slider", {
+                loop: false,
+                navigation: {
+                    nextEl: ".suggestion-slider .swiper-button-next",
+                    prevEl: ".suggestion-slider .swiper-button-prev" 
+                },
+                slidesPerView: 1,
+                spaceBetween: 20,
+                freeMode: false,
+                autoHeight: true,
+                watchOverflow: true, 
+                initialSlide: 0,
+            });
+            initSuggestion = true;
+        }
+
+        if (initSuggestion && width > 768) {
+            initSuggestion = false;
+            swiperSuggestion.destroy();
+        }
+    }
+    initSliderSuggestion();
 
     let results = document.querySelectorAll(".search-result");
     let showMoreBtn = document.querySelector(".search__show-more");
@@ -967,6 +1030,7 @@ document.addEventListener("DOMContentLoaded", () => {
             countHeight(filter);
         });
         initSlider();
+        initSliderSuggestion();
     });
 
 
@@ -2062,7 +2126,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
 
         const observer = new IntersectionObserver((entryes) => {
             entryes.forEach(el => {
-                if (el.isIntersecting) {
+                if (el.isIntersecting && window.innerWidth > 768) {
                     for(let img of imagesBlock.children) {
                         if (img.dataset.numberImg === el.target.dataset.numberImg) {
                             img.style.opacity = 1

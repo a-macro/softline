@@ -403,6 +403,36 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  var storiesSlider = document.querySelector(".stories-slider");
+  if (storiesSlider) {
+    new Swiper(".stories-slider", {
+      navigation: {
+        nextEl: ".stories-slider .swiper-button-next",
+        prevEl: ".stories-slider .swiper-button-prev"
+      },
+      slidesPerView: 2,
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: false,
+      breakpoints: {
+        300: {
+          spaceBetween: 20,
+          slidesPerView: 1.1
+        },
+        481: {
+          slidesPerView: 1.35,
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1025: {
+          spaceBetween: 40
+        }
+      }
+    });
+  }
   var solveCustomers = document.querySelectorAll(".customer__container");
   if (solveCustomers.length > 0) {
     solveCustomers.forEach(function (slider) {
@@ -561,6 +591,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   initSlider();
+  var initSuggestion = false;
+  var swiperSuggestion;
+  var sliderSuggestion = document.querySelector(".suggestion-slider");
+  function initSliderSuggestion() {
+    console.log(initSuggestion, width, sliderSuggestion);
+    if (width <= 768 && !initSuggestion && sliderSuggestion) {
+      swiperSuggestion = new Swiper(".suggestion-slider", {
+        loop: false,
+        navigation: {
+          nextEl: ".suggestion-slider .swiper-button-next",
+          prevEl: ".suggestion-slider .swiper-button-prev"
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        freeMode: false,
+        autoHeight: true,
+        watchOverflow: true,
+        initialSlide: 0
+      });
+      initSuggestion = true;
+    }
+    if (initSuggestion && width > 768) {
+      initSuggestion = false;
+      swiperSuggestion.destroy();
+    }
+  }
+  initSliderSuggestion();
   var results = document.querySelectorAll(".search-result");
   var showMoreBtn = document.querySelector(".search__show-more");
   if (results && results.length > 0) {
@@ -904,6 +961,7 @@ document.addEventListener("DOMContentLoaded", function () {
       countHeight(filter);
     });
     initSlider();
+    initSliderSuggestion();
   });
   var currentActiveButton = document.querySelector('.filter-button--active');
   var no = function no() {
@@ -1890,7 +1948,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     var _observer = new IntersectionObserver(function (entryes) {
       entryes.forEach(function (el) {
-        if (el.isIntersecting) {
+        if (el.isIntersecting && window.innerWidth > 768) {
           var _iterator2 = _createForOfIteratorHelper(imagesBlock.children),
             _step2;
           try {

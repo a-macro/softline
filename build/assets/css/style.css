@@ -19701,7 +19701,18 @@ textarea {
   display: grid;
   grid-template-columns: -webkit-max-content 58.7rem;
   grid-template-columns: max-content 58.7rem;
-  gap: 47rem;
+  -webkit-column-gap: 47rem;
+     -moz-column-gap: 47rem;
+          column-gap: 47rem;
+  padding-bottom: 15.4rem;
+}
+@media (max-width: 1440px) {
+  .developing .developing__container {
+    gap: 28.2rem;
+    grid-template-columns: -webkit-max-content 61rem;
+    grid-template-columns: max-content 61rem;
+    padding-bottom: 12.4rem;
+  }
 }
 .developing .developing__top {
   position: sticky;
@@ -19796,6 +19807,7 @@ textarea {
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
   padding-right: 45rem;
+  padding-top: 4.8rem;
 }
 @media (max-width: 1920px) {
   .developing .developing__list {
@@ -19819,6 +19831,23 @@ textarea {
   line-height: 3.2rem;
   color: #212424;
 }
+.developing .developing__list--col {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0;
+}
+.developing .developing__list--col li {
+  display: grid;
+  grid-template-columns: -webkit-min-content 1fr;
+  grid-template-columns: min-content 1fr;
+  gap: 3.2rem;
+  border-top: 0;
+}
+.developing .developing__list--col li:first-child {
+  border-top: 0.1rem solid #D2DCE5;
+}
+.developing .developing__list--col li .list-text {
+  padding-top: 0;
+}
 .developing .developing-images {
   position: absolute;
   top: 0;
@@ -19826,12 +19855,27 @@ textarea {
   height: 100%;
   width: 100%;
 }
+.developing .developing-images .developing-images__inner {
+  position: sticky;
+  top: 10rem;
+  height: 78rem;
+}
+@media (max-width: 1920px) {
+  .developing .developing-images .developing-images__inner {
+    height: 62.7rem;
+  }
+}
+@media (max-width: 1440px) {
+  .developing .developing-images .developing-images__inner {
+    height: 46.7rem;
+  }
+}
 .developing .developing-images .img-wrapper {
   width: 78rem;
   height: 78rem;
-  position: sticky;
-  top: 10rem;
+  position: absolute;
   margin-left: 45rem;
+  transition: opacity 0.3s;
 }
 @media (max-width: 1920px) {
   .developing .developing-images .img-wrapper {
