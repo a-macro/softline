@@ -626,7 +626,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let sliderSuggestion = document.querySelector(".suggestion-slider");
     
     function initSliderSuggestion() {
-        console.log(initSuggestion, width, sliderSuggestion);
 
         if (width <= 768 && !initSuggestion && sliderSuggestion) {
             swiperSuggestion = new Swiper(".suggestion-slider", {
