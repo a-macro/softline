@@ -2044,6 +2044,41 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
             }
         });
     }
+
+    const block = document.querySelector('#developing__wrapper')
+    if (block) {
+        const items = block.querySelectorAll('.developing__item')
+        const images = block.querySelectorAll('.developing__item .img-wrapper')
+        const numbers = block.querySelector('#developing__numbers')
+        const imagesBlock = block.querySelector('#block-images')
+
+        images.forEach((img, index) => {
+            img.parentNode.dataset.numberImg = index
+            const clone = img.cloneNode(true)
+            clone.style.opacity = 0
+            clone.dataset.numberImg = index
+            imagesBlock.appendChild(clone)
+        })
+
+        const observer = new IntersectionObserver((entryes) => {
+            entryes.forEach(el => {
+                if (el.isIntersecting) {
+                    for(let img of imagesBlock.children) {
+                        if (img.dataset.numberImg === el.target.dataset.numberImg) {
+                            img.style.opacity = 1
+                            numbers.innerHTML = `${+img.dataset.numberImg + 1}/${items.length}`
+                        } else {
+                            img.style.opacity = 0
+                        }
+                    }
+                }
+            })
+        })
+
+        items.forEach(el => {
+            observer.observe(el)
+        })
+    }
 });
 
 
