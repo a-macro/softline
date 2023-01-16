@@ -423,11 +423,13 @@
         justify-content: space-between;
         align-items: flex-start;
         padding: 3.5rem 4rem;  
+        background: rgb(33 36 36 / 30%);
         @include breakpoint($sm-bp) {
             grid-row: unset;
             grid-column: unset;
             justify-content: flex-start;
             padding: 0;
+            background: unset;
         }  
     }
 

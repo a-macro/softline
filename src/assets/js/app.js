@@ -175,28 +175,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const innnerDiv = document.querySelector('#inner-menu');
     let menu = document.querySelectorAll(".menu");
 
-    backButton.onclick = (e) => {
-        e.preventDefault();
-        let act = document.querySelector(".menu__item.active");
-        if(act) {
-            act.classList.remove("active");
-            if(window.innerWidth <=480) {
-                subMenuItems.forEach(itemRest => {
-                    itemRest.classList.remove("hide");
+    if(backButton){
+        backButton.onclick = (e) => {
+            e.preventDefault();
+            let act = document.querySelector(".menu__item.active");
+            if(act) {
+                act.classList.remove("active");
+                if(window.innerWidth <=480) {
+                    subMenuItems.forEach(itemRest => {
+                        itemRest.classList.remove("hide");
+                    });
+                    return;
+                }
+            }
+            menuWrapper.classList.remove("show");
+    
+            let act2 = document.querySelector(".header__item.active");
+            if(act2) {
+                menu.forEach(menu => {
+                    menu.style.display = "none";
                 });
-                return;
+                act2.classList.remove("active");
             }
         }
-        menuWrapper.classList.remove("show");
-
-        let act2 = document.querySelector(".header__item.active");
-        if(act2) {
-            menu.forEach(menu => {
-                menu.style.display = "none";
-            });
-            act2.classList.remove("active");
-        }
     }
+
 
 
     const tabAccItems = document.querySelectorAll('.tab-accord__list-item')
@@ -318,81 +321,92 @@ document.addEventListener("DOMContentLoaded", () => {
         } */
     }
 
-    new Swiper(".services__container", {
-        navigation: {
-            nextEl: ".services__container .swiper-button-next",
-            prevEl: ".services__container .swiper-button-prev"
-        },
-        slidesPerView: 6,
-        watchOverflow: true,
-        spaceBetween: 0,
-        loop: true,
-        breakpoints: {
-            300: {
-                slidesPerView: "auto",
+    let servCont = document.querySelector(".services__container");
+    if(servCont) {
+        new Swiper(".services__container", {
+            navigation: {
+                nextEl: ".services__container .swiper-button-next",
+                prevEl: ".services__container .swiper-button-prev"
             },
-            769: {
-                slidesPerView: 6,
+            slidesPerView: 6,
+            watchOverflow: true,
+            spaceBetween: 0,
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                },
+                769: {
+                    slidesPerView: 6,
+                },
+                1025: {
+                    slidesPerView: 6,
+                    spaceBetween: 0,
+                }
             },
-            1025: {
-                slidesPerView: 6,
-                spaceBetween: 0,
-            }
-        },
-    });
+        });    
+    }
 
-    new Swiper(".help__container", {
-        navigation: {
-            nextEl: ".help__container .swiper-button-next",
-            prevEl: ".help__container .swiper-button-prev"
-        },
-        slidesPerView: 6,
-        watchOverflow: true,
-        spaceBetween: 40,
-        loop: true,
-        breakpoints: {
-            300: {
-                slidesPerView: "auto",
-                spaceBetween: 20,
+    let helpCont = document.querySelector(".help__container");
+    if(helpCont) {
+        new Swiper(".help__container", {
+            navigation: {
+                nextEl: ".help__container .swiper-button-next",
+                prevEl: ".help__container .swiper-button-prev"
             },
-            769: {
-                slidesPerView: 6,
-                spaceBetween: 40,
+            slidesPerView: 6,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 6,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    slidesPerView: 6,
+                }
             },
-            1025: {
-                slidesPerView: 6,
-            }
-        },
-    });
+        });    
+    }
 
-    new Swiper(".solve__container", {
-        navigation: {
-            nextEl: ".solve__container .swiper-button-next",
-            prevEl: ".solve__container .swiper-button-prev"
-        },
-        slidesPerView: 4,
-        watchOverflow: true,
-        spaceBetween: 40,
-        freeMode: "false",
-        loop: true,
-        breakpoints: {
-            300: {
-                slidesPerView: "auto",
-                spaceBetween: 20,
+    let solveCont = document.querySelector(".solve__container");
+    if(solveCont) {
+        new Swiper(".solve__container", {
+            navigation: {
+                nextEl: ".solve__container .swiper-button-next",
+                prevEl: ".solve__container .swiper-button-prev"
             },
-            769: {
-                slidesPerView: 2,
-                spaceBetween: 40,
+            slidesPerView: 4,
+            watchOverflow: true,
+            spaceBetween: 40,
+            freeMode: "false",
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1441: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1921: {
+                    slidesPerView: 4,
+                }
             },
-            1441: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-            },
-            1921: {
-                slidesPerView: 4,
-            }
-        },
-    });
+        });
+    }
+
+
 
     if(document.querySelector(".projects__slider")) {
         new Swiper(".projects__slider", {
@@ -449,6 +463,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });    
 
     }
+
+    let featuresSlider = document.querySelector(".features__slider");
+    if(featuresSlider) {
+        new Swiper(".features__slider", {
+            navigation: {
+                nextEl: ".features__slider .swiper-button-next",
+                prevEl: ".features__slider .swiper-button-prev"
+            },
+            slidesPerView: 3,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.1,
+                },
+                481: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
+
+
 
     let solveCustomers = document.querySelectorAll(".customer__container");
     if(solveCustomers.length > 0) {
@@ -1846,6 +1895,33 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                 }
             }
         }
+
+        let programBtn = document.querySelector(".program-conditions");
+        let programModal = document.querySelector(".program-modal");
+        if(programBtn) {
+            programBtn.onclick = (e) => {
+                e.preventDefault();
+                programModal.style.display = "block";
+                scrollLock.disablePageScroll(programModal);
+                setTimeout(() => {
+                    programModal.classList.add("show");
+                }, 10);
+            }
+
+            if(programModal) {
+                let programClose = document.querySelector(".close-program");
+                programClose.onclick = (e) => {
+                    e.preventDefault();
+                    programModal.classList.remove("show");
+                    scrollLock.enablePageScroll(programModal);
+                    setTimeout(() => {
+                        programModal.style.display = "none";
+                    }, 400);
+                }
+            }
+
+        }
+        
 
       let map = document.querySelector("#map");
       let body = document.querySelector("body");
