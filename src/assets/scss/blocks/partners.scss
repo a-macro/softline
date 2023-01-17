@@ -1113,6 +1113,8 @@
         }
         @include breakpoint($sm-bp) {
             padding: 6.2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
         }
     }
     
@@ -1131,10 +1133,17 @@
             font-size: 4.2rem;
             line-height: 1.2;
             margin-bottom: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0;
+            order: 2;
         }
     }
     .partner__logo {
         width: 4.8rem;
+        @include breakpoint($sm-bp) {
+            width: 6.1rem;
+            order: 1;
+        }
     }
 
     .partner__statuses {
@@ -1143,6 +1152,10 @@
         padding-bottom: 2.7rem;
         border-top: 1px solid #D2DCE5;
         border-bottom: 1px solid #D2DCE5;
+        @include breakpoint($sm-bp) {
+            margin-top: 4.8rem;
+            order: 3;
+        }
 
         .text-normal {
             font-size: 1.6rem;
@@ -1151,6 +1164,9 @@
             letter-spacing: 0em;
             text-align: left;
             color: #697279;
+            @include breakpoint($sm-bp) {
+                font-size: 2.05rem;
+            }
         }
         .red {
             color: $red;
@@ -1164,6 +1180,12 @@
         letter-spacing: 0em;
         text-align: left;
         margin-top: 3.2rem;
+        @include breakpoint($sm-bp) {
+            order: 5;
+            font-size: 2.55rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
     }
 
     .partner__text {
@@ -1174,10 +1196,17 @@
         text-align: left;
         margin-top: 3rem;
         color: #697279;
+        @include breakpoint($sm-bp) {
+            order: 6;
+            font-size: 2.05;
+        }
     }
 
     .link-red {
         margin-top: 5.2rem;
+        @include breakpoint($sm-bp) {
+            order: 4;
+        }
     }
 }
 

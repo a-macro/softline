@@ -1664,6 +1664,8 @@ textarea {
 @media (max-width: 480px) {
   .partner-modal .partner__text-block {
     padding: 6.2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
   }
 }
 .partner-modal .partner__text-block_title {
@@ -1685,10 +1687,19 @@ textarea {
     font-size: 4.2rem;
     line-height: 1.2;
     margin-bottom: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+    order: 2;
   }
 }
 .partner-modal .partner__logo {
   width: 4.8rem;
+}
+@media (max-width: 480px) {
+  .partner-modal .partner__logo {
+    width: 6.1rem;
+    order: 1;
+  }
 }
 .partner-modal .partner__statuses {
   margin-top: 5.3rem;
@@ -1697,6 +1708,12 @@ textarea {
   border-top: 1px solid #D2DCE5;
   border-bottom: 1px solid #D2DCE5;
 }
+@media (max-width: 480px) {
+  .partner-modal .partner__statuses {
+    margin-top: 4.8rem;
+    order: 3;
+  }
+}
 .partner-modal .partner__statuses .text-normal {
   font-size: 1.6rem;
   font-weight: 500;
@@ -1704,6 +1721,11 @@ textarea {
   letter-spacing: 0em;
   text-align: left;
   color: #697279;
+}
+@media (max-width: 480px) {
+  .partner-modal .partner__statuses .text-normal {
+    font-size: 2.05rem;
+  }
 }
 .partner-modal .partner__statuses .red {
   color: #A50F2D;
@@ -1716,6 +1738,14 @@ textarea {
   text-align: left;
   margin-top: 3.2rem;
 }
+@media (max-width: 480px) {
+  .partner-modal .partner__descr {
+    order: 5;
+    font-size: 2.55rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
 .partner-modal .partner__text {
   font-size: 2rem;
   font-weight: 500;
@@ -1725,8 +1755,19 @@ textarea {
   margin-top: 3rem;
   color: #697279;
 }
+@media (max-width: 480px) {
+  .partner-modal .partner__text {
+    order: 6;
+    font-size: 2.05;
+  }
+}
 .partner-modal .link-red {
   margin-top: 5.2rem;
+}
+@media (max-width: 480px) {
+  .partner-modal .link-red {
+    order: 4;
+  }
 }
 
 .partner-modal.show {
