@@ -1763,6 +1763,31 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     }
   }
+  var partnersBtn = document.querySelectorAll(".top-partner_name");
+  var partnerModal = document.querySelector(".partner-modal");
+  if (partnersBtn.length > 0) {
+    partnersBtn.forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        partnerModal.style.display = "block";
+        scrollLock.disablePageScroll(partnerModal);
+        setTimeout(function () {
+          partnerModal.classList.add("show");
+        }, 10);
+      };
+    });
+    if (partnerModal) {
+      var partnerClose = document.querySelector(".close-partner");
+      partnerClose.onclick = function (e) {
+        e.preventDefault();
+        partnerModal.classList.remove("show");
+        scrollLock.enablePageScroll(partnerModal);
+        setTimeout(function () {
+          partnerModal.style.display = "none";
+        }, 400);
+      };
+    }
+  }
   var map = document.querySelector("#map");
   var body = document.querySelector("body");
   if (map) {

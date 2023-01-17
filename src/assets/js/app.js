@@ -1921,6 +1921,34 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
             }
 
         }
+
+    let partnersBtn = document.querySelectorAll(".top-partner_name");
+    let partnerModal = document.querySelector(".partner-modal");
+
+    if(partnersBtn.length > 0) {
+        partnersBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                partnerModal.style.display = "block";
+                scrollLock.disablePageScroll(partnerModal);
+                setTimeout(() => {
+                    partnerModal.classList.add("show");
+                }, 10);
+            }
+        });
+
+        if(partnerModal) {
+            let partnerClose = document.querySelector(".close-partner");
+            partnerClose.onclick = (e) => {
+                e.preventDefault();
+                partnerModal.classList.remove("show");
+                scrollLock.enablePageScroll(partnerModal);
+                setTimeout(() => {
+                    partnerModal.style.display = "none";
+                }, 400);
+            }
+        }
+    }
         
 
       let map = document.querySelector("#map");
