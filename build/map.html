@@ -1173,10 +1173,19 @@
         
         <section class="wrapper map">
             <h2>Здесь вы можете узнать контактное лицо <br />в ближайшем офисе Softline</h2>
-            <div id="map" class="map-block">
-                <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+            <div class="map__wrapper">
+                <div class="map__cities">
+                    <a class="map__city" href="#">Москва</a>
+                    <a class="map__city" href="#">Санкт-Петербург</a>
+                    <a class="map__city" href="#">Белгород</a>
+                    <a class="map__city" href="#">Владивосток</a>
+                    <a class="map__city" href="#">Волгоград</a>
+                    <a class="map__city" href="#">Казань</a>
+                </div>
+                <div id="map" class="map-block">
+                    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+                </div>
             </div>
-        
             <div id="map__panel" class="map__panel">
                 <button class="close__baloon"><span>Закрыть</span> <span class="close-button__cross"><span class="close-icon"></span></span></button>       
                 <div class="panel-body">
@@ -1311,7 +1320,7 @@
                             Россия
                         </p>
                         <div class="baloon__body">
-                            <p class="baloon__city">Волгоград 2</p>
+                            <p class="baloon__city">Казань</p>
                             <div>
                                 <p class="baloon__info">Контакты</p>
                                 <a class="baloon__link" href="tel:+70000000000">+7 (000) 000-00-00</a>
@@ -1331,7 +1340,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>    
         </section>
         
         <div class="cookie regModal">

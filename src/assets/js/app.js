@@ -406,7 +406,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
+    let solveContStory = document.querySelector(".solve-p__container");
+    if(solveContStory) {
+        new Swiper(".solve-p__container", {
+            navigation: {
+                nextEl: ".solve-p__container .swiper-button-next",
+                prevEl: ".solve-p__container .swiper-button-prev"
+            },
+            slidesPerView: 2,
+            watchOverflow: true,
+            spaceBetween: 40,
+            freeMode: "false",
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1441: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1921: {
+                    slidesPerView: 2,
+                }
+            },
+        });
+    }
 
     if(document.querySelector(".projects__slider")) {
         new Swiper(".projects__slider", {
@@ -2044,13 +2074,13 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
 
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
-                    center: [55.751574, 37.573856],
-                    zoom: 5,
+                    center: [62.040454, 96.165935],
+                    zoom: 3,
                     behaviors: ['default', 'scrollZoom']
                 }, {
                     searchControlProvider: 'yandex#search'
                 }),
-                    clusterer = new ymaps.Clusterer({
+                    /*clusterer = new ymaps.Clusterer({
                     clusterIcons: [
                         {
                             href: 'assets/images/map/default.svg',
@@ -2062,13 +2092,81 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                     clusterHideIconOnBalloonOpen: false,
                     geoObjectHideIconOnBalloonOpen: false,
                     hasBalloon: false
-                }),
+                }),*/
                     getPointData = function (index) {
                     return {};
                 },
                 geoObjects = [];
 
-                clusterer.events
+                ///////////////////////////////////////
+
+                var colors = ['#ff0000', '#00000000', '#00000000', '#00000000'];
+
+                var objectManager = new ymaps.ObjectManager();
+                ymaps.borders.load('001', {
+                    lang: 'ru',
+                    quality: 2
+                }).then(function (result) {
+                    var queue = [];
+                    var regions = result.features.reduce(function (acc, feature) {
+                        var iso = feature.properties.iso3166;
+                        feature.id = iso;
+                        feature.options = {
+                            fillOpacity: 1,
+                            strokeColor: '#ffffff',
+                            strokeOpacity: 1
+                        };
+                        acc[iso] = feature;
+                        return acc;
+                    }, {});
+
+                    function paint(iso) {
+                        var allowedColors = colors.slice();
+                        var region = regions[iso];
+                        var neighbors = region.properties.neighbors;
+                        if (region.options.fillColor) {
+                            return;
+                        }
+                        if (neighbors.length !== 0) {
+                            neighbors.forEach(function (neighbor) {
+                                var fillColor = regions[neighbor].options.fillColor;
+                                if (queue.indexOf(neighbor) === -1) {
+                                    queue.push(neighbor);
+                                }
+                            });
+                        }
+                        if(region.id === "RU") {
+                            region.options.fillColor = "#c9c9c94a";
+                        } else {
+                            region.options.fillColor = "#c9c9c9";
+                        }
+                    }
+
+                    for (var iso in regions) {
+                        if (!regions[iso].options.fillColor) {
+                            queue.push(iso);
+                        }
+                        while (queue.length > 0) {
+                            paint(queue.shift());
+                        }
+                    }
+                    result.features = [];
+                    for (var reg in regions) {
+                        result.features.push(regions[reg]);
+                    }
+                    objectManager.add(result);
+                    myMap.geoObjects.add(objectManager);
+                })
+                ///////////////////////////////////////////////////
+                
+                /*var pane = new ymaps.pane.StaticPane(myMap, {
+                    zIndex: 100, css: {
+                        width: '100%', height: '100%', backgroundColor: '#c9c9c9'
+                    }
+                });
+                myMap.panes.append('#c9c9c9', pane);*/
+
+                /*clusterer.events
                     .add(['click'], function (e) {
                         var target = e.get('target'),
                             type = e.get('type');
@@ -2078,7 +2176,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                                 duration: 300
                             });
                         } 
-                    });
+                    });*/
 
             function render() {
                 return new Promise( ( resolve, reject ) => {
@@ -2132,20 +2230,21 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         iconImageSize: [30, 30],
                         iconImageOffset: [-15, -15],
                         balloonContentLayout: BalloonContentLayout,
+                        hideIconOnBalloonOpen:false,
                         balloonPanelMaxMapArea: 0,
                         balloonLayout: "default#imageWithContent",
                         balloonShadow: false,
                         balloonImageSize: [0, 0]
                     });
                     myPlacemark.fakeId = id[i];
-                    geoObjects[i] = myPlacemark;
+                    myMap.geoObjects.add(myPlacemark);
                     myPlacemark.events.add('balloonopen', function (e) {
                         /*myMap.setCenter(myPlacemark.geometry._coordinates, 16, {
                             duration: 500
                         });*/
 
                         let fakeId = myPlacemark.fakeId;
-                        myPlacemark.options.set('iconImageHref', 'assets/images/map/pressed.svg');
+                        //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
                         let div = document.querySelector(`.id${fakeId}`);
                         if(div) {
                             div.classList.add("open");
@@ -2157,7 +2256,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         activePlacmark = myPlacemark;
                     });
                     myPlacemark.events.add('balloonclose', function (e) {
-                        myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
+                        //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
                         baloons.forEach(baloon => {
                             baloon.classList.remove("open");
                         });
@@ -2168,23 +2267,36 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                     });
                 }
             
-                clusterer.options.set({
+                /*clusterer.options.set({
                     gridSize: 80,
                     clusterDisableClickZoom: true
                 });
             
-                clusterer.add(geoObjects);
+                clusterer.add(geoObjects);*/
                 myMap.behaviors.disable('scrollZoom');
-                myMap.geoObjects.add(clusterer);
+                //myMap.geoObjects.add(clusterer);
                 myMap.controls.add('geolocationControl');
                 myMap.controls.remove('searchControl');
             
-                myMap.setBounds(clusterer.getBounds(), {
+                /*myMap.setBounds(clusterer.getBounds(), {
                     checkZoomRange: true
-                });    
+                });    */
                 myMap.behaviors.enable("dblClickZoom", "rightMouseButtonMagnifier", "multiTouch", "drag");
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                     //myMap.behaviors.disable('drag');
+                }
+
+                const buttons = document.querySelectorAll('.map__city');
+                for(let k = 0; k < data.length; k++) {
+                    buttons[k].setAttribute("data-index", id[k]);
+                    buttons[k].addEventListener('click', ({ target: { dataset: { index } } }) => {
+                        event.preventDefault();
+                        if (index) {
+                            myMap.setCenter(pointsData[index], 11, {
+                                duration: 400
+                            });
+                        }
+                    });
                 }
             })
         
