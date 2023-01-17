@@ -464,6 +464,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    let storiesSliderNew = document.querySelector(".stories-slider-new");
+    if(storiesSliderNew) {
+        new Swiper(".stories-slider-new", {
+            navigation: {
+                nextEl: ".stories-slider-new .swiper-button-next",
+                prevEl: ".stories-slider-new .swiper-button-prev"
+            },
+            slidesPerView: 6,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.7,
+                },
+                481: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 6,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
+
     let featuresSlider = document.querySelector(".features__slider");
     if(featuresSlider) {
         new Swiper(".features__slider", {
@@ -497,6 +529,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    let gallerySlider = document.querySelector(".gallery-slider");
+    if(gallerySlider) {
+        new Swiper(".gallery-slider", {
+            navigation: {
+                nextEl: ".gallery-slider .swiper-button-next",
+                prevEl: ".gallery-slider .swiper-button-prev"
+            },
+            slidesPerView: 4,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.1,
+                },
+                481: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1441: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1921: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
 
 
     let solveCustomers = document.querySelectorAll(".customer__container");
