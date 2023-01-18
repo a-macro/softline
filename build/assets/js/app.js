@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
           spaceBetween: 40
         },
         1441: {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 40
         },
         1921: {
@@ -729,6 +729,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   initSlider();
+  var initStoryRange = false;
+  var swiperStoryRange;
+  var sliderStoryRange = document.querySelector(".range-slider");
+  function initSliderStoryRange() {
+    if (width <= 480 && !initStoryRange && sliderStoryRange) {
+      swiperStoryRange = new Swiper(".range-slider", {
+        loop: true,
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        freeMode: true,
+        autoHeight: false,
+        watchOverflow: true,
+        initialSlide: 0
+      });
+      initStoryRange = true;
+    }
+    if (initStoryRange && width > 480) {
+      initStoryRange = false;
+      swiperStoryRange.destroy();
+    }
+  }
+  initSliderStoryRange();
   var initSuggestion = false;
   var swiperSuggestion;
   var sliderSuggestion = document.querySelector(".suggestion-slider");
@@ -1099,6 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     initSlider();
     initSliderSuggestion();
+    initSliderStoryRange();
   });
   var currentActiveButton = document.querySelector('.filter-button--active');
   var no = function no() {

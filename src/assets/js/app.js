@@ -428,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     spaceBetween: 40,
                 },
                 1441: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 40,
                 },
                 1921: {
@@ -767,6 +767,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     initSlider();
+
+    let initStoryRange = false;
+    let swiperStoryRange;
+    let sliderStoryRange = document.querySelector(".range-slider");
+
+    function initSliderStoryRange() {
+        if (width <= 480 && !initStoryRange && sliderStoryRange) {
+            swiperStoryRange = new Swiper(".range-slider", {
+                loop: true,
+                slidesPerView: 1.1,
+                spaceBetween: 20,
+                freeMode: true,
+                autoHeight: false,
+                watchOverflow: true, 
+                initialSlide: 0,
+            });
+            initStoryRange = true;
+        }
+
+        if (initStoryRange && width > 480) {
+            initStoryRange = false;
+            swiperStoryRange.destroy();
+        }
+    }
+    initSliderStoryRange();
 
     let initSuggestion = false;
     let swiperSuggestion;
@@ -1177,6 +1202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         initSlider();
         initSliderSuggestion();
+        initSliderStoryRange();
     });
 
 
