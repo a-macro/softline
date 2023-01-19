@@ -176,27 +176,29 @@ document.addEventListener("DOMContentLoaded", function () {
   var menuSecond = document.querySelector('.menu-second');
   var innnerDiv = document.querySelector('#inner-menu');
   var menu = document.querySelectorAll(".menu");
-  backButton.onclick = function (e) {
-    e.preventDefault();
-    var act = document.querySelector(".menu__item.active");
-    if (act) {
-      act.classList.remove("active");
-      if (window.innerWidth <= 480) {
-        subMenuItems.forEach(function (itemRest) {
-          itemRest.classList.remove("hide");
-        });
-        return;
+  if (backButton) {
+    backButton.onclick = function (e) {
+      e.preventDefault();
+      var act = document.querySelector(".menu__item.active");
+      if (act) {
+        act.classList.remove("active");
+        if (window.innerWidth <= 480) {
+          subMenuItems.forEach(function (itemRest) {
+            itemRest.classList.remove("hide");
+          });
+          return;
+        }
       }
-    }
-    menuWrapper.classList.remove("show");
-    var act2 = document.querySelector(".header__item.active");
-    if (act2) {
-      menu.forEach(function (menu) {
-        menu.style.display = "none";
-      });
-      act2.classList.remove("active");
-    }
-  };
+      menuWrapper.classList.remove("show");
+      var act2 = document.querySelector(".header__item.active");
+      if (act2) {
+        menu.forEach(function (menu) {
+          menu.style.display = "none";
+        });
+        act2.classList.remove("active");
+      }
+    };
+  }
   var tabAccItems = document.querySelectorAll('.tab-accord__list-item');
   if (tabAccItems.length) {
     tabAccItems.forEach(function (tab) {
@@ -307,79 +309,119 @@ document.addEventListener("DOMContentLoaded", function () {
     } */
   };
 
-  new Swiper(".services__container", {
-    navigation: {
-      nextEl: ".services__container .swiper-button-next",
-      prevEl: ".services__container .swiper-button-prev"
-    },
-    slidesPerView: 6,
-    watchOverflow: true,
-    spaceBetween: 0,
-    loop: true,
-    breakpoints: {
-      300: {
-        slidesPerView: "auto"
+  var servCont = document.querySelector(".services__container");
+  if (servCont) {
+    new Swiper(".services__container", {
+      navigation: {
+        nextEl: ".services__container .swiper-button-next",
+        prevEl: ".services__container .swiper-button-prev"
       },
-      769: {
-        slidesPerView: 6
-      },
-      1025: {
-        slidesPerView: 6,
-        spaceBetween: 0
+      slidesPerView: 6,
+      watchOverflow: true,
+      spaceBetween: 0,
+      loop: true,
+      breakpoints: {
+        300: {
+          slidesPerView: "auto"
+        },
+        769: {
+          slidesPerView: 6
+        },
+        1025: {
+          slidesPerView: 6,
+          spaceBetween: 0
+        }
       }
-    }
-  });
-  new Swiper(".help__container", {
-    navigation: {
-      nextEl: ".help__container .swiper-button-next",
-      prevEl: ".help__container .swiper-button-prev"
-    },
-    slidesPerView: 6,
-    watchOverflow: true,
-    spaceBetween: 40,
-    loop: true,
-    breakpoints: {
-      300: {
-        slidesPerView: "auto",
-        spaceBetween: 20
+    });
+  }
+  var helpCont = document.querySelector(".help__container");
+  if (helpCont) {
+    new Swiper(".help__container", {
+      navigation: {
+        nextEl: ".help__container .swiper-button-next",
+        prevEl: ".help__container .swiper-button-prev"
       },
-      769: {
-        slidesPerView: 6,
-        spaceBetween: 40
-      },
-      1025: {
-        slidesPerView: 6
+      slidesPerView: 6,
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: true,
+      breakpoints: {
+        300: {
+          slidesPerView: "auto",
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 6,
+          spaceBetween: 40
+        },
+        1025: {
+          slidesPerView: 6
+        }
       }
-    }
-  });
-  new Swiper(".solve__container", {
-    navigation: {
-      nextEl: ".solve__container .swiper-button-next",
-      prevEl: ".solve__container .swiper-button-prev"
-    },
-    slidesPerView: 4,
-    watchOverflow: true,
-    spaceBetween: 40,
-    freeMode: "false",
-    loop: true,
-    breakpoints: {
-      300: {
-        slidesPerView: "auto",
-        spaceBetween: 20
+    });
+  }
+  var solveCont = document.querySelector(".solve__container");
+  if (solveCont) {
+    new Swiper(".solve__container", {
+      navigation: {
+        nextEl: ".solve__container .swiper-button-next",
+        prevEl: ".solve__container .swiper-button-prev"
       },
-      769: {
-        slidesPerView: 2,
-        spaceBetween: 40
-      },
-      1441: {
-        slidesPerView: 3,
-        spaceBetween: 40
-      },
-      1921: {
-        slidesPerView: 4
+      slidesPerView: 4,
+      watchOverflow: true,
+      spaceBetween: 40,
+      freeMode: "false",
+      loop: true,
+      breakpoints: {
+        300: {
+          slidesPerView: "auto",
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1441: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        },
+        1921: {
+          slidesPerView: 4
+        }
       }
-    }
-  });
+    });
+  }
+  var solveContStory = document.querySelector(".solve-p__container");
+  if (solveContStory) {
+    new Swiper(".solve-p__container", {
+      navigation: {
+        nextEl: ".solve-p__container .swiper-button-next",
+        prevEl: ".solve-p__container .swiper-button-prev"
+      },
+      slidesPerView: 2,
+      watchOverflow: true,
+      spaceBetween: 40,
+      freeMode: "false",
+      loop: true,
+      breakpoints: {
+        300: {
+          slidesPerView: "auto",
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1441: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1921: {
+          slidesPerView: 2
+        }
+      }
+    });
+  }
   if (document.querySelector(".projects__slider")) {
     new Swiper(".projects__slider", {
       navigation: {
@@ -428,6 +470,102 @@ document.addEventListener("DOMContentLoaded", function () {
           spaceBetween: 40
         },
         1025: {
+          spaceBetween: 40
+        }
+      }
+    });
+  }
+  var storiesSliderNew = document.querySelector(".stories-slider-new");
+  if (storiesSliderNew) {
+    new Swiper(".stories-slider-new", {
+      navigation: {
+        nextEl: ".stories-slider-new .swiper-button-next",
+        prevEl: ".stories-slider-new .swiper-button-prev"
+      },
+      slidesPerView: 6,
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: false,
+      breakpoints: {
+        300: {
+          spaceBetween: 20,
+          slidesPerView: 1.7
+        },
+        481: {
+          slidesPerView: 3.5,
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 6,
+          spaceBetween: 40
+        },
+        1025: {
+          spaceBetween: 40
+        }
+      }
+    });
+  }
+  var featuresSlider = document.querySelector(".features__slider");
+  if (featuresSlider) {
+    new Swiper(".features__slider", {
+      navigation: {
+        nextEl: ".features__slider .swiper-button-next",
+        prevEl: ".features__slider .swiper-button-prev"
+      },
+      slidesPerView: 3,
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: false,
+      breakpoints: {
+        300: {
+          spaceBetween: 20,
+          slidesPerView: 1.1
+        },
+        481: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1025: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      }
+    });
+  }
+  var gallerySlider = document.querySelector(".gallery-slider");
+  if (gallerySlider) {
+    new Swiper(".gallery-slider", {
+      navigation: {
+        nextEl: ".gallery-slider .swiper-button-next",
+        prevEl: ".gallery-slider .swiper-button-prev"
+      },
+      slidesPerView: 4,
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: false,
+      breakpoints: {
+        300: {
+          spaceBetween: 20,
+          slidesPerView: 1.1
+        },
+        481: {
+          slidesPerView: 1.3,
+          spaceBetween: 20
+        },
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 40
+        },
+        1441: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        },
+        1921: {
+          slidesPerView: 4,
           spaceBetween: 40
         }
       }
@@ -591,6 +729,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   initSlider();
+  var initStoryRange = false;
+  var swiperStoryRange;
+  var sliderStoryRange = document.querySelector(".range-slider");
+  function initSliderStoryRange() {
+    if (width <= 480 && !initStoryRange && sliderStoryRange) {
+      swiperStoryRange = new Swiper(".range-slider", {
+        loop: true,
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        freeMode: true,
+        autoHeight: false,
+        watchOverflow: true,
+        initialSlide: 0
+      });
+      initStoryRange = true;
+    }
+    if (initStoryRange && width > 480) {
+      initStoryRange = false;
+      swiperStoryRange.destroy();
+    }
+  }
+  initSliderStoryRange();
   var initSuggestion = false;
   var swiperSuggestion;
   var sliderSuggestion = document.querySelector(".suggestion-slider");
@@ -961,6 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     initSlider();
     initSliderSuggestion();
+    initSliderStoryRange();
   });
   var currentActiveButton = document.querySelector('.filter-button--active');
   var no = function no() {
@@ -1698,6 +1859,54 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     }
   }
+  var programBtn = document.querySelector(".program-conditions");
+  var programModal = document.querySelector(".program-modal");
+  if (programBtn) {
+    programBtn.onclick = function (e) {
+      e.preventDefault();
+      programModal.style.display = "block";
+      scrollLock.disablePageScroll(programModal);
+      setTimeout(function () {
+        programModal.classList.add("show");
+      }, 10);
+    };
+    if (programModal) {
+      var programClose = document.querySelector(".close-program");
+      programClose.onclick = function (e) {
+        e.preventDefault();
+        programModal.classList.remove("show");
+        scrollLock.enablePageScroll(programModal);
+        setTimeout(function () {
+          programModal.style.display = "none";
+        }, 400);
+      };
+    }
+  }
+  var partnersBtn = document.querySelectorAll(".top-partner_name");
+  var partnerModal = document.querySelector(".partner-modal");
+  if (partnersBtn.length > 0) {
+    partnersBtn.forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        partnerModal.style.display = "block";
+        scrollLock.disablePageScroll(partnerModal);
+        setTimeout(function () {
+          partnerModal.classList.add("show");
+        }, 10);
+      };
+    });
+    if (partnerModal) {
+      var partnerClose = document.querySelector(".close-partner");
+      partnerClose.onclick = function (e) {
+        e.preventDefault();
+        partnerModal.classList.remove("show");
+        scrollLock.enablePageScroll(partnerModal);
+        setTimeout(function () {
+          partnerModal.style.display = "none";
+        }, 400);
+      };
+    }
+  }
   var map = document.querySelector("#map");
   var body = document.querySelector("body");
   if (map) {
@@ -1720,38 +1929,107 @@ document.addEventListener("DOMContentLoaded", function () {
     var activePlacmark;
     ymaps.ready(function () {
       var myMap = new ymaps.Map('map', {
-          center: [55.751574, 37.573856],
-          zoom: 5,
+          center: [62.040454, 96.165935],
+          zoom: 3,
           behaviors: ['default', 'scrollZoom']
         }, {
           searchControlProvider: 'yandex#search'
         }),
-        clusterer = new ymaps.Clusterer({
-          clusterIcons: [{
-            href: 'assets/images/map/default.svg',
-            size: [30, 30],
-            offset: [-15, -15]
-          }],
-          groupByCoordinates: false,
-          clusterDisableClickZoom: false,
-          clusterHideIconOnBalloonOpen: false,
-          geoObjectHideIconOnBalloonOpen: false,
-          hasBalloon: false
-        }),
+        /*clusterer = new ymaps.Clusterer({
+        clusterIcons: [
+            {
+                href: 'assets/images/map/default.svg',
+                size: [30, 30],
+                offset: [-15, -15]
+            }],
+        groupByCoordinates: false,
+        clusterDisableClickZoom: false,
+        clusterHideIconOnBalloonOpen: false,
+        geoObjectHideIconOnBalloonOpen: false,
+        hasBalloon: false
+        }),*/
         getPointData = function getPointData(index) {
           return {};
         },
         geoObjects = [];
-      clusterer.events.add(['click'], function (e) {
-        var target = e.get('target'),
-          type = e.get('type');
-        if (typeof target.getGeoObjects != 'undefined') {
-          // Событие произошло на кластере.
-          myMap.setCenter(target.properties._data.geoObjects[0].geometry._coordinates, myMap.getZoom() + 1, {
-            duration: 300
-          });
+
+      ///////////////////////////////////////
+
+      var colors = ['#ff0000', '#00000000', '#00000000', '#00000000'];
+      var objectManager = new ymaps.ObjectManager();
+      ymaps.borders.load('001', {
+        lang: 'ru',
+        quality: 2
+      }).then(function (result) {
+        var queue = [];
+        var regions = result.features.reduce(function (acc, feature) {
+          var iso = feature.properties.iso3166;
+          feature.id = iso;
+          feature.options = {
+            fillOpacity: 1,
+            strokeColor: '#ffffff',
+            strokeOpacity: 1
+          };
+          acc[iso] = feature;
+          return acc;
+        }, {});
+        function paint(iso) {
+          var allowedColors = colors.slice();
+          var region = regions[iso];
+          var neighbors = region.properties.neighbors;
+          if (region.options.fillColor) {
+            return;
+          }
+          if (neighbors.length !== 0) {
+            neighbors.forEach(function (neighbor) {
+              var fillColor = regions[neighbor].options.fillColor;
+              if (queue.indexOf(neighbor) === -1) {
+                queue.push(neighbor);
+              }
+            });
+          }
+          if (region.id === "RU") {
+            region.options.fillColor = "#c9c9c94a";
+          } else {
+            region.options.fillColor = "#c9c9c9";
+          }
         }
+        for (var iso in regions) {
+          if (!regions[iso].options.fillColor) {
+            queue.push(iso);
+          }
+          while (queue.length > 0) {
+            paint(queue.shift());
+          }
+        }
+        result.features = [];
+        for (var reg in regions) {
+          result.features.push(regions[reg]);
+        }
+        objectManager.add(result);
+        myMap.geoObjects.add(objectManager);
       });
+      ///////////////////////////////////////////////////
+
+      /*var pane = new ymaps.pane.StaticPane(myMap, {
+          zIndex: 100, css: {
+              width: '100%', height: '100%', backgroundColor: '#c9c9c9'
+          }
+      });
+      myMap.panes.append('#c9c9c9', pane);*/
+
+      /*clusterer.events
+          .add(['click'], function (e) {
+              var target = e.get('target'),
+                  type = e.get('type');
+              if (typeof target.getGeoObjects != 'undefined') {
+                  // Событие произошло на кластере.
+                  myMap.setCenter(target.properties._data.geoObjects[0].geometry._coordinates, myMap.getZoom() + 1, {
+                      duration: 300
+                  });
+              } 
+          });*/
+
       function render() {
         return new Promise(function (resolve, reject) {
           /*let req = new XMLHttpRequest();
@@ -1795,20 +2073,21 @@ document.addEventListener("DOMContentLoaded", function () {
             iconImageSize: [30, 30],
             iconImageOffset: [-15, -15],
             balloonContentLayout: BalloonContentLayout,
+            hideIconOnBalloonOpen: false,
             balloonPanelMaxMapArea: 0,
             balloonLayout: "default#imageWithContent",
             balloonShadow: false,
             balloonImageSize: [0, 0]
           });
           myPlacemark.fakeId = id[i];
-          geoObjects[i] = myPlacemark;
+          myMap.geoObjects.add(myPlacemark);
           myPlacemark.events.add('balloonopen', function (e) {
             /*myMap.setCenter(myPlacemark.geometry._coordinates, 16, {
                 duration: 500
             });*/
 
             var fakeId = myPlacemark.fakeId;
-            myPlacemark.options.set('iconImageHref', 'assets/images/map/pressed.svg');
+            //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
             var div = document.querySelector(".id".concat(fakeId));
             if (div) {
               div.classList.add("open");
@@ -1819,7 +2098,7 @@ document.addEventListener("DOMContentLoaded", function () {
             activePlacmark = myPlacemark;
           });
           myPlacemark.events.add('balloonclose', function (e) {
-            myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
+            //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
             baloons.forEach(function (baloon) {
               baloon.classList.remove("open");
             });
@@ -1832,21 +2111,36 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0, len = pointsData.length; i < len; i++) {
           _loop();
         }
-        clusterer.options.set({
-          gridSize: 80,
-          clusterDisableClickZoom: true
+
+        /*clusterer.options.set({
+            gridSize: 80,
+            clusterDisableClickZoom: true
         });
-        clusterer.add(geoObjects);
+                      clusterer.add(geoObjects);*/
         myMap.behaviors.disable('scrollZoom');
-        myMap.geoObjects.add(clusterer);
+        //myMap.geoObjects.add(clusterer);
         myMap.controls.add('geolocationControl');
         myMap.controls.remove('searchControl');
-        myMap.setBounds(clusterer.getBounds(), {
-          checkZoomRange: true
-        });
+
+        /*myMap.setBounds(clusterer.getBounds(), {
+            checkZoomRange: true
+        });    */
         myMap.behaviors.enable("dblClickZoom", "rightMouseButtonMagnifier", "multiTouch", "drag");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           //myMap.behaviors.disable('drag');
+        }
+        var buttons = document.querySelectorAll('.map__city');
+        for (var k = 0; k < data.length; k++) {
+          buttons[k].setAttribute("data-index", id[k]);
+          buttons[k].addEventListener('click', function (_ref) {
+            var index = _ref.target.dataset.index;
+            event.preventDefault();
+            if (index) {
+              myMap.setCenter(pointsData[index], 11, {
+                duration: 400
+              });
+            }
+          });
         }
       });
     });

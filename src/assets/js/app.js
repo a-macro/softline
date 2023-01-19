@@ -175,28 +175,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const innnerDiv = document.querySelector('#inner-menu');
     let menu = document.querySelectorAll(".menu");
 
-    backButton.onclick = (e) => {
-        e.preventDefault();
-        let act = document.querySelector(".menu__item.active");
-        if(act) {
-            act.classList.remove("active");
-            if(window.innerWidth <=480) {
-                subMenuItems.forEach(itemRest => {
-                    itemRest.classList.remove("hide");
+    if(backButton){
+        backButton.onclick = (e) => {
+            e.preventDefault();
+            let act = document.querySelector(".menu__item.active");
+            if(act) {
+                act.classList.remove("active");
+                if(window.innerWidth <=480) {
+                    subMenuItems.forEach(itemRest => {
+                        itemRest.classList.remove("hide");
+                    });
+                    return;
+                }
+            }
+            menuWrapper.classList.remove("show");
+    
+            let act2 = document.querySelector(".header__item.active");
+            if(act2) {
+                menu.forEach(menu => {
+                    menu.style.display = "none";
                 });
-                return;
+                act2.classList.remove("active");
             }
         }
-        menuWrapper.classList.remove("show");
-
-        let act2 = document.querySelector(".header__item.active");
-        if(act2) {
-            menu.forEach(menu => {
-                menu.style.display = "none";
-            });
-            act2.classList.remove("active");
-        }
     }
+
 
 
     const tabAccItems = document.querySelectorAll('.tab-accord__list-item')
@@ -318,81 +321,122 @@ document.addEventListener("DOMContentLoaded", () => {
         } */
     }
 
-    new Swiper(".services__container", {
-        navigation: {
-            nextEl: ".services__container .swiper-button-next",
-            prevEl: ".services__container .swiper-button-prev"
-        },
-        slidesPerView: 6,
-        watchOverflow: true,
-        spaceBetween: 0,
-        loop: true,
-        breakpoints: {
-            300: {
-                slidesPerView: "auto",
+    let servCont = document.querySelector(".services__container");
+    if(servCont) {
+        new Swiper(".services__container", {
+            navigation: {
+                nextEl: ".services__container .swiper-button-next",
+                prevEl: ".services__container .swiper-button-prev"
             },
-            769: {
-                slidesPerView: 6,
+            slidesPerView: 6,
+            watchOverflow: true,
+            spaceBetween: 0,
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                },
+                769: {
+                    slidesPerView: 6,
+                },
+                1025: {
+                    slidesPerView: 6,
+                    spaceBetween: 0,
+                }
             },
-            1025: {
-                slidesPerView: 6,
-                spaceBetween: 0,
-            }
-        },
-    });
+        });    
+    }
 
-    new Swiper(".help__container", {
-        navigation: {
-            nextEl: ".help__container .swiper-button-next",
-            prevEl: ".help__container .swiper-button-prev"
-        },
-        slidesPerView: 6,
-        watchOverflow: true,
-        spaceBetween: 40,
-        loop: true,
-        breakpoints: {
-            300: {
-                slidesPerView: "auto",
-                spaceBetween: 20,
+    let helpCont = document.querySelector(".help__container");
+    if(helpCont) {
+        new Swiper(".help__container", {
+            navigation: {
+                nextEl: ".help__container .swiper-button-next",
+                prevEl: ".help__container .swiper-button-prev"
             },
-            769: {
-                slidesPerView: 6,
-                spaceBetween: 40,
+            slidesPerView: 6,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 6,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    slidesPerView: 6,
+                }
             },
-            1025: {
-                slidesPerView: 6,
-            }
-        },
-    });
+        });    
+    }
 
-    new Swiper(".solve__container", {
-        navigation: {
-            nextEl: ".solve__container .swiper-button-next",
-            prevEl: ".solve__container .swiper-button-prev"
-        },
-        slidesPerView: 4,
-        watchOverflow: true,
-        spaceBetween: 40,
-        freeMode: "false",
-        loop: true,
-        breakpoints: {
-            300: {
-                slidesPerView: "auto",
-                spaceBetween: 20,
+    let solveCont = document.querySelector(".solve__container");
+    if(solveCont) {
+        new Swiper(".solve__container", {
+            navigation: {
+                nextEl: ".solve__container .swiper-button-next",
+                prevEl: ".solve__container .swiper-button-prev"
             },
-            769: {
-                slidesPerView: 2,
-                spaceBetween: 40,
+            slidesPerView: 4,
+            watchOverflow: true,
+            spaceBetween: 40,
+            freeMode: "false",
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1441: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1921: {
+                    slidesPerView: 4,
+                }
             },
-            1441: {
-                slidesPerView: 3,
-                spaceBetween: 40,
+        });
+    }
+
+    let solveContStory = document.querySelector(".solve-p__container");
+    if(solveContStory) {
+        new Swiper(".solve-p__container", {
+            navigation: {
+                nextEl: ".solve-p__container .swiper-button-next",
+                prevEl: ".solve-p__container .swiper-button-prev"
             },
-            1921: {
-                slidesPerView: 4,
-            }
-        },
-    });
+            slidesPerView: 2,
+            watchOverflow: true,
+            spaceBetween: 40,
+            freeMode: "false",
+            loop: true,
+            breakpoints: {
+                300: {
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1441: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1921: {
+                    slidesPerView: 2,
+                }
+            },
+        });
+    }
 
     if(document.querySelector(".projects__slider")) {
         new Swiper(".projects__slider", {
@@ -449,6 +493,109 @@ document.addEventListener("DOMContentLoaded", () => {
         });    
 
     }
+
+    let storiesSliderNew = document.querySelector(".stories-slider-new");
+    if(storiesSliderNew) {
+        new Swiper(".stories-slider-new", {
+            navigation: {
+                nextEl: ".stories-slider-new .swiper-button-next",
+                prevEl: ".stories-slider-new .swiper-button-prev"
+            },
+            slidesPerView: 6,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.7,
+                },
+                481: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 6,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
+
+    let featuresSlider = document.querySelector(".features__slider");
+    if(featuresSlider) {
+        new Swiper(".features__slider", {
+            navigation: {
+                nextEl: ".features__slider .swiper-button-next",
+                prevEl: ".features__slider .swiper-button-prev"
+            },
+            slidesPerView: 3,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.1,
+                },
+                481: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
+
+    let gallerySlider = document.querySelector(".gallery-slider");
+    if(gallerySlider) {
+        new Swiper(".gallery-slider", {
+            navigation: {
+                nextEl: ".gallery-slider .swiper-button-next",
+                prevEl: ".gallery-slider .swiper-button-prev"
+            },
+            slidesPerView: 4,
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: false,
+            breakpoints: {
+                300: {
+                    spaceBetween: 20,
+                    slidesPerView: 1.1,
+                },
+                481: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 20,
+                },
+                769: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1441: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1921: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                }
+            },
+        });    
+
+    }
+
 
     let solveCustomers = document.querySelectorAll(".customer__container");
     if(solveCustomers.length > 0) {
@@ -620,6 +767,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     initSlider();
+
+    let initStoryRange = false;
+    let swiperStoryRange;
+    let sliderStoryRange = document.querySelector(".range-slider");
+
+    function initSliderStoryRange() {
+        if (width <= 480 && !initStoryRange && sliderStoryRange) {
+            swiperStoryRange = new Swiper(".range-slider", {
+                loop: true,
+                slidesPerView: 1.1,
+                spaceBetween: 20,
+                freeMode: true,
+                autoHeight: false,
+                watchOverflow: true, 
+                initialSlide: 0,
+            });
+            initStoryRange = true;
+        }
+
+        if (initStoryRange && width > 480) {
+            initStoryRange = false;
+            swiperStoryRange.destroy();
+        }
+    }
+    initSliderStoryRange();
 
     let initSuggestion = false;
     let swiperSuggestion;
@@ -1030,6 +1202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         initSlider();
         initSliderSuggestion();
+        initSliderStoryRange();
     });
 
 
@@ -1847,6 +2020,61 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
             }
         }
 
+        let programBtn = document.querySelector(".program-conditions");
+        let programModal = document.querySelector(".program-modal");
+        if(programBtn) {
+            programBtn.onclick = (e) => {
+                e.preventDefault();
+                programModal.style.display = "block";
+                scrollLock.disablePageScroll(programModal);
+                setTimeout(() => {
+                    programModal.classList.add("show");
+                }, 10);
+            }
+
+            if(programModal) {
+                let programClose = document.querySelector(".close-program");
+                programClose.onclick = (e) => {
+                    e.preventDefault();
+                    programModal.classList.remove("show");
+                    scrollLock.enablePageScroll(programModal);
+                    setTimeout(() => {
+                        programModal.style.display = "none";
+                    }, 400);
+                }
+            }
+
+        }
+
+    let partnersBtn = document.querySelectorAll(".top-partner_name");
+    let partnerModal = document.querySelector(".partner-modal");
+
+    if(partnersBtn.length > 0) {
+        partnersBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                partnerModal.style.display = "block";
+                scrollLock.disablePageScroll(partnerModal);
+                setTimeout(() => {
+                    partnerModal.classList.add("show");
+                }, 10);
+            }
+        });
+
+        if(partnerModal) {
+            let partnerClose = document.querySelector(".close-partner");
+            partnerClose.onclick = (e) => {
+                e.preventDefault();
+                partnerModal.classList.remove("show");
+                scrollLock.enablePageScroll(partnerModal);
+                setTimeout(() => {
+                    partnerModal.style.display = "none";
+                }, 400);
+            }
+        }
+    }
+        
+
       let map = document.querySelector("#map");
       let body = document.querySelector("body");
       if(map) {
@@ -1872,13 +2100,13 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
 
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
-                    center: [55.751574, 37.573856],
-                    zoom: 5,
+                    center: [62.040454, 96.165935],
+                    zoom: 3,
                     behaviors: ['default', 'scrollZoom']
                 }, {
                     searchControlProvider: 'yandex#search'
                 }),
-                    clusterer = new ymaps.Clusterer({
+                    /*clusterer = new ymaps.Clusterer({
                     clusterIcons: [
                         {
                             href: 'assets/images/map/default.svg',
@@ -1890,13 +2118,81 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                     clusterHideIconOnBalloonOpen: false,
                     geoObjectHideIconOnBalloonOpen: false,
                     hasBalloon: false
-                }),
+                }),*/
                     getPointData = function (index) {
                     return {};
                 },
                 geoObjects = [];
 
-                clusterer.events
+                ///////////////////////////////////////
+
+                var colors = ['#ff0000', '#00000000', '#00000000', '#00000000'];
+
+                var objectManager = new ymaps.ObjectManager();
+                ymaps.borders.load('001', {
+                    lang: 'ru',
+                    quality: 2
+                }).then(function (result) {
+                    var queue = [];
+                    var regions = result.features.reduce(function (acc, feature) {
+                        var iso = feature.properties.iso3166;
+                        feature.id = iso;
+                        feature.options = {
+                            fillOpacity: 1,
+                            strokeColor: '#ffffff',
+                            strokeOpacity: 1
+                        };
+                        acc[iso] = feature;
+                        return acc;
+                    }, {});
+
+                    function paint(iso) {
+                        var allowedColors = colors.slice();
+                        var region = regions[iso];
+                        var neighbors = region.properties.neighbors;
+                        if (region.options.fillColor) {
+                            return;
+                        }
+                        if (neighbors.length !== 0) {
+                            neighbors.forEach(function (neighbor) {
+                                var fillColor = regions[neighbor].options.fillColor;
+                                if (queue.indexOf(neighbor) === -1) {
+                                    queue.push(neighbor);
+                                }
+                            });
+                        }
+                        if(region.id === "RU") {
+                            region.options.fillColor = "#c9c9c94a";
+                        } else {
+                            region.options.fillColor = "#c9c9c9";
+                        }
+                    }
+
+                    for (var iso in regions) {
+                        if (!regions[iso].options.fillColor) {
+                            queue.push(iso);
+                        }
+                        while (queue.length > 0) {
+                            paint(queue.shift());
+                        }
+                    }
+                    result.features = [];
+                    for (var reg in regions) {
+                        result.features.push(regions[reg]);
+                    }
+                    objectManager.add(result);
+                    myMap.geoObjects.add(objectManager);
+                })
+                ///////////////////////////////////////////////////
+                
+                /*var pane = new ymaps.pane.StaticPane(myMap, {
+                    zIndex: 100, css: {
+                        width: '100%', height: '100%', backgroundColor: '#c9c9c9'
+                    }
+                });
+                myMap.panes.append('#c9c9c9', pane);*/
+
+                /*clusterer.events
                     .add(['click'], function (e) {
                         var target = e.get('target'),
                             type = e.get('type');
@@ -1906,7 +2202,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                                 duration: 300
                             });
                         } 
-                    });
+                    });*/
 
             function render() {
                 return new Promise( ( resolve, reject ) => {
@@ -1960,20 +2256,21 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         iconImageSize: [30, 30],
                         iconImageOffset: [-15, -15],
                         balloonContentLayout: BalloonContentLayout,
+                        hideIconOnBalloonOpen:false,
                         balloonPanelMaxMapArea: 0,
                         balloonLayout: "default#imageWithContent",
                         balloonShadow: false,
                         balloonImageSize: [0, 0]
                     });
                     myPlacemark.fakeId = id[i];
-                    geoObjects[i] = myPlacemark;
+                    myMap.geoObjects.add(myPlacemark);
                     myPlacemark.events.add('balloonopen', function (e) {
                         /*myMap.setCenter(myPlacemark.geometry._coordinates, 16, {
                             duration: 500
                         });*/
 
                         let fakeId = myPlacemark.fakeId;
-                        myPlacemark.options.set('iconImageHref', 'assets/images/map/pressed.svg');
+                        //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
                         let div = document.querySelector(`.id${fakeId}`);
                         if(div) {
                             div.classList.add("open");
@@ -1985,7 +2282,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         activePlacmark = myPlacemark;
                     });
                     myPlacemark.events.add('balloonclose', function (e) {
-                        myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
+                        //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
                         baloons.forEach(baloon => {
                             baloon.classList.remove("open");
                         });
@@ -1996,23 +2293,36 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                     });
                 }
             
-                clusterer.options.set({
+                /*clusterer.options.set({
                     gridSize: 80,
                     clusterDisableClickZoom: true
                 });
             
-                clusterer.add(geoObjects);
+                clusterer.add(geoObjects);*/
                 myMap.behaviors.disable('scrollZoom');
-                myMap.geoObjects.add(clusterer);
+                //myMap.geoObjects.add(clusterer);
                 myMap.controls.add('geolocationControl');
                 myMap.controls.remove('searchControl');
             
-                myMap.setBounds(clusterer.getBounds(), {
+                /*myMap.setBounds(clusterer.getBounds(), {
                     checkZoomRange: true
-                });    
+                });    */
                 myMap.behaviors.enable("dblClickZoom", "rightMouseButtonMagnifier", "multiTouch", "drag");
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                     //myMap.behaviors.disable('drag');
+                }
+
+                const buttons = document.querySelectorAll('.map__city');
+                for(let k = 0; k < data.length; k++) {
+                    buttons[k].setAttribute("data-index", id[k]);
+                    buttons[k].addEventListener('click', ({ target: { dataset: { index } } }) => {
+                        event.preventDefault();
+                        if (index) {
+                            myMap.setCenter(pointsData[index], 11, {
+                                duration: 400
+                            });
+                        }
+                    });
                 }
             })
         

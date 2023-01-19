@@ -300,26 +300,33 @@
     </ul>
   </section>
 
-  <section class="world-wide">
-    <div class="wrapper">
-        <div class="section-top">
-            <div class="title-wrapper">
-                <span class="title-num">3</span>
-                <h2 class="title">У нас 95+ офисов&nbsp;<br>в 55 странах</h2>
-            </div>   
-            <a class="link-red" href="#">
-                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
-                </svg>
-                <span>О Softline</span>
-            </a>
-        </div>    
+  <section class="wrapper map">
+    <div class="section-top">
+      <div class="title-wrapper">
+          <span class="title-num">3</span>
+          <h2 class="title">У нас 95+ офисов&nbsp;<br>в 55 странах</h2>
+      </div>   
+      <a class="link-red" href="#">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+              <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+          </svg>
+          <span>О Softline</span>
+      </a>
+  </div>   
+    <div class="map__wrapper">
+        <div class="map__cities">
+            <a class="map__city" href="#">Москва</a>
+            <a class="map__city" href="#">Санкт-Петербург</a>
+            <a class="map__city" href="#">Белгород</a>
+            <a class="map__city" href="#">Владивосток</a>
+            <a class="map__city" href="#">Волгоград</a>
+            <a class="map__city" href="#">Казань</a>
+        </div>
+        <div id="map" class="map-block">
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        </div>
     </div>
-    <div id="map" class="map-block">
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    </div>
-
     <div id="map__panel" class="map__panel">
         <button class="close__baloon"><span>Закрыть</span> <span class="close-button__cross"><span class="close-icon"></span></span></button>       
         <div class="panel-body">
@@ -454,7 +461,7 @@
                     Россия
                 </p>
                 <div class="baloon__body">
-                    <p class="baloon__city">Волгоград 2</p>
+                    <p class="baloon__city">Казань</p>
                     <div>
                         <p class="baloon__info">Контакты</p>
                         <a class="baloon__link" href="tel:+70000000000">+7 (000) 000-00-00</a>
@@ -474,8 +481,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </section>
+
 
 <section class="wrapper">
     <div class="above-block">
