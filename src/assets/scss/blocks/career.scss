@@ -226,10 +226,41 @@
     }
 }
 
+.photo-gallery {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 14rem;
+    @include breakpoint($mid-bp) {
+        margin-top: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5rem;
+    }
+
+    .swiper-container  .swiper-button-next {
+        right: -2rem;
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+
+    .swiper-container  .swiper-button-prev {
+        left: -2rem;
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+}
+
+.gallery-slider {
+    margin-top: 5rem;
+    position: relative;
+}
+
 .suggestion__wrapper {
     margin-top: 7.5rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
     @include breakpoint($xl-bp) {
         margin-top: 5rem;
@@ -242,6 +273,10 @@
     @include breakpoint($sm-bp) {
         margin-top: 2.8rem;
     }
+}
+
+.suggestion__card {
+    margin-bottom: 1rem;
 }
 
 .suggestion__card_img{
@@ -278,7 +313,6 @@
         line-height: 1.56;
         color: #212424;
         margin-top: 3rem;
-        max-width: 73%;
         @include breakpoint($xxl-bp) {
             max-width: 100%;
         }
@@ -288,7 +322,7 @@
     }
 
     li {
-        margin: 2.6rem 0;
+        margin: 1.6rem 0;
         padding: 0;
         padding-left: 4.5rem;
         background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
@@ -324,12 +358,101 @@
     letter-spacing: 0em;
     text-align: left;
     margin-top: 1.2rem;
-    max-width: 73%;
-    @include breakpoint($xxl-bp) {
-        max-width: 100%;
-    }
     @include breakpoint($sm-bp) {
         font-size: 2.3rem;
+    }
+}
+
+.gallery__card  {
+    height: 36rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.stories-slider-new.swiper-container {
+    margin-top: 5rem;
+    position: relative;
+    @include breakpoint($mid-bp) {
+        margin-top: 4rem;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 23rem;
+        @include breakpoint($xxl-bp) {
+            top: 18rem;
+        }
+        @include breakpoint($xl-bp) {
+            top: 14rem;
+        }
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+
+    .swiper-button-next {
+        right: -2rem;
+    }
+
+    .swiper-button-prev {
+        left: -2rem;
+    }
+
+    .story {
+        height: auto;
+        min-height: unset;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .story__img {
+        width: 100%;
+        height: 46rem;
+        @include breakpoint($xxl-bp) {
+            height: 34rem;
+        }
+        @include breakpoint($xl-bp) {
+            height: 25rem;
+        }
+        @include breakpoint($sm-bp) {
+            height: 32rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+        }
+    }
+
+    .story__texts {
+        margin-top: 2.4rem;
+    }
+
+    .story__title {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $black;
+    }
+
+    .story__desc {
+        margin-top: 1.6rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $black;
     }
 }
 
@@ -346,6 +469,9 @@
     .above-block {
         @include breakpoint($xl-bp) {
             margin-top: 11rem;
+        }
+        @include breakpoint($mid-bp) {
+            margin-top: 10rem;
         }
         @include breakpoint($sm-bp) {
             margin-top: 5.5rem;
@@ -423,11 +549,13 @@
         justify-content: space-between;
         align-items: flex-start;
         padding: 3.5rem 4rem;  
+        background: rgb(33 36 36 / 30%);
         @include breakpoint($sm-bp) {
             grid-row: unset;
             grid-column: unset;
             justify-content: flex-start;
             padding: 0;
+            background: unset;
         }  
     }
 

@@ -493,6 +493,8 @@
     width: calc(100% - 40rem);
     padding-top: 6rem;
     padding-right: 4rem;
+    padding-left: 4rem;
+    border-left: 1px solid #D2DCE5;
     @include breakpoint($xxl-bp) {
         padding-top: 5rem;
         width: calc(100% - 52rem);
@@ -504,6 +506,7 @@
         width: 100%;
         padding-left: 2rem;
         padding-right: 2rem;
+        border-left: unset;
     }
     @include breakpoint($sm-bp) {
         padding-left: 2.5rem;
