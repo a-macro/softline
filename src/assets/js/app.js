@@ -2073,6 +2073,34 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
             }
         }
     }
+
+    let employeeBtn = document.querySelectorAll(".employee-block__bottom");
+    let employeeModal = document.querySelector(".employee-modal");
+
+    if(employeeBtn.length > 0) {
+        employeeBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                employeeModal.style.display = "block";
+                scrollLock.disablePageScroll(employeeModal);
+                setTimeout(() => {
+                    employeeModal.classList.add("show");
+                }, 10);
+            }
+        });
+
+        if(employeeModal) {
+            let employeeClose = document.querySelector(".close-employee");
+            employeeClose.onclick = (e) => {
+                e.preventDefault();
+                employeeModal.classList.remove("show");
+                scrollLock.enablePageScroll(employeeModal);
+                setTimeout(() => {
+                    employeeModal.style.display = "none";
+                }, 400);
+            }
+        }
+    }
         
 
       let map = document.querySelector("#map");

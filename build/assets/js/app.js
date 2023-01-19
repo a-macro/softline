@@ -1907,6 +1907,31 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     }
   }
+  var employeeBtn = document.querySelectorAll(".employee-block__bottom");
+  var employeeModal = document.querySelector(".employee-modal");
+  if (employeeBtn.length > 0) {
+    employeeBtn.forEach(function (btn) {
+      btn.onclick = function (e) {
+        e.preventDefault();
+        employeeModal.style.display = "block";
+        scrollLock.disablePageScroll(employeeModal);
+        setTimeout(function () {
+          employeeModal.classList.add("show");
+        }, 10);
+      };
+    });
+    if (employeeModal) {
+      var employeeClose = document.querySelector(".close-employee");
+      employeeClose.onclick = function (e) {
+        e.preventDefault();
+        employeeModal.classList.remove("show");
+        scrollLock.enablePageScroll(employeeModal);
+        setTimeout(function () {
+          employeeModal.style.display = "none";
+        }, 400);
+      };
+    }
+  }
   var map = document.querySelector("#map");
   var body = document.querySelector("body");
   if (map) {

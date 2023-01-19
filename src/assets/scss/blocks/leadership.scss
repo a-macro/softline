@@ -240,7 +240,7 @@
             border: unset;
             padding: unset;
             right: 0.5rem;
-            top: 5.5rem;
+            top: 1.5rem;
             background: unset;
         }
 
@@ -336,10 +336,12 @@
     height: 100%;
     @include breakpoint($mid-bp) {
         width: 100%;
-        height: 94%;
+        height: auto;
+        max-height: 94%;
         border-radius: 12px 12px 0 0;
         overflow: auto;
         flex-direction: column;
+        position: relative;
     }
 }
 

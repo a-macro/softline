@@ -147,6 +147,7 @@
     letter-spacing: 0em;
     text-align: left;
     color: $black;
+    text-decoration: none;
     @include breakpoint($xl-bp) {
         line-height: 1.4;
     }
@@ -206,4 +207,537 @@
             color: white;
         }
     }
+}
+
+.news-page.story-employee {
+    
+    .story-p__img-wrap {
+        max-width: 119rem;
+        margin: 0 auto;
+        @include breakpoint($xxl-bp) {
+            max-width: 90rem;
+        }
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    .story-p__img  {
+        .news-page__contest {
+            max-width: 119rem;
+            margin: 0 auto;   
+            @include breakpoint($xxl-bp) {
+                max-width: 90rem;
+            } 
+            @include breakpoint($sm-bp) {
+                font-size: 1.95rem;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    .unite-block {
+        max-width: 119rem;
+        margin: 8rem auto 0;   
+        @include breakpoint($xxl-bp) {
+            max-width: 90rem;
+        }
+        @include breakpoint($mid-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin-top: 3.5rem;
+        } 
+        @include breakpoint($sm-bp) {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            margin-top: 7rem;
+        }
+
+        .man36 {
+            @include breakpoint($mid-bp) {
+                font-size: 3.6rem;  
+                line-height: 1.44;              
+            }
+        }
+    }
+
+    .center-block {
+        @include breakpoint($mid-bp) {
+            order: 4;
+            width: 100%;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 6rem;
+        }
+
+        .man36 {
+            font-size: 3.15rem;
+            line-height: 1.5;
+        }
+
+        .text-wrapper {
+            max-width: 123rem;
+            @include breakpoint($xxl-bp) {
+                max-width: 94rem;
+            }
+            @include breakpoint($sm-bp) {
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+            }
+        }
+    
+        .text-wrapper__first {
+            @include breakpoint($mid-bp) {
+                padding-bottom: 6rem;   
+                padding-top: 0;         
+            }
+        }
+    }
+
+    .sticky-wrapper {
+        padding-left: 20.5rem;
+        padding-right: 20.5rem;
+        padding-top: 7rem;
+        @include breakpoint($xxl-bp) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        @include breakpoint($mid-bp) {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 4.5rem;
+        }
+
+        & > .line {
+            @include breakpoint($mid-bp) {
+                order: 3;
+                margin-bottom: 1rem;
+            }
+            @include breakpoint($sm-bp) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    .pb10 {
+        padding-bottom: 0;
+        @include breakpoint($xxl-bp) {
+            padding-bottom: 0;
+        }
+        @include breakpoint($mid-bp) {
+            padding-bottom: 0;
+        }
+    }
+
+    .text-wrapper.bottom {
+        margin-top: 10rem;
+        @include breakpoint($xxl-bp) {
+            margin-top: 8rem;
+        }
+        @include breakpoint($mid-bp) {
+            margin-top: 6rem;
+        }
+    }
+
+    .stories {
+        margin-top: 15rem; 
+        @include breakpoint($xl-bp) {
+            margin-top: 12rem; 
+        }
+        @include breakpoint($mid-bp) {
+            margin-top: 7.5rem; 
+        }
+    }
+
+    .press-contacts {
+        justify-content: flex-start;
+        padding-top: 1rem;
+        @include breakpoint($mid-bp) {
+            padding-top: 3rem;
+        }
+
+        .links {
+            justify-content: flex-start;
+        }
+    }
+
+    .block-line {
+        margin-top: 0;
+        margin-bottom: 7rem;
+        @include breakpoint($mid-bp) {
+            margin-bottom: 5.5rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-bottom: 6.5rem;
+        }
+    }
+
+    .story-p__img {
+        margin-top: 8rem;
+        @include breakpoint($mid-bp) {
+            margin-top: 6rem;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 5rem;
+        }
+
+        .story-p__img-wrap {
+            width: 100%;
+            height: 43rem;
+            @include breakpoint($sm-bp) {
+                height: 33rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .insights-title {
+        margin-top: 7rem;
+        font-size: 5.1rem;
+        line-height: 1.2;
+        color: $black;
+        @include breakpoint($mid-bp) {
+            margin-top: 4rem;
+            font-size: 5.2rem;
+            line-height: 1.12;
+        }
+        @include breakpoint($sm-bp) {
+            margin-top: 6rem;
+            font-size: 4.35rem;
+            line-height: 1.22;
+        }
+    }
+
+    .story-employee__data {
+        display: flex;
+        align-items: center;
+        margin-top: 3.2rem;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $red;
+        @include breakpoint($sm-bp) {
+            margin-top: 2.2rem;
+        }
+
+        span {
+            color: #697279;
+            margin-left: 2rem;
+            @include breakpoint($sm-bp) {
+                margin-left: 3rem;
+            }
+        }
+
+    }
+
+    .sticky-wrapper__block {
+        @include breakpoint($mid-bp) {
+            order: 2;
+            width: 100%;
+        }
+    }
+
+    .sticky-wrappper__block.right-block{
+        @include breakpoint($mid-bp) {
+            order: 1;
+            width: 100%;
+        }
+         .links {
+            align-items: flex-start;
+            @include breakpoint($xxl-bp) {
+                align-items: flex-end;
+            }
+            @include breakpoint($mid-bp) {
+                align-items: flex-start;
+                padding-left: 0;
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            @include breakpoint($sm-bp) {
+                align-items: flex-end;
+                padding-left: 2rem;
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .avatar-block {
+        @include breakpoint($mid-bp) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 9rem;
+            gap: 2rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-top: 1rem;
+            display: none;
+        }
+
+        .img-wrapper {
+            @include breakpoint($mid-bp) {
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+
+        .avatar-name {
+            @include breakpoint($mid-bp) {
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 1.5;
+                letter-spacing: 0em;
+                max-width: 18rem;
+            }
+        }
+    }
+
+    .line {
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
+}
+
+.employee-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.4);
+    z-index: 200;
+    display: none;
+    opacity: 0;
+    transition: opacity .4s;
+
+    .close-employee {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+        color: #212424;
+        padding: 1.2rem 1.2rem 1.2rem 2.4rem;
+        border: 0.1rem solid #D2DCE5;
+        border-radius: 10rem;
+        height: min-content;
+        position: relative;
+        top: -2rem;
+        transition: background-color 0.3s;
+        z-index: 5;
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+        z-index: 5;
+        background: white;
+        @include breakpoint($mid-bp) {
+            border: unset;
+            padding: unset;
+            right: 0.5rem;
+            top: 1.5rem;
+            background: unset;
+        }
+
+    
+        span {
+            @include breakpoint($mid-bp) {
+                display: none;
+            }
+        }
+    
+        &:hover {
+            border-color: #40454E;
+    
+            .close-employee__cross {
+                background-color: #40454E;
+    
+                &::after,
+                &::before {
+                    background-color: #FFFFFF;
+                }
+            }
+        }
+    
+        .close-employee__cross {
+            position: relative;
+            display: block;
+            width: 2.8rem;
+            height: 2.8rem;
+            background: rgba(210, 220, 229, 0.3);
+            border-radius: 50%;
+            @include breakpoint($mid-bp) {
+                display: block;
+                background: unset;
+                width: 5.8rem;
+                height: 5.8rem;   
+            }
+            @include breakpoint($mid-bp) {
+                width: 7.8rem;
+                height: 7.8rem;   
+            }
+    
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50%;
+                height: 0.2rem;
+                background-color: #AAB8C3;
+                transition: color 0.3s;
+                transform: translate(-50%, -50%) rotate(-45deg);
+                @include breakpoint($mid-bp) {
+                    background: #D2DCE5;
+                }
+            }
+    
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50%;
+                height: 0.2rem;
+                background-color: #AAB8C3;
+                transform: translate(-50%, -50%) rotate(45deg);
+                transition: color 0.3s;
+                @include breakpoint($mid-bp) {
+                    background: #D2DCE5;
+                }
+            }
+        }
+    }
+
+    .employee__block {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        @include breakpoint($mid-bp) {
+            align-items: flex-end;
+        }
+    }
+    
+    .employee__wrapper-modal {
+        display: flex;
+        flex-direction: column;
+        width: 70.8rem;
+        height: 100%;
+        background: #F0F2F6;;
+        @include breakpoint($mid-bp) {
+            width: 100%;
+            border-radius: 12px 12px 0 0;
+            overflow: auto;
+            flex-direction: column;
+            position: relative;
+            height: auto;
+            max-height: 94%;
+        }
+    }
+        
+    .employee__text-block {
+        padding: 4.8rem;
+        height: 100%;
+        overflow-y: auto;
+        @include breakpoint($mid-bp) {
+            height: unset;
+            overflow: unset;
+            padding: 4.2rem 2rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding: 6.2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .employee__top-wrap {
+        display: flex;
+        align-items: center;
+        @include breakpoint($sm-bp) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    .employee__avatar_text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3.2rem;
+        @include breakpoint($sm-bp) {
+            margin-left: 0;
+            margin-top: 2.55rem;
+        }
+    }
+
+    .employee__avatar_name {
+        font-size: 3.6rem;
+        font-weight: 400;
+        line-height: 1.44;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: $black;
+    }
+
+    .employee__avatar {
+        width: 12rem;
+        min-width: 12rem;
+        height: 12rem;
+        border-radius: 100%;
+    }
+
+    .employee__avatar_position {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #697279;
+    }
+
+    .employee__descr {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 3.2rem;
+        @include breakpoint($sm-bp) {
+            order: 5;
+            font-size: 2.55rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+    }
+
+    .employee__text {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 3rem;
+        color: #697279;
+        @include breakpoint($sm-bp) {
+            order: 6;
+            font-size: 2.05;
+        }
+    }
+}
+
+
+.employee-modal.show {
+    opacity: 1;
 }
