@@ -320,6 +320,10 @@
     opacity: 1;
 }
 
+.swipe-el {
+    pointer-events: all !important;
+}
+
 .leadership__block {
     display: flex;
     justify-content: flex-end;

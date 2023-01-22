@@ -295,6 +295,14 @@
     }
 }
 
+button.link-red {
+    &:hover {
+        span {
+            box-shadow: 0px 4px 0px -3px #a50f2d;
+        }
+    }
+}
+
 .subtitle {
     font-size: 2.4rem;
     font-weight: 500;

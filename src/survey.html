@@ -1,0 +1,76 @@
+---
+layout: default
+title: анкета
+---
+
+
+<section class="intro__pages" style="background-image: url(assets/images/career/image.jpg);">
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Главная</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="intro__content">
+        <h1 class="intro__title">Анкета кандидата</h1>
+        <a class="intro__video-btn" href="#">
+            <span>Working at Softline</span>
+        </a>
+    </div>
+</section>
+
+<section class="wrapper survey">
+    <div class="survey__form">
+        <form action="">
+            <p class="form__title">Анкета кандидата</p>
+            <div class="custom-select">
+                <select>
+                  <option value="none">Вакансия</option>
+                  <option value="Moscow">Разработчик 1С (Проекты внутренние)</option>
+                  <option value="Minsk">Разработчик</option>
+                </select>
+            </div>
+
+            <input type="text" name="name" placeholder="ФИО" required>
+            <input type="email" name="name" placeholder="Email" required>
+            <input type="text" name="name" placeholder="Город" required>
+
+            <div class="form__item">
+                <div class="form__item-name">Ваше резюме</div>
+                
+                <input type="file" id="actual-btn" hidden="">
+        
+                <div class="form__item-wrapper">
+                  <label for="actual-btn" class="link-red">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                      <rect class="ball" width="32" height="32" rx="16"></rect>
+                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"></path>
+                    </svg>
+                    <span class="link-red__text">Вложить файл</span>
+                  </label>
+                </div>
+        
+                <div class="form__item-text canText" data-error="File download interrupted" data-submit="Supported formats: doc, txt, rtf, pfd. No more than 1 mb">
+                  Поддерживаемые форматы: doc, txt, rtf, pfd. Не более 1 Мб
+                </div>
+            </div>
+
+            <button class="link-red" type="submit">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="16" fill="#A50F2D"></rect>
+                  <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"></path>
+                </svg>
+                <span>Отправьте запрос</span>
+              </button>
+              <div class="vacancy__send">
+                <span>
+                    Нажимая "Отправить", вы соглашаетесь с условиями нашей Политики конфиденциальности и обработки персональных данных. Этот сайт защищен reCAPTCHA, и к нему применяются Политика конфиденциальности и Условия обслуживания Google.
+                </span>
+            </div>
+        </form>
+    </div>
+</section>
+
+{{> subscribe-block}}
