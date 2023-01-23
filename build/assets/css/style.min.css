@@ -12351,7 +12351,7 @@ textarea {
   }
 }
 .event-page .left-block + .link-red {
-  display: none;
+  margin-top: 3rem;
 }
 @media (max-width: 768px) {
   .event-page .left-block + .link-red {
@@ -14741,7 +14741,7 @@ body::before {
 }
 
 .intro {
-  height: calc(100vh - 13.7rem);
+  height: calc(100vh - var(--headerH));
   max-height: 1113px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14760,7 +14760,7 @@ body::before {
 }
 @media (max-width: 1440px) {
   .intro {
-    padding-bottom: 2.8rem;
+    padding-bottom: 4.8rem;
     max-height: 600px;
   }
 }

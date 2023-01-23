@@ -3681,7 +3681,7 @@
   }
 
   .left-block+.link-red {
-    display: none;
+    margin-top: 3rem;
 
     @include breakpoint($mid-bp) {
       display: flex;

@@ -4,7 +4,7 @@
 }
 
 .intro {
-    height: calc(100vh - 13.7rem);
+    height: calc(100vh - var((--headerH)));
     max-height: 1113px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +19,7 @@
         max-height: 823px;
     }
     @include breakpoint($xl-bp) {
-        padding-bottom: 2.8rem;        
+        padding-bottom: 4.8rem;        
         max-height: 600px;
     }
     @include breakpoint($mid-bp) {
