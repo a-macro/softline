@@ -1946,17 +1946,30 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         pannel.classList.remove("open");
         if (activePlacmark) {
-          activePlacmark.options.set('iconImageHref', 'assets/images/map/default.svg');
+          activePlacmark.options.set('iconImageHref', 'assets/images/map/Location.svg');
           activePlacmark.balloon.close();
         }
       };
     }
+    var zoom;
+    if (window.innerWidth > 1920) {
+      zoom = 4;
+    } else if (window.innerWidth > 1440) {
+      zoom = 3.6;
+    } else if (window.innerWidth > 768) {
+      zoom = 3;
+    } else if (window.innerWidth > 480) {
+      zoom = 2.6;
+    } else {
+      zoom = 1.5;
+    }
     var activePlacmark;
     ymaps.ready(function () {
       var myMap = new ymaps.Map('map', {
-          center: [62.040454, 96.165935],
-          zoom: 3,
-          behaviors: ['default', 'scrollZoom']
+          center: [64.040454, 106.165935],
+          zoom: zoom,
+          behaviors: ['default', 'scrollZoom'],
+          controls: ['geolocationControl', 'zoomControl', 'fullscreenControl']
         }, {
           searchControlProvider: 'yandex#search'
         }),
@@ -2094,9 +2107,9 @@ document.addEventListener("DOMContentLoaded", function () {
         var _loop = function _loop() {
           var myPlacemark = new ymaps.Placemark(pointsData[i], getPointData(i), {
             iconLayout: 'default#image',
-            iconImageHref: 'assets/images/map/default.svg',
-            iconImageSize: [30, 30],
-            iconImageOffset: [-15, -15],
+            iconImageHref: 'assets/images/map/Location.svg',
+            iconImageSize: [45, 56],
+            iconImageOffset: [-28, -45],
             balloonContentLayout: BalloonContentLayout,
             hideIconOnBalloonOpen: false,
             balloonPanelMaxMapArea: 0,
@@ -2144,8 +2157,6 @@ document.addEventListener("DOMContentLoaded", function () {
                       clusterer.add(geoObjects);*/
         myMap.behaviors.disable('scrollZoom');
         //myMap.geoObjects.add(clusterer);
-        myMap.controls.add('geolocationControl');
-        myMap.controls.remove('searchControl');
 
         /*myMap.setBounds(clusterer.getBounds(), {
             checkZoomRange: true
