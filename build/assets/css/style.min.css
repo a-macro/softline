@@ -7930,7 +7930,7 @@ textarea {
 .catalog-sidebar {
   width: 35rem;
   min-width: 35rem;
-  margin-right: 5rem;
+  margin-right: 2rem;
   padding-left: 4rem;
   padding-top: 1rem;
 }
@@ -7939,7 +7939,6 @@ textarea {
     width: 40rem;
     min-width: 40rem;
     padding-top: 0;
-    margin-right: 12rem;
   }
 }
 @media (max-width: 1440px) {
