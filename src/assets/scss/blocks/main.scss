@@ -16,11 +16,10 @@
     padding-right: 4rem;
     @include breakpoint($xxl-bp) {
         padding-bottom: 7.8rem;        
-        max-height: 823px;
+        max-height: 600px;
     }
     @include breakpoint($xl-bp) {
         padding-bottom: 4.8rem;        
-        max-height: 600px;
     }
     @include breakpoint($mid-bp) {
         height: auto;
@@ -109,6 +108,9 @@
 
 .services-wrapper {
     margin-top: 15rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
 }
 
 .section-top {
@@ -116,7 +118,7 @@
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -228,7 +230,7 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -461,7 +463,10 @@ button.link-red {
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
-    color: $black;
+    color: #697279;
+    @include breakpoint($xxl-bp) {
+        font-size: 1.6rem;
+    }
     @include breakpoint($sm-bp) {
         font-size: 1.94rem;
     }
@@ -529,9 +534,9 @@ button.link-red {
 }
 
 .help__slider_text {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    line-height: 1.6;
+    line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
     color: $black;
@@ -795,7 +800,7 @@ button.link-red {
         padding-top: 15rem;
         margin-top: 0;
         @include breakpoint($xxl-bp) {
-            padding-top: 21.5rem;
+            padding-top: 12rem;
         }
         @include breakpoint($xl-bp) {
             padding-top: 12rem;
@@ -1045,7 +1050,7 @@ button.link-red {
     .news-slide__title {
         font-size: 3.45rem;
         color: white;
-        line-height: 1.5;
+        line-height: 1.12;
         margin-top: 2rem;
         @include breakpoint($xl-bp) {
             margin-top: 1.8rem;
@@ -1075,7 +1080,7 @@ button.link-red {
 }
 
 .news-slide__theme {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0em;
@@ -1087,7 +1092,7 @@ button.link-red {
 }
 
 .news-slide__title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.45;
     letter-spacing: 0em;

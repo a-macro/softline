@@ -149,6 +149,10 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
     row-gap: 14.6rem;
+    @include breakpoint($xxl-bp) {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
     @include breakpoint($xl-bp) {
       padding: 10rem 5.2rem 6.8rem 11.7rem;
     }
@@ -320,6 +324,10 @@
   .from {
     position: relative;
     padding: 15rem 19.7rem 30.8rem;
+    @include breakpoint($xxl-bp) {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
     @include breakpoint($xl-bp) {
       padding: 10rem 15.7rem 20rem;
     }
@@ -461,6 +469,10 @@
   .py-150 {
     padding-top: 15rem;
     padding-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
     @include breakpoint($xl-bp) {
       padding-top: 10rem;
       padding-bottom: 10rem;

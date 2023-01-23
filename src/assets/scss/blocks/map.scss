@@ -11,6 +11,9 @@
         color: $bg-dark;
         margin-top: 15rem;
         margin-bottom: 10rem;
+        @include breakpoint($xxl-bp) {
+            margin-top: 12rem;
+        }
     }
 
     .title-wrapper {
@@ -372,6 +375,8 @@
         display: flex;
         overflow-y: auto;
         flex-direction: column;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         @include breakpoint($xxl-bp) {
             width: 40rem;
         }
@@ -396,10 +401,9 @@
             color: $red;
             text-decoration: none;
             font-family: "Manrope";
-            font-size: 3.2rem;
+            font-size: 2.4rem;
             font-weight: 400;
-            line-height: 1.12;
-            letter-spacing: -0.02em;
+            line-height: 1;
             text-align: left;
             margin: 1rem 2rem;
             @include breakpoint($mid-bp) {

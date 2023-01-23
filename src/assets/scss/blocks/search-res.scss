@@ -76,7 +76,7 @@
     width: 35rem;
     position: sticky;
     top: 0;
-    padding-top: 5rem;
+    padding-top: 3.8rem;
     @include breakpoint($xxl-bp) {
         padding-top: 5.5rem;
     }
@@ -201,6 +201,7 @@ body {
 
 .search-block {
     width: calc(100% - 39rem);
+    margin-top: -2.5rem;
     @include breakpoint($xl-bp) {
         width: calc(100% - 35rem);
         margin-top: -1rem;
@@ -395,7 +396,7 @@ body {
 }
 
 .search-result__title {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0em;
@@ -406,12 +407,13 @@ body {
 }
 
 .search-result__text {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0em;
     text-align: left;
     margin-top: 1.1rem;
+    color: #697279;
     @include breakpoint($xxl-bp) {
         margin-top: 1.2rem;
     }

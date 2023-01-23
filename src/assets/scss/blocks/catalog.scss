@@ -260,6 +260,7 @@
     }
     .side-list__item {
         margin-bottom: 1.6rem;
+        transition: .3s;
         @include breakpoint($mid-bp) {
             margin-bottom: 0;
             padding-bottom: 1.6rem;
@@ -300,6 +301,8 @@
     }
 
     .side-list__item.active {
+        padding-left: 2rem;
+        padding-right: 2rem;
         .side-list__close {
             right: 1.5rem;
             @include breakpoint($mid-bp) {
@@ -490,10 +493,10 @@
 }
 
 .catalog-content {
-    width: calc(100% - 40rem);
+    width: calc(100% - 43rem);
     padding-top: 6rem;
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
     border-left: 1px solid #D2DCE5;
     @include breakpoint($xxl-bp) {
         padding-top: 5rem;

@@ -313,6 +313,9 @@
             padding-top: 10rem;
         }
         margin-bottom: 15rem;
+        @include breakpoint($xxl-bp) {
+            margin-bottom: 12rem;
+        }
 
         .subtitle {
             max-width: 50%;

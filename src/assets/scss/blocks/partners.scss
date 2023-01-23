@@ -2,7 +2,7 @@
     width: 100%;
     overflow: hidden;
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -96,7 +96,7 @@
     margin-top: 15rem;
     padding-top: 15rem;
     padding-bottom: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
         padding-top: 10rem;
         padding-bottom: 11rem;
@@ -268,7 +268,7 @@
 
 .wrapper.partners-faq {
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -462,7 +462,7 @@
     margin-top: 15rem;
     flex-direction: column; 
     border-top: unset;   
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -568,7 +568,7 @@
 
 .top-partners {
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 11.5rem;
     }
     @include breakpoint($mid-bp) {

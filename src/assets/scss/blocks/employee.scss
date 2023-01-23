@@ -12,6 +12,9 @@
     padding-bottom: 4.7rem;
     border-bottom: 1px solid #D2DCE5;
     grid-auto-flow: dense;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
     @include breakpoint($xl-bp) {
         margin-top: 5.2rem;
     }
@@ -342,7 +345,7 @@
 
     .stories {
         margin-top: 15rem; 
-        @include breakpoint($xl-bp) {
+        @include breakpoint($xxl-bp) {
             margin-top: 12rem; 
         }
         @include breakpoint($mid-bp) {

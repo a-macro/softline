@@ -8,10 +8,6 @@
     }
 
     .catalog-content {
-        padding-left: 5rem;
-        @include breakpoint($xxl-bp) {
-            padding-left: 4rem;
-        }
         @include breakpoint($mid-bp) {
             padding-left: 2rem;
         }
@@ -143,6 +139,7 @@
     padding: 0;
     @include breakpoint($xxl-bp) {
         max-width: 120rem;
+        margin: 8rem auto 12rem;
     }
     @include breakpoint($xl-bp) {
         max-width: 89.5rem;
@@ -341,7 +338,7 @@
     margin-bottom: 15rem;
     display: flex;
     justify-content: center;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         margin-top: 12rem;
         margin-bottom: 12rem;    
     }

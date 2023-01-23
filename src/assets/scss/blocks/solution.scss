@@ -13,7 +13,7 @@
   }
   .solution__services {
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
       margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -36,7 +36,7 @@
   }
   .accordion {
     margin-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
       margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -222,7 +222,7 @@
 
 .mt15 {
   margin-top: 15rem;
-  @include breakpoint($xl-bp) {
+  @include breakpoint($xxl-bp) {
     margin-top: 12rem;
   }
   @include breakpoint($mid-bp) {
@@ -630,6 +630,9 @@
     margin-top: 15rem;
     padding-top: 7.2rem;
     padding-bottom: 5.2rem;
+    @include breakpoint($xxl-bp) {
+      margin-top: 12rem;
+    }
     @include breakpoint($mid-bp) {
       margin-top: 10rem;
       padding-top: 5rem;

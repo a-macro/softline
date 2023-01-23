@@ -4,7 +4,7 @@
   }
   .industries__block {
     padding-top: 15rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
       padding-top: 12rem;
     }
     @include breakpoint($mid-bp) {
@@ -23,8 +23,10 @@
     justify-content: space-between;
     max-width: 156rem;
     @include breakpoint($xl-bp) {
-      max-width: 132.5rem;
       padding-bottom: 12rem;
+    }
+    @include breakpoint($xl-bp) {
+      max-width: 132.5rem;
     }
     @include breakpoint($mid-bp) {
       gap: 3.7rem;
@@ -292,6 +294,9 @@
   }
   .accordion {
     padding-top: 15rem;
+    @include breakpoint($xxl-bp) {
+      padding-top: 12rem;
+    }
     @include breakpoint($xl-bp) {
       padding-top: 10rem;
     }

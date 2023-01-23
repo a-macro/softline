@@ -205,6 +205,10 @@
 .BCG {
     margin-top: 15rem;
     margin-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+    }
     @include breakpoint($mid-bp) {
         margin-top: 10rem;
         margin-bottom: 10rem;
@@ -231,6 +235,10 @@
 
 .BCG__rules {
     padding: 15rem 20.5rem;
+    @include breakpoint($xxl-bp) {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
     @include breakpoint($xl-bp) {
         padding: 10rem 4rem;
     }

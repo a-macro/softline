@@ -127,6 +127,9 @@
 
 .corporate-position {
     margin-top: 15rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
     @include breakpoint($mid-bp) {
         margin-top: 10rem;
     }
@@ -253,6 +256,9 @@
 
 .ourNews__position {
     margin-top: 15rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
 }
 
 .ourNews {
