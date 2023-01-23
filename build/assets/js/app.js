@@ -1953,15 +1953,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     var zoom;
     if (window.innerWidth > 1920) {
-      zoom = 4;
+      zoom = 3.5;
     } else if (window.innerWidth > 1440) {
-      zoom = 3.6;
-    } else if (window.innerWidth > 768) {
       zoom = 3;
+    } else if (window.innerWidth > 768) {
+      zoom = 2;
     } else if (window.innerWidth > 480) {
-      zoom = 2.6;
+      zoom = 2;
     } else {
-      zoom = 1.5;
+      zoom = 1.3;
     }
     var activePlacmark;
     ymaps.ready(function () {
