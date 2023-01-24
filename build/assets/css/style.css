@@ -8538,11 +8538,11 @@ textarea {
 }
 
 .menu__link {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: 0em;
-    margin-bottom: 1.8rem;
+    margin-bottom: 0.4rem;
     text-align: left;
     text-decoration: none;
     color: #A50F2D;
@@ -8696,9 +8696,9 @@ textarea {
 }
 
 .submenu__link {
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     font-weight: 500;
-    line-height: 1.43;
+    line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
     color: #212424;
@@ -14714,10 +14714,6 @@ textarea {
     }
 }
 
-.event-page .left-block .link-red {
-    display: none;
-}
-
 @media (max-width: 768px) {
     .event-page .left-block .link-red {
         display: -ms-flexbox;
@@ -15744,7 +15740,7 @@ body::before {
 @media (max-width: 1440px) {
     .search-block {
         width: calc(100% - 35rem);
-        margin-top: -1rem;
+        margin-top: -3rem;
     }
 }
 
@@ -25045,4 +25041,13 @@ input {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+.visually-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -2;
 }

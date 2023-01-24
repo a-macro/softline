@@ -151,6 +151,9 @@
 
 .solve.solve--industries {
   .solve__slider {
+    @include breakpoint($xxl-bp) {
+      margin-top: -23rem;
+    }
     @include breakpoint($xl-bp) {
       margin-top: -24rem;
     }
