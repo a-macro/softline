@@ -204,7 +204,7 @@ body {
     margin-top: -2.5rem;
     @include breakpoint($xl-bp) {
         width: calc(100% - 35rem);
-        margin-top: -1rem;
+        margin-top: -3rem;
     }
     @include breakpoint($mid-bp) {
         width: 100%;
