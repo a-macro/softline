@@ -1075,12 +1075,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function countHeight(filter) {
-        let num = +filter.getAttribute("data-show");
+        let num = filter.getAttribute("data-show");
         let elems = filter.querySelectorAll(".catalog-sidebar__item");
         let len = elems.length;
+        if(num === "all" || !num || +num > len) {
+            let parent = filter.closest(".filter__wrapper");
+            let btn = parent.querySelector(".filter__show-more");
+            btn.style.display = "none";
+            return;
+        }
         let margin =  +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
         let commonH = 0;
-        for(let i = 0; i < num; i++) {
+        for(let i = 0; i < +num; i++) {
             let h = +elems[i].getBoundingClientRect().height + margin;
             commonH += h;
         }

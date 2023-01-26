@@ -1006,12 +1006,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   function countHeight(filter) {
-    var num = +filter.getAttribute("data-show");
+    var num = filter.getAttribute("data-show");
     var elems = filter.querySelectorAll(".catalog-sidebar__item");
     var len = elems.length;
+    if (num === "all" || !num || +num > len) {
+      var parent = filter.closest(".filter__wrapper");
+      var btn = parent.querySelector(".filter__show-more");
+      btn.style.display = "none";
+      return;
+    }
     var margin = +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
     var commonH = 0;
-    for (var _i5 = 0; _i5 < num; _i5++) {
+    for (var _i5 = 0; _i5 < +num; _i5++) {
       var h = +elems[_i5].getBoundingClientRect().height + margin;
       commonH += h;
     }
