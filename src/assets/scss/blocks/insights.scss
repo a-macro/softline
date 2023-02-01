@@ -2043,8 +2043,8 @@
     .key-operating__list-main {
       li {
         padding: 1.2rem 0;
-        padding-left: 4.5rem;
-        background-position: left top 2.1rem;
+        padding-left: 2.2rem;
+        background-position: left top 2.4rem;
       }
     }
   }
@@ -3018,7 +3018,7 @@
     li {
       padding: .5rem 0;
       padding-left: 3.5rem;
-      background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: left top 1.6rem;
     }
@@ -3399,6 +3399,7 @@
     padding-bottom: 7.2rem;
     display: flex;
     gap: 2.4rem;
+    flex-wrap: wrap;
 
     @include breakpoint($mid-bp) {
       padding-bottom: 5.2rem;
@@ -3408,6 +3409,15 @@
       flex-direction: column;
       gap: 3.5rem;
       padding-bottom: 3.5rem;
+    }
+
+    .vacancy__bottom {
+      width: 100%;
+      align-items: flex-start;
+      margin-top: 4rem;
+      .vacancy__bottom_info {
+        margin: 1rem 3.3rem 0;
+      }
     }
 
     .subscribe__input {

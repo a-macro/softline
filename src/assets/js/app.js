@@ -1572,8 +1572,8 @@ if (buttonsModal.length) {
     buttonsModal.forEach(el => el.addEventListener('click', modalHandler))
 }
 
-const forms = document.forms
-const feedBack = document.querySelector('.feedBack')
+const forms = document.querySelectorAll("form");
+const feedBack = document.querySelector('.feedBack');
 
 if (feedBack) {
     const closeButton = feedBack.querySelectorAll('button')
@@ -1584,12 +1584,23 @@ if (feedBack) {
 
 }
 
-if (forms.length && feedBack) {
+if (forms.length) {
     for(let form of forms) {
         form.addEventListener('submit', function () {
-            event.preventDefault()
-            modalHandler.apply(this.closest('.regModal'))
-            modalHandler.apply(feedBack)
+            let vacancyCheck = form.querySelector(".vacancy__send-agree input");
+            if(vacancyCheck) {
+                vacancyCheck.parentNode.onanimationend = (e) => {
+                    vacancyCheck.parentNode.classList.remove("animate");
+                }
+                if(!vacancyCheck.checked) {
+                    vacancyCheck.parentNode.classList.add("animate");
+                    event.preventDefault();
+                }
+            }
+            if(feedBack) {
+                modalHandler.apply(this.closest('.regModal'));
+                modalHandler.apply(feedBack);    
+            }
         })
     }
 }
@@ -2396,7 +2407,7 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         iconLayout: 'default#image',
                         iconImageHref: 'assets/images/map/Location.svg',
                         iconImageSize: [45, 56],
-                        iconImageOffset: [-28, -45],
+                        iconImageOffset: [-22.5, -56],
                         balloonContentLayout: BalloonContentLayout,
                         hideIconOnBalloonOpen:false,
                         balloonPanelMaxMapArea: 0,

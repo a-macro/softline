@@ -1471,7 +1471,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return el.addEventListener('click', modalHandler);
     });
   }
-  var forms = document.forms;
+  var forms = document.querySelectorAll("form");
   var feedBack = document.querySelector('.feedBack');
   if (feedBack) {
     var closeButton = feedBack.querySelectorAll('button');
@@ -1481,17 +1481,31 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
-  if (forms.length && feedBack) {
+  if (forms.length) {
     var _iterator = _createForOfIteratorHelper(forms),
       _step;
     try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var _loop = function _loop() {
         var form = _step.value;
         form.addEventListener('submit', function () {
-          event.preventDefault();
-          modalHandler.apply(this.closest('.regModal'));
-          modalHandler.apply(feedBack);
+          var vacancyCheck = form.querySelector(".vacancy__send-agree input");
+          if (vacancyCheck) {
+            vacancyCheck.parentNode.onanimationend = function (e) {
+              vacancyCheck.parentNode.classList.remove("animate");
+            };
+            if (!vacancyCheck.checked) {
+              vacancyCheck.parentNode.classList.add("animate");
+              event.preventDefault();
+            }
+          }
+          if (feedBack) {
+            modalHandler.apply(this.closest('.regModal'));
+            modalHandler.apply(feedBack);
+          }
         });
+      };
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        _loop();
       }
     } catch (err) {
       _iterator.e(err);
@@ -2194,12 +2208,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         var BalloonContentLayout = ymaps.templateLayoutFactory.createClass('<div style="display: none;">' + '</div>', {});
         var baloons = document.querySelectorAll(".baloon");
-        var _loop = function _loop() {
+        var _loop2 = function _loop2() {
           var myPlacemark = new ymaps.Placemark(pointsData[i], getPointData(i), {
             iconLayout: 'default#image',
             iconImageHref: 'assets/images/map/Location.svg',
             iconImageSize: [45, 56],
-            iconImageOffset: [-28, -45],
+            iconImageOffset: [-22.5, -56],
             balloonContentLayout: BalloonContentLayout,
             hideIconOnBalloonOpen: false,
             balloonPanelMaxMapArea: 0,
@@ -2237,7 +2251,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         };
         for (var i = 0, len = pointsData.length; i < len; i++) {
-          _loop();
+          _loop2();
         }
 
         /*clusterer.options.set({

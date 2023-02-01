@@ -2405,7 +2405,7 @@ textarea {
 .employee__success .story-success .story__desc {
     font-size: 1.8rem;
     line-height: 1.5;
-    color: #AAB8C3;
+    color: #697279;
     margin-top: 2rem;
 }
 
@@ -5105,7 +5105,7 @@ textarea {
 .solve .solve-story__container .swiper-slide .story__desc {
     font-size: 1.8rem;
     line-height: 1.5;
-    color: #AAB8C3;
+    color: #697279;
     margin-top: 2rem;
 }
 
@@ -10419,6 +10419,7 @@ textarea {
         margin-bottom: 2.6rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        gap: 2rem;
     }
 }
 
@@ -23441,7 +23442,8 @@ textarea {
 }
 
 .swipe-el {
-  pointer-events: all !important;
+  -ms-touch-action: auto !important;
+      touch-action: auto !important;
 }
 
 .leadership__block {
