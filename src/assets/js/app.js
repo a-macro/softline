@@ -1175,6 +1175,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 scrollLock.disablePageScroll();
                 scrollLock.addScrollableSelector(".search-aside__list");
+                scrollLock.addScrollableSelector(".swipe-el__inner");
                 elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
                 lastPosY = getTranslate3d(elem.style.transform)[1];
             }

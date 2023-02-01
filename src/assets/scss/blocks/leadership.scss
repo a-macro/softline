@@ -321,7 +321,7 @@
 }
 
 .swipe-el {
-    pointer-events: all !important;
+    touch-action: auto !important;
 }
 
 .leadership__block {
