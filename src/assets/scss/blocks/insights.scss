@@ -2153,6 +2153,13 @@
   }
 }
 
+.event-page {
+  @include breakpoint($mid-bp) {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
 .video-page,
 .event-page {
   .news__container {

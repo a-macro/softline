@@ -1041,13 +1041,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (swipeEls && swipeEls.length > 0) {
     swipeEls.forEach(function (swipeEl) {
       var mcSwipe = new Hammer.Manager(swipeEl);
-      var swipeElHeight = window.innerHeight - 100;
-      var swipeThreshold = swipeElHeight / 3.5;
-      if (window.innerWidth <= 768 && window.innerWidth > 480) {
-        swipeEl.style.maxHeight = window.innerHeight * .8 + "px";
-      } else if (window.innerWidth <= 480) {
-        swipeEl.style.maxHeight = window.innerHeight * .9 + "px";
-      }
+      var swipeElHeight;
+      var swipeThreshold;
       var lastPosY = 0;
       var isDragging = false;
       var canSwipeUpDown = false;
@@ -1072,7 +1067,14 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.classList.remove("show");
         bodyTag.classList.remove("lock-modal");
         elem.classList.remove("canScroll");
-        elem.style.transform = 'translate3d(0, 0px, 0)';
+        if (elem.classList.contains("search-aside") && window.innerWidth <= 480) {
+          elem.style.transform = 'translate3d(0, -3.5rem, 0)';
+          console.log(1);
+        } else if (elem.classList.contains("search-aside") && window.innerWidth <= 768) {
+          elem.style.transform = 'translate3d(0, -6rem, 0)';
+        } else {
+          elem.style.transform = 'translate3d(0, 0px, 0)';
+        }
         lastPosY = getTranslate3d(elem.style.transform)[1];
         scrollLock.enablePageScroll();
       };
@@ -1093,15 +1095,10 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.classList.remove("hide");
         elem.classList.add("show");
         bodyTag.classList.add("lock-modal");
-        if (window.innerWidth <= 768 && window.innerWidth > 480) {
-          var topPos = -window.innerHeight * .7;
-        } else if (window.innerWidth <= 480) {
-          var topPos = -window.innerHeight * .85;
-        }
         scrollLock.disablePageScroll();
         scrollLock.addScrollableSelector(".search-aside__list");
         scrollLock.addScrollableSelector(".swipe-el__inner");
-        elem.style.transform = 'translate3d(0,' + topPos + 'px, 0)';
+        elem.style.transform = 'translate3d(0, -100%, 0)';
         lastPosY = getTranslate3d(elem.style.transform)[1];
       };
       function displayswipeEl() {
@@ -1140,10 +1137,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (ev.target != elem) {
               return;
             }
+            if (!swipeElHeight) {
+              swipeElHeight = swipeEl.clientHeight;
+            }
+            if (!swipeThreshold) {
+              ;
+              swipeThreshold = swipeElHeight / 1.3;
+            }
             elem.classList.remove('anim');
             isDragging = true;
-            var currentPosY = getTranslate3d(elem.style.transform)[1];
-            lastPosY = currentPosY ? currentPosY : 0;
+            var topPos = -swipeElHeight;
+            var currentPosY = topPos;
+            lastPosY = currentPosY ? currentPosY : topPos;
           }
           var posY = ev.deltaY + lastPosY;
           elem.style.transform = setTranslate3dPosY(posY);

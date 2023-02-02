@@ -58,10 +58,7 @@
 .menu-open {
     .search-aside {
         @include breakpoint($mid-bp) {
-            top: calc(100% + 6rem);
-        }
-        @include breakpoint($sm-bp) {
-            top: calc(100% + 3.5rem);
+            transform: translateY(-100%);
         }
     }
 
@@ -83,21 +80,23 @@
     @include breakpoint($mid-bp) {
         position: fixed;
         width: 100%;
-        top: calc(100% - 6rem);
+        top: 100%;
+        transform: translateY(-6rem);
         left: 0;
         display: flex;
         align-items: flex-start;
         z-index: 1000;
         background: white;
         width: 100%;
-        height: 100vh;
+        height: auto;
+        max-height: 60vh;
         padding: 10.3rem 2rem 1rem;
         flex-direction: column;
         border-radius: 2rem 2rem 0 0;
     }
     @include breakpoint($sm-bp) {
         padding: 6.5rem 2.5rem 1rem;
-        top: calc(100% - 3.5rem);
+        transform: translateY(-3.5rem);
     }
 
     &::before {
