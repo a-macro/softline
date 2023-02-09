@@ -226,6 +226,19 @@
         }
     }
 
+    .avatar-block .img-wrapper {
+        width: 15rem;
+        height: 15rem;
+        @include breakpoint($mid-bp) {
+            width: 14.7rem;
+            height: 14.7rem;
+        }
+        @include breakpoint($sm-bp) {
+            width: 8rem;
+            height: 8rem;
+        }
+    }
+
     .story-p__img  {
         .news-page__contest {
             max-width: 119rem;
@@ -754,11 +767,14 @@
     overflow: hidden;
     @include breakpoint($xxl-bp) {
         grid-template-columns: repeat(3, 1fr);
+        margin-top: 12rem;
     }
     @include breakpoint($xl-bp) {
         grid-template-columns: 1fr 1fr;
+        margin-top: 10rem;
     }
     @include breakpoint($mid-bp) {
+        margin-top: 7rem;
         display: flex;
         justify-content: flex-start;
         gap: 2rem;
@@ -865,5 +881,29 @@
             margin-top: 5rem;
             font-size: 2.6rem;
         }
+    }
+}
+
+.employee__text-normal {
+    margin-top: 15rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.56;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 2rem;
+    position: relative;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
+    @include breakpoint($xl-bp) {
+        margin-top: 10rem;
+    }
+    @include breakpoint($mid-bp) {
+        margin-top: 7rem;
+    }
+    @include breakpoint($sm-bp) {
+        line-height: 1.6;
+        font-size: 2.05rem;
     }
 }

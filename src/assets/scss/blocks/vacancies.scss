@@ -302,7 +302,7 @@
 
 .animate {
     .vacancy__send_checkbox {
-        box-shadow: 1px 1px 2px $red;
+        box-shadow: 1px 1px 2px #AAB8C3;
         animation: shake .5s 0s linear forwards;
     }
 }
@@ -355,7 +355,7 @@
     .vacancy__send_checkbox {
         width: 2rem;
         height: 2rem;
-        border: 1px solid $red;
+        border: 1px solid #AAB8C3;
         border-radius: 2px;
         display: flex;
         justify-content: center;
@@ -385,6 +385,7 @@
 
     input:checked ~ .vacancy__send_checkbox {
         background: $red;
+        border: 1px solid $red;
         svg {
             path {
                 stroke: white;
