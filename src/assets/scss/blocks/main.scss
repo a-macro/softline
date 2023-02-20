@@ -492,6 +492,8 @@ button.link-red {
 
 
     .swiper-slide {
+        display: block;
+        text-decoration: none;
         @include breakpoint($mid-bp) {
             width: 27.5rem;
         }
@@ -541,6 +543,7 @@ button.link-red {
     text-align: left;
     color: $black;
     margin-top: 2.4rem;
+    display: block;
 }
 
 .solve__intro {

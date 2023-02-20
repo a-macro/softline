@@ -13218,6 +13218,7 @@ textarea {
   width: 1.4rem;
   height: 100%;
   transition: transform 0.3s;
+  border: 0;
 }
 @media (max-width: 480px) {
   .registration .registration__block form .custom-select .select-items {
@@ -15703,6 +15704,10 @@ button.link-red:hover span {
     width: calc(100% - 2rem);
   }
 }
+.help__slider .swiper-slide {
+  display: block;
+  text-decoration: none;
+}
 @media (max-width: 768px) {
   .help__slider .swiper-slide {
     width: 27.5rem;
@@ -15770,6 +15775,7 @@ button.link-red:hover span {
   text-align: left;
   color: #212424;
   margin-top: 2.4rem;
+  display: block;
 }
 
 .solve__intro {
