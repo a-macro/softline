@@ -228,7 +228,7 @@ function deploy2() {
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, deploy1, deploy2));
-const watch = gulp.parallel(build, watchFiles, serve, deploy1, deploy2);
+const watch = gulp.parallel(build, watchFiles, css, serve, deploy1, deploy2);
 
 /* Exports Tasks */
 exports.deploy1 = deploy1;

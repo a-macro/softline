@@ -928,20 +928,20 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
-  var catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item");
+  var catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item input");
   if (catalogList && catalogList.length > 0) {
     catalogList.forEach(function (item) {
       var parent = item.closest("ul");
-      item.onclick = function (e) {
-        e.preventDefault();
-        if (!item.classList.contains("active")) {
-          var prevActive = document.querySelector(".active.catalog-sidebar__item");
+      var elem = item.closest(".catalog-sidebar__item");
+      item.onchange = function (e) {
+        console.log(item);
+        if (!elem.classList.contains("active")) {
+          console.log(item.checked, item, elem);
+          var prevActive = parent.querySelector(".active.catalog-sidebar__item");
           if (prevActive) {
             prevActive.classList.remove("active");
           }
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
+          elem.classList.add("active");
         }
       };
     });
