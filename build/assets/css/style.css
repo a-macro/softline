@@ -6743,16 +6743,13 @@ textarea {
     }
 }
 
-.industries .industries__list li {
+.industries .industries__list li a {
+    text-decoration: none;
+    color: #212424;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-}
-
-.industries .industries__list li a {
-    text-decoration: none;
-    color: #212424;
 }
 
 .industries .industries__list li a .img-wrapper {
