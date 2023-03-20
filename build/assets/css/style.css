@@ -6743,6 +6743,13 @@ textarea {
     }
 }
 
+.industries .industries__list li {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
 .industries .industries__list li a {
     text-decoration: none;
     color: #212424;
@@ -10212,7 +10219,7 @@ textarea {
 }
 
 .catalog .side-list__item {
-    margin-bottom: 1.6rem;
+    margin-bottom: 0;
     transition: 0.3s;
 }
 
@@ -10271,7 +10278,6 @@ textarea {
 
 .catalog .side-list__item.active {
     padding-left: 2rem;
-    padding-right: 2rem;
 }
 
 .catalog .side-list__item.active .side-list__close {
@@ -10296,8 +10302,8 @@ textarea {
 }
 
 .catalog-sidebar__list {
-    padding-top: 2.6rem;
-    max-height: calc(var(--max-h) + 2.6rem);
+    padding-top: 1.8rem;
+    max-height: calc(var(--max-h) + 1.8rem);
     overflow: hidden;
     transition: 0.4s;
 }
@@ -16127,6 +16133,11 @@ textarea {
     justify-content: space-between;
 }
 
+.search-aside__title {
+    padding: 0.8rem 0;
+    display: inline-block;
+}
+
 @media (max-width: 768px) {
     .menu-open .search-aside {
         -webkit-transform: translateY(-100%);
@@ -16324,7 +16335,7 @@ body::before {
 }
 
 .side-list__item {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
     position: relative;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -16348,8 +16359,8 @@ body::before {
     width: calc(100% - 3rem);
     position: absolute;
     background: transparent;
-    height: calc(100% + 2rem);
-    top: -1rem;
+    height: 100%;
+    top: 0;
     left: -1rem;
     z-index: 1;
     transition: background 0.4s;
@@ -16415,6 +16426,21 @@ body::before {
 @media (max-width: 480px) {
     .side-list__link {
         font-size: 2.55rem;
+    }
+}
+
+.side-list__link label {
+    width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    padding: 0.8rem 0;
+}
+
+@media (max-width: 768px) {
+    .side-list__link label {
+        padding: 0;
     }
 }
 
@@ -18663,6 +18689,10 @@ button.link-red:hover span {
     .subtitle {
         font-size: 2.55rem;
     }
+}
+
+.swiper-wrapper {
+    height: auto;
 }
 
 .services__slider {

@@ -997,14 +997,26 @@ document.addEventListener("DOMContentLoaded", () => {
             let parent = item.closest("ul");
             let elem = item.closest(".catalog-sidebar__item");
             item.onchange = (e) => {
-                console.log(item);
                 if(!elem.classList.contains("active")) {
-                    console.log(item.checked, item, elem);
                     let prevActive = parent.querySelector(".active.catalog-sidebar__item");
                     if(prevActive) {
                         prevActive.classList.remove("active");
                     }
                     elem.classList.add("active");
+                }
+            }
+        });
+    }
+
+    let catalogClose = document.querySelectorAll(".catalog-sidebar__item .search-aside__item_close");
+    if(catalogClose.length > 0) {
+        catalogClose.forEach(close => {
+            let elem = close.closest(".catalog-sidebar__item");
+            let inp = elem.querySelector("input");
+            close.onclick = (e) => {
+                if(elem.classList.contains("active")) {
+                    elem.classList.remove("active");
+                    inp.checked = false;
                 }
             }
         });
@@ -1142,7 +1154,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 elem.classList.remove("canScroll");
                 if(elem.classList.contains("search-aside") && window.innerWidth <= 480) {
                     elem.style.transform = 'translate3d(0, -3.5rem, 0)';
-                    console.log(1);
                 } else if(elem.classList.contains("search-aside") && window.innerWidth <= 768) {
                     elem.style.transform = 'translate3d(0, -6rem, 0)';
                 } else {

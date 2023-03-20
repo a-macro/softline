@@ -79,6 +79,8 @@
       grid-template-columns: repeat(2, 1fr);
     }
     li {
+      display: flex;
+      flex-direction: column;
       a {
         text-decoration: none;
         color: #212424;
