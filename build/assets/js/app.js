@@ -944,6 +944,18 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
+  var siteMapsTrigger = document.querySelectorAll(".site-map__category_name.trigger");
+  if (siteMapsTrigger.length > 0) {
+    siteMapsTrigger.forEach(function (trigger) {
+      var parent = trigger.closest(".site-map__wrap");
+      var block = parent.querySelector(".site-map__category");
+      trigger.onclick = function (e) {
+        e.preventDefault();
+        parent.classList.toggle("active");
+        block.style.cssText = "--elH: ".concat(block.scrollHeight, "px");
+      };
+    });
+  }
   var catalogClose = document.querySelectorAll(".catalog-sidebar__item .search-aside__item_close");
   if (catalogClose.length > 0) {
     catalogClose.forEach(function (close) {

@@ -1008,6 +1008,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    let siteMapsTrigger = document.querySelectorAll(".site-map__category_name.trigger");
+    if(siteMapsTrigger.length > 0) {
+        siteMapsTrigger.forEach(trigger => {
+            let parent = trigger.closest(".site-map__wrap");
+            let block = parent.querySelector(".site-map__category");
+            trigger.onclick = (e) => {
+                e.preventDefault();
+                parent.classList.toggle("active");
+                block.style.cssText = `--elH: ${block.scrollHeight}px`;
+            }
+        });
+    }
+
     let catalogClose = document.querySelectorAll(".catalog-sidebar__item .search-aside__item_close");
     if(catalogClose.length > 0) {
         catalogClose.forEach(close => {
