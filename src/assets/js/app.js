@@ -431,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 40,
                 freeMode: "false",
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",
@@ -724,7 +724,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: "auto",
                 watchOverflow: true,
                 spaceBetween: 40,
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         spaceBetween: 20,
@@ -741,13 +741,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    let newsSliser = document.querySelectorAll(".news-page__swiper");
-    if(newsSliser.length > 0) {
-        newsSliser.forEach(slider => {
-            let prev = slider.querySelector(".swiper-button-prev");
-            let next = slider.querySelector(".swiper-button-next");
+    let newsSliser = document.querySelector(".news-page__swiper");
+    if(newsSliser) {
+            console.log(slider);
+            let prev = newsSliser.querySelector(".swiper-button-prev");
+            let next = newsSliser.querySelector(".swiper-button-next");
 
-            new Swiper(slider, {
+            new Swiper(newsSliser, {
                 navigation: {
                     nextEl: next,
                     prevEl: prev
@@ -768,7 +768,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 },
             });
-        });
     }
 
     // const customPagination = document.querySelector('.swiper-pagination-custom__inner')
@@ -2442,17 +2441,30 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                 }
 
                 const buttons = document.querySelectorAll('.map__city');
-                for(let k = 0; k < data.length; k++) {
-                    buttons[k].setAttribute("data-index", id[k]);
-                    buttons[k].addEventListener('click', ({ target: { dataset: { index } } }) => {
-                        event.preventDefault();
-                        if (index) {
-                            myMap.setCenter(pointsData[index], 11, {
-                                duration: 400
-                            });
-                        }
+                buttons.forEach(btn => {
+                    let txt = btn.innerText;
+                    let coords;
+                    ymaps.geocode(txt, {
+                        results: 1
+                    }).then(function (res) {
+                        let firstGeoObject = res.geoObjects.get(0);
+                        coords = firstGeoObject.geometry.getCoordinates();
+
+                    btn.setAttribute("c1", coords[0]);
+                    btn.setAttribute("c2", coords[1]);
+                
+                    btn.onclick = (e) => {
+                        e.preventDefault();
+                        let attr1 = btn.getAttribute("c1");
+                        let attr2 = btn.getAttribute("c2");
+                        myMap.setCenter([attr1, attr2], 11, {
+                            duration: 400
+                        });
+                    }
                     });
-                }
+                    
+                });
+
             })
         
         });

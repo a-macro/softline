@@ -14168,6 +14168,18 @@ textarea {
 
 .news-page .text-wrapper--swiper {
     padding-right: 0;
+    width: 100%;
+    position: relative;
+}
+
+.news-page .text-wrapper--swiper .swiper-container {
+    position: unset;
+    overflow: hidden;
+    width: 100%;
+}
+
+.news-page .text-wrapper--swiper .swiper-container .swiper-button-prev {
+    left: -4.5rem;
 }
 
 .news-page .insights-title {
@@ -19152,6 +19164,11 @@ button.link-red:hover span {
     }
 }
 
+.help__slider .swiper-slide {
+    display: block;
+    text-decoration: none;
+}
+
 @media (max-width: 768px) {
     .help__slider .swiper-slide {
         width: 27.5rem;
@@ -19231,6 +19248,7 @@ button.link-red:hover span {
     text-align: left;
     color: #212424;
     margin-top: 2.4rem;
+    display: block;
 }
 
 .solve__intro {
@@ -22216,7 +22234,7 @@ textarea {
       justify-content: space-between;
   padding: 4rem 4rem;
   padding-bottom: 0;
-  background-image: url("../images/penetration/penetration-bg.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 @media (max-width: 1920px) {
@@ -22227,18 +22245,18 @@ textarea {
 @media (max-width: 1440px) {
   .penetration .penetration__top-block {
     max-height: 520px;
+    background-position: center;
   }
 }
 @media (max-width: 768px) {
   .penetration .penetration__top-block {
     height: calc(100vh - 7rem);
-    max-height: 602px;
+    max-height: 400px;
     border-top-left-radius: 1.2rem;
     border-top-right-radius: 1.2rem;
     overflow: hidden;
     padding-left: 2rem;
     padding-right: 2rem;
-    background-image: url("../images/penetration/penetration-bg-768.jpg");
   }
   .penetration .penetration__top-block::before {
     content: "";
@@ -22256,8 +22274,7 @@ textarea {
 @media (max-width: 480px) {
   .penetration .penetration__top-block {
     height: calc(100vh - 8rem);
-    max-height: 460px;
-    background-image: url("../images/penetration/penetration-bg-375.jpg");
+    background-position-x: 41%;
   }
   .penetration .penetration__top-block::before {
     display: none;

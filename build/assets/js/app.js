@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         freeMode: "false",
-        loop: true,
+        loop: false,
         breakpoints: {
           300: {
             slidesPerView: "auto",
@@ -687,7 +687,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: "auto",
         watchOverflow: true,
         spaceBetween: 40,
-        loop: true,
+        loop: false,
         breakpoints: {
           300: {
             spaceBetween: 20
@@ -702,32 +702,31 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-  var newsSliser = document.querySelectorAll(".news-page__swiper");
-  if (newsSliser.length > 0) {
-    newsSliser.forEach(function (slider) {
-      var prev = slider.querySelector(".swiper-button-prev");
-      var next = slider.querySelector(".swiper-button-next");
-      new Swiper(slider, {
-        navigation: {
-          nextEl: next,
-          prevEl: prev
+  var newsSliser = document.querySelector(".news-page__swiper");
+  if (newsSliser) {
+    console.log(slider);
+    var prev = newsSliser.querySelector(".swiper-button-prev");
+    var next = newsSliser.querySelector(".swiper-button-next");
+    new Swiper(newsSliser, {
+      navigation: {
+        nextEl: next,
+        prevEl: prev
+      },
+      slidesPerView: "auto",
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: true,
+      breakpoints: {
+        300: {
+          spaceBetween: 20
         },
-        slidesPerView: "auto",
-        watchOverflow: true,
-        spaceBetween: 40,
-        loop: true,
-        breakpoints: {
-          300: {
-            spaceBetween: 20
-          },
-          769: {
-            spaceBetween: 40
-          },
-          1025: {
-            spaceBetween: 40
-          }
+        769: {
+          spaceBetween: 40
+        },
+        1025: {
+          spaceBetween: 40
         }
-      });
+      }
     });
   }
 
@@ -2246,18 +2245,26 @@ document.addEventListener("DOMContentLoaded", function () {
           //myMap.behaviors.disable('drag');
         }
         var buttons = document.querySelectorAll('.map__city');
-        for (var k = 0; k < data.length; k++) {
-          buttons[k].setAttribute("data-index", id[k]);
-          buttons[k].addEventListener('click', function (_ref) {
-            var index = _ref.target.dataset.index;
-            event.preventDefault();
-            if (index) {
-              myMap.setCenter(pointsData[index], 11, {
+        buttons.forEach(function (btn) {
+          var txt = btn.innerText;
+          var coords;
+          ymaps.geocode(txt, {
+            results: 1
+          }).then(function (res) {
+            var firstGeoObject = res.geoObjects.get(0);
+            coords = firstGeoObject.geometry.getCoordinates();
+            btn.setAttribute("c1", coords[0]);
+            btn.setAttribute("c2", coords[1]);
+            btn.onclick = function (e) {
+              e.preventDefault();
+              var attr1 = btn.getAttribute("c1");
+              var attr2 = btn.getAttribute("c2");
+              myMap.setCenter([attr1, attr2], 11, {
                 duration: 400
               });
-            }
+            };
           });
-        }
+        });
       });
     });
   }

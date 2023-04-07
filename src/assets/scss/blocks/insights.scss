@@ -2505,6 +2505,18 @@
 
   .text-wrapper--swiper {
     padding-right: 0;
+    width: 100%;
+    position: relative;
+
+    .swiper-container {
+      position: unset;
+      overflow: hidden;
+      width: 100%;
+
+      .swiper-button-prev {
+        left: -4.5rem;
+      }
+    }
   }
 
   .insights-title {
