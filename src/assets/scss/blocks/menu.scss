@@ -5,7 +5,7 @@
     overflow-y: auto;
     background: white;
     padding-left: 34%;
-    padding-top: 4.8rem;
+    padding-top: 5.5rem;
     padding-bottom: 4rem;
     padding-right: 3rem;
     top: var(--headerH);
@@ -228,12 +228,13 @@
     transition: opacity .2s;
     @include breakpoint($mid-bp) {
         display: flex;
-        width: 50%;
+        width: 100%;
         gap: 0;
         flex-wrap: wrap;
         padding-top: 1rem;
         border-left: 0.1rem solid #E5E9F1;
-        padding-right: 1.5rem;
+        padding-right: 0;
+        height: 100%;
     }
     @include breakpoint($sm-bp) {
         padding: 0;
@@ -253,12 +254,62 @@
     }
 
     .menu-second__top {
-        display: flex;
+        @include breakpoint($mid-bp) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 2rem;
+        }
         @include breakpoint($sm-bp) {
             padding-right: 7rem;
             padding-left: 2.5rem;
-            border-bottom: 1px solid #E5E9F1;
             padding-bottom: 2.5rem;
+            row-gap: 3.5rem;
+        }
+        .header__search {
+            @include breakpoint($mid-bp) {
+                grid-row: 2 span;
+                margin-right: 0;
+                justify-content: center;
+                height: min-content;
+                align-items: start;
+                margin-top: 2rem;
+                padding-right: 2.5rem;
+            }
+            @include breakpoint($sm-bp) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .menu-second__mid {
+        @include breakpoint($mid-bp) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint($sm-bp) {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            border-bottom: 0.1rem solid #D2DCE5;
+            padding-bottom: 3.5rem;
+        }
+        .header__top-button {
+            @include breakpoint($mid-bp) {
+                display: flex;
+                padding: 0;
+            }
+        }
+    }
+
+    .menu-second__flex-col {
+        @include breakpoint($mid-bp) {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        @include breakpoint($sm-bp) {
+            gap: 3.5rem;
         }
     }
 
@@ -269,7 +320,7 @@
             margin-top: 2.5rem;
         }
         @include breakpoint($sm-bp) {
-            margin-top: 3.5rem;
+            margin-top: 0;
         }
     }
 
@@ -280,11 +331,12 @@
     }
     .header__contact-mob {
         @include breakpoint($mid-bp) {
-            width: 50%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-
+            justify-content: flex-end;
+            gap: 0.5rem;
             a {
                 font-size: 1.4rem;
                 font-weight: 500;
@@ -294,6 +346,9 @@
                 color: $black;
                 text-decoration: none;
                 margin-bottom: .5rem;
+                @include breakpoint($mid-bp) {
+                    margin-bottom: 0;
+                }
             }
         }
         @include breakpoint($sm-bp) {
@@ -321,11 +376,11 @@
     .header__nav_link {
         @include breakpoint($mid-bp) {
             margin-left: 0;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: $black;
             text-decoration: none;
             font-weight: 500;
-            line-height: 1.5;
+            line-height: 2rem;
             letter-spacing: 0em;
             text-align: left;
             margin-top: 2.5rem;
@@ -473,7 +528,7 @@
     }
 
     .link-red {
-        margin-left: calc(75% + 1rem);
+        margin-left: 0;
         @include breakpoint($mid-bp) {
             margin-top: 2.5rem;
             order: 1;
@@ -793,20 +848,35 @@
     margin-bottom: .4rem;
     text-align: left;
     text-decoration: none;
-    color: $red;
-    display: block;
+    color: $black;
+    display: flex;
     transition: .4s;
+    gap: 1.6rem;
+    align-items: center;
+    img {
+        align-self: flex-start;
+        width: 2.4rem;
+        height: 2.4rem;
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
+    }
     @include breakpoint($mid-bp) {
         position: relative;
     }
     &:hover {
         outline: none;
-        text-decoration: underline;
+        text-decoration: none;
+        color: $red;
     }
     &:active,
     &:focus  {
         outline: none;
     }
+}
+
+.menu__link + .submenu {
+    margin-top: 1rem;
 }
 
 .submenu__aside {
@@ -880,6 +950,7 @@
     flex-wrap: wrap;
     width: 100%;
     margin-bottom: 1.5rem;
+    padding-left: 4rem;
     @include breakpoint($mid-bp) {
         display: flex;
         flex-direction: column;
@@ -904,13 +975,16 @@
 }
 
 .submenu__link {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
-    color: $black;
+    color: $footer-color;
     text-decoration: none;
+    &:hover {
+        color: $red;
+    }
     @include breakpoint($mid-bp) {
         font-size: 1.6rem;
         font-weight: 500;
@@ -1304,7 +1378,7 @@
   }
 
 .menu__item {
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.7rem;
     padding-right: 6rem;
     overflow: hidden;
     -webkit-column-break-inside: avoid;
@@ -1365,7 +1439,7 @@
         color: $black;
         @include breakpoint($mid-bp) {
             width: 50%;
-            color: $red;
+            color: $black;
             text-decoration: none;  
             padding-left: 3rem;  
         }
@@ -1400,3 +1474,4 @@
         }    
     }
 }
+

@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         headerSearchBtn.forEach(btn => {
             btn.onclick = (e) => {
                 e.preventDefault();
+                const parent = headerSearch.closest('.header__mid')
+                if (parent) {
+                    parent.classList.add('header__mid--active')
+                }
                 headerSearch.classList.add('active');
                 if(window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
                     bodyTag.classList.remove("menu-open");
@@ -54,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let headerSearchClose = document.querySelector(".header__search_close");
     if(headerSearchClose) {
         headerSearchClose.onclick = (e) => {
+            const parent = headerSearch.closest('.header__mid')
+            if (parent) {
+                parent.classList.remove('header__mid--active')
+            }
             headerSearch.classList.remove('active');
         }
     }
@@ -395,6 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 spaceBetween: 40,
                 freeMode: "false",
                 loop: false,
+                // loop: true,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",

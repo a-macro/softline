@@ -45,6 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
     headerSearchBtn.forEach(function (btn) {
       btn.onclick = function (e) {
         e.preventDefault();
+        var parent = headerSearch.closest('.header__mid');
+        if (parent) {
+          parent.classList.add('header__mid--active');
+        }
         headerSearch.classList.add('active');
         if (window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
           bodyTag.classList.remove("menu-open");
@@ -61,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var headerSearchClose = document.querySelector(".header__search_close");
   if (headerSearchClose) {
     headerSearchClose.onclick = function (e) {
+      var parent = headerSearch.closest('.header__mid');
+      if (parent) {
+        parent.classList.remove('header__mid--active');
+      }
       headerSearch.classList.remove('active');
     };
   }
@@ -378,7 +386,11 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         freeMode: "false",
+<<<<<<< HEAD
         loop: false,
+=======
+        // loop: true,
+>>>>>>> ff949ccf9906617cb1b36246e5d4e3415cf45c9e
         breakpoints: {
           300: {
             slidesPerView: "auto",
