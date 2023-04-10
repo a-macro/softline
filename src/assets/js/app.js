@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    let headerSearch = document.querySelector(".header__search");
+    let headerSearch = document.querySelectorAll(".header__search");
     let headerSearchBtn = document.querySelectorAll(".btn__search-show");
     const menubutton = document.querySelector('.menu-button');
 
@@ -37,11 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
         headerSearchBtn.forEach(btn => {
             btn.onclick = (e) => {
                 e.preventDefault();
-                const parent = headerSearch.closest('.header__mid')
-                if (parent) {
-                    parent.classList.add('header__mid--active')
+                const parent = btn.closest('.header__mid')
+                if(parent) {
+                    parent.classList.add('header__mid--active');
                 }
-                headerSearch.classList.add('active');
+                headerSearch.forEach(element => {
+                    element.classList.add('active');
+                });
                 if(window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
                     bodyTag.classList.remove("menu-open");
                     menubutton.classList.remove("menu-button--active")
@@ -55,15 +57,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    let headerSearchClose = document.querySelector(".header__search_close");
-    if(headerSearchClose) {
-        headerSearchClose.onclick = (e) => {
-            const parent = headerSearch.closest('.header__mid')
-            if (parent) {
-                parent.classList.remove('header__mid--active')
+    let headerSearchClose = document.querySelectorAll(".header__search_close");
+    if(headerSearchClose.length > 0) {
+        headerSearchClose.forEach(headerSearchClose => {
+            headerSearchClose.onclick = (e) => {
+                e.preventDefault();
+                headerSearch.forEach(element => {
+                    const parent = element.closest('.header__mid')
+                    if (parent) {
+                        parent.classList.remove('header__mid--active')
+                    }
+                    element.classList.remove('active');
+                });        
             }
-            headerSearch.classList.remove('active');
-        }
+        });
     }
 
     let menuItems = document.querySelectorAll(".header__item");
@@ -243,19 +250,22 @@ document.addEventListener("DOMContentLoaded", () => {
         this.removeEventListener('transitionend', hideaftertransition)
     }
 
-    let searchInp = document.querySelector(".input__search");
-    let btnSearch = document.querySelector(".btn__search");
-    if(searchInp) {
-        searchInp.oninput = (e) => {
-            if(searchInp.value && btnSearch.classList.contains("disabled")) {
-                btnSearch.classList.remove("disabled");
-                btnSearch.removeAttribute("disabled");
-            }
-            if(!searchInp.value && !btnSearch.classList.contains("disabled")) {
-                btnSearch.classList.add("disabled");
-                btnSearch.setAttribute("disabled", "disabled");
-            }
-        }
+    let searchInp = document.querySelectorAll(".input__search");
+    if(searchInp.length > 0) {
+        searchInp.forEach(searchInp => {
+            searchInp.oninput = (e) => {
+                let parent = searchInp.closest(".header__search");
+                let btnSearch = parent.querySelector(".btn__search");
+                if(searchInp.value && btnSearch.classList.contains("disabled")) {
+                    btnSearch.classList.remove("disabled");
+                    btnSearch.removeAttribute("disabled");
+                }
+                if(!searchInp.value && !btnSearch.classList.contains("disabled")) {
+                    btnSearch.classList.add("disabled");
+                    btnSearch.setAttribute("disabled", "disabled");
+                }
+            }    
+        });
     }
 
     let bodyTag = document.querySelector("body");
