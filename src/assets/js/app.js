@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: 6,
                 watchOverflow: true,
                 spaceBetween: 0,
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",
@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
             slidesPerView: 6,
             watchOverflow: true,
             spaceBetween: 40,
-            loop: true,
+            loop: false,
             breakpoints: {
                 300: {
                     slidesPerView: "auto",
@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 40,
                 freeMode: "false",
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",
@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 40,
                 freeMode: "false",
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",
@@ -503,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: "auto",
                 watchOverflow: true,
                 spaceBetween: 40,
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         spaceBetween: 20,
@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 40,
                 freeMode: "false",
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",
@@ -755,7 +755,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: "auto",
                 watchOverflow: true,
                 spaceBetween: 40,
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         spaceBetween: 20,
@@ -831,7 +831,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function initSlider() {
         if (width <= 768 && !init && slider) {
             swiper = new Swiper(".partners__mobSlider", {
-                loop: true,
+                loop: false,
                 slidesPerView: 2.8,
                     spaceBetween: 40,
                 freeMode: true,
@@ -868,7 +868,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function initSliderStoryRange() {
         if (width <= 480 && !initStoryRange && sliderStoryRange) {
             swiperStoryRange = new Swiper(".range-slider", {
-                loop: true,
+                loop: false,
                 slidesPerView: 1.1,
                 spaceBetween: 20,
                 freeMode: true,
