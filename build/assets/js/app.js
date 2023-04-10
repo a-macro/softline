@@ -386,11 +386,8 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         freeMode: "false",
-<<<<<<< HEAD
         loop: false,
-=======
         // loop: true,
->>>>>>> ff949ccf9906617cb1b36246e5d4e3415cf45c9e
         breakpoints: {
           300: {
             slidesPerView: "auto",
