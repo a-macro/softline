@@ -4,25 +4,7 @@
     </a>
 
     <div class="header__top">
-        <form action="./search-results.html" class="header__search">
-            <a href="#" class="header__search_close"></a>
-            <div class="btn__search-show">
-                <span>Поиск</span>
-                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
-                    <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
-                </svg>
-            </div>
-            <input class="input input__search" type="text" placeholder="Введите условие поиска">
-            <button class="btn__search disabled" disabled>
-                <span>Искать</span>
-                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
-                </svg>    
-            </button>
-        </form>
-        <div class="geolocation __select" data-state="">
+        <!-- <div class="geolocation __select" data-state="">
             <div class="select-side"></div>
             <div id="location" class="geolocation__location __select__title" data-default="Option 0">                   
                 <img class="geolocation__flag" src="assets/images/flag.png" alt="">
@@ -35,24 +17,57 @@
                     <span>Россия</span>
                 </label>
             </div>
-        </div>
-        <div class="city __select" data-state="">
-            <div class="select-side"></div>
-            <div id="location-city" class="city__location __select__title" data-default="Option 0">                   
-                <span>Город</span>
+        </div> -->
+        <form action="./search-results.html" class="header__search">
+            <a href="#" class="header__search_close"></a>
+            <div class="btn__search-show">
+                <span>Поиск</span>
+                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279" />
+                    <path d="M12.9986 13L9.45312 9.45459" stroke="#697279" />
+                </svg>
             </div>
-            <div class="__select__content">
-                <input id="citySelect1" class="__select__input" type="radio" name="citySelect">
-                <label for="citySelect1" data-type="default" class="__select__label">
+            <input class="input input__search" type="text" placeholder="Введите условие поиска">
+            <button class="btn__search disabled" disabled>
+                <span>Искать</span>
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10"
+                        stroke="white" stroke-width="1.5" />
+                </svg>
+            </button>
+        </form>
+        <div class="header__flex-row">
+            <div class="city __select" data-state="">
+                <div class="select-side"></div>
+                <div id="location-city" class="city__location __select__title" data-default="Option 1">
                     <span>Москва</span>
-                </label>
-                <input id="citySelect2" class="__select__input" type="radio" name="citySelect">
-                <label for="citySelect2" class="__select__label">
-                    <span>Санкт-Петербург</span>
-                </label>
+                </div>
+                <div class="__select__content">
+                    <input id="citySelect1" class="__select__input" type="radio" name="citySelect">
+                    <label for="citySelect1" data-type="default" class="__select__label">
+                        <span>Москва</span>
+                    </label>
+                    <input id="citySelect2" class="__select__input" type="radio" name="citySelect">
+                    <label for="citySelect2" class="__select__label">
+                        <span>Санкт-Петербург</span>
+                    </label>
+                </div>
             </div>
+
+            <div><a href="https://softline.ru/events" class="header__anchor">Мероприятия</a></div>
+
+            <div><a href="https://slddigital.com/ " class="header__anchor">Блог</a></div>
         </div>
-        <div class="languages __select" data-state="">
+
+        <a href="#" class="header__top-button">
+            Регистрация
+        </a>
+
+        <a href="#" class="header__top-button">
+            Войти
+        </a>
+        <!-- <div class="languages __select" data-state="">
             <div class="select-side"></div>
             <div id="language" class="__select__title" data-default="Option 0">
                 <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
@@ -70,7 +85,7 @@
                     <span>En</span>
                 </label>
             </div>
-        </div>
+        </div> -->
         <button class="menu-button">
             <span class="burger-button-close">
                 <span id="first-line-burger"></span>
@@ -85,18 +100,35 @@
         </a>
         <div class="header__mid_wrap">
             <nav>
-                <a href="./aboutus.html" class="header__nav_link">О компании</a>
-                <a href="./partner-relations.html" class="header__nav_link">Инвесторам</a>
-                <a href="./career.html" class="header__nav_link">Карьера</a>
-                <a href="./events.html" class="header__nav_link">IT-события</a>
-                <a href="./blog.html" class="header__nav_link">Блог</a>
-                <a href="./map.html" class="header__nav_link">Контакты</a>
-                <a href="#" class="header__nav_link">Softline Finance</a>
+                <a href="https://softline.ru/about" class="header__nav_link">Группа компаний</a>
+                <a href="https://finance.softline.ru/" class="header__nav_link">Softline Finance</a>
+                <a href="https://softline.ru/investor-relations" class="header__nav_link">Инвесторам</a>
+                <a href="https://softline.ru/job" class="header__nav_link">Карьера</a>
+                <a href="https://edu.softline.com/" class="header__nav_link">Учебный центр</a>
             </nav>
+            <form action="./search-results.html" class="header__search">
+                <a href="#" class="header__search_close"></a>
+                <div class="btn__search-show">
+                    <span>Поиск</span>
+                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279" />
+                        <path d="M12.9986 13L9.45312 9.45459" stroke="#697279" />
+                    </svg>
+                </div>
+                <input class="input input__search" type="text" placeholder="Введите условие поиска">
+                <button class="btn__search disabled" disabled>
+                    <span>Искать</span>
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                        <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10"
+                            stroke="white" stroke-width="1.5" />
+                    </svg>
+                </button>
+            </form>
             <div class="header__contact">
                 <a href="tel:+74952320023">+7 (495) 232-0023</a>
                 <a href="tel:88002320023">8 (800) 232-0023</a>
-            </div>    
+            </div>
         </div>
     </div>
     <div class="header__bottom">
@@ -105,71 +137,50 @@
                 <li data-menu="online-store" class="header__item">
                     <a class="header__link" href="#">Интернет-магазин</a>
                 </li>
-                <li data-menu="digital-business" class="header__item">
-                    <a class="header__link" href="#">Цифровой бизнес</a>
-                </li>
                 <li data-menu="solutions-and-services" class="header__item">
-                    <a class="header__link" href="./catalog.html">Услуги и решения</a>
+                    <a class="header__link" href="#">Решения и услуги</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Для малого и среднего бизнеса</a>
+                    <a class="header__link" href="https://softline.ru/solutions/import-replacement">Импортозамещение</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Для госсектора</a>
+                    <a class="header__link" href="https://softline.ru/solutions/security">Кибербезопасность</a>
+                </li>
+                <li data-menu="digital-business" class="header__item">
+                    <a class="header__link" href="#">ПО и аппаратные <br> решения Softline</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="#">Для ритейла FMCG</a>
+                    <a class="header__link" href="https://softline.ru/solutions/dev">Заказная <br> разработка</a>
                 </li>
                 <li data-menu="clouds" class="header__item">
-                    <a class="header__link" href="#">Облака</a>
+                    <a class="header__link" href="#">Облако <br> Softline</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="./stories.html">Кейсы</a>
+                    <a class="header__link"
+                        href="https://softline.ru/about/softline-vendor-development-program">Программа<br> для
+                        вендоров</a>
                 </li>
-                <li data-menu="training-center" class="header__item">
-                    <a class="header__link" href="#">Учебный центр</a>
+                <li class="header__item">
+                    <a class="header__link" href="#">Индустриальные<br> решения</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="https://softline.ru/solutions/resheniya-dlya-gos-organizatsiy">Для
+                        госсектора</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="https://softline.ru/smb">Для среднего и малого бизнеса</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="https://softline.ru/about/projects">Проекты</a>
                 </li>
             </ul>
             <div class="menu-second">
                 <div class="menu-second__top">
-                    <div class="menu-second__helpers">
-                        <form class="header__search">
-                            <a href="#" class="header__search_close"></a>
-                            <div class="btn__search-show">
-                                <span>Поиск</span>
-                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
-                                    <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
-                                </svg>
-                            </div>
-                            <input class="input input__search" type="text" placeholder="Введите условие поиска">
-                            <button class="btn__search disabled" disabled>
-                                <span>Искать</span>
-                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
-                                </svg>    
-                            </button>
-                        </form>
-            
-                        <div class="geolocation __select" data-state="">
-                            <div class="select-side"></div>
-                            <div id="location" class="geolocation__location __select__title" data-default="Option 0">                   
-                                <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                                <span>Россия</span>
-                            </div>
-                            <div class="__select__content">
-                                <input id="locationSelect1" class="__select__input" type="radio" name="locationSelect">
-                                <label for="locationSelect1" data-type="default" class="__select__label">
-                                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                                    <span>Россия</span>
-                                </label>
-                            </div>
-                        </div>
+
                         <div class="city __select" data-state="">
                             <div class="select-side"></div>
-                            <div id="location-city" class="city__location __select__title" data-default="Option 0">                   
-                                <span>Город</span>
+                            <div id="location-city" class="city__location __select__title" data-default="Option 1">
+                                <span>Москва</span>
                             </div>
                             <div class="__select__content">
                                 <input id="citySelect1" class="__select__input" type="radio" name="citySelect">
@@ -182,7 +193,47 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="languages __select" data-state="">
+    
+                        <form class="header__search">
+                            <a href="#" class="header__search_close"></a>
+                            <div class="btn__search-show">
+                                <span>Поиск</span>
+                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279" />
+                                    <path d="M12.9986 13L9.45312 9.45459" stroke="#697279" />
+                                </svg>
+                            </div>
+                            <input class="input input__search" type="text" placeholder="Введите условие поиска">
+                            <button class="btn__search disabled" disabled>
+                                <span>Искать</span>
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                                    <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10"
+                                        stroke="white" stroke-width="1.5" />
+                                </svg>
+                            </button>
+                        </form>
+
+                        <div><a href="https://softline.ru/events" class="header__anchor">Мероприятия</a></div>
+
+                        <div><a href="https://slddigital.com/ " class="header__anchor">Блог</a></div>
+
+                        <!-- <div class="geolocation __select" data-state="">
+                            <div class="select-side"></div>
+                            <div id="location" class="geolocation__location __select__title" data-default="Option 0">
+                                <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                                <span>Россия</span>
+                            </div>
+                            <div class="__select__content">
+                                <input id="locationSelect1" class="__select__input" type="radio" name="locationSelect">
+                                <label for="locationSelect1" data-type="default" class="__select__label">
+                                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
+                                    <span>Россия</span>
+                                </label>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="languages __select" data-state="">
                             <div class="select-side"></div>
                             <div id="language" class="__select__title" data-default="Option 0">
                                 <img class="geolocation__flag" src="assets/images/flag3.jpg" alt="">
@@ -200,22 +251,35 @@
                                     <span>En</span>
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
+                </div>
+
+                <div class="menu-second__mid">
+
+                    <div class="menu-second__flex-col">
+                        <a href="#" class="header__top-button">
+                            Регистрация
+                        </a>
+                
+                        <a href="#" class="header__top-button">
+                            Войти
+                        </a>
                     </div>
+
                     <div class="header__contact-mob">
                         <a href="tel:+74952320023">+7 (495) 232-0023</a>
                         <a href="tel:88002320023">8 (800) 232-0023</a>
-                    </div> 
+                    </div>
                 </div>
+
                 <nav>
-                    <a href="./aboutus.html" class="header__nav_link">О компании</a>
-                    <a href="./partner-relations.html" class="header__nav_link">Инвесторам</a>
-                    <a href="./career.html" class="header__nav_link">Карьера</a>
-                    <a href="./events.html" class="header__nav_link">IT-события</a>
-                    <a href="./blog.html" class="header__nav_link">Блог</a>
-                    <a href="./map.html" class="header__nav_link">Контакты</a>
-                    <a href="#" class="header__nav_link">Softline Finance</a>
+                    <a href="https://softline.ru/about" class="header__nav_link">Группа компаний</a>
+                    <a href="https://finance.softline.ru/" class="header__nav_link">Softline Finance</a>
+                    <a href="https://softline.ru/investor-relations" class="header__nav_link">Инвесторам</a>
+                    <a href="https://softline.ru/job" class="header__nav_link">Карьера</a>
+                    <a href="https://edu.softline.com/" class="header__nav_link">Учебный центр</a>
                 </nav>
+                
             </div>
         </div>
     </div>
