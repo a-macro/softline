@@ -255,12 +255,13 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.5;
+        padding-right: 5rem;
         @include breakpoint($sm-bp) {
             font-size: 2.05rem;
         }
     }
     .side-list__item {
-        margin-bottom: 1.6rem;
+        margin-bottom: 0;
         transition: .3s;
         @include breakpoint($mid-bp) {
             margin-bottom: 0;
@@ -303,7 +304,6 @@
 
     .side-list__item.active {
         padding-left: 2rem;
-        padding-right: 2rem;
         .side-list__close {
             right: 1.5rem;
             @include breakpoint($mid-bp) {
@@ -322,8 +322,8 @@
 }
 
 .catalog-sidebar__list {
-    padding-top: 2.6rem;
-    max-height: calc(var(--max-h) + 2.6rem);
+    padding-top: 1.8rem;
+    max-height: calc(var(--max-h) + 1.8rem);
     overflow: hidden;
     transition: .4s;
     @include breakpoint($mid-bp) {

@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 40,
                 freeMode: "false",
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",
@@ -732,7 +732,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: "auto",
                 watchOverflow: true,
                 spaceBetween: 40,
-                loop: true,
+                loop: false,
                 breakpoints: {
                     300: {
                         spaceBetween: 20,
@@ -749,13 +749,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    let newsSliser = document.querySelectorAll(".news-page__swiper");
-    if(newsSliser.length > 0) {
-        newsSliser.forEach(slider => {
-            let prev = slider.querySelector(".swiper-button-prev");
-            let next = slider.querySelector(".swiper-button-next");
+    let newsSliser = document.querySelector(".news-page__swiper");
+    if(newsSliser) {
+            console.log(slider);
+            let prev = newsSliser.querySelector(".swiper-button-prev");
+            let next = newsSliser.querySelector(".swiper-button-next");
 
-            new Swiper(slider, {
+            new Swiper(newsSliser, {
                 navigation: {
                     nextEl: next,
                     prevEl: prev
@@ -776,7 +776,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 },
             });
-        });
     }
 
     // const customPagination = document.querySelector('.swiper-pagination-custom__inner')
@@ -999,20 +998,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    let catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item");
+    let catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item input");
     if(catalogList && catalogList.length > 0) {
         catalogList.forEach(item => {
             let parent = item.closest("ul");
-            item.onclick = (e) => {
-                e.preventDefault();
-                if(!item.classList.contains("active")) {
-                    let prevActive = document.querySelector(".active.catalog-sidebar__item");
+            let elem = item.closest(".catalog-sidebar__item");
+            item.onchange = (e) => {
+                if(!elem.classList.contains("active")) {
+                    let prevActive = parent.querySelector(".active.catalog-sidebar__item");
                     if(prevActive) {
                         prevActive.classList.remove("active");
                     }
-                    item.classList.add("active");
-                } else {
-                    item.classList.remove("active");
+                    elem.classList.add("active");
+                }
+            }
+        });
+    }
+
+    let siteMapsTrigger = document.querySelectorAll(".site-map__category_name.trigger");
+    if(siteMapsTrigger.length > 0) {
+        siteMapsTrigger.forEach(trigger => {
+            let parent = trigger.closest(".site-map__wrap");
+            let block = parent.querySelector(".site-map__category");
+            trigger.onclick = (e) => {
+                e.preventDefault();
+                parent.classList.toggle("active");
+                block.style.cssText = `--elH: ${block.scrollHeight}px`;
+            }
+        });
+    }
+
+    let catalogClose = document.querySelectorAll(".catalog-sidebar__item .search-aside__item_close");
+    if(catalogClose.length > 0) {
+        catalogClose.forEach(close => {
+            let elem = close.closest(".catalog-sidebar__item");
+            let inp = elem.querySelector("input");
+            close.onclick = (e) => {
+                if(elem.classList.contains("active")) {
+                    elem.classList.remove("active");
+                    inp.checked = false;
                 }
             }
         });
@@ -1150,7 +1174,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 elem.classList.remove("canScroll");
                 if(elem.classList.contains("search-aside") && window.innerWidth <= 480) {
                     elem.style.transform = 'translate3d(0, -3.5rem, 0)';
-                    console.log(1);
                 } else if(elem.classList.contains("search-aside") && window.innerWidth <= 768) {
                     elem.style.transform = 'translate3d(0, -6rem, 0)';
                 } else {
@@ -2270,25 +2293,10 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                 }, {
                     searchControlProvider: 'yandex#search'
                 }),
-                    /*clusterer = new ymaps.Clusterer({
-                    clusterIcons: [
-                        {
-                            href: 'assets/images/map/default.svg',
-                            size: [30, 30],
-                            offset: [-15, -15]
-                        }],
-                    groupByCoordinates: false,
-                    clusterDisableClickZoom: false,
-                    clusterHideIconOnBalloonOpen: false,
-                    geoObjectHideIconOnBalloonOpen: false,
-                    hasBalloon: false
-                }),*/
                     getPointData = function (index) {
                     return {};
                 },
                 geoObjects = [];
-
-                ///////////////////////////////////////
 
                 var colors = ['#ff0000', '#00000000', '#00000000', '#00000000'];
 
@@ -2346,49 +2354,29 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                     }
                     objectManager.add(result);
                     myMap.geoObjects.add(objectManager);
-                })
-                ///////////////////////////////////////////////////
-                
-                /*var pane = new ymaps.pane.StaticPane(myMap, {
-                    zIndex: 100, css: {
-                        width: '100%', height: '100%', backgroundColor: '#c9c9c9'
-                    }
-                });
-                myMap.panes.append('#c9c9c9', pane);*/
-
-                /*clusterer.events
-                    .add(['click'], function (e) {
-                        var target = e.get('target'),
-                            type = e.get('type');
-                        if (typeof target.getGeoObjects != 'undefined') {
-                            // Событие произошло на кластере.
-                            myMap.setCenter(target.properties._data.geoObjects[0].geometry._coordinates, myMap.getZoom() + 1, {
-                                duration: 300
-                            });
-                        } 
-                    });*/
+                })                
 
             function render() {
                 return new Promise( ( resolve, reject ) => {
-                    /*let req = new XMLHttpRequest();
-                    req.onreadystatechange = () => {
-                        if(req.readyState == 4) {
-                            resolve( req );
-                        }
-                    };  
-                    req.open("GET", "/local/ajax/map.php", true);
-                    req.responseType = 'json';
-                    req.send();*/
                     let req = new XMLHttpRequest();
                     req.onreadystatechange = () => {
                         if(req.readyState == 4) {
                             resolve( req );
                         }
                     };  
-                    req.open("GET", "https://api.jsonbin.io/v3/b/63a9a90215ab31599e25552a", true);
+                    req.open("GET", "/about/map/get-office-coordinates.php", true);
+                    req.responseType = 'json';
+                    req.send();
+                    /*let req = new XMLHttpRequest();
+                    req.onreadystatechange = () => {
+                        if(req.readyState == 4) {
+                            resolve( req );
+                        }
+                    };  
+                    req.open("GET", "https://api.jsonbin.io/v3/b/6421a378ace6f33a22fe2c27", true);
                     req.setRequestHeader("X-Master-Key", "$2b$10$2vK1es0DlNZIjjLMRFSAEuqLKa67nVqo9xGycFQi3bVKqhwkMHgA6");
                     req.responseType = 'json';
-                    req.send(); 
+                    req.send(); */
                 } )
             } 
 
@@ -2397,12 +2385,13 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
             }, 10);
 
             render().then( ( req ) => {
-                //data = req.response.features;
-                data = req.response.record.features;
+                data = req.response.features;
+                //data = req.response.record.features;
+                console.log(data);
 
                 for(let j = 0; j < data.length; j++) {
-                    pointsData[j] = data[j].geometry.coordinates;
-                    baloonsInfo[j] = [data[j].properties.balloonContentHeader];
+                    pointsData[j] = data[j].coordinates;
+                    baloonsInfo[j] = [data[j].balloonContentHeader];
                     id[j] = data[j].id;
                 }
 
@@ -2416,7 +2405,8 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                 for(var i = 0, len = pointsData.length; i < len; i++) {
                     let myPlacemark = new ymaps.Placemark(pointsData[i], getPointData(i), {
                         iconLayout: 'default#image',
-                        iconImageHref: 'assets/images/map/Location.svg',
+                        //iconImageHref: 'assets/images/map/Location.svg',
+                        iconImageHref: '/assets/images/map/Location.svg',
                         iconImageSize: [45, 56],
                         iconImageOffset: [-22.5, -56],
                         balloonContentLayout: BalloonContentLayout,
@@ -2429,12 +2419,8 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                     myPlacemark.fakeId = id[i];
                     myMap.geoObjects.add(myPlacemark);
                     myPlacemark.events.add('balloonopen', function (e) {
-                        /*myMap.setCenter(myPlacemark.geometry._coordinates, 16, {
-                            duration: 500
-                        });*/
 
                         let fakeId = myPlacemark.fakeId;
-                        //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
                         let div = document.querySelector(`.id${fakeId}`);
                         if(div) {
                             div.classList.add("open");
@@ -2446,7 +2432,6 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         activePlacmark = myPlacemark;
                     });
                     myPlacemark.events.add('balloonclose', function (e) {
-                        //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
                         baloons.forEach(baloon => {
                             baloon.classList.remove("open");
                         });
@@ -2456,37 +2441,38 @@ const filterSwipe = document.querySelectorAll('.filter-swipe')
                         activePlacmark = null;
                     });
                 }
-            
-                /*clusterer.options.set({
-                    gridSize: 80,
-                    clusterDisableClickZoom: true
-                });
-            
-                clusterer.add(geoObjects);*/
-                myMap.behaviors.disable('scrollZoom');
-                //myMap.geoObjects.add(clusterer);
 
-            
-                /*myMap.setBounds(clusterer.getBounds(), {
-                    checkZoomRange: true
-                });    */
+                myMap.behaviors.disable('scrollZoom');
                 myMap.behaviors.enable("dblClickZoom", "rightMouseButtonMagnifier", "multiTouch", "drag");
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                     //myMap.behaviors.disable('drag');
                 }
 
                 const buttons = document.querySelectorAll('.map__city');
-                for(let k = 0; k < data.length; k++) {
-                    buttons[k].setAttribute("data-index", id[k]);
-                    buttons[k].addEventListener('click', ({ target: { dataset: { index } } }) => {
-                        event.preventDefault();
-                        if (index) {
-                            myMap.setCenter(pointsData[index], 11, {
-                                duration: 400
-                            });
-                        }
+                buttons.forEach(btn => {
+                    let txt = btn.innerText;
+                    let coords;
+                    ymaps.geocode(txt, {
+                        results: 1
+                    }).then(function (res) {
+                        let firstGeoObject = res.geoObjects.get(0);
+                        coords = firstGeoObject.geometry.getCoordinates();
+
+                    btn.setAttribute("c1", coords[0]);
+                    btn.setAttribute("c2", coords[1]);
+                
+                    btn.onclick = (e) => {
+                        e.preventDefault();
+                        let attr1 = btn.getAttribute("c1");
+                        let attr2 = btn.getAttribute("c2");
+                        myMap.setCenter([attr1, attr2], 11, {
+                            duration: 400
+                        });
+                    }
                     });
-                }
+                    
+                });
+
             })
         
         });

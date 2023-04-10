@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         freeMode: "false",
-        loop: true,
+        loop: false,
         breakpoints: {
           300: {
             slidesPerView: "auto",
@@ -695,7 +695,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: "auto",
         watchOverflow: true,
         spaceBetween: 40,
-        loop: true,
+        loop: false,
         breakpoints: {
           300: {
             spaceBetween: 20
@@ -710,32 +710,31 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-  var newsSliser = document.querySelectorAll(".news-page__swiper");
-  if (newsSliser.length > 0) {
-    newsSliser.forEach(function (slider) {
-      var prev = slider.querySelector(".swiper-button-prev");
-      var next = slider.querySelector(".swiper-button-next");
-      new Swiper(slider, {
-        navigation: {
-          nextEl: next,
-          prevEl: prev
+  var newsSliser = document.querySelector(".news-page__swiper");
+  if (newsSliser) {
+    console.log(slider);
+    var prev = newsSliser.querySelector(".swiper-button-prev");
+    var next = newsSliser.querySelector(".swiper-button-next");
+    new Swiper(newsSliser, {
+      navigation: {
+        nextEl: next,
+        prevEl: prev
+      },
+      slidesPerView: "auto",
+      watchOverflow: true,
+      spaceBetween: 40,
+      loop: true,
+      breakpoints: {
+        300: {
+          spaceBetween: 20
         },
-        slidesPerView: "auto",
-        watchOverflow: true,
-        spaceBetween: 40,
-        loop: true,
-        breakpoints: {
-          300: {
-            spaceBetween: 20
-          },
-          769: {
-            spaceBetween: 40
-          },
-          1025: {
-            spaceBetween: 40
-          }
+        769: {
+          spaceBetween: 40
+        },
+        1025: {
+          spaceBetween: 40
         }
-      });
+      }
     });
   }
 
@@ -936,20 +935,43 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
-  var catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item");
+  var catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item input");
   if (catalogList && catalogList.length > 0) {
     catalogList.forEach(function (item) {
       var parent = item.closest("ul");
-      item.onclick = function (e) {
-        e.preventDefault();
-        if (!item.classList.contains("active")) {
-          var prevActive = document.querySelector(".active.catalog-sidebar__item");
+      var elem = item.closest(".catalog-sidebar__item");
+      item.onchange = function (e) {
+        if (!elem.classList.contains("active")) {
+          var prevActive = parent.querySelector(".active.catalog-sidebar__item");
           if (prevActive) {
             prevActive.classList.remove("active");
           }
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
+          elem.classList.add("active");
+        }
+      };
+    });
+  }
+  var siteMapsTrigger = document.querySelectorAll(".site-map__category_name.trigger");
+  if (siteMapsTrigger.length > 0) {
+    siteMapsTrigger.forEach(function (trigger) {
+      var parent = trigger.closest(".site-map__wrap");
+      var block = parent.querySelector(".site-map__category");
+      trigger.onclick = function (e) {
+        e.preventDefault();
+        parent.classList.toggle("active");
+        block.style.cssText = "--elH: ".concat(block.scrollHeight, "px");
+      };
+    });
+  }
+  var catalogClose = document.querySelectorAll(".catalog-sidebar__item .search-aside__item_close");
+  if (catalogClose.length > 0) {
+    catalogClose.forEach(function (close) {
+      var elem = close.closest(".catalog-sidebar__item");
+      var inp = elem.querySelector("input");
+      close.onclick = function (e) {
+        if (elem.classList.contains("active")) {
+          elem.classList.remove("active");
+          inp.checked = false;
         }
       };
     });
@@ -1077,7 +1099,6 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.classList.remove("canScroll");
         if (elem.classList.contains("search-aside") && window.innerWidth <= 480) {
           elem.style.transform = 'translate3d(0, -3.5rem, 0)';
-          console.log(1);
         } else if (elem.classList.contains("search-aside") && window.innerWidth <= 768) {
           elem.style.transform = 'translate3d(0, -6rem, 0)';
         } else {
@@ -2090,26 +2111,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }, {
           searchControlProvider: 'yandex#search'
         }),
-        /*clusterer = new ymaps.Clusterer({
-        clusterIcons: [
-            {
-                href: 'assets/images/map/default.svg',
-                size: [30, 30],
-                offset: [-15, -15]
-            }],
-        groupByCoordinates: false,
-        clusterDisableClickZoom: false,
-        clusterHideIconOnBalloonOpen: false,
-        geoObjectHideIconOnBalloonOpen: false,
-        hasBalloon: false
-        }),*/
         getPointData = function getPointData(index) {
           return {};
         },
         geoObjects = [];
-
-      ///////////////////////////////////////
-
       var colors = ['#ff0000', '#00000000', '#00000000', '#00000000'];
       var objectManager = new ymaps.ObjectManager();
       ymaps.borders.load('001', {
@@ -2164,59 +2169,40 @@ document.addEventListener("DOMContentLoaded", function () {
         objectManager.add(result);
         myMap.geoObjects.add(objectManager);
       });
-      ///////////////////////////////////////////////////
-
-      /*var pane = new ymaps.pane.StaticPane(myMap, {
-          zIndex: 100, css: {
-              width: '100%', height: '100%', backgroundColor: '#c9c9c9'
-          }
-      });
-      myMap.panes.append('#c9c9c9', pane);*/
-
-      /*clusterer.events
-          .add(['click'], function (e) {
-              var target = e.get('target'),
-                  type = e.get('type');
-              if (typeof target.getGeoObjects != 'undefined') {
-                  // Событие произошло на кластере.
-                  myMap.setCenter(target.properties._data.geoObjects[0].geometry._coordinates, myMap.getZoom() + 1, {
-                      duration: 300
-                  });
-              } 
-          });*/
-
       function render() {
         return new Promise(function (resolve, reject) {
-          /*let req = new XMLHttpRequest();
-          req.onreadystatechange = () => {
-              if(req.readyState == 4) {
-                  resolve( req );
-              }
-          };  
-          req.open("GET", "/local/ajax/map.php", true);
-          req.responseType = 'json';
-          req.send();*/
           var req = new XMLHttpRequest();
           req.onreadystatechange = function () {
             if (req.readyState == 4) {
               resolve(req);
             }
           };
-          req.open("GET", "https://api.jsonbin.io/v3/b/63a9a90215ab31599e25552a", true);
-          req.setRequestHeader("X-Master-Key", "$2b$10$2vK1es0DlNZIjjLMRFSAEuqLKa67nVqo9xGycFQi3bVKqhwkMHgA6");
+          req.open("GET", "/about/map/get-office-coordinates.php", true);
           req.responseType = 'json';
           req.send();
+          /*let req = new XMLHttpRequest();
+          req.onreadystatechange = () => {
+              if(req.readyState == 4) {
+                  resolve( req );
+              }
+          };  
+          req.open("GET", "https://api.jsonbin.io/v3/b/6421a378ace6f33a22fe2c27", true);
+          req.setRequestHeader("X-Master-Key", "$2b$10$2vK1es0DlNZIjjLMRFSAEuqLKa67nVqo9xGycFQi3bVKqhwkMHgA6");
+          req.responseType = 'json';
+          req.send(); */
         });
       }
+
       setTimeout(function () {
         pannel.style.display = "block";
       }, 10);
       render().then(function (req) {
-        //data = req.response.features;
-        data = req.response.record.features;
+        data = req.response.features;
+        //data = req.response.record.features;
+        console.log(data);
         for (var j = 0; j < data.length; j++) {
-          pointsData[j] = data[j].geometry.coordinates;
-          baloonsInfo[j] = [data[j].properties.balloonContentHeader];
+          pointsData[j] = data[j].coordinates;
+          baloonsInfo[j] = [data[j].balloonContentHeader];
           id[j] = data[j].id;
         }
         var BalloonContentLayout = ymaps.templateLayoutFactory.createClass('<div style="display: none;">' + '</div>', {});
@@ -2224,7 +2210,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var _loop2 = function _loop2() {
           var myPlacemark = new ymaps.Placemark(pointsData[i], getPointData(i), {
             iconLayout: 'default#image',
-            iconImageHref: 'assets/images/map/Location.svg',
+            //iconImageHref: 'assets/images/map/Location.svg',
+            iconImageHref: '/assets/images/map/Location.svg',
             iconImageSize: [45, 56],
             iconImageOffset: [-22.5, -56],
             balloonContentLayout: BalloonContentLayout,
@@ -2237,12 +2224,7 @@ document.addEventListener("DOMContentLoaded", function () {
           myPlacemark.fakeId = id[i];
           myMap.geoObjects.add(myPlacemark);
           myPlacemark.events.add('balloonopen', function (e) {
-            /*myMap.setCenter(myPlacemark.geometry._coordinates, 16, {
-                duration: 500
-            });*/
-
             var fakeId = myPlacemark.fakeId;
-            //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
             var div = document.querySelector(".id".concat(fakeId));
             if (div) {
               div.classList.add("open");
@@ -2253,7 +2235,6 @@ document.addEventListener("DOMContentLoaded", function () {
             activePlacmark = myPlacemark;
           });
           myPlacemark.events.add('balloonclose', function (e) {
-            //myPlacemark.options.set('iconImageHref', 'assets/images/map/default.svg');
             baloons.forEach(function (baloon) {
               baloon.classList.remove("open");
             });
@@ -2266,35 +2247,32 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0, len = pointsData.length; i < len; i++) {
           _loop2();
         }
-
-        /*clusterer.options.set({
-            gridSize: 80,
-            clusterDisableClickZoom: true
-        });
-                      clusterer.add(geoObjects);*/
         myMap.behaviors.disable('scrollZoom');
-        //myMap.geoObjects.add(clusterer);
-
-        /*myMap.setBounds(clusterer.getBounds(), {
-            checkZoomRange: true
-        });    */
         myMap.behaviors.enable("dblClickZoom", "rightMouseButtonMagnifier", "multiTouch", "drag");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           //myMap.behaviors.disable('drag');
         }
         var buttons = document.querySelectorAll('.map__city');
-        for (var k = 0; k < data.length; k++) {
-          buttons[k].setAttribute("data-index", id[k]);
-          buttons[k].addEventListener('click', function (_ref) {
-            var index = _ref.target.dataset.index;
-            event.preventDefault();
-            if (index) {
-              myMap.setCenter(pointsData[index], 11, {
+        buttons.forEach(function (btn) {
+          var txt = btn.innerText;
+          var coords;
+          ymaps.geocode(txt, {
+            results: 1
+          }).then(function (res) {
+            var firstGeoObject = res.geoObjects.get(0);
+            coords = firstGeoObject.geometry.getCoordinates();
+            btn.setAttribute("c1", coords[0]);
+            btn.setAttribute("c2", coords[1]);
+            btn.onclick = function (e) {
+              e.preventDefault();
+              var attr1 = btn.getAttribute("c1");
+              var attr2 = btn.getAttribute("c2");
+              myMap.setCenter([attr1, attr2], 11, {
                 duration: 400
               });
-            }
+            };
           });
-        }
+        });
       });
     });
   }

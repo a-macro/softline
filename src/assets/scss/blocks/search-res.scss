@@ -55,6 +55,11 @@
     justify-content: space-between;
 }
 
+.search-aside__title {
+    padding: .8rem 0;
+    display: inline-block;
+}
+
 .menu-open {
     .search-aside {
         @include breakpoint($mid-bp) {
@@ -215,7 +220,7 @@ body {
 }
 
 .side-list__item {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
     position: relative;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -232,8 +237,8 @@ body {
         width: calc(100% - 3rem);
         position: absolute;
         background: transparent;
-        height: calc(100% + 2rem);
-        top: -1rem;
+        height: 100%;
+        top: 0;
         left: -1rem;
         z-index: 1;
         transition: background .4s;
@@ -289,6 +294,18 @@ body {
     position: relative;
     @include breakpoint($sm-bp) {
         font-size: 2.55rem;
+    }
+
+    label {
+        width: 100%;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+        padding: 0.8rem 0;
+        @include breakpoint($mid-bp) {
+            padding: 0;
+        }
     }
 }
 

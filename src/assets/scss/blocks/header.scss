@@ -169,6 +169,7 @@
     padding-right: 4rem;
     position: relative;
     background: #F0F2F6;
+    border-bottom: 1px solid #d2dce5;
     @include breakpoint($xl-bp) {
         padding-left: 3rem;
         padding-right: 4rem;

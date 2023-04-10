@@ -317,6 +317,10 @@ button.link-red {
     }
 }
 
+.swiper-wrapper {
+    height: auto;
+}
+
 .services__slider {
     width: calc(100% + 4rem);
     margin-left: -2rem;
@@ -494,6 +498,7 @@ button.link-red {
     .swiper-slide {
         display: block;
         text-decoration: none;
+
         @include breakpoint($mid-bp) {
             width: 27.5rem;
         }
