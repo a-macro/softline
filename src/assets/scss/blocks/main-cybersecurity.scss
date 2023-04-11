@@ -1,6 +1,6 @@
 .intro__pages {
-    height: 50rem;
-    max-height: calc(var(--h) - var(--headerH));
+    max-height: 600px;
+    height: calc(80vh - 100px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
