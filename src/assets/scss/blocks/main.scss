@@ -4,8 +4,8 @@
 }
 
 .intro {
-    height: 50rem;
-    max-height: 1113px;
+    max-height: 700px;
+    height: calc(100vh - var(--headerH) - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -16,7 +16,6 @@
     padding-right: 4rem;
     @include breakpoint($xxl-bp) {
         padding-bottom: 7.8rem;        
-        max-height: 600px;
     }
     @include breakpoint($xl-bp) {
         padding-bottom: 4.8rem;        

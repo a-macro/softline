@@ -7680,8 +7680,8 @@ textarea {
 }
 
 .intro__pages {
-    height: 50rem;
-    max-height: calc(var(--h) - var(--headerH));
+    max-height: 700px;
+    height: calc(100vh - var(--headerH) - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7699,7 +7699,6 @@ textarea {
 @media (max-width: 1920px) {
     .intro__pages {
         padding-bottom: 8.8rem;
-        max-height: 600px;
     }
 }
 
@@ -11614,20 +11613,14 @@ textarea {
 
 .insights-main-bg {
     position: relative;
-    height: 50rem;
-    max-height: 1113px;
+    max-height: 700px;
+    height: calc(100vh - var(--headerH) - 80px);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: justify;
     justify-content: space-between;
-}
-
-@media (max-width: 1920px) {
-    .insights-main-bg {
-        max-height: 823px;
-    }
 }
 
 @media (max-width: 1440px) {
@@ -18814,8 +18807,8 @@ body::before {
 }
 
 .intro {
-    height: 50rem;
-    max-height: 1113px;
+    max-height: 700px;
+    height: calc(100vh - var(--headerH) - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     display: -ms-flexbox;
@@ -18832,7 +18825,6 @@ body::before {
 @media (max-width: 1920px) {
     .intro {
         padding-bottom: 7.8rem;
-        max-height: 600px;
     }
 }
 
