@@ -17772,8 +17772,13 @@ body::before {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    padding: 1.2rem 0;
     max-width: 180rem;
+}
+
+@media (max-width: 1440px) {
+    .header__menu {
+        padding: 1.2rem 0;
+    }
 }
 
 @media (max-width: 768px) {
@@ -18241,6 +18246,20 @@ body::before {
     .header__item[data-menu]::after {
         width: 1.5rem;
         height: 1.5rem;
+    }
+}
+
+.header__item .header__link {
+    height: 6.4rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media (max-width: 1440px) {
+    .header__item .header__link {
+        height: auto;
     }
 }
 
