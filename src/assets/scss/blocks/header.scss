@@ -201,8 +201,10 @@
 .header__menu {
     display: flex;
     align-items: center;
-    padding: 1.2rem 0;
     max-width: 180rem;
+    @include breakpoint($xl-bp) {
+        padding: 1.2rem 0;
+    }
     @include breakpoint($mid-bp) {
         height: 100%;
         row-gap: 1.5rem;
@@ -540,6 +542,14 @@
                     width: 1.5rem;
                     height: 1.5rem;
                 }
+    }
+    .header__link {
+        height: 6.4rem;
+        display: flex;
+        align-items: center;
+        @include breakpoint($xl-bp) {
+            height: auto;
+        }
     }
 }
 

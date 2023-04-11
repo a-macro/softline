@@ -14783,8 +14783,12 @@ body::before {
 .header__menu {
   display: flex;
   align-items: center;
-  padding: 1.2rem 0;
   max-width: 180rem;
+}
+@media (max-width: 1440px) {
+  .header__menu {
+    padding: 1.2rem 0;
+  }
 }
 @media (max-width: 768px) {
   .header__menu {
@@ -15159,6 +15163,16 @@ body::before {
   .header__item[data-menu]::after {
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+.header__item .header__link {
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1440px) {
+  .header__item .header__link {
+    height: auto;
   }
 }
 
