@@ -7680,7 +7680,7 @@ textarea {
 }
 
 .intro__pages {
-    height: calc(100vh - 13.7rem);
+    height: 50rem;
     max-height: calc(var(--h) - var(--headerH));
     background-repeat: no-repeat;
     background-size: cover;
@@ -10244,7 +10244,7 @@ textarea {
 
 @media (max-width: 768px) {
     .intro__catalog {
-        height: 60rem;
+        height: 50rem;
     }
 }
 
@@ -11614,7 +11614,7 @@ textarea {
 
 .insights-main-bg {
     position: relative;
-    height: calc(100vh - 16rem);
+    height: 50rem;
     max-height: 1113px;
     display: -ms-flexbox;
     display: flex;
@@ -18814,7 +18814,7 @@ body::before {
 }
 
 .intro {
-    height: calc(100vh - var(--headerH));
+    height: 50rem;
     max-height: 1113px;
     background-repeat: no-repeat;
     background-size: cover;
