@@ -6,13 +6,13 @@
 
 .insights-main-bg {
   position: relative;
-  max-height: 600px;
-  height: calc(80vh - 100px);
+  max-height: 700px;
+  height: calc(100vh - var(--headerH) - 80px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @include breakpoint($xxl-bp) {
-    max-height: 823px;
+    // max-height: 823px;
   }
   @include breakpoint($xl-bp) {
     max-height: 600px;

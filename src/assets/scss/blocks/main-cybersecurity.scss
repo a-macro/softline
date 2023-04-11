@@ -1,6 +1,6 @@
 .intro__pages {
-    max-height: 600px;
-    height: calc(80vh - 100px);
+    max-height: 700px;
+    height: calc(100vh - var(--headerH) - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -12,7 +12,7 @@
     padding-right: 4rem;
     @include breakpoint($xxl-bp) {
         padding-bottom: 8.8rem;
-        max-height: 600px;
+        // max-height: 600px;
     }
     @include breakpoint($xl-bp) {
         padding-bottom: 4rem;
