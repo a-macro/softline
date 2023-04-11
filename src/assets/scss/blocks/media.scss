@@ -139,19 +139,6 @@
 }
 
 .corporate {
-    h2 {
-        font-family: 'Manrope';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 2.4rem;
-        line-height: 3.6rem;
-        color: #212424;
-        padding-bottom: 2.6rem;
-        border-bottom: solid 0.1rem #D2DCE5;
-        @include breakpoint($sm-bp) {
-            font-size: 2.6rem;
-        }
-    }
 
     .corporate__content {
         display: flex;
