@@ -18825,7 +18825,6 @@ body::before {
 @media (max-width: 1920px) {
     .intro {
         padding-bottom: 7.8rem;
-        max-height: 600px;
     }
 }
 

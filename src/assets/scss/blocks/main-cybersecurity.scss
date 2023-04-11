@@ -12,7 +12,6 @@
     padding-right: 4rem;
     @include breakpoint($xxl-bp) {
         padding-bottom: 8.8rem;
-        // max-height: 600px;
     }
     @include breakpoint($xl-bp) {
         padding-bottom: 4rem;
