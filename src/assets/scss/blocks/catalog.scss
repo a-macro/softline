@@ -8,7 +8,7 @@
         height: 42rem;
     }
     @include breakpoint($mid-bp) {
-        height: 60rem;
+        height: 50rem;
     }
     @include breakpoint($sm-bp) {
         height: 46rem;
