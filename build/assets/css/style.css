@@ -6782,6 +6782,11 @@ textarea {
     }
 }
 
+.offer-customers .title {
+    border-bottom: 1px solid #D2DCE5;
+    padding-bottom: 2.6rem;
+}
+
 .offer-customers .offers__list {
     display: -ms-flexbox;
     display: flex;
@@ -20538,23 +20543,6 @@ button.link-red:hover span {
 @media (max-width: 480px) {
     .corporate-position {
         margin-top: 8rem;
-    }
-}
-
-.corporate h2 {
-    font-family: "Manrope";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 3.6rem;
-    color: #212424;
-    padding-bottom: 2.6rem;
-    border-bottom: solid 0.1rem #D2DCE5;
-}
-
-@media (max-width: 480px) {
-    .corporate h2 {
-        font-size: 2.6rem;
     }
 }
 
