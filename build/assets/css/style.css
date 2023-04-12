@@ -17324,12 +17324,18 @@ body::before {
 .footer__link {
     color: #697279;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 500;
-    line-height: 1.5rem;
+    line-height: 3.6rem;
     letter-spacing: 0em;
     text-align: left;
     transition: color 0.4s;
+}
+
+@media (max-width: 768px) {
+    .footer__link {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -17355,20 +17361,29 @@ body::before {
 .footer__info {
     width: 100%;
     margin-top: 12rem;
-    display: -ms-flexbox;
-    display: flex;
+    display: grid;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    grid-template-columns: repeat(3, 44.5rem) 1fr;
 }
 
 @media (max-width: 1920px) {
     .footer__info {
         margin-top: 11rem;
+        grid-template-columns: repeat(3, 39rem) 1fr;
+    }
+}
+
+@media (max-width: 1440px) {
+    .footer__info {
+        grid-template-columns: repeat(2, 35.3rem) 35rem 1fr;
     }
 }
 
 @media (max-width: 768px) {
     .footer__info {
+        display: -ms-flexbox;
+        display: flex;
         width: 65%;
         -ms-flex-order: 2;
         order: 2;
@@ -17393,7 +17408,7 @@ body::before {
 .footer__info > * {
     font-size: 1.6rem;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 2.4rem;
     letter-spacing: 0em;
     text-align: left;
     color: #697279;
@@ -17404,6 +17419,8 @@ body::before {
     .footer__info > * {
         width: 44%;
         margin-right: 1%;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
     }
 }
 
@@ -17442,6 +17459,45 @@ body::before {
 
 .footer__info a:hover {
     color: #A50F2D;
+}
+
+.footer__info-link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .footer__info-link {
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+}
+
+.footer__info-link a {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #697279;
+    text-decoration: none;
+    width: 44.5rem;
+}
+
+@media (max-width: 1920px) {
+    .footer__info-link a {
+        width: 31rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__info-link a {
+        width: auto;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
 }
 
 .footer__selects .__select {
