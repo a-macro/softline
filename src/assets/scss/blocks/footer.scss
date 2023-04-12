@@ -186,12 +186,15 @@
 .footer__link {
     color: $footer-color;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 500;
-    line-height: 1.5rem;
+    line-height: 3.6rem;
     letter-spacing: 0em;
     text-align: left;
     transition: color .4s;
+    @include breakpoint($mid-bp) {
+        font-size: 1.8rem;
+    }
     @include breakpoint($sm-bp) {
         font-size: 2.05rem;
     }
@@ -211,12 +214,18 @@
 .footer__info {
     width: 100%;
     margin-top: 12rem;
-    display: flex;
+    display: grid;
     justify-content: space-between;
+    grid-template-columns: repeat(3, 44.5rem) 1fr;
     @include breakpoint($xxl-bp) {
         margin-top: 11rem;
+        grid-template-columns: repeat(3,39rem) 1fr;
+    }
+    @include breakpoint($xl-bp) {
+        grid-template-columns: repeat(2, 35.3rem) 35rem 1fr;
     }
     @include breakpoint($mid-bp) {
+        display: flex;
         width: 65%;
         order: 2;
         flex-wrap: wrap;
@@ -230,9 +239,9 @@
     }
 
     & > * {
-        font-size: 1.6rem;
+        font-size:  1.6rem;
         font-weight: 500;
-        line-height: 1.5;
+        line-height: 2.4rem;
         letter-spacing: 0em;
         text-align: left;
         color: $footer-color;
@@ -240,6 +249,8 @@
         @include breakpoint($mid-bp) {
             width: 44%;
             margin-right: 1%;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
         }
         @include breakpoint($sm-bp) {
             width: 43%;
@@ -267,6 +278,34 @@
 
         &:hover {
             color: $red;
+        }
+    }
+}
+
+.footer__info-link {
+    display: flex;
+    justify-content: flex-end;
+    @include breakpoint($mid-bp) {
+        justify-content: flex-start;
+    }
+    a {
+
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $footer-color;
+        text-decoration: none;
+
+        width: 44.5rem;
+        @include breakpoint($xxl-bp) {
+            width: 31rem;
+        }
+        @include breakpoint($mid-bp) {
+            width: auto;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
         }
     }
 }
