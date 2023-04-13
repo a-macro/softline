@@ -634,7 +634,7 @@
           flex-direction: column;
           @include breakpoint($sm-bp) {
             flex-direction: row;
-            justify-content: start;
+            justify-content: flex-start;
             transform: translateX(-1rem);
             a {
               width: 4rem;
