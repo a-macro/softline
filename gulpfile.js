@@ -207,6 +207,9 @@ function clean(cb) {
 
   cb();
 }
+function cleanWithoutImg(cb) {
+  return del([`!dist/**/images/**`, 'dist/**/fonts/**', 'dist/**/css/**', 'dist/**/js/**', 'dist/index.html'])
+}
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
@@ -228,7 +231,9 @@ function deploy2() {
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, deploy1, deploy2));
+const buildwithoutimg = gulp.series(cleanWithoutImg, gulp.parallel(html, css, js, fonts, deploy1, deploy2));
 const watch = gulp.parallel(build, watchFiles, css, serve, deploy1, deploy2);
+const dev = gulp.parallel(buildwithoutimg, watchFiles, css, serve, deploy1, deploy2)
 
 /* Exports Tasks */
 exports.deploy1 = deploy1;
@@ -242,3 +247,4 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
+exports.dev = dev;

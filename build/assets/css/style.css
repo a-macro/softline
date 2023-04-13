@@ -8645,7 +8645,7 @@ textarea {
         height: -moz-min-content;
         height: min-content;
         -ms-flex-align: start;
-        align-items: start;
+        align-items: flex-start;
         margin-top: 2rem;
         padding-right: 2.5rem;
     }
@@ -17778,7 +17778,8 @@ body::before {
     padding-right: 4rem;
     position: relative;
     background: #F0F2F6;
-    border-bottom: 1px solid #d2dce5;
+    border-bottom: 1px solid #F0F2F6;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 1440px) {
@@ -21599,7 +21600,7 @@ button.link-red:hover span {
         -ms-flex-direction: row;
         flex-direction: row;
         -ms-flex-pack: start;
-        justify-content: start;
+        justify-content: flex-start;
         -webkit-transform: translateX(-1rem);
         transform: translateX(-1rem);
     }
