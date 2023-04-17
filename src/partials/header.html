@@ -4,20 +4,7 @@
     </a>
 
     <div class="header__top">
-        <!-- <div class="geolocation __select" data-state="">
-            <div class="select-side"></div>
-            <div id="location" class="geolocation__location __select__title" data-default="Option 0">                   
-                <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                <span>Россия</span>
-            </div>
-            <div class="__select__content">
-                <input id="locationSelect1" class="__select__input" type="radio" name="locationSelect" />
-                <label for="locationSelect1" data-type="default" class="__select__label">
-                    <img class="geolocation__flag" src="assets/images/flag.png" alt="">
-                    <span>Россия</span>
-                </label>
-            </div>
-        </div> -->
+
         <form action="./search-results.html" class="header__search">
             <a href="#" class="header__search_close"></a>
             <div class="btn__search-show">
@@ -37,6 +24,7 @@
                 </svg>
             </button>
         </form>
+
         <div class="header__flex-row">
             <div class="city __select" data-state="">
                 <div class="select-side"></div>
@@ -106,28 +94,13 @@
                 <a href="https://softline.ru/job" class="header__nav_link">Карьера</a>
                 <a href="https://edu.softline.com/" class="header__nav_link">Учебный центр</a>
             </nav>
-            <form action="./search-results.html" class="header__search">
-                <a href="#" class="header__search_close"></a>
-                <div class="btn__search-show">
-                    <span>Поиск</span>
-                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279" />
-                        <path d="M12.9986 13L9.45312 9.45459" stroke="#697279" />
-                    </svg>
-                </div>
-                <input class="input input__search" type="text" placeholder="Введите условие поиска">
-                <button class="btn__search disabled" disabled>
-                    <span>Искать</span>
-                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="32" height="32" rx="16" fill="#A50F2D" />
-                        <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10"
-                            stroke="white" stroke-width="1.5" />
-                    </svg>
-                </button>
-            </form>
+
             <div class="header__contact">
-                <a href="tel:+74952320023">+7 (495) 232-0023</a>
-                <a href="tel:88002320023">8 (800) 232-0023</a>
+                <div class="header__dropdown-button">
+                    <a href="tel:+74952320023">+7 (495) 232-0023</a>
+                    <div class="header__dropdown-icon"></div>
+                </div>
+                <div class="header__dropdown"><a href="tel:88002320023">8 (800) 232-0023</a></div>
             </div>
         </div>
     </div>
@@ -135,10 +108,10 @@
         <div class="header__menu">
             <ul class="header__nav">
                 <li data-menu="online-store" class="header__item">
-                    <a class="header__link" href="#">Интернет-магазин</a>
+                    <button class="header__link" >Интернет-магазин</button>
                 </li>
                 <li data-menu="solutions-and-services" class="header__item">
-                    <a class="header__link" href="#">Решения и услуги</a>
+                    <button class="header__link">Решения и услуги</button>
                 </li>
                 <li class="header__item">
                     <a class="header__link" href="https://softline.ru/solutions/import-replacement">Импортозамещение</a>
@@ -147,13 +120,13 @@
                     <a class="header__link" href="https://softline.ru/solutions/security">Кибербезопасность</a>
                 </li>
                 <li data-menu="digital-business" class="header__item">
-                    <a class="header__link" href="#">ПО и аппаратные <br> решения Softline</a>
+                    <button class="header__link">ПО и аппаратные <br> решения Softline</button>
                 </li>
                 <li class="header__item">
                     <a class="header__link" href="https://softline.ru/solutions/dev">Заказная <br> разработка</a>
                 </li>
                 <li data-menu="clouds" class="header__item">
-                    <a class="header__link" href="#">Облако <br> Softline</a>
+                    <button class="header__link">Облако <br> Softline</button>
                 </li>
                 <li class="header__item">
                     <a class="header__link"

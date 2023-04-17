@@ -172,7 +172,7 @@
         background-size: cover;
         background-position:center;
         display: flex;
-        align-items: end;
+        align-items: flex-end;
         padding: 4rem;
         @include breakpoint($xxl-bp) {
             height: 52rem;

@@ -172,6 +172,11 @@ textarea {
     resize: vertical;
 }
 
+a, a:active, a:focus {
+    outline: none;
+ /* Works in Firefox, Chrome, IE8 and above */
+}
+
 /**
  * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
@@ -8296,7 +8301,6 @@ textarea {
     overflow-y: auto;
     background: white;
     padding-left: 34%;
-    padding-top: 5.5rem;
     padding-bottom: 4rem;
     padding-right: 3rem;
     top: var(--headerH);
@@ -8361,7 +8365,29 @@ textarea {
 }
 
 .menu__title {
-    display: none;
+    margin-top: 5.6rem;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    color: #212424;
+    text-decoration: none;
+}
+
+.menu__title:hover {
+    color: #A50F2D;
+}
+
+.menu__title::after {
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-block;
+    margin-left: 0.8rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 2L11 8L5 14' stroke='%23212424' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
@@ -8375,6 +8401,11 @@ textarea {
         color: #212424;
         -webkit-text-decoration: dashed;
         text-decoration: dashed;
+        margin-top: 0;
+    }
+
+    .menu__title::after {
+        content: unset;
     }
 }
 
@@ -8689,7 +8720,7 @@ textarea {
         flex-direction: column;
         gap: 2rem;
         -ms-flex-align: start;
-        align-items: start;
+        align-items: flex-start;
         margin-top: 2rem;
     }
 }
@@ -8940,6 +8971,7 @@ textarea {
 }
 
 .menu nav {
+    padding-top: 4rem;
     -webkit-columns: 4;
     -moz-columns: 4;
     columns: 4;
@@ -8950,6 +8982,7 @@ textarea {
 
 @media (max-width: 768px) {
     .menu nav {
+        padding-top: 0;
         -ms-flex-order: 2;
         order: 2;
         display: -ms-flexbox;
@@ -17324,9 +17357,9 @@ body::before {
 .footer__link {
     color: #697279;
     text-decoration: none;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    line-height: 3.6rem;
+    line-height: 2rem;
     letter-spacing: 0em;
     text-align: left;
     transition: color 0.4s;
@@ -17605,6 +17638,7 @@ body::before {
 }
 
 .header.start {
+    top: -4.9rem;
     box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.1098039216);
 }
 
@@ -17612,6 +17646,10 @@ body::before {
     .header.start {
         box-shadow: unset;
     }
+}
+
+.header.start .menu-wrapper {
+    top: calc(var(--headerH) - 4.9rem);
 }
 
 .header.hide-header {
@@ -17689,11 +17727,11 @@ body::before {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: end;
-    justify-content: end;
+    justify-content: flex-end;
     -ms-flex-align: center;
     align-items: center;
     border-bottom: 1px solid #D2DCE5;
-    z-index: 3;
+    z-index: 4;
     line-height: 1;
     font-size: 1.6rem;
     font-weight: 500;
@@ -17745,7 +17783,6 @@ body::before {
 
 .header__top > *:not(.menu-button) {
     height: 4.9rem;
-    border-left: 1px solid #D2DCE5;
 }
 
 @media (max-width: 768px) {
@@ -17753,10 +17790,6 @@ body::before {
         height: unset;
         border-left: unset;
     }
-}
-
-.header__top .header__search {
-    display: none;
 }
 
 @media (max-width: 768px) {
@@ -18571,7 +18604,7 @@ body::before {
     padding-left: 4rem;
     padding-right: 4rem;
     border-bottom: 1px solid #D2DCE5;
-    z-index: 2;
+    z-index: 3;
 }
 
 @media (max-width: 768px) {
@@ -18592,19 +18625,8 @@ body::before {
     height: 4.7rem;
 }
 
-.header__mid_wrap > * {
-    border-left: 0.1rem solid #D2DCE5;
-}
-
-.header__mid_wrap > *:first-child {
-    border-left: 0;
-}
-
-.header__mid_wrap nav {
-    padding-right: 4rem;
-}
-
 .header__contact {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     gap: 2rem;
@@ -18614,6 +18636,16 @@ body::before {
     align-items: flex-start;
     padding: 1rem 0;
     padding-left: 4rem;
+}
+
+.header__contact:hover .header__dropdown {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header__contact:hover .header__dropdown-icon {
+    -webkit-transform: scale(1, -1);
+    transform: scale(1, -1);
 }
 
 @media (max-width: 768px) {
@@ -18636,6 +18668,55 @@ body::before {
 
 .header__contact a:hover {
     color: #A50F2D;
+}
+
+.header__dropdown-button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__dropdown-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.header__dropdown-icon::after {
+    content: "";
+    width: 0.8rem;
+    height: 0.4rem;
+    display: block;
+    position: absolute;
+    background: url(../images/arrow-down.svg) no-repeat;
+    background-size: contain;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.header__dropdown {
+    position: absolute;
+    top: 4.8rem;
+    left: 2rem;
+    background-color: #FFFFFF;
+    padding: 1rem 2.2rem;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    z-index: 3;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .header__nav_link {
@@ -18816,7 +18897,7 @@ body::before {
     gap: 4rem;
     -ms-flex-align: center;
     align-items: center;
-    padding-right: 4rem;
+    padding-right: 2rem;
     font-family: "Manrope";
     font-style: normal;
     font-weight: 500;
@@ -18863,7 +18944,33 @@ body::before {
 
 @media (max-width: 768px) {
     .header__link {
-        max-width: 30.4rem;
+        max-width: 29.4rem;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+button.header__link {
+    border: 0;
+    background-color: transparent;
+    text-align: center;
+    padding: 0;
+}
+
+button.header__link:hover {
+    color: #A50F2D;
+}
+
+@media (max-width: 768px) {
+    button.header__link {
+        text-align: start;
+        color: #212424;
+    }
+
+    button.header__link:hover {
+        color: #212424;
     }
 }
 
@@ -24001,7 +24108,7 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: end;
-      align-items: end;
+      align-items: flex-end;
   padding: 4rem;
 }
 @media (max-width: 1920px) {
