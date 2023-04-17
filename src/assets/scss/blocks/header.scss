@@ -8,11 +8,13 @@
     z-index: 100;
     transition: .4s;
     box-shadow: 0px 0px 35px transparent;
+
     @include breakpoint($mid-bp) {
         flex-direction: row;
         justify-content: space-between;
         padding: 2.2rem 2rem 2rem;
         flex-wrap: wrap;
+
         &::before {
             content: '';
             position: absolute;
@@ -24,6 +26,7 @@
             z-index: 3;
         }
     }
+
     @include breakpoint($sm-bp) {
         padding: 2.5rem;
     }
@@ -37,15 +40,22 @@
 }
 
 .header.start {
+    top: -4.9rem;
     box-shadow: 0px 0px 35px #0000001c;
+
     @include breakpoint($mid-bp) {
         box-shadow: unset;
+    }
+
+    .menu-wrapper {
+        top: calc(var(--headerH) - 4.9rem);
     }
 }
 
 .header.hide-header {
     transform: translateY(-103%);
     box-shadow: 0px 0px 35px transparent;
+
     @include breakpoint($mid-bp) {
         transform: translateY(0);
     }
@@ -54,15 +64,17 @@
 
 .burger {
     display: none;
+
     @include breakpoint($mid-bp) {
         display: block;
         width: 4rem;
-        height: 2.8rem;  
-        border-top: 1px solid $footer-color;   
-        border-bottom: 1px solid $footer-color;  
+        height: 2.8rem;
+        border-top: 1px solid $footer-color;
+        border-bottom: 1px solid $footer-color;
         position: relative;
         border-left: unset;
     }
+
     @include breakpoint($sm-bp) {
         width: 2.8rem;
         height: 2.1rem;
@@ -83,6 +95,7 @@
 
 .header__logo_mob {
     display: none;
+
     @include breakpoint($mid-bp) {
         display: block;
         width: 50%;
@@ -91,6 +104,7 @@
 
     img {
         width: 10.7rem;
+
         @include breakpoint($sm-bp) {
             width: 13.7rem;
         }
@@ -99,16 +113,17 @@
 
 .header__top {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     border-bottom: 1px solid $grey;
-    z-index: 3;
+    z-index: 4;
     line-height: 1;
     font-size: 1.6rem;
     font-weight: 500;
     background: #F0F2F6;
     color: #697279;
     padding-right: 2.4rem;
+
     @include breakpoint($mid-bp) {
         border-bottom: unset;
         width: 50%;
@@ -120,6 +135,7 @@
         @include breakpoint($mid-bp) {
             display: none;
         }
+
         .__select__title {
             @include breakpoint($sm-bp) {
                 padding: 0;
@@ -129,9 +145,10 @@
         .geolocation__flag {
             margin-right: 1rem;
         }
-    
+
         img {
             width: 2.4rem;
+
             @include breakpoint($sm-bp) {
                 width: 3rem;
             }
@@ -144,16 +161,17 @@
         }
     }
 
-    & > *:not(.menu-button) {
+    &>*:not(.menu-button) {
         height: 4.9rem;
-        border-left: 1px solid $grey;
+
+        // border-left: 1px solid $grey;
         @include breakpoint($mid-bp) {
             height: unset;
             border-left: unset;
         }
     }
+
     .header__search {
-        display: none;
         @include breakpoint($mid-bp) {
             display: flex;
         }
@@ -171,10 +189,12 @@
     background: #F0F2F6;
     // border-bottom: 1px solid #F0F2F6;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+
     @include breakpoint($xl-bp) {
         padding-left: 3rem;
         padding-right: 4rem;
     }
+
     @include breakpoint($mid-bp) {
         display: none;
         transform: translateY(-100%);
@@ -189,12 +209,14 @@
         border-top: 0.1rem solid #D2DCE5;
         background: white;
     }
+
     @include breakpoint($sm-bp) {
         padding-right: 0;
         padding-left: 0;
         overflow: auto;
     }
 }
+
 .header__bottom.show {
     transform: translateY(100%);
 }
@@ -203,9 +225,11 @@
     display: flex;
     align-items: center;
     max-width: 180rem;
+
     @include breakpoint($xl-bp) {
         padding: 1.2rem 0;
     }
+
     @include breakpoint($mid-bp) {
         height: 100%;
         row-gap: 1.5rem;
@@ -215,6 +239,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
     @include breakpoint($sm-bp) {
         flex-direction: column;
         display: flex;
@@ -226,6 +251,7 @@
 
 .header__nav {
     display: flex;
+
     @include breakpoint($xl-bp) {
         flex-wrap: wrap;
         column-gap: 4rem;
@@ -233,6 +259,7 @@
         justify-content: flex-end;
         padding-left: 13rem;
     }
+
     @include breakpoint($mid-bp) {
         flex-direction: column;
         align-items: flex-start;
@@ -241,6 +268,7 @@
         padding-right: 5.5rem;
         padding-left: 0;
     }
+
     @include breakpoint($sm-bp) {
         width: 100%;
         padding-right: 3rem;
@@ -257,24 +285,27 @@
     align-items: center;
     height: 100%;
     cursor: pointer;
+
     @include breakpoint($mid-bp) {
         padding: 0;
-        margin-right: 3rem;        
+        margin-right: 3rem;
     }
-    @include breakpoint($sm-bp) {
-    }
+
+    @include breakpoint($sm-bp) {}
 
     svg {
         width: 1.3rem;
         height: 1.3rem;
         margin-left: .9rem;
+
         @include breakpoint($mid-bp) {
             width: 3rem;
-            height: 3rem;            
+            height: 3rem;
         }
+
         @include breakpoint($sm-bp) {
             width: 2.7rem;
-            height: 2.7rem;            
+            height: 2.7rem;
         }
     }
 }
@@ -283,6 +314,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+
     span {
         font-family: 'Manrope';
         font-style: normal;
@@ -290,11 +322,12 @@
         font-size: 1.4rem;
         line-height: 2rem;
         /* identical to box height, or 143% */
-        
-        
+
+
         /* UI/Footer */
-        
+
         color: #697279;
+
         @include breakpoint($mid-bp) {
             display: none;
         }
@@ -320,12 +353,14 @@
     background-image: url("../images/close-grey.svg");
     background-repeat: no-repeat;
     background-size: contain;
+
     @include breakpoint($mid-bp) {
         top: 2rem;
         right: 2rem;
         width: 1.6rem;
         height: 1.6rem;
     }
+
     @include breakpoint($sm-bp) {
         top: 2.8rem;
         right: 2.8rem;
@@ -347,19 +382,22 @@
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 1.8rem;
+
     @include breakpoint($xxl-bp) {
         padding-right: 4rem;
     }
+
     @include breakpoint($mid-bp) {
         height: 12rem;
         padding-left: 2rem;
-        padding-right: 2rem;   
-        padding-bottom: 2.2rem; 
+        padding-right: 2rem;
+        padding-bottom: 2.2rem;
     }
+
     @include breakpoint($sm-bp) {
         height: 15rem;
         padding-left: 2.8rem;
-        padding-right: 2.8rem;   
+        padding-right: 2.8rem;
     }
 
     .btn__search-show {
@@ -381,9 +419,11 @@
         border-radius: 10rem;
         text-decoration: none;
         transition: .4s;
+
         @include breakpoint($mid-bp) {
             padding: 0;
             border: unset;
+
             span {
                 display: none;
             }
@@ -393,11 +433,13 @@
             width: 2.8rem;
             height: 2.8rem;
             margin-left: 2.4rem;
+
             @include breakpoint($mid-bp) {
                 width: 2.4rem;
                 height: 2.4rem;
                 margin-left: 0;
             }
+
             @include breakpoint($sm-bp) {
                 width: 3.5rem;
                 height: 3.5rem;
@@ -405,12 +447,15 @@
 
             rect {
                 fill: white;
+
                 @include breakpoint($mid-bp) {
                     fill: $red;
                 }
             }
+
             path {
                 stroke: $red;
+
                 @include breakpoint($mid-bp) {
                     stroke: white;
                 }
@@ -422,13 +467,16 @@
         color: $footer-color;
         background: white;
         border: 1px solid rgb(210, 220, 229, .3);
+
         @include breakpoint($mid-bp) {
             border: unset;
         }
+
         svg {
             rect {
                 fill: #D2DCE5;
             }
+
             path {
                 stroke: white;
             }
@@ -444,13 +492,16 @@
         text-align: left;
         padding-bottom: .8rem;
         color: $black;
+
         &::placeholder {
             color: #AAB8C3;
         }
+
         @include breakpoint($mid-bp) {
             padding-bottom: 0;
             font-size: 1.6rem;
         }
+
         @include breakpoint($sm-bp) {
             font-size: 2rem;
         }
@@ -465,6 +516,7 @@
     @include breakpoint($mid-bp) {
         display: none;
     }
+
     img {
         width: 12.8rem;
     }
@@ -477,12 +529,14 @@
     letter-spacing: 0em;
     text-align: center;
     width: 100%;
+
     @include breakpoint($mid-bp) {
         text-align: start;
     }
+
     a {
         color: #212424;
-        text-decoration: none;   
+        text-decoration: none;
     }
 }
 
@@ -491,14 +545,17 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
     @include breakpoint($xl-bp) {
         justify-content: flex-end;
     }
+
     a {
         transition: color .4s;
+
         &:hover {
             color: $red;
-        }    
+        }
     }
 }
 
@@ -516,6 +573,7 @@
         transition: transform .4s;
         position: relative;
     }
+
     @include breakpoint($sm-bp) {
         font-size: 2.6rem;
         margin-bottom: 3.1rem;
@@ -528,27 +586,31 @@
 
     &[data-menu]::after {
         content: '';
-                @include breakpoint($mid-bp) {
-                    position: absolute;
-                    top: 50%;
-                    right: 0;
-                    width: 1.2rem;
-                    height: 1.2rem;
-                    background-image: url('../images/arrow.svg');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    filter: brightness(0.2);
-                    transform: translateY(-50%);
-                }
-                @include breakpoint($sm-bp) {
-                    width: 1.5rem;
-                    height: 1.5rem;
-                }
+
+        @include breakpoint($mid-bp) {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-image: url('../images/arrow.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: brightness(0.2);
+            transform: translateY(-50%);
+        }
+
+        @include breakpoint($sm-bp) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
+
     .header__link {
         height: 6.4rem;
         display: flex;
         align-items: center;
+
         @include breakpoint($xl-bp) {
             height: auto;
         }
@@ -559,6 +621,7 @@
     @include breakpoint($mid-bp) {
         transform: translateX(2rem);
     }
+
     .header__link {
         color: $red;
         text-align: center;
@@ -580,6 +643,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+
     @include breakpoint($xl-bp) {
         padding-right: 1.8rem;
         padding-left: 1.2rem;
@@ -589,8 +653,10 @@
 .__select {
     &[data-state="active"] {
         overflow: visible;
+
         .__select__content {
             opacity: 1;
+
             @include breakpoint($sm-bp) {
                 width: 26rem;
             }
@@ -602,6 +668,7 @@
             }
         }
     }
+
     @include breakpoint($sm-bp) {
         padding: 0;
     }
@@ -620,6 +687,7 @@
     text-align: center;
     cursor: pointer;
     transition: color .4s;
+
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
@@ -631,7 +699,7 @@
     @include breakpoint($sm-bp) {
         z-index: 2;
     }
-  
+
     &::after {
         content: "";
         display: block;
@@ -652,36 +720,40 @@
     display: flex;
     flex-direction: column;
     background: white;
-    width: 100%;        
+    width: 100%;
     transition: all 0.3s ease-out;
     opacity: 0;
     z-index: 8;
     max-height: 38.5rem;
     overflow-y: auto;
-    scrollbar-width: thin;          
-    scrollbar-color: rgba(239, 239, 239, 1) white;  
+    scrollbar-width: thin;
+    scrollbar-color: rgba(239, 239, 239, 1) white;
     max-height: 12rem;
+
     @include breakpoint($mid-bp) {
         left: -1px;
-    } 
+    }
+
     &::-webkit-scrollbar {
         width: 40px;
     }
+
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 10px 10px transparent;
         border: solid 4px transparent;
     }
-      
+
     &::-webkit-scrollbar-thumb {
         box-shadow: inset 0 0 10px 10px rgba(239, 239, 239, 1);
         border: solid 10px transparent;
         border-right: solid 25px transparent;
         border-radius: 0;
     }
-      
+
     &::-webkit-scrollbar-button {
         display: none;
     }
+
     @include breakpoint($sm-bp) {
         padding-top: 1.8rem;
         padding-bottom: 1.8rem;
@@ -692,11 +764,12 @@
 
 .__select__input {
     display: none;
-  
-    &:checked + label {
+
+    &:checked+label {
         color: $red;
     }
-    &:disabled + label {
+
+    &:disabled+label {
         opacity: 0.6;
         pointer-events: none;
     }
@@ -712,20 +785,24 @@
     transition: all 0.2s ease-out;
     cursor: pointer;
     color: $black;
+
     @include breakpoint($xl-bp) {
         padding: 1rem 1.2rem;
     }
+
     @include breakpoint($mid-bp) {
         font-size: 1.4rem;
         border-bottom: 1px solid #E5E9F1;
         padding-left: 0;
         padding-right: 0;
     }
+
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
+
     &:hover {
         color: $red;
     }
@@ -734,6 +811,7 @@
 .city.__select {
     text-transform: unset;
     padding-right: 0;
+
     @include breakpoint($mid-bp) {
         display: none;
     }
@@ -755,7 +833,8 @@
     padding-left: 4rem;
     padding-right: 4rem;
     border-bottom: 1px solid $grey;
-    z-index: 2;
+    z-index: 3;
+
     @include breakpoint($mid-bp) {
         display: none;
     }
@@ -769,24 +848,34 @@
     display: flex;
     align-items: center;
     height: 4.7rem;
-    & > * {
-        border-left: 0.1rem solid #D2DCE5;
-        &:first-child {
-            border-left: 0;
-        }
-    }
-    nav {
-        padding-right: 4rem;
-    }
+    // & > * {
+    //     border-left: 0.1rem solid #D2DCE5;
+    //     &:first-child {
+    //         border-left: 0;
+    //     }
+    // }
+    // nav {
+    //     padding-right: 4rem;
+    // }
 }
 
 .header__contact {
+    position: relative;
     display: flex;
     gap: 2rem;
     flex-direction: row;
     align-items: flex-start;
     padding: 1rem 0;
     padding-left: 4rem;
+
+    &:hover .header__dropdown {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &:hover .header__dropdown-icon {
+        transform: scale(1, -1);
+    }
+
     @include breakpoint($mid-bp) {
         flex-direction: column;
     }
@@ -800,10 +889,51 @@
         color: $black;
         text-decoration: none;
         transition: color .4s;
+
         &:hover {
             color: $red;
         }
     }
+}
+
+.header__dropdown-button {
+    display: flex;
+    align-items: center;
+}
+
+.header__dropdown-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    transition: transform 0.4s;
+
+    &::after {
+        content: '';
+        width: 0.8rem;
+        height: 0.4rem;
+        display: block;
+        position: absolute;
+        background: url(../images/arrow-down.svg) no-repeat;
+        background-size: contain;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.header__dropdown {
+    position: absolute;
+    top: 4.8rem;
+    left: 2rem;
+    background-color: #FFFFFF;
+    padding: 1rem 2.2rem;
+    width: max-content;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .header__nav_link {
@@ -816,6 +946,7 @@
     text-decoration: none;
     margin-left: 4rem;
     transition: color .4s;
+
     &:nth-child(1) {
         margin-left: 0;
     }
@@ -833,16 +964,19 @@
     padding-right: 2rem;
     text-transform: unset;
     min-width: 12rem;
+
     @include breakpoint($mid-bp) {
         justify-content: flex-start;
         padding: 0;
     }
+
     @include breakpoint($sm-bp) {
         min-width: unset;
     }
 
     .geolocation__flag {
         margin-right: 1rem;
+
         @include breakpoint($sm-bp) {
             margin-right: 1.8rem;
         }
@@ -850,6 +984,7 @@
 
     .__select__content {
         width: 17rem;
+
         @include breakpoint($sm-bp) {
             width: 20rem;
         }
@@ -857,6 +992,7 @@
 
     img {
         width: 2.4rem;
+
         @include breakpoint($sm-bp) {
             width: 3rem;
         }
@@ -868,6 +1004,7 @@
         justify-content: flex-start;
         padding-left: 2rem;
         padding-right: 2rem;
+
         @include breakpoint($mid-bp) {
             padding-left: 0;
             padding-right: 0;
@@ -881,8 +1018,9 @@
     display: flex;
     align-items: center;
     transition: color .4s;
-    @include breakpoint($xl-bp) {
-    }
+
+    @include breakpoint($xl-bp) {}
+
     @include breakpoint($mid-bp) {
         font-weight: 500;
         font-size: 1.4rem;
@@ -890,6 +1028,7 @@
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
@@ -917,10 +1056,10 @@
     font-size: 1.4rem;
     line-height: 2rem;
     /* identical to box height, or 143% */
-    
-    
+
+
     /* UI/Black/High */
-    
+
     color: #212424;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
@@ -928,12 +1067,15 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+
     &:hover {
         color: $red;
     }
+
     @include breakpoint($mid-bp) {
         display: none;
     }
+
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
@@ -943,7 +1085,7 @@
     display: flex;
     gap: 4rem;
     align-items: center;
-    padding-right: 4rem;
+    padding-right: 2rem;
 
     font-family: 'Manrope';
     font-style: normal;
@@ -951,11 +1093,12 @@
     font-size: 1.4rem;
     line-height: 2rem;
     /* identical to box height, or 143% */
-    
-    
+
+
     /* UI/Footer */
-    
+
     color: #697279;
+
     @include breakpoint($mid-bp) {
         display: none;
     }
@@ -968,15 +1111,17 @@
     font-size: 1.4rem;
     line-height: 2rem;
     /* identical to box height, or 143% */
-    
-    
+
+
     /* UI/Footer */
-    
+
     color: #697279;
     text-decoration: none;
+
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
+
     &:hover {
         color: $red;
     }
@@ -988,7 +1133,29 @@
             display: none;
         }
     }
+
     @include breakpoint($mid-bp) {
-        max-width: 30.4rem;
+        max-width: 29.4rem;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+button.header__link {
+    border: 0;
+    background-color: transparent;
+    text-align: center;
+    padding: 0;
+    &:hover {
+        color: #A50F2D;
+    }
+    @include breakpoint($mid-bp) {
+        text-align: start;
+        color: #212424;
+        &:hover {
+            color: #212424;
+        }
     }
 }
