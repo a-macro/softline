@@ -4642,6 +4642,28 @@
     }
   }
 
+  .table-wrapper {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(236, 230, 230, 0.663);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+  }
+
   table {
     width: 100%;
     font-family: 'Manrope';
@@ -4651,48 +4673,51 @@
     line-height: 2.4rem;
     margin-top: 5.2rem;
     color: #40454E;
-    overflow: auto;
-    display: flex;
+
+    // overflow: auto;
+    // display: flex;
     &::-webkit-scrollbar {
-        width: 5px;
+      width: 5px;
     }
+
     &::-webkit-scrollbar:horizontal {
       height: 5px;
     }
-    
+
     &::-webkit-scrollbar-track {
-        background-color: rgba(236, 230, 230, 0.663);
-        border-radius: 10px;
+      background-color: rgba(236, 230, 230, 0.663);
+      border-radius: 10px;
     }
-    
+
     &::-webkit-scrollbar-thumb {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
     }
+
     @include breakpoint($mid-bp) {
       margin-top: 3.2rem;
     }
 
     tbody {
-      width: 100%;
-      display: flex; 
-      flex-direction: column;
+      // width: 100%;
+      // display: flex; 
+      // flex-direction: column;
     }
 
     tr {
       // display: grid;
       // grid-template-columns: 20rem repeat(auto-fit, minmax(12rem,1fr));
-      display: grid;
-      grid-template-columns:  18rem;
-      grid-auto-flow: column;
-      width: max-content;
+      // display: grid;
+      // grid-template-columns:  18rem;
+      // grid-auto-flow: column;
+      // width: max-content;
       border-top: 0.1rem solid #D2DCE5;
 
       @include breakpoint($mid-bp) {
-        display: grid;
-        grid-template-columns: 20rem;
-        grid-auto-flow: column;
-        width: max-content;
+        // display: grid;
+        // grid-template-columns: 20rem;
+        // grid-auto-flow: column;
+        // width: max-content;
       }
 
       &:first-child {
@@ -4706,11 +4731,13 @@
       }
 
       &>* {
-        padding: 3.2rem 1rem;
-        white-space: pre-wrap;
-        word-wrap: break-word;
+        padding: 3.2rem 2rem;
+        // white-space: pre-wrap;
+        // word-wrap: break-word;
         text-align: start;
         width: 18rem;
+        white-space: nowrap;
+        // display: block;
         @include breakpoint($mid-bp) {
           padding: 3.2rem 1.5rem;
           width: 20rem;
