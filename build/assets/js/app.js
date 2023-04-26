@@ -12,6 +12,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 document.addEventListener("DOMContentLoaded", function () {
   var mm = matchMedia("(max-width: 1024px)");
+  var tables = document.querySelectorAll('.crm-block table, story-block table');
+  if (tables.length) {
+    tables.forEach(function (table) {
+      // create wrapper container
+      var wrapper = document.createElement('div');
+      wrapper.classList.add('table-wrapper');
+
+      // insert wrapper before el in the DOM tree
+      table.parentNode.insertBefore(wrapper, table);
+
+      // move el into wrapper
+      wrapper.appendChild(table);
+    });
+  }
   var height = window.innerHeight;
   var width = window.innerWidth;
   document.documentElement.style.setProperty('--h', height + "px");

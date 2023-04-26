@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const mm = matchMedia("(max-width: 1024px)")
+    const mm = matchMedia("(max-width: 1024px)");
+
+    const tables = document.querySelectorAll('.crm-block table, story-block table');
+    if (tables.length) {
+        tables.forEach(table => {
+
+            // create wrapper container
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('table-wrapper');
+
+            // insert wrapper before el in the DOM tree
+            table.parentNode.insertBefore(wrapper, table);
+
+            // move el into wrapper
+            wrapper.appendChild(table);
+        })
+    }
 
     let height = window.innerHeight;
     let width = window.innerWidth;
@@ -251,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mm.addEventListener('change', () => {
         if (!mm.matches) {
             headerBottom.style.display = "block";
-        } 
+        }
         if (mm.matches) {
         }
         header.classList.remove('start');
@@ -1424,7 +1440,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initSlider();
         initSliderSuggestion();
         initSliderStoryRange();
-        
+
         if (header) {
             let headerH = header.getBoundingClientRect().height;
             document.documentElement.style.setProperty('--headerH', headerH + "px");
@@ -1432,10 +1448,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (header) {
-        new ResizeObserver(function() {
+        new ResizeObserver(function () {
             let headerH = header.getBoundingClientRect().height;
-                document.documentElement.style.setProperty('--headerH', headerH + "px");
-          }).observe(header);
+            document.documentElement.style.setProperty('--headerH', headerH + "px");
+        }).observe(header);
     }
 
 
