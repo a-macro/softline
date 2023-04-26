@@ -16416,6 +16416,8 @@ textarea {
 
 .crm-block .table-wrapper {
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(236, 230, 230, 0.663);
 }
 
 .crm-block .table-wrapper::-webkit-scrollbar {
@@ -26488,6 +26490,8 @@ body {
   background: #EFF1F6;
   color: #212424;
   min-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 230, 230, 0.663);
 }
 body::-webkit-scrollbar {
   width: 0;
