@@ -4424,6 +4424,7 @@
     padding-right: 0;
   }
 
+  .table-wrapper+.tag-wrapper,
   p+.tag-wrapper,
   table+.tag-wrapper {
     margin-top: 8rem;
@@ -4792,6 +4793,8 @@
     color: #212424;
   }
 
+  .table-wrapper+h2,
+  .table-wrapper+h3,
   h2+h3,
   h3+h2,
   p+h2,
@@ -4825,6 +4828,8 @@
     }
   }
 
+  .table-wrapper+h4,
+  .table-wrapper + p,
   table+p,
   p+h4,
   h3+h4,
