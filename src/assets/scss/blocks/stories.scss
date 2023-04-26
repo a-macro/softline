@@ -233,7 +233,7 @@
         }
 
         .informationTechnology__block {
-            width: calc(calc((100% - 8rem) / 3));
+            // width: calc(calc((100% - 8rem) / 3));
 
             @include breakpoint($sm-bp) {
                 width: 100%;
