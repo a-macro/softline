@@ -120,9 +120,9 @@
 
 .career {
     .informationTechnology__content {
-        justify-content: flex-start;
+        display: grid;
         gap: 4rem;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/5)), 1fr));
         padding-top: 15rem;
         @include breakpoint($xxl-bp) {
             padding-top: 12rem;
@@ -139,7 +139,7 @@
         }
 
         .informationTechnology__block {
-            width: calc(calc(100% - 12rem) / 4);
+            // width: calc(calc(100% - 12rem) / 4);
             margin-bottom: 1rem;
             gap: 3.2rem;
             margin-bottom: 1.4rem;

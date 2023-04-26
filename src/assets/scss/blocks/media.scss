@@ -43,8 +43,9 @@
 
 
 .informationTechnology__content {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/5)), 1fr));
+    gap: 4rem;
     @include breakpoint($mid-bp) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -55,7 +56,7 @@
     }
 
     .informationTechnology__block {
-        width: 24%;
+        // width: 24%;
         padding-bottom: 1.4rem;
         padding-top: 1.2rem;
         border-bottom: 0.1rem solid #D2DCE5;
@@ -66,7 +67,7 @@
         justify-content: space-between;
         @include breakpoint($mid-bp) {
             width: 100%;
-            border-bottom: 0.1rem solid transparent;
+            // border-bottom: 0.1rem solid transparent;
             &:nth-last-child(1), &:nth-last-child(2) {
                 border-bottom: 0.1rem solid #D2DCE5;
             }
