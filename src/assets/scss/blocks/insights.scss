@@ -4644,7 +4644,8 @@
 
   .table-wrapper {
     overflow: auto;
-
+    scrollbar-width: thin;
+    scrollbar-color: rgba(236, 230, 230, 0.663);
     &::-webkit-scrollbar {
       width: 5px;
     }
@@ -4738,6 +4739,9 @@
         width: 18rem;
         white-space: nowrap;
         // display: block;
+        &:first-child {
+          // white-space: normal;
+        }
         @include breakpoint($mid-bp) {
           padding: 3.2rem 1.5rem;
           width: 20rem;

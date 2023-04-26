@@ -68,6 +68,8 @@ body {
   &::-webkit-scrollbar {
     width: 0;
   }
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 230, 230, 0.663);
 }
 
 main {
