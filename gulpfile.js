@@ -91,22 +91,22 @@ function css(cb) {
       })
     )
     .pipe(cssbeautify())
-    .pipe(dest(path.build.css))
-    .pipe(
-      cssnano({
-        zindex: false,
-        discardComments: {
-          removeAll: true,
-        },
-      })
-    )
+    // .pipe(dest(path.build.css))
+    // .pipe(
+    //   cssnano({
+    //     zindex: false,
+    //     discardComments: {
+    //       removeAll: true,
+    //     },
+    //   })
+    // )
     .pipe(removeComments())
-    .pipe(
-      rename({
-        suffix: ".min",
-        extname: ".css",
-      })
-    )
+    // .pipe(
+    //   rename({
+    //     suffix: ".min",
+    //     extname: ".css",
+    //   })
+    // )
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
 
@@ -120,12 +120,12 @@ function cssWatch(cb) {
         includePaths: "./node_modules/",
       })
     )
-    .pipe(
-      rename({
-        suffix: ".min",
-        extname: ".css",
-      })
-    )
+    // .pipe(
+    //   rename({
+    //     suffix: ".min",
+    //     extname: ".css",
+    //   })
+    // )
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
 

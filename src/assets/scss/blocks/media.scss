@@ -22,12 +22,12 @@
 }
 
 .informationTechnology__content_position {
-    margin-top: 7.2rem;
+    padding-top: 7.2rem;
     @include breakpoint($mid-bp) {
-        margin-top: 4.2rem;
+        padding-top: 4.2rem;
     }
     @include breakpoint($sm-bp) {
-        margin-top: 5.2rem;
+        padding-top: 5.2rem;
     }
 }
 

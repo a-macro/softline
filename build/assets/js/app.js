@@ -2,7 +2,6 @@
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -10,8 +9,9 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 document.addEventListener("DOMContentLoaded", function () {
-  var mm = matchMedia("(max-width: 768px)");
+  var mm = matchMedia("(max-width: 1024px)");
   var height = window.innerHeight;
   var width = window.innerWidth;
   document.documentElement.style.setProperty('--h', height + "px");
@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var prevScroll = 0;
   window.onscroll = function (e) {
     var delta = pageYOffset - prevScroll;
-    if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 768) {
+    if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
       header.classList.add("hide-header");
       header.classList.add("start");
-    } else if (header && pageYOffset > 80 && window.innerWidth > 768) {
+    } else if (header && pageYOffset > 80 && window.innerWidth > 1024) {
       header.classList.remove("hide-header");
       header.classList.add("start");
-    } else if (header && pageYOffset < 20 && window.innerWidth > 768) {
+    } else if (header && pageYOffset < 20 && window.innerWidth > 1024) {
       header.classList.remove("start");
     }
     prevScroll = pageYOffset;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         headerSearch.forEach(function (element) {
           element.classList.add('active');
         });
-        if (window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
+        if (window.innerWidth <= 1024 && bodyTag.classList.contains("menu-open")) {
           bodyTag.classList.remove("menu-open");
           menubutton.classList.remove("menu-button--active");
           headerBottom.style.display = "none";
@@ -245,6 +245,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  mm.addEventListener('change', function () {
+    if (!mm.matches) {
+      headerBottom.style.display = "block";
+    }
+    if (mm.matches) {}
+    header.classList.remove('start');
+    header.classList.remove('hide-header');
+  });
   var tabs = document.querySelectorAll('.tab-label');
   var navList = document.querySelectorAll('.main-nav__list-item');
   var backButton = document.querySelector('.back-panel');
@@ -397,7 +405,7 @@ document.addEventListener("DOMContentLoaded", function () {
           nextEl: next,
           prevEl: prev
         },
-        slidesPerView: 6,
+        slidesPerView: 4,
         watchOverflow: true,
         spaceBetween: 0,
         loop: false,
@@ -405,10 +413,11 @@ document.addEventListener("DOMContentLoaded", function () {
           300: {
             slidesPerView: "auto"
           },
-          769: {
-            slidesPerView: 6
-          },
           1025: {
+            slidesPerView: 4,
+            spaceBetween: 0
+          },
+          1516: {
             slidesPerView: 6,
             spaceBetween: 0
           }
@@ -427,19 +436,18 @@ document.addEventListener("DOMContentLoaded", function () {
       watchOverflow: true,
       spaceBetween: 40,
       loop: false,
-      breakpoints: {
+      breakpoints: _defineProperty({
         300: {
           slidesPerView: "auto",
           spaceBetween: 20
         },
-        769: {
+        1025: {
           slidesPerView: 6,
           spaceBetween: 40
-        },
-        1025: {
-          slidesPerView: 6
         }
-      }
+      }, "1025", {
+        slidesPerView: 6
+      })
     });
   }
   var solveCont = document.querySelectorAll(".solve__container");
@@ -463,11 +471,11 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: "auto",
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
           },
-          1441: {
+          1516: {
             slidesPerView: 3,
             spaceBetween: 40
           },
@@ -498,11 +506,11 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: "auto",
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
           },
-          1441: {
+          1516: {
             slidesPerView: 3,
             spaceBetween: 40
           },
@@ -533,11 +541,11 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: "auto",
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
           },
-          1441: {
+          1516: {
             slidesPerView: 2,
             spaceBetween: 40
           },
@@ -562,17 +570,16 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         loop: false,
-        breakpoints: {
+        breakpoints: _defineProperty({
           300: {
             spaceBetween: 20
-          },
-          769: {
-            spaceBetween: 40
           },
           1025: {
             spaceBetween: 40
           }
-        }
+        }, "1025", {
+          spaceBetween: 40
+        })
       });
     });
   }
@@ -590,7 +597,7 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         loop: false,
-        breakpoints: {
+        breakpoints: _defineProperty({
           300: {
             spaceBetween: 20,
             slidesPerView: 1.1
@@ -599,14 +606,13 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 1.35,
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
-          },
-          1025: {
-            spaceBetween: 40
           }
-        }
+        }, "1025", {
+          spaceBetween: 40
+        })
       });
     });
   }
@@ -624,7 +630,7 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         loop: false,
-        breakpoints: {
+        breakpoints: _defineProperty({
           300: {
             spaceBetween: 20,
             slidesPerView: 1.7
@@ -633,14 +639,13 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 3.5,
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 6,
             spaceBetween: 40
-          },
-          1025: {
-            spaceBetween: 40
           }
-        }
+        }, "1025", {
+          spaceBetween: 40
+        })
       });
     });
   }
@@ -658,7 +663,7 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         loop: false,
-        breakpoints: {
+        breakpoints: _defineProperty({
           300: {
             spaceBetween: 20,
             slidesPerView: 1.1
@@ -667,15 +672,14 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 2,
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
-          },
-          1025: {
-            slidesPerView: 3,
-            spaceBetween: 40
           }
-        }
+        }, "1025", {
+          slidesPerView: 3,
+          spaceBetween: 40
+        })
       });
     });
   }
@@ -702,11 +706,11 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 1.3,
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
           },
-          1441: {
+          1516: {
             slidesPerView: 3,
             spaceBetween: 40
           },
@@ -738,11 +742,11 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: "auto",
             spaceBetween: 20
           },
-          769: {
+          1025: {
             slidesPerView: 2,
             spaceBetween: 40
           },
-          1441: {
+          1516: {
             slidesPerView: 2,
             spaceBetween: 40
           },
@@ -767,23 +771,21 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 40,
         loop: false,
-        breakpoints: {
+        breakpoints: _defineProperty({
           300: {
             spaceBetween: 20
-          },
-          769: {
-            spaceBetween: 40
           },
           1025: {
             spaceBetween: 40
           }
-        }
+        }, "1025", {
+          spaceBetween: 40
+        })
       });
     });
   }
   var newsSliser = document.querySelector(".news-page__swiper");
   if (newsSliser) {
-    console.log(slider);
     var prev = newsSliser.querySelector(".swiper-button-prev");
     var next = newsSliser.querySelector(".swiper-button-next");
     new Swiper(newsSliser, {
@@ -795,17 +797,16 @@ document.addEventListener("DOMContentLoaded", function () {
       watchOverflow: true,
       spaceBetween: 40,
       loop: false,
-      breakpoints: {
+      breakpoints: _defineProperty({
         300: {
           spaceBetween: 20
-        },
-        769: {
-          spaceBetween: 40
         },
         1025: {
           spaceBetween: 40
         }
-      }
+      }, "1025", {
+        spaceBetween: 40
+      })
     });
   }
 
@@ -862,7 +863,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var swiper;
   var slider = document.querySelector(".partners__mobSlider");
   function initSlider() {
-    if (width <= 768 && !init && slider) {
+    if (width <= 1024 && !init && slider) {
       swiper = new Swiper(".partners__mobSlider", {
         loop: false,
         slidesPerView: 2.8,
@@ -884,7 +885,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       init = true;
     }
-    if (init && width > 768) {
+    if (init && width > 1024) {
       init = false;
       swiper.destroy();
     }
@@ -916,7 +917,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var swiperSuggestion;
   var sliderSuggestion = document.querySelector(".suggestion-slider");
   function initSliderSuggestion() {
-    if (width <= 768 && !initSuggestion && sliderSuggestion) {
+    if (width <= 1024 && !initSuggestion && sliderSuggestion) {
       swiperSuggestion = new Swiper(".suggestion-slider", {
         loop: false,
         navigation: {
@@ -932,7 +933,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       initSuggestion = true;
     }
-    if (initSuggestion && width > 768) {
+    if (initSuggestion && width > 1024) {
       initSuggestion = false;
       swiperSuggestion.destroy();
     }
@@ -1170,7 +1171,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.classList.remove("canScroll");
         if (elem.classList.contains("search-aside") && window.innerWidth <= 480) {
           elem.style.transform = 'translate3d(0, -3.5rem, 0)';
-        } else if (elem.classList.contains("search-aside") && window.innerWidth <= 768) {
+        } else if (elem.classList.contains("search-aside") && window.innerWidth <= 1024) {
           elem.style.transform = 'translate3d(0, -6rem, 0)';
         } else {
           elem.style.transform = 'translate3d(0, 0px, 0)';
@@ -1269,7 +1270,7 @@ document.addEventListener("DOMContentLoaded", function () {
         direction: Hammer.DIRECTION_ALL,
         threshold: 0
       }));
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1024) {
         mcSwipe.on("pan", handleDrag);
       }
     });
@@ -1307,17 +1308,23 @@ document.addEventListener("DOMContentLoaded", function () {
     width = window.innerWidth;
     height = window.innerHeight;
     document.documentElement.style.setProperty('--h', height + "px");
-    if (header) {
-      var _headerH = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--headerH', _headerH + "px");
-    }
     filters.forEach(function (filter) {
       countHeight(filter);
     });
     initSlider();
     initSliderSuggestion();
     initSliderStoryRange();
+    if (header) {
+      var _headerH = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', _headerH + "px");
+    }
   });
+  if (header) {
+    new ResizeObserver(function () {
+      var headerH = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', headerH + "px");
+    }).observe(header);
+  }
   var currentActiveButton = document.querySelector('.filter-button--active');
   var no = function no() {
     var x, i, j, l, ll, selElmnt, a, b, c;
@@ -2047,7 +2054,7 @@ document.addEventListener("DOMContentLoaded", function () {
         leadershipModal.style.display = "block";
         scrollLock.disablePageScroll(leadershipModal);
         scrollLock.addScrollableSelector('.leadership__text-block');
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
           scrollLock.addScrollableSelector(".leadership__wrapper");
         }
         setTimeout(function () {
@@ -2164,7 +2171,7 @@ document.addEventListener("DOMContentLoaded", function () {
       zoom = 3.5;
     } else if (window.innerWidth > 1440) {
       zoom = 3;
-    } else if (window.innerWidth > 768) {
+    } else if (window.innerWidth > 1024) {
       zoom = 2;
     } else if (window.innerWidth > 480) {
       zoom = 2;
@@ -2406,7 +2413,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var txt = parent.querySelector(".section-top__aside");
       info.onclick = function (e) {
         e.preventDefault();
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
           txt.style.display = "flex";
           setTimeout(function () {
             txt.classList.add("show");
@@ -2418,7 +2425,7 @@ document.addEventListener("DOMContentLoaded", function () {
     close.forEach(function (btn) {
       var parent = btn.closest(".section-top__aside");
       btn.onclick = function (e) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
           parent.classList.remove("show");
           setTimeout(function () {
             parent.style.display = "none";
@@ -2442,7 +2449,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     var _observer = new IntersectionObserver(function (entryes) {
       entryes.forEach(function (el) {
-        if (el.isIntersecting && window.innerWidth > 768) {
+        if (el.isIntersecting && window.innerWidth > 1024) {
           var _iterator2 = _createForOfIteratorHelper(imagesBlock.children),
             _step2;
           try {

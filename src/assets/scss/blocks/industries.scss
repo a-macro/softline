@@ -298,6 +298,25 @@
       gap: 5.5rem;
     }
   }
+
+
+}
+
+.accordion__industry {
+  .accordion.dark {
+    padding-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+      padding-bottom: 12rem;
+    }
+    @include breakpoint($xl-bp) {
+      padding-bottom: 10rem;
+    }
+    @include breakpoint($sm-bp) {
+      padding-bottom: 5rem;
+    }
+  }
+}
+.accordion__industry {
   .accordion {
     padding-top: 15rem;
     @include breakpoint($xxl-bp) {
@@ -484,7 +503,7 @@
   .accordion__item.active {
     border-color: transparent;
   }
-
+  
   .services {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -502,7 +521,7 @@
     @include breakpoint($sm-bp) {
       grid-template-columns: repeat(1, 1fr);
     }
-
+  
     .service {
         width: 100%;
         height: 29.5rem;
@@ -607,13 +626,51 @@
     .service__top_img {
         height: 5rem;
     }
-
+  
     .service__text {
         max-width: 70%;
         @include breakpoint($xl-bp) {
           max-width: 100%;
         }
     }
+  }
 }
 
+.dark {
+  .accordion__list__inner {
+    .accordion__big-title {
+      color: #212424;
+    }
+    .accordion__desc-text {
+      color: #212424;
+    }
+    .link-red,
+    .link-red span {
+      color: #A50F2D;
+    }
+  }
+
+  .man16,
+  .man52,
+  .man36 {
+    color: #FFFFFF;
+  }
+  .accordion__list__inner {
+    background-color: #212424;
+  }
+  .accordion li {
+    border-color: #40454E; 
+  }
+  .accordion__list__inner .services .service .service__inner {
+    border-color: #40454E; 
+  }
+  .accordion__list__inner .services .service:hover .service__inner {
+    border-bottom-color: transparent;
+  }
+}
+.dark.accordion li:first-child {
+  border-color: #40454E; 
+}
+.dark.accordion li {
+  border-color: #40454E; 
 }

@@ -1295,60 +1295,174 @@
         </nav></header>
     <main class="main">
 
-        
-        
-        <section class="intro__pages" style="background-image: url(assets/images/career/image.jpg);">
-            <div class="breadcrumbs">
-                <ul class="breadcrumbs__list">
-                    <li class="breadcrumbs__item">
-                        <a class="breadcrumbs__link" href="./main.html">Главная</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="intro__content">
-                <h1 class="intro__title">Анкета кандидата</h1>
-                <a class="intro__video-btn" href="#">
-                    <span>Working at Softline</span>
-                </a>
-            </div>
+        <section class="callback wrapper-margin mt15">
+          <div class="callback__inner">
+              <h2 class="callback__title">
+                  Свяжитесь с нами
+              </h2>
+              <button class="footer__btn" data-modal="#testform">
+                  <h3>Свяжитесь сейчас</h3>
+                  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                  </svg>    
+              </button>
+          </div>
         </section>
         
-        <section class="wrapper survey">
-            <div class="thanks__form">
-                <p class="form__title">Добрый день!</p>
-                <p class="text-normal">
-                    Благодарим Вас за проявленный интерес к вакансиям Группы Компаний Softline.
-                    <br><br>
-                    Ваше резюме получено сотрудниками департамента подбора и адаптации персонала.
-                    <br><br>
-                    При положительном рассмотрении резюме на одну из открытых вакансий с Вами свяжется HR-менеджер. 
-                    В ином случае, мы сможем вернуться к Вашему резюме в будущем при появлении подходящих Вашей квалификации вакансий.
-                    <br>
-                    Хорошего дня!
-                    <br><br>
-                    С уважением,<br>
-                    Департамент подбора и адаптации Softline
-                </p>
-                <a class="link-red" href="#">
-                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="32" height="32" rx="16" fill="#A50F2D"/>
-                        <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+        <section class="callback wrapper-margin mt15 dark">
+          <div class="callback__inner">
+              <h2 class="callback__title">
+                  Свяжитесь с нами
+              </h2>
+              <button class="footer__btn" data-modal="#testform">
+                  <h3>Свяжитесь сейчас</h3>
+                  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                  </svg>    
+              </button>
+          </div>
+        </section>
+        
+        <section class="callback wrapper-margin mt15 dark">
+          <div class="callback__img"><img class="callback__bg" src="./assets/images/news-page/subscribe-1.jpg" alt="callback-bg"></div>
+          <div class="callback__inner">
+              <h2 class="callback__title">
+                  Есть вопросы?
+              </h2>
+              <button class="footer__btn" data-modal="#testform">
+                  <h3>Свяжитесь сейчас</h3>
+                  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+                  </svg>    
+              </button>
+          </div>
+        </section>
+        
+        <div class="registration regModal opacity-0" id="testform" hidden>
+          <div class="registration__block filter-swipe">
+            <div class="registration__wrapper">
+              <p class="registration__title">Название формы</p>
+              <button class="close-button"><span>Закрыть</span> <span class="close-button__cross"><span
+                    class="close-icon"></span></span></button>
+            </div>
+            <div class="registration__subtitle">Описательная часть формы</div>
+        
+            <form action="#">
+              <div class="form__item">
+                <div class="form__item-name">Вопрос</div>
+                <textarea name="textarea">Введите свой вопрос</textarea>
+              </div>
+        
+              <div class="form__item">
+                <div class="form__item-name">Ваше резюме</div>
+                
+                <input type="file" id="actual-btn" hidden/>
+        
+                <div class="form__item-wrapper">
+                  <label for="actual-btn" class="link-red">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                      <rect class="ball" width="32" height="32" rx="16"/>
+                      <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                        stroke-width="1.5" />
                     </svg>
-                    <span>На страницу “Карьера”</span>
-                </a>
-            </div>
-        </section>
+                    <span class="link-red__text">Вложить файл</span>
+                  </label>
+                </div>
         
+                <div class="form__item-text canText" data-error="File download interrupted" data-submit="Supported formats: doc, txt, rtf, pfd. No more than 1 mb">
+                  Поддерживаемые форматы: doc, txt, rtf, pfd. Не более 1 Мб
+                </div>
+              </div>
         
-          <section class="subscribe wrapper-margin pb15">
+              <input type="text" name="name" placeholder="Имя" required>
+              <input type="text" name="dataBirth" placeholder="Дата рождения">
+              <input type="tel" name="tel" placeholder="Номер телефона" required>
         
-            <h2 class="subscribe__title">Подпишитесь на нашу рассылку последних новостей и событий</h2>
+              <div class="custom-select">
+                <select>
+                  <option value="none">Город</option>
+                  <option value="Moscow">Москва</option>
+                  <option value="Minsk">Минск</option>
+                </select>
+              </div>
+              
+              <div class="form__item">
+                <div class="form__item-name">Выберите вариант ответа</div>
         
-            <form class="subscribe__form" action="#">
-              <input class="subscribe__input" type="email" name="email" id="email" placeholder="Почта">
+                <div class="form__item-radio">
+                  <label class="container">Вариант первый
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+          
+                  <label class="container">Вариант второй
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+          
+                  <label class="container">Вариант третий
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
         
-              <button class="subscribe__button" type="submit">Подписаться</button>
+              </div>
+        
+              <div class="form__item">
+                <div class="form__item-name">Выберите вариант ответа</div>
+        
+                <div class="form__item-radio">
+                  <label class="container container--box">Вариант первый
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+          
+                  <label class="container container--box">Вариант второй
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+          
+                  <label class="container container--box">Вариант третий
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+        
+              </div>
+        
+              <div class="form__item">
+                <div class="form__item-name">Выберите вариант ответа</div>
+        
+                <div class="form__item-radio form__item-radio--column">
+                  <label class="container">Вариант первый
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+          
+                  <label class="container">Вариант второй
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+          
+                  <label class="container">Вариант третий
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+        
+              </div>
+        
+              <button class="link-red" type="submit">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                  <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white"
+                    stroke-width="1.5" />
+                </svg>
+                <span>Отправьте запрос</span>
+              </button>
         
               <div class="vacancy__bottom">
                 <div class="vacancy__send">
@@ -1368,9 +1482,9 @@
             </div>
         
             </form>
-        
-        
-          </section>
+          </div>
+        </div>
+
         
     </main>
     

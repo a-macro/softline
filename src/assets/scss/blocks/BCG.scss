@@ -234,6 +234,7 @@
 }
 
 .BCG__rules {
+    background-size: cover;
     padding: 15rem 20.5rem;
     @include breakpoint($xxl-bp) {
         padding-top: 12rem;
@@ -257,6 +258,8 @@
 .BCG__rules_list {
     display: flex;
     margin-top: 10rem;
+    flex-wrap: wrap;
+    row-gap: 4rem;
     @include breakpoint($mid-bp) {
         flex-wrap: wrap;
     }
@@ -266,10 +269,10 @@
 
     .lined-card {
         align-items: flex-start;
-        height: 33.5rem;
+        min-height: 33.5rem;
         @include breakpoint($mid-bp) {
             width: calc(calc(100% - 4rem)/2); 
-            height: 31rem;
+            min-height: 31rem;
             &:nth-child(odd) {
                 margin-right: 4rem;
             }
@@ -279,7 +282,7 @@
         }
         @include breakpoint($sm-bp) {
             padding-bottom: 2rem;
-            height: unset;
+            min-height: unset;
             border-top: 1px solid #40454E;
         }
 

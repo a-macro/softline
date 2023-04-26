@@ -224,9 +224,15 @@
 .header__menu {
     display: flex;
     align-items: center;
-    max-width: 180rem;
+    @include breakpoint($xxl-bp) {
+        max-width: 180rem;
+    }
+    @include breakpoint($sr-bp) {
+        max-width: none;
+    }
 
     @include breakpoint($xl-bp) {
+        max-width: 180rem;
         padding: 1.2rem 0;
     }
 
@@ -251,13 +257,15 @@
 
 .header__nav {
     display: flex;
-
+    gap: 1rem;
     @include breakpoint($xl-bp) {
         flex-wrap: wrap;
         column-gap: 4rem;
-        row-gap: 1rem;
+        row-gap: 2rem;
         justify-content: flex-end;
-        padding-left: 13rem;
+    }
+    @include breakpoint($xs-bp) {
+        column-gap: 2rem;
     }
 
     @include breakpoint($mid-bp) {
@@ -327,7 +335,9 @@
         /* UI/Footer */
 
         color: #697279;
-
+        @include breakpoint($xxl-bp) {
+            font-size: 14px;
+        }
         @include breakpoint($mid-bp) {
             display: none;
         }
@@ -529,9 +539,12 @@
     letter-spacing: 0em;
     text-align: center;
     width: 100%;
-
+    @include breakpoint($xxl-bp) {
+        font-size: 14px;
+    }
     @include breakpoint($mid-bp) {
         text-align: start;
+        font-size: 1.4rem;
     }
 
     a {
@@ -687,7 +700,12 @@
     text-align: center;
     cursor: pointer;
     transition: color .4s;
-
+    @include breakpoint($xxl-bp) {
+        font-size: 14px;
+    }
+    @include breakpoint($mid-bp) {
+        font-size: 1.4rem;
+    }
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
@@ -866,7 +884,7 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 1rem 0;
-    padding-left: 4rem;
+    padding-left: 3rem;
 
     &:hover .header__dropdown {
         opacity: 1;
@@ -889,7 +907,9 @@
         color: $black;
         text-decoration: none;
         transition: color .4s;
-
+        @include breakpoint($xxl-bp) {
+            font-size: 14px;
+        }
         &:hover {
             color: $red;
         }
@@ -946,7 +966,9 @@
     text-decoration: none;
     margin-left: 4rem;
     transition: color .4s;
-
+    @include breakpoint($xxl-bp) {
+        font-size: 14px;
+    }
     &:nth-child(1) {
         margin-left: 0;
     }
@@ -1067,7 +1089,12 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-
+    @include breakpoint($xxl-bp) {
+        font-size: 14px;
+    }
+    @include breakpoint($mid-bp) {
+        font-size: 1.4rem;
+    }
     &:hover {
         color: $red;
     }
@@ -1117,7 +1144,12 @@
 
     color: #697279;
     text-decoration: none;
-
+    @include breakpoint($xxl-bp) {
+        font-size: 14px;
+    }
+    @include breakpoint($mid-bp) {
+        font-size: 1.4rem;
+    }
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
@@ -1128,6 +1160,14 @@
 }
 
 .header__link {
+    br {
+        display: none;
+    }
+    @include breakpoint($xxl-bp) {
+        br {
+            display: block;
+        }
+    }
     @include breakpoint($xl-bp) {
         br {
             display: none;

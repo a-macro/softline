@@ -4,7 +4,7 @@
     max-height: 81.4rem;
     overflow-y: auto;
     background: white;
-    padding-left: 34%;
+    padding-left: 4rem;
     // padding-top: 5.5rem;
     padding-bottom: 4rem;
     padding-right: 3rem;
@@ -17,7 +17,7 @@
         padding-left: 4rem;
     }
     @include breakpoint($xl-bp) {
-        max-height: 67rem;
+        max-height: calc(100% - var(--headerH));
     }
     @include breakpoint($mid-bp) {
         border-top: 0.1rem solid #D2DCE5;
@@ -1010,6 +1010,9 @@
     text-decoration: none;
     &:hover {
         color: $red;
+    }
+    @include breakpoint($xxl-bp) {
+        font-size: 14px;
     }
     @include breakpoint($mid-bp) {
         font-size: 1.6rem;

@@ -65,6 +65,9 @@ body {
   background: $bg-color;
   color: $black;
   min-height: 100%;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 main {

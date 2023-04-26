@@ -1,6 +1,6 @@
 .intro__pages {
-    max-height: 700px;
-    height: calc(100vh - var(--headerH) - 80px);
+    // max-height: 700px;
+    // height: calc(100vh - var(--headerH) - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -18,7 +18,7 @@
     }
     @include breakpoint($sm-bp) {
         padding-bottom: 4rem;
-        max-height: 440px;
+        // max-height: 440px;
     }
 
     .breadcrumbs__link {
@@ -70,6 +70,7 @@
     flex-wrap: wrap;
     margin-top: 15rem;
     padding-bottom: 15rem;
+    row-gap: 4rem;
     @include breakpoint($xxl-bp) {
         margin-top: 11.5rem;
         padding-bottom: 12rem;
@@ -100,7 +101,7 @@
     padding-bottom: 3rem;
     margin-right: 4rem;
     width: calc(calc(100% - 12rem) / 4);
-    height: 23.5rem;
+    min-height: 23.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -139,7 +140,14 @@
         line-height: 1.6;
         letter-spacing: 0em;
         text-align: left;
-        color: $grey3;
+    }
+}
+
+.dark {
+    .lined-card {
+        p {
+            color: $grey3;
+        }
     }
 }
 
@@ -163,7 +171,7 @@
 
     .service {
         width: 100%;
-        height: 29.5rem;
+        min-height: 29.5rem;
         margin-right: 0;
         margin-left: 0;
         border-right: unset;
@@ -191,13 +199,13 @@
           }
         }
         @include breakpoint($xl-bp) {
-          height: 27.5rem;
+          min-height: 27.5rem;
         }
         @include breakpoint($mid-bp) {
           border: 0;
           padding: 0;
           position: relative;
-          height: 25rem;
+          min-height: 25rem;
           &:nth-child(2n + 1) {
             padding-right: 1rem;
             &::before {
@@ -220,7 +228,7 @@
           }
         }
         @include breakpoint($sm-bp) {
-          height: 28rem;
+          min-height: 28rem;
           &:nth-child(2n + 1) {
             padding-right: 0;
             &::before {
@@ -322,13 +330,14 @@
 .cybersecurity-nums__block {
     color: white;
     display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    row-gap: 4rem;
     margin-top: 13rem;
-    margin-left: 36.3%;
     @include breakpoint($xxl-bp) {
-        margin-left: 32.3%;
+        // margin-left: 1rem;
     }
     @include breakpoint($xl-bp) {
-        margin-left: 25.7%;
         margin-top: 10rem;
     }
     @include breakpoint($mid-bp) {
@@ -421,6 +430,14 @@
 }
 
 .cybersecurity {
+    padding-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+        padding-bottom: 12rem;
+    }
+    @include breakpoint($xl-bp) {
+        padding-bottom: 10rem;
+    }
+
     .partner {
         margin-right: 21.5rem;
         width: calc((100% - 133rem) / 7);
@@ -431,6 +448,46 @@
         @include breakpoint($xl-bp) {
             width: calc((100% - 39rem) / 7);
             margin-right: 6.5rem;
+        }
+    }
+
+    .section-top {
+        margin-top: 0;
+        padding-top: 21.5rem;
+        @include breakpoint($xxl-bp) {
+            padding-top: 14rem;
+        }
+        @include breakpoint($xl-bp) {
+            padding-top: 8.5rem;
+        }
+        @include breakpoint($mid-bp) {
+            padding-top: 9.5rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-top: 5.5rem;
+        }
+    }
+
+    &.dark {
+        .subtitle {
+            color: white;
+        }
+        .service-text {
+            color: white;
+        }
+        .services .service:hover {
+            background-color: #40454E;
+        }
+        .services .service:hover {
+            .service__inner {
+                border-color: transparent;
+            }
+        }
+        .services .service {
+            border-color: #40454E;
+        }
+        .services .service__inner {
+            border-color: #40454E;
         }
     }
 }
