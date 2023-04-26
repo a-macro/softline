@@ -1,3 +1,25 @@
+.wrapper.customers-faq.dark {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+    .accordion__title {
+        color: #FFFFFF;
+    }
+    li.active {
+        background-color: #40454E!important;
+        border-color: #40454E!important;
+    }
+    .accordion__list-desc {
+        color: #FFFFFF!important;
+    }
+}
 .wrapper.customers-faq {
     margin-top: 15rem;
     @include breakpoint($xxl-bp) {

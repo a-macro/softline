@@ -2,10 +2,23 @@
     //--h: 100vh;
     //--scroll-y: 0px;
 }
-
-.intro {
+.intro,
+.intro__pages,
+.insights-main-bg {
     max-height: 700px;
     height: calc(100vh - var(--headerH) - 80px);
+    @include breakpoint($mid-bp) {
+        height: auto;
+        max-height: min-content;
+        max-height: 60rem;
+    }
+    @include breakpoint($sm-bp) {
+        height: calc(100vh - var(--headerH) - 80px);
+        max-height: 56rem;
+    }
+}
+.intro {
+
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -21,18 +34,16 @@
         padding-bottom: 4.8rem;        
     }
     @include breakpoint($mid-bp) {
-        height: auto;
-        max-height: unset;
-        padding-top: 29.5rem;
+        // height: calc(100vh - var(--headerH) - 80px);
+        // max-height: unset;
+        padding-top: 5rem;
         padding-bottom: 5.1rem;
         padding-left: 2rem;
-        max-height: 602px;
     }
     @include breakpoint($sm-bp) {
         padding-top: 23.2rem;
         padding-bottom: 3.1rem;
         padding-left: 2.4rem;
-        max-height: 440px;
     }
 }
 
@@ -121,11 +132,12 @@
         margin-top: 12rem;
     }
     @include breakpoint($mid-bp) {
-        flex-direction: column;
+        
         margin-top: 10.2rem;
     }
     @include breakpoint($sm-bp) {
         margin-top: 5.5rem;
+        flex-direction: column;
     }
 }
 
@@ -366,10 +378,10 @@ button.link-red {
     }
     @include breakpoint($xl-bp) {
         padding: 2.8rem 2.5rem 2rem 2rem;
-        min-height: 32rem;            
+        min-height: 32rem;
     }
     @include breakpoint($mid-bp) {
-        width: 23.2rem;
+        width: 30.2rem;
         padding-right: 3.5rem;
         margin-left: 0;
     }

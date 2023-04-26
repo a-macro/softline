@@ -123,17 +123,17 @@
         justify-content: flex-start;
         gap: 4rem;
         flex-wrap: wrap;
-        margin-top: 15rem;
+        padding-top: 15rem;
         @include breakpoint($xxl-bp) {
-            margin-top: 12rem;
+            padding-top: 12rem;
         }
         @include breakpoint($mid-bp) {
-            margin-top: 10rem;
+            padding-top: 10rem;
             display: flex;
             gap: 2rem;
         }
         @include breakpoint($sm-bp) {
-            margin-top: 5rem;
+            padding-top: 5rem;
             flex-direction: column;
             gap: unset;
         }
@@ -747,4 +747,138 @@
     @include breakpoint($sm-bp) {
         margin-top: 5rem;
     }
+}
+
+.motivation-block {
+    padding-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+        padding-bottom: 12rem;
+    }
+    @include breakpoint($xl-bp) {
+        padding-bottom: 10rem;
+    }
+    .section-top {
+        margin-top: 0;
+        padding-top: 21.5rem;
+        @include breakpoint($xxl-bp) {
+            padding-top: 14rem;
+        }
+        @include breakpoint($xl-bp) {
+            padding-top: 8.5rem;
+        }
+        @include breakpoint($mid-bp) {
+            padding-top: 9.5rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-top: 5.5rem;
+        }
+    }
+
+    &.dark {
+        .informationTechnology__content .informationTechnology__block div:last-child {
+            color: white;
+        }
+        .informationTechnology__content .informationTechnology__block {
+            border-color: #40454E;
+        }
+    }
+}
+
+.callback {
+    background-color: #FFFFFF;
+    position: relative;
+    .footer__btn {
+        color: #212424;
+        padding: 0;
+    }
+    .callback__img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+}
+.callback__inner {
+    max-width: 90rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+    padding: 4rem;
+    @include breakpoint($sm-bp) {
+        gap: 10rem;
+    }
+}
+.callback__img + .callback__inner {
+    padding: 15.6rem 11.7rem;
+    flex-direction: column;
+    align-items: flex-start;
+    @include breakpoint($xl-bp) {
+      padding: 8rem 11.7rem 6rem;
+    }
+  
+    @include breakpoint($mid-bp) {
+      padding: 13.8rem 2.5rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      padding: 5rem 2.5rem;
+    }
+    .callback__title {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 5.2rem;
+        line-height: 5.8rem;
+        /* or 112% */
+    
+        letter-spacing: -0.02em;
+
+    
+        @include breakpoint($sm-bp) {
+          font-size: 4rem;
+          line-height: 5rem;
+        }
+    }
+    .footer__btn {
+        flex-direction: row-reverse;
+        gap: 2rem;
+        padding: 0;
+        svg {
+            margin-left: 0;
+            rect {
+                fill: #FFFFFF;
+            }
+            path {
+                stroke: #212424;
+            }
+        }
+    }
+}
+.dark {
+    .callback__title {
+        color: #FFFFFF;
+    }
+    .footer__btn {
+        color: #FFFFFF;
+    }
+}
+.callback__title {
+    font-size: 3.45rem;
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+.opacity-0 {
+    opacity: 0;
 }

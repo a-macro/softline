@@ -424,6 +424,31 @@
     }
   }
 
+  .faq {
+      .dark {
+        .accordion__title {
+          color: #FFFFFF!important;
+        }
+      }
+      .dark.accordion li.active {
+        background-color: #282B2B!important;
+        border-color: #282B2B!important;
+      }
+  }
+  .dark.faq__block {
+    .faq__left.wrapper nav li.active {
+      color: #FFFFFF!important;
+    }
+    .accordion .accordion__title {
+      color: #FFFFFF!important;
+    }
+    .accordion li.active {
+      background-color: #282B2B!important;
+      border-color: #282B2B!important;
+    }
+
+  }
+
   .accordion {
     li {
       transition: all .2s;
@@ -576,9 +601,11 @@
       }
     }
   }
-  
-  .politics-page {
+  .politics-page__container {
     max-width: 144rem;
+  }
+  .politics-page {
+    
     .breadcrumbs__link {
       color: #212424;
     }
@@ -647,6 +674,152 @@
         }
       }
     }
+    .dark {
+      .accordion {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .accordion .accordion__list-desc .accordion__desc-title,
+      .accordion .accordion__list-desc .accordion__list__inner,
+      .accordion__list-title {
+        color: #FFFFFF;
+      }
+      
+      .accordion .accordion__list-desc .accordion__list__inner {
+        background-color: #282B2B;
+      }
+    }
+    .accordion {
+      .accordion__list-title {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        align-items: center;
+        width: 100%;
+        text-align: start;
+        padding-top: 4.8rem;
+        padding-bottom: 4.8rem;
+        transition: all .3s;
+        @media (hover: hover) {
+          &:hover {
+            padding-left: 3rem;
+            padding-right: 3rem;
+          }
+        }
+        font-size: 3.6rem;
+        letter-spacing: -0.02em;
+        line-height: 5.2rem;
+        @include breakpoint($mid-bp) {
+          padding-top: 4rem;
+          padding-bottom: 4rem;
+        }
+        @include breakpoint($sm-bp) {
+          font-size: 2.6rem;
+          line-height: 3.2rem;
+          letter-spacing: normal;
+        }
+      }
+      .accordion__list-desc {
+        display: block;
+        position: relative;
+        .close-button {
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          top: 2rem;
+          right: 2.5rem;
+          z-index: 2;
+          &::after, &::before {
+            background-color: #AAB8C3;
+            height: 0.2rem;
+          }
+        }
+        .accordion__list__inner {
+          padding: 5.6rem 6.4rem 7.2rem;
+          background-color: #FFFFFF;
+          @include breakpoint($mid-bp) {
+            padding: 4rem 2rem;
+          }
+          @include breakpoint($sm-bp) {
+            padding: 3rem 3rem;
+            padding-right: 5rem;
+          }
+        }
+        .accordion__desc-title {
+          font-family: 'Manrope';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 3.6rem;
+          line-height: 5.2rem;
+          /* identical to box height, or 144% */
+          
+          letter-spacing: -0.01em;
+          
+          /* UI/Black/High */
+          
+          color: #212424;
+          padding-bottom: 4rem;
+          @include breakpoint($sm-bp) {
+            font-size: 2.7rem;
+            line-height: 4.2rem;
+            padding-right: 2rem;
+            font-weight: 500;
+            padding-bottom: 3rem;
+          }
+        }
+        ul {
+          li {
+            border: 0;
+            padding: 1.2rem 0;
+            padding-left: 2.2rem;
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left top 2.4rem;
+          }
+        }
+        p + ul {
+          padding-top: 3.2rem;
+          @include breakpoint($sm-bp) {
+            padding-top: 2.2rem;
+          }
+        }
+        p + p {
+          padding-top: 3.2rem;
+          @include breakpoint($sm-bp) {
+            padding-top: 2.2rem;
+          }
+        }
+        ul + p {
+          padding-top: 3.2rem;
+          @include breakpoint($sm-bp) {
+            padding-top: 2.2rem;
+          }
+        }
+      }
+    }
+    .accordion__item.active {
+      border-color: transparent;
+    }
+  }
+
+  .dark {
+    .politics-page__container {
+      .accordion {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .accordion .accordion__list-desc .accordion__desc-title,
+      .accordion .accordion__list-desc .accordion__list__inner,
+      .accordion__list-title {
+        color: #FFFFFF;
+      }
+      
+      .accordion .accordion__list-desc .accordion__list__inner {
+        background-color: #282B2B;
+      }
+    }
+  }
+
+  .politics-page__container {
     .accordion {
       .accordion__list-title {
         display: grid;
@@ -1114,5 +1287,14 @@
       p + p {
         padding-top: 4rem;
       }
+    }
+  }
+
+  .dark {
+    .accordion__list-title {
+      color: #FFFFFF;
+    }
+    .accordion li {
+      border-color: #40454E;
     }
   }

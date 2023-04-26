@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const mm = matchMedia("(max-width: 768px)")
+    const mm = matchMedia("(max-width: 1024px)")
 
     let height = window.innerHeight;
     let width = window.innerWidth;
@@ -16,16 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty('--headerH', headerH + "px");
     }
 
+
     let prevScroll = 0;
     window.onscroll = (e) => {
         let delta = pageYOffset - prevScroll;
-        if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 768) {
+        if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
             header.classList.add("hide-header");
             header.classList.add("start");
-        } else if (header && pageYOffset > 80 && window.innerWidth > 768) {
+        } else if (header && pageYOffset > 80 && window.innerWidth > 1024) {
             header.classList.remove("hide-header");
             header.classList.add("start");
-        } else if (header && pageYOffset < 20 && window.innerWidth > 768) {
+        } else if (header && pageYOffset < 20 && window.innerWidth > 1024) {
             header.classList.remove("start");
         }
         prevScroll = pageYOffset;
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 headerSearch.forEach(element => {
                     element.classList.add('active');
                 });
-                if (window.innerWidth <= 768 && bodyTag.classList.contains("menu-open")) {
+                if (window.innerWidth <= 1024 && bodyTag.classList.contains("menu-open")) {
                     bodyTag.classList.remove("menu-open");
                     menubutton.classList.remove("menu-button--active")
                     headerBottom.style.display = "none";
@@ -247,6 +248,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    mm.addEventListener('change', () => {
+        if (!mm.matches) {
+            headerBottom.style.display = "block";
+        } 
+        if (mm.matches) {
+        }
+        header.classList.remove('start');
+        header.classList.remove('hide-header');
+    })
+
     const tabs = document.querySelectorAll('.tab-label');
     const navList = document.querySelectorAll('.main-nav__list-item')
     const backButton = document.querySelector('.back-panel')
@@ -414,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     nextEl: next,
                     prevEl: prev
                 },
-                slidesPerView: 6,
+                slidesPerView: 4,
                 watchOverflow: true,
                 spaceBetween: 0,
                 loop: false,
@@ -422,10 +433,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     300: {
                         slidesPerView: "auto",
                     },
-                    769: {
-                        slidesPerView: 6,
-                    },
                     1025: {
+                        slidesPerView: 4,
+                        spaceBetween: 0,
+                    },
+                    1516: {
                         slidesPerView: 6,
                         spaceBetween: 0,
                     }
@@ -451,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     slidesPerView: "auto",
                     spaceBetween: 20,
                 },
-                769: {
+                1025: {
                     slidesPerView: 6,
                     spaceBetween: 40,
                 },
@@ -483,11 +495,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: "auto",
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
-                    1441: {
+                    1516: {
                         slidesPerView: 3,
                         spaceBetween: 40,
                     },
@@ -520,11 +532,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: "auto",
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
-                    1441: {
+                    1516: {
                         slidesPerView: 3,
                         spaceBetween: 40,
                     },
@@ -557,11 +569,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: "auto",
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
-                    1441: {
+                    1516: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
@@ -591,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     300: {
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         spaceBetween: 40,
                     },
                     1025: {
@@ -625,7 +637,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: 1.35,
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
@@ -662,7 +674,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: 3.5,
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 6,
                         spaceBetween: 40,
                     },
@@ -699,7 +711,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: 2,
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
@@ -737,11 +749,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: 1.3,
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
-                    1441: {
+                    1516: {
                         slidesPerView: 3,
                         spaceBetween: 40,
                     },
@@ -778,11 +790,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         slidesPerView: "auto",
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
-                    1441: {
+                    1516: {
                         slidesPerView: 2,
                         spaceBetween: 40,
                     },
@@ -812,7 +824,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     300: {
                         spaceBetween: 20,
                     },
-                    769: {
+                    1025: {
                         spaceBetween: 40,
                     },
                     1025: {
@@ -826,7 +838,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let newsSliser = document.querySelector(".news-page__swiper");
     if (newsSliser) {
-        console.log(slider);
         let prev = newsSliser.querySelector(".swiper-button-prev");
         let next = newsSliser.querySelector(".swiper-button-next");
 
@@ -843,7 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 300: {
                     spaceBetween: 20,
                 },
-                769: {
+                1025: {
                     spaceBetween: 40,
                 },
                 1025: {
@@ -914,7 +925,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let slider = document.querySelector(".partners__mobSlider");
 
     function initSlider() {
-        if (width <= 768 && !init && slider) {
+        if (width <= 1024 && !init && slider) {
             swiper = new Swiper(".partners__mobSlider", {
                 loop: false,
                 slidesPerView: 2.8,
@@ -939,7 +950,7 @@ document.addEventListener("DOMContentLoaded", () => {
             init = true;
         }
 
-        if (init && width > 768) {
+        if (init && width > 1024) {
             init = false;
             swiper.destroy();
         }
@@ -977,7 +988,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function initSliderSuggestion() {
 
-        if (width <= 768 && !initSuggestion && sliderSuggestion) {
+        if (width <= 1024 && !initSuggestion && sliderSuggestion) {
             swiperSuggestion = new Swiper(".suggestion-slider", {
                 loop: false,
                 navigation: {
@@ -994,7 +1005,7 @@ document.addEventListener("DOMContentLoaded", () => {
             initSuggestion = true;
         }
 
-        if (initSuggestion && width > 768) {
+        if (initSuggestion && width > 1024) {
             initSuggestion = false;
             swiperSuggestion.destroy();
         }
@@ -1251,7 +1262,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 elem.classList.remove("canScroll");
                 if (elem.classList.contains("search-aside") && window.innerWidth <= 480) {
                     elem.style.transform = 'translate3d(0, -3.5rem, 0)';
-                } else if (elem.classList.contains("search-aside") && window.innerWidth <= 768) {
+                } else if (elem.classList.contains("search-aside") && window.innerWidth <= 1024) {
                     elem.style.transform = 'translate3d(0, -6rem, 0)';
                 } else {
                     elem.style.transform = 'translate3d(0, 0px, 0)';
@@ -1362,7 +1373,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 direction: Hammer.DIRECTION_ALL,
                 threshold: 0
             }));
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1024) {
                 mcSwipe.on("pan", handleDrag);
             }
         });
@@ -1406,19 +1417,26 @@ document.addEventListener("DOMContentLoaded", () => {
         width = window.innerWidth;
         height = window.innerHeight;
         document.documentElement.style.setProperty('--h', height + "px");
-        if (header) {
-            let headerH = header.getBoundingClientRect().height;
-            document.documentElement.style.setProperty('--headerH', headerH + "px");
-        }
+
         filters.forEach(filter => {
             countHeight(filter);
         });
         initSlider();
         initSliderSuggestion();
         initSliderStoryRange();
+        
+        if (header) {
+            let headerH = header.getBoundingClientRect().height;
+            document.documentElement.style.setProperty('--headerH', headerH + "px");
+        }
     });
 
-
+    if (header) {
+        new ResizeObserver(function() {
+            let headerH = header.getBoundingClientRect().height;
+                document.documentElement.style.setProperty('--headerH', headerH + "px");
+          }).observe(header);
+    }
 
 
 
@@ -2221,7 +2239,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 leadershipModal.style.display = "block";
                 scrollLock.disablePageScroll(leadershipModal);
                 scrollLock.addScrollableSelector('.leadership__text-block');
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     scrollLock.addScrollableSelector(".leadership__wrapper");
                 }
                 setTimeout(() => {
@@ -2351,7 +2369,7 @@ document.addEventListener("DOMContentLoaded", () => {
             zoom = 3.5;
         } else if (window.innerWidth > 1440) {
             zoom = 3;
-        } else if (window.innerWidth > 768) {
+        } else if (window.innerWidth > 1024) {
             zoom = 2;
         } else if (window.innerWidth > 480) {
             zoom = 2;
@@ -2621,7 +2639,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let txt = parent.querySelector(".section-top__aside");
             info.onclick = (e) => {
                 e.preventDefault();
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     txt.style.display = "flex";
                     setTimeout(() => {
                         txt.classList.add("show");
@@ -2634,7 +2652,7 @@ document.addEventListener("DOMContentLoaded", () => {
         close.forEach(btn => {
             let parent = btn.closest(".section-top__aside")
             btn.onclick = (e) => {
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     parent.classList.remove("show");
                     setTimeout(() => {
                         parent.style.display = "none";
@@ -2661,7 +2679,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const observer = new IntersectionObserver((entryes) => {
             entryes.forEach(el => {
-                if (el.isIntersecting && window.innerWidth > 768) {
+                if (el.isIntersecting && window.innerWidth > 1024) {
                     for (let img of imagesBlock.children) {
                         if (img.dataset.numberImg === el.target.dataset.numberImg) {
                             img.style.opacity = 1
