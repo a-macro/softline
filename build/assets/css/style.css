@@ -16953,11 +16953,10 @@ textarea {
 .breadcrumbs__list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 1rem;
+    gap: 1.1rem;
 }
 
 .breadcrumbs__item {
-    padding-left: 1.1rem;
     display: flex;
     align-items: center;
     position: relative;
