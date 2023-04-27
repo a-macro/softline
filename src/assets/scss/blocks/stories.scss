@@ -162,7 +162,7 @@
         }
 
         .links {
-            align-items: flex-start;
+            align-items: flex-end;
 
             @include breakpoint($xxl-bp) {
                 align-items: flex-end;
