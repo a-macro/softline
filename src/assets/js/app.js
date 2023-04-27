@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let height = window.innerHeight;
     let width = window.innerWidth;
-    document.documentElement.style.setProperty('--h', height + "px");
+    // document.documentElement.style.setProperty('--h', height + "px");
     //document.documentElement.style.setProperty('--w', width + "px");
     //el.style.setProperty("--r", right + "px");
     //scrollLock.enablePageScroll(openedModal); отключить
@@ -1432,7 +1432,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", () => {
         width = window.innerWidth;
         height = window.innerHeight;
-        document.documentElement.style.setProperty('--h', height + "px");
+        // document.documentElement.style.setProperty('--h', height + "px");
 
         filters.forEach(filter => {
             countHeight(filter);

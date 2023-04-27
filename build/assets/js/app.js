@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   var height = window.innerHeight;
   var width = window.innerWidth;
-  document.documentElement.style.setProperty('--h', height + "px");
+  // document.documentElement.style.setProperty('--h', height + "px");
   //document.documentElement.style.setProperty('--w', width + "px");
   //el.style.setProperty("--r", right + "px");
   //scrollLock.enablePageScroll(openedModal); отключить
@@ -1321,7 +1321,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     width = window.innerWidth;
     height = window.innerHeight;
-    document.documentElement.style.setProperty('--h', height + "px");
+    // document.documentElement.style.setProperty('--h', height + "px");
+
     filters.forEach(function (filter) {
       countHeight(filter);
     });

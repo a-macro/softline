@@ -189,7 +189,9 @@
     background: #F0F2F6;
     // border-bottom: 1px solid #F0F2F6;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-
+    &::-webkit-scrollbar {
+        width: 0; 
+    } 
     @include breakpoint($xl-bp) {
         padding-left: 3rem;
         padding-right: 4rem;
@@ -197,10 +199,10 @@
 
     @include breakpoint($mid-bp) {
         display: none;
-        transform: translateY(-100%);
+        transform: translate3D(0, -100%, 0);
         width: 100%;
-        height: calc(var(--h) - var(--headerH));
-        position: absolute;
+        height: calc(100% - var(--headerH));
+        position: fixed;
         bottom: 1px;
         left: 0;
         transition: transform .4s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -218,7 +220,7 @@
 }
 
 .header__bottom.show {
-    transform: translateY(100%);
+    transform: translate3D(0, 0, 0);
 }
 
 .header__menu {

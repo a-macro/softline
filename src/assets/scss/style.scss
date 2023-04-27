@@ -32,7 +32,55 @@
 @import "blocks/history.scss";
 @import "blocks/mission.scss";
 
+.insights-title,
+.intro__title {
+  font-size: 6.4rem;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: white;
+  @include breakpoint($xl-bp) {
+    font-size: 6rem;
+  }
+  @include breakpoint($mid-bp) {
+    font-size: 5.5rem;
+  }
+  @include breakpoint($sm-bp) {
+      // font-size: 4.35rem;
+      font-size: 3.4rem; 
+      line-height: 1.2;
+      // br {
+      //   display: none
+      // }
+  }
+}
 
+// .insights-title {
+//   font-family: 'Manrope';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 6.4rem;
+//   line-height: 7.6rem;
+//   /* identical to box height, or 119% */
+//   letter-spacing: -0.01em;
+
+//   color: #FFFFFF;
+
+//   @include breakpoint($sm-bp) {
+//     font-weight: 400;
+//     font-size: 4.4rem;
+//     line-height: 5rem;
+//   }
+
+//   br {
+//     display: none;
+
+//     @include breakpoint($mid-bp) {
+//       display: unset;
+//     }
+//   }
+// }
 
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');

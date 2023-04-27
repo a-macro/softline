@@ -105,32 +105,6 @@
   color: #FFFFFF;
 }
 
-.insights-title {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 6.4rem;
-  line-height: 7.6rem;
-  /* identical to box height, or 119% */
-  letter-spacing: -0.01em;
-
-  color: #FFFFFF;
-
-  @include breakpoint($sm-bp) {
-    font-weight: 400;
-    font-size: 4.4rem;
-    line-height: 5rem;
-  }
-
-  br {
-    display: none;
-
-    @include breakpoint($mid-bp) {
-      display: unset;
-    }
-  }
-}
-
 .insights {
   .insights__bottom-block {
 
@@ -4404,6 +4378,7 @@
   }
 }
 
+.story-block,
 .crm-block {
   max-width: 114.4rem;
   padding-right: 2rem;
