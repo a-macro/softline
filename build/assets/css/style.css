@@ -18427,7 +18427,8 @@ body::before {
 
 @media (max-width: 1920px) {
     .header__menu {
-        max-width: 180rem;
+        padding: 1.2rem 0;
+        margin-left: auto;
     }
 }
 
@@ -18446,6 +18447,7 @@ body::before {
 
 @media (max-width: 1024px) {
     .header__menu {
+        margin-left: unset;
         height: 100%;
         row-gap: 1.5rem;
         overflow-y: auto;
@@ -18471,7 +18473,7 @@ body::before {
     gap: 1rem;
 }
 
-@media (max-width: 1515px) {
+@media (max-width: 1920px) {
     .header__nav {
         flex-wrap: wrap;
         column-gap: 4rem;
@@ -18818,7 +18820,7 @@ body::before {
     width: 100%;
 }
 
-@media (max-width: 1515px) {
+@media (max-width: 1920px) {
     .header__nav {
         justify-content: flex-end;
     }
@@ -18892,7 +18894,7 @@ body::before {
     align-items: center;
 }
 
-@media (max-width: 1515px) {
+@media (max-width: 1920px) {
     .header__item .header__link {
         height: auto;
     }

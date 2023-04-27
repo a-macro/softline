@@ -227,7 +227,9 @@
     display: flex;
     align-items: center;
     @include breakpoint($xxl-bp) {
-        max-width: 180rem;
+        // max-width: 180rem;
+        padding: 1.2rem 0;
+        margin-left: auto;
     }
     @include breakpoint($sr-bp) {
         max-width: none;
@@ -239,6 +241,7 @@
     }
 
     @include breakpoint($mid-bp) {
+        margin-left: unset;
         height: 100%;
         row-gap: 1.5rem;
         overflow-y: auto;
@@ -260,7 +263,7 @@
 .header__nav {
     display: flex;
     gap: 1rem;
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         flex-wrap: wrap;
         column-gap: 4rem;
         row-gap: 2rem;
@@ -561,7 +564,7 @@
     justify-content: space-between;
     width: 100%;
 
-    @include breakpoint($xl-bp) {
+    @include breakpoint($xxl-bp) {
         justify-content: flex-end;
     }
 
@@ -626,7 +629,7 @@
         display: flex;
         align-items: center;
 
-        @include breakpoint($xl-bp) {
+        @include breakpoint($xxl-bp) {
             height: auto;
         }
     }
