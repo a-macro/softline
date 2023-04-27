@@ -545,7 +545,8 @@
     background-image: url('../images/404/main-bg.png');
     background-position-x: right;
     background-repeat: no-repeat;
-    height: calc(var(--h) - var(--headerH));
+    height: calc(100vh - var(--headerH));
+    min-height: 700px;
     margin-bottom: -15rem;
     @include breakpoint($xxl-bp) {
       background-position-x: 200%;

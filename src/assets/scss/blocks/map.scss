@@ -24,6 +24,9 @@
     }
     .section-top {
         margin-bottom: 5rem;
+        @include breakpoint($sm-bp) {
+            gap: 2.5rem; 
+        }    
     }
 }
 

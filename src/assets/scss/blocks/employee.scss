@@ -413,22 +413,22 @@
         }
     }
 
-    .insights-title {
-        margin-top: 7rem;
-        font-size: 5.1rem;
-        line-height: 1.2;
-        color: $black;
-        @include breakpoint($mid-bp) {
-            margin-top: 4rem;
-            font-size: 5.2rem;
-            line-height: 1.12;
-        }
-        @include breakpoint($sm-bp) {
-            margin-top: 6rem;
-            font-size: 4.35rem;
-            line-height: 1.22;
-        }
-    }
+    // .insights-title {
+    //     margin-top: 7rem;
+    //     font-size: 5.1rem;
+    //     line-height: 1.2;
+    //     color: $black;
+    //     @include breakpoint($mid-bp) {
+    //         margin-top: 4rem;
+    //         font-size: 5.2rem;
+    //         line-height: 1.12;
+    //     }
+    //     @include breakpoint($sm-bp) {
+    //         margin-top: 6rem;
+    //         font-size: 4.35rem;
+    //         line-height: 1.22;
+    //     }
+    // }
 
     .story-employee__data {
         display: flex;
