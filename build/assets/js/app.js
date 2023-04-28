@@ -1335,10 +1335,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   if (header) {
-    new ResizeObserver(function () {
-      var headerH = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--headerH', headerH + "px");
-    }).observe(header);
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(function () {
+        var headerH = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--headerH', headerH + "px");
+      }).observe(header);
+    }
   }
   var currentActiveButton = document.querySelector('.filter-button--active');
   var no = function no() {

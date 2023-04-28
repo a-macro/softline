@@ -4394,6 +4394,29 @@
     width: 100%;
   }
 
+  p {
+    margin-bottom: 2.4rem;
+  }
+
+  h2,h3 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    @include breakpoint($mid-bp) {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 6rem;
+      margin-bottom: 3rem;
+    }
+
+  }
+
   .story-block {
     padding-left: 0;
     padding-right: 0;
@@ -4622,6 +4645,7 @@
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(236, 230, 230, 0.663);
+
     &::-webkit-scrollbar {
       width: 5px;
     }
@@ -4714,10 +4738,12 @@
         text-align: start;
         width: 18rem;
         white-space: nowrap;
+
         // display: block;
         &:first-child {
           // white-space: normal;
         }
+
         @include breakpoint($mid-bp) {
           padding: 3.2rem 1.5rem;
           width: 20rem;
@@ -4727,14 +4753,22 @@
   }
 
   .press-contacts {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 10rem;
+    padding-top: 0;
     margin-top: 10rem;
-
+    & > * {
+      margin-top: 0;
+    }
     @include breakpoint($xl-bp) {
       margin-top: 8rem;
+      // gap: 8rem;
     }
 
     @include breakpoint($sm-bp) {
       margin-top: 5.5rem;
+      // gap: 5.5rem;
     }
   }
 
@@ -4768,28 +4802,28 @@
     color: #212424;
   }
 
-  .table-wrapper+h2,
-  .table-wrapper+h3,
-  h2+h3,
-  h3+h2,
-  p+h2,
-  p+h3,
-  h1+p,
-  h2+p {
-    margin-top: 7.3rem;
+  // .table-wrapper+h2,
+  // .table-wrapper+h3,
+  // h2+h3,
+  // h3+h2,
+  // p+h2,
+  // p+h3,
+  // h1+p,
+  // h2+p {
+  //   margin-top: 7.3rem;
 
-    @include breakpoint($xl-bp) {
-      margin-top: 5.3rem;
-    }
+  //   @include breakpoint($xl-bp) {
+  //     margin-top: 5.3rem;
+  //   }
 
-    @include breakpoint($mid-bp) {
-      margin-top: 8rem;
-    }
+  //   @include breakpoint($mid-bp) {
+  //     margin-top: 8rem;
+  //   }
 
-    @include breakpoint($sm-bp) {
-      margin-top: 5rem;
-    }
-  }
+  //   @include breakpoint($sm-bp) {
+  //     margin-top: 5rem;
+  //   }
+  // }
 
   button+p {
     margin-top: 10rem;
@@ -4803,41 +4837,41 @@
     }
   }
 
-  .table-wrapper+h4,
-  .table-wrapper + p,
-  table+p,
-  p+h4,
-  h3+h4,
-  h2+h4,
-  h3+ul,
-  h4+ul,
-  h3+ol,
-  h4+ol,
-  h3+p,
-  h4+p,
-  p+.press-contacts__container {
-    margin-top: 3.2rem;
-  }
+  // .table-wrapper+h4,
+  // .table-wrapper + p,
+  // table+p,
+  // p+h4,
+  // h3+h4,
+  // h2+h4,
+  // h3+ul,
+  // h4+ul,
+  // h3+ol,
+  // h4+ol,
+  // h3+p,
+  // h4+p,
+  // p+.press-contacts__container {
+  //   margin-top: 3.2rem;
+  // }
 
-  figure,
-  blockquote+h2,
-  blockquote+h3,
-  ol+h2,
-  ul+h2,
-  ol+h3,
-  ul+h3,
-  ol+h4,
-  ul+h4 {
-    margin-top: 10rem;
+  // figure,
+  // blockquote+h2,
+  // blockquote+h3,
+  // ol+h2,
+  // ul+h2,
+  // ol+h3,
+  // ul+h3,
+  // ol+h4,
+  // ul+h4 {
+  //   margin-top: 10rem;
 
-    @include breakpoint($xl-bp) {
-      margin-top: 8rem;
-    }
+  //   @include breakpoint($xl-bp) {
+  //     margin-top: 8rem;
+  //   }
 
-    @include breakpoint($sm-bp) {
-      margin-top: 5.5rem;
-    }
-  }
+  //   @include breakpoint($sm-bp) {
+  //     margin-top: 5.5rem;
+  //   }
+  // }
 
   p {
     font-family: 'Manrope';
@@ -4862,13 +4896,13 @@
     }
   }
 
-  ol+p,
-  ul+p,
-  p+p,
-  p+ul,
-  p+ol {
-    margin-top: 2.4rem;
-  }
+  // ol+p,
+  // ul+p,
+  // p+p,
+  // p+ul,
+  // p+ol {
+  //   margin-top: 2.4rem;
+  // }
 
   figure {
     position: relative;
@@ -5101,6 +5135,12 @@
   }
 
   li {
+
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+    }
 
     h4+p,
     h3+p {
