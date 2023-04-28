@@ -26495,7 +26495,7 @@ input {
   flex-wrap: wrap;
 }
 
-.btn .btn-link {
+.btn.btn-link {
   font-family: "Manrope", sans-serif;
   font-size: 1.6rem;
   font-weight: 600;
@@ -26509,7 +26509,7 @@ input {
   display: inline-block;
 }
 @media (max-width: 480px) {
-  .btn .btn-link {
+  .btn.btn-link {
     font-size: 2.5rem;
   }
 }
