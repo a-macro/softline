@@ -15,6 +15,12 @@
     padding-bottom: 5rem;
     border-bottom: 1px solid #40454E;
     @include breakpoint($mid-bp) {
+        gap: 4rem;
+    }
+    @include breakpoint($sm-bp) {
+        gap: 10rem;
+    }
+    @include breakpoint($mid-bp) {
         flex-direction: column;
         align-items: flex-start;
         padding-bottom: 5.5rem;
@@ -50,12 +56,7 @@
 .footer__top_btns {
     display: flex;
     flex-direction: column;
-    @include breakpoint($mid-bp) {
-        margin-top: 4rem;
-    }
-    @include breakpoint($sm-bp) {
-        margin-top: 10rem;
-    }
+
 }
 
 .footer__btn {

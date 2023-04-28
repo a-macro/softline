@@ -95,8 +95,8 @@
 }
 
 .lined-card {
-    border-top: 1px solid $grey2;
-    border-bottom: 1px solid $grey2;
+    border-top: 1px solid #D2DCE5;
+    border-bottom: 1px solid #D2DCE5;
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-right: 4rem;
@@ -450,6 +450,9 @@
         @include breakpoint($xl-bp) {
             width: calc((100% - 39rem) / 7);
             margin-right: 6.5rem;
+        }
+        @include breakpoint($sm-bp) {
+            width: 20rem;
         }
     }
 
