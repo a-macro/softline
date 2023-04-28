@@ -847,11 +847,15 @@ button.link-red {
     }
 }
 
+.partners__mobSlider {
+    border-top: 1px solid $grey;
+}
+
 .partners {
     display: flex;
     flex-wrap: wrap;
     margin-top: 2.5rem;
-    border-top: 1px solid $grey;
+    // border-top: 1px solid $grey;
     padding: 0 4.5rem 0 9rem;
     width: 100%;
     box-sizing: border-box;
@@ -865,9 +869,10 @@ button.link-red {
 //        padding: 0 2.5rem;
 //    }
 //    @include breakpoint($sm-bp) {
-        height: calc(33rem + 40px);
+        // height: calc(33rem + 40px);
         padding-top: 3.5rem;
-        flex-direction: column;
+        flex-wrap: nowrap;
+        // flex-direction: column;
     }
 }
 
@@ -899,6 +904,8 @@ button.link-red {
         width: calc((100% - 37.8rem) / 7);
     }
     @include breakpoint($mid-bp) {
+        margin-top: 0!important;
+        width: 20rem;
     //    width: calc((100% - 16.8rem) / 4);
     //    margin-right: 5.6rem;
     //    margin-top: 5rem;
@@ -906,7 +913,7 @@ button.link-red {
     //}
     //@include breakpoint($sm-bp) {
         height: 13rem;
-        margin-right: 0;
+        margin-right: 0!important;
         margin-top: 0;
         margin-bottom: 0;
     }

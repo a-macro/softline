@@ -880,13 +880,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (width <= 1024 && !init && slider) {
       swiper = new Swiper(".partners__mobSlider", {
         loop: false,
-        slidesPerView: 2.8,
+        slidesPerView: 'auto',
         spaceBetween: 40,
         freeMode: true,
         autoHeight: false,
         watchOverflow: true,
         grid: {
-          rows: 2
+          rows: 2,
+          fill: "row"
         },
         initialSlide: 1,
         breakpoints: {
