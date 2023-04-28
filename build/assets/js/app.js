@@ -955,7 +955,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initSliderSuggestion();
   var results = document.querySelectorAll(".search-result");
   var showMoreBtn = document.querySelector(".search__show-more");
-  if (results && results.length > 0) {
+  if (results && results.length > 0 && showMoreBtn) {
     hideResults(results);
   }
   function hideResults(results) {

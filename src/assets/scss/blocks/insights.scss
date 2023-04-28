@@ -4838,8 +4838,6 @@
   }
 
   // .table-wrapper+h4,
-  // .table-wrapper + p,
-  // table+p,
   // p+h4,
   // h3+h4,
   // h2+h4,
@@ -4872,6 +4870,19 @@
   //     margin-top: 5.5rem;
   //   }
   // }
+
+  .table-wrapper + p,
+  table+p {
+        margin-top: 10rem;
+
+        @include breakpoint($xl-bp) {
+          margin-top: 8rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          margin-top: 5.5rem;
+        }
+  }
 
   p {
     font-family: 'Manrope';

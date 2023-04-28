@@ -16393,6 +16393,31 @@ textarea {
     }
 }
 
+.story-block .table-wrapper + p,
+.story-block table + p,
+.crm-block .table-wrapper + p,
+.crm-block table + p {
+    margin-top: 10rem;
+}
+
+@media (max-width: 1515px) {
+    .story-block .table-wrapper + p,
+  .story-block table + p,
+  .crm-block .table-wrapper + p,
+  .crm-block table + p {
+        margin-top: 8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-block .table-wrapper + p,
+  .story-block table + p,
+  .crm-block .table-wrapper + p,
+  .crm-block table + p {
+        margin-top: 5.5rem;
+    }
+}
+
 .story-block p,
 .crm-block p {
     font-family: "Manrope";
