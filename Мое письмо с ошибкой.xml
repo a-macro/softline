@@ -1,0 +1,36 @@
+<new_externalactivity>
+  <new_sourceid>1</new_sourceid>
+  <new_crmactionguid>7FFFC3E5-44A3-EC11-80FD-005056820C08</new_crmactionguid>
+  <new_activitytypecode>1</new_activitytypecode>
+  <new_result>1</new_result>
+  <createdon>2023-04-28T13:49:08</createdon>
+  <new_email>pshj@pshj.ru</new_email>
+  <new_externaluserid>pshj@pshj.ru</new_externaluserid>
+  <new_utm_content></new_utm_content>
+  <new_utm_medium></new_utm_medium>
+  <new_utm_source></new_utm_source>
+  <new_utm_campaign></new_utm_campaign>
+  <new_activitytext>
+    <new_anketa>
+      <new_anketatemplateid>{9251FBA5-8BE5-EC11-80FD-005056820C08}</new_anketatemplateid>
+      <new_questions>
+        <new_question>
+          <new_questionforanketaid>{07A02DBC-8CE5-EC11-80FD-005056820C08}</new_questionforanketaid>
+          <new_answers>
+            <new_answer>
+              <new_answerschemaid></new_answerschemaid>
+              <new_memovalue>https://softline.ru/events</new_memovalue>
+            </new_answer>
+            <new_answer>
+              <new_answerschemaid></new_answerschemaid>
+              <new_datetime>2023-04-28T13:49:08</new_datetime>
+            </new_answer>
+          </new_answers>
+        </new_question>
+      </new_questions>
+    </new_anketa>
+  </new_activitytext>
+
+</new_externalactivity>
+
+
