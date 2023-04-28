@@ -747,8 +747,8 @@ button.link-red {
             left: 0;
             width: 100%;
             height: 5rem;
-            background: -webkit-linear-gradient(0deg, #FFFFFF, transparent);
-                  background: linear-gradient(0deg,#FFFFFF, transparent);
+            background: -webkit-linear-gradient(0deg, #FFFFFF 50%, transparent);
+                  background: linear-gradient(0deg,#FFFFFF 50%, transparent);
         }
     }
 

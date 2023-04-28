@@ -880,7 +880,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (width <= 1024 && !init && slider) {
       swiper = new Swiper(".partners__mobSlider", {
         loop: false,
-        slidesPerView: 'auto',
+        slidesPerView: 2.1,
         spaceBetween: 40,
         freeMode: true,
         autoHeight: false,
