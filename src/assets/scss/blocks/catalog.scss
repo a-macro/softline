@@ -523,6 +523,7 @@
     }
 }
 
+
 .catalog-content {
     width: calc(100% - 43rem);
     padding-top: 6rem;
@@ -540,6 +541,32 @@
         width: 100%;
         padding-left: 2rem;
         padding-right: 2rem;
+        border-left: unset;
+    }
+    @include breakpoint($sm-bp) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        padding-top: 0;
+    }
+}
+
+.stories-catalog-content {
+    width: calc(100% - 43rem);
+    padding-top: 6rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    border-left: 1px solid #D2DCE5;
+    @include breakpoint($xxl-bp) {
+        padding-top: 5rem;
+        width: calc(100% - 52rem);
+    }
+    @include breakpoint($xl-bp) {
+        width: calc(100% - 39rem);
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    @include breakpoint($mid-bp) {
+        width: 100%;
         border-left: unset;
     }
     @include breakpoint($sm-bp) {
