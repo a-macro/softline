@@ -250,10 +250,9 @@ input {
   z-index: -2;
 }
 .bx-filter-parameters-box-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  flex-wrap: wrap;
-
 }
 .btn.btn-link {
   font-family: "Manrope", sans-serif;
