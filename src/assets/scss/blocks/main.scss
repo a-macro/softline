@@ -7,8 +7,9 @@
 .insights-main-bg {
     // min-height: 700px;
     // max-height: 700px;
-    min-height: 70rem;
+    min-height: 500px;
     // height: calc(100vh - var(--headerH) - 80px);
+    max-height: 700px;
 
     @include breakpoint($mid-bp) {
         height: auto;
@@ -327,6 +328,7 @@ button.link-red {
     margin-left: -2rem;
     margin-top: 2.4rem;
     position: relative;
+    padding-bottom: 0.1rem;
     @include breakpoint($sm-bp) {
         margin-top: 3.4rem;
     }
@@ -335,6 +337,7 @@ button.link-red {
         width: calc(100% - 4rem);
         margin-left: 2rem;
         overflow: hidden;
+        padding-bottom: 0.1rem;
         @include breakpoint($mid-bp) {
             margin-left: 0;
             width: 100%;
@@ -712,7 +715,7 @@ button.link-red {
     .swiper-slide {
         padding: 4rem;
         background: white;
-        height: 36rem;
+        min-height: 36rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -721,7 +724,7 @@ button.link-red {
         }
         @include breakpoint($sm-bp) {
             width: 38.5rem;
-            height: 38.5rem;
+            min-height: 38.5rem;
             padding: 3rem;
         }
 

@@ -1448,10 +1448,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (header) {
-        new ResizeObserver(function () {
-            let headerH = header.getBoundingClientRect().height;
-            document.documentElement.style.setProperty('--headerH', headerH + "px");
-        }).observe(header);
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(function () {
+                let headerH = header.getBoundingClientRect().height;
+                document.documentElement.style.setProperty('--headerH', headerH + "px");
+            }).observe(header);
+        }
+
     }
 
 
