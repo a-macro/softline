@@ -48,15 +48,7 @@
     }
 
     img {
-        height: 2.4rem;
-
-        @include breakpoint($xl-bp) {
-            height: 2rem;
-        }
-
-        @include breakpoint($sm-bp) {
-            height: 3rem;
-        }
+        height: 5rem;
     }
 
     .stories__el_top {
