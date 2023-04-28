@@ -4907,8 +4907,10 @@
     }
   }
 
-  // ol+p,
-  // ul+p,
+  ol+p,
+  ul+p {
+    margin-top: 2.4rem;
+  }
   // p+p,
   // p+ul,
   // p+ol {
@@ -4984,6 +4986,9 @@
 
     @include breakpoint($mid-bp) {
       margin-top: 1.1rem;
+    }
+    @include breakpoint($sm-bp) {
+      font-weight: 400;
     }
 
     &::before {
