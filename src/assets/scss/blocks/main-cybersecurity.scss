@@ -309,8 +309,10 @@
 
     .section-top {
         margin-top: 0;
+        gap: 1rem;
         @include breakpoint($mid-bp) {
             max-width: 53rem;
+            flex-wrap: wrap;
         }
     }
 
