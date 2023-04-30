@@ -19245,6 +19245,7 @@ button.header__link:hover {
 .intro__pages,
 .insights-main-bg {
     min-height: 500px;
+    height: calc(100vh - var(--headerH) - 80px);
     max-height: 700px;
 }
 
