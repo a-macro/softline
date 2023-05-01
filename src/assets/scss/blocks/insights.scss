@@ -93,6 +93,43 @@
   .insights-subtitle+.insights-title {
     padding-top: 0.8rem;
   }
+
+  h1 {
+    font-size: 6.4rem;
+    font-weight: 400;
+    line-height: 1.19;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: white;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  
+    @include breakpoint($mid-bp) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+    @include breakpoint($xl-bp) {
+      font-size: 6rem;
+    }
+  
+    @include breakpoint($mid-bp) {
+      font-size: 5.5rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      // font-size: 4.35rem;
+      font-size: 3.4rem;
+      line-height: 1.2;
+      // br {
+      //   display: none
+      // }
+    }
+  }
 }
 
 .insights-subtitle {
@@ -183,10 +220,10 @@
     @include breakpoint($mid-bp) {
       overflow: scroll;
 
-      &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
+      // &::-webkit-scrollbar {
+      //   width: 0;
+      //   height: 0;
+      // }
 
       /* Track */
       &::-webkit-scrollbar-track {
@@ -3941,9 +3978,9 @@
     }
 
     @include breakpoint($mid-bp) {
-      &::-webkit-scrollbar {
-        width: 0;
-      }
+      // &::-webkit-scrollbar {
+      //   width: 0;
+      // }
 
       &::after {
         content: '';

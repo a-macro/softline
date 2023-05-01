@@ -561,6 +561,17 @@ button.link-red {
     background-size: cover;
     background-position: center;
     background-image: url("../images/main/Image-solve.jpg");
+    margin-top: 15rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+        
+        margin-top: 10.2rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5.5rem;
+    }
     @include breakpoint($xxl-bp) {
         height: 71.5rem;
     }
@@ -848,14 +859,14 @@ button.link-red {
 }
 
 .partners__mobSlider {
-    border-top: 1px solid $grey;
+    // border-top: 1px solid $grey;
 }
 
 .partners {
     display: flex;
     flex-wrap: wrap;
     margin-top: 2.5rem;
-    // border-top: 1px solid $grey;
+    border-top: 1px solid $grey;
     padding: 0 4.5rem 0 9rem;
     width: 100%;
     box-sizing: border-box;
