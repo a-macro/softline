@@ -45,9 +45,9 @@
         overflow: auto;
         transform: translateX(100%);
         padding: 0;
-        &::-webkit-scrollbar {
-            width: 0;
-        }
+        // &::-webkit-scrollbar {
+        //     width: 0;
+        // }
     }
     @include breakpoint($sm-bp) {
         grid-template-columns: repeat(1, 1fr);
