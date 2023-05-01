@@ -18752,12 +18752,12 @@ body::before {
 
 .__select__content {
     position: absolute;
-    top: calc(100% + 1px);
+    top: 3.5rem;
     left: 0;
     display: flex;
     flex-direction: column;
     background: white;
-    width: 100%;
+    width: auto;
     transition: all 0.3s ease-out;
     opacity: 0;
     z-index: 8;
@@ -18766,6 +18766,12 @@ body::before {
     scrollbar-width: thin;
     scrollbar-color: rgb(239, 239, 239) white;
     max-height: 12rem;
+}
+
+@media (max-width: 1515px) {
+    .__select__content {
+        top: 3.7rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -18821,11 +18827,21 @@ body::before {
     align-items: center;
     width: 100%;
     line-height: 1;
-    font-size: 1.5rem;
-    padding: 1rem 2.2rem;
+    padding: 1rem 1.8rem;
     transition: all 0.2s ease-out;
     cursor: pointer;
     color: #212424;
+    line-height: 1.3;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0em;
+    white-space: nowrap;
+}
+
+@media (max-width: 1920px) {
+    .__select__label {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 1515px) {
@@ -18975,9 +18991,9 @@ body::before {
 .header__dropdown {
     position: absolute;
     top: 4.8rem;
-    left: 2rem;
+    left: 1.3rem;
     background-color: #FFFFFF;
-    padding: 1rem 2.2rem;
+    padding: 1rem 1.8rem;
     width: max-content;
     z-index: 3;
     display: flex;
@@ -18985,6 +19001,14 @@ body::before {
     gap: 1rem;
     opacity: 0;
     pointer-events: none;
+}
+
+@media (max-width: 1515px) {
+    .header__dropdown {
+        padding: 1rem 1.2rem;
+        top: 5.1rem;
+        left: 1.7rem;
+    }
 }
 
 .header__nav_link {
