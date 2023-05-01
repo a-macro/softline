@@ -757,6 +757,7 @@
     }
     @include breakpoint($mid-bp) {
         left: -1px;
+        top: calc(100% + 1px);
     }
 
     &::-webkit-scrollbar {

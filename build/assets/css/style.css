@@ -18777,6 +18777,7 @@ body::before {
 @media (max-width: 1024px) {
     .__select__content {
         left: -1px;
+        top: calc(100% + 1px);
     }
 }
 
