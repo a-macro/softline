@@ -20681,6 +20681,10 @@ button.link-red:hover span {
 .news-slide.first-slide img {
     z-index: 1;
     height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
 }
 
 .news-slide.first-slide .news-slide__text-wrapper {
@@ -20870,6 +20874,10 @@ button.link-red:hover span {
         padding-top: 5.5rem;
         padding-left: 2.5rem;
     }
+}
+
+.pb15 + .wrapper > .section-top {
+    margin-top: 0;
 }
 
 .informationTechnology h2 {

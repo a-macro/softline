@@ -1073,6 +1073,10 @@ button.link-red {
     img {
         z-index: 1;
         height: 100%;
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
     }
 
     .news-slide__text-wrapper {
@@ -1209,4 +1213,8 @@ button.link-red {
             padding-left: 2.5rem;
         }
     }
+}
+
+.pb15 + .wrapper > .section-top {
+    margin-top: 0;
 }
