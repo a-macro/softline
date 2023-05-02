@@ -16843,6 +16843,31 @@ textarea {
     background-position: left top 1.6rem;
 }
 
+.story-block li,
+.crm-block li {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  
+  
+    color: #212424;
+}
+
+.story-block li a,
+.crm-block li a {
+    color: #A50F2D;
+}
+
+@media (max-width: 480px) {
+    .story-block li,
+  .crm-block li {
+        font-size: 2.1rem;
+        line-height: 3.15rem;
+    }
+}
+
 .story-block li h2,
 .story-block li h3,
 .story-block li h4,
