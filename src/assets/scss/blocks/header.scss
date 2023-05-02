@@ -1200,6 +1200,9 @@
 
 .overflow-hidden {
     overflow: hidden;
+    .hide-header {
+        transform: unset;
+    }
 }
 
 button.header__link {

@@ -19283,6 +19283,10 @@ body::before {
     overflow: hidden;
 }
 
+.overflow-hidden .hide-header {
+    transform: unset;
+}
+
 button.header__link {
     border: 0;
     background-color: transparent;
