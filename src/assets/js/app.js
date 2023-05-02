@@ -32,16 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty('--headerH', headerH + "px");
     }
 
-
+    const stickyBlocks = document.querySelectorAll('.sticky')
     let prevScroll = 0;
     window.onscroll = (e) => {
         let delta = pageYOffset - prevScroll;
         if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
             header.classList.add("hide-header");
             header.classList.add("start");
+            if (stickyBlocks.length) {
+                stickyBlocks.forEach(el => {
+                    el.style.setProperty('--headerH', '0px');
+                })
+            }
         } else if (header && pageYOffset > 80 && window.innerWidth > 1024) {
             header.classList.remove("hide-header");
             header.classList.add("start");
+            if (stickyBlocks.length) {
+                let headerH = header.getBoundingClientRect().height;
+                stickyBlocks.forEach(el => {
+                    if (headerH) { 
+                        el.style.setProperty('--headerH', headerH + "px");
+                    }
+                })
+            }
         } else if (header && pageYOffset < 20 && window.innerWidth > 1024) {
             header.classList.remove("start");
         }

@@ -39,15 +39,29 @@ document.addEventListener("DOMContentLoaded", function () {
     var headerH = header.getBoundingClientRect().height;
     document.documentElement.style.setProperty('--headerH', headerH + "px");
   }
+  var stickyBlocks = document.querySelectorAll('.sticky');
   var prevScroll = 0;
   window.onscroll = function (e) {
     var delta = pageYOffset - prevScroll;
     if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
       header.classList.add("hide-header");
       header.classList.add("start");
+      if (stickyBlocks.length) {
+        stickyBlocks.forEach(function (el) {
+          el.style.setProperty('--headerH', '0px');
+        });
+      }
     } else if (header && pageYOffset > 80 && window.innerWidth > 1024) {
       header.classList.remove("hide-header");
       header.classList.add("start");
+      if (stickyBlocks.length) {
+        var _headerH = header.getBoundingClientRect().height;
+        stickyBlocks.forEach(function (el) {
+          if (_headerH) {
+            el.style.setProperty('--headerH', _headerH + "px");
+          }
+        });
+      }
     } else if (header && pageYOffset < 20 && window.innerWidth > 1024) {
       header.classList.remove("start");
     }
@@ -1331,8 +1345,8 @@ document.addEventListener("DOMContentLoaded", function () {
     initSliderSuggestion();
     initSliderStoryRange();
     if (header) {
-      var _headerH = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--headerH', _headerH + "px");
+      var _headerH2 = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', _headerH2 + "px");
     }
   });
   if (header) {
@@ -1750,8 +1764,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   document.addEventListener('resize', function () {
     if (header) {
-      var _headerH2 = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--headerH', _headerH2 + "px");
+      var _headerH3 = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', _headerH3 + "px");
     }
   });
   if (accordions.length && navBar.length) {
