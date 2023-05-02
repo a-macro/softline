@@ -11431,43 +11431,6 @@ textarea {
 }
 
 .insights-main-bg h1 {
-    padding-top: 13.8rem;
-    padding-bottom: 13.8rem;
-}
-
-@media (max-width: 1920px) {
-    .insights-main-bg h1 {
-        padding-bottom: 8rem;
-    }
-}
-
-@media (max-width: 1515px) {
-    .insights-main-bg h1 {
-        padding-bottom: 4rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .insights-main-bg h1 {
-        padding-bottom: 5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .insights-main-bg h1 {
-        padding-bottom: 4rem;
-    }
-}
-
-.insights-main-bg .insights-subtitle {
-    padding-top: 13.8rem;
-}
-
-.insights-main-bg .insights-subtitle + .insights-title {
-    padding-top: 0.8rem;
-}
-
-.insights-main-bg h1 {
     font-size: 6.4rem;
     font-weight: 400;
     line-height: 1.19;
@@ -11509,6 +11472,49 @@ textarea {
         font-size: 3.4rem;
         line-height: 1.2;
     }
+}
+
+.insights-main-bg h1 {
+    padding-top: 13.8rem;
+    padding-bottom: 13.8rem;
+}
+
+@media (max-width: 1920px) {
+    .insights-main-bg h1 {
+        padding-bottom: 8rem;
+    }
+}
+
+@media (max-width: 1515px) {
+    .insights-main-bg h1 {
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .insights-main-bg h1 {
+        padding-bottom: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .insights-main-bg h1 {
+        padding-bottom: 4rem;
+    }
+}
+
+.insights-main-bg .insights-subtitle {
+    padding-top: 13.8rem;
+}
+
+.insights-main-bg .insights-subtitle + h1,
+.insights-main-bg .insights-subtitle + .insights-title {
+    padding-top: 0.8rem;
+}
+
+.insights-main-bg .wrapper .insights-title {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .insights-subtitle {
@@ -15978,6 +15984,12 @@ textarea {
     margin-bottom: 2.4rem;
 }
 
+.story-block .text-wrapper,
+.crm-block .text-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .story-block h2, .story-block h3,
 .crm-block h2,
 .crm-block h3 {
@@ -20249,7 +20261,7 @@ button.link-red:hover span {
 }
 
 .solve__slider .swiper-slide img {
-    height: 2.5rem;
+    height: 5rem;
 }
 
 .solve__slider .swiper-slide .subtitle {

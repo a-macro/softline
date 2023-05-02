@@ -66,35 +66,6 @@
   }
 
   h1 {
-    padding-top: 13.8rem;
-    padding-bottom: 13.8rem;
-
-    @include breakpoint($xxl-bp) {
-      padding-bottom: 8rem;
-    }
-
-    @include breakpoint($xl-bp) {
-      padding-bottom: 4rem;
-    }
-
-    @include breakpoint($mid-bp) {
-      padding-bottom: 5rem;
-    }
-
-    @include breakpoint($sm-bp) {
-      padding-bottom: 4rem;
-    }
-  }
-
-  .insights-subtitle {
-    padding-top: 13.8rem;
-  }
-
-  .insights-subtitle+.insights-title {
-    padding-top: 0.8rem;
-  }
-
-  h1 {
     font-size: 6.4rem;
     font-weight: 400;
     line-height: 1.19;
@@ -129,6 +100,40 @@
       //   display: none
       // }
     }
+  }
+
+  h1 {
+    padding-top: 13.8rem;
+    padding-bottom: 13.8rem;
+
+    @include breakpoint($xxl-bp) {
+      padding-bottom: 8rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      padding-bottom: 4rem;
+    }
+
+    @include breakpoint($mid-bp) {
+      padding-bottom: 5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      padding-bottom: 4rem;
+    }
+  }
+
+  .insights-subtitle {
+    padding-top: 13.8rem;
+  }
+
+  .insights-subtitle+h1,
+  .insights-subtitle+.insights-title {
+    padding-top: 0.8rem;
+  }
+  .wrapper .insights-title {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -4434,7 +4439,10 @@
   p {
     margin-bottom: 2.4rem;
   }
-
+  .text-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
   h2,h3 {
     &:first-child {
       margin-top: 0;
