@@ -452,8 +452,10 @@
     }
 
     .partner {
-        margin-right: 21.5rem;
-        width: calc((100% - 133rem) / 7);
+        // margin-right: 21.5rem;
+        margin-right: 13.5rem;
+        // width: calc((100% - 133rem) / 7);
+        width: calc((100% - 81rem) / 7);
         @include breakpoint($xxl-bp) {
             width: calc((100% - 81rem) / 7);
             margin-right: 13.5rem;
