@@ -398,7 +398,7 @@
 .filter__wrapper {
     margin-top: 4.6rem;
     @include breakpoint($mid-bp) {
-        width: 80%;
+        width: calc(50% - 2rem);
         margin-top: 0;
         margin-bottom: 2.6rem;
         padding-right: 2rem;

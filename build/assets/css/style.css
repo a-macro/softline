@@ -10531,7 +10531,7 @@ textarea {
 
 @media (max-width: 1024px) {
     .filter__wrapper {
-        width: 80%;
+        width: calc(50% - 2rem);
         margin-top: 0;
         margin-bottom: 2.6rem;
         padding-right: 2rem;
