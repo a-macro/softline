@@ -11418,7 +11418,7 @@ textarea {
     font-weight: 500;
     line-height: 2rem;
     color: #FFFFFF;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .insights-main-bg .breadcrumbs .breadcrumbs__item::after {
@@ -11439,6 +11439,7 @@ textarea {
     color: white;
     padding-left: 4rem;
     padding-right: 4rem;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 @media (max-width: 1024px) {
@@ -11505,6 +11506,7 @@ textarea {
 
 .insights-main-bg .insights-subtitle {
     padding-top: 13.8rem;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 .insights-main-bg .insights-subtitle + h1,
@@ -16932,7 +16934,7 @@ textarea {
 }
 
 .breadcrumbs__link {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.42;
     letter-spacing: 0em;

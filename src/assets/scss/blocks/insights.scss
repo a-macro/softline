@@ -50,7 +50,7 @@
 
       color: #FFFFFF;
 
-      opacity: 0.7;
+      opacity: 0.9;
     }
 
     .breadcrumbs__item {
@@ -74,7 +74,7 @@
     color: white;
     padding-left: 4rem;
     padding-right: 4rem;
-  
+    text-shadow: 1px 1px 3px #000000;
     @include breakpoint($mid-bp) {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -125,6 +125,7 @@
 
   .insights-subtitle {
     padding-top: 13.8rem;
+    text-shadow: 1px 1px 3px #000000;
   }
 
   .insights-subtitle+h1,
