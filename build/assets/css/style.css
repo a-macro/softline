@@ -11594,6 +11594,18 @@ textarea {
     justify-content: space-between;
 }
 
+.insights-navigation .insights-navigation.wrapper-left {
+    border-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 1024px) {
+    .insights-navigation .insights-navigation.wrapper-left {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 1515px) {
     .insights-navigation {
         position: relative;
