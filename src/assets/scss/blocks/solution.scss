@@ -909,5 +909,11 @@
 
   .services .service:hover {
     background-color: #40454E;
+    .service__text--gradient {
+      &::before {
+          content: '';
+          opacity: 0;
+      }
+  }
   }
 }

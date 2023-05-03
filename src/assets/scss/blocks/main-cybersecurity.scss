@@ -205,6 +205,11 @@
         }
         &:hover {
           background-color: #dedfe1;
+          .service__text--gradient {
+            &::before {
+                opacity: 0;
+            }
+        }
           .service__inner {
             border-color: transparent;
           }
@@ -493,8 +498,19 @@
         .service-text {
             color: white;
         }
+        .service__text--gradient {
+            &::before {
+                content: unset;
+            }
+        }
         .services .service:hover {
             background-color: #40454E;
+            .service__text--gradient {
+                &::before {
+                    content: '';
+                    opacity: 0;
+                }
+            }
         }
         .services .service:hover {
             .service__inner {
