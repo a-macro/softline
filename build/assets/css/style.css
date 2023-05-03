@@ -7803,6 +7803,10 @@ textarea {
     background-color: #dedfe1;
 }
 
+.services .service:hover .service__text--gradient::before {
+    opacity: 0;
+}
+
 .services .service:hover .service__inner {
     border-color: transparent;
 }
@@ -8183,8 +8187,17 @@ textarea {
     color: white;
 }
 
+.cybersecurity.dark .service__text--gradient::before {
+    content: unset;
+}
+
 .cybersecurity.dark .services .service:hover {
     background-color: #40454E;
+}
+
+.cybersecurity.dark .services .service:hover .service__text--gradient::before {
+    content: "";
+    opacity: 0;
 }
 
 .cybersecurity.dark .services .service:hover .service__inner {
@@ -11176,9 +11189,11 @@ textarea {
     height: 2rem;
     background: -webkit-linear-gradient(0deg, #EFF1F6 5%, transparent);
     background: linear-gradient(0deg, #EFF1F6 5%, transparent);
+    transition: 0.2s;
     position: absolute;
     bottom: 0;
     left: 0;
+    opacity: 1;
 }
 
 .catalog__services .service::after {
@@ -20101,9 +20116,11 @@ button.link-red:hover span {
     height: 2rem;
     background: -webkit-linear-gradient(0deg, #EFF1F6 5%, transparent);
     background: linear-gradient(0deg, #EFF1F6 5%, transparent);
+    transition: 0.2s;
     position: absolute;
     bottom: 0;
     left: 0;
+    opacity: 1;
 }
 
 .help__slider {
@@ -23731,6 +23748,10 @@ textarea {
 }
 .dark .services .service:hover {
   background-color: #40454E;
+}
+.dark .services .service:hover .service__text--gradient::before {
+  content: "";
+  opacity: 0;
 }
 
 .alloffices__top-wrapper {
