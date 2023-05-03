@@ -2572,4 +2572,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+  var serviceText = document.querySelectorAll('.catalog__services .service__text');
+  if (serviceText.length) {
+    serviceText.forEach(function (el) {
+      if (el.scrollHeight > el.offsetHeight) {
+        el.classList.add('service__text--gradient');
+      }
+    });
+  }
 });

@@ -1055,6 +1055,7 @@ button.link-red {
 .news-slide.first-slide {
     width: 78rem;
     display: grid;
+    position: relative;
     @include breakpoint($xxl-bp) {
         width: 90rem;
     }
@@ -1067,6 +1068,17 @@ button.link-red {
     @include breakpoint($sm-bp) {
         width: 39rem;
     }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        z-index: 2;
+      }
 
     img,
     .news-slide__text-wrapper {
