@@ -2515,9 +2515,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 10);
 
             render().then((req) => {
+                if (!req.responce) {
+                    return;
+                }
                 data = req.response.features;
                 //data = req.response.record.features;
-                console.log(data);
 
                 for (let j = 0; j < data.length; j++) {
                     pointsData[j] = data[j].coordinates;
@@ -2804,13 +2806,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     
-    const serviceText = document.querySelectorAll('.catalog__services .service__text');
+    const serviceText = document.querySelectorAll('.service .service__text');
     if (serviceText.length) {
-        serviceText.forEach(el => {
-            if (el.scrollHeight > el.offsetHeight) {
-                el.classList.add('service__text--gradient');
-            }
+        window.addEventListener('load', () => {
+            serviceText.forEach(el => {
+
+                if (el.scrollHeight > el.offsetHeight) {
+                    el.classList.add('service__text--gradient');
+                }
+            })
         })
+
     }
 });
 

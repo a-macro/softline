@@ -2307,9 +2307,12 @@ document.addEventListener("DOMContentLoaded", function () {
         pannel.style.display = "block";
       }, 10);
       render().then(function (req) {
+        if (!req.responce) {
+          return;
+        }
         data = req.response.features;
         //data = req.response.record.features;
-        console.log(data);
+
         for (var j = 0; j < data.length; j++) {
           pointsData[j] = data[j].coordinates;
           baloonsInfo[j] = [data[j].balloonContentHeader];
@@ -2572,12 +2575,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-  var serviceText = document.querySelectorAll('.catalog__services .service__text');
+  var serviceText = document.querySelectorAll('.service .service__text');
   if (serviceText.length) {
-    serviceText.forEach(function (el) {
-      if (el.scrollHeight > el.offsetHeight) {
-        el.classList.add('service__text--gradient');
-      }
+    window.addEventListener('load', function () {
+      serviceText.forEach(function (el) {
+        if (el.scrollHeight > el.offsetHeight) {
+          el.classList.add('service__text--gradient');
+        }
+      });
     });
   }
 });

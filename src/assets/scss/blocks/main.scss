@@ -472,11 +472,28 @@ button.link-red {
     letter-spacing: 0em;
     text-align: left;
     color: #697279;
+    max-height: 10rem;
+    overflow: hidden;
+    position: relative;
     @include breakpoint($xxl-bp) {
         font-size: 1.6rem;
     }
     @include breakpoint($sm-bp) {
         font-size: 1.94rem;
+    }
+}
+
+.service__text--gradient {
+    &::before {
+        content: '';
+        width: 100%;
+        height: 2rem;
+        background: -webkit-linear-gradient(0deg, #EFF1F6 5%, transparent);
+        background: linear-gradient(0deg,#EFF1F6 5%, transparent); 
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }
 
