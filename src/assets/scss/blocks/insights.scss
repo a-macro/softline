@@ -209,7 +209,14 @@
   border-bottom: 1px solid #D2DCE5;
   display: flex;
   justify-content: space-between;
-
+  .insights-navigation.wrapper-left {
+    border-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    @include breakpoint($mid-bp) {
+      grid-template-columns: 1fr;
+    }
+  }
   @include breakpoint($xl-bp) {
     position: relative;
   }
