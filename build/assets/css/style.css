@@ -26688,6 +26688,11 @@ input {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+@media (max-width: 480px) {
+  .bx-filter-parameters-box-container {
+    padding-left: 3.4rem;
+  }
+}
 
 .btn.btn-link {
   font-family: "Manrope", sans-serif;
