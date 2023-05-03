@@ -1147,6 +1147,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
     var margin = +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
+    console.log(margin);
     var commonH = 0;
     for (var _i5 = 0; _i5 < +num; _i5++) {
       var h = +elems[_i5].getBoundingClientRect().height + margin;
@@ -2534,4 +2535,41 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
   }
+  var partnersButtons = document.querySelectorAll('[data-showText]');
+  if (partnersButtons.length) {
+    partnersButtons.forEach(function (el) {
+      var text = el.parentElement.querySelector('.top-partner_text');
+      if (text.scrollHeight <= text.offsetHeight) {
+        el.hidden = true;
+        text.classList.remove('top-partner_text--gradient');
+      } else {
+        text.classList.add('top-partner_text--gradient');
+      }
+      el.addEventListener('click', function () {
+        if (text) {
+          if (!text.style.maxHeight) {
+            text.style.maxHeight = text.scrollHeight + 'px';
+            text.classList.add('top-partner_text--gradient-transparent');
+            this.innerHTML = this.dataset.hidetext;
+          } else {
+            text.classList.remove('top-partner_text--gradient-transparent');
+            text.style.maxHeight = null;
+            this.innerHTML = this.dataset.showtext;
+          }
+        }
+      });
+    });
+  }
+  window.addEventListener('resize', function () {
+    if (partnersButtons.length) {
+      partnersButtons.forEach(function (el) {
+        var text = el.parentElement.querySelector('.top-partner_text');
+        if (text) {
+          if (text.style.maxHeight) {
+            text.style.maxHeight = text.scrollHeight + 'px';
+          }
+        }
+      });
+    }
+  });
 });
