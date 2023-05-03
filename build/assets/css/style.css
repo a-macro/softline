@@ -4076,7 +4076,7 @@ textarea {
 
 .top-partner_button {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.78;
     padding: 0;
     border: 0;
@@ -11453,6 +11453,16 @@ textarea {
     justify-content: space-between;
 }
 
+.insights-main-bg::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .insights-main-bg img {
     width: 100%;
     height: 100%;
@@ -11496,6 +11506,7 @@ textarea {
     padding-left: 4rem;
     padding-right: 4rem;
     text-shadow: 1px 1px 3px #000000;
+    position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -11563,6 +11574,7 @@ textarea {
 .insights-main-bg .insights-subtitle {
     padding-top: 13.8rem;
     text-shadow: 1px 1px 3px #000000;
+    position: relative;
 }
 
 .insights-main-bg .insights-subtitle + h1,
@@ -16480,25 +16492,7 @@ textarea {
 .crm-block ol,
 .crm-block ul,
 .crm-block ul.icons {
-    margin-bottom: 10rem;
-}
-
-@media (max-width: 1515px) {
-    .story-block ol, .story-block ul, .story-block ul.icons,
-  .crm-block ol,
-  .crm-block ul,
-  .crm-block ul.icons {
-        margin-bottom: 8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .story-block ol, .story-block ul, .story-block ul.icons,
-  .crm-block ol,
-  .crm-block ul,
-  .crm-block ul.icons {
-        margin-bottom: 5.5rem;
-    }
+    margin-bottom: 5rem;
 }
 
 .story-block .press-contacts,
@@ -18326,7 +18320,7 @@ body::before {
 
 .header__nav {
     display: flex;
-    gap: 1rem;
+    column-gap: 1rem;
 }
 
 @media (max-width: 1920px) {
@@ -22785,6 +22779,24 @@ textarea {
   border-color: #40454E;
 }
 
+.solution > .sticky-wrapper__block {
+  margin-top: 10rem;
+}
+@media (max-width: 1920px) {
+  .solution > .sticky-wrapper__block {
+    margin-top: 8rem;
+  }
+}
+@media (max-width: 1024px) {
+  .solution > .sticky-wrapper__block {
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 480px) {
+  .solution > .sticky-wrapper__block {
+    margin-top: 3rem;
+  }
+}
 .solution .solution__services.dark {
   padding-bottom: 5rem;
   padding-top: 5rem;

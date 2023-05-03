@@ -11,7 +11,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
   @include breakpoint($xxl-bp) {}
 
   @include breakpoint($xl-bp) {
@@ -75,6 +83,7 @@
     padding-left: 4rem;
     padding-right: 4rem;
     text-shadow: 1px 1px 3px #000000;
+    position: relative;
     @include breakpoint($mid-bp) {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -126,6 +135,7 @@
   .insights-subtitle {
     padding-top: 13.8rem;
     text-shadow: 1px 1px 3px #000000;
+    position: relative;
   }
 
   .insights-subtitle+h1,
@@ -4807,15 +4817,7 @@
   }
 
   ol,ul,ul.icons {
-    margin-bottom: 10rem;
-
-    @include breakpoint($xl-bp) {
-      margin-bottom: 8rem;
-    }
-  
-    @include breakpoint($sm-bp) {
-      margin-bottom: 5.5rem;
-    }
+      margin-bottom: 5rem;
   }
 
   .press-contacts {
