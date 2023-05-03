@@ -4800,9 +4800,15 @@
     }
 
     thead + tbody {
-      &:first-child {
-        background: #D2DCE5;
-        border-top: 0;
+      tr {
+        &:first-child {
+          background: #D2DCE5;
+          border-top: 0;
+        }
+        &:last-child {
+          background: #D2DCE5;
+          border-top: 0;
+        }
       }
     }
 
@@ -4819,6 +4825,7 @@
       // grid-template-columns:  18rem;
       // grid-auto-flow: column;
       // width: max-content;
+      vertical-align: top;
       p {
         margin-bottom: 0;
       }
@@ -4858,6 +4865,10 @@
           // width: 20rem;
         }
       }
+    }
+    th {
+      font-size: 2.2rem;
+      line-height: 2.4rem;
     }
   }
 

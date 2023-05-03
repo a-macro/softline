@@ -16500,14 +16500,21 @@ textarea {
     }
 }
 
-.story-block table thead + tbody:first-child,
-.crm-block table thead + tbody:first-child {
+.story-block table thead + tbody tr:first-child,
+.crm-block table thead + tbody tr:first-child {
+    background: #D2DCE5;
+    border-top: 0;
+}
+
+.story-block table thead + tbody tr:last-child,
+.crm-block table thead + tbody tr:last-child {
     background: #D2DCE5;
     border-top: 0;
 }
 
 .story-block table tr,
 .crm-block table tr {
+    vertical-align: top;
     border-top: 0.1rem solid #D2DCE5;
 }
 
@@ -16539,6 +16546,12 @@ textarea {
   .crm-block table tr > * {
         padding: 3.2rem 1.5rem;
     }
+}
+
+.story-block table th,
+.crm-block table th {
+    font-size: 2.2rem;
+    line-height: 2.4rem;
 }
 
 .story-block ol, .story-block ul, .story-block ul.icons,
@@ -20065,6 +20078,9 @@ button.link-red:hover span {
     letter-spacing: 0em;
     text-align: left;
     color: #697279;
+    max-height: 10rem;
+    overflow: hidden;
+    position: relative;
 }
 
 @media (max-width: 1920px) {
@@ -20077,6 +20093,17 @@ button.link-red:hover span {
     .service__text {
         font-size: 1.94rem;
     }
+}
+
+.service__text--gradient::before {
+    content: "";
+    width: 100%;
+    height: 2rem;
+    background: -webkit-linear-gradient(0deg, #EFF1F6 5%, transparent);
+    background: linear-gradient(0deg, #EFF1F6 5%, transparent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .help__slider {
