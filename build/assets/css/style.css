@@ -10531,7 +10531,7 @@ textarea {
 
 @media (max-width: 1024px) {
     .filter__wrapper {
-        width: calc(50% - 2rem);
+        width: 80%;
         margin-top: 0;
         margin-bottom: 2.6rem;
         padding-right: 2rem;
@@ -26687,6 +26687,11 @@ input {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+@media (max-width: 480px) {
+  .bx-filter-parameters-box-container {
+    padding-left: 3.4rem;
+  }
 }
 
 .btn.btn-link {
