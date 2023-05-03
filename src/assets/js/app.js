@@ -2803,6 +2803,15 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
     })
+    
+    const serviceText = document.querySelectorAll('.catalog__services .service__text');
+    if (serviceText.length) {
+        serviceText.forEach(el => {
+            if (el.scrollHeight > el.offsetHeight) {
+                el.classList.add('service__text--gradient');
+            }
+        })
+    }
 });
 
 

@@ -796,19 +796,19 @@
     }
 
     .service {
-        width: calc(calc(100% - 20rem) / 6);
+        // width: calc(calc(100% - 20rem) / 6);
         border-right: unset;
-        min-height: 29.8rem;
+        // min-height: 29.8rem;
         margin-right: 4rem;
         margin-left: 0;
         padding-left: 0;
-        padding-top: 3.5rem;
+        // padding-top: 3.5rem;
         padding-bottom: 2.9rem;
         position: relative;
-        @include breakpoint($xxl-bp) {
+        // @include breakpoint($xxl-bp) {
             width: calc(calc(100% - 12rem) / 4);
             padding-top: 2.5rem;
-        }
+        // }
         @include breakpoint($xl-bp) {
             width: calc(calc(100% - 8rem) / 3);
         }
@@ -857,9 +857,26 @@
         .service__text {
             color: #697279;
             font-size: 1.6rem;
+            max-height: 10rem;
+            overflow: hidden;
+            position: relative;
             @include breakpoint($sm-bp) {
                 font-size: 1.92rem;
                 line-height: 1.6;
+            }
+        }
+
+        .service__text--gradient {
+            &::before {
+                content: '';
+                width: 100%;
+                height: 2rem;
+                background: -webkit-linear-gradient(0deg, #EFF1F6 5%, transparent);
+                background: linear-gradient(0deg,#EFF1F6 5%, transparent); 
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
             }
         }
 
@@ -880,10 +897,10 @@
         }
 
         &:nth-child(6n) {
-            margin-right: 0;
-            @include breakpoint($xxl-bp) {
+            // margin-right: 0;
+            // @include breakpoint($xxl-bp) {
                 margin-right: 4rem;
-            }
+            // }
             @include breakpoint($mid-bp) {
                 margin-right: 2rem;
             }
@@ -892,10 +909,10 @@
             }
 
             &::after {
-                content: none;
-                @include breakpoint($xxl-bp) {
+                // content: none;
+                // @include breakpoint($xxl-bp) {
                     content: "";
-                }
+                // }
                 @include breakpoint($sm-bp) {
                     content: none;
                 }
@@ -903,9 +920,9 @@
         }
 
         &:nth-child(4n) {
-            @include breakpoint($xxl-bp) {
+            // @include breakpoint($xxl-bp) {
                 margin-right: 0;
-            }
+            // }
             @include breakpoint($xl-bp) {
                 margin-right: 4rem;
             }
@@ -917,9 +934,9 @@
             }
 
             &::after {
-                @include breakpoint($xxl-bp) {
+                // @include breakpoint($xxl-bp) {
                     content: none;
-                }
+                // }
                 @include breakpoint($xl-bp) {
                     content: "";
                 }
@@ -992,6 +1009,9 @@
         padding-bottom: unset;
         padding-right: 4rem;
         @include breakpoint($xxl-bp) {
+            display: grid;
+            grid-template-columns: 46.5rem 1fr;
+            gap: 1rem;
             width: 100%;
             margin-right: 0;    
             min-height: 8.9rem;   
@@ -1002,6 +1022,7 @@
             height: unset;       
         }
         @include breakpoint($mid-bp) {
+            display: flex;
             flex-direction: column;
             align-items: flex-start;
             min-height: 20rem;

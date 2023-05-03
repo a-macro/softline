@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($color: #000000, $alpha: 0.1);
+    background-color: rgba($color: #000000, $alpha: 0.2);
   }
   @include breakpoint($xxl-bp) {}
 
@@ -1033,7 +1033,7 @@
     transition: all .5s ease;
 
     a {
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       color: #212424;
       text-decoration: none;
       position: relative;
@@ -4457,12 +4457,15 @@
 
   p {
     margin-bottom: 2.4rem;
+    img {
+      width: 100%;
+    }
   }
   .text-wrapper {
     padding-left: 0;
     padding-right: 0;
   }
-  h2,h3,h4 {
+  h2 {
     &:first-child {
       margin-top: 0;
     }
@@ -4478,7 +4481,40 @@
       margin-top: 6rem;
       margin-bottom: 3rem;
     }
+  }
+  h3 {
+    &:first-child {
+      margin-top: 0;
+    }
 
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    @include breakpoint($mid-bp) {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+    }
+  }
+  h4 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin-top: 5rem;
+    margin-bottom: 2.6rem;
+    @include breakpoint($mid-bp) {
+      margin-top: 3.8rem;
+      margin-bottom: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
   }
 
   .story-block {
@@ -4763,6 +4799,13 @@
       margin-top: 3.2rem;
     }
 
+    thead + tbody {
+      &:first-child {
+        background: #D2DCE5;
+        border-top: 0;
+      }
+    }
+
     tbody {
       // width: 100%;
       // display: flex; 
@@ -4776,6 +4819,9 @@
       // grid-template-columns:  18rem;
       // grid-auto-flow: column;
       // width: max-content;
+      p {
+        margin-bottom: 0;
+      }
       border-top: 0.1rem solid #D2DCE5;
 
       @include breakpoint($mid-bp) {
@@ -4800,8 +4846,7 @@
         // white-space: pre-wrap;
         // word-wrap: break-word;
         text-align: start;
-        width: 18rem;
-        white-space: nowrap;
+        // width: 18rem;
 
         // display: block;
         &:first-child {
@@ -4810,7 +4855,7 @@
 
         @include breakpoint($mid-bp) {
           padding: 3.2rem 1.5rem;
-          width: 20rem;
+          // width: 20rem;
         }
       }
     }
@@ -4840,8 +4885,7 @@
     }
   }
 
-  h2,
-  h3 {
+  h2 {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
@@ -4861,6 +4905,26 @@
     }
   }
 
+  h3 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    /* or 144% */
+
+    letter-spacing: -0.01em;
+
+    /* UI/Black/High */
+
+    color: #212424;
+
+    @include breakpoint($sm-bp) {
+      font-size: 2.4rem;
+      line-height: 4.2rem;
+    }
+  }
+
   h4 {
     font-family: "Manrope";
     font-style: normal;
@@ -4868,6 +4932,11 @@
     font-size: 2.4rem;
     line-height: 3.6rem;
     color: #212424;
+    
+    @include breakpoint($sm-bp) {
+      font-size: 2.2rem;
+      line-height: 2.4rem;
+    }
   }
 
   // .table-wrapper+h2,
@@ -5192,7 +5261,7 @@
       padding-left: 3.5rem;
       background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23A50F2D'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: left top 1.6rem;
+      background-position: left top 1.8rem;
     }
 
   }
