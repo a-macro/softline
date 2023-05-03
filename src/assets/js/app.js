@@ -1236,6 +1236,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         let margin = +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
+        console.log(margin)
         let commonH = 0;
         for (let i = 0; i < +num; i++) {
             let h = +elems[i].getBoundingClientRect().height + margin;
@@ -2762,6 +2763,46 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+
+    const partnersButtons = document.querySelectorAll('[data-showText]');
+
+
+    if (partnersButtons.length) {
+        partnersButtons.forEach(el => {
+            const text = el.parentElement.querySelector('.top-partner_text');
+            if (text.scrollHeight <= text.offsetHeight) {
+                el.hidden = true;
+                text.classList.remove('top-partner_text--gradient')
+            } else {
+                text.classList.add('top-partner_text--gradient')
+            }
+            el.addEventListener('click', function () {
+                if (text) {
+                    if (!text.style.maxHeight) {
+                        text.style.maxHeight = text.scrollHeight + 'px';
+                        text.classList.add('top-partner_text--gradient-transparent');
+                        this.innerHTML = this.dataset.hidetext;
+                    } else {
+                        text.classList.remove('top-partner_text--gradient-transparent');
+                        text.style.maxHeight = null;
+                        this.innerHTML = this.dataset.showtext;
+                    }
+                }
+            })
+        })
+    }
+    window.addEventListener('resize', function () {
+        if (partnersButtons.length) {
+            partnersButtons.forEach(el => {
+                const text = el.parentElement.querySelector('.top-partner_text');
+                if (text) {
+                    if (text.style.maxHeight) {
+                        text.style.maxHeight = text.scrollHeight + 'px';
+                    }
+                }
+            })
+        }
+    })
 });
 
 
