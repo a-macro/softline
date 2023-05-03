@@ -887,7 +887,7 @@ button.link-red {
 //    }
 //    @include breakpoint($sm-bp) {
         // height: calc(33rem + 40px);
-        padding-top: 3.5rem;
+        padding-top: 0;
         flex-wrap: nowrap;
         // flex-direction: column;
     }
@@ -909,6 +909,7 @@ button.link-red {
     // margin-right: 17.5rem;
     // width: calc((100% - 105rem) / 7);
     width: calc((100% - 75.6rem) / 7);
+    height: 10rem;
     margin-top: 8.5rem;
     margin-bottom: 3rem;
     margin-right: 12.6rem;
@@ -923,9 +924,10 @@ button.link-red {
         margin-bottom: 0.8rem;
         margin-right: 6.3rem;
         width: calc((100% - 37.8rem) / 7);
+        height: 7rem;
     }
     @include breakpoint($mid-bp) {
-        margin-top: 0!important;
+        margin-top: 5rem!important;
         width: 22rem;
     //    width: calc((100% - 16.8rem) / 4);
     //    margin-right: 5.6rem;
@@ -933,8 +935,8 @@ button.link-red {
     //    margin-bottom: 0.8rem;
     //}
     //@include breakpoint($sm-bp) {
-        height: 13rem;
-        margin-right: 0!important;
+        height: 7rem;
+        margin-right: 2rem!important;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -957,6 +959,8 @@ button.link-red {
 
     img {
         width: 100%;
+        height: 100%;
+        object-fit: contain;
         @include breakpoint($mid-bp) {
             height: 100%;
             object-fit: contain;

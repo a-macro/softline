@@ -266,7 +266,6 @@
     @include breakpoint($xxl-bp) {
         flex-wrap: wrap;
         column-gap: 4rem;
-        row-gap: 2rem;
         justify-content: flex-end;
     }
     @include breakpoint($xs-bp) {
