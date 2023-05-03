@@ -22779,21 +22779,21 @@ textarea {
   border-color: #40454E;
 }
 
-.solution > .sticky-wrapper__block {
+.solution > .sticky-wrappper__block {
   margin-top: 10rem;
 }
 @media (max-width: 1920px) {
-  .solution > .sticky-wrapper__block {
+  .solution > .sticky-wrappper__block {
     margin-top: 8rem;
   }
 }
 @media (max-width: 1024px) {
-  .solution > .sticky-wrapper__block {
+  .solution > .sticky-wrappper__block {
     margin-top: 5rem;
   }
 }
 @media (max-width: 480px) {
-  .solution > .sticky-wrapper__block {
+  .solution > .sticky-wrappper__block {
     margin-top: 3rem;
   }
 }

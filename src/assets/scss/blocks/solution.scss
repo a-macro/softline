@@ -3,7 +3,7 @@
 // }
 
 .solution {
-  & > .sticky-wrapper__block {
+  & > .sticky-wrappper__block {
     margin-top: 10rem;
 
     @include breakpoint($xxl-bp) {
@@ -17,7 +17,7 @@
     @include breakpoint($sm-bp) {
       margin-top: 3rem;
     }
-  }
+  } 
   // .dark {
   //   .section-top {
   //     padding-bottom: 7.2rem;
