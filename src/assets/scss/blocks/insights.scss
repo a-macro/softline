@@ -4482,6 +4482,7 @@
     margin-bottom: 2.4rem;
     img {
       width: 100%;
+      max-width: 100%;
     }
   }
   .text-wrapper {
@@ -4538,6 +4539,10 @@
       margin-top: 4rem;
       margin-bottom: 2rem;
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 
   .story-block {
