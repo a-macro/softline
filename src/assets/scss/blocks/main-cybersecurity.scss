@@ -500,6 +500,7 @@
         }
         .service__text--gradient {
             &::before {
+                opacity: 0;
                 content: unset;
             }
         }
