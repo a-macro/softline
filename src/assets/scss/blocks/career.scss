@@ -130,6 +130,7 @@
         @include breakpoint($mid-bp) {
             padding-top: 10rem;
             display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
         }
         @include breakpoint($sm-bp) {

@@ -4942,6 +4942,7 @@ textarea {
     .career .informationTechnology__content {
         padding-top: 10rem;
         display: flex;
+        flex-wrap: wrap;
         gap: 2rem;
     }
 }
@@ -7918,7 +7919,6 @@ textarea {
 }
 
 .cybersecurity-nums {
-    background-image: url("../images/main-cybersecurity/image3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 4rem;
@@ -7932,7 +7932,6 @@ textarea {
     .cybersecurity-nums {
         margin-top: 12rem;
         padding-bottom: 6rem;
-        background-image: url("../images/main-cybersecurity/nums-1440.jpg");
     }
 }
 
@@ -8202,6 +8201,10 @@ textarea {
 
 .cybersecurity.dark .services .service:hover .service__inner {
     border-color: transparent;
+}
+
+.cybersecurity.dark .services .service:nth-child(2n+1)::before {
+    background-color: #40454E;
 }
 
 .cybersecurity.dark .services .service {
