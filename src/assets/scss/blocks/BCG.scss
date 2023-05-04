@@ -265,6 +265,7 @@
     }
     @include breakpoint($sm-bp) {
         margin-top: 5rem;
+        flex-direction: column;
     }
 
     .lined-card {
@@ -284,6 +285,7 @@
             padding-bottom: 2rem;
             min-height: unset;
             border-top: 1px solid #40454E;
+            width: 100%;
         }
 
         .BCG__rules_img {

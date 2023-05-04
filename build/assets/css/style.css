@@ -7669,6 +7669,12 @@ textarea {
     border-color: #40454E;
 }
 
+@media (max-width: 480px) {
+    .dark .lined-card:nth-child(1) {
+        border-color: 1px solid #40454E;
+    }
+}
+
 .lined-card {
     border-top: 1px solid #D2DCE5;
     border-bottom: 1px solid #D2DCE5;
@@ -7708,7 +7714,7 @@ textarea {
     }
 
     .lined-card:nth-child(1) {
-        border-top: 1px solid #40454E;
+        border-top: 1px solid #D2DCE5;
     }
 }
 
@@ -25410,6 +25416,7 @@ textarea {
 @media (max-width: 480px) {
   .BCG__rules_list {
     margin-top: 5rem;
+    flex-direction: column;
   }
 }
 .BCG__rules_list .lined-card {
@@ -25433,6 +25440,7 @@ textarea {
     padding-bottom: 2rem;
     min-height: unset;
     border-top: 1px solid #40454E;
+    width: 100%;
   }
 }
 .BCG__rules_list .lined-card .BCG__rules_img {
