@@ -7671,7 +7671,7 @@ textarea {
 
 @media (max-width: 480px) {
     .dark .lined-card:nth-child(1) {
-        border-color: 1px solid #40454E;
+        border-color: #40454E;
     }
 }
 
@@ -11146,6 +11146,7 @@ textarea {
 }
 
 .catalog__services .service:hover {
+    z-index: 1;
     box-shadow: unset;
     border-top: 1px solid #A50F2D;
     border-bottom: 1px solid #A50F2D;
@@ -12538,7 +12539,7 @@ textarea {
 }
 
 .main-pagination .select-numb a {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1.5rem;
     color: #212424;
     text-decoration: none;
     position: relative;

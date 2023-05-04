@@ -830,6 +830,7 @@
         }
 
         &:hover {
+            z-index: 1;
             box-shadow: unset;
             border-top: 1px solid $red;
             border-bottom: 1px solid $red;
