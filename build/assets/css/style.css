@@ -16124,6 +16124,7 @@ textarea {
 .story-block p img,
 .crm-block p img {
     width: 100%;
+    max-width: 100%;
 }
 
 .story-block .text-wrapper,
@@ -16211,6 +16212,11 @@ textarea {
         margin-top: 4rem;
         margin-bottom: 2rem;
     }
+}
+
+.story-block img,
+.crm-block img {
+    max-width: 100%;
 }
 
 .story-block .story-block,
