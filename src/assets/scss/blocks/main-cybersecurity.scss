@@ -299,7 +299,7 @@
 }
 
 .cybersecurity-nums {
-    background-image: url("../images/main-cybersecurity/image3.jpg");
+    
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: 4rem;
@@ -310,7 +310,7 @@
     @include breakpoint($xl-bp) {
         margin-top: 12rem;
         padding-bottom: 6rem;
-        background-image: url("../images/main-cybersecurity/nums-1440.jpg");
+        // background-image: url("../images/main-cybersecurity/nums-1440.jpg");
     }
     @include breakpoint($mid-bp) {
         margin-right: 2rem;
@@ -516,6 +516,9 @@
             .service__inner {
                 border-color: transparent;
             }
+        }
+        .services .service:nth-child(2n+1)::before {
+            background-color: #40454E;
         }
         .services .service {
             border-color: #40454E;
