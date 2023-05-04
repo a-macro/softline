@@ -656,6 +656,15 @@ button.link-red {
 }
 
 .vertical {
+    @include breakpoint($sm-bp) {
+        padding-right: 5rem;
+    }
+    .title {
+        width: 100%;
+        @include breakpoint($sm-bp) {
+            word-break: break-word;
+        }
+    }
     .title-wrapper {
         display: flex;
         flex-direction: column;
