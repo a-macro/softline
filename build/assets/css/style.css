@@ -8187,6 +8187,7 @@ textarea {
 }
 
 .cybersecurity.dark .service__text--gradient::before {
+    opacity: 0;
     content: unset;
 }
 
