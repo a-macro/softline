@@ -102,6 +102,11 @@
 .dark {
     .lined-card {
         border-color: #40454E;
+        @include breakpoint($sm-bp) {
+            &:nth-child(1) {
+                border-color: 1px solid #40454E;
+            }
+        }
     }
 }
 
@@ -130,7 +135,7 @@
     @include breakpoint($sm-bp) {
         border-top: unset;
         &:nth-child(1) {
-            border-top: 1px solid $grey2;
+            border-top: 1px solid #D2DCE5;
         }
     }
 
