@@ -602,10 +602,11 @@
       }
     }
   }
-  .politics-page__container {
-    max-width: 144rem;
-  }
+
   .politics-page {
+    .politics-page__container {
+      max-width: 144rem;
+    }
     
     .breadcrumbs__link {
       color: #212424;
@@ -831,6 +832,7 @@
         padding-top: 4.8rem;
         padding-bottom: 4.8rem;
         transition: all .3s;
+        gap: 2rem;
         @media (hover: hover) {
           &:hover {
             padding-left: 3rem;

@@ -2,93 +2,47 @@
 //   width: 0;
 // }
 
-.solution {
-  & > .sticky-wrappper__block {
-    margin-top: 10rem;
-
-    @include breakpoint($xxl-bp) {
-      margin-top: 8rem;
-    }
-  
-    @include breakpoint($mid-bp) {
-      margin-top: 5rem;
-    }
-  
-    @include breakpoint($sm-bp) {
-      margin-top: 3rem;
-    }
-  } 
-  // .dark {
-  //   .section-top {
-  //     padding-bottom: 7.2rem;
-  //     @include breakpoint($sm-bp) {
-  //       padding-bottom: 5.5rem;
-  //     }
-  //   }
-  // }
-  .solution__services.dark {
-    padding-bottom: 5rem;
-    padding-top: 5rem;
-  }
-  .solution__services {
-    margin-top: 15rem;
-
-    @include breakpoint($xxl-bp) {
-      margin-top: 12rem;
-    }
-
-    @include breakpoint($mid-bp) {
-      margin-top: 10rem;
-    }
-
-    @include breakpoint($sm-bp) {
-      margin-top: 8rem;
-    }
-
-    .solution__services-title {
-      padding-bottom: 5.2rem;
-    }
-
-    .services {
-      margin-top: 0;
-    }
-  }
-
+.solution-accordion {
   .accordion__top-wrapper {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
-  }
-  .accordion.dark {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    .accordion__title {
-      color: #FFFFFF;
-    }
-    li {
-      border-color: #40454E;
-    }
-    li.active {
-      background-color: #282B2B;
-      border-color: #282B2B;
-    }
-    .accordion__list-desc {
-      color: #FFFFFF;
+    flex-wrap: wrap;
+    @include breakpoint($mid-bp) {
+      padding-bottom: 4rem;
     }
   }
+  &.dark {
+    .accordion {
+      .accordion__title {
+        color: #FFFFFF;
+      }
+      li {
+        border-color: #40454E;
+      }
+      li.active {
+        background-color: #282B2B;
+        border-color: #282B2B;
+      }
+      .accordion__list-desc {
+        color: #FFFFFF;
+      }
+    }
+  }
+
   .accordion {
-    margin-top: 15rem;
+    padding-top: 15rem;
 
     @include breakpoint($xxl-bp) {
-      margin-top: 12rem;
+      padding-top: 12rem;
     }
 
     @include breakpoint($mid-bp) {
-      margin-top: 10rem;
+      padding-top: 10rem;
     }
 
     @include breakpoint($sm-bp) {
-      margin-top: 8rem;
+      padding-top: 8rem;
     }
 
     .accordion__title {
@@ -241,7 +195,7 @@
         margin-right: 6rem;
 
         @include breakpoint($mid-bp) {
-          margin: 0;
+          // margin: 0;
           margin-right: 6rem;
         }
 
@@ -266,6 +220,59 @@
       .accordion__list-desc {
         padding-top: 2rem;
       }
+    }
+  }
+}
+
+.solution {
+  & > .sticky-wrappper__block {
+    margin-top: 10rem;
+
+    @include breakpoint($xxl-bp) {
+      margin-top: 8rem;
+    }
+  
+    @include breakpoint($mid-bp) {
+      margin-top: 5rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      margin-top: 3rem;
+    }
+  } 
+  // .dark {
+  //   .section-top {
+  //     padding-bottom: 7.2rem;
+  //     @include breakpoint($sm-bp) {
+  //       padding-bottom: 5.5rem;
+  //     }
+  //   }
+  // }
+  .solution__services.dark {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+  .solution__services {
+    margin-top: 15rem;
+
+    @include breakpoint($xxl-bp) {
+      margin-top: 12rem;
+    }
+
+    @include breakpoint($mid-bp) {
+      margin-top: 10rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      margin-top: 8rem;
+    }
+
+    .solution__services-title {
+      padding-bottom: 5.2rem;
+    }
+
+    .services {
+      margin-top: 0;
     }
   }
 
