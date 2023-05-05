@@ -21075,6 +21075,17 @@ button.link-red:hover span {
     }
 }
 
+@media (max-width: 480px) {
+    .news-slide.first-slide .news-slide__title {
+        display: -webkit-box;
+        max-width: 31rem;
+        overflow-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
 .news-slide__text-wrapper {
     display: flex;
     flex-direction: column;
@@ -21136,6 +21147,12 @@ button.link-red:hover span {
 @media (max-width: 480px) {
     .news-slide__title {
         font-size: 2.55rem;
+        display: -webkit-box;
+        max-width: 39rem;
+        overflow-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 
@@ -21274,6 +21291,24 @@ button.link-red:hover span {
     padding-top: 3.2rem;
     padding-bottom: 3.2rem;
     border-bottom: 0.1rem solid #D2DCE5;
+    overflow: auto;
+}
+
+@media (max-width: 1024px) {
+    .investors-nav::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        -webkit-appearance: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .investors-nav {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+    }
 }
 
 .investors-nav ul {
@@ -21283,9 +21318,85 @@ button.link-red:hover span {
     row-gap: 2rem;
 }
 
+@media (max-width: 1024px) {
+    .investors-nav ul {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .investors-nav ul {
+        column-gap: 2.4rem;
+    }
+}
+
+.investors-nav ul .active, .investors-nav ul .active a {
+    color: #a50f2d;
+}
+
+.investors-nav li:hover {
+    color: #a50f2d;
+}
+
+.investors-nav li:hover a {
+    color: #a50f2d;
+}
+
 .investors-nav a {
     color: #212424;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+@media (max-width: 1024px) {
+    .investors-nav a {
+        white-space: nowrap;
+    }
+}
+
+.investors-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4rem;
+    padding-top: 8rem;
+}
+
+@media (max-width: 1024px) {
+    .investors-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.investors-content .crm-block {
+    grid-column: 7 span;
+}
+
+@media (max-width: 1024px) {
+    .investors-content .crm-block {
+        grid-column: 1 span;
+    }
+}
+
+.wrapper.wrapper--swiper {
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .wrapper.wrapper--swiper {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wrapper.wrapper--swiper .section-top {
+        padding-right: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper.wrapper--swiper .section-top {
+        padding-right: 2.5rem;
+    }
 }
 
 .informationTechnology h2 {
