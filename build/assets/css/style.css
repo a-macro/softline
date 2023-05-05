@@ -1099,6 +1099,22 @@ textarea {
     }
 }
 
+.vacancy__send a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.83;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #697279;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .vacancy__send a {
+        font-size: 1.55rem;
+    }
+}
+
 .vacancy__send span {
     display: block;
     font-size: 1.2rem;
@@ -13569,10 +13585,6 @@ textarea {
         margin-left: 0;
         width: 100%;
     }
-
-    .news-page .news__slider .news__container::before {
-        display: none;
-    }
 }
 
 .news-page .key-operating .key-operating__list-main li {
@@ -20791,9 +20803,10 @@ button.link-red:hover span {
         margin-top: 5rem !important;
         width: 22rem;
         height: 7rem;
-        margin-right: 2rem !important;
+        margin-right: 3.5rem !important;
         margin-top: 0;
         margin-bottom: 0;
+        padding-right: 1rem;
     }
 }
 
@@ -20828,7 +20841,6 @@ button.link-red:hover span {
 @media (max-width: 1024px) {
     .partner img {
         height: 100%;
-        object-fit: contain;
     }
 }
 
@@ -20971,6 +20983,24 @@ button.link-red:hover span {
 @media (max-width: 480px) {
     .news-slide.first-slide {
         width: 39rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-slide.first-slide .news-slide__title {
+        text-shadow: 1px 1px 3px #000000;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-slide.first-slide .news-slide__date {
+        text-shadow: 1px 1px 3px #000000;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-slide.first-slide .news-slide__theme {
+        text-shadow: 1px 1px 3px #000000;
     }
 }
 
@@ -21191,6 +21221,71 @@ button.link-red:hover span {
 
 .pb15 + .wrapper > .section-top {
     margin-top: 0;
+}
+
+.corporate.corporate--investors .section-top__title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  
+  
+    color: #212424;
+}
+
+@media (max-width: 480px) {
+    .corporate.corporate--investors .section-top__title {
+        font-size: 2.6rem;
+    }
+}
+
+.corporate.corporate--investors .corporate__content {
+    border-top: 0.1rem solid #D2DCE5;
+    position: relative;
+    padding-top: 4rem;
+    margin-top: 2.7rem;
+}
+
+@media (max-width: 1024px) {
+    .corporate.corporate--investors .corporate__content {
+        padding-top: 2.5rem;
+    }
+}
+
+.subscribe--investors .subscribe__form {
+    padding-bottom: 0;
+}
+
+@media (max-width: 480px) {
+    .subscribe--investors .subscribe__form .vacancy__bottom {
+        margin-top: 0;
+    }
+}
+
+.investors-nav {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  
+    text-align: center;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+    border-bottom: 0.1rem solid #D2DCE5;
+}
+
+.investors-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+
+.investors-nav a {
+    color: #212424;
+    text-decoration: none;
 }
 
 .informationTechnology h2 {
