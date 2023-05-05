@@ -394,6 +394,7 @@
     }
 }
 
+
 .vacancy__send {
     display: flex;
     align-items: flex-start;
@@ -403,7 +404,18 @@
     @include breakpoint($sm-bp) {
         margin-top: 2rem;
     }
-
+    a {
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1.83;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #697279;
+        text-decoration: none;
+        @include breakpoint($sm-bp) {
+            font-size: 1.55rem;
+        }
+    }
     span {
         display: block;
         font-size: 1.2rem;

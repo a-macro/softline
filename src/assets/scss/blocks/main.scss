@@ -986,9 +986,10 @@ button.link-red {
     //}
     //@include breakpoint($sm-bp) {
         height: 7rem;
-        margin-right: 2rem!important;
+        margin-right: 3.5rem!important;
         margin-top: 0;
         margin-bottom: 0;
+        padding-right: 1rem;
     }
 
 
@@ -1013,7 +1014,6 @@ button.link-red {
         object-fit: scale-down;
         @include breakpoint($mid-bp) {
             height: 100%;
-            object-fit: contain;
         }
     }
 }
@@ -1118,7 +1118,21 @@ button.link-red {
     @include breakpoint($sm-bp) {
         width: 39rem;
     }
-
+    .news-slide__title {
+        @include breakpoint($sm-bp) {
+            text-shadow: 1px 1px 3px #000000;  
+        }
+    }
+    .news-slide__date {
+        @include breakpoint($sm-bp) {
+            text-shadow: 1px 1px 3px #000000;
+        }
+    }
+    .news-slide__theme {
+        @include breakpoint($sm-bp) {
+            text-shadow: 1px 1px 3px #000000;
+        }
+    }
     &::before {
         content: '';
         width: 100%;
@@ -1283,4 +1297,68 @@ button.link-red {
 
 .pb15 + .wrapper > .section-top {
     margin-top: 0;
+}
+
+.corporate.corporate--investors {
+    .section-top__title {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        /* identical to box height, or 150% */
+    
+    
+        /* UI/Black/High */
+    
+        color: #212424;
+    
+        @include breakpoint($sm-bp) {
+          font-size: 2.6rem;
+        }
+      }
+      .corporate__content {
+        border-top: 0.1rem solid #D2DCE5;
+        position: relative;
+        padding-top: 4rem;
+        margin-top: 2.7rem;
+        @include breakpoint($mid-bp) {
+          padding-top: 2.5rem;
+        }
+      }
+}
+
+.subscribe--investors {
+    .subscribe__form {
+        padding-bottom: 0;
+        .vacancy__bottom {
+            @include breakpoint($sm-bp) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.investors-nav {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    /* identical to box height, or 160% */
+    
+    text-align: center;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+    border-bottom: 0.1rem solid $grey;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 4rem;
+        row-gap: 2rem;
+    }
+    a {
+        color: #212424;
+        text-decoration: none;
+    }
 }
