@@ -15620,6 +15620,23 @@ textarea {
   
 }
 
+.registration .registration__block .crm-block {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 480px) {
+    .registration .registration__block .crm-block {
+        padding-top: 1rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        height: calc(100% - 10rem);
+        overflow: scroll;
+        padding-bottom: 4rem;
+        width: 100%;
+    }
+}
+
 .registration .registration__block::-webkit-scrollbar {
     width: 2px;
 }
@@ -17181,7 +17198,7 @@ textarea {
 
 .breadcrumbs__link {
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.42;
     letter-spacing: 0em;
     text-align: left;
@@ -18926,6 +18943,11 @@ body::before {
     height: 6.4rem;
     display: flex;
     align-items: center;
+    font-family: "Manrope";
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
 }
 
 @media (max-width: 1920px) {
@@ -19039,8 +19061,8 @@ body::before {
 .__select__title::after {
     content: "";
     display: block;
-    width: 8px;
-    height: 4px;
+    width: 0.8rem;
+    height: 0.4rem;
     margin-left: 1rem;
     background: url("../images/arrow-down.svg") no-repeat;
     background-size: contain;
@@ -20138,7 +20160,8 @@ button.link-red:hover span {
     left: 0;
 }
 
-.swiper-container .swiper-button-next:after, .swiper-container .swiper-button-prev:after {
+.swiper-container .swiper-button-next:after,
+.swiper-container .swiper-button-prev:after {
     content: "";
     display: block;
     width: 2.4rem;
@@ -21330,7 +21353,8 @@ button.link-red:hover span {
     }
 }
 
-.investors-nav ul .active, .investors-nav ul .active a {
+.investors-nav ul .active,
+.investors-nav ul .active a {
     color: #a50f2d;
 }
 
@@ -21367,13 +21391,119 @@ button.link-red:hover span {
     }
 }
 
+@media (max-width: 480px) {
+    .investors-content {
+        padding-top: 4rem;
+    }
+}
+
 .investors-content .crm-block {
     grid-column: 7 span;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 @media (max-width: 1024px) {
     .investors-content .crm-block {
         grid-column: 1 span;
+    }
+}
+
+.investors-subtitle {
+    border-bottom: 0.1rem solid #D2DCE5;
+    padding-bottom: 2.6rem;
+}
+
+.investors-subtitle .section-top__title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  
+  
+    color: #212424;
+}
+
+@media (max-width: 480px) {
+    .investors-subtitle .section-top__title {
+        font-size: 2.6rem;
+    }
+}
+
+.investors-blocks-list {
+    margin-top: 2.6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .investors-blocks-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.investors-blocks-item {
+    background: rgba(210, 220, 229, 0.3);
+    padding: 2rem 2.8rem 2rem 2.4rem;
+    min-height: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+    .investors-blocks-item {
+        min-height: 15.7rem;
+        padding: 1.5rem;
+    }
+}
+
+.investors-blocks-item.--red {
+    background-color: #A50F2D;
+}
+
+.investors-blocks-item.--red .investors-blocks-title {
+    color: #FFFFFF;
+}
+
+.investors-blocks-item.--red .investors-blocks-text {
+    color: #FFFFFF;
+}
+
+.investors-blocks-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.2rem;
+    line-height: 5.8rem;
+  
+    letter-spacing: -0.02em;
+  
+    color: #212424;
+}
+
+@media (max-width: 480px) {
+    .investors-blocks-title {
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+}
+
+.investors-blocks-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+}
+
+@media (max-width: 480px) {
+    .investors-blocks-text {
+        font-size: 1.5rem;
+        line-height: 2.4rem;
     }
 }
 
@@ -21397,6 +21527,155 @@ button.link-red:hover span {
     .wrapper.wrapper--swiper .section-top {
         padding-right: 2.5rem;
     }
+}
+
+.b-invest-section {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.b-invest-section__head {
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 1025px) {
+    .b-invest-section__head {
+        margin-bottom: 5.2rem;
+    }
+}
+
+.b-invest-grid {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .b-invest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .b-invest-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+}
+
+.b-invest-item {
+    padding: 2rem;
+    padding-left: 2.8rem;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1.6rem;
+    min-height: 27.4rem;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    counter-increment: my-sec-counter;
+}
+
+@media (max-width: 480px) {
+    .b-invest-item {
+        min-height: 16.8rem;
+    }
+}
+
+.dark .b-invest-item {
+    background-color: #282B2B;
+}
+
+.dark .b-invest-item__heading {
+    color: #FFFFFF;
+}
+
+.b-invest-item__label {
+    margin-top: auto;
+    color: #697279;
+}
+
+.b-invest-section__list {
+    counter-reset: my-sec-counter;
+}
+
+.b-invest-item__col {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.6rem;
+    -moz-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.b-invest-item__col:after {
+    content: counter(my-sec-counter, decimal-leading-zero);
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  
+    color: #697279;
+    margin-top: auto;
+}
+
+.b-invest-item__image {
+    width: 12rem;
+    height: 12rem;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+@media (max-width: 480px) {
+    .b-invest-item__image {
+        width: 6.8rem;
+        height: 6.8rem;
+    }
+}
+
+.dark .h2 {
+    color: #FFFFFF;
+}
+
+.h2 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.2rem;
+    line-height: 5.8rem;
+  
+    letter-spacing: -0.02em;
+}
+
+.b-invest-item__heading {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+}
+
+.b-invest-item__label {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  
+    color: #697279;
 }
 
 .informationTechnology h2 {
@@ -27067,8 +27346,7 @@ textarea {
 }
 
 html {
-  font-family: "Montserrat";
-  font-size: 0.518134715vw;
+  font-size: 0.5128205128vw;
   height: 100%;
 }
 @media (max-width: 1920px) {

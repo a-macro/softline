@@ -89,8 +89,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
 
 html {
-  font-family: "Montserrat";
-  font-size: calc(100vw / 1930 * 10); 
+  // font-family: "Montserrat";
+  font-size: calc(100vw / 1950 * 10); 
   height: 100%;
 
   @include breakpoint($xxl-bp) {

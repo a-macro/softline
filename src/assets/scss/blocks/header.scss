@@ -627,7 +627,11 @@
         height: 6.4rem;
         display: flex;
         align-items: center;
-
+        font-family: 'Manrope';
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
         @include breakpoint($xxl-bp) {
             height: 4rem;
         }
@@ -725,8 +729,8 @@
     &::after {
         content: "";
         display: block;
-        width: 8px;
-        height: 4px;
+        width: 0.8rem;
+        height: 0.4rem;
         margin-left: 1rem;
         background: url("../images/arrow-down.svg") no-repeat;
         background-size: contain;

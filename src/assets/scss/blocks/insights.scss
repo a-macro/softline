@@ -3978,7 +3978,19 @@
     padding: 4rem;
     padding-top: 4.8rem;
     overflow: scroll;
-
+    .crm-block {
+      padding-left: 0;
+      padding-right: 0;
+      @include breakpoint($sm-bp) {
+        padding-top: 1rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        height: calc(100% - 10rem);
+        overflow: scroll;
+        padding-bottom: 4rem;
+        width: 100%;
+      }
+    }
     &::-webkit-scrollbar {
       width: 2px;
     }
