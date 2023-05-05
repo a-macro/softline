@@ -1190,6 +1190,15 @@ button.link-red {
         @include breakpoint($xl-bp) {
             margin-top: 1.8rem;
         }
+        @include breakpoint($sm-bp) {
+            display: -webkit-box; 
+            max-width: 31rem;
+            overflow-wrap: break-word;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
     }
 }
 
@@ -1239,6 +1248,12 @@ button.link-red {
     }
     @include breakpoint($sm-bp) {
         font-size: 2.55rem;
+        display: -webkit-box; 
+        max-width: 39rem;
+        overflow-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 
@@ -1351,14 +1366,79 @@ button.link-red {
     padding-top: 3.2rem;
     padding-bottom: 3.2rem;
     border-bottom: 0.1rem solid $grey;
+    overflow: auto;
+    @include breakpoint($mid-bp) {
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+          -webkit-appearance: none;
+        }
+      }
+    @include breakpoint($sm-bp) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+    }
     ul {
         display: flex;
         flex-wrap: wrap;
         column-gap: 4rem;
         row-gap: 2rem;
+        @include breakpoint($mid-bp) {
+            flex-wrap: nowrap;
+        }
+        @include breakpoint($sm-bp) {
+            column-gap: 2.4rem;
+        }
+        .active, .active a {
+            color: #a50f2d;
+        }
+    }
+    li:hover {
+        color: #a50f2d;
+        a {
+            color: #a50f2d;
+        }
     }
     a {
         color: #212424;
         text-decoration: none;
+        transition: color .3s;
+        @include breakpoint($mid-bp) {
+            white-space: nowrap;
+        }
     }
 }
+
+.investors-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4rem;
+    padding-top: 8rem;
+    @include breakpoint($mid-bp) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .crm-block {
+        grid-column: 7 span;
+        @include breakpoint($mid-bp) {
+            grid-column: 1 span;
+        }
+    }
+}
+
+.wrapper.wrapper--swiper {
+    overflow: hidden;
+    @include breakpoint($mid-bp) {
+      padding-right: 0;
+    }
+    .section-top {
+        @include breakpoint($mid-bp) {
+            padding-right:  2;
+        }
+        @include breakpoint($sm-bp) {
+            padding-right: 2.5rem;
+        }
+    }
+  }
