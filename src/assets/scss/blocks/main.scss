@@ -207,7 +207,7 @@
         margin-top: 2.2rem;
     }
 
-    .text-normal {
+    p, .text-normal {
         padding-right: 30%;
 
         @include breakpoint($xxl-bp) {
@@ -261,7 +261,7 @@
     }
 }
 
-.text-normal {
+p, .text-normal {
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 1.5;
@@ -549,6 +549,7 @@ button.link-red {
 
     @include breakpoint($sm-bp) {
         font-size: 1.94rem;
+        max-height: 9.5rem;
     }
 }
 

@@ -566,7 +566,7 @@
         padding: 2.55rem;
     }
     
-    .text-normal {
+    p, .text-normal {
         font-size: 1.6rem;
         @include breakpoint($sm-bp) {
             font-size: 2rem;

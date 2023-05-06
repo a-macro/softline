@@ -1305,12 +1305,12 @@ textarea {
     }
 }
 
-.thanks__form .text-normal {
+.thanks__form p, .thanks__form .text-normal {
     font-size: 1.6rem;
 }
 
 @media (max-width: 480px) {
-    .thanks__form .text-normal {
+    .thanks__form p, .thanks__form .text-normal {
         font-size: 2rem;
     }
 }
@@ -3369,7 +3369,7 @@ textarea {
     }
 }
 
-.program.wrapper .section-top__aside .text-normal {
+.program.wrapper .section-top__aside p, .program.wrapper .section-top__aside .text-normal {
     color: white;
     padding-right: 0;
 }
@@ -4686,7 +4686,7 @@ textarea {
     }
 }
 
-.partner-modal .partner__statuses .text-normal {
+.partner-modal .partner__statuses p, .partner-modal .partner__statuses .text-normal {
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.5;
@@ -4696,7 +4696,7 @@ textarea {
 }
 
 @media (max-width: 480px) {
-    .partner-modal .partner__statuses .text-normal {
+    .partner-modal .partner__statuses p, .partner-modal .partner__statuses .text-normal {
         font-size: 2.05rem;
     }
 }
@@ -4789,18 +4789,18 @@ textarea {
     }
 }
 
-.solve.career .text-normal {
+.solve.career p, .solve.career .text-normal {
     color: white;
 }
 
 @media (max-width: 1920px) {
-    .solve.career .text-normal {
+    .solve.career p, .solve.career .text-normal {
         padding-right: 10%;
     }
 }
 
 @media (max-width: 1515px) {
-    .solve.career .text-normal {
+    .solve.career p, .solve.career .text-normal {
         max-width: 99%;
     }
 }
@@ -4835,26 +4835,26 @@ textarea {
     }
 }
 
-.solve.career .title-wrapper .text-normal {
+.solve.career .title-wrapper p, .solve.career .title-wrapper .text-normal {
     margin-left: 20.5rem;
     margin-top: 3rem;
     max-width: 65rem;
 }
 
 @media (max-width: 1920px) {
-    .solve.career .title-wrapper .text-normal {
+    .solve.career .title-wrapper p, .solve.career .title-wrapper .text-normal {
         margin-left: 15.5rem;
     }
 }
 
 @media (max-width: 1515px) {
-    .solve.career .title-wrapper .text-normal {
+    .solve.career .title-wrapper p, .solve.career .title-wrapper .text-normal {
         margin-left: 11.5rem;
     }
 }
 
 @media (max-width: 1024px) {
-    .solve.career .title-wrapper .text-normal {
+    .solve.career .title-wrapper p, .solve.career .title-wrapper .text-normal {
         margin-left: 0;
     }
 }
@@ -4871,13 +4871,13 @@ textarea {
     }
 }
 
-.solve.career .section-top__aside .text-normal {
+.solve.career .section-top__aside p, .solve.career .section-top__aside .text-normal {
     font-size: 2.4rem;
     max-width: 80%;
 }
 
 @media (max-width: 1515px) {
-    .solve.career .section-top__aside .text-normal {
+    .solve.career .section-top__aside p, .solve.career .section-top__aside .text-normal {
         max-width: 99%;
     }
 }
@@ -6388,7 +6388,7 @@ textarea {
     }
 }
 
-.solve.customers .text-normal {
+.solve.customers p, .solve.customers .text-normal {
     color: white;
 }
 
@@ -6406,31 +6406,31 @@ textarea {
     }
 }
 
-.solve.customers .title-wrapper .text-normal {
+.solve.customers .title-wrapper p, .solve.customers .title-wrapper .text-normal {
     margin-left: 20.5rem;
     margin-top: 3rem;
     max-width: 65rem;
 }
 
 @media (max-width: 1920px) {
-    .solve.customers .title-wrapper .text-normal {
+    .solve.customers .title-wrapper p, .solve.customers .title-wrapper .text-normal {
         margin-left: 15.5rem;
     }
 }
 
 @media (max-width: 1515px) {
-    .solve.customers .title-wrapper .text-normal {
+    .solve.customers .title-wrapper p, .solve.customers .title-wrapper .text-normal {
         margin-left: 11.5rem;
     }
 }
 
 @media (max-width: 1024px) {
-    .solve.customers .title-wrapper .text-normal {
+    .solve.customers .title-wrapper p, .solve.customers .title-wrapper .text-normal {
         margin-left: 0;
     }
 }
 
-.solve.customers .section-top__aside .text-normal {
+.solve.customers .section-top__aside p, .solve.customers .section-top__aside .text-normal {
     font-size: 2rem;
 }
 
@@ -7633,16 +7633,16 @@ textarea {
     color: white;
 }
 
-.dark .text-normal {
+.dark p, .dark .text-normal {
     color: white;
 }
 
 .cybersecurity-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(33.3333333333%, max(64px, 20%)), 1fr));
     margin-top: 15rem;
     padding-bottom: 15rem;
-    row-gap: 4rem;
+    gap: 4rem;
 }
 
 @media (max-width: 1920px) {
@@ -7676,6 +7676,10 @@ textarea {
         margin-top: 7rem;
         gap: 0;
     }
+}
+
+.cybersecurity-list .lined-card {
+    width: 100%;
 }
 
 .dark .prof-item {
@@ -7985,12 +7989,12 @@ textarea {
     color: white;
 }
 
-.cybersecurity-nums .text-normal {
+.cybersecurity-nums p, .cybersecurity-nums .text-normal {
     color: white;
 }
 
 @media (max-width: 480px) {
-    .cybersecurity-nums .text-normal {
+    .cybersecurity-nums p, .cybersecurity-nums .text-normal {
         font-size: 1.9rem;
         line-height: 2.9rem;
     }
@@ -19912,24 +19916,24 @@ button.header__link:hover {
     }
 }
 
-.section-top__aside .text-normal {
+.section-top__aside p, .section-top__aside .text-normal {
     padding-right: 30%;
 }
 
 @media (max-width: 1920px) {
-    .section-top__aside .text-normal {
+    .section-top__aside p, .section-top__aside .text-normal {
         padding-right: 31%;
     }
 }
 
 @media (max-width: 1515px) {
-    .section-top__aside .text-normal {
+    .section-top__aside p, .section-top__aside .text-normal {
         padding-right: 10%;
     }
 }
 
 @media (max-width: 1024px) {
-    .section-top__aside .text-normal {
+    .section-top__aside p, .section-top__aside .text-normal {
         padding-right: 0;
     }
 }
@@ -19975,7 +19979,7 @@ button.header__link:hover {
     }
 }
 
-.text-normal {
+p, .text-normal {
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 1.5;
@@ -19985,7 +19989,7 @@ button.header__link:hover {
 }
 
 @media (max-width: 480px) {
-    .text-normal {
+    p, .text-normal {
         font-size: 2.55rem;
         line-height: 1.4;
     }
@@ -20288,6 +20292,7 @@ button.link-red:hover span {
 @media (max-width: 480px) {
     .service__text {
         font-size: 1.94rem;
+        max-height: 9.5rem;
     }
 }
 

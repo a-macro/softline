@@ -186,7 +186,7 @@
         }
     }
 
-    .text-normal {
+    p, .text-normal {
         color: white;
     }
 
@@ -200,7 +200,7 @@
             width: calc(100% - 5rem);
         }
 
-        .text-normal {
+        p, .text-normal {
             margin-left: 20.5rem;
             margin-top: 3rem;
             max-width: 65rem;
@@ -217,7 +217,7 @@
     }
 
     .section-top__aside {
-        .text-normal {
+        p, .text-normal {
             font-size: 2rem;
         }
     }
