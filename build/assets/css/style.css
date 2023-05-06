@@ -1100,7 +1100,7 @@ textarea {
 }
 
 .vacancy__send a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.83;
     letter-spacing: 0em;
@@ -1117,7 +1117,7 @@ textarea {
 
 .vacancy__send span {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.83;
     letter-spacing: 0em;
@@ -1134,7 +1134,7 @@ textarea {
 .vacancy__bottom_info {
     margin: 1rem auto 0;
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.83;
     letter-spacing: 0em;
@@ -1146,6 +1146,7 @@ textarea {
 @media (max-width: 480px) {
     .vacancy__bottom_info {
         font-size: 1.55rem;
+        max-width: 100%;
     }
 }
 
@@ -15130,6 +15131,12 @@ textarea {
     margin: 1rem 3.3rem 0;
 }
 
+@media (max-width: 480px) {
+    .subscribe .subscribe__form .vacancy__bottom .vacancy__bottom_info {
+        margin-right: 0;
+    }
+}
+
 .subscribe .subscribe__form .subscribe__input {
     font-family: "Manrope";
     font-style: normal;
@@ -16099,6 +16106,14 @@ textarea {
     padding-right: 2rem;
     padding-left: 2rem;
     margin: 0 auto;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  
+  
+    color: #212424;
 }
 
 @media (max-width: 1515px) {
@@ -16113,6 +16128,19 @@ textarea {
   .crm-block {
         max-width: none;
         width: 100%;
+    }
+}
+
+.story-block a,
+.crm-block a {
+    color: #A50F2D;
+}
+
+@media (max-width: 480px) {
+    .story-block,
+  .crm-block {
+        font-size: 2.1rem;
+        line-height: 3.15rem;
     }
 }
 
@@ -16152,7 +16180,6 @@ textarea {
 
 .story-block p img,
 .crm-block p img {
-    width: 100%;
     max-width: 100%;
 }
 
@@ -17177,15 +17204,28 @@ textarea {
     position: relative;
 }
 
+@media (max-width: 1024px) {
+    .breadcrumbs__item {
+        display: inline-block;
+    }
+}
+
 .breadcrumbs__item::after {
     content: "";
     display: block;
-    width: 8px;
-    height: 4px;
+    width: 0.8rem;
+    height: 0.4rem;
     transform: rotate(-90deg);
     margin-left: 1.2rem;
     background: url("../images/arrow-down.svg") no-repeat;
     background-size: contain;
+}
+
+@media (max-width: 1024px) {
+    .breadcrumbs__item::after {
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 .breadcrumbs__item:nth-child(1) {
@@ -17204,6 +17244,12 @@ textarea {
     text-align: left;
     color: #AAB8C3;
     text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    .breadcrumbs__link {
+        vertical-align: middle;
+    }
 }
 
 @media (max-width: 480px) {
@@ -18675,6 +18721,7 @@ body::before {
     z-index: 5;
     justify-content: space-between;
     align-items: flex-end;
+    padding-top: 1rem;
     padding-bottom: 1.8rem;
 }
 
@@ -20892,7 +20939,7 @@ button.link-red:hover span {
 
 @media (max-width: 480px) {
     .section-top.align-bottom {
-        margin-top: 5rem;
+        margin-top: 7rem;
     }
 }
 
@@ -21103,7 +21150,7 @@ button.link-red:hover span {
         display: -webkit-box;
         max-width: 31rem;
         overflow-wrap: break-word;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }

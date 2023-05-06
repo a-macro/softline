@@ -3525,6 +3525,9 @@
 
       .vacancy__bottom_info {
         margin: 1rem 3.3rem 0;
+        @include breakpoint($sm-bp) {
+          margin-right: 0;
+        }
       }
     }
 
@@ -4474,6 +4477,27 @@
     width: 100%;
   }
 
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  /* or 160% */
+
+
+  /* UI/Black/High */
+
+  color: #212424;
+
+  a {
+    color: #A50F2D;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.1rem;
+    line-height: 3.15rem;
+  }
+
   iframe {
     width: 100%;
     height: 60rem;
@@ -4493,7 +4517,6 @@
   p {
     margin-bottom: 2.4rem;
     img {
-      width: 100%;
       max-width: 100%;
     }
   }

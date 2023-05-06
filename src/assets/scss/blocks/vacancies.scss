@@ -405,7 +405,7 @@
         margin-top: 2rem;
     }
     a {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 500;
         line-height: 1.83;
         letter-spacing: 0em;
@@ -418,7 +418,7 @@
     }
     span {
         display: block;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 500;
         line-height: 1.83;
         letter-spacing: 0em;
@@ -433,7 +433,7 @@
 .vacancy__bottom_info {
     margin: 1rem auto 0;
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.83;
     letter-spacing: 0em;
@@ -442,6 +442,7 @@
     max-width: calc(100% - 6.6rem);
     @include breakpoint($sm-bp) {
         font-size: 1.55rem;
+        max-width: 100%;
     }
 }
 
