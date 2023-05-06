@@ -20,7 +20,7 @@
         }
     }
 
-    .text-normal {
+    p, .text-normal {
         color: white;
         @include breakpoint($xxl-bp) {
             padding-right: 10%;
@@ -50,7 +50,7 @@
             width: calc(100% - 5rem);
         }
 
-        .text-normal {
+        p, .text-normal {
             margin-left: 20.5rem;
             margin-top: 3rem;
             max-width: 65rem;
@@ -73,7 +73,7 @@
         @include breakpoint($mid-bp) {
             margin-left: 2rem;
         }
-        .text-normal {
+        p, .text-normal {
             font-size: 2.4rem;
             max-width: 80%;
             @include breakpoint($xl-bp) {

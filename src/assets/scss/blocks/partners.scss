@@ -159,7 +159,7 @@
             width: 100%;
         }
 
-        .text-normal {
+        p, .text-normal {
             color: white;
             padding-right: 0;
         }
@@ -1333,7 +1333,7 @@
             order: 3;
         }
 
-        .text-normal {
+        p, .text-normal {
             font-size: 1.6rem;
             font-weight: 500;
             line-height: 1.5;

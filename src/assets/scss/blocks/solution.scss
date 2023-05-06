@@ -351,9 +351,13 @@
     min-height: 34.9rem;
     display: flex;
     justify-content: space-between;
+    // display: grid;
+    // grid-template-columns: 2fr 1fr;
     background-color: #FFFFFF;
     padding: 2rem 4rem 3rem 2.8rem;
-
+    // @include breakpoint($mid-bp) {
+    //   grid-template-columns: 2fr 1fr;
+    // }
     @include breakpoint($sm-bp) {
       padding-right: 2rem;
       min-height: 20.9rem;
