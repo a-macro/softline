@@ -16112,6 +16112,7 @@ textarea {
     font-size: 2rem;
     line-height: 3.2rem;
   
+    word-wrap: break-word;
   
     color: #212424;
 }
@@ -18849,6 +18850,8 @@ body::before {
     letter-spacing: 0em;
     text-align: left;
     padding-bottom: 0.8rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
     color: #212424;
     width: 100%;
 }
