@@ -1156,7 +1156,7 @@ button.link-red {
     }
 
     @include breakpoint($sm-bp) {
-        margin-top: 5rem;
+        margin-top: 7rem;
     }
 
     .link-red {
@@ -1334,11 +1334,10 @@ button.link-red {
             display: -webkit-box;
             max-width: 31rem;
             overflow-wrap: break-word;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
     }
 }
 
