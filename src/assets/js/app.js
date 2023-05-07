@@ -445,11 +445,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener('mousedown', () => {
         if (event.which === 2) {
-            console.log('mid')
+            event.preventDefault();
             return;
         } 
         if (event.button === 1) {
-            console.log('mid')
+            event.preventDefault();
         }
     })
 
@@ -468,11 +468,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 0,
                 loop: false,
-                on: {
-                    click: function (swiper, event) {
-                      console.log(event);
-                    },
-                  },
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",

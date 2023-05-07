@@ -425,11 +425,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('mousedown', function () {
     if (event.which === 2) {
-      console.log('mid');
+      event.preventDefault();
       return;
     }
     if (event.button === 1) {
-      console.log('mid');
+      event.preventDefault();
     }
   });
   var servCont = document.querySelectorAll(".services__container");
@@ -446,11 +446,6 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 0,
         loop: false,
-        on: {
-          click: function click(swiper, event) {
-            console.log(event);
-          }
-        },
         breakpoints: {
           300: {
             slidesPerView: "auto"
