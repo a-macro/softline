@@ -17498,6 +17498,11 @@ body::before {
     }
 }
 
+.search-block b {
+    font-weight: bolder;
+    font-size: larger;
+}
+
 .search-block a {
     text-decoration: none;
 }
