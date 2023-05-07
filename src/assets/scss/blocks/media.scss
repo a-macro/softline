@@ -57,7 +57,7 @@
 
     .informationTechnology__block {
         // width: 24%;
-        padding-bottom: 1.4rem;
+        padding-bottom: 1.5rem;
         padding-top: 1.2rem;
         border-bottom: 0.1rem solid #D2DCE5;
         border-top: 0.1rem solid #D2DCE5;
@@ -74,18 +74,19 @@
         }
         @include breakpoint($sm-bp) {
             gap: 5rem;
-            &:nth-last-child(2) {
-                border-bottom: 0.1rem solid transparent;
+            border-top: 0.1rem solid transparent;
+            &:first-child {
+                border-top: 0.1rem solid #D2DCE5;
             }
         }
 
-        & > div {
-            display: -webkit-box;
-            max-width: 100%;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+        // & > div {
+        //     display: -webkit-box;
+        //     max-width: 100%;
+        //     -webkit-line-clamp: 3;
+        //     -webkit-box-orient: vertical;
+        //     overflow: hidden;
+        // }
 
         div:last-child {
             font-family: 'Manrope';
@@ -109,14 +110,14 @@
             div:first-child {
                 font-family: 'Manrope';
                 font-style: normal;
-                font-weight: 400;
-                font-size: 5.2rem;
-                line-height: 5.8rem;
+                font-weight: 400; 
+                font-size: 5.2rem; 
+                line-height: 5.2rem; 
                 letter-spacing: -0.02em;
                 color: #A50F2D;
                 @include breakpoint($sm-bp) {
                     font-size: 7rem;
-                    line-height: 8rem;
+                    line-height: 7rem;
                     padding-bottom: 0.4rem;
                 }
             }

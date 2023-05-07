@@ -427,7 +427,7 @@
   .faq {
       .dark {
         .accordion__title {
-          color: #FFFFFF!important;
+          color: #eff1f6!important;
         }
       }
       .dark.accordion li.active {
@@ -437,10 +437,10 @@
   }
   .dark.faq__block {
     .faq__left.wrapper nav li.active {
-      color: #FFFFFF!important;
+      color: #eff1f6!important;
     }
     .accordion .accordion__title {
-      color: #FFFFFF!important;
+      color: #eff1f6!important;
     }
     .accordion li.active {
       background-color: #282B2B!important;
@@ -684,7 +684,7 @@
       .accordion .accordion__list-desc .accordion__desc-title,
       .accordion .accordion__list-desc .accordion__list__inner,
       .accordion__list-title {
-        color: #FFFFFF;
+        color: #eff1f6;
       }
       
       .accordion .accordion__list-desc .accordion__list__inner {
@@ -737,7 +737,7 @@
         }
         .accordion__list__inner {
           padding: 5.6rem 6.4rem 7.2rem;
-          background-color: #FFFFFF;
+          background-color: #eff1f6;
           @include breakpoint($mid-bp) {
             padding: 4rem 2rem;
           }
@@ -812,7 +812,7 @@
       .accordion .accordion__list-desc .accordion__desc-title,
       .accordion .accordion__list-desc .accordion__list__inner,
       .accordion__list-title {
-        color: #FFFFFF;
+        color: #eff1f6;
       }
       
       .accordion .accordion__list-desc .accordion__list__inner {
@@ -1295,7 +1295,7 @@
 
   .dark {
     .accordion__list-title {
-      color: #FFFFFF;
+      color: #eff1f6;
     }
     .accordion li {
       border-color: #40454E;

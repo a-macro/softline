@@ -2,7 +2,11 @@
     //--h: 100vh;
     //--scroll-y: 0px;
 }
-
+.solution .insights-main-bg {
+    &::before {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+}
 .intro,
 .intro__pages,
 .insights-main-bg {
@@ -546,7 +550,7 @@ button.link-red {
     max-height: 10rem;
     overflow: hidden;
     position: relative;
-
+    transition: color .3s;
     @include breakpoint($xxl-bp) {
         font-size: 1.6rem;
     }
@@ -1775,7 +1779,7 @@ button.link-red {
         background-color: #282B2B;
     }
     .b-invest-item__heading {
-        color: #FFFFFF;
+        color: #eff1f6;
     }
 }
 
@@ -1828,7 +1832,7 @@ button.link-red {
 
 .dark {
     .h2 {
-        color: #FFFFFF;
+        color: #eff1f6;
     }
 }
 .h2 {

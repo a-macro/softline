@@ -15,7 +15,7 @@
   &.dark {
     .accordion {
       .accordion__title {
-        color: #FFFFFF;
+        color: #eff1f6;
       }
       li {
         border-color: #40454E;
@@ -25,7 +25,7 @@
         border-color: #282B2B;
       }
       .accordion__list-desc {
-        color: #FFFFFF;
+        color: #eff1f6;
       }
     }
   }
@@ -69,7 +69,7 @@
     }
     .dark .accordion {
       & * {
-        color: #FFFFFF;
+        color: #eff1f6;
       }
     }
     ul {}
@@ -375,10 +375,11 @@
 
   .help-blocks__item {
     min-height: 34.9rem;
-    display: flex;
-    justify-content: space-between;
-    // display: grid;
-    // grid-template-columns: 2fr 1fr;
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
     background-color: #FFFFFF;
     padding: 2rem 4rem 3rem 2.8rem;
     // @include breakpoint($mid-bp) {
@@ -396,11 +397,6 @@
 
       .help-blocks__subtitle {
         color: #697279;
-        max-height: 10rem;
-        overflow: hidden;
-        @include breakpoint($mid-bp) {
-          max-height: 9.5rem;
-        }
       }
       .service__text--gradient {
         position: relative;
@@ -426,10 +422,10 @@
     .help-blocks__right {
       .img-wrapper {
         height: 12rem;
-        width: 12rem;
+        width: 100%;
 
         @include breakpoint($sm-bp) {
-          width: 9rem;
+          width: 100%;
           height: 9rem;
         }
       }
@@ -444,7 +440,7 @@
 }
 .dark .accordion {
   & * {
-    color: #FFFFFF;
+    color: #eff1f6;
   }
 }
 .dark .accordion li {
@@ -456,7 +452,7 @@
 }
 .dark {
   .help-blocks__title {
-    color: #FFFFFF;
+    color: #eff1f6;
   }
 }
 .dark {
@@ -465,12 +461,12 @@
       background-color: #282B2B;;
   
       .help-blocks__title {
-        color: #FFFFFF;
-        display: -webkit-box;
-        max-width: 100%;
-        -webkit-line-clamp: 3; 
-        -webkit-box-orient: vertical;
-        overflow: hidden; 
+        color: #eff1f6;
+        // display: -webkit-box;
+        // max-width: 100%;
+        // -webkit-line-clamp: 3; 
+        // -webkit-box-orient: vertical;
+        // overflow: hidden; 
       }
       .service__text--gradient {
         &::before {
@@ -488,11 +484,11 @@
 
     .help-blocks__title {
       color: #212424;
-      display: -webkit-box;
-      max-width: 100%;
-      -webkit-line-clamp: 3; 
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      // display: -webkit-box;
+      // max-width: 100%;
+      // -webkit-line-clamp: 3; 
+      // -webkit-box-orient: vertical;
+      // overflow: hidden;
     }
   }
 }
@@ -768,11 +764,11 @@
     /* UI/Black/Low */
 
     color: #A50F2D;
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    // display: -webkit-box;
+    // max-width: 100%;
+    // -webkit-line-clamp: 3; 
+    // -webkit-box-orient: vertical;
+    // overflow: hidden;
   }
 
   .prof-item__title {
@@ -781,11 +777,11 @@
     line-height: 3.6rem;
     /* or 150% */
 
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 3; 
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    // display: -webkit-box;
+    // max-width: 100%;
+    // -webkit-line-clamp: 3; 
+    // -webkit-box-orient: vertical;
+    // overflow: hidden;
     /* UI / White */
 
     
@@ -800,7 +796,7 @@
       color: #AAB8C3;
     }
     .prof-item__title {
-      color: #FFFFFF;
+      color: #eff1f6;
     }
   }
 }
@@ -996,7 +992,7 @@
 }
 
 .dark .subtitle {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 .dark {
   .services .service .service__inner,
@@ -1016,5 +1012,5 @@
 }
 
 .dark .crm-block {
-  color: #FFFFFF;
+  color: #eff1f6;
 }

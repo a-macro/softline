@@ -2806,7 +2806,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     
-    const serviceText = document.querySelectorAll('.service .service__text,.help-blocks__left .help-blocks__subtitle');
+    const serviceText = document.querySelectorAll('.service .service__text');
     if (serviceText.length) {
         window.addEventListener('load', () => {
             serviceText.forEach(el => {
