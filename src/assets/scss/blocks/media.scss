@@ -79,6 +79,14 @@
             }
         }
 
+        & > div {
+            display: -webkit-box;
+            max-width: 100%;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
         div:last-child {
             font-family: 'Manrope';
             font-style: normal;

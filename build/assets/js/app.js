@@ -2575,7 +2575,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-  var serviceText = document.querySelectorAll('.service .service__text');
+  var serviceText = document.querySelectorAll('.service .service__text,.help-blocks__left .help-blocks__subtitle');
   if (serviceText.length) {
     window.addEventListener('load', function () {
       serviceText.forEach(function (el) {
