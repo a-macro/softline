@@ -255,6 +255,13 @@
     }
 }
 
+.BCG__rules-wrapper.dark {
+    .lined-card {
+        border-bottom: 1px solid #40454E;
+        border-top: 1px solid #40454E;
+    }
+}
+
 .BCG__rules_list {
     display: flex;
     margin-top: 10rem;
@@ -284,7 +291,6 @@
         @include breakpoint($sm-bp) {
             padding-bottom: 2rem;
             min-height: unset;
-            border-top: 1px solid #40454E;
             width: 100%;
         }
 

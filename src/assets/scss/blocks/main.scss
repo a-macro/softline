@@ -368,7 +368,11 @@ button.link-red {
     letter-spacing: 0em;
     text-align: left;
     color: $black;
-
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     @include breakpoint($sm-bp) {
         font-size: 2.55rem;
     }

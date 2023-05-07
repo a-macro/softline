@@ -63,6 +63,11 @@
             line-height: 1.25;
         }
     }
+
+    .breadcrumbs.wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .intro__catalog_link {
@@ -1019,6 +1024,7 @@
         padding-top: unset;
         padding-bottom: unset;
         padding-right: 4rem;
+        gap: 1rem;
         @include breakpoint($xxl-bp) {
             display: grid;
             grid-template-columns: 46.5rem 1fr;
@@ -1060,8 +1066,12 @@
     }
 
     .service__text {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        @include breakpoint($mid-bp) {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
     }
 
     .service__top {
