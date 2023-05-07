@@ -20042,6 +20042,14 @@ button.header__link:hover {
     line-height: 1.5;
 }
 
+@media (max-width: 480px) {
+    .section-top__aside ul,
+  .section-top__aside ol {
+        font-size: 2.55rem;
+        line-height: 1.4;
+    }
+}
+
 @media (max-width: 1515px) {
     .section-top__aside {
         padding-right: 10rem;
