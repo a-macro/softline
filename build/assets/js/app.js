@@ -423,6 +423,15 @@ document.addEventListener("DOMContentLoaded", function () {
     } */
   };
 
+  document.addEventListener('mousedown', function () {
+    if (event.which === 2) {
+      console.log('mid');
+      return;
+    }
+    if (event.button === 1) {
+      console.log('mid');
+    }
+  });
   var servCont = document.querySelectorAll(".services__container");
   if (servCont.length > 0) {
     servCont.forEach(function (slider) {
@@ -437,6 +446,11 @@ document.addEventListener("DOMContentLoaded", function () {
         watchOverflow: true,
         spaceBetween: 0,
         loop: false,
+        on: {
+          click: function click(swiper, event) {
+            console.log(event);
+          }
+        },
         breakpoints: {
           300: {
             slidesPerView: "auto"

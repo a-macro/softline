@@ -443,6 +443,16 @@ document.addEventListener("DOMContentLoaded", () => {
         } */
     }
 
+    document.addEventListener('mousedown', () => {
+        if (event.which === 2) {
+            console.log('mid')
+            return;
+        } 
+        if (event.button === 1) {
+            console.log('mid')
+        }
+    })
+
     let servCont = document.querySelectorAll(".services__container");
     if (servCont.length > 0) {
         servCont.forEach(slider => {
@@ -458,6 +468,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
                 spaceBetween: 0,
                 loop: false,
+                on: {
+                    click: function (swiper, event) {
+                      console.log(event);
+                    },
+                  },
                 breakpoints: {
                     300: {
                         slidesPerView: "auto",

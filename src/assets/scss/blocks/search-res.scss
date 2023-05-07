@@ -228,7 +228,10 @@ body {
     @include breakpoint($sm-bp) {
         margin-top: 5rem;
     }
-
+    b {
+        font-weight: bolder;
+        font-size: larger;
+    }
     a {
         text-decoration: none;
     }
