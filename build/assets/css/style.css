@@ -5830,7 +5830,7 @@ textarea {
 }
 
 .motivation-block.dark .informationTechnology__content .informationTechnology__block div:last-child {
-    color: white;
+    color: #eff1f6;
 }
 
 .motivation-block.dark .informationTechnology__content .informationTechnology__block {
@@ -5938,11 +5938,11 @@ textarea {
 }
 
 .dark .callback__title {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .dark .footer__btn {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .callback__title {
@@ -6162,7 +6162,7 @@ textarea {
 }
 
 .wrapper.customers-faq.dark .accordion__title {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .wrapper.customers-faq.dark li.active {
@@ -6171,7 +6171,7 @@ textarea {
 }
 
 .wrapper.customers-faq.dark .accordion__list-desc {
-    color: #FFFFFF !important;
+    color: #eff1f6 !important;
 }
 
 .wrapper.customers-faq {
@@ -7718,7 +7718,7 @@ textarea {
 
 @media (max-width: 1515px) {
     .lined-card {
-        height: 27rem;
+        min-height: 27rem;
     }
 }
 
@@ -7759,14 +7759,6 @@ textarea {
     line-height: 1.6;
     letter-spacing: 0em;
     text-align: left;
-}
-
-.lined-card > p {
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .dark .lined-card p {
@@ -8046,7 +8038,7 @@ textarea {
     .cybersecurity-nums__block {
         margin-top: 6.5rem;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         row-gap: 5rem;
         column-gap: 4.2rem;
     }
@@ -8227,11 +8219,11 @@ textarea {
 }
 
 .cybersecurity.dark .subtitle {
-    color: white;
+    color: #eff1f6;
 }
 
 .cybersecurity.dark .service-text {
-    color: white;
+    color: #eff1f6;
 }
 
 .cybersecurity.dark .service__text--gradient::before {
@@ -8244,6 +8236,10 @@ textarea {
 .cybersecurity.dark .services .service:hover {
     background-color: #40454E;
     position: relative;
+}
+
+.cybersecurity.dark .services .service:hover .service__text {
+    color: #eff1f6;
 }
 
 .cybersecurity.dark .services .service:hover::before {
@@ -8259,6 +8255,10 @@ textarea {
 .cybersecurity.dark .services .service:hover .service__text--gradient::before {
     content: "";
     opacity: 0;
+}
+
+.cybersecurity.dark .services .service:hover .subtitle {
+    color: #eff1f6;
 }
 
 .cybersecurity.dark .services .service:hover .service__inner {
@@ -11549,16 +11549,6 @@ textarea {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.insights-main-bg::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .insights-main-bg img {
@@ -19714,6 +19704,10 @@ button.header__link:hover {
     }
 }
 
+.solution .insights-main-bg::before {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .intro,
 .intro__pages,
 .insights-main-bg {
@@ -20333,6 +20327,7 @@ button.link-red:hover span {
     max-height: 10rem;
     overflow: hidden;
     position: relative;
+    transition: color 0.3s;
 }
 
 @media (max-width: 1920px) {
@@ -21699,7 +21694,7 @@ button.link-red:hover span {
 }
 
 .dark .b-invest-item__heading {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .b-invest-item__label {
@@ -21754,7 +21749,7 @@ button.link-red:hover span {
 }
 
 .dark .h2 {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .h2 {
@@ -21868,7 +21863,7 @@ button.link-red:hover span {
 }
 
 .informationTechnology__content .informationTechnology__block {
-    padding-bottom: 1.4rem;
+    padding-bottom: 1.5rem;
     padding-top: 1.2rem;
     border-bottom: 0.1rem solid #D2DCE5;
     border-top: 0.1rem solid #D2DCE5;
@@ -21891,19 +21886,12 @@ button.link-red:hover span {
 @media (max-width: 480px) {
     .informationTechnology__content .informationTechnology__block {
         gap: 5rem;
+        border-top: 0.1rem solid transparent;
     }
 
-    .informationTechnology__content .informationTechnology__block:nth-last-child(2) {
-        border-bottom: 0.1rem solid transparent;
+    .informationTechnology__content .informationTechnology__block:first-child {
+        border-top: 0.1rem solid #D2DCE5;
     }
-}
-
-.informationTechnology__content .informationTechnology__block > div {
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .informationTechnology__content .informationTechnology__block div:last-child {
@@ -21934,7 +21922,7 @@ button.link-red:hover span {
     font-style: normal;
     font-weight: 400;
     font-size: 5.2rem;
-    line-height: 5.8rem;
+    line-height: 5.2rem;
     letter-spacing: -0.02em;
     color: #A50F2D;
 }
@@ -21942,7 +21930,7 @@ button.link-red:hover span {
 @media (max-width: 480px) {
     .informationTechnology__content .informationTechnology__block .informationTechnology__helper div:first-child {
         font-size: 7rem;
-        line-height: 8rem;
+        line-height: 7rem;
         padding-bottom: 0.4rem;
     }
 }
@@ -22680,7 +22668,7 @@ button.link-red:hover span {
 }
 
 .faq .dark .accordion__title {
-    color: #FFFFFF !important;
+    color: #eff1f6 !important;
 }
 
 .faq .dark.accordion li.active {
@@ -22689,11 +22677,11 @@ button.link-red:hover span {
 }
 
 .dark.faq__block .faq__left.wrapper nav li.active {
-    color: #FFFFFF !important;
+    color: #eff1f6 !important;
 }
 
 .dark.faq__block .accordion .accordion__title {
-    color: #FFFFFF !important;
+    color: #eff1f6 !important;
 }
 
 .dark.faq__block .accordion li.active {
@@ -22984,7 +22972,7 @@ button.link-red:hover span {
 .politics-page .dark .accordion .accordion__list-desc .accordion__desc-title,
 .politics-page .dark .accordion .accordion__list-desc .accordion__list__inner,
 .politics-page .dark .accordion__list-title {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .politics-page .dark .accordion .accordion__list-desc .accordion__list__inner {
@@ -23048,7 +23036,7 @@ button.link-red:hover span {
 
 .politics-page .accordion .accordion__list-desc .accordion__list__inner {
     padding: 5.6rem 6.4rem 7.2rem;
-    background-color: #FFFFFF;
+    background-color: #eff1f6;
 }
 
 @media (max-width: 1024px) {
@@ -23138,7 +23126,7 @@ button.link-red:hover span {
 .dark .politics-page__container .accordion .accordion__list-desc .accordion__desc-title,
 .dark .politics-page__container .accordion .accordion__list-desc .accordion__list__inner,
 .dark .politics-page__container .accordion__list-title {
-    color: #FFFFFF;
+    color: #eff1f6;
 }
 
 .dark .politics-page__container .accordion .accordion__list-desc .accordion__list__inner {
@@ -23628,7 +23616,7 @@ textarea {
 }
 
 .dark .accordion__list-title {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 .dark .accordion li {
   border-color: #40454E;
@@ -23646,7 +23634,7 @@ textarea {
   }
 }
 .solution-accordion.dark .accordion .accordion__title {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 .solution-accordion.dark .accordion li {
   border-color: #40454E;
@@ -23656,7 +23644,7 @@ textarea {
   border-color: #282B2B;
 }
 .solution-accordion.dark .accordion .accordion__list-desc {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 .solution-accordion .accordion {
   padding-top: 15rem;
@@ -23697,7 +23685,7 @@ textarea {
   }
 }
 .solution-accordion .accordion .dark .accordion * {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 .solution-accordion .accordion li .accordion__plus {
   display: block;
@@ -23976,8 +23964,9 @@ textarea {
 }
 .help-blocks .help-blocks__item {
   min-height: 34.9rem;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
   background-color: #FFFFFF;
   padding: 2rem 4rem 3rem 2.8rem;
 }
@@ -23994,13 +23983,6 @@ textarea {
 }
 .help-blocks .help-blocks__item .help-blocks__left .help-blocks__subtitle {
   color: #697279;
-  max-height: 10rem;
-  overflow: hidden;
-}
-@media (max-width: 1024px) {
-  .help-blocks .help-blocks__item .help-blocks__left .help-blocks__subtitle {
-    max-height: 9.5rem;
-  }
 }
 .help-blocks .help-blocks__item .help-blocks__left .service__text--gradient {
   position: relative;
@@ -24019,11 +24001,11 @@ textarea {
 }
 .help-blocks .help-blocks__item .help-blocks__right .img-wrapper {
   height: 12rem;
-  width: 12rem;
+  width: 100%;
 }
 @media (max-width: 480px) {
   .help-blocks .help-blocks__item .help-blocks__right .img-wrapper {
-    width: 9rem;
+    width: 100%;
     height: 9rem;
   }
 }
@@ -24034,7 +24016,7 @@ textarea {
 }
 
 .dark .accordion * {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 
 .dark .accordion li {
@@ -24046,19 +24028,14 @@ textarea {
 }
 
 .dark .help-blocks__title {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 
 .dark .help-blocks.light .help-blocks__item {
   background-color: #282B2B;
 }
 .dark .help-blocks.light .help-blocks__item .help-blocks__title {
-  color: #FFFFFF;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: #eff1f6;
 }
 .dark .help-blocks.light .help-blocks__item .service__text--gradient::before {
   background: -webkit-linear-gradient(0deg, #282B2B 5%, transparent);
@@ -24070,11 +24047,6 @@ textarea {
 }
 .help-blocks.light .help-blocks__item .help-blocks__title {
   color: #212424;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .penetration .section-top .title-wrapper {
@@ -24335,22 +24307,12 @@ textarea {
   
   
   color: #A50F2D;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 .prof-item .prof-item__title {
   font-weight: 500;
   font-size: 2.4rem;
   line-height: 3.6rem;
   
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   
 }
 
@@ -24358,7 +24320,7 @@ textarea {
   color: #AAB8C3;
 }
 .dark .prof-item .prof-item__title {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 
 .py-10 {
@@ -24547,7 +24509,7 @@ textarea {
 }
 
 .dark .subtitle {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 
 .dark .services .service .service__inner,
@@ -24563,7 +24525,7 @@ textarea {
 }
 
 .dark .crm-block {
-  color: #FFFFFF;
+  color: #eff1f6;
 }
 
 .alloffices__top-wrapper {
@@ -26115,9 +26077,32 @@ textarea {
   }
 }
 .BCG__rules .title {
-  color: white;
+  color: #eff1f6;
 }
 
+.BCG__rules-wrapper.dark {
+  margin-top: 0;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+@media (max-width: 1920px) {
+  .BCG__rules-wrapper.dark {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+}
+@media (max-width: 1024px) {
+  .BCG__rules-wrapper.dark {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+@media (max-width: 480px) {
+  .BCG__rules-wrapper.dark {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
 .BCG__rules-wrapper.dark .lined-card {
   border-bottom: 1px solid #40454E;
   border-top: 1px solid #40454E;
@@ -26172,7 +26157,7 @@ textarea {
   }
 }
 .BCG__rules_list .lined-card p {
-  color: white;
+  color: #eff1f6;
 }
 
 .intro__content-top {

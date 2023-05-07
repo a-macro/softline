@@ -251,11 +251,29 @@
     }
 
     .title {
-        color: white;
+        color: #eff1f6;
     }
 }
 
 .BCG__rules-wrapper.dark {
+    margin-top: 0;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+
+    @include breakpoint($xxl-bp) {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+  
+    @include breakpoint($mid-bp) {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
     .lined-card {
         border-bottom: 1px solid #40454E;
         border-top: 1px solid #40454E;
@@ -302,7 +320,7 @@
         }
 
         p {
-            color: white;
+            color: #eff1f6;
         }
     }
 }

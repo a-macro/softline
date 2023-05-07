@@ -131,7 +131,7 @@
       gap: 5.5rem;
     }
     @include breakpoint($xl-bp) {
-        height: 27rem;
+        min-height: 27rem;
     }
     @include breakpoint($mid-bp) {
         width: 100%;
@@ -162,13 +162,13 @@
         letter-spacing: 0em;
         text-align: left;
     }
-    & > p {
-        display: -webkit-box;
-        max-width: 100%;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+    // & > p {
+    //     display: -webkit-box;
+    //     max-width: 100%;
+    //     -webkit-line-clamp: 3;
+    //     -webkit-box-orient: vertical;
+    //     overflow: hidden;
+    // }
 }
 
 .dark {
@@ -393,7 +393,7 @@
     @include breakpoint($sm-bp) {
         margin-top: 6.5rem;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         row-gap: 5rem;
         column-gap: 4.2rem;
     }
@@ -527,10 +527,10 @@
 
     &.dark {
         .subtitle {
-            color: white;
+            color: #eff1f6;
         }
         .service-text {
-            color: white;
+            color: #eff1f6;
         }
         .service__text--gradient {
             &::before {
@@ -543,6 +543,9 @@
         .services .service:hover {
             background-color: #40454E;
             position: relative;
+            .service__text {
+                color: #eff1f6;
+            }
             &::before {
                 content: '';
                 height: 100%;
@@ -560,6 +563,9 @@
             }
         }
         .services .service:hover {
+            .subtitle {
+                color: #eff1f6; 
+            }
             .service__inner {
                 border-color: transparent;
             }
