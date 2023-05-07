@@ -210,7 +210,16 @@
     color: $black;
 
     padding-right: 20rem;
-
+    ul,
+    ol {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 1.5;
+        @include breakpoint($sm-bp) {
+            font-size: 2.55rem;
+            line-height: 1.4;
+        }
+    }
     @include breakpoint($xl-bp) {
         padding-right: 10rem;
     }
