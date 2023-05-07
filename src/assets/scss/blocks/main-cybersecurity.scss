@@ -22,7 +22,7 @@
     }
 
     .breadcrumbs__link {
-        color: white;
+        color: #eff1f6;
     }
     
     .breadcrumbs__item{
@@ -53,15 +53,17 @@
     }
 
     .title-num {
-        color: white;
+        color: #eff1f6;
     }
 
     .title {
-        color: white;
+        color: #eff1f6;
     }
-
+    .section-top__aside {
+        color: #eff1f6;
+    }
     p, .text-normal {
-        color: white;
+        color: #eff1f6;
     }
 }
 
@@ -359,13 +361,16 @@
             flex-wrap: wrap;
         }
     }
+    .section-top__aside {
+        color: #eff1f6;
+    }
 
     .title {
-        color: white;
+        color: #eff1f6;
     }
 
     p, .text-normal {
-        color: white;
+        color: #eff1f6;
         @include breakpoint($sm-bp) {
             font-size: 1.9rem;
             line-height: 2.9rem;
@@ -374,7 +379,7 @@
 }
 
 .cybersecurity-nums__block {
-    color: white;
+    color:  #eff1f6;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -414,6 +419,7 @@
         margin-right: 0;
         align-items: center;
         gap: 4rem;
+        max-width: 100%;
     }
     @include breakpoint($sm-bp) {
         flex-direction: column;
@@ -442,11 +448,6 @@
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 5; 
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     br {
         @include breakpoint($mid-bp) {
             content: ' ';

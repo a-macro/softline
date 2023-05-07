@@ -95,7 +95,7 @@
 }
 
 .intro__video-btn {
-    color: white;
+    color: #eff1f6;
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 500;
@@ -202,6 +202,28 @@
 .section-top__aside {
     width: calc(50% - 2rem);
 
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $black;
+
+    padding-right: 20rem;
+
+    @include breakpoint($xl-bp) {
+        padding-right: 10rem;
+    }
+
+    @include breakpoint($mid-bp) {
+        padding-right: 0;
+    }
+
+    @include breakpoint($sm-bp) {
+        font-size: 2.55rem;
+        line-height: 1.4;
+    }
+
     @include breakpoint($mid-bp) {
         width: 100%;
         // margin-top: 4rem;
@@ -212,19 +234,19 @@
     }
 
     p, .text-normal {
-        padding-right: 30%;
+        // padding-right: 30%;
 
-        @include breakpoint($xxl-bp) {
-            padding-right: 31%;
-        }
+        // @include breakpoint($xxl-bp) {
+        //     padding-right: 31%;
+        // }
 
-        @include breakpoint($xl-bp) {
-            padding-right: 10%;
-        }
+        // @include breakpoint($xl-bp) {
+        //     padding-right: 10%;
+        // }
 
-        @include breakpoint($mid-bp) {
-            padding-right: 0;
-        }
+        // @include breakpoint($mid-bp) {
+        //     padding-right: 0;
+        // }
     }
 }
 
@@ -778,13 +800,13 @@ button.link-red {
 
 .white {
     .title-num {
-        color: white;
+        color: #eff1f6;
         top: 0;
         border: 1px solid white;
     }
 
     .title {
-        color: white;
+        color: #eff1f6;
     }
 }
 
@@ -796,7 +818,7 @@ button.link-red {
     line-height: 1.78;
     letter-spacing: 0em;
     text-align: right;
-    color: white;
+    color: #eff1f6;
     text-decoration: none;
 
     @include breakpoint($sm-bp) {
@@ -1322,16 +1344,16 @@ button.link-red {
     }
 
     .news-slide__date {
-        color: white;
+        color: #eff1f6;
     }
 
     .news-slide__theme {
-        color: white;
+        color: #eff1f6;
     }
 
     .news-slide__title {
         font-size: 3.45rem;
-        color: white;
+        color: #eff1f6;
         line-height: 1.12;
         margin-top: 2rem;
 
