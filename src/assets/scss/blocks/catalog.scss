@@ -55,7 +55,7 @@
         line-height: 1.19;
         letter-spacing: -0.01em;
         text-align: left;
-        color: white;
+        color: #eff1f6;
         max-width: 95rem;
         @include breakpoint($sm-bp) {
             font-size: 4.35rem;
@@ -76,7 +76,7 @@
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
-    color: white;
+    color: #eff1f6;
     text-decoration: none;
     transition: color .4s;
     @include breakpoint($sm-bp) {
