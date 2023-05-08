@@ -296,6 +296,7 @@
     .lined-card {
         align-items: flex-start;
         min-height: 33.5rem;
+        border-color: $grey3;
         @include breakpoint($mid-bp) {
             width: calc(calc(100% - 4rem)/2); 
             min-height: 31rem;
