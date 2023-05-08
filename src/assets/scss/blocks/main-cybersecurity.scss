@@ -76,23 +76,33 @@
     }
 }
 
+.pb15 {
+        padding-bottom: 15rem;
+        @include breakpoint($xxl-bp) {
+            padding-bottom: 12rem;
+        }
+        @include breakpoint($xl-bp) {
+            padding-bottom: 10rem;
+        }
+}
+
 .cybersecurity-list {
     // display: flex;
     // flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/5)), 1fr));
     margin-top: 15rem;
-    padding-bottom: 15rem;
+    // padding-bottom: 15rem;
     gap: 4rem;
 
     @include breakpoint($xxl-bp) {
         margin-top: 11.5rem;
-        padding-bottom: 12rem;
+        // padding-bottom: 12rem;
     }
 
     @include breakpoint($xl-bp) {
         margin-top: 9rem;
-        padding-bottom: 10rem;
+        // padding-bottom: 10rem;
     }
 
     @include breakpoint($mid-bp) {
