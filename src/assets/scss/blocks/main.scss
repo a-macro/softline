@@ -904,7 +904,7 @@ button.link-red {
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-
+        text-decoration: none;
         @include breakpoint($mid-bp) {
             width: 58.5rem;
         }
