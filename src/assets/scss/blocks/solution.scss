@@ -2,6 +2,12 @@
 //   width: 0;
 // }
 
+.accordion   {
+  & > ul:not([class]) > li:not([class]) {
+    background-image: unset;
+  } 
+}
+
 .solution-accordion {
   .accordion__top-wrapper {
     display: flex;

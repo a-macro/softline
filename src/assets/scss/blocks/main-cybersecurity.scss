@@ -708,6 +708,55 @@
     }
 }
 
+.cols-3 {
+    .help-blocks {
+        grid-template-columns: repeat(3, 1fr);
+        @include breakpoint($mid-bp) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @include breakpoint($sm-bp) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+        @include breakpoint($mid-bp) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @include breakpoint($sm-bp) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .informationTechnology__content {
+        grid-template-columns: repeat(3, 1fr);
+        @include breakpoint($mid-bp) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @include breakpoint($sm-bp) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .cybersecurity-list {
+        grid-template-columns: repeat(3, 1fr);
+        @include breakpoint($mid-bp) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @include breakpoint($sm-bp) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .BCG__rules_list { 
+        grid-template-columns: repeat(3, 1fr);
+        @include breakpoint($mid-bp) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
 .cybersecurity {
     .service__text {
         max-height: none;
@@ -720,8 +769,36 @@
         }
     }
     &.cols-3 {
+        &.dark {
+            .services {
+                .service:nth-child(4n+1) {
+                    border-left: 0.1rem solid #40454E;
+                    @include breakpoint($mid-bp) {
+                        border-left: 0;
+                    }
+                }
+                .service:nth-child(1) {
+                    border-left: 0;
+                }
+            }
+        }
         .services {
             grid-template-columns: repeat(3,1fr);
+            .service:nth-child(4) .service__inner {
+                border-top: 0;
+            }
+            .service:nth-child(4n+1) {
+                border-left: 0.1rem solid #D2DCE5;
+                @include breakpoint($mid-bp) {
+                    border-left: 0;
+                }
+            }
+            .service:nth-child(1) {
+                border-left: 0;
+            }
+            .service:nth-child(3n + 1) {
+                border-left: 0;
+            }
             @include breakpoint($mid-bp) {
                 grid-template-columns: repeat(2, 1fr);
             }

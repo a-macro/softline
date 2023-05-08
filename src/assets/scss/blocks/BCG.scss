@@ -281,15 +281,16 @@
 }
 
 .BCG__rules_list {
-    display: flex;
     margin-top: 10rem;
-    flex-wrap: wrap;
-    row-gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 4rem;
     @include breakpoint($mid-bp) {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
     }
     @include breakpoint($sm-bp) {
         margin-top: 5rem;
+        display: flex;
         flex-direction: column;
     }
 
@@ -297,6 +298,7 @@
         align-items: flex-start;
         min-height: 33.5rem;
         border-color: $grey3;
+        width: 100%;
         @include breakpoint($mid-bp) {
             width: calc(calc(100% - 4rem)/2); 
             min-height: 31rem;
