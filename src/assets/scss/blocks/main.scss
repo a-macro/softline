@@ -577,9 +577,6 @@ button.link-red {
     overflow: hidden;
     position: relative;
     transition: color .3s;
-    @include breakpoint($xxl-bp) {
-        font-size: 1.6rem;
-    }
 
     @include breakpoint($sm-bp) {
         font-size: 1.94rem;
