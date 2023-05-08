@@ -8158,6 +8158,7 @@ textarea {
 
 .cybersecurity.wrapper .service__inner {
     justify-content: flex-start;
+    gap: 4rem;
 }
 
 @media (max-width: 480px) {
@@ -8321,6 +8322,22 @@ textarea {
 
 .cybersecurity .service__text--gradient::before {
     content: unset;
+}
+
+.cybersecurity.cols-3 .services {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .cybersecurity.cols-3 .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .cybersecurity.cols-3 .services {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 @media (max-width: 480px) {

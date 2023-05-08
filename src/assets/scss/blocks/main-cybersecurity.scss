@@ -561,6 +561,7 @@
 .cybersecurity.wrapper {
     .service__inner {
         justify-content: flex-start;
+        gap: 4rem;
     }
     @include breakpoint($sm-bp) {
         padding-left: 0;
@@ -716,6 +717,18 @@
     .service__text--gradient {
         &::before {
             content: unset;
+        }
+    }
+    &.cols-3 {
+        .services {
+            grid-template-columns: repeat(3,1fr);
+            @include breakpoint($mid-bp) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        
+            @include breakpoint($sm-bp) {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     }
 }
