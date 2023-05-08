@@ -946,7 +946,7 @@ textarea {
 
 @media (max-width: 480px) {
     .vacancy__bottom {
-        margin-top: 3rem;
+        margin-top: 0;
     }
 }
 
@@ -1095,7 +1095,7 @@ textarea {
 
 @media (max-width: 480px) {
     .vacancy__send {
-        margin-top: 2rem;
+        margin-top: 0;
     }
 }
 
@@ -8317,6 +8317,7 @@ textarea {
 
 .cybersecurity .service__text {
     max-height: none;
+    max-width: none;
 }
 
 .cybersecurity .service__text--gradient::before {
@@ -15203,7 +15204,7 @@ textarea {
     .subscribe .subscribe__title {
         font-size: 4rem;
         line-height: 5rem;
-        padding-bottom: 8.2rem;
+        padding-bottom: 5rem;
     }
 }
 
@@ -15224,7 +15225,7 @@ textarea {
     .subscribe .subscribe__form {
         flex-direction: column;
         gap: 3.5rem;
-        padding-bottom: 3.5rem;
+        padding-bottom: 0;
     }
 }
 

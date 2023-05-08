@@ -3498,7 +3498,8 @@
     @include breakpoint($sm-bp) {
       font-size: 4rem;
       line-height: 5rem;
-      padding-bottom: 8.2rem;
+      // padding-bottom: 8.2rem;
+      padding-bottom: 5rem;
     }
   }
 
@@ -3515,7 +3516,8 @@
     @include breakpoint($sm-bp) {
       flex-direction: column;
       gap: 3.5rem;
-      padding-bottom: 3.5rem;
+      // padding-bottom: 3.5rem;
+      padding-bottom: 0;
     }
 
     .vacancy__bottom {
