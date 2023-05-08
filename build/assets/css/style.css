@@ -4981,6 +4981,7 @@ textarea {
         margin-bottom: 0;
         padding-top: 3rem;
         padding-bottom: 3rem;
+        border-top: 0;
     }
 }
 
@@ -5886,7 +5887,7 @@ textarea {
 
 @media (max-width: 1515px) {
     .callback__img + .callback__inner {
-        padding: 8rem 11.7rem 6rem;
+        padding: 8rem 11.7rem;
     }
 }
 
@@ -7637,7 +7638,8 @@ textarea {
     color: #eff1f6;
 }
 
-.dark p, .dark .text-normal {
+.dark p,
+.dark .text-normal {
     color: #eff1f6;
 }
 
@@ -8009,12 +8011,14 @@ textarea {
     color: #eff1f6;
 }
 
-.cybersecurity-nums p, .cybersecurity-nums .text-normal {
+.cybersecurity-nums p,
+.cybersecurity-nums .text-normal {
     color: #eff1f6;
 }
 
 @media (max-width: 480px) {
-    .cybersecurity-nums p, .cybersecurity-nums .text-normal {
+    .cybersecurity-nums p,
+  .cybersecurity-nums .text-normal {
         font-size: 1.9rem;
         line-height: 2.9rem;
     }
@@ -8152,6 +8156,28 @@ textarea {
     }
 }
 
+.cybersecurity.wrapper .service__inner {
+    justify-content: flex-start;
+    gap: 4rem;
+}
+
+@media (max-width: 480px) {
+    .cybersecurity.wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cybersecurity.wrapper .service {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .cybersecurity.wrapper .section-top {
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+    }
+}
+
 .cybersecurity {
     padding-bottom: 15rem;
 }
@@ -8222,6 +8248,10 @@ textarea {
     }
 }
 
+.cybersecurity .service-text {
+    max-height: auto;
+}
+
 .cybersecurity.dark .subtitle {
     color: #eff1f6;
 }
@@ -8283,6 +8313,31 @@ textarea {
 
 .cybersecurity.dark .services .service__inner {
     border-color: #40454E;
+}
+
+.cybersecurity .service__text {
+    max-height: none;
+}
+
+.cybersecurity .service__text--gradient::before {
+    content: unset;
+}
+
+@media (max-width: 480px) {
+    .solution__services.wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .solution__services.wrapper .service {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    .solution__services.wrapper .solution__services-title {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 }
 
 .menu-wrapper {
@@ -10155,6 +10210,7 @@ textarea {
 @media (max-width: 480px) {
     .menu__item.active .submenu {
         width: 100%;
+        height: calc(100% - var(--headerH));
         max-height: 200vh;
         background: white;
         right: 0;
@@ -20234,11 +20290,6 @@ button.link-red:hover span {
     letter-spacing: 0em;
     text-align: left;
     color: #212424;
-    display: -webkit-box;
-    max-width: 100%;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 @media (max-width: 480px) {

@@ -1508,6 +1508,7 @@
         }
         @include breakpoint($sm-bp) {
             width: 100%;
+            height: calc(100% - var(--headerH));
             max-height: 200vh;
             background: white;
             right: 0;
