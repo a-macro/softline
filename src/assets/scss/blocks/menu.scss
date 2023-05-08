@@ -319,6 +319,7 @@
             }
             @include breakpoint($sm-bp) {
                 margin-top: 0;
+                justify-content: flex-end;
             }
         }
     }
@@ -1490,6 +1491,10 @@
             text-decoration: none;  
             padding-left: 3rem;  
         }
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            padding-left: 0;
+        }
         &::after {
             @include breakpoint($mid-bp) {
                 right: 0;
@@ -1508,8 +1513,8 @@
         }
         @include breakpoint($sm-bp) {
             width: 100%;
-            height: calc(100% - var(--headerH));
-            max-height: 200vh;
+            height: 100%;
+            max-height: none;
             background: white;
             right: 0;
             top: 0;

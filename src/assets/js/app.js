@@ -221,6 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     if(h >= toBottom) {
                         submenu.style.cssText = `top: -${h >= toBottom}px`;
                     }*/
+                    if (!item.classList.contains('list')) {
+                        return;
+                    }
                     if (window.innerWidth <= 480 && !item.classList.contains("empty")) {
                         subMenuItems.forEach(itemRest => {
                             itemRest.classList.add("hide");

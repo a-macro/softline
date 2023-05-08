@@ -8863,6 +8863,7 @@ textarea {
 @media (max-width: 480px) {
     .menu-second .menu-second__top .header__search {
         margin-top: 0;
+        justify-content: flex-end;
     }
 }
 
@@ -10326,6 +10327,13 @@ textarea {
     }
 }
 
+@media (max-width: 480px) {
+    .menu__item.active .menu__link {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .menu__item.active .menu__link::after {
         right: 0;
@@ -10350,8 +10358,8 @@ textarea {
 @media (max-width: 480px) {
     .menu__item.active .submenu {
         width: 100%;
-        height: calc(100% - var(--headerH));
-        max-height: 200vh;
+        height: 100%;
+        max-height: none;
         background: white;
         right: 0;
         top: 0;
