@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const mm = matchMedia("(max-width: 1024px)");
+    const sm = matchMedia("(max-width: 480px)");
 
     const tables = document.querySelectorAll('.crm-block table, story-block table');
     if (tables.length) {
@@ -188,6 +189,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let subMenuItems = document.querySelectorAll(".menu__item");
     if (subMenuItems && subMenuItems.length > 0) {
+        sm.addEventListener('change', () => {
+            if (sm.matches) {
+                let menuActive = document.querySelector(".menu__item.active");
+                if (menuActive) {
+                    subMenuItems.forEach(itemRest => {
+                        itemRest.classList.add("hide");
+                    });
+                }
+            } else {
+                subMenuItems.forEach(itemRest => {
+                    itemRest.classList.remove("hide");
+                });
+            }
+        })
         subMenuItems.forEach(item => {
             if (window.innerWidth <= 480) {
                 item.classList.remove("active");
@@ -1652,7 +1667,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const sm = matchMedia("(max-width: 480px)")
     const newsButton = document.querySelector('.news__button')
     let hideItems = null
     const items = document.querySelectorAll('.events__item, .news__item');
