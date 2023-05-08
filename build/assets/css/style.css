@@ -7949,7 +7949,7 @@ textarea {
 }
 
 .services .service__text {
-    max-width: 70%;
+    max-width: none;
 }
 
 @media (max-width: 1515px) {
@@ -8158,7 +8158,6 @@ textarea {
 
 .cybersecurity.wrapper .service__inner {
     justify-content: flex-start;
-    gap: 4rem;
 }
 
 @media (max-width: 480px) {

@@ -375,7 +375,7 @@
     }
 
     .service__text {
-        max-width: 70%;
+        max-width: none;
 
         @include breakpoint($xl-bp) {
             max-width: 100%;
@@ -561,7 +561,6 @@
 .cybersecurity.wrapper {
     .service__inner {
         justify-content: flex-start;
-        gap: 4rem;
     }
     @include breakpoint($sm-bp) {
         padding-left: 0;
