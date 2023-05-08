@@ -16740,13 +16740,13 @@ textarea {
 
 .story-block table thead + tbody tr:first-child,
 .crm-block table thead + tbody tr:first-child {
-    background: #D2DCE5;
+    background: transparent;
     border-top: 0;
 }
 
 .story-block table thead + tbody tr:last-child,
 .crm-block table thead + tbody tr:last-child {
-    background: #D2DCE5;
+    background: rgba(210, 220, 229, 0.3);
     border-top: 0;
 }
 
