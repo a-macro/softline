@@ -3998,6 +3998,9 @@
     }
     &::-webkit-scrollbar {
       width: 2px;
+      @include breakpoint($sm-bp) {
+        width: 0;
+      }
     }
 
     /* Track */
@@ -4043,7 +4046,7 @@
     @include breakpoint($sm-bp) {
       height: auto;
       width: 100%;
-      top: 4rem;
+      top: var(--headerH);
       border-top-left-radius: 2rem;
       border-top-right-radius: 2rem;
       padding-left: 0;

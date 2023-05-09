@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //document.documentElement.style.setProperty('--w', width + "px");
     //el.style.setProperty("--r", right + "px");
     //scrollLock.enablePageScroll(openedModal); отключить
+    enableScroll();
     //scrollLock.disablePageScroll(mobMenu);
 
     let header = document.querySelector(".header");
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (stickyBlocks.length) {
                 let headerH = header.getBoundingClientRect().height;
                 stickyBlocks.forEach(el => {
-                    if (headerH) { 
+                    if (headerH) {
                         el.style.setProperty('--headerH', headerH + "px");
                     }
                 })
@@ -85,7 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(() => {
                         headerBottom.classList.remove("show");
                     }, 100);
-                    scrollLock.enablePageScroll();
+                    // scrollLock.enablePageScroll();
+                    enableScroll();
                 }
             }
         });
@@ -116,7 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let itemMenu = document.querySelector(`.${attrPrev}`);
         itemMenu.style.display = "none";
         menuWrapper.classList.remove("show");
-        scrollLock.enablePageScroll();
+        // scrollLock.enablePageScroll();
+        enableScroll();
         document.body.classList.remove('overflow-hidden')
         document.removeEventListener('click', closeMenuAll)
         menuItems.forEach(item => {
@@ -136,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 let itemMenu = document.querySelector(`.${attrPrev}`);
                 itemMenu.style.display = "none";
                 menuWrapper.classList.remove("show");
-                scrollLock.enablePageScroll();
+                // scrollLock.enablePageScroll();
+                enableScroll();
                 document.body.classList.remove('overflow-hidden')
                 document.removeEventListener('click', closeMenuAll)
                 menuItems.forEach(item => {
@@ -263,10 +267,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     headerBottom.classList.add("show");
                 }, 10);
-                scrollLock.disablePageScroll();
-                scrollLock.addScrollableSelector('.header__bottom');
-                scrollLock.addScrollableSelector('.header__menu');
-                scrollLock.addScrollableSelector('.menu');
+                disableScroll()
+                // scrollLock.disablePageScroll();
+                // scrollLock.addScrollableSelector('.header__bottom');
+                // scrollLock.addScrollableSelector('.header__menu');
+                // scrollLock.addScrollableSelector('.menu');
             } else {
                 let active = document.querySelector(".header__item.active");
                 if (active) {
@@ -290,7 +295,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     headerBottom.classList.remove("show");
                 }, 10);
-                scrollLock.enablePageScroll();
+                // scrollLock.enablePageScroll();
+                enableScroll();
             }
         })
     }
@@ -465,7 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.which === 2) {
             event.preventDefault();
             return;
-        } 
+        }
         if (event.button === 1) {
             event.preventDefault();
         }
@@ -993,7 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchOverflow: true,
 
                 grid: {
-                    rows: 2,  
+                    rows: 2,
                     fill: "row",
 
                 },
@@ -1328,7 +1334,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     elem.style.transform = 'translate3d(0, 0px, 0)';
                 }
                 lastPosY = getTranslate3d(elem.style.transform)[1];
-                scrollLock.enablePageScroll();
+                // scrollLock.enablePageScroll();
+                enableScroll();
             }
 
             let asideClose = document.querySelectorAll(".swipe-el__close");
@@ -1347,9 +1354,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 elem.classList.remove("hide");
                 elem.classList.add("show");
                 bodyTag.classList.add("lock-modal");
-                scrollLock.disablePageScroll();
-                scrollLock.addScrollableSelector(".search-aside__list");
-                scrollLock.addScrollableSelector(".swipe-el__inner");
+                disableScroll()
+                // scrollLock.disablePageScroll();
+                // scrollLock.addScrollableSelector(".search-aside__list");
+                // scrollLock.addScrollableSelector(".swipe-el__inner");
                 elem.style.transform = 'translate3d(0, -100%, 0)';
                 lastPosY = getTranslate3d(elem.style.transform)[1];
             }
@@ -1728,6 +1736,49 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    const isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+    function disableScroll() {
+        // Get the current page scroll position;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollTop;
+        document.documentElement.style.setProperty('scroll-behavior', 'auto');
+
+        if (isMobile.any()) {
+            document.body.style.overflow='hidden';
+        }
+
+        // if any scroll is attempted, set this to the previous value;
+        window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+    };
+
+    function enableScroll() {
+        document.documentElement.style.setProperty('scroll-behavior', null);
+        document.body.style.overflow=null;
+        window.onscroll = function () { };
+    };
+
     function modalHandler() {
         let pannel = document.querySelector(".map__panel");
         if (pannel) {
@@ -1735,10 +1786,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const modal = document.querySelector(`${this.dataset?.modal}`) || this
         if (modal.classList.contains('regModal') && modal.hidden) {
-            scrollLock.disablePageScroll();
-            scrollLock.addScrollableSelector('.regModal');
+            disableScroll()
+            // scrollLock.disablePageScroll();
+            // scrollLock.addScrollableSelector('.regModal');
         } else {
-            scrollLock.enablePageScroll();
+            // scrollLock.enablePageScroll();
+            enableScroll();
         }
         if (modal) {
             if (modal.hidden) {
@@ -2299,10 +2352,10 @@ document.addEventListener("DOMContentLoaded", () => {
             card.onclick = (e) => {
                 e.preventDefault();
                 leadershipModal.style.display = "block";
-                scrollLock.disablePageScroll(leadershipModal);
-                scrollLock.addScrollableSelector('.leadership__text-block');
+                // scrollLock.disablePageScroll(leadershipModal);
+                // scrollLock.addScrollableSelector('.leadership__text-block');
                 if (window.innerWidth <= 1024) {
-                    scrollLock.addScrollableSelector(".leadership__wrapper");
+                    // scrollLock.addScrollableSelector(".leadership__wrapper");
                 }
                 setTimeout(() => {
                     leadershipModal.classList.add("show");
@@ -2315,7 +2368,8 @@ document.addEventListener("DOMContentLoaded", () => {
             leadershipClose.onclick = (e) => {
                 e.preventDefault();
                 leadershipModal.classList.remove("show");
-                scrollLock.enablePageScroll(leadershipModal);
+                // scrollLock.enablePageScroll(leadershipModal);
+                enableScroll();
                 setTimeout(() => {
                     leadershipModal.style.display = "none";
                 }, 400);
@@ -2329,7 +2383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         programBtn.onclick = (e) => {
             e.preventDefault();
             programModal.style.display = "block";
-            scrollLock.disablePageScroll(programModal);
+            // scrollLock.disablePageScroll(programModal);
             setTimeout(() => {
                 programModal.classList.add("show");
             }, 10);
@@ -2340,7 +2394,8 @@ document.addEventListener("DOMContentLoaded", () => {
             programClose.onclick = (e) => {
                 e.preventDefault();
                 programModal.classList.remove("show");
-                scrollLock.enablePageScroll(programModal);
+                // scrollLock.enablePageScroll(programModal);
+                enableScroll();
                 setTimeout(() => {
                     programModal.style.display = "none";
                 }, 400);
@@ -2357,7 +2412,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.onclick = (e) => {
                 e.preventDefault();
                 partnerModal.style.display = "block";
-                scrollLock.disablePageScroll(partnerModal);
+                // scrollLock.disablePageScroll(partnerModal);
                 setTimeout(() => {
                     partnerModal.classList.add("show");
                 }, 10);
@@ -2369,7 +2424,8 @@ document.addEventListener("DOMContentLoaded", () => {
             partnerClose.onclick = (e) => {
                 e.preventDefault();
                 partnerModal.classList.remove("show");
-                scrollLock.enablePageScroll(partnerModal);
+                // scrollLock.enablePageScroll(partnerModal);
+                enableScroll();
                 setTimeout(() => {
                     partnerModal.style.display = "none";
                 }, 400);
@@ -2385,7 +2441,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.onclick = (e) => {
                 e.preventDefault();
                 employeeModal.style.display = "block";
-                scrollLock.disablePageScroll(employeeModal);
+                // scrollLock.disablePageScroll(employeeModal);
                 setTimeout(() => {
                     employeeModal.classList.add("show");
                 }, 10);
@@ -2397,7 +2453,8 @@ document.addEventListener("DOMContentLoaded", () => {
             employeeClose.onclick = (e) => {
                 e.preventDefault();
                 employeeModal.classList.remove("show");
-                scrollLock.enablePageScroll(employeeModal);
+                // scrollLock.enablePageScroll(employeeModal);
+                enableScroll();
                 setTimeout(() => {
                     employeeModal.style.display = "none";
                 }, 400);
@@ -2832,7 +2889,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
     })
-    
+
     const serviceText = document.querySelectorAll('.service .service__text');
     if (serviceText.length) {
         window.addEventListener('load', () => {

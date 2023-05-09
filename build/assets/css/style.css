@@ -5842,6 +5842,13 @@ textarea {
     border-color: #40454E;
 }
 
+@media (max-width: 480px) {
+    .callback.wrapper-margin {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 .callback {
     background-color: #FFFFFF;
     position: relative;
@@ -5879,7 +5886,7 @@ textarea {
 
 @media (max-width: 480px) {
     .callback__inner {
-        gap: 10rem;
+        gap: 8rem;
     }
 }
 
@@ -15933,6 +15940,12 @@ textarea {
     width: 2px;
 }
 
+@media (max-width: 480px) {
+    .registration .registration__block::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
 .registration .registration__block::-webkit-scrollbar-track {
     background-color: transparent;
 }
@@ -15970,7 +15983,7 @@ textarea {
     .registration .registration__block {
         height: auto;
         width: 100%;
-        top: 4rem;
+        top: var(--headerH);
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
         padding-left: 0;
@@ -20320,6 +20333,15 @@ button.header__link:hover {
     }
 }
 
+.section-top__aside p + p {
+    margin-top: 1rem;
+}
+
+.section-top__aside ul, .section-top__aside ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .title-num {
     display: flex;
     align-items: center;
@@ -24661,7 +24683,7 @@ textarea {
 }
 .prof-item .prof-item__subtitle {
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 2.4rem;
   
   
