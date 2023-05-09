@@ -8879,7 +8879,7 @@ textarea {
         padding-right: 7rem;
         padding-left: 2.5rem;
         padding-bottom: 2.5rem;
-        row-gap: 3.5rem;
+        row-gap: 2.4rem;
     }
 }
 
@@ -8937,7 +8937,8 @@ textarea {
 
 @media (max-width: 480px) {
     .menu-second .menu-second__flex-col {
-        gap: 3.5rem;
+        gap: 2.4rem;
+        margin-top: 0;
     }
 }
 
@@ -8990,8 +8991,13 @@ textarea {
 }
 
 @media (max-width: 480px) {
+    .menu-second .header__contact-mob {
+        gap: 2.4rem;
+    }
+
     .menu-second .header__contact-mob a {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
+        line-height: 2rem;
     }
 }
 
@@ -9047,7 +9053,7 @@ textarea {
     }
 
     .menu-second .header__nav_link:nth-child(2n) {
-        padding-left: 1.5rem;
+        padding-left: 6rem;
     }
 }
 
@@ -9776,6 +9782,7 @@ textarea {
         max-height: 0;
         transition: max-height 0.6s;
         overflow: hidden;
+        padding-left: 0;
     }
 }
 
@@ -19985,7 +19992,7 @@ body::before {
     line-height: 2rem;
   
   
-    color: #697279;
+    color: #697279 !important;
     text-decoration: none;
 }
 

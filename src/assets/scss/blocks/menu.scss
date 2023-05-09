@@ -305,7 +305,7 @@
             padding-right: 7rem;
             padding-left: 2.5rem;
             padding-bottom: 2.5rem;
-            row-gap: 3.5rem;
+            row-gap: 2.4rem;
         }
         .header__search {
             @include breakpoint($mid-bp) {
@@ -352,7 +352,8 @@
             margin-top: 2rem;
         }
         @include breakpoint($sm-bp) {
-            gap: 3.5rem;
+            gap: 2.4rem;
+            margin-top: 0;
         }
     }
 
@@ -395,8 +396,10 @@
             }
         }
         @include breakpoint($sm-bp) {
+            gap: 2.4rem;
             a {
-                font-size: 1.75rem;
+                font-size: 1.8rem;
+                line-height: 2rem;
             }
         }
     }
@@ -443,7 +446,7 @@
                 margin-top: 0;
             }
             &:nth-child(2n) {
-                padding-left: 1.5rem;
+                padding-left: 6rem;
             }
         }
     }
@@ -1015,6 +1018,7 @@
         max-height: 0;
         transition: max-height .6s;
         overflow: hidden;
+        padding-left: 0;
     }
 }
 
