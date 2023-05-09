@@ -220,6 +220,9 @@
         p, .text-normal {
             font-size: 2rem;
         }
+        p + p {
+            margin-top: 1rem;
+        }
     }
 
     .solve__intro {
