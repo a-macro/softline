@@ -45,9 +45,9 @@
         overflow: auto;
         transform: translateX(100%);
         padding: 0;
-        // &::-webkit-scrollbar {
-        //     width: 0;
-        // }
+        &::-webkit-scrollbar {
+            width: 0;
+        }
     }
     @include breakpoint($sm-bp) {
         grid-template-columns: repeat(1, 1fr);
@@ -532,6 +532,7 @@
     }
     @include breakpoint($sm-bp) {
         padding: 4rem 2.5rem;
+        height: auto;
     }
 
     .menu__title {
@@ -553,7 +554,7 @@
             margin-top: 2rem;
         }
         @include breakpoint($sm-bp) {
-            margin-top: 2.9rem;
+            margin-top: 2.4rem;
         }
     }
 
@@ -568,12 +569,14 @@
             padding-right: 3rem;
         }
         @include breakpoint($sm-bp) {
-            font-size: 2.05rem;
+            font-size: 2rem;
+            line-height: 2.8rem;
         }
     }
 
     .link-red {
         margin-left: 0;
+        margin-top: 7.6rem;
         @include breakpoint($mid-bp) {
             margin-top: 2.5rem;
             order: 1;
@@ -898,6 +901,9 @@
     transition: .4s;
     gap: 1.6rem;
     align-items: center;
+    @include breakpoint($sm-bp) {
+        margin-bottom: 0;
+    }
     img {
         align-self: flex-start;
         width: 2.4rem;
@@ -922,6 +928,9 @@
 
 .menu__link + .submenu {
     margin-top: 1rem;
+    @include breakpoint($sm-bp) {
+        margin-top: 0;
+    }
 }
 
 .submenu__aside {
@@ -1015,7 +1024,7 @@
         margin-bottom: 2.2rem;
     }
     @include breakpoint($sm-bp) {
-        margin-bottom: 2.8rem;
+        margin-bottom: 2.4rem;
     }
 }
 
@@ -1443,7 +1452,7 @@
     @include breakpoint($sm-bp) {
         width: 100%;
         padding-right: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 2.4rem;
     }
 }
 .menu__item.list {
