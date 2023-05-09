@@ -242,6 +242,14 @@
         margin-top: 2.2rem;
     }
 
+    p + p {
+        margin-top: 1rem;
+    }
+    ul, ol {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
     p, .text-normal {
         // padding-right: 30%;
 

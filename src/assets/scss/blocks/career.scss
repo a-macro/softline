@@ -795,10 +795,17 @@
         }
     }
 }
+.callback.wrapper-margin {
+    @include breakpoint($sm-bp) {
+        margin-left: 0;
+        margin-right: 0; 
+    }
+}
 
 .callback {
     background-color: #FFFFFF;
     position: relative;
+
     .footer__btn {
         color: #212424;
         padding: 0;
@@ -827,7 +834,7 @@
     z-index: 1;
     padding: 4rem;
     @include breakpoint($sm-bp) {
-        gap: 10rem;
+        gap: 8rem;
     }
 }
 .callback__img + .callback__inner {
