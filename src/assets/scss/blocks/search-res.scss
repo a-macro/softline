@@ -74,7 +74,7 @@
 .menu-open {
     .search-aside {
         @include breakpoint($mid-bp) {
-            transform: translateY(-100%);
+            transform: translateY(100%)!important;
         }
     }
 
