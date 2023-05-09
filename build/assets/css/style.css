@@ -17637,7 +17637,7 @@ ul:not([class]) > li:not([class]) {
 
 @media (max-width: 1024px) {
     .menu-open .search-aside {
-        transform: translateY(-100%);
+        transform: translateY(100%) !important;
     }
 }
 
