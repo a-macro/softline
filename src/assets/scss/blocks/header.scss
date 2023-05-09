@@ -1171,7 +1171,7 @@
 
     /* UI/Footer */
 
-    color: #697279;
+    color: #697279!important;
     text-decoration: none;
     @include breakpoint($xxl-bp) {
         font-size: 14px;
