@@ -1499,6 +1499,19 @@ button.link-red {
     margin-top: 0;
 }
 
+.pb15.dark + .wrapper>.section-top {
+    margin-top: 15rem;
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+    }
+    @include breakpoint($mid-bp) {
+        margin-top: 10.2rem;
+    }
+    @include breakpoint($sm-bp) {
+        margin-top: 5.5rem;
+    }
+}
+
 .corporate.corporate--investors {
     .section-top__title {
         font-family: 'Manrope';

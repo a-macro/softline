@@ -599,7 +599,18 @@
         padding-bottom: 10rem;
     }
 
-
+    .services {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/4)), 1fr)); 
+        @include breakpoint($xl-bp) {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(64px, 100%/3)), 1fr)); 
+        }
+        @include breakpoint($mid-bp) {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(64px, 100%/2)), 1fr)); 
+        }
+        @include breakpoint($sm-bp) {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(64px, 100%/1)), 1fr)); 
+        }
+    }
     .partner {
         // margin-right: 21.5rem;
         margin-right: 13.5rem;
@@ -663,7 +674,6 @@
                 content: unset;
             }
         }
-
         .services .service:hover {
             background-color: #40454E;
             position: relative;
@@ -793,7 +803,8 @@
             }
         }
         .services {
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(64px, 100%/3)), 1fr));
+            
             .service:nth-child(4) .service__inner {
                 border-top: 0;
             }
@@ -810,11 +821,11 @@
                 border-left: 0;
             }
             @include breakpoint($mid-bp) {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(64px, 100%/2)), 1fr));
             }
         
             @include breakpoint($sm-bp) {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(64px, 100%/1)), 1fr));
             }
         }
     }

@@ -115,10 +115,12 @@
                 line-height: 5.2rem; 
                 letter-spacing: -0.02em;
                 color: #A50F2D;
+                margin-bottom: 1rem;
                 @include breakpoint($sm-bp) {
                     font-size: 7rem;
                     line-height: 7rem;
                     padding-bottom: 0.4rem;
+                    margin-bottom: 0;
                 }
             }
     

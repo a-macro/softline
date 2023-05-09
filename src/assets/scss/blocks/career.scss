@@ -783,7 +783,11 @@
     }
 
     &.dark {
+        
         .informationTechnology__content .informationTechnology__block div:last-child {
+            color: #697279;
+        }
+        .informationTechnology__content .informationTechnology__block .informationTechnology__helper div:last-child {
             color: #eff1f6;
         }
         .informationTechnology__content .informationTechnology__block {
