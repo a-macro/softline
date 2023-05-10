@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   var stickyBlocks = document.querySelectorAll('.sticky');
   var prevScroll = 0;
-  window.onscroll = function (e) {
+  window.addEventListener('scroll', function (e) {
     var delta = pageYOffset - prevScroll;
     if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
       header.classList.add("hide-header");
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.remove("start");
     }
     prevScroll = pageYOffset;
-  };
+  });
   var headerSearch = document.querySelectorAll(".header__search");
   var headerSearchBtn = document.querySelectorAll(".btn__search-show");
   var menubutton = document.querySelector('.menu-button');
