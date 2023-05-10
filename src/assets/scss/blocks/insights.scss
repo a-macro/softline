@@ -282,7 +282,10 @@
       @include breakpoint($sm-bp) {
         gap: 1rem;
       }
-
+      li:not([class]) {
+        padding: 0;
+        background: unset;
+      }
       li {
         @include breakpoint($mid-bp) {
           &:nth-child(1) {

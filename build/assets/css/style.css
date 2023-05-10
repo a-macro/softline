@@ -12092,6 +12092,11 @@ textarea {
     }
 }
 
+.insights-navigation nav ul li:not([class]) {
+    padding: 0;
+    background: unset;
+}
+
 @media (max-width: 1024px) {
     .insights-navigation nav ul li:nth-child(1) a {
         padding-left: 0;
