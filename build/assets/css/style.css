@@ -911,7 +911,7 @@ textarea {
 }
 
 .vacancy__text ul li::before {
-    content: "";
+    content: unset;
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 100%;
