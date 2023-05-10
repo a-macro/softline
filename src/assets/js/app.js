@@ -37,8 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const stickyBlocks = document.querySelectorAll('.sticky')
     let prevScroll = 0;
     window.addEventListener('scroll', (e) => {
-        let delta = pageYOffset - prevScroll;
-        if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        if (currentScroll < 0) {
+            currentScroll = 0;
+        }
+        let delta = currentScroll - prevScroll;
+        if (delta > 0 && currentScroll > 80 && header && window.innerWidth > 1024) {
             header.classList.add("hide-header");
             header.classList.add("start");
             if (stickyBlocks.length) {
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     el.style.setProperty('--headerH', '0px');
                 })
             }
-        } else if (header && pageYOffset > 80 && window.innerWidth > 1024) {
+        } else if (header && currentScroll > 80 && window.innerWidth > 1024) {
             header.classList.remove("hide-header");
             header.classList.add("start");
             if (stickyBlocks.length) {
@@ -57,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 })
             }
-        } else if (header && pageYOffset < 20 && window.innerWidth > 1024) {
+        } else if (header && currentScroll < 20 && window.innerWidth > 1024) {
             header.classList.remove("start");
         }
-        prevScroll = pageYOffset;
+        prevScroll = currentScroll;
     })
 
 
