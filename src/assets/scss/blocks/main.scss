@@ -1503,20 +1503,20 @@ button.link-red {
     }
 }
 
-.pb15+.wrapper>.section-top {
-    margin-top: 0;
-}
+// .pb15+.wrapper>.section-top {
+//     margin-top: 0;
+// }
 
-.pb15.dark + .wrapper.dark>.section-top {
-    margin-top: 15rem;
+.pb15.dark + .wrapper.dark {
+    padding-top: 15rem;
     @include breakpoint($xxl-bp) {
-        margin-top: 12rem;
+        padding-top: 12rem;
     }
     @include breakpoint($mid-bp) {
-        margin-top: 10.2rem;
+        padding-top: 10.2rem;
     }
     @include breakpoint($sm-bp) {
-        margin-top: 5.5rem;
+        padding-top: 5.5rem;
     }
 }
 
