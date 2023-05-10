@@ -90,7 +90,9 @@
 
 .catalog {
     display: flex;
-
+    @include breakpoint($sm-bp) {
+        overflow: hidden;
+    }
     .pagination-block {
         padding-left: 0;
         padding-right: 0;
