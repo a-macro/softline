@@ -436,9 +436,9 @@
         }
         @include breakpoint($sm-bp) {
             width: 50%;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 500;
-            line-height: 2.8rem;
+            line-height: 2rem;
             letter-spacing: 0em;
             text-align: left;
             color: #697279;
