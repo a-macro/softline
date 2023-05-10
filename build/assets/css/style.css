@@ -21759,29 +21759,25 @@ button.link-red:hover span {
     }
 }
 
-.pb15 + .wrapper > .section-top {
-    margin-top: 0;
-}
-
-.pb15.dark + .wrapper.dark > .section-top {
-    margin-top: 15rem;
+.pb15.dark + .wrapper.dark {
+    padding-top: 15rem;
 }
 
 @media (max-width: 1920px) {
-    .pb15.dark + .wrapper.dark > .section-top {
-        margin-top: 12rem;
+    .pb15.dark + .wrapper.dark {
+        padding-top: 12rem;
     }
 }
 
 @media (max-width: 1024px) {
-    .pb15.dark + .wrapper.dark > .section-top {
-        margin-top: 10.2rem;
+    .pb15.dark + .wrapper.dark {
+        padding-top: 10.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .pb15.dark + .wrapper.dark > .section-top {
-        margin-top: 5.5rem;
+    .pb15.dark + .wrapper.dark {
+        padding-top: 5.5rem;
     }
 }
 
