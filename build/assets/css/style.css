@@ -20275,6 +20275,8 @@ button.header__link:hover {
 
 @media (max-width: 1024px) {
     .section-top {
+        flex-direction: column;
+        gap: 2rem;
         margin-top: 10.2rem;
     }
 }
@@ -20283,6 +20285,7 @@ button.header__link:hover {
     .section-top {
         margin-top: 5.5rem;
         flex-direction: column;
+        gap: 0;
     }
 }
 

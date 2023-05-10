@@ -162,13 +162,15 @@
     }
 
     @include breakpoint($mid-bp) {
-
+        flex-direction: column;
+        gap: 2rem;
         margin-top: 10.2rem;
     }
 
     @include breakpoint($sm-bp) {
         margin-top: 5.5rem;
         flex-direction: column;
+        gap: 0;
     }
 }
 
