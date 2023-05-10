@@ -239,7 +239,7 @@
             }
 
             &::before {
-                content: "";
+                content: unset;
                 width: .6rem;
                 height: .6rem;
                 border-radius: 100%;
