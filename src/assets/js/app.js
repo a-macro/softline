@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stickyBlocks = document.querySelectorAll('.sticky')
     let prevScroll = 0;
-    window.onscroll = (e) => {
+    window.addEventListener('scroll', (e) => {
         let delta = pageYOffset - prevScroll;
         if (delta > 0 && pageYOffset > 80 && header && window.innerWidth > 1024) {
             header.classList.add("hide-header");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove("start");
         }
         prevScroll = pageYOffset;
-    };
+    })
 
 
     let headerSearch = document.querySelectorAll(".header__search");
