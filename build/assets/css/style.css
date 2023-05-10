@@ -9047,9 +9047,9 @@ textarea {
 @media (max-width: 480px) {
     .menu-second .header__nav_link {
         width: 50%;
-        font-size: 16px;
+        font-size: 2rem;
         font-weight: 500;
-        line-height: 24px;
+        line-height: 2.8rem;
         letter-spacing: 0em;
         text-align: left;
         color: #697279;
@@ -10559,6 +10559,12 @@ textarea {
 
 .catalog {
     display: flex;
+}
+
+@media (max-width: 480px) {
+    .catalog {
+        overflow: hidden;
+    }
 }
 
 .catalog .pagination-block {
@@ -21757,24 +21763,24 @@ button.link-red:hover span {
     margin-top: 0;
 }
 
-.pb15.dark + .wrapper > .section-top {
+.pb15.dark + .wrapper.dark > .section-top {
     margin-top: 15rem;
 }
 
 @media (max-width: 1920px) {
-    .pb15.dark + .wrapper > .section-top {
+    .pb15.dark + .wrapper.dark > .section-top {
         margin-top: 12rem;
     }
 }
 
 @media (max-width: 1024px) {
-    .pb15.dark + .wrapper > .section-top {
+    .pb15.dark + .wrapper.dark > .section-top {
         margin-top: 10.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .pb15.dark + .wrapper > .section-top {
+    .pb15.dark + .wrapper.dark > .section-top {
         margin-top: 5.5rem;
     }
 }

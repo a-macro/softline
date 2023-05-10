@@ -1507,7 +1507,7 @@ button.link-red {
     margin-top: 0;
 }
 
-.pb15.dark + .wrapper>.section-top {
+.pb15.dark + .wrapper.dark>.section-top {
     margin-top: 15rem;
     @include breakpoint($xxl-bp) {
         margin-top: 12rem;
