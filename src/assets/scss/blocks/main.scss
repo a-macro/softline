@@ -1688,6 +1688,10 @@ button.link-red {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+    @include breakpoint($sm-bp) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
 
 .investors-blocks-item {

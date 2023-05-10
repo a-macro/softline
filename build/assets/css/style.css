@@ -7600,7 +7600,14 @@ textarea {
 @media (max-width: 480px) {
     .intro__pages {
         padding-bottom: 4rem;
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
     }
+}
+
+.intro__pages .breadcrumbs.wrapper {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .intro__pages .breadcrumbs__link {
@@ -21948,6 +21955,13 @@ button.link-red:hover span {
 }
 
 @media (max-width: 1024px) {
+    .investors-blocks-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
     .investors-blocks-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
