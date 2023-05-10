@@ -25033,6 +25033,10 @@ textarea {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.alloffices__list-block .alloffices__list-item ul li:not([class]) {
+  padding: 0;
+  background: unset;
+}
 .alloffices__list-block .alloffices__list-item ul .link {
   display: flex;
   gap: 1.6rem;
