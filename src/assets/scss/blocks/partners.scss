@@ -599,32 +599,32 @@
 }
 
 .wrapper.customers-faq {
-    .accordion {
-        .accordion__top {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: flex-end;
-            padding-bottom: 5.2rem;
-            gap: 2rem;
+    // .accordion {
+    //     .accordion__top {
+    //         display: flex;
+    //         width: 100%;
+    //         justify-content: space-between;
+    //         align-items: flex-end;
+    //         padding-bottom: 5.2rem;
+    //         gap: 2rem;
 
-            @include breakpoint($mid-bp) {
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
+    //         @include breakpoint($mid-bp) {
+    //             flex-direction: column;
+    //             justify-content: flex-start;
+    //             align-items: flex-start;
+    //         }
 
-            .accordion__title {
-                padding-bottom: 0;
-            }
+    //         .accordion__title {
+    //             padding-bottom: 0;
+    //         }
 
-            .link-red {
-                @include breakpoint($sm-bp) {
-                    padding-left: 2.5rem;
-                }
-            }
-        }
-    }
+    //         .link-red {
+    //             @include breakpoint($sm-bp) {
+    //                 padding-left: 2.5rem;
+    //             }
+    //         }
+    //     }
+    // }
 
 }
 

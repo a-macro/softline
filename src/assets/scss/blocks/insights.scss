@@ -1124,7 +1124,7 @@
   }
 
   &:not(:last-child) {
-    margin-right: 1.2rem;
+    // margin-right: 1.2rem;
   }
 
   &:nth-last-child(3) {
@@ -3783,6 +3783,9 @@
     .sticky-wrapper__item {
       @include breakpoint($mid-bp) {
         width: 13rem;
+        &:first-child {
+          flex: 1;
+        }
       }
 
       @include breakpoint($sm-bp) {

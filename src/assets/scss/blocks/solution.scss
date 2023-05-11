@@ -5,6 +5,7 @@
 .accordion   {
   & > ul:not([class]) > li:not([class]) {
     background-image: unset;
+    padding-left: 0;
   } 
 }
 
