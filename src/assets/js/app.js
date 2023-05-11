@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             }
         } else if (header && currentScroll < 20 && window.innerWidth > 1024) {
+            header.classList.remove("hide-header");
             header.classList.remove("start");
         }
         prevScroll = currentScroll;

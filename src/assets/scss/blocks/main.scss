@@ -931,6 +931,9 @@ button.link-red {
 
             @include breakpoint($mid-bp) {
                 height: 10rem;
+                width: 100%;
+                object-fit: contain;
+                object-position: left;
             }
 
             @include breakpoint($sm-bp) {
@@ -1914,3 +1917,94 @@ button.link-red {
     
     color: #697279;
 }
+
+.news_for_investors-element {
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .crm-block h3.news_for_investors-title {
+    margin-top: 0;
+  }
+  
+  .crm-block h3.news_for_investors-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* .crm-block h3.news_for_investors-title a {
+    color: #a50f2d;
+    text-decoration: none;
+  }
+  
+  .crm-block h3.news_for_investors-title a:hover {  
+    text-decoration: underline;
+  } */
+  
+  .news_for_investors-date {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #aaa9a6;
+  }
+  
+  /* .crm-block p.news_for_investors-text {
+    font-family: ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+  } */
+
+  .credit-block {
+    .section-top {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        @include breakpoint($sm-bp) {
+            gap: 0;
+        }
+    }
+    .section-top__aside {
+        width: 40%;
+        @include breakpoint($mid-bp) {
+            width: 50%;
+        }
+        @include breakpoint($sm-bp) {    
+            width: 100%;
+        }
+    }
+
+
+
+    .title-wrapper {
+        .title {
+            margin-left: 0;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+    }
+  }
+
+  .b-page-ratings__rate {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    margin-left: 4rem;
+    @include breakpoint($sm-bp) {
+        margin-left: 0;
+    }
+    img {
+        margin-top: 2rem;
+    }
+  }
+
+  .b-page-ratings__rate-title {
+    color: #A50F2D;
+    border-bottom: 0.1rem solid $grey;
+    padding-bottom: 2rem;
+  }
+
+  .b-page-ratings__rate-date {
+    color: #697279;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    padding-top: 2rem;
+    display: block;
+  }

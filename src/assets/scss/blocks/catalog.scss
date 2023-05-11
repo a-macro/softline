@@ -597,6 +597,7 @@
     }
 
     input {
+        font-family: 'Manrope';
         width: 100%;
         box-sizing: border-box;
         height: 6rem;
@@ -620,11 +621,17 @@
             height: 7.5rem;
             padding-left: 7.5rem;
             font-size: 1.82rem;
+            line-height: 1.5;
         }
 
 
-        &::placeholder {
+        &::placeholder { 
             color: #AAB8C3;
+            @include breakpoint($sm-bp) {
+                font-family: 'Manrope';
+                font-size: 1.82rem;
+                line-height: 1.5;
+            }
         }
     }
 }

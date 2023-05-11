@@ -30,6 +30,11 @@
     @include breakpoint($sm-bp) {
         padding: 2.5rem;
     }
+
+    a {
+        -webkit-tap-highlight-color: rgba(0,0,0,0); 
+        -webkit-tap-highlight-color: transparent;   
+    }
 }
 
 .menu-open {

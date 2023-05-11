@@ -120,6 +120,8 @@ function cssWatch(cb) {
         includePaths: "./node_modules/",
       })
     )
+    .pipe(cssbeautify())
+    .pipe(removeComments())
     // .pipe(
     //   rename({
     //     suffix: ".min",
