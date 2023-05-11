@@ -3527,7 +3527,9 @@
       width: 100%;
       align-items: flex-start;
       margin-top: 4rem;
-
+      @include breakpoint($sm-bp) {
+        margin-top: 0;
+      }
       .vacancy__bottom_info {
         margin: 1rem 3.3rem 0;
         @include breakpoint($sm-bp) {

@@ -851,13 +851,20 @@
   text-decoration: none;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
   align-items: center;
   padding: 2.8rem 0;
   transition: all .3s;
 
+  & > span {
+    display: flex;
+    align-items: baseline;
+  }
+
   @include breakpoint($sm-bp) {
     display: grid;
     grid-template-columns: 1fr min-content;
+    gap: 0;
   }
 
   .download-data {
@@ -871,7 +878,6 @@
 
   .download-text {
     padding-left: 6rem;
-
     @include breakpoint($mid-bp) {
       padding-left: 2.5rem;
     }
@@ -1017,9 +1023,23 @@
   }
 }
 
-.dark .registration__block .crm-block {
+.dark .registration__block .crm-block, .dark .registration__block .crm-block p {
   color: #212424;
 }
 .dark .crm-block {
   color: #eff1f6;
+}
+
+.crm-block .download-block {
+  padding-left: 0;
+  padding-right: 0;
+}
+.crm-block .download-text {
+  max-width: 82rem;
+  @include breakpoint($xl-bp) {
+    max-width: 61rem;
+  }
+  @include breakpoint($mid-bp) {
+    max-width: 56rem;
+  }
 }
