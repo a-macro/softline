@@ -19,7 +19,12 @@
 <body>
     <div class="preloader">
         <div class="spin">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </div>
     <svg style="display: none;">
@@ -1371,6 +1376,8 @@
         </section>
         
         <section class="catalog">
+        
+        
             <aside class="catalog-sidebar swipe-el">
                 <div class="swipe-el__inner">
                     <div class="catalog-sidebar__close swipe-el__close"></div>
@@ -1379,11 +1386,11 @@
                         <div class="search-term">
                             <span class="search-term__text">Аэрокосмическая и оборонная промышленность</span>
                             <a class="search-term__close" href="#"></a>
-                        </div>  
+                        </div>
                         <div class="search-term">
                             <span class="search-term__text">Java</span>
                             <a class="search-term__close" href="#"></a>
-                        </div>      
+                        </div>
                         <a class="catalog__terms_del" href="#">Очистить все</a>
                     </div>
                     <div class="catalog__filters">
@@ -1393,10 +1400,11 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Автомеханический</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" onchange="smartFilter.click(this)"/> 
+                                                <span
+                                                    class="bx-filter-param-text catalog-sidebar__title side-list__title">Автомеханический</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1404,10 +1412,12 @@
                                 <li class="catalog-sidebar__item side-list__item active">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item" checked/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Аэрокосмическая и оборонная промышленность</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" checked />
+                                                <span
+                                                    class="bx-filter-param-text catalog-sidebar__title side-list__title">Аэрокосмическая
+                                                    и оборонная промышленность</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1415,10 +1425,12 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Банковское дело</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" />
+                                                <span
+                                                    class="bx-filter-param-text catalog-sidebar__title side-list__title">Банковское
+                                                    дело</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1426,10 +1438,11 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Рынки капитала</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" />
+                                                <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Рынки
+                                                    капитала</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1437,10 +1450,11 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Химикаты</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" />
+                                                <span
+                                                    class="bx-filter-param-text catalog-sidebar__title side-list__title">Химикаты</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1448,10 +1462,11 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Связь и средства массовой информации</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" onchange="smartFilter.click(this)"/>
+                                                <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Связь
+                                                    и средства массовой информации</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1459,10 +1474,11 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Автомеханический</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" onclick="smartFilter.click(this)"/>
+                                                <span
+                                                    class="bx-filter-param-text catalog-sidebar__title side-list__title">Автомеханический</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1470,10 +1486,11 @@
                                 <li class="catalog-sidebar__item side-list__item">
                                     <div class="radio catalog-sidebar__link side-list__link">
                                         <label class="bx-filter-param-label ">
-                                          <span class="bx-filter-input-checkbox">
-                                            <input class="visually-hidden" type="radio" value="" name="item"/>
-                                            <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Химикаты</span>
-                                          </span>
+                                            <span class="bx-filter-input-checkbox">
+                                                <input class="visually-hidden" type="radio" value="" name="item" />
+                                                <span
+                                                    class="bx-filter-param-text catalog-sidebar__title side-list__title">Химикаты</span>
+                                            </span>
                                         </label>
                                         <span class="search-aside__item_close side-list__close"></span>
                                     </div>
@@ -1540,11 +1557,69 @@
                                         <span class="check-box__text">Autodesk</span>
                                     </label>
                                 </li>
+        
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Microsoft</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Apple</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">IBM</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Google Cloud</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Autodesk</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Cisco</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Microsoft</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Autodesk</span>
+                                    </label>
+                                </li>
                             </ul>
                             <a class="filter__show-more" href="#">Показать все</a>
                         </div>
                         <div class="filter__wrapper">
                             <a class="filter__category" href="#">Технологии</a>
+                            <input type="text" class="filter-input-text" placeholder="Введите условие поиска">
                             <ul data-show="4" class="catalog-sidebar__list side-checkbox">
                                 <li class="catalog-sidebar__item side-checkbox__item">
                                     <label>
@@ -1593,6 +1668,7 @@
                         </div>
                         <div class="filter__wrapper">
                             <a class="filter__category" href="#">Архитектура</a>
+                            <input type="text" class="filter-input-text" placeholder="Введите условие поиска">
                             <ul data-show="4" class="catalog-sidebar__list side-checkbox">
                                 <li class="catalog-sidebar__item side-checkbox__item">
                                     <label>
@@ -1639,16 +1715,1931 @@
                             </ul>
                             <a class="filter__show-more" href="#">Показать все</a>
                         </div>
+                        <div class="filter__wrapper">
+                            <a class="filter__category" href="#">Направления</a>
+                            <input type="text" class="filter-input-text" placeholder="">
+                            <ul data-show="4" class="catalog-sidebar__list side-checkbox" style="--max-h:160px;">
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3427756184" id="arrFilterSolutions_65_3427756184"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Кибербезопасность</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3408047233" id="arrFilterSolutions_65_3408047233"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Импортозамещение</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3148865571" id="arrFilterSolutions_65_3148865571"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Заказная разработка</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2663285759" id="arrFilterSolutions_65_2663285759"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">ИТ-инфраструктура</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_574687668" id="arrFilterSolutions_65_574687668"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">САПР и ГИС</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3142080526" id="arrFilterSolutions_65_3142080526"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Бизнес-решения</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2782467451" id="arrFilterSolutions_65_2782467451"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Бизнес-консалтинг</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3264536746" id="arrFilterSolutions_65_3264536746"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Управляемые услуги. Техническая поддержка и
+                                            аутсорсинг</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1272411223" id="arrFilterSolutions_65_1272411223"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Послепродажное обслуживание печати</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1010302188" id="arrFilterSolutions_65_1010302188"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Сервис-провайдерам</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_995768565" id="arrFilterSolutions_65_995768565"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Softline Digital</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3046363196" id="arrFilterSolutions_65_3046363196"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Software Asset Management (SAM)</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2830911807" id="arrFilterSolutions_65_2830911807"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Eva Project</span>
+                                    </label>
+                                </li>
+        
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2830911807" id="arrFilterSolutions_65_2830911807"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Eva A</span>
+                                    </label>
+                                </li>
+        
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3753605545" id="arrFilterSolutions_65_3753605545"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">EvaWiki</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_833951877" id="arrFilterSolutions_65_833951877"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Kaiten</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3464027067" id="arrFilterSolutions_65_3464027067"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Microsoft Solution Assessment</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2351766594" id="arrFilterSolutions_65_2351766594"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">SL·ECM (Инфооборот)</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1020282049" id="arrFilterSolutions_65_1020282049"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Softline Enterprise Agreement</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1105193994" id="arrFilterSolutions_65_1105193994"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Yandex Tracker</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1344032280" id="arrFilterSolutions_65_1344032280"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Автоматизация</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_827498664" id="arrFilterSolutions_65_827498664"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Автоматизация ESM (Enterprise Service Management)</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3747398020" id="arrFilterSolutions_65_3747398020"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Автоматизация ITSM </span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2824597778" id="arrFilterSolutions_65_2824597778"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Автоматизация SAM/ITAM</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2726789262" id="arrFilterSolutions_65_2726789262"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">АРМ</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3445222254" id="arrFilterSolutions_65_3445222254"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Аутсорсинг учетных функций </span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_651760825" id="arrFilterSolutions_65_651760825"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Бизнес-аналитика</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3341365181" id="arrFilterSolutions_65_3341365181"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Все услуги и решения Softline Digital</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_493513724" id="arrFilterSolutions_65_493513724"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Другие сервисы ИБ</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3218097411" id="arrFilterSolutions_65_3218097411"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Заказная разработка</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_910637119" id="arrFilterSolutions_65_910637119"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Защита данных</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3628685587" id="arrFilterSolutions_65_3628685587"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Защита инфраструктуры</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1094715561" id="arrFilterSolutions_65_1094715561"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Защита приложений</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1612554169" id="arrFilterSolutions_65_1612554169"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Инженерная инфраструктура зданий</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_387624751" id="arrFilterSolutions_65_387624751"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Инженерная инфраструктура ЦОД</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2105084888" id="arrFilterSolutions_65_2105084888"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Инфраструктура</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3881974619" id="arrFilterSolutions_65_3881974619"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Комплексные инженерные решения</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_4083419856" id="arrFilterSolutions_65_4083419856"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Консалтинг и соответствие требованиям ИБ </span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2973810771" id="arrFilterSolutions_65_2973810771"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Лицензионные политики</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_913598931" id="arrFilterSolutions_65_913598931"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Машиностроение</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_4094283465" id="arrFilterSolutions_65_4094283465"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Мессенджеры и почтовые сервисы </span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_565498016" id="arrFilterSolutions_65_565498016"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Обеспечение удаленной работы для специалистов по
+                                            САПР</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3667481117" id="arrFilterSolutions_65_3667481117"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Образование</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1545063716" id="arrFilterSolutions_65_1545063716"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Программное обеспечение Softline</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2798351426" id="arrFilterSolutions_65_2798351426"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Промышленное и гражданское строительство</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3683635691" id="arrFilterSolutions_65_3683635691"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Решения для госсектора</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2716712249" id="arrFilterSolutions_65_2716712249"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Сервис DITO (Digital IT Optimization) и инвентаризация
+                                            ПО</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_705638320" id="arrFilterSolutions_65_705638320"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Сетевая безопасность</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_795826322" id="arrFilterSolutions_65_795826322"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Система электронного документооборота</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3280102236" id="arrFilterSolutions_65_3280102236"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Системы прокторинга</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3188862772" id="arrFilterSolutions_65_3188862772"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Специализированные проекты</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_656113294" id="arrFilterSolutions_65_656113294"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Спецпредложения</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2941151621" id="arrFilterSolutions_65_2941151621"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Удаленная работа</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3934206865" id="arrFilterSolutions_65_3934206865"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Удаленная работа бизнеса</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_1828757363" id="arrFilterSolutions_65_1828757363"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Управление проектами и процессами</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_2120968929" id="arrFilterSolutions_65_2120968929"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Управление сервисами (ESM/ITSM)</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_722533810" id="arrFilterSolutions_65_722533810"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Услуги и решения для ритейла</span>
+                                    </label>
+                                </li>
+                                <li class="catalog-sidebar__item side-checkbox__item">
+                                    <label>
+                                        <input class="check-input" type="checkbox" value="Y"
+                                            name="arrFilterSolutions_65_3126778872" id="arrFilterSolutions_65_3126778872"
+                                            onclick="smartFilter.click(this)">
+                                        <span class="check-box"></span>
+                                        <span class="check-box__text">Энергоэффективность и ЖКХ</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <a class="filter__show-more" href="#">Показать все</a>
+                            <div class="filter__wrapper">
+                                <a class="filter__category" href="#">Партнеры</a>
+                                <input type="text" class="filter-input-text" placeholder="Введите условие поиска">
+                                <ul data-show="4" class="catalog-sidebar__list side-checkbox" style="--max-h:160px;">
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3043657809" id="arrFilterSolutions_66_3043657809"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Aquarius</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2324048497" id="arrFilterSolutions_66_2324048497"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">DEPO Computers</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_794988923" id="arrFilterSolutions_66_794988923"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Group-IB</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_291860701" id="arrFilterSolutions_66_291860701"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">CommuniGate Systems</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3881608030" id="arrFilterSolutions_66_3881608030"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Positive Technologies</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3430019229" id="arrFilterSolutions_66_3430019229"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Postgres Professional</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_782302028" id="arrFilterSolutions_66_782302028"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">TrueConf</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_192305400" id="arrFilterSolutions_66_192305400"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Гравитон»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_599653254" id="arrFilterSolutions_66_599653254"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">"СКАЛА-Р</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2378929709" id="arrFilterSolutions_66_2378929709"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">=Ansys</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3898947870" id="arrFilterSolutions_66_3898947870"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">8APPIUS</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_792914238" id="arrFilterSolutions_66_792914238"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">9Arenadata</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1958907418" id="arrFilterSolutions_66_1958907418"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">1Astra Linux</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2624196844" id="arrFilterSolutions_66_2624196844"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Autodesk</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3847766417" id="arrFilterSolutions_66_3847766417"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Avast</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2200987226" id="arrFilterSolutions_66_2200987226"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">BaseALT</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3025099339" id="arrFilterSolutions_66_3025099339"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text"> BiZone</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1804708184" id="arrFilterSolutions_66_1804708184"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Bookmate</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2302714505" id="arrFilterSolutions_66_2302714505"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Canon</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1396303568" id="arrFilterSolutions_66_1396303568"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Check Point</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2562808845" id="arrFilterSolutions_66_2562808845"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Cisco</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3683725739" id="arrFilterSolutions_66_3683725739"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">CITECK</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3853953096" id="arrFilterSolutions_66_3853953096"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Citrix Systems</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_854758558" id="arrFilterSolutions_66_854758558"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Comindware</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_494177212" id="arrFilterSolutions_66_494177212"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">COMSOL Group</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3681978758" id="arrFilterSolutions_66_3681978758"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">CSoft</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_156418674" id="arrFilterSolutions_66_156418674"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Dell Technologies</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3614319379" id="arrFilterSolutions_66_3614319379"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">DIGIS</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1098813612" id="arrFilterSolutions_66_1098813612"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Docsvision</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2582503395" id="arrFilterSolutions_66_2582503395"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Elma</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1864015356" id="arrFilterSolutions_66_1864015356"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ELTEX</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2108883545" id="arrFilterSolutions_66_2108883545"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ENTEL</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_384195869" id="arrFilterSolutions_66_384195869"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Epson</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2895511869" id="arrFilterSolutions_66_2895511869"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Evelopers</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2256091337" id="arrFilterSolutions_66_2256091337"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">eXpress</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1832781686" id="arrFilterSolutions_66_1832781686"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Extreme Networks</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_759565297" id="arrFilterSolutions_66_759565297"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">F+ tech</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2421920712" id="arrFilterSolutions_66_2421920712"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Flexera Software</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3631726870" id="arrFilterSolutions_66_3631726870"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Forcepoint</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2442176523" id="arrFilterSolutions_66_2442176523"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Fujitsu</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1828482369" id="arrFilterSolutions_66_1828482369"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Goodline</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1919185344" id="arrFilterSolutions_66_1919185344"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Google Cloud</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3959481443" id="arrFilterSolutions_66_3959481443"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Hewlett Packard Enterprise</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_434095965" id="arrFilterSolutions_66_434095965"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">HOSTVM</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3126477797" id="arrFilterSolutions_66_3126477797"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">HP Inc.</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2533190674" id="arrFilterSolutions_66_2533190674"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Huawei</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3791281284" id="arrFilterSolutions_66_3791281284"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">IBM</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1377133886" id="arrFilterSolutions_66_1377133886"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ICL</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2385340048" id="arrFilterSolutions_66_2385340048"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">InfoWatch</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3738726200" id="arrFilterSolutions_66_3738726200"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Instock</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3111264964" id="arrFilterSolutions_66_3111264964"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">IRU</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1009327276" id="arrFilterSolutions_66_1009327276"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ITD Systems</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_239011435" id="arrFilterSolutions_66_239011435"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">iTMan</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2161546983" id="arrFilterSolutions_66_2161546983"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">IVA Technologies</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4126489851" id="arrFilterSolutions_66_4126489851"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">IVI</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3951282595" id="arrFilterSolutions_66_3951282595"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Kraftway</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2290272446" id="arrFilterSolutions_66_2290272446"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Mail.ru для бизнеса</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2241841268" id="arrFilterSolutions_66_2241841268"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">MEGOGO</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_439957472" id="arrFilterSolutions_66_439957472"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Micro Focus</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2343217567" id="arrFilterSolutions_66_2343217567"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Microsoft Corporation</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2849988526" id="arrFilterSolutions_66_2849988526"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Microsoft Teams</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2496702316" id="arrFilterSolutions_66_2496702316"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Navigine</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2178575692" id="arrFilterSolutions_66_2178575692"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">NetApp</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3979110285" id="arrFilterSolutions_66_3979110285"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">NetByNet</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2725114186" id="arrFilterSolutions_66_2725114186"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Nutanix</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4008374133" id="arrFilterSolutions_66_4008374133"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">NVIDIA Corporation</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2461112542" id="arrFilterSolutions_66_2461112542"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Oracle Corporation</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3003311639" id="arrFilterSolutions_66_3003311639"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Orionsoft (ранее «Инфолэнд»)</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1204895362" id="arrFilterSolutions_66_1204895362"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Panasonic</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_479631822" id="arrFilterSolutions_66_479631822"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Playkey</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3232668256" id="arrFilterSolutions_66_3232668256"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ProctorEdu</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_365391304" id="arrFilterSolutions_66_365391304"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Qtech</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_858848937" id="arrFilterSolutions_66_858848937"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Renga</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4089260792" id="arrFilterSolutions_66_4089260792"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Ricoh</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3305143518" id="arrFilterSolutions_66_3305143518"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Rocket.Chat</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1656773982" id="arrFilterSolutions_66_1656773982"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">RuBackup</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1158814757" id="arrFilterSolutions_66_1158814757"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">SOICA</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1790212930" id="arrFilterSolutions_66_1790212930"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">SOLIDWORKS</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1936231019" id="arrFilterSolutions_66_1936231019"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Space</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_34067643" id="arrFilterSolutions_66_34067643"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Tele2</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4253096679" id="arrFilterSolutions_66_4253096679"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">UserGate</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4161197544" id="arrFilterSolutions_66_4161197544"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Veeam</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3523675589" id="arrFilterSolutions_66_3523675589"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">VideoMost</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2623750424" id="arrFilterSolutions_66_2623750424"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Vinteo</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3612236630" id="arrFilterSolutions_66_3612236630"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Visiology</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1610842105" id="arrFilterSolutions_66_1610842105"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">VK Workspace</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2754393789" id="arrFilterSolutions_66_2754393789"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">VMware</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_819334676" id="arrFilterSolutions_66_819334676"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">VR Сoncept</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1129974310" id="arrFilterSolutions_66_1129974310"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Wolfram Research</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2277200638" id="arrFilterSolutions_66_2277200638"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">YandexCloud</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1752652261" id="arrFilterSolutions_66_1752652261"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Zextras</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4287408604" id="arrFilterSolutions_66_4287408604"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Аквариус»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2336505926" id="arrFilterSolutions_66_2336505926"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Билайн»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1514224487" id="arrFilterSolutions_66_1514224487"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Бифорком Текнолоджис»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1261317178" id="arrFilterSolutions_66_1261317178"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Борлас»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4070111458" id="arrFilterSolutions_66_4070111458"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Где Мои Дети»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3434492149" id="arrFilterSolutions_66_3434492149"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Девелоника»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3098560755" id="arrFilterSolutions_66_3098560755"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Индид»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2029194558" id="arrFilterSolutions_66_2029194558"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Код Безопасности»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1785969450" id="arrFilterSolutions_66_1785969450"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Кредо-Диалог»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3261970631" id="arrFilterSolutions_66_3261970631"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Логика Бизнеса»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_492106745" id="arrFilterSolutions_66_492106745"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Нанософт разработка»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1919754292" id="arrFilterSolutions_66_1919754292"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Новотелеком»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3018592206" id="arrFilterSolutions_66_3018592206"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Ростелеком-Солар»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3407623300" id="arrFilterSolutions_66_3407623300"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«С-Терра СиЭсПи»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1751019604" id="arrFilterSolutions_66_1751019604"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Связь инжиниринг»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3837416419" id="arrFilterSolutions_66_3837416419"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«СпутникЛаб»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_899633287" id="arrFilterSolutions_66_899633287"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«Эврика Би Пи О»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_469458391" id="arrFilterSolutions_66_469458391"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">«ЭР-Телеком»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2196900973" id="arrFilterSolutions_66_2196900973"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">АКАДО</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2014622995" id="arrFilterSolutions_66_2014622995"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Аладдин Р.Д.</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3288716929" id="arrFilterSolutions_66_3288716929"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">АО «НППКТ»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3451099818" id="arrFilterSolutions_66_3451099818"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">АО «Р7»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3276303069" id="arrFilterSolutions_66_3276303069"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">АО Научно-производственное предприятие
+                                                «Полигон»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1628406866" id="arrFilterSolutions_66_1628406866"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Yandex</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1628406866" id="arrFilterSolutions_66_1628406866"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">АСКОН</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3155887122" id="arrFilterSolutions_66_3155887122"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">БУЛАТ</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3290803908" id="arrFilterSolutions_66_3290803908"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Вектор Технологии</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1025894151" id="arrFilterSolutions_66_1025894151"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Доктор Веб</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2476546864" id="arrFilterSolutions_66_2476546864"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Инфосекьюрити</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2943414656" id="arrFilterSolutions_66_2943414656"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ИнфоТеКС</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2442787327" id="arrFilterSolutions_66_2442787327"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">КАТЮША</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2138665226" id="arrFilterSolutions_66_2138665226"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Киберпротект</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3132402236" id="arrFilterSolutions_66_3132402236"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Компания РОСА</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_948064333" id="arrFilterSolutions_66_948064333"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Компания ЭСТИ МАП</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3711868805" id="arrFilterSolutions_66_3711868805"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">««Конструкторское бюро «Панорама»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1963570649" id="arrFilterSolutions_66_1963570649"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">(Лаборатория Касперского)</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1962992685" id="arrFilterSolutions_66_1962992685"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">МегаФон</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2048460328" id="arrFilterSolutions_66_2048460328"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">МойОфис (ООО «Новые Облачные Технологии»)</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1535332688" id="arrFilterSolutions_66_1535332688"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Научно-технический центр «АПМ» (НТЦ «АПМ»)</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1408726860" id="arrFilterSolutions_66_1408726860"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Научно-технический центр «Протей»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2478662517" id="arrFilterSolutions_66_2478662517"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">НТП Трубопровод</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_90837154" id="arrFilterSolutions_66_90837154"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ОнЛайм</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_722345458" id="arrFilterSolutions_66_722345458"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ООО "Крафт-Толк"</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1043201635" id="arrFilterSolutions_66_1043201635"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ООО «Симанитрон»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1227542261" id="arrFilterSolutions_66_1227542261"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ООО «Т-КОМ»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2855907091" id="arrFilterSolutions_66_2855907091"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ООО «ЭСТИ»</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_527460723" id="arrFilterSolutions_66_527460723"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Пачка</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_498289620" id="arrFilterSolutions_66_498289620"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Редсофт</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3869165929" id="arrFilterSolutions_66_3869165929"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Росплатформа</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1934160430" id="arrFilterSolutions_66_1934160430"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Ростелеком</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2597121846" id="arrFilterSolutions_66_2597121846"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">С3 Solutions</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1504168922" id="arrFilterSolutions_66_1504168922"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">САФИБ</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_4232278224" id="arrFilterSolutions_66_4232278224"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Таттелеком</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3960059287" id="arrFilterSolutions_66_3960059287"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Тинькофф</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_3081349878" id="arrFilterSolutions_66_3081349878"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ТИОНИКС</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2586531611" id="arrFilterSolutions_66_2586531611"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ТТК</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2551172497" id="arrFilterSolutions_66_2551172497"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Хайстекс</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_2691240837" id="arrFilterSolutions_66_2691240837"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Экзамус</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_179581647" id="arrFilterSolutions_66_179581647"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ЭЛТЕКС</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_1144507967" id="arrFilterSolutions_66_1144507967"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">ЭРЕМЕКС</span>
+                                        </label>
+                                    </li>
+                                    <li class="catalog-sidebar__item side-checkbox__item">
+                                        <label>
+                                            <input class="check-input" type="checkbox" value="Y"
+                                                name="arrFilterSolutions_66_744741355" id="arrFilterSolutions_66_744741355"
+                                                onclick="smartFilter.click(this)">
+                                            <span class="check-box"></span>
+                                            <span class="check-box__text">Яндекс 360 для бизнеса</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <a class="filter__show-more" href="#">Показать все</a>
+                            </div>
+                            <div class="clb"></div>
+        
+        
+        
+                        </div>
                     </div>
                 </div>
             </aside>
+        
             <div class="catalog-content">
                 <div class="catalog__input-search">
                     <input type="text" name="search-term" placeholder="Введите условие поиска">
                 </div>
                 <div class="filters__mobile">
                     <p class="filters__mobile_text">
-                        Filters 
+                        Filters
                         <span class="filters__mobile_num">(3)</span>
                     </p>
                     <img class="filters__mobile_img" src="assets/images/Filter.svg" alt="">
@@ -1658,11 +3649,11 @@
                         <div class="search-term">
                             <span class="search-term__text">Аэрокосмическая и оборонная промышленность</span>
                             <a class="search-term__close" href="#"></a>
-                        </div>  
+                        </div>
                         <div class="search-term">
                             <span class="search-term__text">Java</span>
                             <a class="search-term__close" href="#"></a>
-                        </div>      
+                        </div>
                     </div>
                     <a class="catalog__terms_del" href="#">Очистить все</a>
                 </div>
@@ -1671,17 +3662,21 @@
                     <div class="catalog__top_btns">
                         <a href="#" class="catalog__btn-grid active">
                             <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="1.71484" y="1.71436" width="6.57143" height="6.57143" stroke="#AAB8C3" stroke-width="2"/>
-                                <rect x="1.71484" y="13.7144" width="6.57143" height="6.57143" stroke="#AAB8C3" stroke-width="2"/>
-                                <rect x="13.7148" y="1.71436" width="6.57143" height="6.57143" stroke="#AAB8C3" stroke-width="2"/>
-                                <rect x="13.7148" y="13.7144" width="6.57143" height="6.57143" stroke="#AAB8C3" stroke-width="2"/>
+                                <rect x="1.71484" y="1.71436" width="6.57143" height="6.57143" stroke="#AAB8C3"
+                                    stroke-width="2" />
+                                <rect x="1.71484" y="13.7144" width="6.57143" height="6.57143" stroke="#AAB8C3"
+                                    stroke-width="2" />
+                                <rect x="13.7148" y="1.71436" width="6.57143" height="6.57143" stroke="#AAB8C3"
+                                    stroke-width="2" />
+                                <rect x="13.7148" y="13.7144" width="6.57143" height="6.57143" stroke="#AAB8C3"
+                                    stroke-width="2" />
                             </svg>
                         </a>
                         <a href="#" class="catalog__btn-list">
                             <svg viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="18" height="2" fill="#AAB8C3"/>
-                                <rect y="7" width="18" height="2" fill="#AAB8C3"/>
-                                <rect y="14" width="18" height="2" fill="#AAB8C3"/>
+                                <rect width="18" height="2" fill="#AAB8C3" />
+                                <rect y="7" width="18" height="2" fill="#AAB8C3" />
+                                <rect y="14" width="18" height="2" fill="#AAB8C3" />
                             </svg>
                         </a>
                     </div>
@@ -1695,8 +3690,9 @@
                             <span class="subtitle">Облачные сервисы</span>
                         </span>
                         <p class="service__text">
-                            
-                    Помогаем компаниям определиться с дельнейшими сценариями развития ИТ-инфраструктуры, проводим анализ доступных решений, рассчитываем затраты и технологические риски.         
+        
+                            Помогаем компаниям определиться с дельнейшими сценариями развития ИТ-инфраструктуры, проводим анализ
+                            доступных решений, рассчитываем затраты и технологические риски.
                         </p>
                     </a>
                     <a href="./main-cybersecurity.html" class="service">
@@ -1955,9 +3951,9 @@
                 </div>
                 <a href="#" class="catalog__show-more show-more">Показать еще</a>
                 <div class="pagination-block wrapper">
-                
+        
                     <div class="main-pagination">
-                        <span>Элементы:</span>        
+                        <span>Элементы:</span>
                         <div class="numb-container" tabindex="1">
                             <span class="select-button num-page">15</span>
                             <span class="select-numb" tabindex="1">
@@ -1966,24 +3962,28 @@
                                 <a href="#">30</a>
                             </span>
                         </div>
-              
+        
                         <div class="main-pagination__right">
                             <span class="now-pages">1-15</span>
                             <span> of </span>
                             <span class="all-pages">350</span>
                         </div>
                     </div>
-                
+        
                     <div class="pagination">
-                        <a href="#"><svg class="arrow"><use href="#arrow"></use></svg></a>
+                        <a href="#"><svg class="arrow">
+                                <use href="#arrow"></use>
+                            </svg></a>
                         <a class="active" href="#">1</a>
                         <a href="#">2</a>
                         <a href="#">3</a>
                         <a href="#">...</a>
                         <a href="#">20</a>
-                        <a href="#"><svg class="arrow arrow--right arrow--active"><use href="#arrow"></use></svg></a>
+                        <a href="#"><svg class="arrow arrow--right arrow--active">
+                                <use href="#arrow"></use>
+                            </svg></a>
                     </div>
-              
+        
                 </div>
             </div>
         </section>
@@ -1993,9 +3993,9 @@
           <div class="cookie__text">Продолжая использовать данный веб-сайт, вы соглашаетесь с тем, что группа компаний Softline может <a href="#" class="red">использовать файлы «cookie»</a> в целях хранения ваших учетных данных, параметров и предпочтений, оптимизации работы веб-сайта.</div>
           <button class="cookie__button">Принять</button>
         </div>
-        
+
     </main>
-    
+
     <div class="registration regModal getintouch reqcallback" id="request" style="opacity: 0;" hidden>
       <div class="registration__block swipe-on2">
         <div class="getintouch__top-block">
@@ -2181,9 +4181,9 @@
                 <div class="footer__info-link"><a target="_blank" href="#">Made by Pinkman</a></div>
             </div>
        </div>
-    </footer>    
+    </footer>
     <!-- JS -->
-    
+
     <script defer src="assets/vendor/swiper/swiper.min.js"></script>
     <script defer src="assets/vendor/jquery/jquery-3.6.0.min.js"></script>
     <script defer src="assets/vendor/fancybox/fancybox.min.js"></script>
@@ -2191,7 +4191,8 @@
     <script defer src="assets/vendor/scroll-lock/scroll-lock.min.js"></script>
     <script defer src="assets/js/app.js"></script>
     <script>
-        window.onload = function(){ document.querySelector(".preloader").style.display = "none"; }
+        window.onload = function () { document.querySelector(".preloader").style.display = "none"; }
     </script>
 </body>
+
 </html>

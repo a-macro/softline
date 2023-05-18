@@ -1,0 +1,2253 @@
+/*! CSS Used from: https://softline.ru/css/global_styles.min.css?1682505544 ; media=all */
+@media all {
+
+  a,
+  div,
+  fieldset,
+  form,
+  h1,
+  h3,
+  h4,
+  img,
+  label,
+  p,
+  small,
+  span,
+  strong {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    border: none;
+    max-width: 100%;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style-position: outside;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  :focus {
+    outline: 0;
+  }
+
+  :link,
+  :visited,
+  a {
+    color: #cb0f41;
+    text-decoration: underline;
+  }
+
+  :link:hover,
+  :visited:hover,
+  a:hover {
+    text-decoration: none;
+  }
+
+  input {
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input[type=submit],
+  input[type=text] {
+    -webkit-appearance: none;
+  }
+
+  * {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .b-breadcrumbs {
+    position: relative;
+  }
+
+  .b-breadcrumbs__item {
+    display: inline;
+    margin-right: 2px;
+    margin-bottom: 8px;
+  }
+
+  .b-checkbox {
+    position: relative;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .b-form {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .b-form a {
+    color: #a50f2d;
+    -webkit-text-decoration-color: #a50f2d;
+    -moz-text-decoration-color: #a50f2d;
+    text-decoration-color: #a50f2d;
+  }
+
+  .owl-carousel {
+    display: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    -moz-backface-visibility: hidden;
+  }
+
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+  }
+
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  .owl-carousel .owl-dots.disabled,
+  .owl-carousel .owl-nav.disabled {
+    display: none;
+  }
+
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-nav .owl-prev {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .owl-carousel.owl-loaded {
+    display: block;
+  }
+
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .owl-carousel .owl-item .owl-lazy {
+    opacity: 0;
+    transition: opacity .4s ease;
+  }
+
+  .owl-carousel .owl-item img.owl-lazy {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .owl-theme .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .owl-theme .owl-nav [class*=owl-] {
+    color: #fff;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #d6d6d6;
+    display: inline-block;
+    cursor: pointer;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+
+  .owl-theme .owl-nav [class*=owl-]:hover {
+    background: #869791;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 10px;
+  }
+
+  .owl-theme .owl-dots {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .b-button {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .b-checkbox {
+    position: relative;
+    font: 0/0 a;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+    transition: all ease-out .2s;
+  }
+
+  .b-checkbox:hover .b-pseudo-checkbox-form-field:before {
+    border-color: #c1c1c1;
+  }
+
+  .b-checkbox:active {
+    opacity: .3;
+  }
+
+  .b-checkbox span {
+    cursor: pointer;
+  }
+
+  .b-checkbox .b-form-field_type_checkbox {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    cursor: pointer;
+  }
+
+  .b-checkbox .b-form-field_type_checkbox:checked+.b-pseudo-checkbox-form-field {
+    background: url(https://softline.ru/images/svg/m-tick.svg) center center no-repeat;
+    -moz-background-size: 12px 9px;
+    background-size: 12px 9px;
+    color: #cb0f41;
+  }
+
+  .b-checkbox .b-form-field-text {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 0 0 29px;
+    font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    transition: all ease-out .2s;
+  }
+
+  .b-checkbox .b-form-field-text:hover {
+    color: #000;
+  }
+
+  .b-checkbox .b-pseudo-checkbox-form-field {
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background: transparent no-repeat 0 0;
+    -moz-background-size: 0 0, 19px 19px;
+    background-size: 0 0, 19px 19px;
+  }
+
+  .b-checkbox .b-pseudo-checkbox-form-field:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    z-index: -1;
+    transition: all ease-out .2s;
+  }
+
+  .b-content-column {
+    font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    letter-spacing: normal;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .b-external-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .b-form-field-box {
+    position: relative;
+  }
+
+  .b-form-field-remark {
+    display: inline-block;
+    font: 14px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: rgba(68, 68, 68, .3);
+    text-align: left;
+    margin-top: 6px;
+  }
+
+  .b-form-fields-box {
+    position: relative;
+  }
+
+  .b-icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+  }
+
+  .b-icon.b-icon_content_breadcrumbs {
+    height: 6px;
+    width: 5px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-icon.b-icon_content_breadcrumbs {
+      height: 8px;
+    }
+  }
+
+  .b-icon.b-icon_content_readmore {
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    top: 50%;
+    margin-top: -5px;
+    right: 0;
+    color: #cb0f41;
+  }
+
+  .b-icon.b-icon_content_our-expertise {
+    position: absolute;
+    width: 14px;
+    height: 26px;
+    bottom: 0;
+    left: 0;
+    color: #cb0f41;
+  }
+
+  .b-icon.b-icon_content_quotes {
+    display: none;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-icon.b-icon_content_quotes {
+      display: inline-block;
+      position: absolute;
+      width: 24px;
+      height: 20px;
+      top: 38px;
+      left: -10px;
+      z-index: 2;
+      color: #444;
+      opacity: .2;
+    }
+  }
+
+  .b-pure-content>h3 {
+    font: 22px/26px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #222;
+    margin-bottom: 14px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-pure-content>h3 {
+      font: 24px/28px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+
+  .b-pure-content>h4 {
+    font: 20px/24px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #222;
+    margin-bottom: 14px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-pure-content>h4 {
+      font: 22px/26px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+
+  .b-pure-content p {
+    margin-bottom: 24px;
+    font: 14px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-pure-content p {
+      margin-bottom: 30px;
+      font: 16px/22px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    }
+  }
+
+  .b-pure-content .b-button {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-pure-content .b-button {
+      margin-bottom: 30px;
+    }
+  }
+
+  :active,
+  :focus,
+  :hover {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  :active,
+  :focus,
+  :hover {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  .b-share-social .b-share-social__body {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+    background: 0 0;
+    text-align: left;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .b-share-social .b-share-social__content .b-share-social-wrap a.b-share-social-vkontakte {
+    background: url(https://softline.ru/images/svg/m-vk.svg) no-repeat center;
+    width: 24px;
+    height: 22px;
+    -moz-background-size: 21px;
+    background-size: 21px;
+  }
+
+  .b-share-social .b-share-social__content .b-share-social-wrap a.b-share-social-vkontakte:hover {
+    background: url(https://softline.ru/images/svg/m-vk-hover.svg) no-repeat center;
+    -moz-background-size: 21px;
+    background-size: 21px;
+    opacity: 1;
+  }
+
+  .b-share-social .b-share-social__content .b-share-social-wrap a.b-share-social-vkontakte:active {
+    opacity: .1;
+  }
+
+  .b-share-social .b-share-social__content .b-share-social-wrap a {
+    font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    letter-spacing: normal;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: .2;
+    transition: opacity ease-out .1s;
+    height: auto;
+    margin-right: 8px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-share-social .b-share-social__content .b-share-social-wrap a {
+      margin-right: 16px;
+    }
+  }
+
+  .b-stripe {
+    clear: both;
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .b-stripe:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    font: 0/0 a;
+    visibility: hidden;
+  }
+
+  .b-stripe__in {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .b-stripe_padding-top_80 {
+    padding-top: 30px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_padding-top_80 {
+      padding-top: 80px;
+    }
+  }
+
+  .b-content-columns_type_justify {
+    font: 0/0 a;
+    text-align: justify;
+    text-justify: newspaper;
+  }
+
+  .b-content-columns_type_justify:after {
+    content: "";
+    display: inline-block;
+    font: 0/0 softline, a !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: top;
+    visibility: hidden;
+    width: 100% !important;
+  }
+
+  .b-form-field-box_type_checkbox {
+    display: inline-block;
+    vertical-align: top;
+    height: 19px;
+    width: 19px;
+    margin: 0 -19px 0 0;
+    font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    position: relative;
+    z-index: 0;
+  }
+
+  .b-form-field-remark_type_enlarged {
+    display: block;
+  }
+
+  .b-form-field_type_submit {
+    cursor: pointer;
+  }
+
+  .b-form-field_type_text.b-form-field_viewtype_d2 {
+    display: inline-block;
+    background: 0 0;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #fff;
+    height: 42px;
+    font: 16px/20px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #fff;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all ease-out .2s;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-form-field_type_text.b-form-field_viewtype_d2 {
+      font: 20px/24px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    }
+  }
+
+  .b-form-field_type_text.b-form-field_viewtype_d2:hover {
+    border-bottom-color: #a7a9ad;
+  }
+
+  .b-form-field_type_text.b-form-field_viewtype_d2:focus::placeholder {
+    color: transparent;
+  }
+
+  .b-form-field_type_text.b-form-field_viewtype_d2:focus {
+    border: 2px solid #fff;
+    padding: 0 14px;
+  }
+
+  .b-icon_type_svg {
+    width: 16px;
+    height: 16px;
+    fill: #444;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .b-membrane_type_disable {
+    opacity: .2;
+    cursor: default;
+  }
+
+  .b-stripe_type_overhang>.b-stripe__in {
+    max-width: 100%;
+    padding: 0 0;
+  }
+
+  .b-button_viewtype_standard {
+    display: inline-block;
+    position: relative;
+    padding: 11px 40px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font: 16px/20px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    border: 0 none;
+    transition: all ease-out .2s;
+  }
+
+  .b-content-columns_viewtype_padding {
+    padding: 0 0 23px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_viewtype_padding {
+      padding: 0 0 67px;
+    }
+  }
+
+  .b-icon_viewtype_context {
+    fill: currentColor;
+    width: 100%;
+    height: 100%;
+  }
+
+  .b-membrane_viewtype_a1 {
+    background: #cb0f41;
+    color: #fff;
+    transition: all ease-out .2s;
+  }
+
+  .b-membrane_viewtype_a1:hover {
+    background: #b40434;
+    color: #fff;
+  }
+
+  .b-membrane_viewtype_a1:active {
+    background: #b40434;
+    color: rgba(255, 255, 255, .3);
+  }
+
+  .b-membrane_viewtype_a2 {
+    color: #444;
+    border: 1px solid #dcdcdc;
+  }
+
+  .b-membrane_viewtype_a2:hover {
+    border: 1px solid #c2c2c2;
+  }
+
+  .b-membrane_viewtype_a2:active {
+    opacity: .3;
+  }
+
+  .b-membrane_viewtype_a3 {
+    background: #cb0f41;
+    font: 16px/20px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #fff;
+    padding: 11px 40px;
+    transition: all ease-out .2s;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-membrane_viewtype_a3 {
+      font: 18px/22px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      padding: 14px 40px;
+    }
+  }
+
+  .b-membrane_viewtype_a3:hover {
+    background: #b40434;
+    color: #fff;
+  }
+
+  .b-membrane_viewtype_a3:active {
+    background: #b40434;
+    color: rgba(255, 255, 255, .3);
+  }
+
+  .b-section__title_viewtype_height-hidden {
+    max-height: 141px;
+    overflow: hidden;
+  }
+
+  .b-stripe_viewtype_tone {
+    position: relative;
+  }
+
+  .b-stripe_viewtype_tone:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    width: 1440px;
+    margin: 0 auto;
+  }
+
+  .b-stripe_viewtype_tone .b-section_content_special-offers .b-section__title_type_desktop .b-section__title-text {
+    color: #fff;
+  }
+
+  .b-membrane_size_100 {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .b-carousel_content_our-expertise {
+    width: 886px;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav {
+    position: absolute;
+    top: -130px;
+    right: 0;
+    font: 0/0 a;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav [class*=owl-] {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 66px;
+    height: 66px;
+    text-indent: -9999px;
+    opacity: .2;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #444;
+    background: 0 0;
+    transition: opacity ease-out .2s;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav [class*=owl-]:before {
+    position: absolute;
+    content: "";
+    background: url(https://softline.ru/images/svg/big-traingle-arrow-left.svg) no-repeat;
+    width: 14px;
+    height: 26px;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav [class*=owl-]:hover {
+    opacity: .4;
+    background: 0 0;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav [class*=owl-]:active {
+    opacity: .1;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav .owl-prev {
+    left: -10px;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav .owl-prev:before {
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -10px;
+  }
+
+  .b-carousel_content_our-expertise.owl-theme .owl-nav .owl-next:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -4px;
+  }
+
+  .b-carousel_content_partners-comment.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 17px;
+  }
+
+  .b-content-columns_content_our-expertise {
+    font: 0/0 a;
+    text-align: justify;
+    text-justify: newspaper;
+    display: none;
+  }
+
+  .b-content-columns_content_our-expertise:after {
+    content: "";
+    display: inline-block;
+    font: 0/0 softline, a !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: top;
+    visibility: hidden;
+    width: 100% !important;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_our-expertise {
+      display: block;
+    }
+  }
+
+  .b-content-columns_content_our-expertise>.b-content-column_layout_a {
+    padding-top: 34px;
+  }
+
+  .b-content-columns_content_our-partners {
+    font: 0/0 a;
+  }
+
+  .b-content-columns_content_our-partners>.b-content-column {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_our-partners>.b-content-column {
+      width: 50%;
+    }
+  }
+
+  .b-content-columns_content_our-partners>.b-content-column_layout_a {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_our-partners>.b-content-column_layout_a {
+      border: 1px solid #e5e5e5;
+      height: 337px;
+      margin-right: -1px;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .b-content-columns_content_our-partners>.b-content-column_layout_a:after {
+      position: absolute;
+      content: "";
+      width: 3px;
+      height: 60px;
+      top: 18px;
+      left: -2px;
+      background: #fff;
+      z-index: 1;
+    }
+
+    .b-content-columns_content_our-partners>.b-content-column_layout_a .b-content-column__in {
+      padding: 40px 46px;
+    }
+  }
+
+  .b-content-columns_content_sidebar-and-grid-virtual-office {
+    display: block;
+    font: 0/0 a;
+    width: 100%;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_sidebar-and-grid-virtual-office {
+      display: table;
+    }
+  }
+
+  .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column {
+    display: block;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column {
+      display: table-cell;
+    }
+  }
+
+  .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_1 {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_1 {
+      display: table-cell;
+      position: relative;
+      width: 400px;
+    }
+  }
+
+  .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_1>.b-content-column__in {
+    padding-left: 98px;
+  }
+
+  .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_2 {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_2 {
+      width: 760px;
+    }
+  }
+
+  .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_2>.b-content-column__in {
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_sidebar-and-grid-virtual-office>.b-content-column_layout_2>.b-content-column__in {
+      padding: 0;
+      width: 760px;
+    }
+  }
+
+  .b-content-columns_content_special-offers {
+    font: 0/0 a;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-width: 1160px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_special-offers {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+    }
+  }
+
+  .b-content-columns_content_special-offers .b-content-column.b-content-column_layout_a {
+    vertical-align: middle;
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_special-offers .b-content-column.b-content-column_layout_a {
+      width: 960px;
+      display: table-cell;
+      padding: 36px 0 30px;
+    }
+  }
+
+  .b-content-columns_content_special-offers.b-content-columns_content_company {
+    margin: 0 auto;
+    line-height: 88px;
+    position: relative;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_special-offers.b-content-columns_content_company {
+      line-height: 283px;
+      height: 283px;
+    }
+  }
+
+  .b-content-columns_content_special-offers.b-content-columns_content_company .b-content-column.b-content-column_layout_a {
+    vertical-align: top;
+    padding: 30px 0 30px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_special-offers.b-content-columns_content_company .b-content-column.b-content-column_layout_a {
+      padding: 44px 0 0;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_special-offers.b-content-columns_content_company.b-size333 {
+      line-height: 333px;
+      height: 333px;
+    }
+  }
+
+  .b-content-columns_content_subscribe-two {
+    font: 0/0 a;
+    text-align: left;
+    margin: -25px 0 0 -40px;
+  }
+
+  .b-content-columns_content_subscribe-two .b-content-column {
+    margin: 25px 0 0 0;
+    padding: 0 0 0 40px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .b-content-columns_content_subscribe-two .b-content-column.b-content-column_layout_c {
+    width: 100%;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_subscribe-two .b-content-column.b-content-column_layout_c {
+      width: 220px;
+    }
+  }
+
+  .b-content-columns_content_subscribe-two .b-content-column_layout_a {
+    width: 100%;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_subscribe-two .b-content-column_layout_a {
+      width: 340px;
+    }
+  }
+
+  .b-content-columns_content_subscribe-two .b-content-column_layout_b {
+    text-align: right;
+    width: 100%;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_subscribe-two .b-content-column_layout_b {
+      width: 300px;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_subscribe-two .b-content-column_layout_d {
+      display: none;
+    }
+  }
+
+  .b-content-columns_content_subscribe-two .b-content-column_layout_e {
+    display: none;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-content-columns_content_subscribe-two .b-content-column_layout_e {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .b-form_content_sidebar-virtual-office .b-heading_level_4 {
+    font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-form-fields-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding-top: 30px;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-form-fields-list .b-form-fields-list__item {
+    padding-top: 10px;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-form-fields-list .b-form-fields-list__item .b-form-field {
+    display: inline-block;
+    border: 1px solid #dadada;
+    background: #fff;
+    padding: 0 14px;
+    height: 38px;
+    font: 16px/18px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all ease-out .2s;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-form-fields-list .b-form-fields-list__item .b-form-field:hover {
+    border-color: #c1c1c1;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-form-fields-list .b-form-fields-list__item .b-form-field:focus::placeholder {
+    color: transparent;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-form-fields-list .b-form-fields-list__item .b-form-field:focus {
+    border-color: #444;
+  }
+
+  .b-form_content_sidebar-virtual-office .b-button_viewtype_standard {
+    margin-top: 30px;
+    padding: 11px 0;
+    width: 100%;
+  }
+
+  .b-heading_content_sidebar-virtual-office {
+    font: 16px/20px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #cb0f41;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dcdcdc;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-heading_content_sidebar-virtual-office {
+      font: 30px/36px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      padding-bottom: 14px;
+    }
+  }
+
+  .b-heading_content_subtitle-our-expertise {
+    font: 16px/20px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    width: 165px;
+    padding-top: 10px;
+    border-top: 2px solid #cb1042;
+    margin-bottom: 143px;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a2 {
+    font: 14px/50px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    text-decoration: none;
+    padding-right: 16px;
+    position: relative;
+    display: block;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-link_content_readmore.b-link_viewtype_a2 {
+      display: none;
+    }
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a2:hover {
+    color: #444;
+    text-decoration: none;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a3 {
+    text-decoration: none;
+    display: block;
+    width: 6px;
+    height: 9px;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a3 .b-link__text {
+    display: none;
+    width: 6px;
+    height: 9px;
+    background-image: url(https://softline.ru/images/bg/icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 -255px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-link_content_readmore.b-link_viewtype_a3 .b-link__text {
+      display: block;
+    }
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a3:hover {
+    color: #444;
+    text-decoration: none;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a4 {
+    font: 16px/22px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    text-decoration: none;
+    padding-bottom: 58px;
+    position: relative;
+    transition: all ease-out .2s;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a4 .b-icon_content_block-svg {
+    position: absolute;
+    display: inline-block;
+    width: 168px;
+    height: 26px;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a4 .b-icon_content_block-svg .b-icon_type_svg:nth-child(2) {
+    left: -168px;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a4:hover {
+    color: #cb0f41;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-link_content_readmore.b-link_viewtype_a4:hover .b-icon_type_svg {
+      -webkit-animation-name: our-expertise-readmore;
+      animation-name: our-expertise-readmore;
+      -webkit-animation-duration: .5s;
+      animation-duration: .5s;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a4:active .b-link__text {
+    opacity: .3;
+  }
+
+  .b-link_content_readmore.b-link_viewtype_a4:active .b-icon_content_block-svg .b-icon_type_svg {
+    color: rgba(203, 15, 65, .3);
+  }
+
+  .b-section_content_our-expertise {
+    position: relative;
+    z-index: 2;
+  }
+
+  .b-section_content_our-expertise .b-section__header {
+    margin-bottom: 23px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-expertise .b-section__header {
+      margin-bottom: 67px;
+    }
+  }
+
+  .b-section_content_our-expertise .b-section__title {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-expertise .b-section__title {
+      text-align: left;
+      max-width: 990px;
+      margin-bottom: 0;
+    }
+  }
+
+  .b-section_content_our-expertise .b-section__title-text {
+    font: 24px/28px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #222;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cb0f41;
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-expertise .b-section__title-text {
+      font: 45px/49px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      padding-bottom: 0;
+      border-bottom: 0 none;
+      margin: 0;
+    }
+  }
+
+  .b-section_content_our-expertise .b-section__subtitle {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-expertise .b-section__subtitle {
+      padding: 0;
+      display: none;
+    }
+  }
+
+  .b-section_content_our-expertise .b-section__subtitle-text {
+    font: 16px/20px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+  }
+
+  .b-section_content_our-expertise .b-section__footer {
+    background: #f5f4f2;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-expertise .b-section__footer {
+      display: none;
+    }
+  }
+
+  .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions {
+    text-align: center;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions {
+      text-align: justify;
+    }
+  }
+
+  .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions .b-content-column_layout_a .b-section__title {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions .b-content-column_layout_a .b-section__title {
+      text-align: left;
+      padding: 0;
+    }
+  }
+
+  .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions .b-content-column_layout_a .b-section__title .b-section__title-text {
+    font: 24px/28px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    line-height: 24px;
+    color: #444;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions .b-content-column_layout_a .b-section__title .b-section__title-text {
+      font: 40px/44px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      line-height: 40px;
+      color: #444;
+    }
+  }
+
+  .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions .b-content-column_layout_b {
+    display: none;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-partners .b-content-columns_content_heading-vendors-cloud-solutions .b-content-column_layout_b {
+      display: inline-block;
+    }
+  }
+
+  .b-section_content_our-partners .b-section__title {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .b-section_content_our-partners .b-section__title-text {
+    font: 24px/28px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #222;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-partners .b-section__title-text {
+      font: 40px/44px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    }
+  }
+
+  .b-section_content_our-partners .b-section__footer {
+    display: block;
+    background: #f5f4f2;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin: -1px 0;
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_our-partners .b-section__footer {
+      display: none;
+    }
+  }
+
+  .b-section_content_right-sidebar .b-section__header {
+    padding-bottom: 36px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_special-offers .b-section__title_type_desktop {
+      width: 600px;
+    }
+  }
+
+  .b-section_content_special-offers .b-section__title_type_desktop .b-section__title-text {
+    font: 24px/28px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #222;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_special-offers .b-section__title_type_desktop .b-section__title-text {
+      font: 40px/47px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      color: #222;
+    }
+  }
+
+  .b-section_content_special-offers.b-section_content_event-detail {
+    margin: 0;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_special-offers.b-section_content_event-detail {
+      margin: 30px 0;
+    }
+  }
+
+  .b-section_content_special-offers.b-section_content_event-detail .b-section__title_type_desktop {
+    width: auto;
+  }
+
+  .b-section_content_subscribe-two {
+    font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    letter-spacing: normal;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_subscribe-two {
+      width: auto;
+    }
+  }
+
+  .b-section_content_subscribe-two .b-section__header {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_subscribe-two .b-section__header {
+      margin-bottom: 40px;
+    }
+  }
+
+  .b-section_content_subscribe-two .b-section__title {
+    text-align: center;
+  }
+
+  .b-section_content_subscribe-two .b-section__title-text {
+    font: 24px/28px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #fff;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_subscribe-two .b-section__title-text {
+      font: 45px/49px ProximaNovaLight, ProximaNovaAltLight, ProximaNovaScOsfLight, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    }
+  }
+
+  .b-section_content_subscribe-two .b-section__body {
+    margin-bottom: 8px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_subscribe-two .b-section__body {
+      margin-bottom: 20px;
+    }
+  }
+
+  .b-section_content_subscribe-two .b-section__body+.b-section__body {
+    margin: 18px 0 0;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_subscribe-two .b-section__body+.b-section__body {
+      margin: 0;
+    }
+  }
+
+  .b-section_content_subscribe-two .b-form-fields-box_content_subscribe {
+    display: inline-block;
+    margin: 20px 0;
+  }
+
+  .b-section_content_subscribe-two .b-form-fields-box_content_subscribe .b-form-field-text {
+    font: 16px/20px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #fff;
+  }
+
+  .b-section_content_subscribe-two .b-section__footer {
+    text-align: center;
+    margin: 18px auto 0;
+  }
+
+  .b-section_content_subscribe-two .b-section__footer-text {
+    font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #fff;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-section_content_subscribe-two .b-section__footer-text {
+      font: 18px/22px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    }
+  }
+
+  .b-section_content_subscribe-two .b-form-field-remark_content_recaptcha {
+    text-align: center;
+    color: #fff;
+  }
+
+  .b-stories_content_our-expertise {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin: 0 -20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stories_content_our-expertise {
+      display: none;
+    }
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise {
+    width: 100%;
+    padding: 20px 40px;
+    margin: 0;
+    border: 0 none;
+    border-top: 1px solid #e5e5e5;
+    clear: both;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    font: 0/0 a;
+    visibility: hidden;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise .b-story__thumbnail {
+    padding: 0 0 20px 0;
+    margin: 0;
+    border: 0 none;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise .b-story__content {
+    overflow: hidden;
+    height: auto;
+    padding: 0;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise .b-story__content .b-story__title-text {
+    transition: all ease-out .2s;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise .b-story__content .b-link_viewtype_mobile {
+    transition: all ease-out .2s;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise .b-story__content .b-link_viewtype_mobile:hover .b-story__title-text {
+    color: #000;
+  }
+
+  .b-stories_content_our-expertise .b-story_content_our-expertise .b-story__content .b-link_viewtype_mobile:active {
+    opacity: .3;
+  }
+
+  .b-stories_content_our-expertise .b-link_viewtype_mobile {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .b-stories_content_our-partners {
+    font: 0/0 a;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-left: 1px solid #e5e5e5;
+    margin-top: 1px;
+  }
+
+  .b-stories_content_our-partners .b-story_content_our-partner {
+    font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    letter-spacing: normal;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.333%;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: -1px;
+  }
+
+  .b-stories_content_our-partners .b-story_content_our-partner .b-story__thumbnail {
+    display: block;
+    font-size: 0;
+    line-height: 62px;
+    font-family: a;
+    height: 62px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .b-stories_content_our-partners .b-story_content_our-partner .b-story__thumbnail:after {
+    font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    letter-spacing: normal;
+    line-height: 62px;
+    content: "";
+    display: inline-block;
+    height: 62px;
+    margin: 0 -1px 0 0;
+    vertical-align: middle;
+    width: 1px;
+  }
+
+  @media screen and (min-width:480px) {
+    .b-stories_content_our-partners .b-story_content_our-partner .b-story__thumbnail {
+      font-size: 0;
+      line-height: 82px;
+      font-family: a;
+      height: 82px;
+    }
+
+    .b-stories_content_our-partners .b-story_content_our-partner .b-story__thumbnail:after {
+      font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      letter-spacing: normal;
+      line-height: 82px;
+      content: "";
+      display: inline-block;
+      height: 82px;
+      margin: 0 -1px 0 0;
+      vertical-align: middle;
+      width: 1px;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stories_content_our-partners .b-story_content_our-partner .b-story__thumbnail {
+      font-size: 0;
+      line-height: 111px;
+      font-family: a;
+      height: 111px;
+    }
+
+    .b-stories_content_our-partners .b-story_content_our-partner .b-story__thumbnail:after {
+      font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      letter-spacing: normal;
+      line-height: 111px;
+      content: "";
+      display: inline-block;
+      height: 111px;
+      margin: 0 -1px 0 0;
+      vertical-align: middle;
+      width: 1px;
+    }
+  }
+
+  .b-stories_content_our-partners .b-story_content_our-partner .b-story__image {
+    vertical-align: middle;
+    max-width: 60%;
+    max-height: 60%;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stories_content_our-partners .b-story_content_our-partner .b-story__image {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  }
+
+  .b-story_content_our-expertise {
+    position: relative;
+    background: #fff;
+    border: 1px solid #dbdcdc;
+    padding: 32px 29px 27px;
+    margin-bottom: 16px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    text-decoration: none;
+    transition: all ease-out .2s;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_our-expertise {
+      height: 335px;
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_our-expertise:hover {
+      -moz-box-shadow: 0 6px 9px 0 rgba(1, 1, 1, .1);
+      box-shadow: 0 6px 9px 0 rgba(1, 1, 1, .1);
+    }
+
+    .b-story_content_our-expertise:hover .b-story__footer .b-link .b-icon_type_svg {
+      -webkit-animation-name: our-expertise-story;
+      animation-name: our-expertise-story;
+      -webkit-animation-duration: .8s;
+      animation-duration: .8s;
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_our-expertise:active {
+      -moz-box-shadow: 0 3px 5px 0 rgba(1, 1, 1, .1);
+      box-shadow: 0 3px 5px 0 rgba(1, 1, 1, .1);
+    }
+
+    .b-story_content_our-expertise:active .b-story__thumbnail {
+      opacity: .3;
+    }
+
+    .b-story_content_our-expertise:active .b-story__title-text {
+      color: rgba(68, 68, 68, .3);
+    }
+  }
+
+  .b-story_content_our-expertise .b-story__thumbnail {
+    padding-bottom: 34px;
+    border-bottom: 2px solid #dae3de;
+    margin-bottom: 9px;
+    transition: opacity ease-out .2s;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    display: block;
+  }
+
+  .b-story_content_our-expertise .b-story__image {
+    vertical-align: top;
+    max-height: 90px;
+    max-width: 207px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_our-expertise .b-story__image {
+      vertical-align: middle;
+    }
+  }
+
+  .b-story_content_our-expertise .b-story__content {
+    height: 120px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .b-story_content_our-expertise .b-story__footer .b-link {
+    color: #444;
+    opacity: .6;
+    width: 210px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  }
+
+  .b-story_content_our-expertise .b-story__footer .b-link .b-icon_type_svg:nth-child(2) {
+    position: absolute;
+    top: 4px;
+    left: -210px;
+  }
+
+  .b-story_content_our-expertise .b-story__title-text {
+    font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    transition: color ease-out .2s;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_our-expertise .b-story__title-text {
+      font: 16px/20px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    }
+  }
+
+  .b-story_content_partners-comment .b-story__content {
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_partners-comment .b-story__content {
+      height: 166px;
+      overflow: hidden;
+      margin-bottom: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e5e5e5;
+      text-align: left;
+    }
+  }
+
+  .b-story_content_partners-comment .b-story__symmary {
+    font: 14px/20px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    text-align: center;
+    position: relative;
+    height: 128px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_partners-comment .b-story__symmary {
+      font: 16px/24px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      color: #222;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+  }
+
+  .b-story_content_partners-comment .b-story__symmary:before {
+    position: absolute;
+    content: "";
+    height: 94px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, #fff 90%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 90%);
+  }
+
+  .b-story_content_partners-comment .b-link_content_partners-comment {
+    display: inline-block;
+    font: 14px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #444;
+    text-decoration: none;
+    transition: all ease-out .2s;
+  }
+
+  .b-story_content_partners-comment .b-link_content_partners-comment:hover {
+    opacity: .6;
+  }
+
+  .b-story_content_partners-comment .b-link_content_partners-comment:active {
+    opacity: .3;
+  }
+
+  .b-story_content_partners-comment .b-story__author {
+    font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: rgba(68, 68, 68, .5);
+    text-align: center;
+    height: 90px;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_partners-comment .b-story__author {
+      color: #444;
+      text-align: left;
+      height: 38px;
+    }
+  }
+
+  .b-story_content_partners-comment .b-story__author:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, #fff 90%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 90%);
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_partners-comment .b-story__author:before {
+      height: 18px;
+      background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 75%, #fff 90%);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 75%, #fff 90%);
+    }
+  }
+
+  .b-story_content_partners-comment .b-story__author strong {
+    font: 16px/24px ProximaNovaBold, ProximaNovaAltBold, ProximaNovaScOsfBold, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    color: #222;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-story_content_partners-comment .b-story__author strong {
+      font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      color: #444;
+      display: inline;
+      margin-bottom: 0;
+    }
+  }
+
+  .b-stripe_content_background-special-offers {
+    background: #f2f2f2;
+    -moz-background-size: cover;
+    background-size: cover;
+    border-bottom: 1px solid #dadada;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_background-special-offers {
+      -moz-background-size: auto;
+      background-size: auto;
+    }
+  }
+
+  .b-stripe_content_background-special-offers>.b-stripe__in {
+    padding: 0 20px;
+  }
+
+  .b-stripe_content_background-special-offers .b-section__title {
+    position: relative;
+    z-index: 2;
+  }
+
+  .b-stripe_content_background-special-offers:before {
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .b-stripe_content_background-special-offers .b-stripe__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_background-special-offers.b-stripe_content_company {
+      max-width: 1440px;
+      height: 333px;
+    }
+  }
+
+  .b-stripe_content_base {
+    padding-top: 103px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_base {
+      padding-top: 0;
+    }
+  }
+
+  .b-stripe_content_breadcrumbs {
+    min-height: 20px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_breadcrumbs {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      min-height: inherit;
+    }
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_breadcrumbs .b-stripe__in {
+      padding: 0 20px;
+    }
+  }
+
+  .b-stripe_content_breadcrumbs .b-breadcrumbs__dilimeter {
+    color: #444;
+    opacity: .3;
+    padding: 0 8px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_breadcrumbs .b-breadcrumbs__dilimeter {
+      color: #fff;
+      opacity: .6;
+    }
+  }
+
+  .b-stripe_content_breadcrumbs .b-breadcrumbs {
+    text-transform: uppercase;
+    font: 9px/13px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+    padding: 4px 0;
+    max-height: 50px;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_breadcrumbs .b-breadcrumbs {
+      font: 14px/18px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      text-transform: none;
+      padding: 0;
+      max-width: 840px;
+      max-height: 36px;
+    }
+  }
+
+  .b-stripe_content_breadcrumbs .b-breadcrumbs .b-breadcrumbs__item-text {
+    text-decoration: none;
+    color: #a7a9ac;
+    opacity: 1;
+    transition: all ease-out .2s;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_breadcrumbs .b-breadcrumbs .b-breadcrumbs__item-text {
+      color: #fff;
+      opacity: .6;
+    }
+  }
+
+  .b-stripe_content_breadcrumbs .b-breadcrumbs .b-breadcrumbs__item-text:hover {
+    opacity: .8;
+  }
+
+  .b-stripe_content_breadcrumbs .b-breadcrumbs .b-breadcrumbs__item-text:active {
+    opacity: .5;
+  }
+
+  .b-stripe_content_our-expertise {
+    position: relative;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_our-expertise:before {
+      background: #f5f4f2;
+      position: absolute;
+      content: "";
+      height: 260px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .b-stripe_content_our-expertise>.b-stripe__in {
+    padding: 30px 0 0;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_our-expertise>.b-stripe__in {
+      padding: 38px 20px 55px 20px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .b-stripe_content_our-partners>.b-stripe__in {
+    padding: 30px 0 1px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_our-partners>.b-stripe__in {
+      padding: 0 20px 0 20px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .b-stripe_content_sidebar-and-grid {
+    background: #fff;
+  }
+
+  .b-stripe_content_sidebar-and-grid>.b-stripe__in {
+    padding: 26px 0 36px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_sidebar-and-grid>.b-stripe__in {
+      padding: 84px 20px 94px;
+    }
+  }
+
+  .b-stripe_content_sidebar-and-grid.b-stripe_padding-bottom_0>.b-stripe__in {
+    padding-bottom: 0;
+  }
+
+  .b-stripe_content_subscribe-two {
+    background: url(https://softline.ru/images/bg/iStock-499115511_super-min.jpg) no-repeat center;
+    -moz-background-size: cover;
+    background-size: cover;
+    position: relative;
+    max-width: 1440px;
+  }
+
+  .b-stripe_content_subscribe-two:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .8);
+    width: 1440px;
+    margin: 0 auto;
+  }
+
+  .b-stripe_content_subscribe-two>.b-stripe__in {
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_subscribe-two>.b-stripe__in {
+      padding: 0 20px;
+      font-size: 0;
+      line-height: 400px;
+      font-family: a;
+      height: 400px;
+      text-align: center;
+    }
+
+    .b-stripe_content_subscribe-two>.b-stripe__in:after {
+      font: 12px/16px ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
+      letter-spacing: normal;
+      line-height: 400px;
+      content: "";
+      display: inline-block;
+      height: 400px;
+      margin: 0 -1px 0 0;
+      vertical-align: middle;
+      width: 1px;
+    }
+  }
+
+  .b-form-field-remark_content-type_error {
+    color: #cb0f41;
+    max-width: 712px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-form-field-remark_content-type_error {
+      max-width: 560px;
+    }
+  }
+
+  .b-stripe_content_share .b-stripe__in {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width:768px) {
+    .b-stripe_content_share .b-stripe__in {
+      margin-bottom: 50px;
+    }
+  }
+
+  .b-stripe_content_share.b-stripe_viewtype_section .b-stripe__in {
+    padding: 0;
+  }
+
+  .b-form-field-remark_content_recaptcha {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #414141;
+  }
+}
+
+/*! CSS Used keyframes */
+@-webkit-keyframes our-expertise-readmore {
+  to {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(168px);
+    -moz-transform: translateX(168px);
+    -ms-transform: translateX(168px);
+    transform: translateX(168px);
+  }
+}
+
+@keyframes our-expertise-readmore {
+  to {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(168px);
+    -moz-transform: translateX(168px);
+    -ms-transform: translateX(168px);
+    transform: translateX(168px);
+  }
+}
+
+@-webkit-keyframes our-expertise-story {
+  to {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(210px);
+    -moz-transform: translateX(210px);
+    -ms-transform: translateX(210px);
+    transform: translateX(210px);
+  }
+}
+
+@keyframes our-expertise-story {
+  to {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(210px);
+    -moz-transform: translateX(210px);
+    -ms-transform: translateX(210px);
+    transform: translateX(210px);
+  }
+}

@@ -516,6 +516,7 @@
       position: relative;
       z-index: 1;
       padding: 5.6rem 6.4rem 7.2rem;
+      max-width: none;
       @include breakpoint($mid-bp) {
         padding: 4rem 2rem;
       }
@@ -603,6 +604,9 @@
     }
   }
 
+  .politics-page {
+    max-width: 144rem;
+  }
   .politics-page {
     .politics-page__container {
       max-width: 144rem;
@@ -737,7 +741,7 @@
         }
         .accordion__list__inner {
           padding: 5.6rem 6.4rem 7.2rem;
-          background-color: #eff1f6;
+          background-color: #FFFFFF;
           @include breakpoint($mid-bp) {
             padding: 4rem 2rem;
           }

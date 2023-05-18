@@ -599,32 +599,32 @@
 }
 
 .wrapper.customers-faq {
-    // .accordion {
-    //     .accordion__top {
-    //         display: flex;
-    //         width: 100%;
-    //         justify-content: space-between;
-    //         align-items: flex-end;
-    //         padding-bottom: 5.2rem;
-    //         gap: 2rem;
+    .accordion {
+        .accordion__top {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-bottom: 5.2rem;
+            gap: 2rem;
 
-    //         @include breakpoint($mid-bp) {
-    //             flex-direction: column;
-    //             justify-content: flex-start;
-    //             align-items: flex-start;
-    //         }
+            @include breakpoint($mid-bp) {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
 
-    //         .accordion__title {
-    //             padding-bottom: 0;
-    //         }
+            .accordion__title {
+                padding-bottom: 0;
+            }
 
-    //         .link-red {
-    //             @include breakpoint($sm-bp) {
-    //                 padding-left: 2.5rem;
-    //             }
-    //         }
-    //     }
-    // }
+            .link-red {
+                @include breakpoint($sm-bp) {
+                    padding-left: 2.5rem;
+                }
+            }
+        }
+    }
 
 }
 
@@ -698,12 +698,16 @@
     @include breakpoint($xl-bp) {
         height: 20rem;
     }
+    @include breakpoint($sm-bp) {
+        padding: 2rem;
+    }
 
     img {
         width: 24rem;
 
         @include breakpoint($sm-bp) {
-            width: unset;
+            width: 100%;
+            object-fit: contain;
             height: 85%;
         }
     }
@@ -752,6 +756,19 @@
 
     @include breakpoint($sm-bp) {
         font-size: 2rem;
+        max-width: 100%;
+    }
+    ul li, ol li {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #697279;
+        padding-left: 2.5rem;
+        @include breakpoint($sm-bp) {
+            font-size: 2rem;
+        }
     }
 }
 

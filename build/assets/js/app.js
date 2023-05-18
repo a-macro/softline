@@ -3,7 +3,11 @@
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 document.addEventListener("DOMContentLoaded", function () {
@@ -73,6 +77,19 @@ document.addEventListener("DOMContentLoaded", function () {
   var headerSearch = document.querySelectorAll(".header__search");
   var headerSearchBtn = document.querySelectorAll(".btn__search-show");
   var menubutton = document.querySelector('.menu-button');
+  if (mm.matches) {
+    var links = document.querySelectorAll('a.header__link,a.menu__item:not(.list),a.menu__title,a.submenu__title,a.submenu__link,a.header__anchor,a.header__nav_link,a.header__top-button');
+    console.log(links);
+    if (links.length) {
+      links.forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (menubutton) {
+            menubutton.click();
+          }
+        });
+      });
+    }
+  }
   if (headerSearchBtn) {
     headerSearchBtn.forEach(function (btn) {
       btn.onclick = function (e) {
@@ -251,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
       el.addEventListener('click', function () {
         if (mm.matches && this.parentElement.classList.contains('list')) {
           event.preventDefault();
-        }
+        } else {}
       });
     });
   }
@@ -279,6 +296,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (prev) {
           prev.forEach(function (prev) {
             prev.classList.remove("active");
+          });
+        }
+        var menus = document.querySelectorAll(".menu");
+        if (menus.length) {
+          menus.forEach(function (el) {
+            return el.style.display = null;
           });
         }
         var subMenus = document.querySelectorAll(".menu__item.hide");
@@ -577,7 +600,7 @@ document.addEventListener("DOMContentLoaded", function () {
             spaceBetween: 40
           },
           1921: {
-            slidesPerView: 4
+            slidesPerView: 3
           }
         }
       });
@@ -1106,7 +1129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       close.onclick = function (e) {
         if (elem.classList.contains("active")) {
           elem.classList.remove("active");
-          inp.checked = false;
+          inp.setAttribute('checked', 'false');
         }
       };
     });
@@ -1177,11 +1200,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (num === "all" || !num || +num > len) {
       var parent = filter.closest(".filter__wrapper");
       var btn = parent.querySelector(".filter__show-more");
-      btn.style.display = "none";
+      if (btn) {
+        btn.style.display = "none";
+      }
       return;
     }
     var margin = +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
-    console.log(margin);
     var commonH = 0;
     for (var _i5 = 0; _i5 < +num; _i5++) {
       var h = +elems[_i5].getBoundingClientRect().height + margin;
@@ -1193,13 +1217,141 @@ document.addEventListener("DOMContentLoaded", function () {
   if (showMoreFilters && showMoreFilters.length > 0) {
     showMoreFilters.forEach(function (btn) {
       var parent = btn.closest(".filter__wrapper");
+      var list = parent.querySelector("ul");
+      var listContent = list.innerHTML;
       btn.onclick = function (e) {
         e.preventDefault();
-        var list = parent.querySelector("ul");
-        list.style.maxHeight = "200vh";
-        btn.classList.add("hide");
+        var text = this.innerHTML;
+        var hideText = this.dataset.hideText || 'Скрыть';
+        this.innerHTML = hideText;
+        this.dataset.hideText = text;
+        if (list.children.length > 20) {
+          parent.classList.toggle('open');
+        }
+        list.classList.toggle('overflow-auto');
+        if (list.style.maxHeight !== '') {
+          list.style.maxHeight = null;
+          list.innerHTML = listContent;
+          list.classList.remove('empty');
+          list.scrollTo(0, 0);
+        } else {
+          if (list.children.length > 20) {
+            sortList(list);
+          }
+          list.style.maxHeight = "30rem";
+          list.classList.remove('empty');
+        }
       };
     });
+  }
+  var radioButtons = document.querySelectorAll('.catalog-sidebar__item.side-list__item');
+  if (radioButtons.length) {
+    radioButtons.forEach(function (el) {
+      el.addEventListener('click', function (event) {
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+          var input = this.querySelector('input[type="radio"]');
+          if (input) {
+            input.setAttribute('checked', 'false');
+            input.checked = false;
+          }
+        }
+      });
+    });
+  }
+  function sortList(list) {
+    var arr = _toConsumableArray(list.querySelectorAll('li'));
+    if (arr) {
+      var newArr = arr.sort(function (a, b) {
+        var textA = a.querySelector('.check-box__text');
+        var textB = b.querySelector('.check-box__text');
+        if (textA && textB) {
+          var textValueA = textA.innerHTML.toLowerCase().replace(/«/, '');
+          var textValueB = textB.innerHTML.toLowerCase().replace(/«/, '');
+          if (textValueA < textValueB) {
+            return -1;
+          }
+          if (textValueA > textValueB) {
+            return 1;
+          }
+          return 0;
+        }
+      });
+      list.innerHTML = '';
+      var prevLetter = null;
+      var currentLetter = '';
+      newArr.forEach(function (el) {
+        var text = el.innerText.trim().toUpperCase().replace(/^[«|"|=|'|\(]/, '');
+        currentLetter = text[0];
+        if (currentLetter !== prevLetter) {
+          var li = document.createElement('li');
+          li.classList.add('filter-number');
+          li.innerHTML = currentLetter;
+          list.appendChild(li);
+        }
+        prevLetter = currentLetter;
+        list.appendChild(el);
+      });
+    }
+  }
+  function throttle(func, ms) {
+    var isThrottled = false,
+      savedArgs,
+      savedThis;
+    function wrapper() {
+      if (isThrottled) {
+        // (2)
+        savedArgs = arguments;
+        savedThis = this;
+        return;
+      }
+      func.apply(this, arguments); // (1)
+
+      isThrottled = true;
+      setTimeout(function () {
+        isThrottled = false; // (3)
+        if (savedArgs) {
+          wrapper.apply(savedThis, savedArgs);
+          savedArgs = savedThis = null;
+        }
+      }, ms);
+    }
+    return wrapper;
+  }
+  var filterInputs = document.querySelectorAll('.filter-input-text');
+  if (filterInputs.length) {
+    filterInputs.forEach(function (el) {
+      var list = el.parentElement.querySelector("ul");
+      if (list) {
+        el.addEventListener('input', function () {
+          var filterArr = throttle(filterList, 4000);
+          filterArr(list, this.value);
+        });
+      }
+    });
+  }
+  function filterList(list, input) {
+    var items = list.querySelectorAll('li');
+    if (items.length) {
+      var arr = _toConsumableArray(items);
+      var regExp = new RegExp("".concat(input.trim().toUpperCase()), 'g');
+      var number = arr.length;
+      arr.forEach(function (el) {
+        var text = el.innerText.trim().toUpperCase();
+        if (!regExp.test(text)) {
+          el.style.display = 'none';
+          number--;
+        } else {
+          el.style.display = null;
+          number++;
+        }
+      });
+      if (number === 0) {
+        list.classList.add('empty');
+      } else {
+        list.classList.remove('empty');
+      }
+    }
   }
   var swipeEls = document.querySelectorAll('.swipe-el');
   var hideswipeEl;
@@ -1375,9 +1527,11 @@ document.addEventListener("DOMContentLoaded", function () {
     height = window.innerHeight;
     // document.documentElement.style.setProperty('--h', height + "px");
 
-    filters.forEach(function (filter) {
-      countHeight(filter);
-    });
+    if (filters.length) {
+      filters.forEach(function (filter) {
+        countHeight(filter);
+      });
+    }
     initSlider();
     initSliderSuggestion();
     initSliderStoryRange();
@@ -2152,13 +2306,43 @@ document.addEventListener("DOMContentLoaded", function () {
           })
         }*/
 
+  //   function disableScroll() {
+  //     // Get the current page scroll position;
+  //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  //     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollTop;
+  //     document.documentElement.style.setProperty('scroll-behavior', 'auto');
+
+  //     if (isMobile.any()) {
+  //         document.body.style.overflow='hidden';
+  //     }
+
+  //     // if any scroll is attempted, set this to the previous value;
+  //     window.onscroll = function () {
+  //         window.scrollTo(scrollLeft, scrollTop);
+  //     };
+  // };
+
+  // function enableScroll() {
+  //     document.documentElement.style.setProperty('scroll-behavior', null);
+  //     document.body.style.overflow=null;
+  //     window.onscroll = function () { };
+  // };
+
   var leadershipCards = document.querySelectorAll(".leader__card");
   var leadershipModal = document.querySelector("#leadership-modal");
   if (leadershipCards && leadershipModal) {
     leadershipCards.forEach(function (card) {
       card.onclick = function (e) {
         e.preventDefault();
+        var content = this.querySelector('.leader__content');
+        var modalWrapper = leadershipModal.querySelector('.leadership-modal__wrapper');
+        if (content && modalWrapper) {
+          modalWrapper.innerHTML = content.innerHTML;
+        } else {
+          return;
+        }
         leadershipModal.style.display = "block";
+        disableScroll();
         // scrollLock.disablePageScroll(leadershipModal);
         // scrollLock.addScrollableSelector('.leadership__text-block');
         if (window.innerWidth <= 1024) {
@@ -2174,8 +2358,8 @@ document.addEventListener("DOMContentLoaded", function () {
       leadershipClose.onclick = function (e) {
         e.preventDefault();
         leadershipModal.classList.remove("show");
-        // scrollLock.enablePageScroll(leadershipModal);
         enableScroll();
+        // scrollLock.enablePageScroll(leadershipModal);
         setTimeout(function () {
           leadershipModal.style.display = "none";
         }, 400);

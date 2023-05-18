@@ -34,7 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    height: 20rem;
+    min-height: 20rem;
     margin-bottom: 2rem;
     @include breakpoint($mid-bp) {
         position: relative;
@@ -78,8 +78,19 @@
     line-height: 1.4;
     letter-spacing: 0em;
     text-align: left;
+    color: $black;
     @include breakpoint($sm-bp) {
         font-size: 2.58rem;
+    }
+}
+
+a.vacancy__block_name {
+    transition: .4s;
+    &:hover {
+        color: #A50F2D;
+        // text-decoration: underline;
+        // text-underline-offset: 0.5rem;
+        // text-decoration-thickness: 0.1rem;
     }
 }
 
@@ -112,12 +123,14 @@
     letter-spacing: 0em;
     text-align: left;
     color: $red;
+    transition: box-shadow .3s;
     @include breakpoint($sm-bp) {
         font-size: 2.05rem;
     }
-
+    box-shadow: 0 1px 0 0 transparent;
     &:hover {
         text-decoration: none;
+        box-shadow: 0 1px 0 0 #A50F2D;
     }
 }
 
@@ -139,20 +152,20 @@
 
 .vacancy-page.wrapper {
     margin: 8rem auto 15rem;
-    max-width: 119rem;
+    max-width: 114.4rem;
     padding: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
     @include breakpoint($xxl-bp) {
-        max-width: 120rem;
+        max-width: 114.4rem;
         margin: 8rem auto 12rem;
     }
     @include breakpoint($xl-bp) {
-        max-width: 89.5rem;
+        max-width: 93.4rem;
     }
     @include breakpoint($mid-bp) {
         margin-top: 6rem;
         max-width: 100%;
-        padding-left: 2rem;
-        padding-right: 2rem;
         margin-bottom: 10rem;
     }
     @include breakpoint($sm-bp) {
@@ -161,13 +174,50 @@
         margin-top: 2.5rem;
         margin-bottom: 5rem;
     }
+    .crm-block {
+        padding: 0;
+    }
+
+    .vacancy__bottom .vacancy__bottom_links .link-red span {
+        font-size: 2rem;
+    }
+    .vacancy__send-agree {
+        margin-top: 0.6rem;
+    }
+    .vacancy__send_text {
+        font-size: 2rem;
+        @include breakpoint($xl-bp) {
+            font-size: 1.6rem;
+        }
+        a {
+            font-size: 2rem;
+            color: #A50F2D;
+            @include breakpoint($xl-bp) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .vacancy__bottom_info {
+        font-size: 2rem;
+        @include breakpoint($xl-bp) {
+            font-size: 1.6rem;
+        }
+        @include breakpoint($sm-bp) {
+            padding-left: 3.2rem;
+        }
+        a {
+            font-size: 2rem;
+            @include breakpoint($xl-bp) {
+                font-size: 1.6rem;
+            }
+            color: #A50F2D;
+        }
+    }
 }
 
 .vacancy__title {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
     .title {
         font-size: 3.65rem;
         line-height: 1.4;
@@ -184,6 +234,12 @@
             margin-top: 1.1rem;
         }
     }
+}
+
+.city-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .vacancy__tags {
@@ -204,57 +260,57 @@
         padding-top: 0;
     }
 
-    p {
-        margin-top: 7rem;
-        font-size: 2.4rem;
-        font-weight: 500;
-        line-height: 1.5;
-        letter-spacing: 0em;
-        text-align: left; 
-        @include breakpoint($sm-bp) {
-            margin-top: 5rem;
-            font-size: 2.6rem;
-        }
-    }
+    // p {
+    //     margin-top: 7rem;
+    //     font-size: 2.4rem;
+    //     font-weight: 500;
+    //     line-height: 1.5;
+    //     letter-spacing: 0em;
+    //     text-align: left; 
+    //     @include breakpoint($sm-bp) {
+    //         margin-top: 5rem;
+    //         font-size: 2.6rem;
+    //     }
+    // }
 
-    ul {
-        padding-top: .4rem;
-        @include breakpoint($sm-bp) {
-            padding-top: 0;
-        }
+    // ul {
+    //     padding-top: .4rem;
+    //     @include breakpoint($sm-bp) {
+    //         padding-top: 0;
+    //     }
 
-        li {
-            margin-top: 2.8rem;
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 1.56;
-            letter-spacing: 0em;
-            text-align: left;
-            padding-left: 2rem;
-            position: relative;
-            @include breakpoint($sm-bp) {
-                font-size: 2.05rem;
-                line-height: 1.6;
-                margin-top: 2rem;
-            }
+    //     li {
+    //         margin-top: 2.8rem;
+    //         font-size: 1.8rem;
+    //         font-weight: 500;
+    //         line-height: 1.56;
+    //         letter-spacing: 0em;
+    //         text-align: left;
+    //         padding-left: 2rem;
+    //         position: relative;
+    //         @include breakpoint($sm-bp) {
+    //             font-size: 2.05rem;
+    //             line-height: 1.6;
+    //             margin-top: 2rem;
+    //         }
 
-            &::before {
-                content: unset;
-                width: .6rem;
-                height: .6rem;
-                border-radius: 100%;
-                background: $red;
-                position: absolute;
-                top: 1.1rem;
-                left: 0;
-                @include breakpoint($sm-bp) {
-                    width: .8rem;
-                    height: .8rem;    
-                    top: 1.3rem;
-                }
-            }
-        }
-    }
+    //         &::before {
+    //             content: unset;
+    //             width: .6rem;
+    //             height: .6rem;
+    //             border-radius: 100%;
+    //             background: $red;
+    //             position: absolute;
+    //             top: 1.1rem;
+    //             left: 0;
+    //             @include breakpoint($sm-bp) {
+    //                 width: .8rem;
+    //                 height: .8rem;    
+    //                 top: 1.3rem;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 .vacancy__bottom {
@@ -273,19 +329,33 @@
     }
 
     .link-red {
-        margin-right: 6.5rem;
-        @include breakpoint($mid-bp) {
-            margin-right: 5rem;
-        }
+        margin-right: 0.5rem;
     }
 
     .vacancy__bottom_links {
         display: flex;
         align-items: center;
+        @include breakpoint($sm-bp) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .link-red {
+            span {
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 1.5;
+                letter-spacing: 0em;
+                text-align: left;
+                @include breakpoint($sm-bp) {
+                    font-size: 1.93rem;
+                    line-height: 2.2;
+                }
+            }
+        }
     }
 
     .send-cv {
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: 500;
         line-height: 1.5;
         letter-spacing: 0em;
@@ -407,12 +477,12 @@
         margin-top: 0;
     }
     a {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.83;
         letter-spacing: 0em;
         text-align: left;
-        color: #697279;
+        color: #AAB8C3;
         text-decoration: none;
         @include breakpoint($sm-bp) {
             font-size: 1.55rem;
@@ -420,7 +490,7 @@
     }
     span {
         display: block;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.83;
         letter-spacing: 0em;
@@ -430,12 +500,16 @@
             font-size: 1.55rem;
         }
     }
+    .link {
+        text-decoration: none;
+        color: #AAB8C3;
+    }
 }
 
 .vacancy__bottom_info {
     margin: 1rem auto 0;
     display: block;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.83;
     letter-spacing: 0em;
@@ -445,6 +519,10 @@
     @include breakpoint($sm-bp) {
         font-size: 1.55rem;
         max-width: 100%;
+    }
+    a {
+        color: #AAB8C3;
+        text-decoration: none;
     }
 }
 

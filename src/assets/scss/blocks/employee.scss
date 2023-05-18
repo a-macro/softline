@@ -760,7 +760,7 @@
 
 .employee__success {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
     margin: 15rem 0 0;
     width: 100%;
@@ -809,7 +809,7 @@
                 transform: scale(1.01);
             }
             .story__title {
-                text-decoration: underline;
+                color: $red; 
             }
         }
 
@@ -850,13 +850,14 @@
             font-size: 2.2rem;
             line-height: 1.5;
             color: $black;
+            transition: .3s;
             @include breakpoint($mid-bp) {
                 padding-left: 18.5rem;
                 min-height: 22.5rem;
                 padding-bottom: 1.5rem;
             }
         }
-
+        p,
         .story__desc {
             font-size: 1.8rem;
             line-height: 1.5;
@@ -908,3 +909,6 @@
     }
 }
 
+.center-block {
+    overflow: hidden;
+}

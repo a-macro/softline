@@ -2,11 +2,13 @@
     //--h: 100vh;
     //--scroll-y: 0px;
 }
+
 .solution .insights-main-bg {
     &::before {
         background-color: rgba($color: #000000, $alpha: 0);
     }
 }
+
 .intro,
 .intro__pages,
 .insights-main-bg {
@@ -87,6 +89,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 2rem;
 
     @include breakpoint($mid-bp) {
         flex-direction: column;
@@ -109,13 +112,15 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 4px transparent;
     transition: .4s;
+    background-color: transparent;
+    position: relative;
+    width: max-content;
 
     @include breakpoint($mid-bp) {
-        margin-top: 5rem;
+        margin-top: 0;
     }
 
     @include breakpoint($sm-bp) {
-        margin-top: 3rem;
         font-size: 2.05rem;
         padding: 1.5rem 3rem 1.5rem 1.5rem;
     }
@@ -139,6 +144,12 @@
             width: 3.7rem;
             height: 3.7rem;
             margin-right: 3rem;
+        }
+    }
+
+    &.--callback {
+        &::before {
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='16' fill='white' /%3E%3Cpath d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='%23212424' stroke-width='1.5' /%3E%3C/svg%3E") no-repeat;
         }
     }
 }
@@ -184,6 +195,14 @@
         width: 100%;
     }
 
+    &.title-wrapper--width {
+        width: calc(60% - 2rem);
+
+        @include breakpoint($mid-bp) {
+            width: 100%;
+        }
+    }
+
     .title {
         margin-left: 20.5rem;
 
@@ -212,16 +231,19 @@
     color: $black;
 
     padding-right: 20rem;
+
     ul,
     ol {
         font-size: 2.4rem;
         font-weight: 500;
         line-height: 1.5;
+
         @include breakpoint($sm-bp) {
             font-size: 2.55rem;
             line-height: 1.4;
         }
     }
+
     @include breakpoint($xl-bp) {
         padding-right: 10rem;
     }
@@ -244,15 +266,18 @@
         margin-top: 2.2rem;
     }
 
-    p + p {
+    p+p {
         margin-top: 1rem;
     }
-    ul, ol {
+
+    ul,
+    ol {
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 
-    p, .text-normal {
+    p,
+    .text-normal {
         // padding-right: 30%;
 
         // @include breakpoint($xxl-bp) {
@@ -306,7 +331,8 @@
     }
 }
 
-p, .text-normal {
+p,
+.text-normal {
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 1.5;
@@ -413,6 +439,7 @@ button.link-red {
     letter-spacing: 0em;
     text-align: left;
     color: $black;
+
     @include breakpoint($sm-bp) {
         font-size: 2.55rem;
     }
@@ -583,7 +610,7 @@ button.link-red {
     letter-spacing: 0em;
     text-align: left;
     color: #697279;
-    max-height: 10rem;
+    max-height: 3 * 1em * 1.5;
     overflow: hidden;
     position: relative;
     transition: color .3s;
@@ -772,6 +799,36 @@ button.link-red {
     }
 }
 
+.solve--adaptive {
+    .solve__intro {
+        height: auto;
+        min-height: unset;
+        padding-bottom: 28rem;
+    }
+
+    .solve__slider {
+        overflow: hidden;
+        width: 100%;
+        margin-left: 0;
+
+        .swiper-container {
+            width: 100%;
+            margin: 0;
+            padding-left: 4rem;
+            padding-right: 4rem;
+
+            @include breakpoint($sm-bp) {
+                padding-right: 2.5rem;
+                padding-left: 2.5rem;
+            }
+        }
+    }
+
+    .solve__slider .swiper-slide {
+        height: auto;
+    }
+}
+
 .vertical {
     @include breakpoint($sm-bp) {
         padding-right: 5rem;
@@ -915,6 +972,7 @@ button.link-red {
         justify-content: space-between;
         position: relative;
         text-decoration: none;
+
         @include breakpoint($mid-bp) {
             width: 58.5rem;
         }
@@ -967,6 +1025,7 @@ button.link-red {
             display: none;
         }
     }
+
     p.footnote,
     .footnote {
         font-size: 1.6rem;
@@ -1460,28 +1519,28 @@ button.link-red {
 }
 
 .career-block {
-    height: 61rem;
+    min-height: 61rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../images/main/career.jpg");
 
     @include breakpoint($xxl-bp) {
-        height: 46rem;
+        min-height: 46rem;
     }
 
     @include breakpoint($xl-bp) {
-        height: 36.5rem;
+        min-height: 36.5rem;
     }
 
     @include breakpoint($mid-bp) {
-        height: 46.5rem;
+        min-height: 46.5rem;
         background-image: url("../images/main/career-768.jpg");
     }
 
     @include breakpoint($sm-bp) {
         width: calc(100% + 5rem);
         margin-left: -2.5rem;
-        height: 54rem;
+        min-height: 54rem;
     }
 
     .section-top {
@@ -1512,16 +1571,23 @@ button.link-red {
 //     margin-top: 0;
 // }
 
-.pb15.dark + .wrapper.dark {
+.pb15.dark+.wrapper.dark {
     padding-top: 15rem;
+
     @include breakpoint($xxl-bp) {
         padding-top: 12rem;
     }
+
     @include breakpoint($mid-bp) {
         padding-top: 10.2rem;
     }
+
     @include breakpoint($sm-bp) {
         padding-top: 5.5rem;
+    }
+
+    .section-top {
+        padding-top: 0;
     }
 }
 
@@ -1646,6 +1712,7 @@ button.link-red {
     @include breakpoint($mid-bp) {
         grid-template-columns: repeat(1, 1fr);
     }
+
     @include breakpoint($sm-bp) {
         padding-top: 4rem;
     }
@@ -1654,6 +1721,7 @@ button.link-red {
         grid-column: 7 span;
         padding-left: 0;
         padding-right: 0;
+
         @include breakpoint($mid-bp) {
             grid-column: 1 span;
         }
@@ -1693,6 +1761,7 @@ button.link-red {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+
     @include breakpoint($sm-bp) {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -1706,10 +1775,12 @@ button.link-red {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @include breakpoint($sm-bp) {
         min-height: 15.7rem;
         padding: 1.5rem;
     }
+
     &.--red {
         background-color: #A50F2D;
 
@@ -1736,6 +1807,7 @@ button.link-red {
     /* UI/Black/High */
 
     color: #212424;
+
     @include breakpoint($sm-bp) {
         font-size: 3.2rem;
         line-height: 4rem;
@@ -1748,6 +1820,7 @@ button.link-red {
     font-weight: 500;
     font-size: 2rem;
     line-height: 3.2rem;
+
     @include breakpoint($sm-bp) {
         font-size: 1.5rem;
         line-height: 2.4rem;
@@ -1773,7 +1846,7 @@ button.link-red {
 }
 
 .b-invest-section {
-    padding-top: 10rem ;
+    padding-top: 10rem;
     padding-bottom: 10rem;
 }
 
@@ -1822,6 +1895,7 @@ button.link-red {
     background-color: #FFFFFF;
     cursor: pointer;
     counter-increment: my-sec-counter;
+
     @include breakpoint($sm-bp) {
         min-height: 16.8rem;
     }
@@ -1831,6 +1905,7 @@ button.link-red {
     .b-invest-item {
         background-color: #282B2B;
     }
+
     .b-invest-item__heading {
         color: #eff1f6;
     }
@@ -1840,9 +1915,11 @@ button.link-red {
     margin-top: auto;
     color: #697279
 }
+
 .b-invest-section__list {
     counter-reset: my-sec-counter;
 }
+
 .b-invest-item__col {
     display: -moz-box;
     display: -ms-flexbox;
@@ -1855,6 +1932,7 @@ button.link-red {
     -moz-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+
     &:after {
         content: counter(my-sec-counter, decimal-leading-zero);
         font-family: 'Manrope';
@@ -1862,9 +1940,9 @@ button.link-red {
         font-weight: 500;
         font-size: 2rem;
         line-height: 3.2rem;
-        
+
         /* UI/Footer */
-        
+
         color: #697279;
         margin-top: auto;
     }
@@ -1877,6 +1955,7 @@ button.link-red {
     flex-shrink: 0;
     -ms-flex-item-align: end;
     align-self: flex-end;
+
     @include breakpoint($sm-bp) {
         width: 6.8rem;
         height: 6.8rem;
@@ -1888,6 +1967,7 @@ button.link-red {
         color: #eff1f6;
     }
 }
+
 .h2 {
     font-family: 'Manrope';
     font-style: normal;
@@ -1895,7 +1975,7 @@ button.link-red {
     font-size: 5.2rem;
     line-height: 5.8rem;
     /* identical to box height, or 112% */
-    
+
     letter-spacing: -0.02em;
 }
 
@@ -1906,15 +1986,16 @@ button.link-red {
     font-size: 2rem;
     line-height: 3.2rem;
 }
+
 .b-invest-item__label {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 2rem;
     line-height: 3.2rem;
-    
+
     /* UI/Footer */
-    
+
     color: #697279;
 }
 
@@ -1922,18 +2003,18 @@ button.link-red {
     margin-bottom: 3rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
-  }
+}
 
-  .crm-block h3.news_for_investors-title {
+.crm-block h3.news_for_investors-title {
     margin-top: 0;
-  }
-  
-  .crm-block h3.news_for_investors-title a {
+}
+
+.crm-block h3.news_for_investors-title a {
     color: inherit;
     text-decoration: none;
-  }
-  
-  /* .crm-block h3.news_for_investors-title a {
+}
+
+/* .crm-block h3.news_for_investors-title a {
     color: #a50f2d;
     text-decoration: none;
   }
@@ -1941,33 +2022,37 @@ button.link-red {
   .crm-block h3.news_for_investors-title a:hover {  
     text-decoration: underline;
   } */
-  
-  .news_for_investors-date {
+
+.news_for_investors-date {
     margin-bottom: 3rem;
     font-size: 1.8rem;
     line-height: 2.4rem;
     color: #aaa9a6;
-  }
-  
-  /* .crm-block p.news_for_investors-text {
+}
+
+/* .crm-block p.news_for_investors-text {
     font-family: ProximaNovaRegular, ProximaNovaAltRegular, ProximaNovaScOsfRegular, Georgia, Verdana, Arial, Tahoma, Helvetica, 'Ubuntu Light', Ubuntu, sans-serif;
   } */
 
-  .credit-block {
+.credit-block {
     .section-top {
         display: flex;
         flex-direction: column;
         gap: 4rem;
+
         @include breakpoint($sm-bp) {
             gap: 0;
         }
     }
+
     .section-top__aside {
         width: 40%;
+
         @include breakpoint($mid-bp) {
             width: 50%;
         }
-        @include breakpoint($sm-bp) {    
+
+        @include breakpoint($sm-bp) {
             width: 100%;
         }
     }
@@ -1981,30 +2066,185 @@ button.link-red {
             font-weight: 500;
         }
     }
-  }
+}
 
-  .b-page-ratings__rate {
+.b-page-ratings__rate {
     background-color: #FFFFFF;
     padding: 2rem;
     margin-left: 4rem;
+
     @include breakpoint($sm-bp) {
         margin-left: 0;
     }
+
     img {
         margin-top: 2rem;
     }
-  }
+}
 
-  .b-page-ratings__rate-title {
+.b-page-ratings__rate-title {
     color: #A50F2D;
     border-bottom: 0.1rem solid $grey;
     padding-bottom: 2rem;
-  }
+}
 
-  .b-page-ratings__rate-date {
+.b-page-ratings__rate-date {
     color: #697279;
     font-size: 1.8rem;
     line-height: 2.2rem;
     padding-top: 2rem;
     display: block;
-  }
+}
+
+.leadership-modal__wrapper {
+    display: flex;
+
+    @include breakpoint($mid-bp) {
+        flex-direction: column;
+    }
+}
+
+.flex_buttons_countries {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
+    column-gap: 1rem;
+
+    @include breakpoint($mid-bp) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($sm-bp) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .link-red {
+        svg {
+            margin-right: 1.2rem;
+        }
+
+        span {
+            color: $red;
+        }
+    }
+}
+
+.numb-list {
+    counter-reset: number1;
+
+    li {
+        counter-increment: number1;
+    }
+
+    .informationTechnology__helper {
+        &>div:first-child {
+            &::before {
+                content: counter(number1);
+                display: block;
+                font-family: 'Manrope';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 5.2rem;
+                line-height: 5.2rem;
+                letter-spacing: -0.02em;
+                color: #A50F2D;
+                margin-bottom: 1rem;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 7rem;
+                    line-height: 7rem;
+                    padding-bottom: 0.4rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.partners-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4rem;
+
+    li {
+        a {
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.wepromote-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.solve__slider {
+    .swiper-slide {
+        .crm-block {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.dark-margin {
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+
+    @include breakpoint($xxl-bp) {
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+    }
+
+    @include breakpoint($mid-bp) {
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+    }
+}
+
+.dark .dark-margin,
+.dark.dark-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    @include breakpoint($xxl-bp) {
+        padding-top: 12rem;
+    padding-bottom: 12rem;
+    }
+
+    @include breakpoint($mid-bp) {
+        padding-top: 10rem;
+    padding-bottom: 10rem;
+    }
+
+    @include breakpoint($sm-bp) { 
+        padding-top: 8rem;
+    padding-bottom: 8rem;
+    }
+}
+
+.partner-logo {
+    width: 20rem;
+    height: 20rem;
+    background: #FFFFFF;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
