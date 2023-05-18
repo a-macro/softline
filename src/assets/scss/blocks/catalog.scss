@@ -1,15 +1,19 @@
 .intro__catalog {
     display: grid;
     height: 71rem;
+
     @include breakpoint($xxl-bp) {
         height: 55rem;
     }
+
     @include breakpoint($xl-bp) {
         height: 42rem;
     }
+
     @include breakpoint($mid-bp) {
         height: 50rem;
     }
+
     @include breakpoint($sm-bp) {
         height: 46rem;
     }
@@ -31,17 +35,21 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 3rem 4rem 8.5rem;
+
     @include breakpoint($xxl-bp) {
         padding-bottom: 9rem;
     }
+
     @include breakpoint($xl-bp) {
         padding-bottom: 4rem;
     }
+
     @include breakpoint($mid-bp) {
         padding-left: 2rem;
         padding-right: 2rem;
         padding-bottom: 4.5rem;
     }
+
     @include breakpoint($sm-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -57,6 +65,7 @@
         text-align: left;
         color: #eff1f6;
         max-width: 95rem;
+
         @include breakpoint($sm-bp) {
             font-size: 4.35rem;
             max-width: 80%;
@@ -79,6 +88,7 @@
     color: #eff1f6;
     text-decoration: none;
     transition: color .4s;
+
     @include breakpoint($sm-bp) {
         font-size: 1.8rem;
     }
@@ -90,9 +100,11 @@
 
 .catalog {
     display: flex;
+
     @include breakpoint($sm-bp) {
         overflow: hidden;
     }
+
     .pagination-block {
         padding-left: 0;
         padding-right: 0;
@@ -105,17 +117,20 @@
     margin-right: 2rem;
     padding-left: 4rem;
     padding-top: 1rem;
+
     @include breakpoint($xxl-bp) {
         width: 40rem;
         min-width: 40rem;
         padding-top: 0;
     }
+
     @include breakpoint($xl-bp) {
         margin-top: 0.6rem;
         width: 35rem;
         min-width: 35rem;
         margin-right: 4rem;
     }
+
     @include breakpoint($mid-bp) {
         position: fixed;
         width: 100%;
@@ -133,6 +148,7 @@
         border-radius: 2rem 2rem 0 0;
         transition: transform .1s;
     }
+
     @include breakpoint($sm-bp) {
         padding: 6.5rem 1rem 1rem;
         max-height: 90vh;
@@ -159,6 +175,7 @@
             border-radius: .2rem;
             background: #AAB8C3;
         }
+
         @include breakpoint($sm-bp) {
             width: 5.6rem;
             height: 3px;
@@ -174,6 +191,7 @@
     }
 
     .filter__category {
+        margin-bottom: 1.8rem;
         @include breakpoint($mid-bp) {
             padding-left: 1.5rem;
         }
@@ -189,6 +207,7 @@
         width: 100%;
         flex-grow: 1;
     }
+
     @include breakpoint($sm-bp) {
         margin-top: 5rem;
     }
@@ -196,6 +215,7 @@
 
 .catalog-sidebar__close {
     display: none;
+
     @include breakpoint($mid-bp) {
         display: block;
         position: absolute;
@@ -210,6 +230,7 @@
         z-index: 5;
         transition: opacity .1s;
     }
+
     @include breakpoint($sm-bp) {
         top: 2.5rem;
         right: 2.5rem;
@@ -227,6 +248,7 @@
 
 .catalog-sidebar__title-mobile {
     display: none;
+
     @include breakpoint($mid-bp) {
         display: block;
         font-size: 5.2rem;
@@ -235,6 +257,7 @@
         letter-spacing: -0.02em;
         text-align: left;
     }
+
     @include breakpoint($sm-bp) {
         font-size: 4.15rem;
     }
@@ -248,6 +271,8 @@
     text-align: left;
     color: $black;
     text-decoration: none;
+    display: block;
+
     @include breakpoint($sm-bp) {
         font-size: 2.5rem;
     }
@@ -263,23 +288,29 @@
         font-weight: 500;
         line-height: 1.5;
         padding-right: 5rem;
+
         @include breakpoint($sm-bp) {
             font-size: 2.05rem;
         }
     }
+
     .side-list__item {
         margin-bottom: 0;
         transition: .3s;
+
         @include breakpoint($mid-bp) {
             margin-bottom: 0;
             padding-bottom: 1.6rem;
             padding-left: 1.5rem;
         }
+
         @include breakpoint($sm-bp) {
             padding-bottom: 3.1rem;
         }
+
         &::before {
             width: calc(100% + 1rem);
+
             @include breakpoint($mid-bp) {
                 content: "";
                 left: 0;
@@ -287,14 +318,17 @@
             }
         }
     }
+
     .side-list__item.active {
         &::before {
             width: calc(100% + 1rem);
+
             @include breakpoint($mid-bp) {
                 content: "";
                 width: calc(100% - 1rem);
                 top: -.8rem;
             }
+
             @include breakpoint($sm-bp) {
                 content: "";
                 width: calc(100% + 3rem);
@@ -302,6 +336,7 @@
                 left: -1rem;
             }
         }
+
         .catalog-sidebar__title {
             @include breakpoint($mid-bp) {
                 color: $black;
@@ -311,13 +346,16 @@
 
     .side-list__item.active {
         padding-left: 2rem;
+
         .side-list__close {
             right: 1.5rem;
+
             @include breakpoint($mid-bp) {
                 display: block;
                 right: 2.8rem;
                 top: calc(50% - .8rem);
             }
+
             @include breakpoint($sm-bp) {
                 right: 1rem;
                 width: 2rem;
@@ -325,20 +363,47 @@
                 top: calc(50% - 1.5rem);
             }
         }
-    } 
+    }
 }
 
 .catalog-sidebar__list {
-    padding-top: 1.8rem;
-    max-height: calc(var(--max-h) + 1.8rem);
+    max-height: var(--max-h);
     overflow: hidden;
     transition: .4s;
-    @include breakpoint($mid-bp) {
-        max-height: unset;
+    position: relative;
+    &::-webkit-scrollbar {
+        width: 8px;
     }
+
+    &::-webkit-scrollbar:horizontal {
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #D2DCE5;
+    }
+    @include breakpoint($mid-bp) {
+        max-height: unset!important;
+    }
+
     @include breakpoint($sm-bp) {
         padding-left: 1.4rem;
         padding-top: 3.5rem;
+    }
+
+    &.overflow-auto {
+        overflow: auto;
+    }
+    &.empty {
+        &::before {
+            content: 'Ничего не найдено';
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
     }
 }
 
@@ -350,6 +415,7 @@
         max-height: calc(100% - 13rem);
         overflow-y: scroll;
     }
+
     @include breakpoint($sm-bp) {
         max-height: calc(100% - 3rem);
     }
@@ -365,6 +431,7 @@
     text-decoration: none;
     padding-top: 0.8rem;
     display: inline-block;
+
     @include breakpoint($mid-bp) {
         display: none;
     }
@@ -376,6 +443,7 @@
 
 .row {
     margin-top: 4.6rem;
+
     @include breakpoint($mid-bp) {
         margin-top: 0;
     }
@@ -390,13 +458,14 @@
     text-align: left;
     color: #A50F2D;
     text-decoration: none;
-    padding:0;
+    padding: 0;
     padding-top: 0.8rem;
     display: inline-block;
-  
+
     @include breakpoint($sm-bp) {
-      font-size: 2.5rem;
+        font-size: 2.5rem;
     }
+
     a {
         color: #A50F2D;
     }
@@ -404,31 +473,48 @@
 
 .filter__wrapper {
     margin-top: 4.6rem;
+
     @include breakpoint($mid-bp) {
-        width: calc(50% - 2rem);
+        width: 100%;
         margin-top: 0;
         margin-bottom: 2.6rem;
         padding-right: 2rem;
     }
+
     @include breakpoint($sm-bp) {
         width: 100%;
+    }
+    &.open {
+        .filter-input-text {
+            display: block;
+        }
+    }
+    .filter-number {
+        font-size: 1.6rem;
+        line-height: 1.5;
+        @include breakpoint($mid-bp) {
+            display: none;
+        }
     }
 }
 
 .side-checkbox {
     padding-left: .2rem;
+
     @include breakpoint($mid-bp) {
         padding-left: 1.5rem;
     }
+
     @include breakpoint($sm-bp) {
         padding-left: 3.4rem;
     }
 }
 
 .side-checkbox__item {
-    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+
     @include breakpoint($sm-bp) {
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
     }
 
     label {
@@ -449,6 +535,7 @@
         transition: .4s;
         position: relative;
         cursor: pointer;
+
         @include breakpoint($sm-bp) {
             width: 2.5rem;
             height: 2.5rem;
@@ -461,14 +548,15 @@
             width: 1.2rem;
             height: 0.8rem;
             display: block;
-            background-image: url("../images/checkbox.svg");  
+            background-image: url("../images/checkbox.svg");
             background-repeat: no-repeat;
-            background-size: contain;  
-            opacity: 0;       
+            background-size: contain;
+            opacity: 0;
+
             @include breakpoint($sm-bp) {
                 width: 1.8rem;
                 height: 1.3rem;
-            } 
+            }
         }
     }
 
@@ -479,12 +567,13 @@
         letter-spacing: 0em;
         text-align: left;
         transition: color .4s;
+
         @include breakpoint($sm-bp) {
             font-size: 2.05rem;
         }
     }
 
-    input:checked ~ .check-box {
+    input:checked~.check-box {
         border: 1px solid $red;
         background: $red;
 
@@ -493,7 +582,7 @@
         }
     }
 
-    input:checked ~ .check-box__text {
+    input:checked~.check-box__text {
         color: $red;
     }
 }
@@ -509,6 +598,7 @@
 
 .catalog__terms_wrapper.mobile {
     display: none;
+
     @include breakpoint($mid-bp) {
         display: flex;
         margin-top: 3.5rem;
@@ -517,6 +607,7 @@
         padding-right: 1.5rem;
         gap: 2rem;
     }
+
     @include breakpoint($sm-bp) {
         margin-top: 3rem;
     }
@@ -538,19 +629,23 @@
     padding-right: 2rem;
     padding-left: 2rem;
     border-left: 1px solid #D2DCE5;
+
     @include breakpoint($xxl-bp) {
         padding-top: 5rem;
         width: calc(100% - 52rem);
     }
+
     @include breakpoint($xl-bp) {
         width: calc(100% - 39rem);
     }
+
     @include breakpoint($mid-bp) {
         width: 100%;
         padding-left: 2rem;
         padding-right: 2rem;
         border-left: unset;
     }
+
     @include breakpoint($sm-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -562,6 +657,7 @@
     .catalog-content {
         padding-left: 4rem;
         padding-right: 4rem;
+
         @include breakpoint($xl-bp) {
             padding-left: 2rem;
             padding-right: 2rem;
@@ -572,10 +668,6 @@
 .catalog__input-search {
     position: relative;
     width: 100%;
-    @include breakpoint($sm-bp) {
-        width: calc(100% + 5rem);
-        margin-left: -2.5rem;
-    }
 
     &::before {
         content: "";
@@ -589,10 +681,11 @@
         background: url("../images/search.svg") no-repeat;
         background-size: contain;
         opacity: .4;
+
         @include breakpoint($sm-bp) {
             left: 2.8rem;
             width: 3rem;
-            height: 2.8rem;   
+            height: 2.8rem;
         }
     }
 
@@ -614,9 +707,11 @@
         text-align: left;
         color: $black;
         padding-left: 6rem;
+
         @include breakpoint($xl-bp) {
             height: 6.5rem;
         }
+
         @include breakpoint($sm-bp) {
             height: 7.5rem;
             padding-left: 7.5rem;
@@ -625,8 +720,9 @@
         }
 
 
-        &::placeholder { 
+        &::placeholder {
             color: #AAB8C3;
+
             @include breakpoint($sm-bp) {
                 font-family: 'Manrope';
                 font-size: 1.82rem;
@@ -641,9 +737,11 @@
     align-items: center;
     margin-top: 5rem;
     flex-wrap: wrap;
+
     @include breakpoint($xxl-bp) {
         margin-top: 5.5rem;
     }
+
     @include breakpoint($mid-bp) {
         display: none;
     }
@@ -651,6 +749,7 @@
 
 .filters__mobile {
     display: none;
+
     @include breakpoint($mid-bp) {
         display: flex;
         justify-content: space-between;
@@ -667,6 +766,7 @@
         letter-spacing: 0em;
         text-align: left;
     }
+
     @include breakpoint($sm-bp) {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -680,6 +780,7 @@
 
 .filters__mobile_img {
     width: 2.4rem;
+
     @include breakpoint($sm-bp) {
         width: 3.1rem;
     }
@@ -690,6 +791,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+
     @include breakpoint($sm-bp) {
         gap: 1.7rem;
     }
@@ -701,6 +803,7 @@
     padding: 0.35rem 1.1rem 0.35rem 1.4rem;
     display: flex;
     align-items: center;
+
     @include breakpoint($sm-bp) {
         padding: 0.35rem 1.3rem 0.35rem 1.6rem;
         border-radius: 22px;
@@ -713,6 +816,7 @@
     line-height: 1.5;
     letter-spacing: 0em;
     text-align: left;
+
     @include breakpoint($sm-bp) {
         font-size: 2.05rem;
     }
@@ -726,6 +830,7 @@
     background: url("../images/close-black.svg") no-repeat;
     background-size: contain;
     cursor: pointer;
+
     @include breakpoint($sm-bp) {
         width: 2rem;
         height: 2rem;
@@ -746,6 +851,7 @@
     cursor: pointer;
     transition: .4s;
     box-shadow: 0 1px 0 0 transparent;
+
     @include breakpoint($sm-bp) {
         margin-bottom: 1.7rem;
         font-size: 1.9rem;
@@ -762,12 +868,15 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 5.5rem;
+
     @include breakpoint($xl-bp) {
         margin-top: 5rem;
     }
+
     @include breakpoint($mid-bp) {
         margin-top: 3rem;
     }
+
     @include breakpoint($sm-bp) {
         margin-top: 6.5rem;
     }
@@ -776,6 +885,7 @@
 .catalog__top_btns {
     display: flex;
     align-items: center;
+
     @include breakpoint($sm-bp) {
         display: none;
     }
@@ -784,7 +894,7 @@
 .catalog__btn-grid,
 .catalog__btn-list {
     margin-left: 2rem;
-    
+
     svg {
         width: 2.1rem;
     }
@@ -797,6 +907,7 @@
     letter-spacing: 0em;
     text-align: left;
     color: #AAB8C3;
+
     @include breakpoint($sm-bp) {
         font-size: 1.82rem;
     }
@@ -806,6 +917,7 @@
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
+
     @include breakpoint($mid-bp) {
         margin-top: 1.2rem;
     }
@@ -822,12 +934,14 @@
         position: relative;
         margin-top: -0.1rem;
         // @include breakpoint($xxl-bp) {
-            width: calc(calc(100% - 12rem) / 4);
-            padding-top: 2.5rem;
+        width: calc(calc(100% - 12rem) / 4);
+        padding-top: 2.5rem;
+
         // }
         @include breakpoint($xl-bp) {
             width: calc(calc(100% - 8rem) / 3);
         }
+
         @include breakpoint($mid-bp) {
             width: calc(calc(100% - 2rem) / 2);
             margin-right: 2rem;
@@ -835,6 +949,7 @@
             padding-bottom: 2.4rem;
             padding-right: 1rem;
         }
+
         @include breakpoint($sm-bp) {
             width: 100%;
             margin-right: 0;
@@ -848,6 +963,7 @@
             box-shadow: unset;
             border-top: 1px solid $red;
             border-bottom: 1px solid $red;
+
             .subtitle {
                 color: $red;
             }
@@ -859,9 +975,11 @@
 
         .service__top_img {
             height: 4.5rem;
+
             @include breakpoint($xxl-bp) {
                 height: 5.5rem;
             }
+
             @include breakpoint($sm-bp) {
                 height: 7rem;
             }
@@ -877,6 +995,7 @@
             max-height: 10rem;
             overflow: hidden;
             position: relative;
+
             @include breakpoint($sm-bp) {
                 font-size: 1.92rem;
                 line-height: 1.6;
@@ -886,18 +1005,19 @@
         .dark {
             .service__text--gradient {
                 &::before {
-                    opacity: 0; 
+                    opacity: 0;
                 }
             }
         }
+
         .service__text--gradient {
             &::before {
                 content: '';
                 width: 100%;
                 height: 2rem;
                 background: -webkit-linear-gradient(0deg, #EFF1F6 5%, transparent);
-                background: linear-gradient(0deg,#EFF1F6 5%, transparent); 
-                transition:  .2s;
+                background: linear-gradient(0deg, #EFF1F6 5%, transparent);
+                transition: .2s;
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -913,9 +1033,11 @@
             height: calc(100% + 0.1rem);
             width: 1px;
             background: #D2DCE5;
+
             @include breakpoint($mid-bp) {
                 right: -1rem;
             }
+
             @include breakpoint($sm-bp) {
                 content: none;
             }
@@ -924,11 +1046,13 @@
         &:nth-child(6n) {
             // margin-right: 0;
             // @include breakpoint($xxl-bp) {
-                margin-right: 4rem;
+            margin-right: 4rem;
+
             // }
             @include breakpoint($mid-bp) {
                 margin-right: 2rem;
             }
+
             @include breakpoint($sm-bp) {
                 margin-right: 0;
             }
@@ -936,7 +1060,8 @@
             &::after {
                 // content: none;
                 // @include breakpoint($xxl-bp) {
-                    content: "";
+                content: "";
+
                 // }
                 @include breakpoint($sm-bp) {
                     content: none;
@@ -946,25 +1071,30 @@
 
         &:nth-child(4n) {
             // @include breakpoint($xxl-bp) {
-                margin-right: 0;
+            margin-right: 0;
+
             // }
             @include breakpoint($xl-bp) {
                 margin-right: 4rem;
             }
+
             @include breakpoint($mid-bp) {
                 margin-right: 2rem;
             }
+
             @include breakpoint($sm-bp) {
                 margin-right: 0;
             }
 
             &::after {
                 // @include breakpoint($xxl-bp) {
-                    content: none;
+                content: none;
+
                 // }
                 @include breakpoint($xl-bp) {
                     content: "";
                 }
+
                 @include breakpoint($sm-bp) {
                     content: none;
                 }
@@ -975,9 +1105,11 @@
             @include breakpoint($xl-bp) {
                 margin-right: 0;
             }
+
             @include breakpoint($mid-bp) {
                 margin-right: 2rem;
             }
+
             @include breakpoint($sm-bp) {
                 margin-right: 0;
             }
@@ -986,9 +1118,11 @@
                 @include breakpoint($xl-bp) {
                     content: none;
                 }
+
                 @include breakpoint($mid-bp) {
                     content: "";
                 }
+
                 @include breakpoint($sm-bp) {
                     content: none;
                 }
@@ -1034,19 +1168,22 @@
         padding-bottom: unset;
         padding-right: 4rem;
         gap: 1rem;
+
         @include breakpoint($xxl-bp) {
             display: grid;
             grid-template-columns: 46.5rem 1fr;
             gap: 1rem;
             width: 100%;
-            margin-right: 0;    
-            min-height: 8.9rem;   
-            height: unset;     
+            margin-right: 0;
+            min-height: 8.9rem;
+            height: unset;
         }
+
         @include breakpoint($xl-bp) {
-            min-height: 9rem; 
-            height: unset;       
+            min-height: 9rem;
+            height: unset;
         }
+
         @include breakpoint($mid-bp) {
             display: flex;
             flex-direction: column;
@@ -1077,6 +1214,7 @@
     .service__text {
         padding-top: 0;
         padding-bottom: 0;
+
         @include breakpoint($mid-bp) {
             padding-top: 1rem;
             padding-bottom: 1rem;
@@ -1090,6 +1228,7 @@
     .service__top_img {
         height: unset;
         margin-right: 4rem;
+
         @include breakpoint($mid-bp) {
             height: 5rem;
             margin-right: 0;
@@ -1101,9 +1240,13 @@
         flex-direction: row;
         align-items: center;
         min-width: 36.5rem;
+        max-width: 36.5rem;
+
         @include breakpoint($xxl-bp) {
             min-width: 46.5rem;
+            max-width: unset;
         }
+
         @include breakpoint($mid-bp) {
             min-width: unset;
             flex-direction: column;
@@ -1114,6 +1257,7 @@
     .subtitle {
         font-size: 2rem;
     }
+
     .service__text {
         @include breakpoint($mid-bp) {
             font-size: 1.5rem;
@@ -1124,5 +1268,80 @@
 .catalog__show-more.show-more {
     @include breakpoint($xxl-bp) {
         margin-top: 4rem;
+    }
+}
+
+.filter-input-text {
+    font-family: 'Manrope';
+    width: 100%;
+    box-sizing: border-box;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 0.1rem solid #D2DCE5;
+    box-shadow: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $black;
+    padding-left: 2rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+    display: none;
+    animation: fadeEffect .3s;
+    @include breakpoint($xl-bp) {
+        height: 6.5rem;
+    }
+    @include breakpoint($mid-bp) {
+        display: none!important;
+    }
+    @include breakpoint($sm-bp) {
+        height: 7.5rem;
+        font-size: 1.82rem;
+        line-height: 1.5;
+    }
+
+
+    &::placeholder {
+        color: #AAB8C3;
+
+        @include breakpoint($sm-bp) {
+            font-family: 'Manrope';
+            font-size: 1.82rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+.catalog__filters {
+
+    .smartfilter {
+        @include breakpoint($mid-bp) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+        }
+        @include breakpoint($sm-bp) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+.catalog-content {
+    .smartfilter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        @include breakpoint($sm-bp) {
+            width: calc(100% + 5rem);
+            margin-left: -2.5rem;
+        }
     }
 }

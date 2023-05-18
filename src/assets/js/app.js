@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const mm = matchMedia("(max-width: 1024px)");
@@ -73,6 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let headerSearchBtn = document.querySelectorAll(".btn__search-show");
     const menubutton = document.querySelector('.menu-button');
 
+    if (mm.matches) {
+        const links = document.querySelectorAll('a.header__link,a.menu__item:not(.list),a.menu__title,a.submenu__title,a.submenu__link,a.header__anchor,a.header__nav_link,a.header__top-button');
+        console.log(links)
+        if (links.length) {
+            links.forEach(el => {
+                el.addEventListener('click', () => {
+                    if (menubutton) {
+                        menubutton.click();
+                    }
+                })
+            })
+        }
+    }
+
     if (headerSearchBtn) {
         headerSearchBtn.forEach(btn => {
             btn.onclick = (e) => {
@@ -131,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
             item.removeEventListener('click', closeMenuButton)
         })
     }
+
     function closeMenuAll() {
         if (!event.target.closest('.menu-wrapper')) {
             let targ = event.target;
@@ -233,6 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (!item.classList.contains('list')) {
                         return;
                     }
+
                     if (window.innerWidth <= 480 && !item.classList.contains("empty")) {
                         subMenuItems.forEach(itemRest => {
                             itemRest.classList.add("hide");
@@ -255,11 +272,14 @@ document.addEventListener("DOMContentLoaded", () => {
         menuLink.forEach(el => {
             el.addEventListener('click', function () {
                 if (mm.matches && this.parentElement.classList.contains('list')) {
-                    event.preventDefault()
+                    event.preventDefault();
+                } else {
                 }
             })
         })
     }
+
+
 
     let headerBottom = document.querySelector(".header__bottom");
 
@@ -287,6 +307,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     prev.forEach(prev => {
                         prev.classList.remove("active");
                     });
+                }
+                const menus = document.querySelectorAll(".menu");
+                if (menus.length) {
+                    menus.forEach(el => el.style.display = null)
                 }
                 let subMenus = document.querySelectorAll(".menu__item.hide");
                 if (subMenus) {
@@ -609,7 +633,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         spaceBetween: 40,
                     },
                     1921: {
-                        slidesPerView: 4,
+                        slidesPerView: 3,
                     }
                 },
             });
@@ -1194,7 +1218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             close.onclick = (e) => {
                 if (elem.classList.contains("active")) {
                     elem.classList.remove("active");
-                    inp.checked = false;
+                    inp.setAttribute('checked', 'false');
                 }
             }
         });
@@ -1271,11 +1295,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (num === "all" || !num || +num > len) {
             let parent = filter.closest(".filter__wrapper");
             let btn = parent.querySelector(".filter__show-more");
-            btn.style.display = "none";
+            if (btn) {
+                btn.style.display = "none";
+            }
             return;
         }
         let margin = +window.getComputedStyle(elems[0], null).getPropertyValue("margin-bottom").split("px")[0];
-        console.log(margin)
         let commonH = 0;
         for (let i = 0; i < +num; i++) {
             let h = +elems[i].getBoundingClientRect().height + margin;
@@ -1288,14 +1313,156 @@ document.addEventListener("DOMContentLoaded", () => {
     if (showMoreFilters && showMoreFilters.length > 0) {
         showMoreFilters.forEach(btn => {
             let parent = btn.closest(".filter__wrapper");
-            btn.onclick = (e) => {
+            let list = parent.querySelector("ul");
+            const listContent = list.innerHTML;
+            btn.onclick = function (e) {
                 e.preventDefault();
-                let list = parent.querySelector("ul");
-                list.style.maxHeight = "200vh";
-                btn.classList.add("hide");
+                let text = this.innerHTML;
+                let hideText = this.dataset.hideText || 'Скрыть';
+                this.innerHTML = hideText;
+                this.dataset.hideText = text;
+                if (list.children.length > 20) {
+                    parent.classList.toggle('open');
+                }
+                list.classList.toggle('overflow-auto')
+                if (list.style.maxHeight !== '') {
+                    list.style.maxHeight = null;
+                    list.innerHTML = listContent;
+                    list.classList.remove('empty')
+                    list.scrollTo(0, 0)
+                } else {
+                    if (list.children.length > 20) {
+                        sortList(list);
+                    }
+                    list.style.maxHeight = "30rem";
+                    list.classList.remove('empty')
+                }
             }
         });
     }
+
+    const radioButtons = document.querySelectorAll('.catalog-sidebar__item.side-list__item');
+
+    if (radioButtons.length) {
+        radioButtons.forEach(el => {
+            el.addEventListener('click', function (event) {
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    const input = this.querySelector('input[type="radio"]')
+                    if (input) {
+                        input.setAttribute('checked', 'false');
+                        input.checked = false;
+                    }
+                }
+            })
+        })
+    }
+
+    function sortList(list) {
+        const arr = [...list.querySelectorAll('li')];
+        if (arr) {
+            const newArr = arr.sort((a, b) => {
+                const textA = a.querySelector('.check-box__text');
+                const textB = b.querySelector('.check-box__text');
+                if (textA && textB) {
+                    const textValueA = textA.innerHTML.toLowerCase().replace(/«/, '');
+                    const textValueB = textB.innerHTML.toLowerCase().replace(/«/, '');
+                    if (textValueA < textValueB) {
+                        return -1;
+                    }
+                    if (textValueA > textValueB) {
+                        return 1;
+                    }
+                    return 0;
+                }
+            })
+            list.innerHTML = '';
+            let prevLetter = null;
+            let currentLetter = '';
+            newArr.forEach((el) => {
+                const text = el.innerText.trim().toUpperCase().replace(/^[«|"|=|'|\(]/, '')
+                currentLetter = text[0];
+                if (currentLetter !== prevLetter) {
+                    const li = document.createElement('li');
+                    li.classList.add('filter-number');
+                    li.innerHTML = currentLetter;
+                    list.appendChild(li);
+                }
+                prevLetter = currentLetter;
+                list.appendChild(el);
+            })
+        }
+    }
+
+    function throttle(func, ms) {
+
+        let isThrottled = false,
+            savedArgs,
+            savedThis;
+
+        function wrapper() {
+
+            if (isThrottled) { // (2)
+                savedArgs = arguments;
+                savedThis = this;
+                return;
+            }
+
+            func.apply(this, arguments); // (1)
+
+            isThrottled = true;
+
+            setTimeout(function () {
+                isThrottled = false; // (3)
+                if (savedArgs) {
+                    wrapper.apply(savedThis, savedArgs);
+                    savedArgs = savedThis = null;
+                }
+            }, ms);
+        }
+
+        return wrapper;
+    }
+
+    const filterInputs = document.querySelectorAll('.filter-input-text');
+    if (filterInputs.length) {
+        filterInputs.forEach(el => {
+            const list = el.parentElement.querySelector("ul");
+            if (list) {
+                el.addEventListener('input', function () {
+                    const filterArr = throttle(filterList, 4000);
+                    filterArr(list, this.value)
+                })
+            }
+        })
+    }
+
+    function filterList(list, input) {
+        const items = list.querySelectorAll('li');
+        if (items.length) {
+            const arr = [...items];
+            const regExp = new RegExp(`${input.trim().toUpperCase()}`, 'g');
+            let number = arr.length;
+            arr.forEach(el => {
+                const text = el.innerText.trim().toUpperCase();
+                if (!regExp.test(text)) {
+                    el.style.display = 'none';
+                    number--;
+                } else {
+                    el.style.display = null;
+                    number++;
+                }
+            })
+            if (number === 0) {
+                list.classList.add('empty')
+            } else {
+                list.classList.remove('empty')
+            }
+
+        }
+    }
+
+
 
     let swipeEls = document.querySelectorAll('.swipe-el');
     let hideswipeEl;
@@ -1491,9 +1658,11 @@ document.addEventListener("DOMContentLoaded", () => {
         height = window.innerHeight;
         // document.documentElement.style.setProperty('--h', height + "px");
 
-        filters.forEach(filter => {
-            countHeight(filter);
-        });
+        if (filters.length) {
+            filters.forEach(filter => {
+                countHeight(filter);
+            });
+        }
         initSlider();
         initSliderSuggestion();
         initSliderStoryRange();
@@ -1742,22 +1911,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const isMobile = {
-        Android: function() {
+        Android: function () {
             return navigator.userAgent.match(/Android/i);
         },
-        BlackBerry: function() {
+        BlackBerry: function () {
             return navigator.userAgent.match(/BlackBerry/i);
         },
-        iOS: function() {
+        iOS: function () {
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
         },
-        Opera: function() {
+        Opera: function () {
             return navigator.userAgent.match(/Opera Mini/i);
         },
-        Windows: function() {
+        Windows: function () {
             return navigator.userAgent.match(/IEMobile/i);
         },
-        any: function() {
+        any: function () {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
@@ -1769,7 +1938,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty('scroll-behavior', 'auto');
 
         if (isMobile.any()) {
-            document.body.style.overflow='hidden';
+            document.body.style.overflow = 'hidden';
         }
 
         // if any scroll is attempted, set this to the previous value;
@@ -1780,7 +1949,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function enableScroll() {
         document.documentElement.style.setProperty('scroll-behavior', null);
-        document.body.style.overflow=null;
+        document.body.style.overflow = null;
         window.onscroll = function () { };
     };
 
@@ -2350,13 +2519,43 @@ document.addEventListener("DOMContentLoaded", () => {
             })
           }*/
 
+    //   function disableScroll() {
+    //     // Get the current page scroll position;
+    //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    //     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollTop;
+    //     document.documentElement.style.setProperty('scroll-behavior', 'auto');
+
+    //     if (isMobile.any()) {
+    //         document.body.style.overflow='hidden';
+    //     }
+
+    //     // if any scroll is attempted, set this to the previous value;
+    //     window.onscroll = function () {
+    //         window.scrollTo(scrollLeft, scrollTop);
+    //     };
+    // };
+
+    // function enableScroll() {
+    //     document.documentElement.style.setProperty('scroll-behavior', null);
+    //     document.body.style.overflow=null;
+    //     window.onscroll = function () { };
+    // };
+
     let leadershipCards = document.querySelectorAll(".leader__card");
     let leadershipModal = document.querySelector("#leadership-modal");
     if (leadershipCards && leadershipModal) {
         leadershipCards.forEach(card => {
-            card.onclick = (e) => {
+            card.onclick = function (e) {
                 e.preventDefault();
+                const content = this.querySelector('.leader__content');
+                const modalWrapper = leadershipModal.querySelector('.leadership-modal__wrapper')
+                if (content && modalWrapper) {
+                    modalWrapper.innerHTML = content.innerHTML;
+                } else {
+                    return;
+                }
                 leadershipModal.style.display = "block";
+                disableScroll();
                 // scrollLock.disablePageScroll(leadershipModal);
                 // scrollLock.addScrollableSelector('.leadership__text-block');
                 if (window.innerWidth <= 1024) {
@@ -2373,8 +2572,8 @@ document.addEventListener("DOMContentLoaded", () => {
             leadershipClose.onclick = (e) => {
                 e.preventDefault();
                 leadershipModal.classList.remove("show");
-                // scrollLock.enablePageScroll(leadershipModal);
                 enableScroll();
+                // scrollLock.enablePageScroll(leadershipModal);
                 setTimeout(() => {
                     leadershipModal.style.display = "none";
                 }, 400);
@@ -2907,6 +3106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     }
+
 });
 
 

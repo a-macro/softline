@@ -5,7 +5,7 @@
 .accordion   {
   & > ul:not([class]) > li:not([class]) {
     background-image: unset;
-    padding-left: 0;
+    padding: 0;
   } 
 }
 
@@ -731,7 +731,7 @@
 
 .prof-item {
   padding-bottom: 4rem;
-  border-bottom: 0.1rem solid #AAB8C3;
+  border-bottom: 0.1rem solid $grey;
   gap: 2.4rem;
 
   @include breakpoint($mid-bp) {
@@ -797,6 +797,10 @@
   
 }
 
+a.prof-item {
+  color: #212424;
+}
+
 .dark {
   .prof-item {
     .prof-item__subtitle {
@@ -808,13 +812,20 @@
   }
 }
 
+.dark .py-10 {
+  padding-bottom: 10rem;
+  margin-bottom: 0;
+  @include breakpoint($mid-bp) {
+    padding-bottom: 5rem;
+  }
+}
 .py-10 {
   padding-top: 10rem;
-  padding-bottom: 10rem;
+  margin-bottom: 10rem;
 
   @include breakpoint($mid-bp) {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    margin-bottom: 5rem;
   }
 }
 

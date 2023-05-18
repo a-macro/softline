@@ -78,8 +78,6 @@
         transition: all .2s;
         @include breakpoint($mid-bp) {
             margin-right: 6rem;
-            margin-top: auto;
-            margin-bottom: auto;
         }
         @include breakpoint($sm-bp) {
             width: 4.2rem;
@@ -184,6 +182,16 @@
         @include breakpoint($sm-bp) {
             padding-top: 5rem;
         }
+
+        .title {
+            padding-right: 6rem;
+            @include breakpoint($xl-bp) {
+                padding-right: 13rem;
+            }
+            @include breakpoint($mid-bp) {
+                padding-right: 0;
+            }
+        }
     }
 
     p, .text-normal {
@@ -204,6 +212,7 @@
             margin-left: 20.5rem;
             margin-top: 3rem;
             max-width: 65rem;
+            padding-right: 4rem;
             @include breakpoint($xxl-bp) {
                 margin-left: 15.5rem;
             }
@@ -212,6 +221,7 @@
             }
             @include breakpoint($mid-bp) {
                 margin-left: 0;
+                padding-right: 0;
             }
         }
     }
@@ -233,9 +243,11 @@
         @include breakpoint($mid-bp) {
             position: relative;
             min-height: 40rem;
+            padding-bottom: 25rem;
         }
         @include breakpoint($sm-bp) {
             min-height: 51.5rem;
+            padding-bottom: 17rem;
         }
 
         .footnote {
@@ -245,7 +257,7 @@
 
     .solve__slider {
         @include breakpoint($mid-bp) {
-            margin-top: -4rem;
+            margin-top: -18rem;
         }
         @include breakpoint($sm-bp) {
             margin-top: -15rem;
@@ -389,6 +401,7 @@
         }
         @include breakpoint($sm-bp) {
             min-height: 36rem;
+            flex-direction: column; 
         }
 
         li {
@@ -402,6 +415,9 @@
             border-bottom: 1px solid #D2DCE5;
             @include breakpoint($mid-bp) {
                 width: calc(calc(100% - 2rem) / 2);
+            }
+            @include breakpoint($sm-bp) {
+                width: 100%;
             }
 
             p {

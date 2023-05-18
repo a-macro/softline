@@ -654,10 +654,16 @@
     @include breakpoint($mid-bp) {
         transform: translateX(2rem);
     }
+    @include breakpoint($sm-bp) {
+        transform: translateX(0);
+    }
 
     .header__link {
         color: $red;
         text-align: center;
+        @include breakpoint($sm-bp) {
+            text-align: start;
+        }
     }
 }
 

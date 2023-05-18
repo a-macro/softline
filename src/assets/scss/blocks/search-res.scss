@@ -238,6 +238,21 @@ body {
 }
 
 .side-list__item {
+    .radion {
+        label {
+            pointer-events: none;
+        }
+    }
+}
+.side-list__item.active {
+    .radio {
+        label {
+            pointer-events: none;
+        }
+    }
+}
+
+.side-list__item {
     margin-bottom: 0;
     position: relative;
     cursor: pointer;

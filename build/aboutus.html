@@ -19,7 +19,12 @@
 <body>
     <div class="preloader">
         <div class="spin">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </div>
     <svg style="display: none;">
@@ -1647,16 +1652,16 @@
                 <div class="aboutus-cards__img rounded-full w-140 h-140"><img
                     src="./assets/images/aboutus/presentation/presentation-1.jpg" alt=""></div>
               </li>
-              <li class="aboutus-cards__item bg-lblack p-28 pt-20">
-                <h4 class="aboutus-cards__title man36 light min-h-10">Корпоративная <br>презентация</h4>
-                <ul class="list-red man20">
-                  <li><a class="light" href="#">ру</a></li>
-                  <li><a class="light" href="#">eng</a></li>
-                  <li><a class="light" href="#">esp</a></li>
-                </ul>
-                <div class="aboutus-cards__img rounded-full w-140 h-140"><img
-                    src="./assets/images/aboutus/presentation/presentation-2.jpg" alt=""></div>
-              </li>
+              <a href="#" class="aboutus-cards__item bg-lblack p-28 pt-20">
+                <span class="aboutus-cards__title man36 light min-h-10">Корпоративная <br>презентация</span>
+                <span class="list-red man20">
+                  <span><span class="light">ру</span></span>
+                  <span><span class="light">eng</span></span>
+                  <span><span class="light">esp</span></span> 
+                </span>
+                <span class="aboutus-cards__img rounded-full w-140 h-140"><img
+                    src="./assets/images/aboutus/presentation/presentation-2.jpg" alt=""></span>
+              </a>
               <li class="aboutus-cards__item bg-lblack p-28 pt-20">
                 <h4 class="aboutus-cards__title man36 light min-h-10">Логотип</h4>
                 <ul class="list-red man20">
@@ -2023,9 +2028,9 @@
           </section>
         </section>
 
-        
+
     </main>
-    
+
     <div class="registration regModal getintouch reqcallback" id="request" style="opacity: 0;" hidden>
       <div class="registration__block swipe-on2">
         <div class="getintouch__top-block">
@@ -2211,9 +2216,9 @@
                 <div class="footer__info-link"><a target="_blank" href="#">Made by Pinkman</a></div>
             </div>
        </div>
-    </footer>    
+    </footer>
     <!-- JS -->
-    
+
     <script defer src="assets/vendor/swiper/swiper.min.js"></script>
     <script defer src="assets/vendor/jquery/jquery-3.6.0.min.js"></script>
     <script defer src="assets/vendor/fancybox/fancybox.min.js"></script>
@@ -2221,7 +2226,8 @@
     <script defer src="assets/vendor/scroll-lock/scroll-lock.min.js"></script>
     <script defer src="assets/js/app.js"></script>
     <script>
-        window.onload = function(){ document.querySelector(".preloader").style.display = "none"; }
+        window.onload = function () { document.querySelector(".preloader").style.display = "none"; }
     </script>
 </body>
+
 </html>
