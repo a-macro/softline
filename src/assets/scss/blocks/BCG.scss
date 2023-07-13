@@ -30,7 +30,8 @@
         border: unset;
         border-left: 0.1rem solid #D2DCE5;
         text-decoration: none;
-
+        margin-top: -0.1rem;
+        transition: background-color .3s;
         .subtitle {
             font-size: 2rem;
             line-height: 1.6;
@@ -300,7 +301,7 @@
         border-color: $grey3;
         width: 100%;
         @include breakpoint($mid-bp) {
-            width: calc(calc(100% - 4rem)/2); 
+            width: 100%; 
             min-height: 31rem;
             &:nth-child(odd) {
                 margin-right: 4rem;

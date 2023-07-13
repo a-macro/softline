@@ -87,16 +87,16 @@
         padding-top: 4rem;
       }
       .img-wrapper {
-        width: 78rem;
-        height: 78rem;
+        // width: 78rem;
+        // height: 78rem;
         grid-row: 2 span;
-        margin-left: 45rem;
+        // margin-left: 45rem;
         visibility: hidden;
-        @include breakpoint($xxl-bp) {
+        // @include breakpoint($xxl-bp) {
           width: 62.7rem;
           height: 62.7rem;
           margin-left: 15.7rem;
-        }
+        // }
         @include breakpoint($xl-bp) {
           width: 46.7rem;
           height: 46.7rem;
@@ -117,9 +117,9 @@
   .developing__block {
     padding-top: 5rem;
     padding-right: 45rem;
-    @include breakpoint($xxl-bp) {
+    // @include breakpoint($xxl-bp) {
       padding-right: 15.7rem;
-    }
+    // }
     @include breakpoint($mid-bp) {
       padding-right: 0rem;
       width: calc(100% - 26.3rem);
@@ -153,11 +153,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
-    padding-right: 45rem;
+    // padding-right: 45rem;
     padding-top: 4.8rem;
-    @include breakpoint($xxl-bp) {
+    // @include breakpoint($xxl-bp) {
       padding-right: 15.7rem;
-    }
+    // }
     @include breakpoint($mid-bp) {
       padding-right: 0;
       padding-left: 0rem;
@@ -218,7 +218,7 @@
       .list-text {
         padding-top: 0;
       }
-    }
+    } 
   }
   .developing-images {
     position: absolute;
@@ -232,27 +232,27 @@
     .developing-images__inner {
       position: sticky;
       top: 10rem;
-      height: 78rem;
-      @include breakpoint($xxl-bp) {
+      // height: 78rem;
+      // @include breakpoint($xxl-bp) {
         height: 62.7rem;
-      }
+      // }
       @include breakpoint($xl-bp) {
         height: 46.7rem;
       }
 
     }
     .img-wrapper {
-      width: 78rem;
-      height: 78rem;
+      // width: 78rem;
+      // height: 78rem;
       position: absolute;
       // top: 10rem;
-      margin-left: 45rem;
+      // margin-left: 45rem;
       transition: opacity .3s;
-      @include breakpoint($xxl-bp) {
-        margin-left: 15.7rem;
+      // @include breakpoint($xxl-bp) {
+        margin-left: 15.7rem; 
         width: 62.7rem;
         height: 62.7rem;
-      }
+      // }
       @include breakpoint($xl-bp) {
         width: 46.7rem;
         height: 46.7rem;

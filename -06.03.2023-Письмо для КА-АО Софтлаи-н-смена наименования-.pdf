@@ -1,0 +1,2631 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <title>Истории</title>
+    <meta charset='UTF-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<link href="/bitrix/js/ui/design-tokens/dist/ui.design-tokens.css?168068439624720" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/js/ui/fonts/opensans/ui.font.opensans.css?16806843962555" type="text/css"  rel="stylesheet" />
+<link href="/bitrix/js/main/popup/dist/main.popup.bundle.css?168068440328324" type="text/css"  rel="stylesheet" />
+<link href="/local/templates/softline/components/bitrix/catalog.smart.filter/.default/style.css?167639670218791" type="text/css"  rel="stylesheet" />
+<link href="/local/templates/softline/assets/vendor/fancybox/fancybox.min.css?168068443912795" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/local/templates/softline/assets/vendor/swiper/swiper.min.css?168068443916467" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/local/templates/softline/assets/css/style.css?1684741880566664" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/local/templates/softline/assets/css/manrope.css?16837969716043" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<link href="/local/templates/softline/template_styles.css?1682609240961" type="text/css"  data-template-style="true"  rel="stylesheet" />
+<script type="text/javascript">if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script type="text/javascript">(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_WINDOW_CONTINUE':'Продолжить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+
+<script type="text/javascript" src="/bitrix/js/main/core/core.js?1680684402487984"></script>
+
+<script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_promise.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/loadext/loadext.js','/bitrix/js/main/loadext/extension.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/includes/js/includes.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/ui/polyfill/closest/js/closest.js','/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/core/core.js','/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','/bitrix/js/main/lazyload/dist/lazyload.bundle.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/parambag/dist/parambag.bundle.js']);
+</script>
+<script type="text/javascript">(window.BX||top.BX).message({'pull_server_enabled':'N','pull_config_timestamp':'0','pull_guest_mode':'N','pull_guest_user_id':'0'});(window.BX||top.BX).message({'PULL_OLD_REVISION':'Для продолжения корректной работы с сайтом необходимо перезагрузить страницу.'});</script>
+<script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM','SERVER_TZ_OFFSET':'10800','UTF_MODE':'Y','SITE_ID':'s1','SITE_DIR':'/','USER_ID':'','SERVER_TIME':'1684754135','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'8c764872cd62b02b5900668ab9edc42f'});</script>
+
+
+<script type="text/javascript" src="/bitrix/js/pull/protobuf/protobuf.js?1680684411274055"></script>
+<script type="text/javascript" src="/bitrix/js/pull/protobuf/model.js?168068441170928"></script>
+<script type="text/javascript" src="/bitrix/js/rest/client/rest.client.js?168068439517414"></script>
+<script type="text/javascript" src="/bitrix/js/pull/client/pull.client.js?168068441181012"></script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_fx.js?168068440316888"></script>
+<script type="text/javascript" src="/bitrix/js/main/popup/dist/main.popup.bundle.js?1680684403116769"></script>
+<script type="text/javascript">
+					(function () {
+						"use strict";
+
+						var counter = function ()
+						{
+							var cookie = (function (name) {
+								var parts = ("; " + document.cookie).split("; " + name + "=");
+								if (parts.length == 2) {
+									try {return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));}
+									catch (e) {}
+								}
+							})("BITRIX_CONVERSION_CONTEXT_s1");
+
+							if (cookie && cookie.EXPIRE >= BX.message("SERVER_TIME"))
+								return;
+
+							var request = new XMLHttpRequest();
+							request.open("POST", "/bitrix/tools/conversion/ajax_counter.php", true);
+							request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+							request.send(
+								"SITE_ID="+encodeURIComponent("s1")+
+								"&sessid="+encodeURIComponent(BX.bitrix_sessid())+
+								"&HTTP_REFERER="+encodeURIComponent(document.referrer)
+							);
+						};
+
+						if (window.frameRequestStart === true)
+							BX.addCustomEvent("onFrameDataReceived", counter);
+						else
+							BX.ready(counter);
+					})();
+				</script>
+
+
+
+<script type="text/javascript" src="/local/templates/softline/assets/vendor/swiper/swiper.min.js?1680684439143237"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/vendor/jquery/jquery-3.6.0.min.js?168068443989501"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/vendor/fancybox/fancybox.min.js?168068443968253"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/vendor/hammer/hammer.min.js?168068443920727"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/vendor/scroll-lock/scroll-lock.min.js?168068443912419"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/js/app.js?168474877397902"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/js/script.js?1680684439165"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/js/jquery.inputmask.js?1621269896120605"></script>
+<script type="text/javascript" src="/local/templates/softline/assets/js/forms.js?16833862374610"></script>
+<script type="text/javascript" src="/local/templates/softline/components/bitrix/catalog.smart.filter/.default/script.js?168470371622079"></script>
+<script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "59ccc406e296e2a3e325b9b1dd8c7c90"]); _ba.push(["host", "10.100.0.30:8030"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+
+
+    <meta name='format-detection' content='telephone=no'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta name='robots' content='index, follow'>
+    <meta name='format-detection' content='telephone=no'>
+
+    </head>
+
+<body>
+<!--    <div class='preloader'>-->
+<!--        <div class='spin'>-->
+<!--            <div class='lds-ring'><div></div><div></div><div></div><div></div></div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <svg style="display: none;">
+
+        <symbol id="arrow" viewBox="0 0 15 15">
+            <g >
+                <path d="M1.11429 7.4L7.30462 13.8M1.11429 7.4L13 7.39972M1.11429 7.4L7.30462 1" stroke-width="1.5"/>
+            </g>
+        </symbol>
+
+
+        <g id="facebook">
+            <path d="M22.3575 13.9887H24.0007V11.1267C23.7172 11.0877 22.7423 11 21.6068 11C19.2375 11 17.6145 12.4902 17.6145 15.2292V17.75H15V20.9495H17.6145V29H20.82V20.9503H23.3287L23.727 17.7508H20.8193V15.5465C20.82 14.6217 21.069 13.9887 22.3575 13.9887V13.9887Z" />
+        </g>
+
+        <g id="twitter">
+            <path d="M29.1671 15.0157C28.5117 15.3044 27.8166 15.4939 27.105 15.5782C27.8551 15.1315 28.4165 14.4285 28.6846 13.6002C27.9806 14.0173 27.2088 14.3097 26.4044 14.4678C25.8641 13.8922 25.1478 13.5104 24.3671 13.3819C23.5864 13.2533 22.7848 13.3852 22.0872 13.757C21.3895 14.1288 20.8347 14.7197 20.5091 15.4378C20.1835 16.1559 20.1053 16.961 20.2866 17.7279C18.859 17.6567 17.4624 17.2873 16.1874 16.6438C14.9125 16.0003 13.7878 15.097 12.8862 13.9926C12.5671 14.5383 12.3994 15.1587 12.4003 15.7902C12.4003 17.0296 13.0339 18.1246 13.9971 18.7656C13.4271 18.7478 12.8696 18.5945 12.3711 18.3186V18.363C12.3713 19.1885 12.6582 19.9885 13.1831 20.6274C13.7081 21.2663 14.4388 21.7048 15.2514 21.8685C14.7222 22.0113 14.1674 22.0323 13.6288 21.93C13.8579 22.6406 14.3045 23.262 14.9059 23.7072C15.5074 24.1525 16.2337 24.3993 16.983 24.4132C16.2383 24.9956 15.3855 25.4261 14.4735 25.6801C13.5615 25.9341 12.6082 26.0067 11.668 25.8937C13.3092 26.9446 15.2197 27.5025 17.1711 27.5006C23.7756 27.5006 27.3874 22.0531 27.3874 17.3288C27.3874 17.1749 27.3831 17.0193 27.3762 16.8672C28.0793 16.3613 28.686 15.7346 29.168 15.0166L29.1671 15.0157Z" />
+        </g>
+
+        <g id="linkedin">
+            <path d="M27.9968 27.9995V27.9988H28.0008V22.1308C28.0008 19.2602 27.3828 17.0488 24.0268 17.0488C22.4135 17.0488 21.3308 17.9342 20.8888 18.7735H20.8422V17.3168H17.6602V27.9988H20.9735V22.7095C20.9735 21.3168 21.2375 19.9702 22.9622 19.9702C24.6615 19.9702 24.6868 21.5595 24.6868 22.7988V27.9995H27.9968Z" />
+            <path d="M12.2656 17.3184H15.583V28.0004H12.2656V17.3184Z" />
+            <path d="M13.9213 12C12.8607 12 12 12.8607 12 13.9213C12 14.982 12.8607 15.8607 13.9213 15.8607C14.982 15.8607 15.8427 14.982 15.8427 13.9213C15.842 12.8607 14.9813 12 13.9213 12V12Z" />
+        </g>
+
+        <g id="play">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM64 50L42 38V62L64 50Z" fill="white"/>
+        </g>
+
+        <g id="cloud">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.554 32.5c-8.405 0-8.405-14.223 0-14.223 0-17.552 20.31-13.737 20.31-2.29 14.01-.763 14.01 16.513 2.803 16.513H17.5" stroke="#A50F2D" stroke-width="2px"/>
+        </g>
+
+        <g id="light">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.25 1.25V0h-2.5v16.2a3.996 3.996 0 012.5 0V1.25zm.553 15.179a4.018 4.018 0 011.768 1.767L34.634 7.134l.884-.884-1.768-1.768-.884.884L21.803 16.43zm1.998 2.321c.13.393.199.814.199 1.25 0 .436-.07.857-.2 1.25H40v-2.5H23.8zm-.23 3.054a4.018 4.018 0 01-1.768 1.767l11.062 11.063.884.884 1.768-1.768-.884-.884-11.062-11.062zM21.25 23.8c-.393.13-.814.199-1.25.199-.436 0-.857-.07-1.25-.2V40h2.5V23.8zm-3.054-.23a4.017 4.017 0 01-1.767-1.768L5.366 32.866l-.884.884 1.767 1.768.884-.884L18.196 23.57zM16.2 21.25c-.13-.393-.2-.814-.2-1.25 0-.436.07-.857.2-1.25H0v2.5h16.2zM7.134 5.366l-.884-.884L4.482 6.25l.884.884 6.417 6.417.884.884 1.768-1.768-.884-.884-6.417-6.417z" fill="#A50F2D"/>
+        </g>
+
+        <g id="tag">
+            <path d="M25 5L17.5 35" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square" stroke-linejoin="round"/>
+            <path d="M10.9559 11.0608L6.25 15.7667L3.75 18.2667L1.875 20.1417L10.9559 28.4192" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square"/>
+            <path d="M30.9191 11.0608L35.625 15.7667L38.125 18.2667L40 20.1417L30.9191 28.4192" stroke="#A50F2D" stroke-width="2.23529" stroke-linecap="square"/>
+        </g>
+
+        <symbol id="telegram" viewBox="0 0 40 40">
+            <g>
+                <path d="M13.0999 18.7083C17.3949 16.8371 20.2589 15.6034 21.6919 15.0074C25.7834 13.3056 26.6335 13.01 27.1877 13.0001C27.3095 12.9981 27.582 13.0283 27.7586 13.1715C27.9076 13.2924 27.9486 13.4558 27.9683 13.5705C27.9879 13.6851 28.0123 13.9464 27.9929 14.1505C27.7712 16.4801 26.8118 22.1335 26.3237 24.7427C26.1172 25.8468 25.7105 26.217 25.3168 26.2532C24.4613 26.3319 23.8116 25.6878 22.9829 25.1446C21.6862 24.2946 20.9537 23.7654 19.695 22.936C18.2404 21.9774 19.1834 21.4506 20.0124 20.5896C20.2293 20.3643 23.999 16.9355 24.0719 16.6244C24.0811 16.5855 24.0895 16.4405 24.0034 16.3639C23.9172 16.2874 23.7901 16.3136 23.6983 16.3344C23.5683 16.3639 21.4968 17.7331 17.4839 20.4419C16.8959 20.8457 16.3633 21.0424 15.8862 21.0321C15.3601 21.0207 14.3482 20.7346 13.596 20.4901C12.6733 20.1902 11.94 20.0316 12.0039 19.5223C12.0371 19.257 12.4025 18.9856 13.0999 18.7083Z"/>
+            </g>
+        </symbol>
+
+        <symbol id="vk" viewBox="0 0 40 40">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M29.5413 15.7449C29.6796 15.3159 29.5413 15 28.8788 15H26.6913C26.1347 15 25.878 15.2726 25.7388 15.5736C25.7388 15.5736 24.6264 18.0847 23.0506 19.7159C22.5406 20.1889 22.3089 20.3389 22.0306 20.3389C21.8914 20.3389 21.6823 20.1889 21.6823 19.7591V15.7449C21.6823 15.2294 21.5289 15 21.0656 15H17.6257C17.2782 15 17.069 15.2389 17.069 15.4659C17.069 15.9539 17.8573 16.067 17.9382 17.4404V20.4246C17.9382 21.0791 17.8107 21.1977 17.5323 21.1977C16.7907 21.1977 14.9866 18.6748 13.9158 15.7881C13.7083 15.2263 13.4983 15 12.9391 15H10.75C10.125 15 10 15.2726 10 15.5736C10 16.1094 10.7417 18.7714 13.4541 22.2922C15.2624 24.6965 17.8082 26 20.1273 26C21.5181 26 21.6898 25.7109 21.6898 25.2119V23.3946C21.6898 22.8155 21.8214 22.7 22.2622 22.7C22.5872 22.7 23.1431 22.8509 24.4414 24.0098C25.9247 25.384 26.1688 26 27.0038 26H29.1913C29.8163 26 30.1296 25.7109 29.9496 25.1389C29.7513 24.57 29.0429 23.7442 28.1038 22.7644C27.5938 22.2066 26.8288 21.6055 26.5963 21.3046C26.2722 20.9188 26.3647 20.7467 26.5963 20.4034C26.5963 20.4034 29.2629 16.9258 29.5404 15.7449H29.5413Z"/>
+            </g>
+        </symbol>
+
+        <g id="arrowdown" viewBox="0 0 24 24">
+            <path d="M8.85355 10.8536C8.53857 10.5386 8.76165 10 9.20711 10H14.7929C15.2383 10 15.4614 10.5386 15.1464 10.8536L12.3536 13.6464C12.1583 13.8417 11.8417 13.8417 11.6464 13.6464L8.85355 10.8536Z" fill="#AAB8C3"/>
+        </g>
+    </svg>
+    <header class='header'>
+        <a href='/' class='header__logo_mob'>
+            <img src='/local/templates/softline/assets/images/logo.svg' alt=''>
+        </a>
+
+        <div class='header__top'>
+            <form class="header__search" action="/search/index.php">
+    <a href="#" class="header__search_close"></a>
+    <div class="btn__search-show">
+        <span>Поиск</span>
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="5.90909" cy="5.90909" r="5.40909" stroke="#697279"/>
+            <path d="M12.9986 13L9.45312 9.45459" stroke="#697279"/>
+        </svg>
+    </div>
+    <input class="input input__search" type="text" placeholder="Введите условие поиска" name="q">
+    <button class="btn__search disabled" disabled>
+        <span>Искать</span>
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="16" fill="#A50F2D"/>
+            <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5"/>
+        </svg>
+    </button>
+</form>
+
+            <div class='header__flex-row'>
+                <div class='city __select' data-state=''>
+                    <div class='select-side'></div>
+                    <div id='location-city' class='city__location __select__title' data-default='Option 1'>
+                        <span>Москва</span>
+                    </div>
+                    <div class='__select__content'>
+                        <input id='citySelect1' class='__select__input' type='radio' name='citySelect'>
+                        <label for='citySelect1' data-type='default' class='__select__label'>
+                            <span>Москва</span>
+                        </label>
+                        <input id='citySelect2' class='__select__input' type='radio' name='citySelect'>
+                        <label for='citySelect2' class='__select__label'>
+                            <span>Санкт-Петербург</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div><a href='/events/' class='header__anchor'>Мероприятия</a></div>
+
+                <div><a href='/blog/ ' class='header__anchor'>Блог</a></div>
+            </div>
+
+            <a href='#' class='header__top-button'>
+                Регистрация
+            </a>
+
+            <a href='#' class='header__top-button'>
+                Войти
+            </a>
+            <button class='menu-button'>
+                <span class='burger-button-close'>
+                    <span id='first-line-burger'></span>
+                    <span id='second-line-burger'></span>
+                    <span id='third-line-burger'></span>
+                </span>
+            </button>
+        </div>
+
+
+        <div class='header__mid'>
+            <a href='/' class='header__logo'>
+                <img src='/local/templates/softline/assets/images/logo.svg' alt=''>
+            </a>
+            <div class='header__mid_wrap'>
+                
+<nav>
+    <a href="/about" class="header__nav_link">Группа компаний</a>
+    <a href="/finance" class="header__nav_link">Softline Finance</a>
+    <a href="/investor-relations" class="header__nav_link">Инвесторам</a>
+    <a href="/job" class="header__nav_link">Карьера</a>
+    <a href="https://edu.softline.com/" class="header__nav_link">Учебный центр</a>
+</nav>
+
+                <div class='header__contact'>
+                    <div class='header__dropdown-button'>
+                        <a href='tel:+74952320023'>+7 (495) 232-0023</a>
+                        <div class='header__dropdown-icon'></div>
+                    </div>
+                    <div class='header__dropdown'><a href='tel:88002320023'>8 (800) 232-0023</a></div>
+                </div>
+            </div>
+        </div>
+
+        
+<div class='header__bottom'>
+    <div class='header__menu'>
+        <ul class='header__nav'>
+                                                                        <li data-menu='internet-magazin' class='header__item'>
+                            <button class='header__link' >Интернет-магазин</button>
+                        </li>
+                                                                                                            <li data-menu='resheniya-i-uslugi' class='header__item'>
+                            <button class='header__link' >Решения и услуги</button>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/solutions/import-replacement'
+                                >
+                                Импортозамещение                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/solutions/security'
+                                >
+                                Кибербезопасность                            </a>
+                        </li>
+                                                                                                            <li data-menu='po-i-apparatnye-resheniya-softline' class='header__item'>
+                            <button class='header__link' >ПО и аппаратные решения Softline</button>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/solutions/dev'
+                                >
+                                Заказная разработка                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                target="_blank"                               href='https://cloud.softline.ru/'
+                                >
+                                Облако Softline                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/about/softline-vendor-development-program'
+                                >
+                                Программа для вендоров                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/industries/'
+                                >
+                                Индустриальные решения                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/solutions/resheniya-dlya-gos-organizatsiy'
+                                >
+                                Для госсектора                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/smb'
+                                >
+                                Для среднего и малого бизнеса                            </a>
+                        </li>
+                                                                                                            <li class='header__item'>
+                            <a class='header__link'
+                                                               href='/about/projects/'
+                                >
+                                Проекты                            </a>
+                        </li>
+                                                        </ul>
+
+        <div class='menu-second'>
+            <div class='menu-second__top'>
+                <div class='city __select' data-state=''>
+                    <div class='select-side'></div>
+                    <div id='location-city' class='city__location __select__title' data-default='Option 1'>
+                        <span>Москва</span>
+                    </div>
+                    <div class='__select__content'>
+                        <input id='citySelect1' class='__select__input' type='radio' name='citySelect'>
+                        <label for='citySelect1' data-type='default' class='__select__label'>
+                            <span>Москва</span>
+                        </label>
+                        <input id='citySelect2' class='__select__input' type='radio' name='citySelect'>
+                        <label for='citySelect2' class='__select__label'>
+                            <span>Санкт-Петербург</span>
+                        </label>
+                    </div>
+                </div>
+
+                <form class='header__search'>
+                    <a href='#' class='header__search_close'></a>
+                    <div class='btn__search-show'>
+                        <span>Поиск</span>
+                        <svg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                            <circle cx='5.90909' cy='5.90909' r='5.40909' stroke='#697279' />
+                            <path d='M12.9986 13L9.45312 9.45459' stroke='#697279' />
+                        </svg>
+                    </div>
+                    <input class='input input__search' type='text' placeholder='Введите условие поиска'>
+                    <button class='btn__search disabled' disabled>
+                        <span>Искать</span>
+                        <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                            <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                            <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10'
+                                  stroke='white' stroke-width='1.5' />
+                        </svg>
+                    </button>
+                </form>
+
+                <div><a href='https://softline.ru/events' class='header__anchor'>Мероприятия</a></div>
+                <div><a href='https://slddigital.com/ ' class='header__anchor'>Блог</a></div>
+            </div>
+
+            <div class='menu-second__mid'>
+
+                <div class='menu-second__flex-col'>
+                    <a href='#' class='header__top-button'>
+                        Регистрация
+                    </a>
+                    <a href='#' class='header__top-button'>
+                        Войти
+                    </a>
+                </div>
+
+                <div class='header__contact-mob'>
+                    <a href='tel:+74952320023'>+7 (495) 232-0023</a>
+                    <a href='tel:88002320023'>8 (800) 232-0023</a>
+                </div>
+            </div>
+
+            <nav>
+                <a href='https://softline.ru/about' class='header__nav_link'>Группа компаний</a>
+                <a href='https://finance.softline.ru/' class='header__nav_link'>Softline Finance</a>
+                <a href='https://softline.ru/investor-relations' class='header__nav_link'>Инвесторам</a>
+                <a href='https://softline.ru/job' class='header__nav_link'>Карьера</a>
+                <a href='https://edu.softline.com/' class='header__nav_link'>Учебный центр</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<nav class='menu-wrapper'>
+    <div class='back-panel'>
+        <div>
+            Назад
+        </div>
+    </div>
+
+        <div class='menu internet-magazin'>
+        <a class='menu__title' href=''>Интернет-магазин</a>
+
+        <nav>
+                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/microsoft/'>
+        <img src='/upload/iblock/925/k6lvy4iau5dejatfjlla4is062hzvqm1/menu-icon-9.png'
+             alt='svg'>
+        Программы Microsoft    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/microsoft/'  class='submenu__title'>
+                Программы Microsoft            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/microsoft/microsoft-exchange-server-standard/'>
+                        Exchange Server                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/ofisnie-programmi/ms-office/'>
+                        Office                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/operating-systems/os-windows/'>
+                        OS Windows                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/microsoft/microsoft-sql-server-standard-edition/'>
+                        SQL Server Standard                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/microsoft/microsoft-windows-server-standard/'>
+                        Windows Server Standard                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/operating-systems/'>
+        <img src='/upload/iblock/16f/f3ez19bwp0uq4iqxcpzaq14jfxw3ksyl/menu-icon-8.png'
+             alt='svg'>
+        ОС и офисные приложения    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/operating-systems/'  class='submenu__title'>
+                ОС и офисные приложения            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/saas/'>
+                        Облачные решения (SaaS)                     </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/operating-systems/'>
+                        Операционные системы                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/ofisnie-programmi/'>
+                        Офисные программы                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/antivirusi-bezopasnost/'>
+        <img src='/upload/iblock/e74/ce1cp189misiovih4cyu3i23l9rjn682/menu-icon-2.png'
+             alt='svg'>
+        Антивирусы, резервное копирование    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/antivirusi-bezopasnost/'  class='submenu__title'>
+                Антивирусы, резервное копирование            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/antivirusi-bezopasnost/'>
+                        Антивирусы и безопасность                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/security/'>
+                        Системы безопасности                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/sapr/'>
+        <img src='/upload/iblock/aaf/w5bhie5i6ry5dqqx60f2ucvk0xa1ur4m/menu-icon-15.png'
+             alt='svg'>
+        Проектирование и графика    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/sapr/'  class='submenu__title'>
+                Проектирование и графика            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/3d-oborudovanie/'>
+                        3D оборудование                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/grafika-i-dizayn/'>
+                        Графика и дизайн                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/sapr/'>
+                        САПР                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/sistemnie-programmi/'>
+        <img src='/upload/iblock/2ce/govsg3ussieydbtpze3tyu0iuy0tzbdb/menu-icon-14.png'
+             alt='svg'>
+        Системное ПО и программирование    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/sistemnie-programmi/'  class='submenu__title'>
+                Системное ПО и программирование            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/programmirovanie/'>
+                        Программирование                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/sistemnie-programmi/'>
+                        Системные программы                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/gadgets/'>
+        <img src='/upload/iblock/aaf/w5bhie5i6ry5dqqx60f2ucvk0xa1ur4m/menu-icon-15.png'
+             alt='svg'>
+        Портативная электроника    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/gadgets/'  class='submenu__title'>
+                Портативная электроника            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/accessories_comp/'>
+                        Аксессуары к компьютерной технике                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/portable/'>
+                        Портативные компьютеры                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/computers/'>
+        <img src='/upload/iblock/5ba/s9o1j4iq70wrtih3cnyfabrpgx25bf17/menu-icon-18.png'
+             alt='svg'>
+        Компьютеры и комплектующие    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/computers/'  class='submenu__title'>
+                Компьютеры и комплектующие            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/parts/'>
+                        Комплектующие                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/peripherals/'>
+                        Компьютерная периферия                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/computers/'>
+                        Компьютеры                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/networking/'>
+        <img src='/upload/iblock/4ae/p4581x56bkfbi7r8dqgbi6j0nlw67lpq/menu-icon-16.png'
+             alt='svg'>
+        Серверы и сети    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/networking/'  class='submenu__title'>
+                Серверы и сети            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/servers/'>
+                        Серверы и опции                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/networking/'>
+                        Сетевое оборудование                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/san-nas/'>
+                        Системы хранения данных                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/office/'>
+        <img src='/upload/iblock/686/5o12t7jw5sgaca3g9arpyv451bfz6p00/menu-icon-1.png'
+             alt='svg'>
+        Офисное оборудование    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/office/'  class='submenu__title'>
+                Офисное оборудование            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/office/'>
+                        Офисная техника                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/photo-video/'>
+                        Фото-, видео-, аудиотехника                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='https://store.softline.ru/obrazovanie-i-nauka/'>
+        <img src='/upload/iblock/f4b/h1lacb106b7nat4vzam44puoii3dwebo/menu-icon-17.png'
+             alt='svg'>
+        ПО для обучения    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='https://store.softline.ru/obrazovanie-i-nauka/'  class='submenu__title'>
+                ПО для обучения            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/distantsionnoe-obuchenie/'>
+                        Дистанционное обучение                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://store.softline.ru/obrazovanie-i-nauka/'>
+                        Образование и наука                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu resheniya-i-uslugi'>
+        <a class='menu__title' href='/solutions/'>Решения и услуги</a>
+
+        <nav>
+                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/organizatsiya-udalennoy-raboty-ofisa'>
+        <img src='/upload/iblock/018/ejjrdzuwgpw30c8n0mywwlanp4dv3rjy.png'
+             alt='svg'>
+        Организация удаленной работы офиса    </a>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/security'>
+        <img src='/upload/iblock/e74/ce1cp189misiovih4cyu3i23l9rjn682/menu-icon-2.png'
+             alt='svg'>
+        Кибербезопасность    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/security'  class='submenu__title'>
+                Кибербезопасность            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/security-of-remote-work'>
+                        Безопасность удаленной работы                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/zaschita-infrastrukturyi'>
+                        Защита инфраструктуры                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/zaschita-prilozheniy'>
+                        Защита приложений                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/konsalting-v-oblasti-ib'>
+                        Консалтинг и соответствие требованиям ИБ                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/zaschita-dannyih'>
+                        Защита данных                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/ethic'>
+                        ETHIC (Выявление угроз для бизнеса)                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/soc'>
+                        SOC                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/security/drugie-servisyi-ib'>
+                        Другие сервисы ИБ                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/supporting-demand-for-products-and-services-of-the-it-industry'>
+        <img src='/upload/iblock/724/60q1tk7cviv512h1y7m0yaqihmcbtkwi/menu-icon-3.png'
+             alt='svg'>
+        Льготные кредиты на ИТ проекты     </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/business-consulting'>
+        <img src='/upload/iblock/686/5o12t7jw5sgaca3g9arpyv451bfz6p00/menu-icon-1.png'
+             alt='svg'>
+        Бизнес-консалтинг    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/servis-provayderam'>
+        <img src='/upload/iblock/6c8/445vqrq8hizenem9ras0263xmh6mc3z0/menu-icon-5.png'
+             alt='svg'>
+        Сервис-провайдерам    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/sam'>
+        <img src='/upload/iblock/173/eczeyyl3uln3q1b6n6i7lsky30nh5lg0/menu-icon-4.png'
+             alt='svg'>
+        SAM    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/cloudmaster'>
+        <img src='/upload/iblock/1a8/jy45auk10hdd2rrskdneofayx690xbpq/menu-icon-6.png'
+             alt='svg'>
+        CloudMaster    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/premer-servisyi-softline'>
+        <img src='/upload/iblock/925/k6lvy4iau5dejatfjlla4is062hzvqm1/menu-icon-9.png'
+             alt='svg'>
+        Премьер Сервисы Softline    </a>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/infrastructure-solutions'>
+        <img src='/upload/iblock/16f/f3ez19bwp0uq4iqxcpzaq14jfxw3ksyl/menu-icon-8.png'
+             alt='svg'>
+        ИТ-инфраструктура    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/infrastructure-solutions'  class='submenu__title'>
+                ИТ-инфраструктура            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/bazovaya-infrastruktura'>
+                        Базовая инфраструктура                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/setevaya-infrastruktura'>
+                        Сетевая инфраструктура                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/virtualizatsiya'>
+                        Виртуализация                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/itsm'>
+                        Управление сервисами (ESM\ITSM)                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/korporativnaya-mobilnost-bez-kapitalnyih-zatrat'>
+                        Корпоративная мобильность                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/inzhenernyie-sistemyi'>
+                        Комплексные инженерные решения                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/infrastructure-solutions/inzhenernyie-sistemyi/programmno-apparatnyj-kompleks-umnye-kaski'>
+                        Комплекс &laquo;Умные каски&raquo;                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/support'>
+        <img src='/upload/iblock/ecd/xv8pmxpyj11bq1lb60n3gc0u6rlsul98/menu-icon-11.png'
+             alt='svg'>
+        Управляемые услуги. Техподдержка и IT-аутсорсинг    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/support'  class='submenu__title'>
+                Управляемые услуги. Техподдержка и IT-аутсорсинг            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/support/autsorsing-it-ekspluatatsii'>
+                        Аутсорсинг ИТ-эксплуатации                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/support/tehnicheskaya-podderzhka'>
+                        Техническая поддержка                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/support/servisyi-vokrug-hardware'>
+                        Сервисы вокруг Hardware                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/support/rekurrentnyiy-servis-vokrug-microsoft'>
+                        Рекуррентный сервис вокруг Microsoft                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/support/servis-pechati'>
+                        Управляемая печать                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://msp.softline.com/'>
+                        Go to Azure                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/about/hardware-solutions'>
+        <img src='/upload/iblock/173/eczeyyl3uln3q1b6n6i7lsky30nh5lg0/menu-icon-4.png'
+             alt='svg'>
+        Аппаратные решения    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/about/hardware-solutions'  class='submenu__title'>
+                Аппаратные решения            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/about/hardware-solutions'>
+                        Инфраструктурные решения                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/about/hardware-solutions'>
+                        Персональные и непрофильные решения                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/about/hardware-solutions'>
+                        Телекоммуникационные решения                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/softline-subscriptions'>
+        <img src='/upload/iblock/843/hcsv59n79bm77dj3cvh5fr3olavnqh4w/menu-icon-7.png'
+             alt='svg'>
+        Softline Подписки    </a>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/business-solutions'>
+        <img src='/upload/iblock/ba3/246de89i5nwv22qn5et8s3mvnchxs846/menu-icon-12.png'
+             alt='svg'>
+        Бизнес-решения    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/business-solutions'  class='submenu__title'>
+                Бизнес-решения            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/udalennaya-rabota-biznesa'>
+                        Удаленная работа бизнеса                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/robotizatsiya-protsessov-rpa'>
+                        Роботизация процессов (RPA)                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/sistemyi-upravleniya-skladami'>
+                        Системы управления складами (WMS)                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/elektronnyiy-arhiv'>
+                        Электронные архивы                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/upravlenie-biznes-protsessami-bpm'>
+                        Управление бизнес-процессами (BPM)                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/sistema-elektronnogo-dokumentooborota'>
+                        СЭД                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/crm'>
+                        CRM                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/biznes-analitika'>
+                        Бизнес-аналитика                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/it-strategy'>
+                        Разработка IT-стратегии                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/korporativnyie-portalyi'>
+                        Корпоративные порталы                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/messendzheryi-i-pochtovyie-servisyi'>
+                        Мессенджеры и почтовые сервисы                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/business-solutions/upravlenie-proektami-i-protsessami'>
+                        Управление проектами и процессами                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/dev'>
+        <img src='/upload/iblock/540/mhg06o5h46bssn52b331ljv0ayfsfp2t/menu-icon-13.png'
+             alt='svg'>
+        Девелоника    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/digital-business/softline-digital'>
+        <img src='/upload/iblock/2ce/govsg3ussieydbtpze3tyu0iuy0tzbdb/menu-icon-14.png'
+             alt='svg'>
+        Softline Digital    </a>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/sapr-i-gis'>
+        <img src='/upload/iblock/4ae/p4581x56bkfbi7r8dqgbi6j0nlw67lpq/menu-icon-16.png'
+             alt='svg'>
+        САПР и ГИС    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/sapr-i-gis'  class='submenu__title'>
+                САПР и ГИС            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/sapr-i-gis/remote-work-for-cad-specialists'>
+                        Удаленная работа специалистов САПР                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/sapr-i-gis/arhitektura-i-stroitelstvo'>
+                        Промышленное и гражданское строительство                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/smb'>
+        <img src='/upload/iblock/ba3/246de89i5nwv22qn5et8s3mvnchxs846/menu-icon-12.png'
+             alt='svg'>
+        Решения для малого и среднего бизнеса    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/import-replacement'>
+        <img src='/upload/iblock/aaf/w5bhie5i6ry5dqqx60f2ucvk0xa1ur4m/menu-icon-15.png'
+             alt='svg'>
+        Импортозамещение    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/print'>
+        <img src='/upload/iblock/f4b/h1lacb106b7nat4vzam44puoii3dwebo/menu-icon-17.png'
+             alt='svg'>
+        Послепродажное обслуживание печати    </a>
+</div>                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/resheniya-dlya-gos-organizatsiy'>
+        <img src='/upload/iblock/aaf/w5bhie5i6ry5dqqx60f2ucvk0xa1ur4m/menu-icon-15.png'
+             alt='svg'>
+        Решения для госсектора    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/resheniya-dlya-gos-organizatsiy'  class='submenu__title'>
+                Решения для госсектора            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/resheniya-dlya-gos-organizatsiy/resheniya-dlya-udalennoy-rabotyi-organizatsii'>
+                        Решения для удаленной работы организации                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='https://its.softline.com/ru/'>
+                        Транспортные системы                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/resheniya-dlya-gos-organizatsiy/resheniya-dlya-obrazovaniya'>
+                        Образование                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='/solutions/resheniya-dlya-gos-organizatsiy/autsorsing-uchetnyih-funktsiy-dlya-gosudarstvennogo-sektora'>
+                        Аутсорсинг учетных функций                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/uslugi-i-resheniya-dlya-riteyla-i-fmcg'>
+        <img src='/upload/iblock/540/mhg06o5h46bssn52b331ljv0ayfsfp2t/menu-icon-13.png'
+             alt='svg'>
+        Услуги и решения для ритейла и FMCG    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='https://slcomputers.ru/'>
+        <img src='/upload/iblock/5ba/s9o1j4iq70wrtih3cnyfabrpgx25bf17/menu-icon-18.png'
+             alt='svg'>
+        Компьютеры Softline    </a>
+</div>            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu import-replacement'>
+        <a class='menu__title' href='/solutions/import-replacement'>Импортозамещение</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu security'>
+        <a class='menu__title' href='/solutions/security'>Кибербезопасность</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu po-i-apparatnye-resheniya-softline'>
+        <a class='menu__title' href=''>ПО и аппаратные решения Softline</a>
+
+        <nav>
+                                <div class='menu__item list'>
+    <a class='menu__link' href='/solutions/softline-software'>
+        <img src='/upload/iblock/e74/ce1cp189misiovih4cyu3i23l9rjn682/menu-icon-2.png'
+             alt='svg'>
+        Программное обеспечение Softline    </a>
+    <div class='submenu'>
+        <div class='submenu__nav'>
+            <a href='/solutions/softline-software'  class='submenu__title'>
+                Программное обеспечение Softline            </a>
+            <ul class='submenu__list'>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='softline-software/softline-arm'>
+                        SL.Desktop                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='softline-software/softline-server'>
+                        SL.Server                    </a>
+                </li>
+                                <li class='submenu__item'>
+                    <a class='submenu__link'  href='softline-software/softline-infooborot'>
+                        SL·ECM (Инфооборот)                    </a>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='https://inferit.com/'>
+        <img src='/upload/iblock/5ba/s9o1j4iq70wrtih3cnyfabrpgx25bf17/menu-icon-18.png'
+             alt='svg'>
+        Компьютеры Softline    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='https://itman.ru/'>
+        <img src='/local/templates/softline/assets/images/menu-icon/menu-icon-11.svg'
+             alt='svg'>
+        ITman    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='https://soica.ru/ '>
+        <img src='/local/templates/softline/assets/images/menu-icon/menu-icon-11.svg'
+             alt='svg'>
+        Soika    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='https://workflowsoft.com/ru'>
+        <img src='/local/templates/softline/assets/images/menu-icon/menu-icon-11.svg'
+             alt='svg'>
+        Workflowsoft    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='/solutions/cloudmaster'>
+        <img src='/upload/iblock/1a8/jy45auk10hdd2rrskdneofayx690xbpq/menu-icon-6.png'
+             alt='svg'>
+        Cloudmaster    </a>
+</div>                                <div class='menu__item'>
+    <a class='menu__link' href='https://robo-voice.ru/'>
+        <img src='/local/templates/softline/assets/images/menu-icon/menu-icon-11.svg'
+             alt='svg'>
+        Robovoice    </a>
+</div>            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu dev'>
+        <a class='menu__title' href='/solutions/dev'>Заказная разработка</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu oblako-softline'>
+        <a class='menu__title' href='https://cloud.softline.ru/'>Облако Softline</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu programma-dlya-vendorov'>
+        <a class='menu__title' href='/about/softline-vendor-development-program'>Программа для вендоров</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu industrialnye-resheniya'>
+        <a class='menu__title' href='/industries/'>Индустриальные решения</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu dlya-gossektora'>
+        <a class='menu__title' href='/solutions/resheniya-dlya-gos-organizatsiy'>Для госсектора</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu dlya-srednego-i-malogo-biznesa'>
+        <a class='menu__title' href='/smb'>Для среднего и малого бизнеса</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+        <div class='menu proekty'>
+        <a class='menu__title' href='/about/projects/'>Проекты</a>
+
+        <nav>
+            
+            <a class='link-red' href='#'>
+                <svg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='32' height='32' rx='16' fill='#A50F2D' />
+                    <path d='M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10' stroke='white'
+                          stroke-width='1.5' />
+                </svg>
+                <span>Все программы и оборудование</span>
+            </a>
+        </nav>
+
+    </div>
+    
+    <div class='inner-menu' id='inner-menu'></div>
+</nav>
+
+
+
+    </header>
+    <main class='main'><section class='intro__pages' style='background-image: url();'>
+    <div class="breadcrumbs wrapper">
+    <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="/">Главная</a>
+    </li>    </ul>
+</div>
+    <div class='intro__content'>
+        <h1 class='intro__title'>Лучшие решения для большинства отраслей</h1>
+    </div>
+</section>
+
+<section class='catalog stories-padding'>
+
+    
+<aside class="catalog-sidebar swipe-el">
+    <div class="swipe-el__inner">
+        <div class="catalog-sidebar__close swipe-el__close"></div>
+        <h2 class="catalog-sidebar__title-mobile">Фильтры</h2>
+        <div class="catalog__terms_wrapper mobile">
+                                </div>
+        <div class="catalog__filters">
+
+		<form name="arrProjectsFilter_form"
+              action="/uploads/files/28bbd6/41087c/f28c11/-06.03.2023-%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D0%9A%D0%90-%D0%90%D0%9E%20%D0%A1%D0%BE%D1%84%D1%82%D0%BB%D0%B0%D0%B8-%D0%BD-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-.pdf"
+              method="get"
+              class="smartfilter"
+              data-url="/uploads/files/28bbd6/41087c/f28c11/-06.03.2023-%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D0%9A%D0%90-%D0%90%D0%9E%20%D0%A1%D0%BE%D1%84%D1%82%D0%BB%D0%B0%D0%B8-%D0%BD-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-.pdf?set_filter=y">
+						<input type="hidden" name="/uploads/files/28bbd6/41087c/f28c11/-06_03_2023-Письмо_для_КА-АО_Софтлаи-н-смена_наименования-_pdf" id="/uploads/files/28bbd6/41087c/f28c11/-06_03_2023-Письмо_для_КА-АО_Софтлаи-н-смена_наименования-_pdf" value="" />
+			                            <div class="filter__wrapper">
+                                        <a class="filter__category" href="#">Отрасли</a>
+                            <input type="text" class="filter-input-text" placeholder="">
+							                                <ul class="catalog-sidebar__list side-list">
+                                    <li class="catalog-sidebar__item side-list__item">
+                                        <div class="radio catalog-sidebar__link side-list__link">
+                                            <label class="bx-filter-param-label ">
+                                              <span class="bx-filter-input-checkbox">
+                                              <input
+                                                      class="visually-hidden"
+                                                      type="radio"
+                                                      value=""
+                                                      name="arrProjectsFilter_12"
+                                                      id="all_arrProjectsFilter_12_3808539628"
+                                                      onclick="smartFilter.click(this)"
+                                              />
+                                                <span class="bx-filter-param-text catalog-sidebar__title side-list__title">
+                                                    Все                                                </span>
+                                              </span>
+                                            </label>
+                                            <span class="search-aside__item_close side-list__close"></span>
+                                        </div>
+                                    </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="3808539628"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_3808539628"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Банки/страхование</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="1547219295"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_1547219295"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Нефть и газ</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="2047402582"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_2047402582"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Образование</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="3678868925"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_3678868925"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Производство</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="219140800"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_219140800"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Промышленность</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="2645610321"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_2645610321"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Ритейл и e-commerce</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="3937927111"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_3937927111"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Строительство</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="3693793700"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_3693793700"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Сфера услуг</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="2871910706"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_2871910706"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Телекоммуникации и связь</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="841265288"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_841265288"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Транспорт</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                            <li class="catalog-sidebar__item side-list__item ">
+                                            <div class="radio catalog-sidebar__link side-list__link">
+                                                <label class="bx-filter-param-label ">
+                                                  <span class="bx-filter-input-checkbox">
+                                                    <input
+                                                            class="visually-hidden"
+                                                            type="radio"
+                                                            value="1159954462"
+                                                            name="arrProjectsFilter_12"
+                                                            id="arrProjectsFilter_12_1159954462"
+																														onclick="smartFilter.click(this)"/>
+                                                    <span class="bx-filter-param-text catalog-sidebar__title side-list__title">Электроэнергетика</span>
+                                                  </span>
+                                                </label>
+                                                <span class="search-aside__item_close side-list__close"></span>
+                                            </div>
+                                        </li>
+                                                                    </ul>
+									                </div>
+				                <div class="filter__wrapper">
+                                        <a class="filter__category" href="#">Партнеры</a>
+                            <input type="text" class="filter-input-text" placeholder="">
+							                                    <ul data-show="4" class="catalog-sidebar__list side-checkbox">
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2324048497"
+                                                            id="arrProjectsFilter_99_2324048497"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">DEPO Computers</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_291860701"
+                                                            id="arrProjectsFilter_99_291860701"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">CommuniGate Systems</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_3881608030"
+                                                            id="arrProjectsFilter_99_3881608030"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Positive Technologies</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2536921041"
+                                                            id="arrProjectsFilter_99_2536921041"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">1С-Битрикс</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_1958907418"
+                                                            id="arrProjectsFilter_99_1958907418"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Astra Linux</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_1396303568"
+                                                            id="arrProjectsFilter_99_1396303568"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Check Point</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2562808845"
+                                                            id="arrProjectsFilter_99_2562808845"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Cisco</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_156418674"
+                                                            id="arrProjectsFilter_99_156418674"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Dell Technologies</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_1098813612"
+                                                            id="arrProjectsFilter_99_1098813612"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Docsvision</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_4285207025"
+                                                            id="arrProjectsFilter_99_4285207025"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Esri CIS</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_1919185344"
+                                                            id="arrProjectsFilter_99_1919185344"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Google Cloud</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_3126477797"
+                                                            id="arrProjectsFilter_99_3126477797"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">HP Inc.</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_3791281284"
+                                                            id="arrProjectsFilter_99_3791281284"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">IBM</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2343217567"
+                                                            id="arrProjectsFilter_99_2343217567"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Microsoft Corporation</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2178575692"
+                                                            id="arrProjectsFilter_99_2178575692"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">NetApp</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_4008374133"
+                                                            id="arrProjectsFilter_99_4008374133"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">NVIDIA Corporation</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_996450544"
+                                                            id="arrProjectsFilter_99_996450544"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">ProfIT</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_4161197544"
+                                                            id="arrProjectsFilter_99_4161197544"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Veeam</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2754393789"
+                                                            id="arrProjectsFilter_99_2754393789"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">VMware</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_3434492149"
+                                                            id="arrProjectsFilter_99_3434492149"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">«Девелоника»</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2029194558"
+                                                            id="arrProjectsFilter_99_2029194558"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">«Код Безопасности»</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_3407623300"
+                                                            id="arrProjectsFilter_99_3407623300"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">«С-Терра СиЭсПи»</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_1628406866"
+                                                            id="arrProjectsFilter_99_1628406866"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">АСКОН</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2476546864"
+                                                            id="arrProjectsFilter_99_2476546864"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Инфосекьюрити</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2943414656"
+                                                            id="arrProjectsFilter_99_2943414656"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">ИнфоТеКС</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_2138665226"
+                                                            id="arrProjectsFilter_99_2138665226"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Киберпротект</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_99_1963570649"
+                                                            id="arrProjectsFilter_99_1963570649"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Лаборатория Касперского</span>
+                                                </label>
+                                            </li>
+										                                    </ul>
+                                    <a class="filter__show-more" href="#">Показать все</a>
+							                </div>
+				                <div class="filter__wrapper">
+                                        <a class="filter__category" href="#">Направления</a>
+                            <input type="text" class="filter-input-text" placeholder="">
+							                                    <ul data-show="4" class="catalog-sidebar__list side-checkbox">
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3427756184"
+                                                            id="arrProjectsFilter_150_3427756184"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Кибербезопасность</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3408047233"
+                                                            id="arrProjectsFilter_150_3408047233"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Импортозамещение</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3148865571"
+                                                            id="arrProjectsFilter_150_3148865571"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Заказная разработка</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_2663285759"
+                                                            id="arrProjectsFilter_150_2663285759"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">ИТ-инфраструктура</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_574687668"
+                                                            id="arrProjectsFilter_150_574687668"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">САПР и ГИС</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3142080526"
+                                                            id="arrProjectsFilter_150_3142080526"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Бизнес-решения</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3264536746"
+                                                            id="arrProjectsFilter_150_3264536746"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Управляемые услуги. Техническая поддержка и аутсорсинг</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_995768565"
+                                                            id="arrProjectsFilter_150_995768565"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Softline Digital</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3046363196"
+                                                            id="arrProjectsFilter_150_3046363196"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Software Asset Management (SAM)</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_4008605544"
+                                                            id="arrProjectsFilter_150_4008605544"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text"> Directum: привычные бизнес-процессы в цифровом виде</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_1467058689"
+                                                            id="arrProjectsFilter_150_1467058689"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Success Fee</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_1344032280"
+                                                            id="arrProjectsFilter_150_1344032280"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Автоматизация</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_651760825"
+                                                            id="arrProjectsFilter_150_651760825"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Бизнес-аналитика</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_158095991"
+                                                            id="arrProjectsFilter_150_158095991"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Виртуализация</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_824900646"
+                                                            id="arrProjectsFilter_150_824900646"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Выявление угроз для бизнеса (ETHIC)</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3243403346"
+                                                            id="arrProjectsFilter_150_3243403346"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Диспетчеризация и мониторинг</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3218097411"
+                                                            id="arrProjectsFilter_150_3218097411"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Заказная разработка</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_910637119"
+                                                            id="arrProjectsFilter_150_910637119"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Защита данных</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_761457577"
+                                                            id="arrProjectsFilter_150_761457577"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Защита конечных точек</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3259586719"
+                                                            id="arrProjectsFilter_150_3259586719"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Защита персональных данных</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_1094715561"
+                                                            id="arrProjectsFilter_150_1094715561"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Защита приложений</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_2988682256"
+                                                            id="arrProjectsFilter_150_2988682256"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Защита сети, ATP</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3326061643"
+                                                            id="arrProjectsFilter_150_3326061643"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Комплексная безопасность</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3881974619"
+                                                            id="arrProjectsFilter_150_3881974619"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Комплексные инженерные решения</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3369563541"
+                                                            id="arrProjectsFilter_150_3369563541"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Разработка IT-стратегии</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3683635691"
+                                                            id="arrProjectsFilter_150_3683635691"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Решения для госсектора</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_2149359462"
+                                                            id="arrProjectsFilter_150_2149359462"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Сервисы вокруг Hardware</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_2422541261"
+                                                            id="arrProjectsFilter_150_2422541261"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Сетевая инфраструктура</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_795826322"
+                                                            id="arrProjectsFilter_150_795826322"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Система электронного документооборота</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3526991296"
+                                                            id="arrProjectsFilter_150_3526991296"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Софт по подписке для сервис-провайдеров</span>
+                                                </label>
+                                            </li>
+										                                            <li class="catalog-sidebar__item side-checkbox__item">
+                                                <label>
+                                                    <input
+                                                            class="check-input"
+                                                            type="checkbox"
+                                                            value="Y"
+                                                            name="arrProjectsFilter_150_3934206865"
+                                                            id="arrProjectsFilter_150_3934206865"
+                                                                                                                    onclick="smartFilter.click(this)"
+                                                    />
+                                                    <span class="check-box"></span>
+                                                    <span class="check-box__text">Удаленная работа бизнеса</span>
+                                                </label>
+                                            </li>
+										                                    </ul>
+                                    <a class="filter__show-more" href="#">Показать все</a>
+							                </div>
+							<div class="clb"></div>
+
+		</form>
+
+        </div>
+    </div>
+</aside>
+
+<div class="catalog-content">
+    <form name="arrProjectsFilter_serach_text" action="/uploads/files/28bbd6/41087c/f28c11/-06.03.2023-%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D0%9A%D0%90-%D0%90%D0%9E%20%D0%A1%D0%BE%D1%84%D1%82%D0%BB%D0%B0%D0%B8-%D0%BD-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-.pdf" method="get" class="smartfilter">
+        <div class="catalog__input-search">
+        <input type="text"
+               placeholder="Введите условие поиска"
+               name="SEARCH_TEXT"
+               value="">
+        </div>
+    </form>
+    <div class="filters__mobile">
+        <p class="filters__mobile_text">
+            Filters
+            <span class="filters__mobile_num">(3)</span>
+        </p>
+        <img class="filters__mobile_img" src="/local/templates/softline/assets/images/Filter.svg" alt="">
+    </div>
+    <div class="catalog__terms_wrapper">
+
+        <form name="arrProjectsFilter_form" action="/uploads/files/28bbd6/41087c/f28c11/-06.03.2023-%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D0%9A%D0%90-%D0%90%D0%9E%20%D0%A1%D0%BE%D1%84%D1%82%D0%BB%D0%B0%D0%B8-%D0%BD-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-.pdf" method="get" class="smartfilter">
+            <div class="catalog__terms_list">
+                            </div>
+                        <input
+                    class="visually-hidden"
+                    type="radio"
+                    value=""
+                    name="arrProjectsFilter_150"
+                    id="all_arrProjectsFilter_150_3427756184"
+                    onclick="smartFilter.click(this)"
+            />
+        </form>
+    </div>
+
+<script type="text/javascript">
+	var smartFilter = new JCSmartFilter('/uploads/files/28bbd6/41087c/f28c11/-06.03.2023-%D0%9F%D0%B8%D1%81%D1%8C%D0%BC%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D0%9A%D0%90-%D0%90%D0%9E%20%D0%A1%D0%BE%D1%84%D1%82%D0%BB%D0%B0%D0%B8-%D0%BD-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0%20%D0%BD%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-.pdf', 'HORIZONTAL', []);
+</script>
+
+    
+<div class="catalog__top-controls">
+    <p class="catalog__results">810 результатов</p>
+</div>
+
+<div class="stories__wrap">
+                    <a href="/about/projects/develonika-gk-softline-avtomatizirovala-dokumentooborot-i-naryad-zadaniya-dlya-vyisokogorskogo-gorno-obogatitelnogo-kombinata" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/598/kjfxsub5r892kj8a0j1od990y2fwi0gh/origin.png" alt="«Девелоника» (ГК Softline) автоматизировала документооборот и наряд-задания для Высокогорского горно-обогатительного комбината">
+                <span class="stories__el_text">«Девелоника» (ГК Softline) автоматизировала документооборот и наряд-задания для Высокогорского горно-обогатительного комбината</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/gruppa-etalon-doverila-obschenie-s-pokupatelyami-umnomu-golosovomu-robotu-robovoice-gk-softline" class="stories__el big">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/1dc/zkwr1pwymgii2res0nozkeozws5yvrwm/origin.jpg" alt="Группа «Эталон» доверила общение с покупателями умному голосовому роботу Robovoice (ГК Softline)">
+                <span class="stories__el_text">Группа «Эталон» доверила общение с покупателями умному голосовому роботу Robovoice (ГК Softline)</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/softline-pomogla-kompanii-schyolkovo-agrohim-povyisit-proizvoditelnost-it-infrastrukturyi" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/28a/30iezv9ony6llvrbk6d8zbigib0vhvmv/origin.png" alt="Softline помогла компании «Щёлково Агрохим» повысить производительность ИТ-инфраструктуры">
+                <span class="stories__el_text">Softline помогла компании «Щёлково Агрохим» повысить производительность ИТ-инфраструктуры</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/elektronnyiy-arhiv-i-upravlenie-protsessami-v-otp-banke" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/48a/g6277yhjprioyvezdn7kecasu41qzyqe/origin.png" alt="Электронный архив и управление процессами в ОТП Банке">
+                <span class="stories__el_text">Электронный архив и управление процессами в ОТП Банке</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/edinaya-sistema-upravleniya-dokumentami-dlya-unilever-rus" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/4ec/xuoxasgg4vnq5y227uasdn9b4wsgbgud/origin.jpg" alt="Единая система для управления и отслеживания электронных документов для Unilever Rus">
+                <span class="stories__el_text">Единая система для управления и отслеживания электронных документов для Unilever Rus</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/korporativnaya-sistema-elektronnogo-dokumentooborota-neftyanoy-kompanii" class="stories__el big">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/1ee/ayktwu58643b6vzryf2cn166670c3ic4/origin.jpg" alt="Корпоративная система электронного документооборота для нефтяной компании">
+                <span class="stories__el_text">Корпоративная система электронного документооборота для нефтяной компании</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/vgspu-sozdal-vyisokotehnologichnuyu-obrazovatelnuyu-sredu-pri-pomoschi-kompanii-softline" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/da0/tjac4gxwirxwzt1ek5swddynatca1eyb/origin.png" alt="ВГСПУ создал высокотехнологичную образовательную среду при помощи компании Softline">
+                <span class="stories__el_text">ВГСПУ создал высокотехнологичную образовательную среду при помощи компании Softline</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/gk-softline-razrabotala-strategiyu-rezervnogo-kopirovaniya-i-vosstanovleniya-active-directory-dlya-aviakompanii-yakutiya" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/a9c/adexdononxcg7a6np6d15nga8e3jwrpw/origin.jpg" alt="ГК Softline разработала стратегию резервного копирования и восстановления Active Directory для авиакомпании «Якутия»">
+                <span class="stories__el_text">ГК Softline разработала стратегию резервного копирования и восстановления Active Directory для авиакомпании «Якутия»</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/tsifra-bank-razmestil-it-servisyi-v-oblako-softline" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/0b7/vhdp39qlylc1fe1x2in533bhrczow52j/origin.jpg" alt="«Цифра банк» разместил ИТ-сервисы в облако Softline">
+                <span class="stories__el_text">«Цифра банк» разместил ИТ-сервисы в облако Softline</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/gk-softline-pomogla-oez-sankt-peterburg-provesti-migratsiyu-baz-dannyih-i-operatsionnoy-sredyi-dlya-1s-na-rossiyskoe-po" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/b10/qr709d15149c0beibbl6psrahgks96r2/origin.png" alt="ГК Softline помогла ОЭЗ «Санкт-Петербург» провести миграцию баз данных и операционной среды для 1С на российское ПО">
+                <span class="stories__el_text">ГК Softline помогла ОЭЗ «Санкт-Петербург» провести миграцию баз данных и операционной среды для 1С на российское ПО</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/gk-softline-pomogla-gbu-mosgorgeotrest-organizovat-upravlenie-korporativnyimi-ustroystvami" class="stories__el ">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/e44/rdpc0457po3y2dqkvuadq7smennwhw8g/origin.png" alt="ГК Softline помогла ГБУ «Мосгоргеотрест» организовать управление корпоративными устройствами">
+                <span class="stories__el_text">ГК Softline помогла ГБУ «Мосгоргеотрест» организовать управление корпоративными устройствами</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+                    <a href="/about/projects/nornikel-optimiziruet-upravlenie-programmnyimi-aktivami-pri-pomoschi-gk-softline" class="stories__el big">
+            <span class="stories__el_top">
+                <img src="/upload/iblock/5fb/i5s6bgwex7c0tw1e2y38t91xw8pw620t/origin.png" alt="«Норникель» оптимизирует управление программными активами при помощи ГК Softline">
+                <span class="stories__el_text">«Норникель» оптимизирует управление программными активами при помощи ГК Softline</span>
+            </span>
+            <span class="stories__el_bottom">
+                            </span>
+        </a>
+    </div>
+<a class="catalog__show-more show-more"></a>
+
+
+<div class="pagination-block">
+    <div class="main-pagination">
+        <span>Элементы:</span>
+        <div class="numb-container" tabindex="1">
+            <span class="select-button num-page">12</span>
+            <span class="select-numb" tabindex="1">
+                <a href="/about/projects/index.php?NEWS_COUNT=8">8</a>
+                <a href="/about/projects/index.php?NEWS_COUNT=16">16</a>
+                <a href="/about/projects/index.php?NEWS_COUNT=20">20</a>
+                <a href="/about/projects/index.php?NEWS_COUNT=32">32</a>
+            </span>
+        </div>
+        <div class="main-pagination__right">
+            <span class="now-pages">1-12</span>
+            <span> из </span>
+            <span class="all-pages">810</span>
+        </div>
+    </div>
+    <div class="pagination">
+        <a><svg class="arrow"><use href="#arrow"></use></svg></a>
+        <a class="active">1</a><a href="/about/projects/index.php?&NEWS_COUNT=12&PAGEN_1=2">2</a><a href="/about/projects/index.php?&NEWS_COUNT=12&PAGEN_1=3">3</a><a>...</a><a href="/about/projects/index.php?&NEWS_COUNT=12&PAGEN_1=68">68</a>
+        <a href="/about/projects/index.php?&NEWS_COUNT=12&PAGEN_1=2"><svg class="arrow arrow--right arrow--active"><use href="#arrow"></use></svg></a>
+    </div>
+</div>
+
+
+    </div>
+</section>
+<div class="cookie regModal">
+    <div class="man20">Мы используем файлы-cookie</div>
+    <div class="cookie__text">Продолжая использовать данный веб-сайт, вы соглашаетесь с тем, что группа компаний Softline может <a href="/cookie/" class="red">использовать файлы «cookie»</a> в целях хранения ваших учетных данных, параметров и предпочтений, оптимизации работы веб-сайта.</div>
+    <button class="cookie__button">Принять</button>
+</div>
+
+</main>
+    <div class="registration regModal getintouch reqcallback" id="request" style="opacity: 0;" hidden>
+        <div class="registration__block swipe-on2">
+            <div class="getintouch__top-block">
+                <div class="registration__wrapper">
+                    <button class="close-button"><span>Закрыть</span>
+                        <span class="close-button__cross">
+                            <span class="close-icon"></span>
+                        </span>
+                    </button>
+                </div>
+                <p class="registration__title">Заказать звонок</p>
+            </div>
+
+            <form action="#">
+
+                <div class="registration__subtitle">Оставьте свои контакты, и мы позвоним вам в ближайшее время</div>
+
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="text" name="company" placeholder="Компания">
+                <input type="tel" name="tel" placeholder="Телефон" required>
+
+                <button class="link-red" type="submit">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                        <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5" />
+                    </svg>
+                    <span>Отправить запрос</span>
+                </button>
+                <div class="vacancy__bottom">
+                    <div class="vacancy__send">
+                        <label class="vacancy__send-agree">
+                            <input type="checkbox" name="policy" value="Я ознакомился с Политикой конфиденциальности персональных данных и даю согласие на обработку персональных данных">
+                            <span class="vacancy__send_checkbox">
+                                <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.808594 3.54395L4.6327 7.36805L11.3676 0.633141" stroke="#A50F2D" stroke-width="1.7"></path>
+                                </svg>
+                            </span>
+                        </label>
+                        <span class="vacancy__send_text">
+                            Я ознакомился с <a href="/privacy_policy/" class="link">Политикой конфиденциальности персональных данных</a> и даю <a href="#" class="link">согласие на обработку персональных данных</a>
+                        </span>
+                    </div>
+                    <p class="vacancy__bottom_info">Этот сайт защищен reCAPTCHA, и применяются <a href="#" class="link">Политика конфиденциальности</a> и <a href="#" class="link">Условия использования Google</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="registration regModal getintouch" hidden style="opacity: 0;" id="askModal">
+        <div class="registration__block swipe-on2">
+            <div class="getintouch__top-block">
+                <div class="registration__wrapper">
+                    <button class="close-button"><span>Закрыть</span> <span class="close-button__cross"><span class="close-icon"></span></span></button>
+                </div>
+                <p class="registration__title">Выйти на связь</p>
+            </div>
+
+            <form action="#" class="send_feedback_form">
+
+                <div class="registration__subtitle">Оставьте контакты, и мы поможем вам решить проблему</div>
+
+                <input type="hidden" name="type" value="feedback_form">
+                <input type="text" name="FIO" placeholder="Ваше имя" required>
+                <input type="text" name="COMPANY_NAME" placeholder="Компания">
+                <input type="email" name="EMAIL" placeholder="Ваш email" required>
+                <input type="tel" name="PHONE" placeholder="Телефон" required>
+                <input type="text" name="site" placeholder="Вебсайт">
+
+                <button class="link-red" type="submit">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="16" fill="#A50F2D" />
+                        <path d="M21.8857 16.4L15.6954 22.8M21.8857 16.4L10 16.3997M21.8857 16.4L15.6954 10" stroke="white" stroke-width="1.5" />
+                    </svg>
+                    <span>Отправьте запрос</span>
+                </button>
+                <div class="vacancy__bottom">
+                    <div class="vacancy__send" id="policycheckbox_element">
+                        <label class="vacancy__send-agree">
+                            <input type="checkbox" name="POLICY" value="Я ознакомился с Политикой конфиденциальности персональных данных и даю ласие на обработку персональных данных" id="policycheckbox" />
+                            <span class="vacancy__send_checkbox">
+                                <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.808594 3.54395L4.6327 7.36805L11.3676 0.633141" stroke="#A50F2D" stroke-width="1.7"></path>
+                                </svg>
+                            </span>
+                        </label>
+                        <span class="vacancy__send_text">
+                            Я ознакомился с <a href="#" class="link">Политикой конфиденциальности персональных данных</a> и даю <a href="#" class="link">согласие на обработку персональных данных</a>
+                        </span>
+                    </div>
+                    <p class="vacancy__bottom_info">Этот сайт защищен reCAPTCHA, и применяются <a href="/privacy_policy/" class="link">Политика конфиденциальности</a> и <a href="#" class="link">Условия использования Google</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="footer__top_btns">
+            </div>
+    <div class="footer__bottom">
+        
+<nav class="footer__nav">
+    <ul class="footer__list">
+    <li class=footer__item>
+        <a href="/about/" class="footer__link">О нас</a>
+    </li>
+    <li class=footer__item>
+        <a href="/solutions/" class="footer__link">Услуги и решения</a>
+    </li>
+    <li class=footer__item>
+        <a href="/industries/" class="footer__link">Отрасли промышленности</a>
+    </li>
+    <li class=footer__item>
+        <a href="/about/projects/" class="footer__link">Истории</a>
+    </li>
+    </ul>
+    <ul class="footer__list">
+    <li class=footer__item>
+        <a href="/" class="footer__link">Связи с инвесторами</a>
+    </li>
+    <li class=footer__item>
+        <a href="/" class="footer__link">Отношения с партнерами</a>
+    </li>
+    <li class=footer__item>
+        <a href="/partners/" class="footer__link">Список партнеров</a>
+    </li>
+    <li class=footer__item>
+        <a href="/" class="footer__link">Контактные организации</a>
+    </li>
+    </ul>
+    <ul class="footer__list">
+    <li class=footer__item>
+        <a href="/career/" class="footer__link">Карьера</a>
+    </li>
+    <li class=footer__item>
+        <a href="/blog/" class="footer__link">Блог</a>
+    </li>
+    <li class=footer__item>
+        <a href="/events/" class="footer__link">События</a>
+    </li>
+    <li class=footer__item>
+        <a href="/news/" class="footer__link">Новости</a>
+    </li>
+    </ul>
+</nav>
+        <div class="footer__selects">
+                    </div>
+        <div class="footer__info">
+            <p>© 1993—2023 Softline</p>
+            <a href="/privacy_policy/">Политика конфиденциальности</a>
+            <a href="#">Карта сайта</a>
+            <a target="_blank" href="#">Made by MSL-IT</a>
+        </div>
+    </div>
+</footer>
+<!-- JS -->
+
+<!--<script>-->
+<!--    window.onload = function() {-->
+<!--        document.querySelector(".preloader").style.display = "none";-->
+<!--    }-->
+<!--</script>-->
+</body>
+
+</html>

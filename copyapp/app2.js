@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+  var bodyTag = document.querySelector("body");
   if (headerSearchBtn) {
     headerSearchBtn.forEach(function (btn) {
       btn.onclick = function (e) {
@@ -405,7 +406,6 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
-  var bodyTag = document.querySelector("body");
   var selectSingle = document.querySelectorAll('.__select');
   function selectFunc() {
     if (selectSingle) {
@@ -449,28 +449,6 @@ document.addEventListener("DOMContentLoaded", function () {
       openedSelect.setAttribute('data-state', '');
     }
   };
-  bodyTag.onmousemove = function (e) {
-    if (menuWrapper.classList.contains("show")) {
-      var targ = e.target;
-      var attr = targ.getAttribute("data-menu");
-      var parent = targ.closest(".menu-wrapper");
-      var itemAct = document.querySelector(".header__item.active");
-      var checkLink = targ.closest(".header__item.active");
-      if (!attr && !parent && !targ.classList.contains("menu-wrapper") && itemAct && itemAct != targ && !checkLink && !targ.classList.contains("header__menu")) {
-        // itemAct.classList.remove("active");
-        // let attrPrev = itemAct.getAttribute("data-menu");
-        // let itemMenu = document.querySelector(`.${attrPrev}`);
-        // itemMenu.style.display = "none";
-        // menuWrapper.classList.remove("show");
-      }
-    }
-    /*if(item.classList.contains("active")) {
-        item.classList.remove("active");
-        itemMenu.style.display = "none";
-        menuWrapper.classList.remove("show");    
-    } */
-  };
-
   document.addEventListener('mousedown', function () {
     if (event.which === 2) {
       event.preventDefault();
@@ -600,7 +578,7 @@ document.addEventListener("DOMContentLoaded", function () {
             spaceBetween: 40
           },
           1921: {
-            slidesPerView: 4
+            slidesPerView: 3
           }
         }
       });
@@ -1093,24 +1071,6 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
-
-  const radioButtons = document.querySelectorAll('.catalog-sidebar__item.side-list__item');
-
-  if (radioButtons.length) {
-    radioButtons.forEach(el => {
-      console.log(el)
-      el.addEventListener('click', function () {
-        if (this.classList.contains('active')) {
-          this.classList.remove('active');
-          const input = this.querySelector('input[type="radio"]');
-          if (input) {
-            input.checked = false;  
-          }
-        }
-      })
-    })
-  }
-
   var catalogList = document.querySelectorAll(".catalog-sidebar__item.side-list__item input");
   if (catalogList && catalogList.length > 0) {
     catalogList.forEach(function (item) {
@@ -1147,7 +1107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       close.onclick = function (e) {
         if (elem.classList.contains("active")) {
           elem.classList.remove("active");
-          inp.checked = false;
+          inp.setAttribute('checked', 'false');
         }
       };
     });
@@ -1262,6 +1222,21 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
   }
+  var radioButtons = document.querySelectorAll('.catalog-sidebar__item.side-list__item');
+  if (radioButtons.length) {
+    radioButtons.forEach(function (el) {
+      el.addEventListener('click', function (event) {
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+          var input = this.querySelector('input[type="radio"]');
+          if (input) {
+            input.setAttribute('checked', 'false');
+            input.checked = false;
+          }
+        }
+      });
+    });
+  }
   function sortList(list) {
     var arr = _toConsumableArray(list.querySelectorAll('li'));
     if (arr) {
@@ -1269,10 +1244,12 @@ document.addEventListener("DOMContentLoaded", function () {
         var textA = a.querySelector('.check-box__text');
         var textB = b.querySelector('.check-box__text');
         if (textA && textB) {
-          if (textA.innerHTML.toLowerCase().replace(/«/, '') < textB.innerHTML.toLowerCase().replace(/«/, '')) {
+          var textValueA = textA.innerHTML.toLowerCase().replace(/«/, '');
+          var textValueB = textB.innerHTML.toLowerCase().replace(/«/, '');
+          if (textValueA < textValueB) {
             return -1;
           }
-          if (textA.innerHTML.toLowerCase() > textB.innerHTML.toLowerCase()) {
+          if (textValueA > textValueB) {
             return 1;
           }
           return 0;
@@ -1584,12 +1561,21 @@ document.addEventListener("DOMContentLoaded", function () {
         create a new DIV that will act as an option item: */
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
+        if (selElmnt.options[j].value === 'own') {
+          c.dataset.own = true;
+        }
         if (j === 0) {
           c.classList.add('same-as-selected');
         }
         c.addEventListener("click", function (e) {
           /* When an item is clicked, update the original select box,
           and the selected item: */
+          if (this.dataset.own) {
+            var vacancyname = document.getElementById('form__vacancy_name');
+            if (vacancyname) {
+              vacancyname.style.display = 'block';
+            }
+          }
           var y, i, k, s, h, sl, yl;
           s = this.parentNode.parentNode.parentNode.getElementsByTagName("select")[0];
           sl = s.length;
@@ -1605,6 +1591,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 y[k].removeAttribute("class");
               }
               this.setAttribute("class", "same-as-selected");
+              var _filters = this.closest('.filters');
+              if (_filters && typeof smartFilter !== 'undefined') {
+                s.options[s.selectedIndex].setAttribute('selected', 'selected');
+                smartFilter.click(s.options[s.selectedIndex]);
+              }
               break;
             }
           }
@@ -2061,10 +2052,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return;
       }
-      var arrayText = 'doc, txt, rtf, pfd';
-      var types = arrayText.split(/[^\w+]+/);
+      var arrayText = this.accept || '.doc,.xls,.txt';
+      var types = arrayText.split(/,/);
       var typesTest = types.some(function (el) {
-        var ext = _this2.files[0].name.match(/\.([^.]+)$/)[0].slice(1);
+        var ext = _this2.files[0].name.match(/\.([^.]+)$/)[0];
         return el === ext;
       });
       if (!typesTest) {
@@ -2277,7 +2268,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var cookie = getCookie('softlineAccessCookie');
   var cookieForm = document.querySelector('.cookie.regModal');
   if (cookie && cookieForm) {
-    modalHandler.apply(cookieForm);
+    cookieForm.hidden = true;
   }
   if (cookieForm) {
     var button = cookieForm.querySelector('.cookie__button');
