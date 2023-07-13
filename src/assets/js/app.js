@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const mm = matchMedia("(max-width: 1024px)");
@@ -76,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mm.matches) {
         const links = document.querySelectorAll('a.header__link,a.menu__item:not(.list),a.menu__title,a.submenu__title,a.submenu__link,a.header__anchor,a.header__nav_link,a.header__top-button');
-        console.log(links)
         if (links.length) {
             links.forEach(el => {
                 el.addEventListener('click', () => {
@@ -88,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    let bodyTag = document.querySelector("body");
+
     if (headerSearchBtn) {
         headerSearchBtn.forEach(btn => {
             btn.onclick = (e) => {
@@ -97,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     parent.classList.add('header__mid--active');
                 }
                 headerSearch.forEach(element => {
+                    element.parentElement.style.position = 'static';
                     element.classList.add('active');
                 });
                 if (window.innerWidth <= 1024 && bodyTag.classList.contains("menu-open")) {
@@ -123,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (parent) {
                         parent.classList.remove('header__mid--active')
                     }
+                    element.parentElement.style.position = null;
                     element.classList.remove('active');
                 });
             }
@@ -202,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         item.classList.add("active");
                         itemMenu.style.display = "flex";
                         menuWrapper.classList.add("show");
+                        disableScroll()
                     } else {
                         /*item.classList.remove("active");
                         itemMenu.style.display = "none";
@@ -425,7 +430,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    let bodyTag = document.querySelector("body");
 
     let selectSingle = document.querySelectorAll('.__select');
     function selectFunc() {
@@ -437,17 +441,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     e.preventDefault();
                     let currentParent = selectSingle_title.closest(".__select");
                     let prev = document.querySelector(`[data-state="active"]`);
+                    document.body.classList.add('select-open');
                     let prevParent;
                     if (prev) {
                         prevParent = prev.closest(".__select");
                     }
                     if (prev && prevParent && prevParent != currentParent) {
                         prev.setAttribute('data-state', '');
+                        document.body.classList.remove('select-open');
+                        enableScroll();
                     }
                     if ('active' === selectSingle.getAttribute('data-state')) {
                         selectSingle.setAttribute('data-state', '');
+                        document.body.classList.remove('select-open');
+                        enableScroll();
                     } else {
                         selectSingle.setAttribute('data-state', 'active');
+                        document.body.classList.add('select-open');
+                        disableScroll();
                     }
                 };
 
@@ -457,7 +468,21 @@ document.addEventListener("DOMContentLoaded", () => {
                             selectSingle_title.classList.add("chosen");
                         }
                         selectSingle_title.innerHTML = evt.currentTarget.innerHTML;
+                        enableScroll();
+
                         selectSingle.setAttribute('data-state', '');
+                        document.body.classList.remove('select-open');
+                        const forEl = evt.currentTarget.getAttribute('for');
+
+                        if (forEl) {
+                            if (getCookie('city') === forEl) {
+                                return;
+                            } else {
+                                setCookie('city', forEl, { expires: getOneYearFromNow() });
+                                location.reload();
+                            }
+                        }
+
                     });
                 }
             });
@@ -466,34 +491,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectFunc();
 
+    function changeLocationOnCookie() {
+        const locationInput = getCookie('city')
+        if (locationInput) {
+
+            const selects = document.querySelectorAll(`.__select__label[for="${locationInput}"]`);
+
+            if (selects.length) {
+                selects.forEach(el => {
+                    el.click()
+                })
+            }
+        } else {
+            const label = document.querySelector(`.__select__label[for]`);
+            if (label) {
+                setCookie('city', label.getAttribute('for'), { expires: getOneYearFromNow() })
+            }
+        }
+    }
+
+    changeLocationOnCookie();
+
+
     bodyTag.onclick = (e) => {
         let openedSelect = document.querySelector(`[data-state="active"]`);
         let parent = e.target.closest(".__select");
         if (openedSelect && !parent) {
             openedSelect.setAttribute('data-state', '');
+            enableScroll();
         }
-    }
-
-    bodyTag.onmousemove = (e) => {
-        if (menuWrapper.classList.contains("show")) {
-            let targ = e.target;
-            let attr = targ.getAttribute("data-menu");
-            let parent = targ.closest(".menu-wrapper");
-            let itemAct = document.querySelector(".header__item.active");
-            let checkLink = targ.closest(".header__item.active");
-            if (!attr && !parent && !targ.classList.contains("menu-wrapper") && itemAct && itemAct != targ && !checkLink && !targ.classList.contains("header__menu")) {
-                // itemAct.classList.remove("active");
-                // let attrPrev = itemAct.getAttribute("data-menu");
-                // let itemMenu = document.querySelector(`.${attrPrev}`);
-                // itemMenu.style.display = "none";
-                // menuWrapper.classList.remove("show");
-            }
-        }
-        /*if(item.classList.contains("active")) {
-            item.classList.remove("active");
-            itemMenu.style.display = "none";
-            menuWrapper.classList.remove("show");    
-        } */
     }
 
     document.addEventListener('mousedown', () => {
@@ -1219,6 +1245,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (elem.classList.contains("active")) {
                     elem.classList.remove("active");
                     inp.setAttribute('checked', 'false');
+                    inp.checked = false;
+                    if (typeof smartFilter !== 'undefined') {
+                        smartFilter.click(inp)
+                    }
                 }
             }
         });
@@ -1262,24 +1292,44 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    let btnGrid = document.querySelector(".catalog__btn-grid");
-    let btnList = document.querySelector(".catalog__btn-list");
-    let catalogWrap = document.querySelector(".catalog__services");
+    const changeGrid = () => {
+        const target = event.target;
 
-    if (btnGrid && btnList && catalogWrap) {
-        btnGrid.onclick = (e) => {
-            e.preventDefault();
-            btnList.classList.remove("active");
-            btnGrid.classList.add("active");
-            catalogWrap.setAttribute("data-type", "grid");
+
+        let btnGrid = target.closest(".catalog__btn-grid");
+        let btnList = target.closest(".catalog__btn-list");
+
+        if (btnGrid) {
+            event.preventDefault();
+            let btnList = document.querySelector(".catalog__btn-list");
+            if (btnList) {
+                btnList.classList.remove("active");
+                btnGrid.classList.add("active");
+                let catalogWrap = document.querySelector(".catalog__services");
+                if (catalogWrap) {
+                    catalogWrap.setAttribute("data-type", "grid");
+                }
+            }
+
         }
-        btnList.onclick = (e) => {
-            e.preventDefault();
-            btnGrid.classList.remove("active");
-            btnList.classList.add("active");
-            catalogWrap.setAttribute("data-type", "list");
+
+        if (btnList) {
+            event.preventDefault();
+            let btnGrid = document.querySelector(".catalog__btn-grid");
+            if (btnGrid) {
+                btnGrid.classList.remove("active");
+                btnList.classList.add("active");
+                let catalogWrap = document.querySelector(".catalog__services");
+                if (catalogWrap) {
+                    catalogWrap.setAttribute("data-type", "list");
+                }
+            }
         }
     }
+
+    document.addEventListener('click', changeGrid);
+
+
 
     let filters = document.querySelectorAll("[data-show]");
     if (filters && filters.length > 0) {
@@ -1352,6 +1402,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (input) {
                         input.setAttribute('checked', 'false');
                         input.checked = false;
+                        if (typeof smartFilter !== 'undefined') {
+                            smartFilter.click(input)
+                        }
                     }
                 }
             })
@@ -1503,7 +1556,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else if (elem.classList.contains("search-aside") && window.innerWidth <= 1024) {
                     elem.style.transform = 'translate3d(0, -6rem, 0)';
                 } else {
-                    elem.style.transform = 'translate3d(0, 0px, 0)';
+                    elem.style.transform = null;
                 }
                 lastPosY = getTranslate3d(elem.style.transform)[1];
                 // scrollLock.enablePageScroll();
@@ -1530,7 +1583,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // scrollLock.disablePageScroll();
                 // scrollLock.addScrollableSelector(".search-aside__list");
                 // scrollLock.addScrollableSelector(".swipe-el__inner");
-                elem.style.transform = 'translate3d(0, -100%, 0)';
+                elem.style.transform = 'translate3d(0, 0, 0)';
                 lastPosY = getTranslate3d(elem.style.transform)[1];
             }
 
@@ -1609,13 +1662,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            mcSwipe.add(new Hammer.Pan({
-                direction: Hammer.DIRECTION_ALL,
-                threshold: 0
-            }));
-            if (window.innerWidth <= 1024) {
-                mcSwipe.on("pan", handleDrag);
-            }
+            // mcSwipe.add(new Hammer.Pan({
+            //     direction: Hammer.DIRECTION_ALL,
+            //     threshold: 0
+            // }));
+            // if (window.innerWidth <= 1024) {
+            //     mcSwipe.on("pan", handleDrag);
+            // }
         });
     }
 
@@ -1685,7 +1738,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
     let currentActiveButton = document.querySelector('.filter-button--active')
 
     const no = () => {
@@ -1722,12 +1774,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 create a new DIV that will act as an option item: */
                 c = document.createElement("DIV");
                 c.innerHTML = selElmnt.options[j].innerHTML;
+                if (selElmnt.options[j].value === 'own') {
+                    c.dataset.own = true;
+                }
                 if (j === 0) {
                     c.classList.add('same-as-selected')
                 }
                 c.addEventListener("click", function (e) {
                     /* When an item is clicked, update the original select box,
                     and the selected item: */
+                    if (this.dataset.own) {
+                        const vacancyname = document.getElementById('form__vacancy_name');
+                        if (vacancyname) {
+                            vacancyname.style.display = 'block';
+                        }
+                    }
                     var y, i, k, s, h, sl, yl;
                     s = this.parentNode.parentNode.parentNode.getElementsByTagName("select")[0];
                     sl = s.length;
@@ -1743,6 +1804,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 y[k].removeAttribute("class");
                             }
                             this.setAttribute("class", "same-as-selected");
+                            const filters = this.closest('.filters')
+                            if (filters && typeof smartFilter !== 'undefined') {
+                                s.options[s.selectedIndex].setAttribute('selected', 'selected');
+                                smartFilter.click(s.options[s.selectedIndex])
+                            }
                             break;
                         }
                     }
@@ -2063,7 +2129,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 li.innerHTML = title
                 li.addEventListener('click', function () {
                     accordions.forEach(el => {
+                        console.log(this.dataset.visible, el.dataset.visible)
                         if (this.dataset.visible === el.dataset.visible) {
+                            const fixed = this.closest('.fixed-mobile')
+                            if (fixed && mm.matches) {
+                                modalHandler.apply(fixed);
+                            }
                             // const headerH = document.documentElement.style.getPropertyValue('--headerH') || '-200'
 
                             const yOffset = !mm.matches ? -200 : -150;
@@ -2217,10 +2288,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 return
             }
 
-            const arrayText = 'doc, txt, rtf, pfd'
-            const types = arrayText.split(/[^\w+]+/)
+            const arrayText = this.accept || '.doc,.xls,.txt';
+            const types = arrayText.split(/,/)
             const typesTest = types.some(el => {
-                const ext = this.files[0].name.match(/\.([^.]+)$/)[0].slice(1)
+                const ext = this.files[0].name.match(/\.([^.]+)$/)[0]
                 return el === ext
             })
 
@@ -2487,7 +2558,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cookie = getCookie('softlineAccessCookie')
     const cookieForm = document.querySelector('.cookie.regModal')
     if (cookie && cookieForm) {
-        modalHandler.apply(cookieForm)
+        cookieForm.hidden = true;
     }
 
     if (cookieForm) {
@@ -2495,10 +2566,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (button) {
             button.addEventListener('click', function () {
-                setCookie('softlineAccessCookie', 'true')
+                setCookie('softlineAccessCookie', 'true', { expires: getOneYearFromNow() })
                 modalHandler.apply(cookieForm)
             })
         }
+    }
+
+    function getOneYearFromNow() {
+        var oneYearFromNow = new Date();
+        oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+        return oneYearFromNow.toUTCString();
     }
     /*
           const mapButton = document.querySelector('#map-button');
@@ -2681,10 +2758,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btnBaloon.onclick = (e) => {
                 e.preventDefault();
                 pannel.classList.remove("open");
-                if (activePlacmark) {
-                    activePlacmark.options.set('iconImageHref', 'assets/images/map/Location.svg');
-                    activePlacmark.balloon.close();
-                }
+                enableScroll();
             }
         }
         let zoom;
@@ -2697,14 +2771,14 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (window.innerWidth > 480) {
             zoom = 2;
         } else {
-            zoom = 1.3;
+            zoom = 1.7;
         }
 
         let activePlacmark;
 
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
-                center: [64.040454, 106.165935],
+                center: [60.040454, 80.165935],
                 zoom: zoom,
                 behaviors: ['default', 'scrollZoom'],
                 controls: ['geolocationControl', 'zoomControl', 'fullscreenControl']
@@ -2785,16 +2859,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     req.open("GET", "/about/map/get-office-coordinates.php", true);
                     req.responseType = 'json';
                     req.send();
-                    /*let req = new XMLHttpRequest();
-                    req.onreadystatechange = () => {
-                        if(req.readyState == 4) {
-                            resolve( req );
-                        }
-                    };  
-                    req.open("GET", "https://api.jsonbin.io/v3/b/6421a378ace6f33a22fe2c27", true);
-                    req.setRequestHeader("X-Master-Key", "$2b$10$2vK1es0DlNZIjjLMRFSAEuqLKa67nVqo9xGycFQi3bVKqhwkMHgA6");
-                    req.responseType = 'json';
-                    req.send(); */
                 })
             }
 
@@ -2803,11 +2867,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 10);
 
             render().then((req) => {
-                if (!req.responce) {
-                    return;
-                }
                 data = req.response.features;
-                //data = req.response.record.features;
 
                 for (let j = 0; j < data.length; j++) {
                     pointsData[j] = data[j].coordinates;
@@ -2816,30 +2876,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 let BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="display: none;">' +
-                    '</div>', {
+                    '<svg width="45" height="56" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 56C14.953 49.607 9.317 43.668 5.591 38.184 1.864 32.7 0 27.627 0 22.96c0-7 2.262-12.577 6.787-16.73C11.309 2.077 16.547 0 22.5 0c5.953 0 11.19 2.077 15.713 6.23C42.738 10.383 45 15.96 45 22.96c0 4.667-1.863 9.741-5.588 15.224C35.684 43.668 30.047 49.607 22.5 56z" fill="#A50F2D"/><circle cx="22.5" cy="22.5" r="17.5" fill="#fff"/><path d="M12 26.253l4.707-.454c.168.568.448.965.784 1.192.337.227 1.513.454 2.13.454.616 0 .392-.227.728-.454.28-.227.392-.454.392-.738 0-.34-.168-.624-.56-.794-.28-.114-.953-.284-2.017-.511-1.625-.284-2.802-.568-3.418-.795-.617-.227-1.177-.681-1.625-1.25a3.15 3.15 0 01-.673-1.986c0-.852.224-1.533.729-2.1.448-.568 1.12-1.022 1.96-1.363.841-.284 1.962-.454 3.307-.454 1.457 0 2.578.113 3.25.34.728.228 1.289.568 1.737 1.022.448.455.84 1.136 1.177 1.93l-4.483.455c-.112-.398-.28-.681-.56-.909-.393-.227-.785-.397-1.345-.397-.505 0-.897.114-1.177.284a.813.813 0 00-.336.681c0 .284.168.511.448.681.28.17 1.009.284 2.017.454 1.57.17 2.746.455 3.475.738.784.341 1.344.795 1.737 1.363.392.568.616 1.249.616 1.987s-.224 1.419-.616 2.1c-.449.681-1.121 1.25-2.018 1.646-.896.398-2.185.625-3.754.625-2.241 0-3.866-.34-4.819-.965-.896-.681-1.513-1.59-1.793-2.782z" fill="#A50F2D"/><path d="M32 13h-5v17h5V13z" fill="#B1B1B1"/></svg>', {
                 });
 
                 let baloons = document.querySelectorAll(".baloon");
 
+                let size = myMap.getZoom();
+                // console.log(size, this, event)
+
+
                 for (var i = 0, len = pointsData.length; i < len; i++) {
                     let myPlacemark = new ymaps.Placemark(pointsData[i], getPointData(i), {
-                        iconLayout: 'default#image',
-                        //iconImageHref: 'assets/images/map/Location.svg',
-                        iconImageHref: '/assets/images/map/Location.svg',
-                        iconImageSize: [45, 56],
-                        iconImageOffset: [-22.5, -56],
-                        balloonContentLayout: BalloonContentLayout,
-                        hideIconOnBalloonOpen: false,
-                        balloonPanelMaxMapArea: 0,
-                        balloonLayout: "default#imageWithContent",
-                        balloonShadow: false,
-                        balloonImageSize: [0, 0]
+                        iconLayout: 'default#imageWithContent',
+                        iconImageHref: '/local/templates/softline/assets/images/map/Location.svg',
+                        
+                        // iconImageSize: [45 * 6, 56 * 8],
+                        // iconImageOffset: [-22.5, -56],
+                        // iconContentLayout: BalloonContentLayout,
                     });
+                    myPlacemark.options.set("iconImageSize", [size * 10, size * 12])
+                    myPlacemark.options.set("iconImageOffset", [(-size * 10) / 2, -size * 12])
                     myPlacemark.fakeId = id[i];
                     myMap.geoObjects.add(myPlacemark);
-                    myPlacemark.events.add('balloonopen', function (e) {
-
+                    myPlacemark.events.add('click', function (e) {
+                        map.scrollIntoView({ block: "center", behavior: "smooth" });
+                        baloons.forEach(baloon => {
+                            baloon.classList.remove("open");
+                        });
                         let fakeId = myPlacemark.fakeId;
                         let div = document.querySelector(`.id${fakeId}`);
                         if (div) {
@@ -2851,15 +2914,22 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                         activePlacmark = myPlacemark;
                     });
-                    myPlacemark.events.add('balloonclose', function (e) {
-                        baloons.forEach(baloon => {
-                            baloon.classList.remove("open");
-                        });
-                        if (pannel.classList.contains("open")) {
-                            pannel.classList.remove("open");
-                        }
-                        activePlacmark = null;
+
+                    myMap.events.add('boundschange', function () {
+                        size = myMap.getZoom();
+                        // console.log(size, this, event)
+                        // myPlacemark.options.set("iconImageSize", [size * 10, size * 12])
+                        // myPlacemark.options.set("iconImageOffset", [(-size * 10) / 2, -size * 12])
                     });
+                    // myPlacemark.events.add('balloonclose', function (e) {
+                    //     baloons.forEach(baloon => {
+                    //         baloon.classList.remove("open");
+                    //     });
+                    //     if (pannel.classList.contains("open")) {
+                    //         pannel.classList.remove("open");
+                    //     }
+                    //     activePlacmark = null;
+                    // });
                 }
 
                 myMap.behaviors.disable('scrollZoom');
@@ -2870,28 +2940,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const buttons = document.querySelectorAll('.map__city');
                 buttons.forEach(btn => {
-                    let txt = btn.innerText;
-                    let coords;
-                    ymaps.geocode(txt, {
-                        results: 1
-                    }).then(function (res) {
-                        let firstGeoObject = res.geoObjects.get(0);
-                        coords = firstGeoObject.geometry.getCoordinates();
 
-                        btn.setAttribute("c1", coords[0]);
-                        btn.setAttribute("c2", coords[1]);
-
-                        btn.onclick = (e) => {
-                            e.preventDefault();
-                            let attr1 = btn.getAttribute("c1");
-                            let attr2 = btn.getAttribute("c2");
-                            myMap.setCenter([attr1, attr2], 11, {
-                                duration: 400
-                            });
-                        }
-                    });
+                    btn.onclick = (e) => {
+                        e.preventDefault();
+                        const coord = btn.dataset.coord.split(',');
+                        myMap.setCenter(coord, 11, {
+                            duration: 400
+                        });
+                    }
 
                 });
+
+                if (buttons.length === 1) {
+                    buttons[0].click();
+                }
 
             })
 
@@ -2926,6 +2988,29 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             video.pause();
         }
+    }
+
+    const radioSelects = document.querySelectorAll('.radio-select .form-group label');
+
+    if (radioSelects.length) {
+        radioSelects.forEach(el => {
+            el.addEventListener('click', () => {
+                const parent = event.target.closest('.radio-select').querySelector('.filter-button > span');
+
+                if (parent) {
+                    parent.innerHTML = event.target.innerHTML;
+                }
+            })
+
+            const input = el.previousElementSibling
+
+            if (input.checked) {
+                const parent = el.closest('.radio-select').querySelector('.filter-button > span');
+                if (parent) {
+                    parent.innerHTML = el.innerHTML;
+                }
+            }
+        })
     }
 
 
@@ -3054,44 +3139,44 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const partnersButtons = document.querySelectorAll('[data-showText]');
-
-
-    if (partnersButtons.length) {
-        partnersButtons.forEach(el => {
-            const text = el.parentElement.querySelector('.top-partner_text');
-            if (text.scrollHeight <= text.offsetHeight) {
-                el.hidden = true;
-                text.classList.remove('top-partner_text--gradient')
-            } else {
-                text.classList.add('top-partner_text--gradient')
-            }
-            el.addEventListener('click', function () {
-                if (text) {
-                    if (!text.style.maxHeight) {
-                        text.style.maxHeight = text.scrollHeight + 'px';
-                        text.classList.add('top-partner_text--gradient-transparent');
-                        this.innerHTML = this.dataset.hidetext;
-                    } else {
-                        text.classList.remove('top-partner_text--gradient-transparent');
-                        text.style.maxHeight = null;
-                        this.innerHTML = this.dataset.showtext;
-                    }
+    document.addEventListener('click', (event) => {
+        const dataset = event.target.dataset;
+        const target = event.target;
+        if (dataset.showtext) {
+            const text = target.parentElement.querySelector('.top-partner_text');;
+            if (text) {
+                if (!text.style.maxHeight) {
+                    text.style.maxHeight = text.scrollHeight + 'px';
+                    target.innerHTML = target.dataset.hidetext;
+                } else {
+                    text.style.maxHeight = null;
+                    target.innerHTML = target.dataset.showtext;
                 }
-            })
-        })
-    }
-    window.addEventListener('resize', function () {
+            }
+        }
+    })
+
+    const hideButton = () => {
+        const partnersButtons = document.querySelectorAll('[data-showText]');
+
         if (partnersButtons.length) {
             partnersButtons.forEach(el => {
                 const text = el.parentElement.querySelector('.top-partner_text');
-                if (text) {
-                    if (text.style.maxHeight) {
-                        text.style.maxHeight = text.scrollHeight + 'px';
-                    }
+                if (text.scrollHeight <= text.offsetHeight) {
+                    el.hidden = true;
+                    text.classList.remove('top-partner_text--gradient')
+                } else {
+                    text.classList.add('top-partner_text--gradient')
                 }
+
             })
         }
+    }
+
+    hideButton();
+
+    window.addEventListener('resize', function () {
+        hideButton();
     })
 
     const serviceText = document.querySelectorAll('.service .service__text');
@@ -3106,7 +3191,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     }
-
 });
 
 

@@ -223,6 +223,10 @@
                 a {
                     color: #eff1f6;
                     text-decoration: none;
+                    transition: color .3s;
+                    &:hover {
+                        color: #A50F2D!important;
+                    }
                 }
 
                 .dott {

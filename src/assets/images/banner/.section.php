@@ -1,0 +1,6 @@
+<?
+$sSectionName = "banner";
+$arDirProperties = array(
+
+);
+?>

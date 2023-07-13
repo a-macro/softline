@@ -122,6 +122,17 @@ function cssWatch(cb) {
     )
     .pipe(cssbeautify())
     .pipe(removeComments())
+    .pipe(
+      cssnano({
+        zindex: false,
+        discardComments: {
+          removeAll: true,
+        },
+        autoprefixer: {
+          remove: false
+        }
+      })
+    )
     // .pipe(
     //   rename({
     //     suffix: ".min",
@@ -142,14 +153,15 @@ function js(cb) {
         presets: ["@babel/preset-env"],
       })
     )
-    .pipe(gulp.dest(path.build.js))
     .pipe(uglify())
-    .pipe(
-      rename({
-        suffix: ".min",
-        extname: ".js",
-      })
-    )
+    // .pipe(gulp.dest(path.build.js))
+    // .pipe(uglify())
+    // .pipe(
+    //   rename({
+    //     suffix: ".min",
+    //     extname: ".js",
+    //   })
+    // )
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
 
@@ -164,14 +176,15 @@ function jsWatch(cb) {
         presets: ["@babel/preset-env"],
       })
     )
-    .pipe(gulp.dest(path.build.js))
     .pipe(uglify())
-    .pipe(
-      rename({
-        suffix: ".min",
-        extname: ".js",
-      })
-    )
+    // .pipe(gulp.dest(path.build.js))
+    // .pipe(uglify())
+    // .pipe(
+    //   rename({
+    //     suffix: ".min",
+    //     extname: ".js",
+    //   })
+    // )
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
 

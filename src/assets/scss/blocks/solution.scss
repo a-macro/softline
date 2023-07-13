@@ -355,6 +355,48 @@
   }
 }
 
+// .pt15 {
+//   margin-top: 15rem;
+
+//   @include breakpoint($xxl-bp) {
+//     margin-top: 12rem;
+//   }
+
+//   @include breakpoint($mid-bp) {
+//     margin-top: 10rem;
+//   }
+
+//   @include breakpoint($sm-bp) {
+//     margin-top: 8rem;
+//   }
+// }
+.dark.pt15 { 
+  .services {
+    padding-top: 15rem;
+
+    @include breakpoint($xxl-bp) {
+      padding-top: 12rem;
+    }
+  
+    @include breakpoint($mid-bp) {
+      padding-top: 10rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      padding-top: 8rem;
+    }
+  }
+}
+
+.dark {
+  .help-blocks {
+    padding-bottom: 10rem;
+    margin-bottom: 0;
+    @include breakpoint($sm-bp) {
+      padding-bottom: 8rem;
+    }
+  }
+}
 
 .help-blocks {
   display: grid;
@@ -368,16 +410,14 @@
   @include breakpoint($sm-bp) {
     padding-top: 5.5rem;
   }
-
-  padding-bottom: 10rem;
-
+  margin-bottom: 10rem;
   @include breakpoint($mid-bp) {
     grid-template-columns: repeat(1, 1fr);
   }
 
   @include breakpoint($sm-bp) {
     gap: 3rem;
-    padding-bottom: 8rem;
+    margin-bottom: 8rem;
   }
 
   .help-blocks__item {
@@ -417,7 +457,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            opacity: 1;
+            opacity: 1; 
         }
     }
       
@@ -911,11 +951,11 @@ a.prof-item {
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='23' viewBox='0 0 20 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 21H20' stroke='%23A50F2D' stroke-width='2.0625'/%3E%3Cpath d='M10 0V15M10 15L18 8.19353M10 15L2 8.19353' stroke='%23A50F2D' stroke-width='2.0625'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
-
+    flex: 0 0 auto;
     @include breakpoint($sm-bp) {
       margin-left: 2rem;
       width: 3rem;
-      height: 3rem;
+      height: 3rem; 
     }
   }
 
@@ -1017,6 +1057,9 @@ a.prof-item {
 
 .dark .subtitle {
   color: #eff1f6;
+  a {
+    color: inherit;
+  }
 }
 .dark {
   .services .service .service__inner,

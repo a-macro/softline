@@ -121,8 +121,8 @@
             nav {
               position: absolute;
               width: 100%;
-              bottom: 0;
-              top: 26%;
+              bottom: 0; 
+              top: 0;
               left: 0;
               background-color: #FFFFFF;
               display: block;
@@ -524,6 +524,10 @@
         padding: 3rem 3rem;
         padding-right: 5rem;
       }
+      li {
+        border-top: 0;
+        border-bottom: 0;
+      }
     }
     .accordion__list-desc {
       position: relative;
@@ -632,22 +636,23 @@
       .politics-page__wrapper {
         .politics-page__title {
           font-family: 'Manrope';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 5.2rem;
-          line-height: 5.8rem;
-          /* identical to box height, or 112% */
-          
-          letter-spacing: -0.02em;
-          
-          /* UI/Black/High */
-          
-          color: #212424;
-          padding-bottom: 3.2rem;
-          @include breakpoint($sm-bp) {
-            font-size: 4.45rem;
-            line-height: 4.8rem;
-          }
+            font-style: normal;
+            font-weight: 400;
+            font-size: 5.2rem;
+            line-height: 5.8rem;
+            /* identical to box height, or 112% */
+            
+            letter-spacing: -0.02em;
+            
+            /* Prototype / Black / High */
+            
+            color: #40454E;
+            padding-bottom: 5.2rem;
+            @include breakpoint($sm-bp) {
+              font-size: 4.1rem;
+              line-height: 4.8rem;
+
+            }
         }
         .politics-page__subtitle {
           font-family: 'Manrope';
@@ -702,8 +707,8 @@
         align-items: center;
         width: 100%;
         text-align: start;
-        padding-top: 4.8rem;
-        padding-bottom: 4.8rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         transition: all .3s;
         @media (hover: hover) {
           &:hover {
@@ -711,18 +716,12 @@
             padding-right: 3rem;
           }
         }
-        font-size: 3.6rem;
-        letter-spacing: -0.02em;
-        line-height: 5.2rem;
+
         @include breakpoint($mid-bp) {
           padding-top: 4rem;
           padding-bottom: 4rem;
         }
-        @include breakpoint($sm-bp) {
-          font-size: 2.6rem;
-          line-height: 3.2rem;
-          letter-spacing: normal;
-        }
+
       }
       .accordion__list-desc {
         display: block;
@@ -941,6 +940,12 @@
 
 
   .form__item {
+    position: relative;
+    input[type=file] {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
     .form__item-name {
       font-family: 'Manrope';
       font-style: normal;
@@ -967,6 +972,9 @@
       /* UI/Black/Low */
       
       color: #AAB8C3;
+      @include breakpoint($sm-bp) {
+        font-size: 1.84rem;
+      }
     }
   }
 
@@ -991,6 +999,7 @@
     padding-bottom: 0;
     box-sizing: border-box;
     outline: none;
+    background-color: transparent;
   }
 
   .form__item {
@@ -1026,7 +1035,7 @@
       
       
       /* UI/Black/High */
-      
+      cursor: pointer;
       color: #212424;
       &::after {
         content: '';
@@ -1049,6 +1058,7 @@
         }
         .link-red__text {
           color: #A50F2D;
+          box-shadow: 0px 4px 0px -3px #a50f2d;
         }
     }
 

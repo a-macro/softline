@@ -131,11 +131,10 @@
     padding-top: 0;
     @include breakpoint($mid-bp) {
       width: 100%;
-      margin-top: 7rem;
       border-top-left-radius: 1.2rem;
       border-top-right-radius: 1.2rem;
       overflow: scroll;
-      height: auto;
+      height: 100%;
       bottom: 0;
     }
     &::before {

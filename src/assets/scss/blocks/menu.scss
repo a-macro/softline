@@ -304,10 +304,11 @@
         width: 100%;
         gap: 0;
         flex-wrap: wrap;
-        padding-top: 1rem;
+        padding-top: 3.5rem;
         border-left: 0.1rem solid #E5E9F1;
-        padding-right: 0;
+        padding-right: 2rem;
         height: 100%;
+        padding-left: 2rem;
     }
 
     @include breakpoint($sm-bp) {
@@ -331,9 +332,17 @@
 
     .menu-second__top {
         @include breakpoint($mid-bp) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             row-gap: 2rem;
+
+            & > * {
+                width: 100%;
+                &:nth-child(2),
+                &:nth-child(5) {
+                    width: 50%;
+                }
+            }
         }
 
         @include breakpoint($sm-bp) {
@@ -341,6 +350,7 @@
             padding-left: 2.5rem;
             padding-bottom: 2.5rem;
             row-gap: 2.4rem;
+            position: relative;
         }
 
         .header__search {
@@ -350,8 +360,8 @@
                 justify-content: center;
                 height: min-content;
                 align-items: flex-start;
-                margin-top: 2rem;
                 padding-right: 2.5rem;
+                margin-top: 0;
             }
 
             @include breakpoint($sm-bp) {
@@ -364,7 +374,9 @@
     .menu-second__mid {
         @include breakpoint($mid-bp) {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: max-content 1fr;
+            gap: 0;
+            margin-top: 2rem;
         }
 
         @include breakpoint($sm-bp) {
@@ -372,6 +384,7 @@
             padding-right: 2.5rem;
             border-bottom: 0.1rem solid #D2DCE5;
             padding-bottom: 3.5rem;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .header__top-button {
@@ -388,7 +401,7 @@
             flex-direction: column;
             gap: 2rem;
             align-items: flex-start;
-            margin-top: 2rem;
+            margin-top: 0;
         }
 
         @include breakpoint($sm-bp) {
@@ -401,11 +414,15 @@
         @include breakpoint($mid-bp) {
             display: block;
             padding-left: 0;
-            margin-top: 2.5rem;
+            margin-top: 0;
+            .select-side {
+                display: none;
+            }
         }
 
         @include breakpoint($sm-bp) {
             margin-top: 0;
+            position: static;
         }
     }
 
@@ -421,13 +438,12 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            justify-content: flex-end;
-            gap: 0.5rem;
-
+            justify-content: flex-start;
+            gap: 2rem;
             a {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
                 font-weight: 500;
-                line-height: 1.43;
+                line-height: 2rem;
                 letter-spacing: 0em;
                 text-align: left;
                 color: $black;
@@ -442,7 +458,7 @@
 
         @include breakpoint($sm-bp) {
             gap: 2.4rem;
-
+            align-items: flex-end;
             a {
                 font-size: 1.8rem;
                 line-height: 2rem;
@@ -455,7 +471,8 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            margin-top: 10rem;
+            margin-top: auto;
+            margin-bottom: 2rem;
         }
 
         @include breakpoint($sm-bp) {
@@ -463,20 +480,21 @@
             padding: 0 2.5rem;
             flex-direction: row;
             flex-wrap: wrap;
+            margin-bottom: 0;
         }
     }
 
     .header__nav_link {
         @include breakpoint($mid-bp) {
             margin-left: 0;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: $black;
             text-decoration: none;
             font-weight: 500;
             line-height: 2rem;
             letter-spacing: 0em;
             text-align: left;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
 
             &:nth-child(1) {
                 margin-top: 0;
@@ -490,8 +508,7 @@
             line-height: 2rem;
             letter-spacing: 0em;
             text-align: left;
-            color: #697279;
-
+            margin-top: 2.5rem;
             &:nth-child(2) {
                 margin-top: 0;
             }
@@ -512,9 +529,11 @@
         }
 
         .__select__title {
+            @include breakpoint($mid-bp) {
+                font-size: 1.8rem;
+            }
             @include breakpoint($sm-bp) {
                 padding: 0;
-                font-size: 1.8rem;
             }
         }
 
@@ -540,15 +559,19 @@
 
             color: #697279;
 
-            @include breakpoint($sm-bp) {
+            @include breakpoint($mid-bp) {
                 font-size: 1.8rem;
+                line-height: 2rem;
+                color: #212424;
             }
         }
 
         svg {
             width: 1.6rem;
             height: 1.6rem;
-
+            @include breakpoint($mid-bp) {
+                filter: brightness(0);
+            }
             @include breakpoint($sm-bp) {
                 width: 1.8rem;
                 height: 1.8rem;
@@ -575,7 +598,7 @@
     transform: translateY(0);
 
     @include breakpoint($mid-bp) {
-        z-index: 2;
+        z-index: 201;
         width: 100%;
         left: 0;
         height: calc(100% - var(--headerH));
@@ -641,6 +664,7 @@
         @include breakpoint($sm-bp) {
             font-size: 2rem;
             line-height: 2.8rem;
+            padding-right: 5.6rem;
         }
     }
 

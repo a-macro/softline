@@ -912,3 +912,9 @@
 .center-block {
     overflow: hidden;
 }
+
+.sticky-wrapper .right-block .links {
+    @include breakpoint($mid-bp) {
+        padding-bottom: 3.2rem;
+    }
+}
